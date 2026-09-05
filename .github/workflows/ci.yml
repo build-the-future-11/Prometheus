@@ -29,3 +29,10 @@ jobs:
             --question "Does a preregistered treatment outperform a strong baseline?" \
             --output /tmp/atlas-smoke.json
           python -m json.tool /tmp/atlas-smoke.json >/dev/null
+      - name: LAM-JEPA adapter dry-run smoke
+        run: |
+          python -m atlas.lam_jepa_adapter \
+            --integration integrations/lam_jepa_arc_v3.json \
+            --dry-run \
+            > /tmp/lam-jepa-plan.json
+          python -m json.tool /tmp/lam-jepa-plan.json >/dev/null

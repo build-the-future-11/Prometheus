@@ -67,6 +67,29 @@ python -m atlas.cli verify-percy \
 
 Artifacts are expected beneath `<artifact-root>/<atlas_experiment_id>/...` using each experiment's `required_artifacts` paths. Absolute paths and parent-directory traversal in required artifact declarations are rejected during verification.
 
+## Frozen LAM-JEPA ARC-v3 adapter
+
+Atlas includes an adapter for the checked-in `integrations/lam_jepa_arc_v3.json` reproduction contract. CI exercises only the dry-run path; it does not execute the outcome-bearing benchmark.
+
+Inspect the frozen execution plan without running anything:
+
+```bash
+python -m atlas.lam_jepa_adapter \
+  --integration integrations/lam_jepa_arc_v3.json \
+  --dry-run
+```
+
+An actual run requires a clean local `vertex-studyAI/LAM-JEPA` checkout at the exact frozen SHA and Python 3.11:
+
+```bash
+python -m atlas.lam_jepa_adapter \
+  --integration integrations/lam_jepa_arc_v3.json \
+  --repo /path/to/LAM-JEPA \
+  --output-root /path/to/fresh/atlas-evidence
+```
+
+The adapter validates the integration contract, refuses the ARC test parquet before and after execution, checks the exact source SHA, executes in an isolated copied workspace, gates the producer on successful protocol preflight, runs the independent verifier whenever producer output exists, records command exit codes/stdout/stderr, freezes the Python package list, hashes train/validation datasets, retains producer/verifier outputs, and writes one checksum manifest over the retained evidence. The scientific verdict remains `VALID_NEGATIVE_OR_INCONCLUSIVE_VALIDATION`; this adapter does not authorize rescue tuning or test-split access.
+
 ## Core design
 
 - **Atlas = scientist/planner**: hypotheses, experiment matrices, stopping rules, evidence requirements.
@@ -77,4 +100,4 @@ Atlas never marks a claim as supported merely because a run completed. A claim m
 
 ## Current milestone
 
-`v0.1`: deterministic research-run manifest generation with validation and JSON serialization, plus a versioned Atlas → Percy durable-task export contract and fail-closed execution-artifact verification.
+`v0.1`: deterministic research-run manifest generation with validation and JSON serialization, a versioned Atlas → Percy durable-task export contract with fail-closed artifact verification, plus evidence-safe execution adapters and verification primitives.
