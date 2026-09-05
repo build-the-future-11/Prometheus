@@ -5,6 +5,13 @@ import json
 import shlex
 from pathlib import Path
 
+from .benchmarks import (
+    build_benchmark_manifest,
+    load_cases,
+    load_predictions,
+    score_exact_match,
+    validate_benchmark,
+)
 from .percy import build_percy_export, load_json_object, verify_export_completion, write_percy_export
 from .planner import build_manifest
 
@@ -26,6 +33,26 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Comma-separated evaluation conditions",
     )
     init_run.add_argument("--output", required=True, help="Destination JSON path")
+
+    benchmark = subparsers.add_parser("benchmark", help="Validate and score deterministic benchmark packages")
+    benchmark_commands = benchmark.add_subparsers(dest="benchmark_command", required=True)
+
+    validate = benchmark_commands.add_parser("validate", help="Validate benchmark JSONL and optional manifest")
+    validate.add_argument("--cases", required=True, help="Benchmark cases JSONL")
+    validate.add_argument("--manifest", help="Optional benchmark manifest JSON")
+
+    manifest = benchmark_commands.add_parser("manifest", help="Create a benchmark manifest bound to exact case bytes")
+    manifest.add_argument("--cases", required=True, help="Benchmark cases JSONL")
+    manifest.add_argument("--name", required=True)
+    manifest.add_argument("--version", required=True)
+    manifest.add_argument("--license", required=True, dest="license_name")
+    manifest.add_argument("--task-description", required=True)
+    manifest.add_argument("--output", required=True, help="Destination manifest JSON")
+
+    score = benchmark_commands.add_parser("score", help="Score prediction JSONL with exact match")
+    score.add_argument("--cases", required=True, help="Benchmark cases JSONL")
+    score.add_argument("--predictions", required=True, help="Prediction JSONL")
+    score.add_argument("--output", required=True, help="Destination score report JSON")
 
     export_percy = subparsers.add_parser("export-percy", help="Export an Atlas run as Percy-ready durable tasks")
     export_percy.add_argument("--manifest", required=True, help="Atlas run manifest JSON")
@@ -71,6 +98,12 @@ def _parse_strings(raw: str, argument: str) -> tuple[str, ...]:
     return values
 
 
+def _write_json(path: str | Path, payload: dict[str, object]) -> None:
+    output = Path(path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
@@ -89,11 +122,39 @@ def main(argv: list[str] | None = None) -> int:
         except ValueError as exc:
             parser.error(str(exc))
 
-        output = Path(args.output)
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(json.dumps(manifest.to_dict(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
-        print(f"wrote {manifest.run_id} with {len(manifest.experiments)} experiments to {output}")
+        _write_json(args.output, manifest.to_dict())
+        print(f"wrote {manifest.run_id} with {len(manifest.experiments)} experiments to {args.output}")
         return 0
+
+    if args.command == "benchmark":
+        try:
+            if args.benchmark_command == "validate":
+                report = validate_benchmark(args.cases, args.manifest)
+                print(json.dumps(report, indent=2, sort_keys=True))
+                return 0
+
+            if args.benchmark_command == "manifest":
+                manifest = build_benchmark_manifest(
+                    args.cases,
+                    name=args.name,
+                    version=args.version,
+                    license_name=args.license_name,
+                    task_description=args.task_description,
+                )
+                _write_json(args.output, manifest.to_dict())
+                print(f"wrote benchmark manifest for {manifest.case_count} cases to {args.output}")
+                return 0
+
+            if args.benchmark_command == "score":
+                report = score_exact_match(load_cases(args.cases), load_predictions(args.predictions))
+                _write_json(args.output, report.to_dict())
+                print(
+                    f"scored {report.total} cases: {report.correct} correct, "
+                    f"{report.missing} missing, accuracy={report.accuracy:.6f}"
+                )
+                return 0
+        except ValueError as exc:
+            parser.error(str(exc))
 
     if args.command == "export-percy":
         try:

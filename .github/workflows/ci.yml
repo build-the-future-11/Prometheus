@@ -29,6 +29,16 @@ jobs:
             --question "Does a preregistered treatment outperform a strong baseline?" \
             --output /tmp/atlas-smoke.json
           python -m json.tool /tmp/atlas-smoke.json >/dev/null
+      - name: Benchmark Foundry smoke
+        run: |
+          atlas benchmark validate \
+            --cases examples/benchmark/cases.jsonl \
+            --manifest examples/benchmark/manifest.json
+          atlas benchmark score \
+            --cases examples/benchmark/cases.jsonl \
+            --predictions examples/benchmark/predictions.jsonl \
+            --output /tmp/atlas-benchmark-score.json
+          python -m json.tool /tmp/atlas-benchmark-score.json >/dev/null
       - name: LAM-JEPA adapter dry-run smoke
         run: |
           python -m atlas.lam_jepa_adapter \
