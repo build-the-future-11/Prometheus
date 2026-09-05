@@ -29,6 +29,44 @@ Run tests:
 python -m unittest discover -s tests -v
 ```
 
+## Atlas → Percy task export
+
+Atlas can export any run manifest into a dependency-free JSON task bundle without importing or installing Percy:
+
+```bash
+python -m atlas.cli export-percy \
+  --manifest runs/robustness.json \
+  --output runs/robustness.percy.json \
+  --working-directory /workspace/project \
+  --command-template 'python run_experiment.py --experiment {experiment_id} --seed {seed} --condition {perturbation} --output {artifact_dir}'
+```
+
+The export uses schema `atlas.percy-tasks.v0.1`. Every experiment becomes one durable task with a deterministic task ID, working directory, command, timeout, retry policy, resource request, Atlas run/experiment metadata, and the experiment's required artifacts. The export also creates one parent verification task depending on every experiment task.
+
+Available command-template placeholders are `{run_id}`, `{experiment_id}`, `{experiment_name}`, `{seed}`, `{perturbation}`, `{treatment}`, `{control}`, and `{artifact_dir}`.
+
+### Minimal Percy ingestion contract
+
+A Percy-side importer only needs to:
+
+1. reject unknown `schema_version` values rather than guessing compatibility;
+2. ingest every `tasks[]` entry using `task_id` as the stable external identity;
+3. preserve `dependencies`, `working_directory`, `command`, `timeout_seconds`, `retry_policy`, `resources`, `artifact_directory`, `expected_artifacts`, and `metadata`;
+4. execute the parent verification task only after every dependency reaches a terminal state;
+5. write the `status_contract.path` JSON object mapping each experiment task ID to its terminal status, using `SUCCEEDED` for success;
+6. never mark the parent verification task successful when a dependency failed/missing or a required artifact is absent.
+
+The verification command embedded in the parent task runs Atlas itself and fails closed:
+
+```bash
+python -m atlas.cli verify-percy \
+  --export runs/robustness.percy.json \
+  --statuses runs/<run-id>-task-statuses.json \
+  --artifact-root runs/<run-id>-artifacts
+```
+
+Artifacts are expected beneath `<artifact-root>/<atlas_experiment_id>/...` using each experiment's `required_artifacts` paths. Absolute paths and parent-directory traversal in required artifact declarations are rejected during verification.
+
 ## Core design
 
 - **Atlas = scientist/planner**: hypotheses, experiment matrices, stopping rules, evidence requirements.
@@ -39,4 +77,4 @@ Atlas never marks a claim as supported merely because a run completed. A claim m
 
 ## Current milestone
 
-`v0.1`: deterministic research-run manifest generation with validation and JSON serialization.
+`v0.1`: deterministic research-run manifest generation with validation and JSON serialization, plus a versioned Atlas → Percy durable-task export contract and fail-closed execution-artifact verification.
