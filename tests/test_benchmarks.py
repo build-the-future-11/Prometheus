@@ -111,6 +111,52 @@ class BenchmarkTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate prediction id"):
                 load_predictions(path)
 
+    def test_rejects_non_string_case_fields_instead_of_coercing_them(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for field, value in (("id", 7), ("category", None), ("answer", True)):
+                with self.subTest(field=field, value=value):
+                    payload = {"id": "case", "category": "math", "answer": "7"}
+                    payload[field] = value
+                    path = root / f"case-{field}.jsonl"
+                    path.write_text(json.dumps(payload) + "\n", encoding="utf-8")
+                    with self.assertRaisesRegex(ValueError, rf"field '{field}' must be a string"):
+                        load_cases(path)
+
+    def test_rejects_non_string_prediction_fields_but_allows_blank_string_prediction(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bad_id = root / "bad-id.jsonl"
+            bad_id.write_text(json.dumps({"id": 1, "prediction": "answer"}) + "\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "field 'id' must be a string"):
+                load_predictions(bad_id)
+
+            bad_prediction = root / "bad-prediction.jsonl"
+            bad_prediction.write_text(json.dumps({"id": "p1", "prediction": None}) + "\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "field 'prediction' must be a string"):
+                load_predictions(bad_prediction)
+
+            blank_prediction = root / "blank-prediction.jsonl"
+            blank_prediction.write_text(json.dumps({"id": "p1", "prediction": "   "}) + "\n", encoding="utf-8")
+            self.assertEqual(load_predictions(blank_prediction)[0].prediction, "")
+
+    def test_rejects_non_string_manifest_text_fields(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            cases_path = self._write_cases(root)
+            manifest = build_benchmark_manifest(
+                cases_path,
+                name="tiny",
+                version="1.0.0",
+                license_name="CC0-1.0",
+                task_description="Tiny deterministic benchmark.",
+            ).to_dict()
+            manifest["name"] = ["tiny"]
+            manifest_path = root / "manifest.json"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "name must be a non-empty string"):
+                validate_benchmark(cases_path, manifest_path)
+
     def test_rejects_malformed_and_empty_datasets(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

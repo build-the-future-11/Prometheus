@@ -34,12 +34,12 @@ class BenchmarkManifest:
 
     def validate(self) -> None:
         for field_name in ("name", "version", "license", "task_description", "metric"):
-            value = str(getattr(self, field_name)).strip()
-            if not value:
-                raise ValueError(f"benchmark manifest {field_name} must be non-empty")
+            value = getattr(self, field_name)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"benchmark manifest {field_name} must be a non-empty string")
         if self.metric != "exact_match":
             raise ValueError("benchmark manifest metric must be 'exact_match' for Benchmark Foundry v0")
-        if not re.fullmatch(r"[0-9a-f]{64}", self.dataset_sha256):
+        if not isinstance(self.dataset_sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", self.dataset_sha256):
             raise ValueError("benchmark manifest dataset_sha256 must be a lowercase SHA-256 hex digest")
         if isinstance(self.case_count, bool) or not isinstance(self.case_count, int) or self.case_count < 1:
             raise ValueError("benchmark manifest case_count must be a positive integer")
@@ -108,18 +108,27 @@ def _sha256_file(path: str | Path) -> str:
     return digest.hexdigest()
 
 
+def _required_string(payload: dict[str, Any], field: str, *, context: str) -> str:
+    try:
+        value = payload[field]
+    except KeyError as exc:
+        raise ValueError(f"{context} missing field {field!r}") from exc
+    if not isinstance(value, str):
+        raise ValueError(f"{context} field {field!r} must be a string")
+    value = value.strip()
+    if not value:
+        raise ValueError(f"{context} field {field!r} must be non-empty")
+    return value
+
+
 def load_cases(path: str | Path) -> list[BenchmarkCase]:
     cases: list[BenchmarkCase] = []
     seen: set[str] = set()
     for index, payload in enumerate(_read_jsonl(path), start=1):
-        try:
-            case_id = str(payload["id"]).strip()
-            category = str(payload["category"]).strip()
-            answer = str(payload["answer"]).strip()
-        except KeyError as exc:
-            raise ValueError(f"benchmark case {index} missing field {exc.args[0]!r}") from exc
-        if not case_id or not category or not answer:
-            raise ValueError(f"benchmark case {index} contains an empty required field")
+        context = f"benchmark case {index}"
+        case_id = _required_string(payload, "id", context=context)
+        category = _required_string(payload, "category", context=context)
+        answer = _required_string(payload, "answer", context=context)
         if case_id in seen:
             raise ValueError(f"duplicate benchmark case id: {case_id}")
         seen.add(case_id)
@@ -133,13 +142,15 @@ def load_predictions(path: str | Path) -> list[Prediction]:
     predictions: list[Prediction] = []
     seen: set[str] = set()
     for index, payload in enumerate(_read_jsonl(path), start=1):
+        context = f"prediction {index}"
+        case_id = _required_string(payload, "id", context=context)
         try:
-            case_id = str(payload["id"]).strip()
-            prediction = str(payload["prediction"]).strip()
+            raw_prediction = payload["prediction"]
         except KeyError as exc:
-            raise ValueError(f"prediction {index} missing field {exc.args[0]!r}") from exc
-        if not case_id:
-            raise ValueError(f"prediction {index} has an empty id")
+            raise ValueError(f"{context} missing field 'prediction'") from exc
+        if not isinstance(raw_prediction, str):
+            raise ValueError(f"{context} field 'prediction' must be a string")
+        prediction = raw_prediction.strip()
         if case_id in seen:
             raise ValueError(f"duplicate prediction id: {case_id}")
         seen.add(case_id)
