@@ -93,7 +93,7 @@ class EvidenceTests(unittest.TestCase):
         ]
 
         with tempfile.TemporaryDirectory() as tmp:
-            with self.assertRaisesRegex(ValueError, "duplicate required artifact"):
+            with self.assertRaisesRegex(ValueError, "required artifact paths must be unique"):
                 verify_evidence(manifest, tmp)
 
     def test_rejects_symlinked_artifact_that_escapes_evidence_root(self):

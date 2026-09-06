@@ -35,12 +35,20 @@ class Experiment:
     def validate(self) -> None:
         if not self.name.strip():
             raise ValueError("experiment name must be non-empty")
+        if not self.treatment.strip() or not self.control.strip():
+            raise ValueError("experiment treatment and control must be non-empty")
         if self.treatment.strip() == self.control.strip():
             raise ValueError("treatment and control must differ")
         if self.seed < 0:
             raise ValueError("seed must be non-negative")
+        if not self.perturbation.strip():
+            raise ValueError("experiment perturbation must be non-empty")
         if not self.required_artifacts:
             raise ValueError("experiment must require at least one artifact")
+        if any(not isinstance(artifact, str) or not artifact.strip() for artifact in self.required_artifacts):
+            raise ValueError("required artifact paths must be non-empty strings")
+        if len(set(self.required_artifacts)) != len(self.required_artifacts):
+            raise ValueError("required artifact paths must be unique")
 
 
 @dataclass
