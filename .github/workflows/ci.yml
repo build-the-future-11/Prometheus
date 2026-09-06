@@ -8,27 +8,60 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: atlas-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout exact source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ env.EXPECTED_SOURCE_SHA }}
+          persist-credentials: false
+
+      - name: Verify exact source binding
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$EXPECTED_SOURCE_SHA" in
+            (*[!0-9a-f]*|'') echo "invalid expected source SHA: $EXPECTED_SOURCE_SHA" >&2; exit 1 ;;
+          esac
+          test "${#EXPECTED_SOURCE_SHA}" -eq 40
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "$EXPECTED_SOURCE_SHA" || {
+            echo "source mismatch: expected=$EXPECTED_SOURCE_SHA actual=$actual" >&2
+            exit 1
+          }
+          printf 'SOURCE_SHA=%s\n' "$actual"
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install
         run: python -m pip install -e .
+
       - name: Unit tests
         run: python -m unittest discover -s tests -v
+
       - name: CLI smoke
         run: |
           atlas init-run \
             --question "Does a preregistered treatment outperform a strong baseline?" \
             --output /tmp/atlas-smoke.json
           python -m json.tool /tmp/atlas-smoke.json >/dev/null
+
       - name: Benchmark Foundry smoke
         run: |
           atlas benchmark validate \
@@ -39,6 +72,7 @@ jobs:
             --predictions examples/benchmark/predictions.jsonl \
             --output /tmp/atlas-benchmark-score.json
           python -m json.tool /tmp/atlas-benchmark-score.json >/dev/null
+
       - name: LAM-JEPA adapter dry-run smoke
         run: |
           python -m atlas.lam_jepa_adapter \
