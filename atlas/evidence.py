@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from dataclasses import asdict, dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from .models import RunManifest
@@ -47,39 +47,99 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _safe_experiment_component(value: str, field: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{field} must be a non-empty string")
+    if "\x00" in value or value in {".", ".."} or "/" in value or "\\" in value:
+        raise ValueError(f"{field} must be a single safe path component")
+    windows = PureWindowsPath(value)
+    if windows.drive or windows.is_absolute():
+        raise ValueError(f"{field} must be a single safe path component")
+    return value
+
+
+def _safe_relative_artifact_path(value: str, field: str) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{field} must be a non-empty string")
+    if "\x00" in value:
+        raise ValueError(f"{field} must be a safe relative artifact path")
+
+    posix = PurePosixPath(value)
+    windows = PureWindowsPath(value)
+    normalized_parts = value.replace("\\", "/").split("/")
+    if (
+        posix.is_absolute()
+        or windows.is_absolute()
+        or bool(windows.drive)
+        or any(part in {"", ".", ".."} for part in normalized_parts)
+    ):
+        raise ValueError(f"{field} must be a safe relative artifact path")
+    return Path(*normalized_parts)
+
+
 def verify_evidence(manifest: RunManifest, evidence_root: str | Path) -> EvidenceReport:
     manifest.validate()
     root = Path(evidence_root)
+    resolved_root = root.resolve()
     missing: list[str] = []
     invalid_json: list[str] = []
     artifacts: list[ArtifactRecord] = []
     expected = 0
 
     for experiment in manifest.experiments:
-        experiment_root = root / experiment.name
+        experiment_name = _safe_experiment_component(experiment.name, "experiment.name")
+        experiment_root = root / experiment_name
+
+        artifact_contract: list[tuple[str, Path]] = []
+        seen_artifacts: set[str] = set()
         for relative_name in experiment.required_artifacts:
+            relative_path = _safe_relative_artifact_path(
+                relative_name,
+                f"{experiment_name}.required_artifacts",
+            )
+            normalized = relative_path.as_posix()
+            if normalized in seen_artifacts:
+                raise ValueError(
+                    f"experiment {experiment_name} has duplicate required artifact: {relative_name}"
+                )
+            seen_artifacts.add(normalized)
+            artifact_contract.append((relative_name, relative_path))
+
+        for relative_name, safe_relative_path in artifact_contract:
             expected += 1
-            artifact_path = experiment_root / relative_name
-            relative_path = str(artifact_path.relative_to(root))
+            artifact_path = experiment_root / safe_relative_path
+            report_path = str(Path(experiment_name) / safe_relative_path)
             if not artifact_path.is_file():
-                missing.append(relative_path)
+                missing.append(report_path)
                 continue
 
-            if artifact_path.suffix.lower() == ".json":
+            try:
+                resolved_artifact = artifact_path.resolve(strict=True)
+                resolved_artifact.relative_to(resolved_root)
+            except (OSError, ValueError) as exc:
+                raise ValueError(
+                    f"{experiment_name}.required_artifacts escapes evidence root: {relative_name}"
+                ) from exc
+
+            if not resolved_artifact.is_file():
+                missing.append(report_path)
+                continue
+
+            if resolved_artifact.suffix.lower() == ".json":
                 try:
-                    payload = json.loads(artifact_path.read_text(encoding="utf-8"))
+                    payload = json.loads(resolved_artifact.read_text(encoding="utf-8"))
                     if not isinstance(payload, dict):
                         raise ValueError("top-level JSON value must be an object")
                 except (OSError, UnicodeDecodeError, json.JSONDecodeError, ValueError):
-                    invalid_json.append(relative_path)
+                    invalid_json.append(report_path)
                     continue
 
             artifacts.append(
                 ArtifactRecord(
-                    experiment=experiment.name,
-                    path=relative_path,
-                    sha256=_sha256(artifact_path),
-                    size_bytes=artifact_path.stat().st_size,
+                    experiment=experiment_name,
+                    path=report_path,
+                    sha256=_sha256(resolved_artifact),
+                    size_bytes=resolved_artifact.stat().st_size,
                 )
             )
 
