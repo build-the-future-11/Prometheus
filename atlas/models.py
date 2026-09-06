@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
@@ -16,6 +17,8 @@ class Criterion:
             raise ValueError(f"unsupported operator: {self.operator}")
         if not self.metric.strip():
             raise ValueError("criterion metric must be non-empty")
+        if not math.isfinite(self.threshold):
+            raise ValueError("criterion threshold must be finite")
         if not self.rationale.strip():
             raise ValueError("criterion rationale must be non-empty")
 
