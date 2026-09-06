@@ -234,6 +234,7 @@ def build_percy_export(
 def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mapping[str, Any]]:
     if export_payload.get("schema_version") != SCHEMA_VERSION:
         raise ValueError(f"unsupported schema_version: {export_payload.get('schema_version')!r}")
+    run_id = _require_non_empty_string(export_payload.get("atlas_run_id"), "export.atlas_run_id")
 
     tasks = export_payload.get("tasks")
     if not isinstance(tasks, list) or not tasks:
@@ -268,8 +269,20 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
 
     verifier = verifiers[0]
     verifier_id = _require_non_empty_string(verifier.get("task_id"), "verification.task_id")
+    expected_verifier_id = _stable_task_id(run_id, "__verification__", kind="verify")
+    if verifier_id != expected_verifier_id:
+        raise ValueError("verification task_id does not match deterministic stable identity")
     if export_payload.get("verification_task_id") != verifier_id:
         raise ValueError("export payload verification_task_id does not match verification task")
+    verifier_metadata = verifier.get("metadata")
+    if not isinstance(verifier_metadata, Mapping):
+        raise ValueError("verification metadata is malformed")
+    verifier_run_id = _require_non_empty_string(
+        verifier_metadata.get("atlas_run_id"), "verification.metadata.atlas_run_id"
+    )
+    if verifier_run_id != run_id:
+        raise ValueError("verification metadata.atlas_run_id does not match export atlas_run_id")
+
     expected_dependencies = {_require_non_empty_string(task.get("task_id"), "experiment.task_id") for task in experiments}
     dependencies = verifier.get("dependencies")
     if not isinstance(dependencies, list) or set(dependencies) != expected_dependencies or len(dependencies) != len(expected_dependencies):
@@ -288,6 +301,11 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
         metadata = task.get("metadata")
         if not isinstance(metadata, Mapping):
             raise ValueError(f"{task_id}: metadata is malformed")
+        task_run_id = _require_non_empty_string(
+            metadata.get("atlas_run_id"), f"{task_id}.metadata.atlas_run_id"
+        )
+        if task_run_id != run_id:
+            raise ValueError(f"{task_id}: metadata.atlas_run_id does not match export atlas_run_id")
         experiment_id = _require_safe_component(
             metadata.get("atlas_experiment_id"),
             f"{task_id}.metadata.atlas_experiment_id",
@@ -295,6 +313,9 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
         if experiment_id in seen_experiments:
             raise ValueError(f"duplicate atlas_experiment_id: {experiment_id}")
         seen_experiments.add(experiment_id)
+        expected_task_id = _stable_task_id(run_id, experiment_id, kind="experiment")
+        if task_id != expected_task_id:
+            raise ValueError(f"{task_id}: task_id does not match deterministic stable identity")
 
         artifacts = task.get("expected_artifacts")
         if not isinstance(artifacts, list) or not artifacts:
