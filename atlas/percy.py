@@ -381,6 +381,13 @@ def verify_export_completion(
             except ValueError:
                 errors.append(f"{task_id}: artifact escapes artifact root {relative}")
                 continue
+            # Keep the owner boundary lexical beneath the resolved run root:
+            # resolving it would let a sibling-directory symlink redefine ownership.
+            try:
+                resolved_candidate.relative_to(resolved_root / experiment_id)
+            except ValueError:
+                errors.append(f"{task_id}: artifact escapes experiment root {relative}")
+                continue
             if not resolved_candidate.is_file():
                 errors.append(f"{task_id}: missing required artifact {relative}")
 
