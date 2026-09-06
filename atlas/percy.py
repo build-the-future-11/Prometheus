@@ -14,7 +14,9 @@ def _stable_task_id(run_id: str, experiment_id: str, *, kind: str) -> str:
 
 
 def _require_non_empty_string(value: Any, field: str) -> str:
-    text = str(value or "").strip()
+    if not isinstance(value, str):
+        raise ValueError(f"{field} must be a non-empty string")
+    text = value.strip()
     if not text:
         raise ValueError(f"{field} must be a non-empty string")
     return text
@@ -77,7 +79,7 @@ def _validate_manifest_dict(manifest: Mapping[str, Any]) -> tuple[str, list[dict
             artifacts.append(artifact_text)
 
         seed = raw.get("seed")
-        if not isinstance(seed, int) or seed < 0:
+        if isinstance(seed, bool) or not isinstance(seed, int) or seed < 0:
             raise ValueError(f"experiment {experiment_id} seed must be a non-negative integer")
 
         normalized.append(
@@ -138,18 +140,28 @@ def build_percy_export(
     working_directory = _require_non_empty_string(working_directory, "working_directory")
     command_template = _require_non_empty_string(command_template, "command_template")
     verification_command = _require_non_empty_string(verification_command, "verification_command")
-    if timeout_seconds <= 0:
-        raise ValueError("timeout_seconds must be positive")
-    if max_retries < 0:
-        raise ValueError("max_retries must be non-negative")
-    if retry_backoff_seconds < 0:
-        raise ValueError("retry_backoff_seconds must be non-negative")
+    if isinstance(timeout_seconds, bool) or not isinstance(timeout_seconds, int) or timeout_seconds <= 0:
+        raise ValueError("timeout_seconds must be a positive integer")
+    if isinstance(max_retries, bool) or not isinstance(max_retries, int) or max_retries < 0:
+        raise ValueError("max_retries must be a non-negative integer")
+    if (
+        isinstance(retry_backoff_seconds, bool)
+        or not isinstance(retry_backoff_seconds, int)
+        or retry_backoff_seconds < 0
+    ):
+        raise ValueError("retry_backoff_seconds must be a non-negative integer")
 
     artifact_root_path = Path(artifact_root)
     status_path = Path(status_file)
-    resource_payload = dict(resources or {"class": "heavy", "slots": 1})
-    if int(resource_payload.get("slots", 0)) <= 0:
-        raise ValueError("resources.slots must be positive")
+    if resources is None:
+        resource_payload = {"class": "heavy", "slots": 1}
+    elif not isinstance(resources, Mapping):
+        raise ValueError("resources must be an object")
+    else:
+        resource_payload = dict(resources)
+    slots = resource_payload.get("slots")
+    if isinstance(slots, bool) or not isinstance(slots, int) or slots <= 0:
+        raise ValueError("resources.slots must be a positive integer")
     _require_non_empty_string(resource_payload.get("class"), "resources.class")
 
     tasks: list[dict[str, Any]] = []
