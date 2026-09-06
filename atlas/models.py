@@ -39,8 +39,8 @@ class Experiment:
             raise ValueError("experiment treatment and control must be non-empty")
         if self.treatment.strip() == self.control.strip():
             raise ValueError("treatment and control must differ")
-        if self.seed < 0:
-            raise ValueError("seed must be non-negative")
+        if isinstance(self.seed, bool) or not isinstance(self.seed, int) or self.seed < 0:
+            raise ValueError("seed must be a non-negative integer")
         if not self.perturbation.strip():
             raise ValueError("experiment perturbation must be non-empty")
         if not self.required_artifacts:
@@ -64,6 +64,8 @@ class RunManifest:
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def validate(self) -> None:
+        if not isinstance(self.run_id, str) or not self.run_id.strip():
+            raise ValueError("run_id must be a non-empty string")
         if len(self.question.strip()) < 10:
             raise ValueError("research question is too short")
         if not self.hypothesis.strip() or not self.null_hypothesis.strip():
@@ -79,6 +81,13 @@ class RunManifest:
             raise ValueError("stopping rule must be non-empty")
         if not self.evidence_requirements:
             raise ValueError("at least one evidence requirement is required")
+        if any(
+            not isinstance(requirement, str) or not requirement.strip()
+            for requirement in self.evidence_requirements
+        ):
+            raise ValueError("evidence requirements must be non-empty strings")
+        if len(set(self.evidence_requirements)) != len(self.evidence_requirements):
+            raise ValueError("evidence requirements must be unique")
 
     def to_dict(self) -> dict[str, Any]:
         self.validate()
