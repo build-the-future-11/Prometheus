@@ -93,6 +93,45 @@ class PercyBoundaryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "single safe path component"):
                 verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
 
+    def test_verifier_rejects_rewritten_experiment_task_identity_even_if_contract_matches(self):
+        payload = self._export()
+        experiment = next(task for task in payload["tasks"] if task["kind"] == "experiment")
+        verifier = next(task for task in payload["tasks"] if task["kind"] == "verification")
+        original_id = experiment["task_id"]
+        forged_id = "atlas-experiment-0000000000000000"
+        experiment["task_id"] = forged_id
+        verifier["dependencies"] = [
+            forged_id if task_id == original_id else task_id for task_id in verifier["dependencies"]
+        ]
+        required_by_task = verifier["verification"]["required_artifacts_by_task"]
+        required_by_task[forged_id] = required_by_task.pop(original_id)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            statuses = self._materialize_success(payload, root)
+            with self.assertRaisesRegex(ValueError, "deterministic stable identity"):
+                verify_export_completion(payload, task_statuses=statuses, artifact_root=root)
+
+    def test_verifier_rejects_rewritten_verification_task_identity(self):
+        payload = self._export()
+        verifier = next(task for task in payload["tasks"] if task["kind"] == "verification")
+        forged_id = "atlas-verify-0000000000000000"
+        verifier["task_id"] = forged_id
+        payload["verification_task_id"] = forged_id
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(ValueError, "deterministic stable identity"):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
+    def test_verifier_rejects_cross_run_metadata_identity(self):
+        payload = self._export()
+        experiment = next(task for task in payload["tasks"] if task["kind"] == "experiment")
+        experiment["metadata"]["atlas_run_id"] = "different-run"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(ValueError, "metadata.atlas_run_id does not match"):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
     def test_verifier_rejects_parent_symlink_escape(self):
         payload = self._export()
         with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as outside_tmp:
