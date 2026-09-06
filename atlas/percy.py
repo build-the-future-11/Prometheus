@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any, Mapping
 
 SCHEMA_VERSION = "atlas.percy-tasks.v0.1"
@@ -20,6 +20,31 @@ def _require_non_empty_string(value: Any, field: str) -> str:
     return text
 
 
+def _require_safe_component(value: Any, field: str) -> str:
+    text = _require_non_empty_string(value, field)
+    if text in {".", ".."} or "/" in text or "\\" in text:
+        raise ValueError(f"{field} must be a single safe path component")
+    windows = PureWindowsPath(text)
+    if windows.drive or windows.is_absolute():
+        raise ValueError(f"{field} must be a single safe path component")
+    return text
+
+
+def _safe_relative_artifact_path(value: Any, field: str) -> Path:
+    text = _require_non_empty_string(value, field)
+    posix = PurePosixPath(text)
+    windows = PureWindowsPath(text)
+    normalized_parts = text.replace("\\", "/").split("/")
+    if (
+        posix.is_absolute()
+        or windows.is_absolute()
+        or bool(windows.drive)
+        or any(part in {"", ".", ".."} for part in normalized_parts)
+    ):
+        raise ValueError(f"{field} must be a safe relative artifact path")
+    return Path(*normalized_parts)
+
+
 def _validate_manifest_dict(manifest: Mapping[str, Any]) -> tuple[str, list[dict[str, Any]]]:
     run_id = _require_non_empty_string(manifest.get("run_id"), "manifest.run_id")
     experiments = manifest.get("experiments")
@@ -31,7 +56,9 @@ def _validate_manifest_dict(manifest: Mapping[str, Any]) -> tuple[str, list[dict
     for index, raw in enumerate(experiments):
         if not isinstance(raw, Mapping):
             raise ValueError(f"manifest.experiments[{index}] must be an object")
-        experiment_id = _require_non_empty_string(raw.get("name"), f"manifest.experiments[{index}].name")
+        experiment_id = _require_safe_component(
+            raw.get("name"), f"manifest.experiments[{index}].name"
+        )
         if experiment_id in seen:
             raise ValueError(f"duplicate experiment name: {experiment_id}")
         seen.add(experiment_id)
@@ -39,10 +66,15 @@ def _validate_manifest_dict(manifest: Mapping[str, Any]) -> tuple[str, list[dict
         required_artifacts = raw.get("required_artifacts")
         if not isinstance(required_artifacts, (list, tuple)) or not required_artifacts:
             raise ValueError(f"experiment {experiment_id} must declare required_artifacts")
-        artifacts = [
-            _require_non_empty_string(item, f"{experiment_id}.required_artifacts")
-            for item in required_artifacts
-        ]
+        artifacts: list[str] = []
+        seen_artifacts: set[str] = set()
+        for item in required_artifacts:
+            artifact_text = _require_non_empty_string(item, f"{experiment_id}.required_artifacts")
+            _safe_relative_artifact_path(artifact_text, f"{experiment_id}.required_artifacts")
+            if artifact_text in seen_artifacts:
+                raise ValueError(f"experiment {experiment_id} has duplicate required artifact: {artifact_text}")
+            seen_artifacts.add(artifact_text)
+            artifacts.append(artifact_text)
 
         seed = raw.get("seed")
         if not isinstance(seed, int) or seed < 0:
@@ -199,51 +231,136 @@ def build_percy_export(
     }
 
 
+def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mapping[str, Any]]:
+    if export_payload.get("schema_version") != SCHEMA_VERSION:
+        raise ValueError(f"unsupported schema_version: {export_payload.get('schema_version')!r}")
+
+    tasks = export_payload.get("tasks")
+    if not isinstance(tasks, list) or not tasks:
+        raise ValueError("export payload tasks must be a non-empty list")
+    if export_payload.get("task_count") != len(tasks):
+        raise ValueError("export payload task_count does not match tasks")
+
+    task_ids: set[str] = set()
+    experiments: list[Mapping[str, Any]] = []
+    verifiers: list[Mapping[str, Any]] = []
+    for index, task in enumerate(tasks):
+        if not isinstance(task, Mapping):
+            raise ValueError(f"export payload tasks[{index}] must be an object")
+        task_id = _require_non_empty_string(task.get("task_id"), f"tasks[{index}].task_id")
+        if task_id in task_ids:
+            raise ValueError(f"duplicate task_id: {task_id}")
+        task_ids.add(task_id)
+        kind = task.get("kind")
+        if kind == "experiment":
+            experiments.append(task)
+        elif kind == "verification":
+            verifiers.append(task)
+        else:
+            raise ValueError(f"{task_id}: unsupported task kind {kind!r}")
+
+    if not experiments:
+        raise ValueError("export payload must contain experiment tasks")
+    if export_payload.get("experiment_task_count") != len(experiments):
+        raise ValueError("export payload experiment_task_count does not match experiment tasks")
+    if len(verifiers) != 1:
+        raise ValueError("export payload must contain exactly one verification task")
+
+    verifier = verifiers[0]
+    verifier_id = _require_non_empty_string(verifier.get("task_id"), "verification.task_id")
+    if export_payload.get("verification_task_id") != verifier_id:
+        raise ValueError("export payload verification_task_id does not match verification task")
+    expected_dependencies = {_require_non_empty_string(task.get("task_id"), "experiment.task_id") for task in experiments}
+    dependencies = verifier.get("dependencies")
+    if not isinstance(dependencies, list) or set(dependencies) != expected_dependencies or len(dependencies) != len(expected_dependencies):
+        raise ValueError("verification task dependencies do not exactly match experiment tasks")
+
+    verification = verifier.get("verification")
+    if not isinstance(verification, Mapping) or verification.get("requires_all_dependencies_succeeded") is not True:
+        raise ValueError("verification task must require all dependencies to succeed")
+    required_by_task = verification.get("required_artifacts_by_task")
+    if not isinstance(required_by_task, Mapping) or set(required_by_task) != expected_dependencies:
+        raise ValueError("verification artifact contract does not exactly match experiment tasks")
+
+    seen_experiments: set[str] = set()
+    for task in experiments:
+        task_id = _require_non_empty_string(task.get("task_id"), "experiment.task_id")
+        metadata = task.get("metadata")
+        if not isinstance(metadata, Mapping):
+            raise ValueError(f"{task_id}: metadata is malformed")
+        experiment_id = _require_safe_component(
+            metadata.get("atlas_experiment_id"),
+            f"{task_id}.metadata.atlas_experiment_id",
+        )
+        if experiment_id in seen_experiments:
+            raise ValueError(f"duplicate atlas_experiment_id: {experiment_id}")
+        seen_experiments.add(experiment_id)
+
+        artifacts = task.get("expected_artifacts")
+        if not isinstance(artifacts, list) or not artifacts:
+            raise ValueError(f"{task_id}: expected_artifacts must be a non-empty list")
+        normalized_artifacts = [
+            str(_safe_relative_artifact_path(item, f"{task_id}.expected_artifacts"))
+            for item in artifacts
+        ]
+        if len(set(normalized_artifacts)) != len(normalized_artifacts):
+            raise ValueError(f"{task_id}: expected_artifacts contains duplicates")
+
+        declared = required_by_task.get(task_id)
+        if not isinstance(declared, list) or declared != artifacts:
+            raise ValueError(f"{task_id}: verification artifact contract drifted from expected_artifacts")
+
+    return experiments
+
+
 def verify_export_completion(
     export_payload: Mapping[str, Any],
     *,
     task_statuses: Mapping[str, str],
     artifact_root: str | Path,
 ) -> tuple[bool, list[str]]:
-    if export_payload.get("schema_version") != SCHEMA_VERSION:
-        raise ValueError(f"unsupported schema_version: {export_payload.get('schema_version')!r}")
-
-    tasks = export_payload.get("tasks")
-    if not isinstance(tasks, list):
-        raise ValueError("export payload tasks must be a list")
+    experiments = _validated_experiment_tasks(export_payload)
 
     errors: list[str] = []
     root = Path(artifact_root)
-    for task in tasks:
-        if not isinstance(task, Mapping) or task.get("kind") != "experiment":
-            continue
+    try:
+        resolved_root = root.resolve(strict=True)
+    except (FileNotFoundError, OSError):
+        return False, [f"artifact root does not exist or cannot be resolved: {root}"]
+
+    for task in experiments:
         task_id = _require_non_empty_string(task.get("task_id"), "task.task_id")
         status = str(task_statuses.get(task_id, "")).strip().upper()
         if status != "SUCCEEDED":
             errors.append(f"{task_id}: dependency status is {status or 'MISSING'}, expected SUCCEEDED")
             continue
 
-        artifacts = task.get("expected_artifacts")
-        if not isinstance(artifacts, list):
-            errors.append(f"{task_id}: expected_artifacts is malformed")
-            continue
-
-        metadata = task.get("metadata")
-        if not isinstance(metadata, Mapping):
-            errors.append(f"{task_id}: metadata is malformed")
-            continue
-        experiment_id = _require_non_empty_string(
+        artifacts = task["expected_artifacts"]
+        metadata = task["metadata"]
+        experiment_id = _require_safe_component(
             metadata.get("atlas_experiment_id"),
             f"{task_id}.metadata.atlas_experiment_id",
         )
         experiment_root = root / experiment_id
+
         for relative in artifacts:
-            relative_path = Path(_require_non_empty_string(relative, f"{task_id}.expected_artifacts"))
-            if relative_path.is_absolute() or ".." in relative_path.parts:
+            try:
+                relative_path = _safe_relative_artifact_path(relative, f"{task_id}.expected_artifacts")
+            except ValueError:
                 errors.append(f"{task_id}: unsafe artifact path {relative}")
                 continue
             candidate = experiment_root / relative_path
-            if not candidate.is_file():
+            try:
+                resolved_candidate = candidate.resolve(strict=True)
+            except (FileNotFoundError, OSError):
+                errors.append(f"{task_id}: missing required artifact {relative}")
+                continue
+            try:
+                resolved_candidate.relative_to(resolved_root)
+            except ValueError:
+                errors.append(f"{task_id}: artifact escapes artifact root {relative}")
+                continue
+            if not resolved_candidate.is_file():
                 errors.append(f"{task_id}: missing required artifact {relative}")
 
     return (not errors, errors)
