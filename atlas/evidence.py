@@ -89,6 +89,10 @@ def verify_evidence(manifest: RunManifest, evidence_root: str | Path) -> Evidenc
     for experiment in manifest.experiments:
         experiment_name = _safe_experiment_component(experiment.name, "experiment.name")
         experiment_root = root / experiment_name
+        # Keep the ownership boundary lexical beneath the canonical evidence root.
+        # Resolving experiment_root itself would allow a symlinked experiment
+        # directory to redefine which sibling directory owns retained evidence.
+        resolved_experiment_root = resolved_root / experiment_name
 
         artifact_contract: list[tuple[str, Path]] = []
         seen_artifacts: set[str] = set()
@@ -115,10 +119,10 @@ def verify_evidence(manifest: RunManifest, evidence_root: str | Path) -> Evidenc
 
             try:
                 resolved_artifact = artifact_path.resolve(strict=True)
-                resolved_artifact.relative_to(resolved_root)
+                resolved_artifact.relative_to(resolved_experiment_root)
             except (OSError, ValueError) as exc:
                 raise ValueError(
-                    f"{experiment_name}.required_artifacts escapes evidence root: {relative_name}"
+                    f"{experiment_name}.required_artifacts escapes evidence root or experiment ownership boundary: {relative_name}"
                 ) from exc
 
             if not resolved_artifact.is_file():

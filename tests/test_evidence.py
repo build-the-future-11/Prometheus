@@ -16,6 +16,18 @@ class EvidenceTests(unittest.TestCase):
             perturbations=("clean",),
         )
 
+    def _two_experiment_manifest(self):
+        manifest = build_manifest(
+            "Does the treatment improve the preregistered metric under clean evaluation?",
+            seeds=(1, 2),
+            perturbations=("clean",),
+        )
+        manifest.experiments = [
+            replace(experiment, required_artifacts=("config.json",))
+            for experiment in manifest.experiments
+        ]
+        return manifest
+
     def test_reports_missing_artifacts(self):
         manifest = self._manifest()
         with tempfile.TemporaryDirectory() as tmp:
@@ -115,6 +127,65 @@ class EvidenceTests(unittest.TestCase):
 
             with self.assertRaisesRegex(ValueError, "escapes evidence root"):
                 verify_evidence(manifest, evidence_root)
+
+    def test_rejects_symlinked_artifact_from_sibling_experiment(self):
+        manifest = self._two_experiment_manifest()
+        first, second = manifest.experiments
+
+        with tempfile.TemporaryDirectory() as tmp:
+            evidence_root = Path(tmp) / "evidence"
+            first_root = evidence_root / first.name
+            second_root = evidence_root / second.name
+            first_root.mkdir(parents=True)
+            second_root.mkdir(parents=True)
+            first_config = first_root / "config.json"
+            first_config.write_text(json.dumps({"seed": first.seed}), encoding="utf-8")
+            try:
+                (second_root / "config.json").symlink_to(first_config)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"symlinks unavailable: {exc}")
+
+            with self.assertRaisesRegex(ValueError, "experiment ownership boundary"):
+                verify_evidence(manifest, evidence_root)
+
+    def test_rejects_symlinked_experiment_directory_to_sibling(self):
+        manifest = self._two_experiment_manifest()
+        first, second = manifest.experiments
+
+        with tempfile.TemporaryDirectory() as tmp:
+            evidence_root = Path(tmp) / "evidence"
+            first_root = evidence_root / first.name
+            first_root.mkdir(parents=True)
+            (first_root / "config.json").write_text(
+                json.dumps({"seed": first.seed}), encoding="utf-8"
+            )
+            try:
+                (evidence_root / second.name).symlink_to(first_root, target_is_directory=True)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"symlinks unavailable: {exc}")
+
+            with self.assertRaisesRegex(ValueError, "experiment ownership boundary"):
+                verify_evidence(manifest, evidence_root)
+
+    def test_allows_symlink_within_declaring_experiment(self):
+        manifest = self._manifest()
+        experiment = manifest.experiments[0]
+        manifest.experiments = [replace(experiment, required_artifacts=("alias.json",))]
+
+        with tempfile.TemporaryDirectory() as tmp:
+            experiment_root = Path(tmp) / experiment.name
+            experiment_root.mkdir(parents=True)
+            target = experiment_root / "canonical.json"
+            target.write_text(json.dumps({"seed": experiment.seed}), encoding="utf-8")
+            try:
+                (experiment_root / "alias.json").symlink_to(target)
+            except (OSError, NotImplementedError) as exc:
+                self.skipTest(f"symlinks unavailable: {exc}")
+
+            report = verify_evidence(manifest, tmp)
+            self.assertEqual(report.status, "COMPLETE")
+            self.assertEqual(report.verified_artifacts, 1)
+            self.assertEqual(report.artifacts[0].path, f"{experiment.name}/alias.json")
 
 
 if __name__ == "__main__":
