@@ -163,7 +163,8 @@ jobs:
           print(out_dir / filename)
           PY
 
-          sdist="$(find "$sdist_dir" -maxdepth 1 -type f -name 'atlas_research_engine-*.tar.gz' -print -quit)"
+          test "$(find "$sdist_dir" -maxdepth 1 -type f -name '*.tar.gz' | wc -l)" -eq 1
+          sdist="$(find "$sdist_dir" -maxdepth 1 -type f -name '*.tar.gz' -print -quit)"
           test -n "$sdist"
           sha256sum "$sdist"
           tar -xzf "$sdist" -C "$unpack_dir"
@@ -183,7 +184,8 @@ jobs:
           PY
           )
 
-          rebuilt_wheel="$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name 'atlas_research_engine-*.whl' -print -quit)"
+          test "$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
+          rebuilt_wheel="$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' -print -quit)"
           test -n "$rebuilt_wheel"
           sha256sum "$rebuilt_wheel"
 
