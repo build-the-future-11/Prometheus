@@ -141,3 +141,105 @@ jobs:
             --question "Does the installed wheel preserve the preregistered run contract?" \
             --output "$output_file"
           "$venv_dir/bin/python" -m json.tool "$output_file" >/dev/null
+
+      - name: Build and verify source distribution install
+        if: matrix.python-version == '3.12'
+        shell: bash
+        run: |
+          set -euo pipefail
+          build_venv="$(mktemp -d)"
+          sdist_dir="$(mktemp -d)"
+          unpack_dir="$(mktemp -d)"
+          rebuilt_wheel_dir="$(mktemp -d)"
+          venv_dir="$(mktemp -d)"
+          output_file="$(mktemp)"
+
+          # pyproject.toml declares setuptools>=68 as the PEP 517 build requirement.
+          # Provision it in a dedicated build environment instead of relying on the
+          # runner's top-level interpreter to happen to expose setuptools.
+          python -m venv "$build_venv"
+          "$build_venv/bin/python" -m pip install 'setuptools>=68'
+          "$build_venv/bin/python" - <<'PY'
+          import setuptools
+          print(f"sdist_build_setuptools={setuptools.__version__}")
+          PY
+
+          SDIST_DIR="$sdist_dir" "$build_venv/bin/python" - <<'PY'
+          import os
+          import pathlib
+          import setuptools.build_meta as backend
+
+          out_dir = pathlib.Path(os.environ["SDIST_DIR"]).resolve()
+          filename = backend.build_sdist(str(out_dir))
+          print(out_dir / filename)
+          PY
+
+          test "$(find "$sdist_dir" -maxdepth 1 -type f -name '*.tar.gz' | wc -l)" -eq 1
+          sdist="$(find "$sdist_dir" -maxdepth 1 -type f -name '*.tar.gz' -print -quit)"
+          test -n "$sdist"
+          sha256sum "$sdist"
+          tar -xzf "$sdist" -C "$unpack_dir"
+          source_root="$(find "$unpack_dir" -mindepth 1 -maxdepth 1 -type d -print -quit)"
+          test -n "$source_root"
+
+          (
+            cd "$source_root"
+            REBUILT_WHEEL_DIR="$rebuilt_wheel_dir" "$build_venv/bin/python" - <<'PY'
+          import os
+          import pathlib
+          import setuptools.build_meta as backend
+
+          out_dir = pathlib.Path(os.environ["REBUILT_WHEEL_DIR"]).resolve()
+          filename = backend.build_wheel(str(out_dir))
+          print(out_dir / filename)
+          PY
+          )
+
+          test "$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
+          rebuilt_wheel="$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' -print -quit)"
+          test -n "$rebuilt_wheel"
+          sha256sum "$rebuilt_wheel"
+
+          python -m venv "$venv_dir"
+          "$venv_dir/bin/python" -m pip install --no-deps "$rebuilt_wheel"
+          "$venv_dir/bin/python" -m pip check
+
+          (
+            cd /tmp
+            "$venv_dir/bin/python" - <<'PY'
+          import importlib
+          import pathlib
+          import pkgutil
+
+          import atlas
+
+          package_path = pathlib.Path(atlas.__file__).resolve()
+          if "site-packages" not in package_path.parts:
+              raise SystemExit(f"sdist-derived import did not resolve from site-packages: {package_path}")
+
+          module_names = sorted(
+              module.name for module in pkgutil.walk_packages(atlas.__path__, atlas.__name__ + ".")
+          )
+          if not module_names:
+              raise SystemExit("sdist-derived wheel exposed no importable atlas submodules")
+
+          for module_name in module_names:
+              module = importlib.import_module(module_name)
+              module_file = getattr(module, "__file__", None)
+              if module_file is None:
+                  raise SystemExit(f"installed module has no file identity: {module_name}")
+              module_path = pathlib.Path(module_file).resolve()
+              if "site-packages" not in module_path.parts:
+                  raise SystemExit(
+                      f"sdist-derived module resolved outside site-packages: {module_name} -> {module_path}"
+                  )
+
+          print(f"installed_atlas={package_path}")
+          print(f"imported_modules={','.join(module_names)}")
+          PY
+          )
+
+          "$venv_dir/bin/atlas" init-run \
+            --question "Does the source distribution preserve the preregistered run contract?" \
+            --output "$output_file"
+          "$venv_dir/bin/python" -m json.tool "$output_file" >/dev/null
