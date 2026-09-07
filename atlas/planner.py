@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 from datetime import datetime, timezone
 
@@ -12,9 +13,19 @@ def _slug(text: str) -> str:
     return normalized[:48] or "research-run"
 
 
-def _run_id(question: str) -> str:
-    digest = hashlib.sha256(question.strip().encode("utf-8")).hexdigest()[:10]
-    return f"{_slug(question)}-{digest}"
+def _protocol_digest(manifest: RunManifest) -> str:
+    """Bind new plan identities to the full protocol, never creation-time metadata."""
+    protocol = manifest.to_dict()
+    protocol.pop("run_id")
+    protocol.pop("metadata")
+    encoded = json.dumps(
+        {"identity_scheme": "atlas.protocol-sha256.v1", "protocol": protocol},
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def build_manifest(
@@ -71,7 +82,7 @@ def build_manifest(
             )
 
     manifest = RunManifest(
-        run_id=_run_id(question),
+        run_id="pending-protocol-identity",
         question=question,
         hypothesis=hypothesis,
         null_hypothesis=null_hypothesis,
@@ -102,4 +113,8 @@ def build_manifest(
         },
     )
     manifest.validate()
+    digest = _protocol_digest(manifest)
+    manifest.run_id = f"{_slug(question)}-{digest[:16]}"
+    manifest.metadata["run_id_scheme"] = "atlas.protocol-sha256.v1"
+    manifest.metadata["protocol_sha256"] = digest
     return manifest
