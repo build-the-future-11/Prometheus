@@ -105,13 +105,35 @@ jobs:
           (
             cd /tmp
             "$venv_dir/bin/python" - <<'PY'
+          import importlib
           import pathlib
+          import pkgutil
+
           import atlas
 
           package_path = pathlib.Path(atlas.__file__).resolve()
           if "site-packages" not in package_path.parts:
               raise SystemExit(f"wheel import did not resolve from site-packages: {package_path}")
+
+          module_names = sorted(
+              module.name for module in pkgutil.walk_packages(atlas.__path__, atlas.__name__ + ".")
+          )
+          if not module_names:
+              raise SystemExit("installed wheel exposed no importable atlas submodules")
+
+          for module_name in module_names:
+              module = importlib.import_module(module_name)
+              module_file = getattr(module, "__file__", None)
+              if module_file is None:
+                  raise SystemExit(f"installed module has no file identity: {module_name}")
+              module_path = pathlib.Path(module_file).resolve()
+              if "site-packages" not in module_path.parts:
+                  raise SystemExit(
+                      f"installed module resolved outside site-packages: {module_name} -> {module_path}"
+                  )
+
           print(f"installed_atlas={package_path}")
+          print(f"imported_modules={','.join(module_names)}")
           PY
           )
 
