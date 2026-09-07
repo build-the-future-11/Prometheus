@@ -147,13 +147,24 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          build_venv="$(mktemp -d)"
           sdist_dir="$(mktemp -d)"
           unpack_dir="$(mktemp -d)"
           rebuilt_wheel_dir="$(mktemp -d)"
           venv_dir="$(mktemp -d)"
           output_file="$(mktemp)"
 
-          SDIST_DIR="$sdist_dir" python - <<'PY'
+          # pyproject.toml declares setuptools>=68 as the PEP 517 build requirement.
+          # Provision it in a dedicated build environment instead of relying on the
+          # runner's top-level interpreter to happen to expose setuptools.
+          python -m venv "$build_venv"
+          "$build_venv/bin/python" -m pip install 'setuptools>=68'
+          "$build_venv/bin/python" - <<'PY'
+          import setuptools
+          print(f"sdist_build_setuptools={setuptools.__version__}")
+          PY
+
+          SDIST_DIR="$sdist_dir" "$build_venv/bin/python" - <<'PY'
           import os
           import pathlib
           import setuptools.build_meta as backend
@@ -173,7 +184,7 @@ jobs:
 
           (
             cd "$source_root"
-            REBUILT_WHEEL_DIR="$rebuilt_wheel_dir" python - <<'PY'
+            REBUILT_WHEEL_DIR="$rebuilt_wheel_dir" "$build_venv/bin/python" - <<'PY'
           import os
           import pathlib
           import setuptools.build_meta as backend
