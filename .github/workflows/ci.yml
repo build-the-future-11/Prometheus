@@ -148,6 +148,7 @@ jobs:
         run: |
           set -euo pipefail
           build_venv="$(mktemp -d)"
+          direct_wheel_dir="$(mktemp -d)"
           sdist_dir="$(mktemp -d)"
           unpack_dir="$(mktemp -d)"
           rebuilt_wheel_dir="$(mktemp -d)"
@@ -163,6 +164,21 @@ jobs:
           import setuptools
           print(f"sdist_build_setuptools={setuptools.__version__}")
           PY
+
+          DIRECT_WHEEL_DIR="$direct_wheel_dir" "$build_venv/bin/python" - <<'PY'
+          import os
+          import pathlib
+          import setuptools.build_meta as backend
+
+          out_dir = pathlib.Path(os.environ["DIRECT_WHEEL_DIR"]).resolve()
+          filename = backend.build_wheel(str(out_dir))
+          print(out_dir / filename)
+          PY
+
+          test "$(find "$direct_wheel_dir" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
+          direct_wheel="$(find "$direct_wheel_dir" -maxdepth 1 -type f -name '*.whl' -print -quit)"
+          test -n "$direct_wheel"
+          sha256sum "$direct_wheel"
 
           SDIST_DIR="$sdist_dir" "$build_venv/bin/python" - <<'PY'
           import os
@@ -199,6 +215,82 @@ jobs:
           rebuilt_wheel="$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' -print -quit)"
           test -n "$rebuilt_wheel"
           sha256sum "$rebuilt_wheel"
+
+          DIRECT_WHEEL="$direct_wheel" REBUILT_WHEEL="$rebuilt_wheel" "$build_venv/bin/python" - <<'PY'
+          import email.parser
+          import hashlib
+          import os
+          import pathlib
+          import zipfile
+
+          direct_path = pathlib.Path(os.environ["DIRECT_WHEEL"]).resolve()
+          rebuilt_path = pathlib.Path(os.environ["REBUILT_WHEEL"]).resolve()
+
+          def payload(path):
+              with zipfile.ZipFile(path) as archive:
+                  return {
+                      name: archive.read(name)
+                      for name in sorted(archive.namelist())
+                      if not name.endswith("/")
+                  }
+
+          direct = payload(direct_path)
+          rebuilt = payload(rebuilt_path)
+
+          if direct.keys() != rebuilt.keys():
+              missing = sorted(direct.keys() - rebuilt.keys())
+              extra = sorted(rebuilt.keys() - direct.keys())
+              raise SystemExit(
+                  f"sdist-derived wheel file set drift: missing={missing} extra={extra}"
+              )
+
+          mismatched = [name for name in direct if direct[name] != rebuilt[name]]
+          if mismatched:
+              details = []
+              for name in mismatched:
+                  direct_sha = hashlib.sha256(direct[name]).hexdigest()
+                  rebuilt_sha = hashlib.sha256(rebuilt[name]).hexdigest()
+                  details.append(f"{name}:{direct_sha}!={rebuilt_sha}")
+              raise SystemExit(
+                  "sdist-derived wheel payload drift: " + ", ".join(details)
+              )
+
+          metadata_names = [name for name in direct if name.endswith(".dist-info/METADATA")]
+          entry_names = [name for name in direct if name.endswith(".dist-info/entry_points.txt")]
+          if len(metadata_names) != 1:
+              raise SystemExit(f"expected one METADATA file, found {metadata_names}")
+          if len(entry_names) != 1:
+              raise SystemExit(f"expected one entry_points.txt file, found {entry_names}")
+
+          metadata = email.parser.BytesParser().parsebytes(direct[metadata_names[0]])
+          expected = {
+              "Name": "atlas-research-engine",
+              "Version": "0.1.0",
+              "Requires-Python": ">=3.10",
+          }
+          for field, expected_value in expected.items():
+              actual = metadata.get(field)
+              if actual != expected_value:
+                  raise SystemExit(
+                      f"wheel metadata drift for {field}: expected={expected_value!r} actual={actual!r}"
+                  )
+
+          requires_dist = metadata.get_all("Requires-Dist", failobj=[])
+          if requires_dist:
+              raise SystemExit(f"unexpected runtime dependency metadata: {requires_dist}")
+
+          entry_points = direct[entry_names[0]].decode("utf-8")
+          if "atlas = atlas.cli:main" not in entry_points:
+              raise SystemExit(f"console entry point drift: {entry_points!r}")
+
+          payload_bytes = b"".join(
+              name.encode("utf-8") + b"\0" + direct[name] + b"\0"
+              for name in sorted(direct)
+          )
+          payload_sha256 = hashlib.sha256(payload_bytes).hexdigest()
+          print(f"distribution_payload_files={len(direct)}")
+          print(f"distribution_payload_sha256={payload_sha256}")
+          PY
 
           python -m venv "$venv_dir"
           "$venv_dir/bin/python" -m pip install --no-deps "$rebuilt_wheel"
