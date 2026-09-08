@@ -1,0 +1,170 @@
+name: package-reproducibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: atlas-package-repro-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ env.EXPECTED_SOURCE_SHA }}
+          persist-credentials: false
+
+      - name: Verify exact source binding
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$EXPECTED_SOURCE_SHA" in
+            (*[!0-9a-f]*|'') echo "invalid expected source SHA: $EXPECTED_SOURCE_SHA" >&2; exit 1 ;;
+          esac
+          test "${#EXPECTED_SOURCE_SHA}" -eq 40
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "$EXPECTED_SOURCE_SHA" || {
+            echo "source mismatch: expected=$EXPECTED_SOURCE_SHA actual=$actual" >&2
+            exit 1
+          }
+          printf 'SOURCE_SHA=%s\n' "$actual"
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify independent distribution reproducibility
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          build_venv="$(mktemp -d)"
+          archive="$(mktemp)"
+          root="$(mktemp -d)"
+          epoch="$(git show -s --format=%ct "$EXPECTED_SOURCE_SHA")"
+
+          python -m venv "$build_venv"
+          "$build_venv/bin/python" -m pip install 'setuptools>=68'
+          "$build_venv/bin/python" - <<'PY'
+          import setuptools
+          print(f"build_setuptools={setuptools.__version__}")
+          PY
+
+          git archive --format=tar "$EXPECTED_SOURCE_SHA" > "$archive"
+
+          export SOURCE_DATE_EPOCH="$epoch"
+          export PYTHONHASHSEED=0
+          export TZ=UTC
+          export LC_ALL=C.UTF-8
+
+          build_artifact() {
+            kind="$1"
+            ordinal="$2"
+            src="$root/${kind}-src-${ordinal}"
+            out="$root/${kind}-out-${ordinal}"
+            mkdir -p "$src" "$out"
+            tar -xf "$archive" -C "$src"
+            (
+              cd "$src"
+              KIND="$kind" OUT_DIR="$out" "$build_venv/bin/python" - <<'PY'
+          import os
+          import pathlib
+          import setuptools.build_meta as backend
+
+          kind = os.environ["KIND"]
+          out_dir = pathlib.Path(os.environ["OUT_DIR"]).resolve()
+          if kind == "wheel":
+              filename = backend.build_wheel(str(out_dir))
+          elif kind == "sdist":
+              filename = backend.build_sdist(str(out_dir))
+          else:
+              raise SystemExit(f"unsupported build kind: {kind}")
+          print(out_dir / filename)
+          PY
+            )
+          }
+
+          build_artifact wheel 1
+          sleep 2
+          build_artifact wheel 2
+          build_artifact sdist 1
+          sleep 2
+          build_artifact sdist 2
+
+          test "$(find "$root/wheel-out-1" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
+          test "$(find "$root/wheel-out-2" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
+          test "$(find "$root/sdist-out-1" -maxdepth 1 -type f -name '*.tar.gz' | wc -l)" -eq 1
+          test "$(find "$root/sdist-out-2" -maxdepth 1 -type f -name '*.tar.gz' | wc -l)" -eq 1
+
+          wheel1="$(find "$root/wheel-out-1" -maxdepth 1 -type f -name '*.whl' -print -quit)"
+          wheel2="$(find "$root/wheel-out-2" -maxdepth 1 -type f -name '*.whl' -print -quit)"
+          sdist1="$(find "$root/sdist-out-1" -maxdepth 1 -type f -name '*.tar.gz' -print -quit)"
+          sdist2="$(find "$root/sdist-out-2" -maxdepth 1 -type f -name '*.tar.gz' -print -quit)"
+
+          test "$(basename "$wheel1")" = "$(basename "$wheel2")"
+          test "$(basename "$sdist1")" = "$(basename "$sdist2")"
+
+          sha256sum "$wheel1" "$wheel2" "$sdist1" "$sdist2"
+
+          if ! cmp -s "$wheel1" "$wheel2"; then
+            echo "independent wheel builds are not byte-for-byte reproducible" >&2
+            exit 1
+          fi
+
+          tar1="$root/sdist-1.tar"
+          tar2="$root/sdist-2.tar"
+          gzip -dc "$sdist1" > "$tar1"
+          gzip -dc "$sdist2" > "$tar2"
+          if ! cmp -s "$tar1" "$tar2"; then
+            echo "independent source distributions have different decompressed tar payloads" >&2
+            exit 1
+          fi
+
+          WHEEL="$wheel1" SDIST="$sdist1" "$build_venv/bin/python" - <<'PY'
+          import hashlib
+          import os
+          import pathlib
+          import tarfile
+          import zipfile
+
+          wheel = pathlib.Path(os.environ["WHEEL"])
+          sdist = pathlib.Path(os.environ["SDIST"])
+
+          with zipfile.ZipFile(wheel) as archive:
+              wheel_files = sorted(name for name in archive.namelist() if not name.endswith("/"))
+              if not wheel_files:
+                  raise SystemExit("wheel contains no files")
+
+          with tarfile.open(sdist, "r:gz") as archive:
+              members = [member for member in archive.getmembers() if member.isfile()]
+              if not members:
+                  raise SystemExit("source distribution contains no regular files")
+              unsafe = [
+                  member.name
+                  for member in members
+                  if pathlib.PurePosixPath(member.name).is_absolute()
+                  or ".." in pathlib.PurePosixPath(member.name).parts
+              ]
+              if unsafe:
+                  raise SystemExit(f"unsafe sdist member path(s): {unsafe}")
+
+          print(f"wheel_files={len(wheel_files)}")
+          print(f"sdist_regular_files={len(members)}")
+          print(f"wheel_sha256={hashlib.sha256(wheel.read_bytes()).hexdigest()}")
+          print(f"sdist_sha256={hashlib.sha256(sdist.read_bytes()).hexdigest()}")
+          PY
+
+          echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH"
+          echo "PASS_INDEPENDENT_DISTRIBUTION_REPRODUCIBILITY"
