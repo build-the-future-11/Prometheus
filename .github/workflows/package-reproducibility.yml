@@ -55,8 +55,11 @@ jobs:
           root="$(mktemp -d)"
           epoch="$(git show -s --format=%ct "$EXPECTED_SOURCE_SHA")"
 
+          # Match the build-system floor declared by pyproject.toml. The separate
+          # build-backend-floor workflow verifies the exact 77.x floor; this workflow
+          # exercises reproducibility on the supported >=77 contract.
           python -m venv "$build_venv"
-          "$build_venv/bin/python" -m pip install 'setuptools>=68'
+          "$build_venv/bin/python" -m pip install 'setuptools>=77'
           "$build_venv/bin/python" - <<'PY'
           import setuptools
           print(f"build_setuptools={setuptools.__version__}")
