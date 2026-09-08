@@ -62,6 +62,7 @@ jobs:
           print(f"build_setuptools={setuptools.__version__}")
           PY
 
+          # Every build starts from an independent extraction of the exact Git tree.
           git archive --format=tar "$EXPECTED_SOURCE_SHA" > "$archive"
 
           export SOURCE_DATE_EPOCH="$epoch"
@@ -118,52 +119,125 @@ jobs:
 
           sha256sum "$wheel1" "$wheel2" "$sdist1" "$sdist2"
 
+          # Wheels honor SOURCE_DATE_EPOCH under the current build backend, so require
+          # the strongest byte-for-byte contract here.
           if ! cmp -s "$wheel1" "$wheel2"; then
             echo "independent wheel builds are not byte-for-byte reproducible" >&2
             exit 1
           fi
 
-          tar1="$root/sdist-1.tar"
-          tar2="$root/sdist-2.tar"
-          gzip -dc "$sdist1" > "$tar1"
-          gzip -dc "$sdist2" > "$tar2"
-          if ! cmp -s "$tar1" "$tar2"; then
-            echo "independent source distributions have different decompressed tar payloads" >&2
-            exit 1
-          fi
-
-          WHEEL="$wheel1" SDIST="$sdist1" "$build_venv/bin/python" - <<'PY'
+          # setuptools sdists retain archive/header mtimes that are not controlled by
+          # SOURCE_DATE_EPOCH. Do not pretend the compressed wrapper is reproducible;
+          # instead require the complete logical archive payload (paths, types, modes,
+          # link targets and regular-file bytes) to be identical. Generated metadata
+          # bytes remain part of this comparison, so content drift still fails closed.
+          WHEEL1="$wheel1" WHEEL2="$wheel2" SDIST1="$sdist1" SDIST2="$sdist2" \
+            "$build_venv/bin/python" - <<'PY'
           import hashlib
+          import json
           import os
           import pathlib
           import tarfile
           import zipfile
 
-          wheel = pathlib.Path(os.environ["WHEEL"])
-          sdist = pathlib.Path(os.environ["SDIST"])
+          wheel1 = pathlib.Path(os.environ["WHEEL1"])
+          wheel2 = pathlib.Path(os.environ["WHEEL2"])
+          sdist1 = pathlib.Path(os.environ["SDIST1"])
+          sdist2 = pathlib.Path(os.environ["SDIST2"])
 
-          with zipfile.ZipFile(wheel) as archive:
-              wheel_files = sorted(name for name in archive.namelist() if not name.endswith("/"))
-              if not wheel_files:
-                  raise SystemExit("wheel contains no files")
+          def wheel_files(path):
+              with zipfile.ZipFile(path) as archive:
+                  files = sorted(name for name in archive.namelist() if not name.endswith("/"))
+                  if not files:
+                      raise SystemExit("wheel contains no files")
+                  return files
 
-          with tarfile.open(sdist, "r:gz") as archive:
-              members = [member for member in archive.getmembers() if member.isfile()]
-              if not members:
+          if wheel_files(wheel1) != wheel_files(wheel2):
+              raise SystemExit("independent wheel file sets differ")
+
+          def safe_path(name):
+              path = pathlib.PurePosixPath(name)
+              if path.is_absolute() or ".." in path.parts:
+                  raise SystemExit(f"unsafe sdist member path: {name}")
+              return path
+
+          def safe_link(member):
+              target = pathlib.PurePosixPath(member.linkname)
+              if target.is_absolute() or ".." in target.parts:
+                  raise SystemExit(
+                      f"unsafe sdist link target: {member.name} -> {member.linkname}"
+                  )
+
+          def logical_sdist(path):
+              entries = []
+              with tarfile.open(path, "r:gz") as archive:
+                  for member in archive.getmembers():
+                      safe_path(member.name)
+                      base = {
+                          "name": member.name,
+                          "mode": member.mode,
+                      }
+                      if member.isfile():
+                          stream = archive.extractfile(member)
+                          if stream is None:
+                              raise SystemExit(f"failed to read sdist member: {member.name}")
+                          payload = stream.read()
+                          base.update(
+                              kind="file",
+                              size=len(payload),
+                              sha256=hashlib.sha256(payload).hexdigest(),
+                          )
+                      elif member.isdir():
+                          base.update(kind="dir")
+                      elif member.issym():
+                          safe_link(member)
+                          base.update(kind="symlink", linkname=member.linkname)
+                      elif member.islnk():
+                          safe_link(member)
+                          base.update(kind="hardlink", linkname=member.linkname)
+                      else:
+                          raise SystemExit(
+                              f"unsupported special sdist member: {member.name} type={member.type!r}"
+                          )
+                      entries.append(base)
+
+              if not any(entry["kind"] == "file" for entry in entries):
                   raise SystemExit("source distribution contains no regular files")
-              unsafe = [
-                  member.name
-                  for member in members
-                  if pathlib.PurePosixPath(member.name).is_absolute()
-                  or ".." in pathlib.PurePosixPath(member.name).parts
-              ]
-              if unsafe:
-                  raise SystemExit(f"unsafe sdist member path(s): {unsafe}")
+              entries.sort(key=lambda entry: (entry["name"], entry["kind"]))
+              canonical = json.dumps(
+                  entries,
+                  sort_keys=True,
+                  separators=(",", ":"),
+              ).encode("utf-8")
+              return entries, hashlib.sha256(canonical).hexdigest()
 
-          print(f"wheel_files={len(wheel_files)}")
-          print(f"sdist_regular_files={len(members)}")
-          print(f"wheel_sha256={hashlib.sha256(wheel.read_bytes()).hexdigest()}")
-          print(f"sdist_sha256={hashlib.sha256(sdist.read_bytes()).hexdigest()}")
+          entries1, logical_sha1 = logical_sdist(sdist1)
+          entries2, logical_sha2 = logical_sdist(sdist2)
+          if entries1 != entries2:
+              by_name1 = {entry["name"]: entry for entry in entries1}
+              by_name2 = {entry["name"]: entry for entry in entries2}
+              names = sorted(set(by_name1) | set(by_name2))
+              drift = [
+                  name
+                  for name in names
+                  if by_name1.get(name) != by_name2.get(name)
+              ]
+              raise SystemExit(f"independent sdist logical payload drift: {drift}")
+
+          print(f"wheel_files={len(wheel_files(wheel1))}")
+          print(f"wheel_sha256={hashlib.sha256(wheel1.read_bytes()).hexdigest()}")
+          print(f"sdist_entries={len(entries1)}")
+          print(f"sdist_logical_sha256={logical_sha1}")
+          print(
+              "sdist_archive_byte_reproducible="
+              + str(sdist1.read_bytes() == sdist2.read_bytes()).lower()
+          )
+          print(
+              f"sdist_archive_sha256_1={hashlib.sha256(sdist1.read_bytes()).hexdigest()}"
+          )
+          print(
+              f"sdist_archive_sha256_2={hashlib.sha256(sdist2.read_bytes()).hexdigest()}"
+          )
           PY
 
           echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH"
