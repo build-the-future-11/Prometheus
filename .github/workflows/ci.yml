@@ -155,11 +155,11 @@ jobs:
           venv_dir="$(mktemp -d)"
           output_file="$(mktemp)"
 
-          # pyproject.toml declares setuptools>=68 as the PEP 517 build requirement.
+          # pyproject.toml declares setuptools>=77 as the PEP 517 build requirement.
           # Provision it in a dedicated build environment instead of relying on the
           # runner's top-level interpreter to happen to expose setuptools.
           python -m venv "$build_venv"
-          "$build_venv/bin/python" -m pip install 'setuptools>=68'
+          "$build_venv/bin/python" -m pip install 'setuptools>=77'
           "$build_venv/bin/python" - <<'PY'
           import setuptools
           print(f"sdist_build_setuptools={setuptools.__version__}")
