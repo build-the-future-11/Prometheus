@@ -269,6 +269,8 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
     if not isinstance(status_contract, Mapping):
         raise ValueError("export payload status_contract is malformed")
     _absolute_execution_path(status_contract.get("path"), "export.status_contract.path")
+    if status_contract.get("format") != "JSON object mapping task_id to terminal status":
+        raise ValueError("export payload status format does not match the Percy schema")
     if status_contract.get("success_status") != "SUCCEEDED":
         raise ValueError("export payload success_status must be SUCCEEDED")
 
@@ -310,6 +312,8 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
         raise ValueError("verification task_id does not match deterministic stable identity")
     if export_payload.get("verification_task_id") != verifier_id:
         raise ValueError("export payload verification_task_id does not match verification task")
+    if verifier.get("expected_artifacts") != []:
+        raise ValueError("verification task expected_artifacts must be empty")
     verifier_metadata = verifier.get("metadata")
     if not isinstance(verifier_metadata, Mapping):
         raise ValueError("verification metadata is malformed")
@@ -380,6 +384,8 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
             _safe_relative_artifact_path(item, f"{task_id}.expected_artifacts").as_posix()
             for item in artifacts
         ]
+        if normalized_artifacts != artifacts:
+            raise ValueError(f"{task_id}: expected_artifacts must use canonical POSIX paths")
         if len(set(normalized_artifacts)) != len(normalized_artifacts):
             raise ValueError(f"{task_id}: expected_artifacts contains duplicates")
 
