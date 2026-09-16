@@ -515,8 +515,15 @@ def write_percy_export(payload: Mapping[str, Any], output: str | Path) -> Path:
     return path
 
 
+def _reject_json_constant(value: str) -> Any:
+    raise ValueError(f"non-standard JSON constant is not permitted: {value}")
+
+
 def load_json_object(path: str | Path) -> dict[str, Any]:
-    value = json.loads(Path(path).read_text(encoding="utf-8"))
+    value = json.loads(
+        Path(path).read_text(encoding="utf-8"),
+        parse_constant=_reject_json_constant,
+    )
     if not isinstance(value, dict):
         raise ValueError(f"{path} must contain a JSON object")
     return value
