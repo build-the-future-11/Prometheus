@@ -104,6 +104,60 @@ def _write_json(path: str | Path, payload: dict[str, object]) -> None:
     output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def _resolved_contract_path(value: object, field: str) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{field} must be a non-empty path string")
+    return Path(value).expanduser().resolve(strict=False)
+
+
+def _validate_percy_verification_paths(
+    export_payload: dict[str, object],
+    *,
+    statuses: str | Path,
+    artifact_root: str | Path,
+) -> None:
+    status_contract = export_payload.get("status_contract")
+    if not isinstance(status_contract, dict):
+        raise ValueError("export payload status_contract is malformed")
+    expected_statuses = _resolved_contract_path(status_contract.get("path"), "export.status_contract.path")
+    actual_statuses = Path(statuses).expanduser().resolve(strict=False)
+    if actual_statuses != expected_statuses:
+        raise ValueError("verification statuses path does not match export status contract")
+
+    tasks = export_payload.get("tasks")
+    if not isinstance(tasks, list) or not tasks:
+        raise ValueError("export payload tasks must be a non-empty list")
+    verifiers = [task for task in tasks if isinstance(task, dict) and task.get("kind") == "verification"]
+    if len(verifiers) != 1:
+        raise ValueError("export payload must contain exactly one verification task")
+
+    expected_root = _resolved_contract_path(
+        verifiers[0].get("artifact_directory"),
+        "verification.artifact_directory",
+    )
+    actual_root = Path(artifact_root).expanduser().resolve(strict=False)
+    if actual_root != expected_root:
+        raise ValueError("verification artifact root does not match export artifact contract")
+
+    for task in tasks:
+        if not isinstance(task, dict) or task.get("kind") != "experiment":
+            continue
+        task_id = str(task.get("task_id") or "<unknown>")
+        metadata = task.get("metadata")
+        if not isinstance(metadata, dict):
+            raise ValueError(f"{task_id}: metadata is malformed")
+        experiment_id = metadata.get("atlas_experiment_id")
+        if not isinstance(experiment_id, str) or not experiment_id.strip():
+            raise ValueError(f"{task_id}: metadata.atlas_experiment_id must be a non-empty string")
+        declared_directory = _resolved_contract_path(
+            task.get("artifact_directory"),
+            f"{task_id}.artifact_directory",
+        )
+        expected_directory = (expected_root / experiment_id).resolve(strict=False)
+        if declared_directory != expected_directory:
+            raise ValueError(f"{task_id}: artifact_directory does not match export artifact root")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = _build_parser()
     args = parser.parse_args(argv)
@@ -163,9 +217,17 @@ def main(argv: list[str] | None = None) -> int:
             if not run_id:
                 raise ValueError("manifest.run_id must be a non-empty string")
 
-            output = Path(args.output)
-            artifact_root = Path(args.artifact_root) if args.artifact_root else output.parent / f"{run_id}-artifacts"
-            status_file = Path(args.status_file) if args.status_file else output.parent / f"{run_id}-task-statuses.json"
+            output = Path(args.output).expanduser().resolve(strict=False)
+            artifact_root = (
+                Path(args.artifact_root).expanduser().resolve(strict=False)
+                if args.artifact_root
+                else output.parent / f"{run_id}-artifacts"
+            )
+            status_file = (
+                Path(args.status_file).expanduser().resolve(strict=False)
+                if args.status_file
+                else output.parent / f"{run_id}-task-statuses.json"
+            )
             verification_command = " ".join(
                 [
                     "python -m atlas.cli verify-percy",
@@ -203,6 +265,11 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "verify-percy":
         try:
             export_payload = load_json_object(args.export)
+            _validate_percy_verification_paths(
+                export_payload,
+                statuses=args.statuses,
+                artifact_root=args.artifact_root,
+            )
             statuses = load_json_object(args.statuses)
             ok, errors = verify_export_completion(
                 export_payload,
