@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import stat
+import uuid
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any, Mapping
 
@@ -468,10 +471,47 @@ def verify_export_completion(
     return (not errors, errors)
 
 
+def _sync_directory(directory: Path) -> None:
+    if os.name != "posix":
+        return
+    directory_fd = os.open(directory, os.O_RDONLY)
+    try:
+        os.fsync(directory_fd)
+    finally:
+        os.close(directory_fd)
+
+
 def write_percy_export(payload: Mapping[str, Any], output: str | Path) -> Path:
     path = Path(output)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    serialized = json.dumps(payload, indent=2, sort_keys=True) + "\n"
+
+    existing_mode: int | None = None
+    try:
+        existing_mode = stat.S_IMODE(path.stat().st_mode)
+    except FileNotFoundError:
+        pass
+
+    temp_path = path.parent / f".{path.name}.{uuid.uuid4().hex}.tmp"
+    pending_temp: Path | None = temp_path
+    try:
+        with temp_path.open("x", encoding="utf-8") as handle:
+            if existing_mode is not None and hasattr(os, "fchmod"):
+                os.fchmod(handle.fileno(), existing_mode)
+            handle.write(serialized)
+            handle.flush()
+            os.fsync(handle.fileno())
+
+        os.replace(temp_path, path)
+        pending_temp = None
+        _sync_directory(path.parent)
+    finally:
+        if pending_temp is not None:
+            try:
+                pending_temp.unlink()
+            except FileNotFoundError:
+                pass
+
     return path
 
 
