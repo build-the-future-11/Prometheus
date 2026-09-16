@@ -247,6 +247,12 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
     if export_payload.get("schema_version") != SCHEMA_VERSION:
         raise ValueError(f"unsupported schema_version: {export_payload.get('schema_version')!r}")
     run_id = _require_non_empty_string(export_payload.get("atlas_run_id"), "export.atlas_run_id")
+    status_contract = export_payload.get("status_contract")
+    if not isinstance(status_contract, Mapping):
+        raise ValueError("export payload status_contract is malformed")
+    _require_non_empty_string(status_contract.get("path"), "export.status_contract.path")
+    if status_contract.get("success_status") != "SUCCEEDED":
+        raise ValueError("export payload success_status must be SUCCEEDED")
 
     tasks = export_payload.get("tasks")
     if not isinstance(tasks, list) or not tasks:
@@ -310,6 +316,9 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
     seen_experiments: set[str] = set()
     for task in experiments:
         task_id = _require_non_empty_string(task.get("task_id"), "experiment.task_id")
+        dependencies = task.get("dependencies")
+        if dependencies != []:
+            raise ValueError(f"{task_id}: experiment dependencies must be empty")
         metadata = task.get("metadata")
         if not isinstance(metadata, Mapping):
             raise ValueError(f"{task_id}: metadata is malformed")
