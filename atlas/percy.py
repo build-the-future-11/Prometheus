@@ -72,11 +72,16 @@ def _validate_manifest_dict(manifest: Mapping[str, Any]) -> tuple[str, list[dict
         seen_artifacts: set[str] = set()
         for item in required_artifacts:
             artifact_text = _require_non_empty_string(item, f"{experiment_id}.required_artifacts")
-            _safe_relative_artifact_path(artifact_text, f"{experiment_id}.required_artifacts")
-            if artifact_text in seen_artifacts:
-                raise ValueError(f"experiment {experiment_id} has duplicate required artifact: {artifact_text}")
-            seen_artifacts.add(artifact_text)
-            artifacts.append(artifact_text)
+            artifact_path = _safe_relative_artifact_path(
+                artifact_text, f"{experiment_id}.required_artifacts"
+            )
+            canonical_artifact = artifact_path.as_posix()
+            if canonical_artifact in seen_artifacts:
+                raise ValueError(
+                    f"experiment {experiment_id} has duplicate required artifact: {canonical_artifact}"
+                )
+            seen_artifacts.add(canonical_artifact)
+            artifacts.append(canonical_artifact)
 
         seed = raw.get("seed")
         if isinstance(seed, bool) or not isinstance(seed, int) or seed < 0:
@@ -342,7 +347,7 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
         if not isinstance(artifacts, list) or not artifacts:
             raise ValueError(f"{task_id}: expected_artifacts must be a non-empty list")
         normalized_artifacts = [
-            str(_safe_relative_artifact_path(item, f"{task_id}.expected_artifacts"))
+            _safe_relative_artifact_path(item, f"{task_id}.expected_artifacts").as_posix()
             for item in artifacts
         ]
         if len(set(normalized_artifacts)) != len(normalized_artifacts):
