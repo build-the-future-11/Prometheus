@@ -47,6 +47,18 @@ def _safe_relative_artifact_path(value: Any, field: str) -> Path:
     return Path(*normalized_parts)
 
 
+def _absolute_execution_path(value: Any, field: str) -> Path:
+    if not isinstance(value, (str, Path)):
+        raise ValueError(f"{field} must be an absolute path")
+    text = str(value).strip()
+    if not text:
+        raise ValueError(f"{field} must be an absolute path")
+    path = Path(text).expanduser()
+    if not path.is_absolute():
+        raise ValueError(f"{field} must be an absolute path")
+    return path.resolve(strict=False)
+
+
 def _validate_manifest_dict(manifest: Mapping[str, Any]) -> tuple[str, list[dict[str, Any]]]:
     run_id = _require_non_empty_string(manifest.get("run_id"), "manifest.run_id")
     experiments = manifest.get("experiments")
@@ -142,7 +154,8 @@ def build_percy_export(
     resources: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     run_id, experiments = _validate_manifest_dict(manifest)
-    working_directory = _require_non_empty_string(working_directory, "working_directory")
+    working_directory_path = _absolute_execution_path(working_directory, "working_directory")
+    working_directory = str(working_directory_path)
     command_template = _require_non_empty_string(command_template, "command_template")
     verification_command = _require_non_empty_string(verification_command, "verification_command")
     if isinstance(timeout_seconds, bool) or not isinstance(timeout_seconds, int) or timeout_seconds <= 0:
@@ -156,8 +169,8 @@ def build_percy_export(
     ):
         raise ValueError("retry_backoff_seconds must be a non-negative integer")
 
-    artifact_root_path = Path(artifact_root)
-    status_path = Path(status_file)
+    artifact_root_path = _absolute_execution_path(artifact_root, "artifact_root")
+    status_path = _absolute_execution_path(status_file, "status_file")
     if resources is None:
         resource_payload = {"class": "heavy", "slots": 1}
     elif not isinstance(resources, Mapping):
@@ -255,7 +268,7 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
     status_contract = export_payload.get("status_contract")
     if not isinstance(status_contract, Mapping):
         raise ValueError("export payload status_contract is malformed")
-    _require_non_empty_string(status_contract.get("path"), "export.status_contract.path")
+    _absolute_execution_path(status_contract.get("path"), "export.status_contract.path")
     if status_contract.get("success_status") != "SUCCEEDED":
         raise ValueError("export payload success_status must be SUCCEEDED")
 
@@ -305,6 +318,12 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
     )
     if verifier_run_id != run_id:
         raise ValueError("verification metadata.atlas_run_id does not match export atlas_run_id")
+    verifier_working_directory = _absolute_execution_path(
+        verifier.get("working_directory"), "verification.working_directory"
+    )
+    verifier_artifact_root = _absolute_execution_path(
+        verifier.get("artifact_directory"), "verification.artifact_directory"
+    )
 
     expected_dependencies = {_require_non_empty_string(task.get("task_id"), "experiment.task_id") for task in experiments}
     dependencies = verifier.get("dependencies")
@@ -342,6 +361,17 @@ def _validated_experiment_tasks(export_payload: Mapping[str, Any]) -> list[Mappi
         expected_task_id = _stable_task_id(run_id, experiment_id, kind="experiment")
         if task_id != expected_task_id:
             raise ValueError(f"{task_id}: task_id does not match deterministic stable identity")
+        task_working_directory = _absolute_execution_path(
+            task.get("working_directory"), f"{task_id}.working_directory"
+        )
+        if task_working_directory != verifier_working_directory:
+            raise ValueError(f"{task_id}: working_directory drifted from verification task")
+        task_artifact_directory = _absolute_execution_path(
+            task.get("artifact_directory"), f"{task_id}.artifact_directory"
+        )
+        expected_artifact_directory = (verifier_artifact_root / experiment_id).resolve(strict=False)
+        if task_artifact_directory != expected_artifact_directory:
+            raise ValueError(f"{task_id}: artifact_directory drifted from verification root")
 
         artifacts = task.get("expected_artifacts")
         if not isinstance(artifacts, list) or not artifacts:

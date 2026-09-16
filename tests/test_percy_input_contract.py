@@ -68,6 +68,30 @@ class PercyInputContractTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self._export(**override)
 
+    def test_execution_paths_must_be_absolute(self):
+        cases = (
+            ("working directory", {"working_directory": "workspace/project"}, "working_directory"),
+            ("artifact root", {"artifact_root": "evidence"}, "artifact_root"),
+            ("status file", {"status_file": "task-statuses.json"}, "status_file"),
+        )
+        for label, override, field in cases:
+            with self.subTest(label=label):
+                with self.assertRaisesRegex(ValueError, f"{field} must be an absolute path"):
+                    self._export(**override)
+
+    def test_execution_paths_are_canonicalized_before_serialization(self):
+        payload = self._export(
+            working_directory="/workspace/./project",
+            artifact_root="/tmp/run/../evidence",
+            status_file="/tmp/run/../task-statuses.json",
+        )
+        experiment = next(task for task in payload["tasks"] if task["kind"] == "experiment")
+        verifier = next(task for task in payload["tasks"] if task["kind"] == "verification")
+        self.assertEqual(experiment["working_directory"], "/workspace/project")
+        self.assertEqual(verifier["working_directory"], "/workspace/project")
+        self.assertEqual(verifier["artifact_directory"], "/tmp/evidence")
+        self.assertEqual(payload["status_contract"]["path"], "/tmp/task-statuses.json")
+
     def test_resource_contract_rejects_coerced_slots_and_non_mapping_payloads(self):
         invalid_resources = (
             {"class": "heavy", "slots": "2"},

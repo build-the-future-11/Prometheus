@@ -49,6 +49,41 @@ class PercyExportStructureContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "success_status must be SUCCEEDED"):
                 verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
 
+    def test_verifier_rejects_relative_serialized_status_path(self):
+        payload = self._export()
+        payload["status_contract"]["path"] = "task-statuses.json"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(ValueError, "export.status_contract.path must be an absolute path"):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
+    def test_verifier_rejects_relative_verification_working_directory(self):
+        payload = self._export()
+        verifier = next(task for task in payload["tasks"] if task["kind"] == "verification")
+        verifier["working_directory"] = "workspace/project"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(ValueError, "verification.working_directory must be an absolute path"):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
+    def test_verifier_rejects_experiment_working_directory_drift(self):
+        payload = self._export()
+        experiment = next(task for task in payload["tasks"] if task["kind"] == "experiment")
+        experiment["working_directory"] = "/workspace/other"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(ValueError, "working_directory drifted from verification task"):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
+    def test_verifier_rejects_experiment_artifact_directory_drift(self):
+        payload = self._export()
+        experiment = next(task for task in payload["tasks"] if task["kind"] == "experiment")
+        experiment["artifact_directory"] = "/tmp/other"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(ValueError, "artifact_directory drifted from verification root"):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
 
 if __name__ == "__main__":
     unittest.main()
