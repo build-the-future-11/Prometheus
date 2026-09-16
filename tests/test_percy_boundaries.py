@@ -17,21 +17,22 @@ class PercyBoundaryTests(unittest.TestCase):
             perturbations=("clean",),
         ).to_dict()
 
-    def _export(self, manifest=None):
-        return build_percy_export(
-            manifest or self._manifest(),
-            working_directory="/workspace/project",
-            command_template=(
+    def _export(self, manifest=None, **overrides):
+        options = {
+            "working_directory": "/workspace/project",
+            "command_template": (
                 "python run.py --experiment {experiment_id} --seed {seed} "
                 "--condition {perturbation} --output {artifact_dir}"
             ),
-            artifact_root="/tmp/evidence",
-            status_file="/tmp/task-statuses.json",
-            verification_command=(
+            "artifact_root": "/tmp/evidence",
+            "status_file": "/tmp/task-statuses.json",
+            "verification_command": (
                 "python -m atlas.cli verify-percy --export tasks.json "
                 "--statuses statuses.json --artifact-root evidence"
             ),
-        )
+        }
+        options.update(overrides)
+        return build_percy_export(manifest or self._manifest(), **options)
 
     def _materialize_success(self, payload, root):
         statuses = {}
@@ -133,9 +134,9 @@ class PercyBoundaryTests(unittest.TestCase):
                 verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
 
     def test_verifier_rejects_parent_symlink_escape(self):
-        payload = self._export()
         with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as outside_tmp:
             root = Path(tmp)
+            payload = self._export(artifact_root=root)
             outside = Path(outside_tmp)
             experiment = next(task for task in payload["tasks"] if task["kind"] == "experiment")
             experiment_id = experiment["metadata"]["atlas_experiment_id"]
@@ -154,9 +155,9 @@ class PercyBoundaryTests(unittest.TestCase):
             self.assertTrue(any("artifact escapes artifact root" in error for error in errors))
 
     def test_verifier_accepts_regular_files_inside_root(self):
-        payload = self._export()
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            payload = self._export(artifact_root=root)
             statuses = self._materialize_success(payload, root)
 
             ok, errors = verify_export_completion(payload, task_statuses=statuses, artifact_root=root)

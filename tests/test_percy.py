@@ -66,10 +66,10 @@ class PercyExportTests(unittest.TestCase):
             self.assertIn(task["artifact_directory"], task["command"])
 
     def test_verifier_fails_on_failed_task_and_missing_artifact(self):
-        payload = self._export()
-        experiments = [task for task in payload["tasks"] if task["kind"] == "experiment"]
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            payload = self._export(artifact_root=root)
+            experiments = [task for task in payload["tasks"] if task["kind"] == "experiment"]
             statuses = {}
             for task in experiments:
                 statuses[task["task_id"]] = "SUCCEEDED"
@@ -91,10 +91,10 @@ class PercyExportTests(unittest.TestCase):
             self.assertTrue(any("missing required artifact" in error for error in errors))
 
     def test_verifier_passes_only_when_all_tasks_succeeded_and_artifacts_exist(self):
-        payload = self._export()
-        experiments = [task for task in payload["tasks"] if task["kind"] == "experiment"]
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            payload = self._export(artifact_root=root)
+            experiments = [task for task in payload["tasks"] if task["kind"] == "experiment"]
             statuses = {}
             for task in experiments:
                 statuses[task["task_id"]] = "SUCCEEDED"

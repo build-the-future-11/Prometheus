@@ -84,6 +84,15 @@ class PercyExportStructureContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "artifact_directory drifted from verification root"):
                 verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
 
+    def test_library_verifier_rejects_substitute_runtime_artifact_root(self):
+        payload = self._export()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaisesRegex(
+                ValueError, "artifact_root does not match verification artifact_directory"
+            ):
+                verify_export_completion(payload, task_statuses={}, artifact_root=tmp)
+
 
 if __name__ == "__main__":
     unittest.main()

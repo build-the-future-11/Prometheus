@@ -397,9 +397,21 @@ def verify_export_completion(
     artifact_root: str | Path,
 ) -> tuple[bool, list[str]]:
     experiments = _validated_experiment_tasks(export_payload)
+    tasks = export_payload["tasks"]
+    verifier = next(
+        task
+        for task in tasks
+        if isinstance(task, Mapping) and task.get("kind") == "verification"
+    )
+    expected_root = _absolute_execution_path(
+        verifier.get("artifact_directory"), "verification.artifact_directory"
+    )
+    actual_root = _absolute_execution_path(artifact_root, "artifact_root")
+    if actual_root != expected_root:
+        raise ValueError("artifact_root does not match verification artifact_directory")
 
     errors: list[str] = []
-    root = Path(artifact_root)
+    root = actual_root
     try:
         resolved_root = root.resolve(strict=True)
     except (FileNotFoundError, OSError):
