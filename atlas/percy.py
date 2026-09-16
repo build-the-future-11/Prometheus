@@ -484,7 +484,7 @@ def _sync_directory(directory: Path) -> None:
 def write_percy_export(payload: Mapping[str, Any], output: str | Path) -> Path:
     path = Path(output)
     path.parent.mkdir(parents=True, exist_ok=True)
-    serialized = json.dumps(payload, indent=2, sort_keys=True) + "\n"
+    serialized = json.dumps(payload, indent=2, sort_keys=True, allow_nan=False) + "\n"
 
     existing_mode: int | None = None
     try:

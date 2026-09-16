@@ -50,6 +50,23 @@ class PercyAtomicExportWriteTests(unittest.TestCase):
 
             self.assertEqual(json.loads(output.read_text(encoding="utf-8")), {"ok": True})
 
+    def test_non_finite_numbers_fail_before_touching_destination(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / "percy-tasks.json"
+            output.write_text("original-export\n", encoding="utf-8")
+
+            for value in (float("nan"), float("inf"), float("-inf")):
+                with self.subTest(value=value):
+                    with self.assertRaisesRegex(
+                        ValueError,
+                        "Out of range float values are not JSON compliant",
+                    ):
+                        write_percy_export({"value": value}, output)
+
+                    self.assertEqual(output.read_text(encoding="utf-8"), "original-export\n")
+                    self.assertEqual(list(root.glob(f".{output.name}.*.tmp")), [])
+
 
 if __name__ == "__main__":
     unittest.main()
