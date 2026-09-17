@@ -519,10 +519,20 @@ def _reject_json_constant(value: str) -> Any:
     raise ValueError(f"non-standard JSON constant is not permitted: {value}")
 
 
+def _reject_duplicate_object_pairs(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    value: dict[str, Any] = {}
+    for key, item in pairs:
+        if key in value:
+            raise ValueError(f"duplicate JSON object key is not permitted: {key}")
+        value[key] = item
+    return value
+
+
 def load_json_object(path: str | Path) -> dict[str, Any]:
     value = json.loads(
         Path(path).read_text(encoding="utf-8"),
         parse_constant=_reject_json_constant,
+        object_pairs_hook=_reject_duplicate_object_pairs,
     )
     if not isinstance(value, dict):
         raise ValueError(f"{path} must contain a JSON object")
