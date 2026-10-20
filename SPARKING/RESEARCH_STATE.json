@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "project": "SPARKING",
+  "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
+  "created_at": "2026-10-20T23:00:00+05:30",
+  "updated_at": "2026-10-20T23:00:00+05:30",
+  "repository_root": "/Volumes/PRO-BLADE/Atlas",
+  "project_path": "SPARKING",
+  "git_remote": "https://github.com/build-the-future-11/Atlas.git",
+  "git_branch": "codex/ml4materials-research-execution",
+  "phase": "IMPLEMENTATION",
+  "disposition": "NOT_EVALUATED",
+  "research_question": "Does support-gating a nonlinear residual improve composition-only experimental band-gap prediction under preregistered element exclusion relative to the identical ungated residual model, without practically degrading official Matbench MAE?",
+  "hypothesis": "A regularized linear component is safer for descriptor-space extrapolation, while nonlinear residual corrections are useful in-support but brittle out-of-support; attenuating only the residual as support distance increases will reduce leave-one-element-out MAE.",
+  "falsifier": "The hypothesis is not supported if the confirmatory macro-MAE improvement over the ungated matched control is at most 0.01 eV, fewer than four of five element holdouts improve, or official five-fold MAE degrades by more than 0.02 eV.",
+  "intended_contribution": "A small, auditable, compute-matched residual gate and a protocol that separates IID benchmark utility from element-exclusion extrapolation.",
+  "scope": {
+    "included": [
+      "Matbench v0.1 matbench_expt_gap",
+      "composition-only features",
+      "development element holdouts Cu, Ag, B",
+      "confirmatory element holdouts Li, Zn, Ga, Se, Te",
+      "official five-fold Matbench evaluation",
+      "split-conformal marginal intervals",
+      "paired model and resource comparison"
+    ],
+    "excluded": [
+      "crystal structures",
+      "new-material generation",
+      "thermodynamic stability claims",
+      "synthesis claims",
+      "causal interpretation",
+      "experimental validation"
+    ]
+  },
+  "predecessor": {
+    "path": "../ML4-Material Discovery",
+    "disposition": "NOT_EVALUATED_RESOURCE_BLOCKED",
+    "preservation_rule": "Do not edit, replace, or reinterpret predecessor failure receipts."
+  },
+  "budgets": {
+    "development_candidates": 8,
+    "development_element_holdouts": 3,
+    "confirmatory_element_holdouts": 5,
+    "official_folds": 5,
+    "max_rss_mib": 512,
+    "require_no_rising_pageout": true,
+    "hosted_accelerator": "CPU"
+  },
+  "protected_evaluation": {
+    "status": "UNOPENED_BY_SPARKING",
+    "confirmatory_elements": ["Li", "Zn", "Ga", "Se", "Te"],
+    "rule": "No gate hyperparameter or model architecture may change after confirmatory outcomes are observed."
+  },
+  "failures": [
+    {
+      "source": "predecessor",
+      "summary": "Five local attempts were retained after no-rising-pageout refusal; no aggregate endpoint exists."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Support gating improves element-exclusion MAE.",
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "C2",
+      "text": "Support gating preserves official Matbench MAE within 0.02 eV.",
+      "status": "NOT_EVALUATED"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-20",
+      "event": "Initialized a successor project from an empty SPARKING directory after auditing the resource-blocked predecessor."
+    }
+  ]
+}
+

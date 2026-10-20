@@ -1,0 +1,11 @@
+{
+  "canonical_composition_count": 4601,
+  "dataset": "matbench_expt_gap",
+  "official_split_canonical_sha256": "69bc38097c78dd752cdc5506d21b08f32bc3def921b2aac6fc3c8681a1adb566",
+  "row_count": 4604,
+  "schema_version": 1,
+  "source_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+  "source_url": "https://ml.materialsproject.org/projects/matbench_expt_gap.json.gz",
+  "target_max_ev": 11.7,
+  "target_min_ev": 0.0
+}
