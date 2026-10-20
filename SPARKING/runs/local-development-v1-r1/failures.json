@@ -1,0 +1,7 @@
+[
+  {
+    "message": "pageout guard refused features_built: 1072270 > 1072262",
+    "traceback": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/SPARKING/src/sparking/experiment.py\", line 147, in run_development\n    guard.check(\"features_built\")\n  File \"/Volumes/PRO-BLADE/Atlas/SPARKING/src/sparking/evidence.py\", line 65, in check\n    raise ResourceLimitError(\nsparking.evidence.ResourceLimitError: pageout guard refused features_built: 1072270 > 1072262\n",
+    "type": "ResourceLimitError"
+  }
+]

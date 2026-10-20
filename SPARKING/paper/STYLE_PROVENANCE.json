@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "source_path": "/Volumes/PRO-BLADE/GitHubRepos/Wharton-Experiment/paper/arxiv.sty",
+  "source_sha256": "eaf2fa779acfc1dc4e5ea75b78bb40967b780b67a19b80113c6b2930cfff2d14",
+  "adaptation": "Preserved the user's local nine-line arxiv style shim and changed only the project-specific left header.",
+  "date": "2026-10-20"
+}
+

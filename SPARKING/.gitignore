@@ -8,6 +8,8 @@ dist/
 build/
 .uv-cache/
 .mplconfig/
+.cache/
+tmp/
 data/raw/
 runs/*/checkpoints/
 runs/*/predictions.csv
@@ -17,4 +19,9 @@ paper/main.blg
 paper/main.log
 paper/main.out
 paper/main.pdf
+output/pdf/*.aux
+output/pdf/*.bbl
+output/pdf/*.blg
+output/pdf/*.log
+output/pdf/*.out
 

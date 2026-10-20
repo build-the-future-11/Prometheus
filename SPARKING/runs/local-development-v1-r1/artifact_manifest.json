@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "bytes": 532,
+      "path": "failures.json",
+      "sha256": "fa6841d3c5e63d7e37a6ef784336ffa428a3a4bc603963e253349909f2af1449"
+    },
+    {
+      "bytes": 697,
+      "path": "receipt.json",
+      "sha256": "ab57a241f22690015a24d69edee7280d3a924393bb2ff5f74fda1bff6bfebc18"
+    }
+  ],
+  "schema_version": 1
+}
