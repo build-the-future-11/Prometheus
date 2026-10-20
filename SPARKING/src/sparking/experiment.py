@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import itertools
 import json
+import os
 from pathlib import Path
 import subprocess
 import time
@@ -45,6 +46,12 @@ def _protocol(root: Path, name: str) -> dict[str, Any]:
 
 def _git_record(root: Path) -> dict[str, object]:
     repository = root.parent
+    if not (repository / ".git").exists():
+        return {
+            "commit": os.environ.get("SPARKING_SOURCE_COMMIT", "UNAVAILABLE_HOSTED_ARCHIVE"),
+            "project_status": [],
+            "source_transport": "versioned_hosted_archive",
+        }
     commit = subprocess.run(
         ["git", "rev-parse", "HEAD"], cwd=repository, text=True, capture_output=True, check=True
     ).stdout.strip()

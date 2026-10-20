@@ -9,7 +9,7 @@
   "enable_tpu": false,
   "enable_internet": true,
   "keywords": ["materials-science", "matbench", "uncertainty"],
-  "dataset_sources": [],
+  "dataset_sources": ["ryangomez010/sparking-source-v1-20261020"],
   "kernel_sources": [],
   "competition_sources": []
 }

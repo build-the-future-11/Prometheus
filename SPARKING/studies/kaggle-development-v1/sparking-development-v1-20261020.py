@@ -11,11 +11,10 @@ import subprocess
 import sys
 
 
-BRANCH = "codex/ml4materials-research-execution"
-REPOSITORY = "https://github.com/build-the-future-11/Atlas.git"
 RUN_ID = "kaggle-development-v1-r1"
 WORKING = Path("/kaggle/working")
-CHECKOUT = WORKING / "atlas-source"
+CHECKOUT = WORKING / "sparking-source"
+SOURCE_DATASET = Path("/kaggle/input/sparking-source-v1-20261020")
 
 
 def run(command: list[str], cwd: Path | None = None) -> None:
@@ -25,8 +24,13 @@ def run(command: list[str], cwd: Path | None = None) -> None:
 
 if CHECKOUT.exists():
     shutil.rmtree(CHECKOUT)
-run(["git", "clone", "--depth", "1", "--branch", BRANCH, REPOSITORY, str(CHECKOUT)])
-project = CHECKOUT / "SPARKING"
+archive = SOURCE_DATASET / "sparking-source.tar.gz"
+if not archive.exists():
+    raise FileNotFoundError(archive)
+CHECKOUT.mkdir(parents=True)
+shutil.unpack_archive(str(archive), str(CHECKOUT), "gztar")
+project = CHECKOUT
+source_revision = (SOURCE_DATASET / "source-revision.txt").read_text().strip()
 os.environ.update(
     {
         "MPLBACKEND": "Agg",
@@ -34,6 +38,7 @@ os.environ.update(
         "XDG_CACHE_HOME": "/tmp/sparking-cache",
         "LOKY_MAX_CPU_COUNT": str(os.cpu_count() or 2),
         "PYTHONHASHSEED": "0",
+        "SPARKING_SOURCE_COMMIT": source_revision,
     }
 )
 run([sys.executable, "-m", "pip", "install", "-e", ".[dev]"], cwd=project)
@@ -63,7 +68,7 @@ environment_path.write_text(
     ).stdout
 )
 archive_base = WORKING / RUN_ID
-archive = Path(
+result_archive = Path(
     shutil.make_archive(
         str(archive_base),
         "gztar",
@@ -71,8 +76,8 @@ archive = Path(
         base_dir="runs/" + RUN_ID,
     )
 )
-digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-(WORKING / f"{RUN_ID}.sha256").write_text(f"{digest}  {archive.name}\n")
+digest = hashlib.sha256(result_archive.read_bytes()).hexdigest()
+(WORKING / f"{RUN_ID}.sha256").write_text(f"{digest}  {result_archive.name}\n")
 summary = json.loads((project / "runs" / RUN_ID / "results.json").read_text())
 (WORKING / "development-summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
 (WORKING / f"preflight-{RUN_ID}.json").write_text(
@@ -80,4 +85,5 @@ summary = json.loads((project / "runs" / RUN_ID / "results.json").read_text())
 )
 print(f"HOSTED_RUN_COMPLETE={RUN_ID}")
 print(f"HOSTED_ARCHIVE_SHA256={digest}")
+
 
