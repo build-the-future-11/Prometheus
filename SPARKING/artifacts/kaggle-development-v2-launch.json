@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "recorded_at": "2026-10-21T17:06:39+05:30",
-  "status": "BLOCKED_GPU_CONCURRENCY",
+  "recorded_at": "2026-10-21T17:57:55+05:30",
+  "status": "RUNNING",
   "private": true,
   "kernel": "ryangomez010/sparking-development-v2-risk-gated-gpu",
   "dataset": "ryangomez010/sparking-source-v2-20261021",
@@ -13,9 +13,8 @@
   "launcher_sha256": "c10832d4eb7693c6491a08120ab9a4a801da628926f6e4b04977c82aa4ffd9b6",
   "metadata_sha256_before_slug_fix": "cb32ed116a05d6920c6d9ca5df723f74f1448cc578dec1f6d15a288ec7dbc677",
   "metadata_sha256_ready_for_retry": "7c4b9205f9de77417d6fc24dd1a94e12eadb2cd786e7b9261e2073ea71741a0c",
-  "error": "Maximum batch GPU session count of 2 reached.",
-  "submission_attempts_observed": 12,
-  "last_submission_attempt_at": "2026-10-21T17:06:39+05:30",
+  "submission_attempts_observed": 13,
+  "last_submission_attempt_at": "2026-10-21T17:46:11.887+05:30",
   "retry_automation": {
     "id": "sparking-gpu-execution",
     "status": "ACTIVE",
@@ -46,5 +45,15 @@
     ]
   },
   "scientific_result": false,
-  "protected_outcomes_observed": false
+  "protected_outcomes_observed": false,
+  "last_pre_acceptance_error": "Maximum batch GPU session count of 2 reached.",
+  "accepted_version": 1,
+  "accepted_at": "2026-10-21T17:46:11.887+05:30",
+  "kernel_url": "https://www.kaggle.com/code/ryangomez010/sparking-development-v2-risk-gated-gpu",
+  "execution_stage": "GPU_MODEL_TRAINING",
+  "hosted_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "kaggle_last_run_time_utc": "2026-10-21T12:16:11.887Z"
 }
