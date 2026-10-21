@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "recorded_at": "2026-10-21T17:01:09+05:30",
+  "recorded_at": "2026-10-21T17:06:39+05:30",
   "status": "BLOCKED_GPU_CONCURRENCY",
   "private": true,
   "kernel": "ryangomez010/sparking-development-v2-risk-gated-gpu",
@@ -14,7 +14,8 @@
   "metadata_sha256_before_slug_fix": "cb32ed116a05d6920c6d9ca5df723f74f1448cc578dec1f6d15a288ec7dbc677",
   "metadata_sha256_ready_for_retry": "7c4b9205f9de77417d6fc24dd1a94e12eadb2cd786e7b9261e2073ea71741a0c",
   "error": "Maximum batch GPU session count of 2 reached.",
-  "submission_attempts_observed": 11,
+  "submission_attempts_observed": 12,
+  "last_submission_attempt_at": "2026-10-21T17:06:39+05:30",
   "retry_automation": {
     "id": "sparking-gpu-execution",
     "status": "ACTIVE",
