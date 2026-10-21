@@ -3,13 +3,13 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-21T16:43:16+05:30",
+  "updated_at": "2026-10-21T19:50:03+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Atlas.git",
   "git_branch": "codex/ml4materials-research-execution",
-  "phase": "SUCCESSOR_V2_WAITING_FOR_KAGGLE_GPU_SLOT",
-  "disposition": "NOT_EVALUATED",
+  "phase": "DEVELOPMENT_V2_COMPLETE",
+  "disposition": "DEVELOPMENT_NOT_SUPPORTED",
   "research_question": "Does support-gating a nonlinear residual improve composition-only experimental band-gap prediction under preregistered element exclusion relative to the identical ungated residual model, without practically degrading official Matbench MAE?",
   "hypothesis": "A regularized linear component is safer for descriptor-space extrapolation, while nonlinear residual corrections are useful in-support but brittle out-of-support; attenuating only the residual as support distance increases will reduce leave-one-element-out MAE.",
   "falsifier": "The hypothesis is not supported if the confirmatory macro-MAE improvement over the ungated matched control is at most 0.01 eV, fewer than four of five element holdouts improve, or official five-fold MAE degrades by more than 0.02 eV.",
@@ -48,7 +48,7 @@
     "hosted_accelerator": "CPU"
   },
   "protected_evaluation": {
-    "status": "UNOPENED_BY_SPARKING",
+    "status": "UNOPENED_BY_SPARKING_DEVELOPMENT_STOP",
     "confirmatory_elements": [
       "Li",
       "Zn",
@@ -74,12 +74,12 @@
     {
       "id": "C1",
       "text": "Support gating improves element-exclusion MAE.",
-      "status": "NOT_EVALUATED"
+      "status": "DEVELOPMENT_NOT_SUPPORTED_V2_PROTECTED_NOT_EVALUATED"
     },
     {
       "id": "C2",
       "text": "Support gating preserves official Matbench MAE within 0.02 eV.",
-      "status": "NOT_EVALUATED"
+      "status": "NOT_EVALUATED_DEVELOPMENT_STOP"
     }
   ],
   "history": [
@@ -114,6 +114,10 @@
     {
       "date": "2026-10-21",
       "event": "Uploaded and byte-roundtrip-verified the private v2 source dataset. Kaggle refused the first GPU kernel submission because the account maximum of two batch GPU sessions was reached; no v2 execution or scientific outcome occurred."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Private Kaggle GPU development v2 completed 180 CatBoost fits on dual T4 hardware. Exact output and source identities were retained; an independent local verifier recomputed 156 metrics. The selected risk gate worsened macro MAE by 0.000130 eV versus CatBoost, failing the >0.020 eV admission rule. Disposition: DEVELOPMENT_NOT_SUPPORTED. Protected outcomes remained unopened."
     }
   ],
   "hosted_development": {
@@ -145,7 +149,7 @@
     "results_sha256": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb",
     "archive_sha256": "e78850dfb06f7c3b6d349a4807fe3c1f306bf86945b96574ca5878c993707b03"
   },
-  "disposition_scope": "Protected confirmatory claims C1/C2; development is complete and verified.",
+  "disposition_scope": "Frozen v2 development gate failed; protected confirmation and official-fold evaluation were not opened.",
   "development_findings": {
     "selected_gate": {
       "support_quantile": 0.99,
@@ -162,8 +166,9 @@
     "caveat": "Resolved by diagnostic v1: direct absolute-error HGB predicts zero for every training/test row, due to zero-median nonnegative targets and uniform initial gradients. Squared-error direct baseline substantially improves development error; original v1 is preserved."
   },
   "confirmation_readiness": {
-    "status": "HOLD_FOR_DEVELOPMENT_REVIEW",
-    "reason": "Direct absolute-error baseline collapses; corrected direct squared-error baseline outperforms residual architecture; gating has negligible benefit and weak risk discrimination. Any redesign requires a versioned successor."
+    "status": "CLOSED_DEVELOPMENT_NOT_SUPPORTED",
+    "reason": "The frozen v2 selected gate worsened macro MAE by 0.000130 eV relative to CatBoost; admission required an improvement greater than 0.020 eV.",
+    "protected_outcomes_observed": false
   },
   "development_diagnostics": {
     "run_id": "kaggle-diagnostic-v1-r1",
@@ -176,7 +181,7 @@
   },
   "successor_v2": {
     "study_id": "sparking-development-v2-risk-gated-gpu",
-    "status": "FROZEN_WAITING_FOR_GPU_SLOT",
+    "status": "COMPLETE_VERIFIED_DEVELOPMENT_NOT_SUPPORTED",
     "protocol": "protocols/development-v2.json",
     "protocol_explanation": "docs/PROTOCOL_V2.md",
     "parent_commit": "c04873557b522962833aafca3759caf6a3fa488b",
@@ -194,9 +199,53 @@
       "Te"
     ],
     "protected_outcomes_observed": false,
-    "confirmation_admission": "PENDING_DEVELOPMENT_RULE",
+    "confirmation_admission": "DENIED_BY_FROZEN_DEVELOPMENT_RULE",
     "hosted_launch": "artifacts/kaggle-development-v2-launch.json",
     "private_source_dataset": "ryangomez010/sparking-source-v2-20261021",
-    "source_roundtrip_sha256": "915dfeaba793c5e70f90a21cb6e9aaa24db57783dfb8d195812e3a2385e04582"
+    "source_roundtrip_sha256": "915dfeaba793c5e70f90a21cb6e9aaa24db57783dfb8d195812e3a2385e04582",
+    "run_id": "kaggle-development-v2-r1",
+    "kernel": "ryangomez010/sparking-development-v2-risk-gated-gpu",
+    "kernel_version": 1,
+    "source_commit": "5a56bb5dc97619730f0fbc6544490cdc69f2c109",
+    "protocol_sha256": "c4aa306c7259238075db18ced236e99d59101d57321e733e84c458f2b7237c2e",
+    "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+    "result": "runs/kaggle-development-v2-r1/results.json",
+    "receipt": "runs/kaggle-development-v2-r1/receipt.json",
+    "verification": "artifacts/development-v2-verification.json",
+    "report": "docs/DEVELOPMENT_RESULTS_V2.md",
+    "output_archive_sha256": "cf8aecebf1dec60ccfb48445b25a891b75b2feff7fb37cf0e08774fbdeeb420a",
+    "retained_tree_sha256": "43eb835f5fe7eef682502fee15c3e6fd3326587313fd2a93a6a5fe398cf32c5c",
+    "hosted_tests_passed": 18,
+    "independent_metric_comparisons": 156
+  },
+  "development_v2_findings": {
+    "selected_gate": {
+      "model": "risk_gate_t0.40",
+      "temperature_ev": 0.4
+    },
+    "selected_macro_mae_ev": 0.7796668155018557,
+    "catboost_ensemble_macro_mae_ev": 0.7795363780167527,
+    "selected_macro_mae_improvement_over_catboost_ev": -0.0001304374851031076,
+    "per_element_improvement_ev": {
+      "Cu": -0.001920918157075735,
+      "Ag": 0.0009665842037214212,
+      "B": 0.000563021498044991
+    },
+    "numerically_best_gate": {
+      "model": "risk_gate_t0.05",
+      "temperature_ev": 0.05,
+      "macro_mae_ev": 0.7764508483678562
+    },
+    "best_control": {
+      "model": "extra_trees_ensemble",
+      "macro_mae_ev": 0.7286748208196586
+    },
+    "admission_threshold_ev": 0.02,
+    "admission_passed": false,
+    "interpretation": "Pseudo-exclusion harm ranking transferred weakly and did not produce a practically meaningful outer-element MAE improvement.",
+    "posthoc_cluster_bootstrap_95_ev": [
+      -0.0019636948533508507,
+      0.0014281323657897574
+    ]
   }
 }

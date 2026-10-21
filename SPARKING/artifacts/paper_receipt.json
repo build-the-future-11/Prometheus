@@ -1,12 +1,21 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "artifact": "output/pdf/main.pdf",
-  "sha256": "74720910586e8be073d0e4d54419a4da6994c633bd88b8f5d9d526c6e92924c8",
+  "sha256": "a96ad8e65f312c7c90ac516ae69f5dac776dc75fd0e78dbb2ef1b67f9b752924",
+  "bytes": 90491,
   "pages": 11,
   "page_size": "letter",
-  "compiled_with": "Tectonic",
-  "bibliography": "resolved",
+  "compiled_with": "Tectonic and Codex desktop LaTeX compiler",
+  "compilation": "SUCCESS",
+  "bibliography": "RESOLVED",
+  "text_assertions": "PASS",
   "visual_inspection": "PASS_ALL_11_PAGES",
-  "scientific_disposition_in_document": "NOT_EVALUATED",
-  "date": "2026-10-20T23:10:00+05:30"
+  "visual_defects": [],
+  "scientific_disposition_in_document": "DEVELOPMENT_NOT_SUPPORTED",
+  "protected_outcomes_observed": false,
+  "source_result": "runs/kaggle-development-v2-r1/results.json",
+  "source_verification": "artifacts/development-v2-verification.json",
+  "generated_figure": "paper/figures/development-v2-results.pdf",
+  "generated_table": "paper/tables/development-v2-results.tex",
+  "date": "2026-10-21T19:58:01+05:30"
 }

@@ -1,60 +1,28 @@
 # SPARKING
 
-SPARKING is an evidence-bound study of support-aware composition-only materials
-property prediction. The model is a regularized linear extrapolator plus a
-nonlinear residual learner. The residual is attenuated only when the query lies
-outside the training support measured by nearest-neighbour distance in a fixed
-composition feature space.
-
-The scientific question is deliberately narrow: does this support gate improve
-leave-one-element-out experimental-band-gap prediction relative to the same
-residual model without the gate, while preserving official Matbench accuracy?
+SPARKING is an evidence-bound study of support-aware composition-only materials property prediction. It tests whether training-only estimates of direct-model harm can improve leave-one-element-out band-gap prediction by adaptively shrinking a nonlinear ensemble toward ridge regression.
 
 ## Status
 
-The predecessor study in `../ML4-Material Discovery` remains immutable and
-resource-blocked. SPARKING is a separately versioned successor. Its current
-machine-readable disposition is always recorded in `RESEARCH_STATE.json`.
+**SPARKING v2 is complete with disposition `DEVELOPMENT_NOT_SUPPORTED`.** A private Kaggle version-1 run completed the frozen Cu/Ag/B development protocol on dual Tesla T4 GPUs. All 180 CatBoost fits completed, the hosted test suite passed 18/18, and an independent local verifier recomputed 156 metrics from the downloaded raw arrays with a valid manifest.
 
-Development completed on Kaggle on 2026-10-21: all eight gate settings and four
-baselines were evaluated across Cu/Ag/B, with the downloaded evidence verified.
-The best numerical gate improved macro-MAE by only 0.000249 eV over the ungated
-control. The frozen tie rule selected quantile 0.99, power 1. Protected
-confirmation remains unrun. See [development results](docs/DEVELOPMENT_RESULTS_V1.md).
+The selected risk gate at temperature 0.40 eV had macro MAE 0.779667 eV versus 0.779536 eV for the identical ungated CatBoost ensemble, an improvement of -0.000130 eV. The frozen admission threshold was greater than +0.020 eV. Although Ag and B improved by less than 0.001 eV each, Cu worsened by 0.001921 eV. The protected Li, Zn, Ga, Se, and Te outcomes remain unopened, and v2 confirmation is not authorized.
 
-Follow-up [development diagnostics](docs/DEVELOPMENT_DIAGNOSIS_V1.md) reproduced
-the original scores and identified a collapsed absolute-error direct boosting
-baseline. With the same tree settings, squared-error direct boosting achieved
-0.760592 eV macro-MAE versus 0.952610 for the original ungated residual model.
-The selected gate affects only 1 of 824 development prediction cases.
-Confirmation is on hold for development review; changes require a versioned
-successor rather than edits to the frozen v1 study.
+The strongest development control was a three-seed Extra Trees ensemble at 0.728675 eV macro MAE. This is a secondary development finding, not a claim of state-of-the-art performance or a basis for opening protected outcomes.
 
-A separately versioned [v2 successor protocol](docs/PROTOCOL_V2.md) is now
-frozen before execution. It replaces the ineffective distance gate with a
-training-only pseudo-element risk calibrator around a five-seed GPU CatBoost
-ensemble, adds corrected and strong baselines, and has an explicit development
-stop rule. V1 evidence remains immutable. V2 has no numerical results yet and
-does not authorize protected confirmation until its development admission rule
-passes.
+See the [v2 results report](docs/DEVELOPMENT_RESULTS_V2.md), [frozen v2 protocol](docs/PROTOCOL_V2.md), [canonical research state](RESEARCH_STATE.json), and [independent verification receipt](artifacts/development-v2-verification.json).
 
-## Reproduce
+SPARKING v1 remains preserved at commit `c04873557b522962833aafca3759caf6a3fa488b`, including its verified CPU development result and diagnostic failure analysis. V2 is an additive successor; it does not rewrite v1 evidence.
+
+## Reproduce the verified result
 
 ```bash
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv sync --extra dev
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking prepare
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run pytest -q
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking preflight
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking develop --run-id development-v1
+.venv/bin/python scripts/verify_successor_v2.py runs/kaggle-development-v2-r1
+MPLCONFIGDIR=/tmp/sparking-matplotlib .venv/bin/python scripts/analyze_successor_v2.py
 ```
 
-The confirmatory command is disabled until a development receipt is explicitly
-frozen into `protocols/confirmatory-v1.json`. No partial run is a scientific
-result. `sparking verify` checks every retained file against its manifest.
+The exact private hosted archive, checksum, environment freeze, source verification, and kernel log are retained in `artifacts/kaggle-development-v2-r1-output/`. The manifest-bound raw predictions and pseudo-calibration arrays are retained in `runs/kaggle-development-v2-r1/`.
 
 ## Claim boundary
 
-This repository predicts one experimental property from composition only. It
-does not establish crystal structure, thermodynamic stability, synthesizability,
-safety, novelty, device performance, or experimental discovery.
-
+This repository predicts one experimental property from composition only. The verified v2 result supports a negative development conclusion about one frozen gating mechanism on Cu/Ag/B. It does not establish crystal structure, thermodynamic stability, synthesizability, safety, novelty, device performance, experimental discovery, protected-element generalization, or official Matbench-fold preservation.

@@ -3,399 +3,372 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,booktabs,array,microtype,graphicx,tabularx}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning}
 \usepackage[round]{natbib}
 \usepackage[colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+\setlength{\emergencystretch}{2em}
 
-\title{SPARKING: A Frozen Study of Support-Gated Residual Learning\\for Composition-Only Band-Gap Prediction}
+\title{When Training-Only Risk Calibration Does Not Improve\\Element-Shift Prediction: A Frozen Negative Study}
 \author{Ryan Gomez}
-\date{October 20, 2026}
+\date{October 21, 2026}
 
 \newcommand{\method}{\textsc{Sparking}}
+\newcommand{\dataset}{\texttt{matbench\_expt\_gap}}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Composition-only materials models are inexpensive screening surrogates, but
-their accuracy under chemical support shift is easy to overstate. We specify
-\method{}, a small mechanism that decomposes a prediction into a regularized
-linear term and a nonlinear residual correction, then attenuates only the
-residual as standardized nearest-neighbour distance exceeds a training-derived
-support threshold. The central, falsifiable hypothesis is that this gate lowers
-leave-one-element-out mean absolute error (MAE) relative to an otherwise
-identical ungated residual model without degrading official Matbench MAE by
-more than 0.02 eV. Development is limited to eight gates over Cu, Ag, and B;
-Li, Zn, Ga, Se, and Te are protected confirmatory scenarios. The implemented
-system hash-binds the 4,604-row Matbench experimental-gap artifact and official
-folds, enforces a 512 MiB/no-rising-pageout resource contract, retains failed
-runs, and provides a compute-matched mechanism-off control, strong simple
-baselines, marginal split-conformal intervals, and claim-evidence manifests.
-The first local development attempt was validly refused before fitting because
-pageouts increased by eight during featurization; therefore no predictive or
-positive scientific result is claimed in this pre-confirmatory execution
-record. The study becomes outcome-bearing only after a hosted development run,
-a separate frozen confirmatory protocol, and protected execution.
+Composition-only materials models can interpolate accurately while failing under
+chemical support shift. We tested whether a training-only risk model could
+identify when a five-seed CatBoost ensemble should be shrunk toward ridge
+regression. The protocol was frozen before outcome-bearing execution. Within
+each of three outer element exclusions (Cu, Ag, and B), eleven pseudo-element
+exclusions generated harm labels without using outer-test targets. Four gate
+temperatures were evaluated under a fixed selection rule. A private Kaggle run
+completed 180 CatBoost GPU fits on dual Tesla T4 accelerators. Source and output
+archives were hash-verified, all 18 hosted tests passed, and an independent
+local verifier recomputed 156 metrics from retained predictions. The selected
+gate ($T=0.40$ eV) achieved element-macro mean absolute error (MAE) of
+0.779667 eV versus 0.779536 eV for the identical ungated ensemble, an
+improvement of $-0.000130$ eV. The frozen admission criterion required an
+improvement greater than 0.020 eV. The gate improved Ag and B by less than
+0.001 eV each and worsened Cu by 0.001921 eV. Extra Trees was the strongest
+control at 0.728675 eV macro MAE. A clearly labeled post hoc row-cluster
+bootstrap gave a 95\% percentile interval of $[-0.001964,0.001428]$ eV for the
+selected-gate effect. The scientific disposition is
+\texttt{DEVELOPMENT\_\allowbreak{}NOT\_\allowbreak{}SUPPORTED}; protected Li, Zn, Ga, Se, and Te outcomes
+were not opened. The result shows that moderate pseudo-shift harm ranking did
+not translate into a practically useful adaptive gate under this frozen design.
 \end{abstract}
 
 \section{Introduction}
-Fast property surrogates can reduce the cost of triaging large materials spaces,
-but a composition alone omits crystal structure, defects, processing, and
-measurement context. Matbench formalized reproducible materials-learning tasks
-and official folds \citep{dunn2020matbench}. Hand-engineered composition
-descriptors \citep{ward2016magpie}, stoichiometric graph models such as Roost
-\citep{goodall2020roost}, and attention models such as CrabNet
-\citep{wang2021crabnet} show that useful prediction is possible without a known
-structure. That utility does not imply reliable extrapolation.
+Composition-only property models are inexpensive screening surrogates, but they
+omit crystal structure, defects, processing, and measurement context. Matbench
+made several materials-learning tasks and splits reproducible
+\citep{dunn2020matbench}; Magpie descriptors provide a widely used
+composition-level representation \citep{ward2016magpie}. Learned composition
+models such as Roost and CrabNet demonstrate substantial predictive utility
+without structural input \citep{goodall2020roost,wang2021crabnet}. That utility
+does not by itself establish reliability when a chemical element is absent from
+training.
 
-Random or redundant splits can reward interpolation between similar materials.
-Materials-domain analyses have consequently emphasized domains of applicability
-\citep{sutton2020domains}, and explicit redundancy control can materially lower
-reported performance while better exposing extrapolative difficulty
-\citep{li2024mdhit}. The practical failure is not merely that a query is far
-from training data; it is that a flexible nonlinear correction can remain large
-when its empirical support is weak.
+Domains-of-applicability studies document the degradation that can accompany
+support shift \citep{sutton2020domains}, while redundancy-controlled evaluation
+can expose optimistic interpolation estimates \citep{li2024mdhit}. A tempting
+response is to estimate predictive risk from the training data and intervene
+when risk is high. The difficult question is whether the estimated risk
+transfers to the particular shift encountered at deployment.
 
-We study a deliberately minimal response. A ridge component supplies a smooth,
-regularized extrapolator over elemental fractions and periodic moments. A
-nonlinear learner fits only the ridge residual. A deterministic support gate is
-one inside a training-derived distance threshold and decays outside it. This
-design does not assert that linear extrapolation is physically correct. It tests
-the narrower proposition that withdrawing an unsupported nonlinear correction
-is safer than applying it unchanged.
+We evaluate a narrow mechanism. A strong direct ensemble and a regularized
+linear model are fit to the same target-independent descriptors. Pseudo-element
+exclusions inside the outer training data teach a separate model to predict when
+the direct ensemble has larger absolute error than ridge. Positive predicted
+harm exponentially shrinks the direct prediction toward ridge. The study asks
+whether this adaptive gate improves leave-one-element-out MAE relative to the
+identical ungated ensemble.
 
-The contribution is threefold: (i) the precise support-gated residual mechanism;
-(ii) a compute-matched mechanism-off comparison under preregistered element
-exclusions and official folds; and (iii) an evidence system that prevents
-partial, resource-refused, or unverified runs from becoming positive claims.
+The experiment was prospectively frozen after an earlier distance-gated version
+showed negligible development benefit and diagnostic weaknesses. The successor
+changed the representation, direct model, and gate, so it received a new
+protocol and source identity. Its protected elements remained sealed behind a
+conjunctive development rule. This report presents the complete verified
+negative development result rather than continuing to search until a positive
+gate appears.
 
-\section{Related Work and Novelty Boundary}
-Magpie-style models summarize stoichiometry with elemental statistics and train
-general-purpose regressors \citep{ward2016magpie}. Roost instead treats a
-composition as a weighted element graph and learns contextual representations
-\citep{goodall2020roost}. CrabNet uses self-attention over element-derived
-representations and predicts element contributions and uncertainty
-\citep{wang2021crabnet}. These models motivate composition-only learning but are
-not reproduced here as outcome-bearing controls: the central question concerns
-the incremental gate under strict parameter and compute matching, not a claim
-of state-of-the-art IID accuracy.
+\section{Methods}
+\subsection{Dataset, representation, and outer shifts}
+We use Matbench v0.1 \dataset{}, containing 4,604 formula--band-gap rows
+\citep{dunn2020matbench}. The accepted compressed artifact has SHA-256
+\texttt{783e7d14\allowbreak{}61eb83b0\allowbreak{}0b2f2942\allowbreak{}da4b95fd\allowbreak{}a5e58a0d\allowbreak{}1ae26b58\allowbreak{}1c24cf8a\allowbreak{}82ca75b2}.
+The 270-dimensional target-independent representation concatenates 132 fixed
+fraction and periodic-summary features with Magpie elemental-property statistics
+and six stoichiometric norms. Missing values are imputed using the outer
+training set only.
 
-Domain-of-applicability methods characterize regions in which model errors are
-lower \citep{sutton2020domains}. MD-HIT constructs redundancy-controlled
-datasets and demonstrates that performance commonly deteriorates as similarity
-to training samples falls \citep{li2024mdhit}. \method{} differs by using
-training-only distance to intervene on a residual correction, while evaluating
-that intervention against the same residual model with the intervention off.
-Nearest-neighbour distance, residual learning, ridge regression, gradient
-boosting, and conformal prediction are not claimed as new. The novelty claim is
-restricted to this explicit composition-space mechanism and its frozen test.
+Development consists of three declared leave-one-element-out shifts. For element
+$E$, every row containing $E$ forms the test set and is excluded from training.
+The train/test counts are 4,214/390 for Cu, 4,408/196 for Ag, and 4,366/238 for
+B. The three test sets have 824 memberships over 821 unique Matbench row
+identifiers because a composition can contain more than one held-out element.
+Li, Zn, Ga, Se, and Te are protected and were not evaluated.
 
-Split conformal inference gives finite-sample marginal coverage under
-exchangeability \citep{lei2018conformal}; exact distribution-free conditional
-coverage is generally unavailable without assumptions \citep{barber2021limits}.
-Accordingly, our 90\% intervals are compatibility diagnostics on official outer
-folds, not guarantees under element shift.
+\subsection{Direct model and controls}
+The primary direct model is a five-seed CatBoost ensemble
+\citep{prokhorenkova2018catboost}. Each member uses 1,200 iterations, depth 8,
+learning rate 0.035, $\ell_2$ leaf regularization 5, random strength 0.5, border
+count 128, and Bayesian bootstrap temperature 1.0. Predictions are clipped only
+at zero and then averaged. The fixed seeds are 20261021 through 20261025.
 
-\section{Problem Formulation}
-Let a composition $c$ be a multiset of elements $e$ and positive stoichiometric
-counts $a_e$. Fractions are
+Controls are the training median; standardized ridge with internally selected
+regularization; direct squared-error histogram gradient boosting; a three-seed,
+700-tree Extra Trees ensemble \citep{geurts2006extremely}; one CatBoost seed;
+the five-seed CatBoost ensemble; and constant convex blends with direct weights
+0.25, 0.50, and 0.75. Scikit-learn supplies ridge, histogram boosting, and Extra
+Trees \citep{pedregosa2011scikit}. These controls separate adaptive gating from
+ordinary shrinkage and from model-family choice.
+
+\subsection{Training-only pseudo-exclusion calibration}
+For each outer element, the gate is trained entirely within its outer training
+set. Eleven declared pseudo elements---Na, Mg, Al, Si, P, Ca, Fe, K, Ti, Mn,
+and Ni---are excluded one at a time. Ridge and the full five-seed CatBoost
+ensemble predict each pseudo holdout. For row $i$, the harm target is
 \begin{equation}
- f_e(c)=\frac{a_e}{\sum_j a_j}, \qquad \sum_e f_e(c)=1.
+ h_i = |y_i-d_i|-|y_i-r_i|,
 \end{equation}
-The target $y\in\mathbb{R}_{\ge 0}$ is experimental band gap in eV. A model
-$h:\mathcal{C}\rightarrow\mathbb{R}_{\ge0}$ is trained on a set
-$D=\{(c_i,y_i)\}_{i=1}^n$. The principal loss is absolute error
-$\ell(y,h(c))=|y-h(c)|$.
+where $d_i$ is the direct-ensemble prediction and $r_i$ is the ridge prediction.
+Positive harm means ridge had smaller absolute error.
 
-For an element $E$, the leave-one-element-out training set contains every row
-whose composition excludes $E$; the test set contains every row including $E$.
-The primary estimand for element $E$ is the paired MAE improvement
-\begin{equation}
- \Delta_E = \operatorname{MAE}(h_{\mathrm{ungated}};E)
- - \operatorname{MAE}(h_{\method};E).
-\end{equation}
-The confirmatory primary endpoint is $\bar\Delta$, the unweighted mean over the
-five protected elements. The compatibility estimand is the pooled official
-five-fold MAE difference. These estimands do not identify a causal effect in a
-materials population.
+A histogram gradient-boosting regressor predicts harm from nine diagnostics.
+They are the direct mean, ensemble standard deviation, ridge prediction,
+direct--ridge disagreement, nearest-training distance, unseen-element fraction,
+unseen-element count, composition element count, and fraction entropy. Each
+pseudo element has equal total weight. The pseudo-calibration sets contain 2,069 rows for the Cu
+outer model, 2,123 for Ag, and 2,105 for B.
 
-\section{Model}
-\subsection{Fixed composition representation}
-The descriptor $x(c)\in\mathbb{R}^{132}$ concatenates 118 elemental fractions
-with 14 global features: number of elements; fraction entropy, minimum, maximum,
-and $\ell_2$ norm; weighted mean and standard deviation of atomic number,
-period, and group; minimum and maximum atomic number; and group range. Formulae
-are parsed with nested-parenthesis and fractional-stoichiometry support. Invalid
-syntax is rejected rather than repaired.
+Given predicted harm $\widehat h(x)$ and temperature $T$, the direct-model
+weight and gated prediction are
+\begin{align}
+ w_T(x) &= \exp\!\left[-\frac{\max\{\widehat h(x),0\}}{T}\right],\\
+ \widehat y_T(x) &= \max\{0,\ r(x)+w_T(x)[d(x)-r(x)]\}.
+\end{align}
+Thus nonpositive predicted harm preserves CatBoost, while positive predicted
+harm shrinks continuously toward ridge. The complete temperature grid is
+$T\in\{0.05,0.10,0.20,0.40\}$ eV.
 
-\subsection{Linear component}
-Each feature is standardized with training mean $\mu_j$ and scale $s_j$. Ridge
-selects $\lambda$ from 17 logarithmically spaced values in $[10^{-4},10^4]$ by
-its internal generalized cross-validation criterion and minimizes
+\subsection{Frozen selection and stopping rule}
+The primary metric is the unweighted mean of Cu, Ag, and B MAE. The numerical
+minimum is identified first; candidates within 0.005 eV choose the largest
+$T$, the least aggressive shrinkage. Protected confirmation is admitted only if
+all of the following hold:
+\begin{enumerate}
+  \item selected-gate macro MAE improves over the identical ungated CatBoost
+        ensemble by more than 0.020 eV;
+  \item at least two of three development elements improve;
+  \item the gate is active on 1--90\% of every element holdout;
+  \item CatBoost predictions are nonconstant, every pseudo exclusion completes,
+        and all retained evidence is finite and manifest-valid.
+\end{enumerate}
+The rule is conjunctive. Failure terminates v2 without opening protected
+outcomes. The primary effect is
 \begin{equation}
- \hat\beta_\lambda = \arg\min_\beta
- \sum_{i=1}^{n}(y_i-\beta_0-z_i^\top\beta)^2+\lambda\|\beta\|_2^2,
- \quad z_{ij}=\frac{x_{ij}-\mu_j}{s_j}.
+ \Delta = \frac{1}{3}\sum_E
+ \left[\operatorname{MAE}_{E}(d)-\operatorname{MAE}_{E}(\widehat y_T)\right],
+ \quad E\in\{\mathrm{Cu},\mathrm{Ag},\mathrm{B}\}.
 \end{equation}
-Its prediction is $b(x)=\beta_0+z^\top\hat\beta$.
+Positive values favor the gate.
 
-\subsection{Nonlinear residual}
-Training residuals are $r_i=y_i-b(x_i)$. A histogram gradient-boosting
-regressor $g(x)$ minimizes absolute-error loss using 180 boosting iterations,
-learning rate 0.055, at most 31 leaves per tree, minimum leaf size 12, and
-$\ell_2$ regularization 0.1. Early stopping is disabled and the random seed is
-20261020. The mechanism-off control is
-\begin{equation}
- h_{\mathrm{ungated}}(x)=\max\{0,b(x)+g(x)\}.
-\end{equation}
+\subsection{Evidence and computation}
+The frozen source commit is
+\texttt{5a56bb5d\allowbreak{}c9761973\allowbreak{}0f0fbc65\allowbreak{}44490cdc\allowbreak{}69f2c109}; the protocol SHA-256 is
+\texttt{c4aa306c\allowbreak{}72592380\allowbreak{}75db18ce\allowbreak{}d236e99d\allowbreak{}59101d57\allowbreak{}321e733e\allowbreak{}84c458f2\allowbreak{}b7237c2e}.
+The private Kaggle kernel ran Python 3.13.15, CatBoost 1.2.10, matminer 0.10.1,
+and NumPy 2.5.4 on two Tesla T4 GPUs with 15,360 MiB each. The design requires
+60 CatBoost fits per outer element: 11 pseudo exclusions times five seeds plus
+five outer fits, for 180 fits total.
 
-\subsection{Training-support gate}
-A second training-fitted standardizer maps descriptors to $u(x)$. Let
-$d_i$ be the Euclidean distance from training point $i$ to its nearest other
-training point, and let $\tau_q$ be the empirical $q$-quantile of $\{d_i\}$.
-For a query, $d(x)=\min_i\|u(x)-u(x_i)\|_2$. The gate is
-\begin{equation}
- w_{q,p}(x)=\left(\frac{\tau_q}{\max\{d(x),\tau_q\}}\right)^p,
-\end{equation}
-and the final prediction is
-\begin{equation}
- h_{q,p}(x)=\max\{0,b(x)+w_{q,p}(x)g(x)\}.
-\end{equation}
-Thus $w=1$ for in-threshold queries, $0<w<1$ outside, and no additional
-predictive parameter is learned by the gate.
+The run retained member predictions, pseudo-calibration rows, gate weights,
+per-example predictions, aggregate metrics, feature schema, environment,
+resource observations, GPU identities, and a content manifest. The published
+archive checksum was verified before safe extraction. A separate local verifier
+then checked all files and recomputed every reported metric from the arrays.
+
+\subsection{Post hoc descriptive uncertainty}
+The frozen gate decision uses the practical-effect rule above. After that
+decision, we computed a descriptive 20,000-resample percentile bootstrap with
+seed 20261021. The sampling unit is the unique Matbench row identifier across
+all three holdouts; resampling a row therefore keeps its memberships coupled.
+This analysis was not prospectively specified, and the three development
+elements are selected scenarios rather than a random population of elements.
+It is reported as a sensitivity description, not as a new decision rule.
+
+\section{Results}
+\subsection{Primary development decision}
+All 180 GPU fits completed in 6,845.90 seconds. Peak host resident memory was
+914.55 MiB and the pageout delta was zero. All 18 hosted tests passed. The gate
+was active on 18.7\% of Cu, 13.3\% of Ag, and 19.3\% of B, satisfying the
+nondegeneracy rule. CatBoost predictions were nonconstant, and all 33 declared
+pseudo exclusions completed.
+
+The selected $T=0.40$ gate achieved macro MAE 0.779667 eV; the ungated CatBoost
+ensemble achieved 0.779536 eV. Hence $\Delta=-0.000130$ eV. Per-element effects
+were $-0.001921$ eV for Cu, $+0.000967$ eV for Ag, and $+0.000563$ eV for B.
+The sign-count condition passed, but the required $>0.020$ eV practical effect
+failed. The prospectively frozen disposition is therefore
+\texttt{DEVELOPMENT\_\allowbreak{}NOT\_\allowbreak{}SUPPORTED}.
+
+The numerical minimum was $T=0.05$ at 0.776451 eV, a 0.003086 eV improvement
+over CatBoost. It was within 0.005 eV of the $T=0.40$ candidate, so the tie rule
+selected $T=0.40$. Neither candidate approached the admission threshold.
+
+\begin{table}[t]
+\centering
+\caption{Development MAE (eV). Macro is the unweighted mean across elements.
+The Extra Trees result is a secondary control; the frozen hypothesis concerns
+the selected risk gate versus the identical CatBoost ensemble.}
+\label{tab:development}
+\resizebox{\linewidth}{!}{\input{tables/development-v2-results.tex}}
+\end{table}
 
 \begin{figure}[t]
 \centering
-\resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[
- node distance=8mm and 10mm,
- box/.style={draw,rounded corners,align=center,minimum height=8mm,minimum width=24mm},
- arrow/.style={-{Latex[length=2mm]},thick}
-]
-\node[box] (formula) {formula $c$};
-\node[box,right=of formula] (feat) {fixed $x(c)$\\132 features};
-\node[box,above right=of feat] (ridge) {ridge\\$b(x)$};
-\node[box,right=of feat] (distance) {support distance\\$d(x)$};
-\node[box,below right=of feat] (residual) {residual HGB\\$g(x)$};
-\node[box,right=of distance] (gate) {gate\\$w_{q,p}(x)$};
-\node[box,below right=of gate] (output) {$\max(0,b+wg)$};
-\draw[arrow] (formula)--(feat);
-\draw[arrow] (feat)--(ridge);
-\draw[arrow] (feat)--(distance);
-\draw[arrow] (feat)--(residual);
-\draw[arrow] (distance)--(gate);
-\draw[arrow] (ridge)--(output);
-\draw[arrow] (residual)--(output);
-\draw[arrow] (gate)--(output);
-\end{tikzpicture}
-}
-\caption{The gate acts only on the nonlinear residual. The ungated control fixes
-$w=1$ while retaining the same fitted ridge and residual models.}
-\label{fig:architecture}
+\includegraphics[width=\linewidth]{figures/development-v2-results.pdf}
+\caption{Left: development macro MAE for principal models (axis begins at
+0.70 eV). Right: selected-gate paired MAE improvements by element; positive
+values favor the gate. The dashed line is the 0.020 eV macro admission
+threshold, shown as a scale reference.}
+\label{fig:development}
 \end{figure}
 
-\subsection{Complexity and failure behavior}
-For $n$ rows, $d=132$ features, and $T$ boosting iterations, ridge fitting is
-bounded by the library solver, histogram boosting is approximately
-$O(Tnd)$ aside from tree overhead, and brute-force support fitting/querying is
-$O(n^2d)$/$O(nmd)$ for $m$ queries at this dataset scale. Any non-finite
-feature, distance, or prediction is fatal. Model outputs are clipped only at the
-physical lower bound zero; no upper target bound is imposed.
+\subsection{Controls and risk transfer}
+Extra Trees was the best evaluated control at 0.728675 eV macro MAE, improving
+by 0.050862 eV relative to the CatBoost ensemble. One CatBoost seed
+(0.772015 eV) and direct histogram boosting (0.772843 eV) also outperformed the
+five-seed CatBoost mean. These are development comparisons under the same three
+shifts; they do not establish a leaderboard claim or authorize protected
+evaluation.
 
-\begin{algorithm}[t]
-\caption{Frozen development selection}
-\begin{algorithmic}[1]
-\For{$E\in\{\mathrm{Cu},\mathrm{Ag},\mathrm{B}\}$}
-  \State exclude every composition containing $E$ from training
-  \State fit ridge and one residual learner
-  \For{$q\in\{0.80,0.90,0.95,0.99\}$ and $p\in\{1,2\}$}
-    \State evaluate $h_{q,p}$ on all compositions containing $E$
-  \EndFor
-  \State evaluate median, ridge, direct HGB, and ungated residual controls
-\EndFor
-\State select the minimum macro-MAE gate
-\State for candidates within 0.002 eV, choose lower $p$, then higher $q$
-\State emit a hash-verified freeze candidate; do not open confirmation
-\end{algorithmic}
-\end{algorithm}
-
-\section{Experimental Methodology}
-\subsection{Dataset and integrity}
-We use Matbench v0.1 \texttt{matbench\_expt\_gap}, 4,604 compositions with
-experimental band gaps from 0.0 to 11.7 eV. The compressed artifact is accepted
-only at SHA-256
-{\footnotesize\ttfamily 783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2}.
-Local scale/order canonicalization yields 4,601 unique compositions. The
-official five-fold split is regenerated with the declared Matbench seed and
-must match a separately retained canonical digest. Official folds contain
-known canonical overlap in folds 0--3 and are not treated as OOD evidence.
-
-\subsection{Controls and endpoints}
-Controls are a training-target median, ridge, a direct HGB model, and the
-compute-matched ungated residual. Development sees Cu, Ag, and B only. The
-protected confirmatory elements are Li, Zn, Ga, Se, and Te. Confirmation is
-supported only if $\bar\Delta>0.01$ eV, at least four of five element effects
-are positive, and official pooled MAE is no more than 0.02 eV worse than the
-ungated control. We report per-element MAE, RMSE, median absolute error, bias,
-gate statistics, runtime, peak RSS, and pageouts.
-
-\subsection{Uncertainty and statistics}
-For each official fold, a separate 80/20 split of the outer-training rows forms
-proper training and calibration sets. If calibration absolute residuals sorted
-as $s_{(1)}\le\cdots\le s_{(n_c)}$, the 90\% split-conformal radius is
-\begin{equation}
- q_{0.9}=s_{(k)},\qquad k=\min\{n_c,\lceil(n_c+1)0.9\rceil\}.
-\end{equation}
-Intervals are $[\max(0,\hat y-q_{0.9}),\hat y+q_{0.9}]$. We report observed
-coverage, mean width, and interval score. These are marginal IID diagnostics.
-
-The five element improvements are reported individually, with a 10,000-resample
-bootstrap over elements and an exact one-sided sign-permutation statistic. The
-small, overlapping scenario set precludes strong asymptotic claims; the
-practical-effect and sign-count rule is primary.
-
-\subsection{Resource, provenance, and stopping rules}
-Each run must begin and remain below 512 MiB peak process RSS, with no increase
-in macOS \texttt{Pageouts} or Linux \texttt{pswpout}. Every phase is checked.
-A refusal writes a failure trace, resource observations, receipt, and a
-SHA-256 manifest, then stops without weakening the gate. Run IDs are immutable.
-The development budget ends after eight gates; protected confirmation runs once
-under a separately frozen protocol.
-
-\section{Implementation Verification}
-The package exposes \texttt{prepare}, \texttt{preflight}, \texttt{develop},
-\texttt{confirm}, and \texttt{verify}. Formula tests cover nested groups,
-fractional stoichiometry, scaling invariance, and malformed input. Mathematical
-tests hand-check regression and interval metrics. Split tests regenerate all
-fold sizes, prove train/test disjointness and completeness, and match the
-canonical split digest. Model tests show that in-support gates equal one,
-far-out gates decay, and the mechanism-off prediction equals $b+g$. Manifest
-tests substitute and add files to ensure verification fails closed.
-
-The isolated Python 3.12 environment resolves 29 packages. Twelve tests pass;
-the source distribution and wheel build successfully. This establishes
-software behavior, not scientific performance.
-
-\section{Execution Results}
-Table~\ref{tab:execution} is the complete outcome-bearing record at this stage.
-No fold, element scenario, predictive metric, or interval result exists.
+The harm model's Spearman correlation on pseudo-calibration rows was 0.666 for
+Cu, 0.656 for Ag, and 0.707 for B. On the actual outer holdouts, descriptive
+risk--harm correlations fell to 0.309, 0.527, and 0.240. The gate therefore
+learned nontrivial ordering within pseudo shifts, but that ordering transferred
+weakly and inconsistently to the declared outer shifts.
 
 \begin{table}[h]
 \centering
-\caption{Execution receipts before hosted development.}
-\label{tab:execution}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}X}
+\caption{Risk-calibration diagnostics. Outer correlations are descriptive
+because outer targets participate in evaluation.}
+\label{tab:risk}
+\begin{tabular}{lrrr}
 \toprule
-Run or gate & Status & Verified observation \\
+Outer element & Pseudo rows & Pseudo Spearman & Outer Spearman \\
 \midrule
-Dataset preparation & PASS & 4,604 rows; source and official-split digests match \\
-Software suite & PASS & 12 tests; package and wheel build \\
-Local preflight & ADMITTED & 124.5 MiB peak RSS; pageout delta 0 \\
-Local development v1-r1 & FAILED & retained after features; 129.3 MiB peak RSS; pageouts +8 \\
-Hosted development & NOT EXECUTED & explicit source-export authorization required \\
-Confirmatory study & NOT AUTHORIZED & no development freeze candidate exists \\
+Cu & 2,069 & 0.666 & 0.309 \\
+Ag & 2,123 & 0.656 & 0.527 \\
+B  & 2,105 & 0.707 & 0.240 \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \end{table}
 
-The local failure occurred before fitting any model. It cannot support or refute
-the mechanism, and it supplies no basis for selecting a gate. The evidence does
-support a narrower engineering conclusion: the feature path fits well below
-the RSS ceiling, but this macOS host does not satisfy the no-rising-pageout
-condition even for the bounded preparation phase. This reproduces the
-predecessor's resource limitation rather than curing it by relaxing the rule.
+\subsection{Post hoc uncertainty description}
+The row-cluster bootstrap interval for the selected-gate macro improvement was
+$[-0.001964,0.001428]$ eV. The fraction of bootstrap replicates above zero was
+0.4596; none of 20,000 exceeded 0.020 eV. Paired-row intervals were
+$[-0.006702,0.001790]$ eV for Cu, $[-0.001664,0.003509]$ eV for Ag, and
+$[-0.000391,0.001447]$ eV for B. These descriptive intervals agree with the
+primary conclusion that any effect under this development design is tiny
+relative to the declared practical threshold.
 
-\section{Failure Analysis and Threats to Validity}
-\paragraph{Representation.} Atomic-number, period, and group moments are coarse;
-distance in this space is neither chemical equivalence nor an error probability.
-\paragraph{Identifiability.} Composition-only inputs conflate polymorphs and
-experimental contexts, imposing irreducible ambiguity.
-\paragraph{Selection.} Eight gate candidates may overfit three development
-elements; confirmation is therefore separated and immutable.
-\paragraph{Dependence.} Element test sets overlap, so five effects are not five
-independent samples from a well-defined population.
-\paragraph{Benchmark leakage.} Canonical duplicates across official folds can
-optimistically bias IID compatibility metrics.
-\paragraph{Baselines.} The controls isolate the gate but do not establish
-state-of-the-art performance against every deep composition model. A positive
-mechanism result would be an ablation result, not an overall leaderboard claim.
-\paragraph{Conformal scope.} Marginal coverage relies on exchangeability and is
-not promised under the protected element shift.
+\subsection{Independent verification}
+Kaggle reported the kernel terminal state as complete. The source roundtrip
+matched 40 files with no missing, extra, or changed entries. The output archive
+SHA-256 was
+\texttt{cf8aeceb\allowbreak{}f1dec60c\allowbreak{}cfb48445\allowbreak{}b25a891b\allowbreak{}75b2feff\allowbreak{}7fb37cf0\allowbreak{}e08774fb\allowbreak{}deeb420a}.
+Its 18 members had no absolute paths, traversal components, links, or device
+entries. All 17 extracted run files matched the direct Kaggle download
+byte-for-byte; their retained tree digest was
+\texttt{43eb835f\allowbreak{}5fe7eef6\allowbreak{}82502fee\allowbreak{}15c3e6fd\allowbreak{}33265873\allowbreak{}13fd2a93\allowbreak{}a6a5fe39\allowbreak{}8cf32c5c}.
+The independent verifier found a valid manifest and reproduced 156 metric
+comparisons. Both hosted and local verification confirmed that protected and
+official-fold outcomes were absent.
 
 \section{Discussion}
-The study design makes a narrow improvement hard to fake. Capacity and training
-compute are matched because the gate operates after the same ridge and residual
-models are fitted. IID and shifted endpoints are separated. The development
-grid and tie-break are fixed. A valid negative outcome would show that support
-distance does not reliably identify harmful residual corrections in this
-representation; a mixed outcome would motivate studying which chemical regimes
-make the linear fallback safer, but only in a separately versioned successor.
+The result separates risk ranking from useful intervention. Pseudo-exclusion
+correlations of roughly 0.66--0.71 show that the harm model captured structure
+in its constructed calibration set. The much smaller outer correlations and
+near-zero MAE effects show that this structure did not support a practically
+valuable gate on Cu, Ag, and B. A risk score can be statistically ordered yet
+still fail to improve the downstream decision.
 
-Even a supported result would not make \method{} a materials-discovery engine.
-It would establish that one conservative intervention improved one
-composition-only extrapolation protocol while preserving one public benchmark
-within tolerance. Candidate stability, synthesis, novelty, and utility would
-remain untested.
+The constant-blend controls also matter. They performed worse than CatBoost,
+which means indiscriminate shrinkage toward ridge was harmful. The adaptive gate
+avoided most of that damage, but avoidance is not improvement. Meanwhile Extra
+Trees substantially outperformed the CatBoost ensemble on these development
+shifts, suggesting that model-family robustness was more consequential than the
+proposed risk correction in this experiment.
+
+The pseudo-exclusion data include extreme ridge failures, especially for Fe.
+Because pseudo elements received equal total weight, those retained cases may
+have shaped the learned harm surface. Removing, clipping, or reweighting them
+after observing the result would be a new hypothesis. Such work must use a new
+versioned protocol and cannot reinterpret v2 as successful.
+
+\section{Limitations and Claim Boundary}
+Only three development elements were evaluated, and their test sets overlap.
+They are fixed stress scenarios, not a random sample of chemical elements, so
+neither the bootstrap nor the sign count supports population-wide inference.
+Composition-only descriptors cannot resolve polymorphs, defects, processing,
+or measurement context. The public dataset itself may contain redundancy, and
+leave-one-element-out shift does not represent every deployment shift.
+
+GPU boosting can vary with floating-point reduction order. We retained all five
+member predictions and report the executed ensemble rather than claiming
+byte-identical retraining. Hyperparameters were fixed and no protected outcome
+was used, but selecting among four temperatures on three outer scenarios can
+still overfit development. The admission threshold was intended to prevent a
+small selected fluctuation from reaching confirmation.
+
+The result supports one bounded conclusion: the frozen v2 risk gate did not
+justify protected confirmation on Cu/Ag/B. It does not prove that risk gating is
+universally ineffective, that Extra Trees is state of the art, or that any model
+identifies stable, synthesizable, safe, novel, or useful materials. No v2 claim
+is available about official Matbench-fold preservation or the protected Li, Zn,
+Ga, Se, and Te shifts.
 
 \section{Conclusion}
-We have specified and implemented a fully matched test of support-gated residual
-learning for experimental band gaps. The data, splits, model, development
-budget, protected elements, statistical rules, and failure behavior are frozen.
-Software and data-integrity gates pass, while the first numerical attempt was
-resource-refused before model fitting. Consequently, the scientifically correct
-current disposition is \texttt{NOT\_EVALUATED}, not a favorable result. Hosted
-development, confirmatory freezing, and one protected execution are the exact
-remaining steps before the central question becomes answerable.
+A fully executed, hash-verified GPU experiment found no practically meaningful
+benefit from training-only risk-gated shrinkage of a CatBoost ensemble. The
+selected gate slightly worsened macro MAE, and even the numerically best gate
+fell far below the prospectively frozen improvement threshold. The correct
+scientific action is to retain the negative result and stop before protected
+confirmation. This outcome narrows future work toward better shift proxies,
+robust treatment of pathological pseudo exclusions, and model-family choices,
+all under separately versioned protocols.
 
-\section*{Reproducibility Statement}
-The repository contains the canonical research state, machine-readable protocol,
-dataset and model cards, pinned lockfile, exact source and split digests, test
-suite, package build configuration, hosted runner, failed local receipt, and
-artifact verifier. A hosted run must emit its environment, source revision,
-resource trace, raw per-condition metrics, model checkpoints, receipt, and file
-manifest. Numerical manuscript text may be regenerated only from a successful,
-manifest-valid confirmatory bundle.
+\section*{Reproducibility and Artifact Statement}
+The retained package contains the frozen protocol; exact source commit and
+archive digests; raw outer predictions; five CatBoost members per element;
+pseudo-calibration arrays; per-example risk features and gate weights; GPU
+admission and postflight receipts; environment freeze; resource trace; kernel
+log; aggregate results; and a manifest. The private Kaggle output was downloaded
+from kernel version 1 and independently verified locally. The deterministic
+secondary analysis regenerates Table~\ref{tab:development},
+Figure~\ref{fig:development}, and the post hoc uncertainty receipt. At the time
+of this report, the hosted kernel and dataset are private; the retained local
+artifacts are the review record and are not described as independently public.
+
+\section*{Data and Ethics Statement}
+The study uses the previously published Matbench experimental-gap benchmark and
+contains no human participants or personal data. It makes no recommendation to
+synthesize or deploy a material. Experimental validation, safety assessment,
+and application-specific review remain necessary for any downstream use.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
 
 \appendix
-\section{Chronological Forward, Training, and Inference Processes}
-At training time the parser produces normalized fractions, the featurizer emits
-132 finite values, ridge fits the target, HGB fits ridge residuals, the support
-standardizer and neighbour index fit training descriptors, and the training
-leave-one-out distances determine $\tau_q$. At inference the same parser and
-feature order are used; ridge, residual, nearest distance, gate, and non-negative
-projection are applied in that order. No test label enters any transformation.
-
-\section{Claim-Evidence Matrix}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}X}
+\section{Frozen Identity and Decision Matrix}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.32\linewidth}X}
 \toprule
-Claim & Required artifact & Current state \\
+Item & Value \\
 \midrule
-Input and folds are pinned & dataset receipt and split digest & supported \\
-Implementation follows equations & tests and source & supported as software \\
-Gate improves element exclusion & protected element metrics & not evaluated \\
-Gate preserves official MAE & official OOF prediction table & not evaluated \\
-90\% intervals calibrate & fold interval metrics & not evaluated \\
-Method discovers materials & structural/experimental evidence & prohibited \\
+Study & \texttt{sparking-development-v2-}\allowbreak{}\texttt{risk-gated-gpu} \\
+Run & \texttt{kaggle-development-v2-r1} \\
+Source commit & {\footnotesize\texttt{5a56bb5d\allowbreak{}c9761973\allowbreak{}0f0fbc65\allowbreak{}44490cdc\allowbreak{}69f2c109}} \\
+Protocol digest & {\footnotesize\texttt{c4aa306c\allowbreak{}72592380\allowbreak{}75db18ce\allowbreak{}d236e99d\allowbreak{}59101d57\allowbreak{}321e733e\allowbreak{}84c458f2\allowbreak{}b7237c2e}} \\
+Selected model & risk gate, $T=0.40$ eV \\
+Primary effect & $-0.000130$ eV \\
+Required effect & $>0.020$ eV \\
+Disposition & \texttt{DEVELOPMENT\_\allowbreak{}NOT\_\allowbreak{}SUPPORTED} \\
+Protected outcomes & unopened \\
 \bottomrule
 \end{tabularx}
 
-\section{Exact Reproduction Commands}
+\section{Exact Verification Commands}
 \begin{verbatim}
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv sync --extra dev --locked
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking prepare
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run pytest -q
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking preflight
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking develop \
-  --run-id development-v1
-UV_CACHE_DIR=/tmp/sparking-uv-cache uv run sparking verify \
-  --run-id development-v1
+.venv/bin/python scripts/verify_successor_v2.py \
+  runs/kaggle-development-v2-r1
+MPLCONFIGDIR=/tmp/sparking-matplotlib \
+  .venv/bin/python scripts/analyze_successor_v2.py
 \end{verbatim}
 
 \end{document}
-

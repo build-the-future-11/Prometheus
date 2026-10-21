@@ -1,0 +1,14 @@
+{
+  "gpu_admitted": true,
+  "manifest": {
+    "changed": [],
+    "extra": [],
+    "missing": [],
+    "valid": true
+  },
+  "metric_comparisons": 156,
+  "protected_outcomes_observed": false,
+  "run_receipt_status": "SUCCESS",
+  "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "status": "VERIFIED"
+}

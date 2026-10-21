@@ -1,0 +1,9 @@
+{
+  "status": "VERIFIED",
+  "archive_sha256": "915dfeaba793c5e70f90a21cb6e9aaa24db57783dfb8d195812e3a2385e04582",
+  "git_commit": "5a56bb5dc97619730f0fbc6544490cdc69f2c109",
+  "file_count": 40,
+  "changed": [],
+  "extra": [],
+  "missing": []
+}

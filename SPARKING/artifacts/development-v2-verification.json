@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-21T19:48:40+05:30",
+  "kernel": "ryangomez010/sparking-development-v2-risk-gated-gpu",
+  "kernel_version": 1,
+  "kernel_status": "COMPLETE",
+  "private": true,
+  "run_id": "kaggle-development-v2-r1",
+  "source_verification": {
+    "status": "VERIFIED",
+    "archive_sha256": "915dfeaba793c5e70f90a21cb6e9aaa24db57783dfb8d195812e3a2385e04582",
+    "git_commit": "5a56bb5dc97619730f0fbc6544490cdc69f2c109",
+    "file_count": 40,
+    "changed": [],
+    "extra": [],
+    "missing": []
+  },
+  "hosted_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "output_archive": {
+    "path": "artifacts/kaggle-development-v2-r1-output/kaggle-development-v2-r1.tar.gz",
+    "sha256": "cf8aecebf1dec60ccfb48445b25a891b75b2feff7fb37cf0e08774fbdeeb420a",
+    "published_sha256": "cf8aecebf1dec60ccfb48445b25a891b75b2feff7fb37cf0e08774fbdeeb420a",
+    "checksum_matches": true,
+    "member_count": 18,
+    "unsafe_members": []
+  },
+  "download_crosscheck": {
+    "direct_file_count": 17,
+    "archive_file_count": 17,
+    "missing": [],
+    "extra": [],
+    "changed": [],
+    "tree_sha256": "43eb835f5fe7eef682502fee15c3e6fd3326587313fd2a93a6a5fe398cf32c5c"
+  },
+  "independent_local_verifier": {
+    "interpreter": ".venv/bin/python",
+    "manifest": {
+      "valid": true,
+      "missing": [],
+      "extra": [],
+      "changed": []
+    },
+    "metric_comparisons": 156,
+    "gpu_admitted": true,
+    "run_receipt_status": "SUCCESS",
+    "status": "VERIFIED"
+  },
+  "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "development_admission": {
+    "admission_rule": {
+      "maximum_active_fraction_each_element": 0.9,
+      "minimum_active_fraction_each_element": 0.01,
+      "minimum_improved_elements": 2,
+      "minimum_macro_mae_improvement_over_catboost_ev": 0.02,
+      "require_all_pseudo_exclusions": true,
+      "require_nonconstant_catboost_predictions": true
+    },
+    "all_pseudo_exclusions_complete": true,
+    "catboost_predictions_nonconstant": true,
+    "gate_activity_within_bounds": true,
+    "improved_element_count": 2,
+    "macro_mae_improvement_over_catboost_ev": -0.0001304374851031076,
+    "passed": false,
+    "per_element_improvement_ev": {
+      "Ag": 0.0009665842037214212,
+      "B": 0.000563021498044991,
+      "Cu": -0.001920918157075735
+    }
+  },
+  "protected_outcomes_observed": false
+}

@@ -1,0 +1,51 @@
+{
+  "elapsed_seconds": 6845.899633646011,
+  "resource_observations": [
+    {
+      "elapsed_seconds": 0.00010633468627929688,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 266.92578125,
+      "phase": "admission"
+    },
+    {
+      "elapsed_seconds": 9.575798511505127,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 306.9921875,
+      "phase": "features_complete"
+    },
+    {
+      "elapsed_seconds": 2282.0268437862396,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 843.79296875,
+      "phase": "outer_holdout_Cu_complete"
+    },
+    {
+      "elapsed_seconds": 4571.9668979644775,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 903.0546875,
+      "phase": "outer_holdout_Ag_complete"
+    },
+    {
+      "elapsed_seconds": 6845.861716270447,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 914.546875,
+      "phase": "outer_holdout_B_complete"
+    },
+    {
+      "elapsed_seconds": 6845.863018512726,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 914.546875,
+      "phase": "complete"
+    }
+  ],
+  "run_id": "kaggle-development-v2-r1",
+  "schema_version": 2,
+  "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "status": "SUCCESS"
+}

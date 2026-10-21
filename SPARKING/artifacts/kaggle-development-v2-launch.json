@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "recorded_at": "2026-10-21T19:05:27+05:30",
-  "status": "RUNNING",
+  "recorded_at": "2026-10-21T19:48:51+05:30",
+  "status": "COMPLETE_VERIFIED",
   "private": true,
   "kernel": "ryangomez010/sparking-development-v2-risk-gated-gpu",
   "dataset": "ryangomez010/sparking-source-v2-20261021",
@@ -17,7 +17,7 @@
   "last_submission_attempt_at": "2026-10-21T17:46:11.887+05:30",
   "retry_automation": {
     "id": "sparking-gpu-execution",
-    "status": "ACTIVE",
+    "status": "DELETED_AFTER_COMPLETION",
     "interval_minutes": 5,
     "target": "current_thread"
   },
@@ -44,13 +44,13 @@
       }
     ]
   },
-  "scientific_result": false,
+  "scientific_result": true,
   "protected_outcomes_observed": false,
   "last_pre_acceptance_error": "Maximum batch GPU session count of 2 reached.",
   "accepted_version": 1,
   "accepted_at": "2026-10-21T17:46:11.887+05:30",
   "kernel_url": "https://www.kaggle.com/code/ryangomez010/sparking-development-v2-risk-gated-gpu",
-  "execution_stage": "GPU_MODEL_TRAINING",
+  "execution_stage": "COMPLETE",
   "hosted_tests": {
     "passed": 18,
     "failed": 0
@@ -58,8 +58,37 @@
   "kaggle_last_run_time_utc": "2026-10-21T12:16:11.887Z",
   "completed_development_elements": [
     "Cu",
-    "Ag"
+    "Ag",
+    "B"
   ],
-  "current_development_element": "B",
-  "last_progress_at": "2026-10-21T19:05:27+05:30"
+  "current_development_element": null,
+  "last_progress_at": "2026-10-21T19:48:51+05:30",
+  "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "development_admission": {
+    "admission_rule": {
+      "maximum_active_fraction_each_element": 0.9,
+      "minimum_active_fraction_each_element": 0.01,
+      "minimum_improved_elements": 2,
+      "minimum_macro_mae_improvement_over_catboost_ev": 0.02,
+      "require_all_pseudo_exclusions": true,
+      "require_nonconstant_catboost_predictions": true
+    },
+    "all_pseudo_exclusions_complete": true,
+    "catboost_predictions_nonconstant": true,
+    "gate_activity_within_bounds": true,
+    "improved_element_count": 2,
+    "macro_mae_improvement_over_catboost_ev": -0.0001304374851031076,
+    "passed": false,
+    "per_element_improvement_ev": {
+      "Ag": 0.0009665842037214212,
+      "B": 0.000563021498044991,
+      "Cu": -0.001920918157075735
+    }
+  },
+  "kaggle_worker_status": "KernelWorkerStatus.COMPLETE",
+  "run_id": "kaggle-development-v2-r1",
+  "independent_verification": "artifacts/development-v2-verification.json",
+  "retained_run": "runs/kaggle-development-v2-r1",
+  "output_archive_sha256": "cf8aecebf1dec60ccfb48445b25a891b75b2feff7fb37cf0e08774fbdeeb420a",
+  "retained_tree_sha256": "43eb835f5fe7eef682502fee15c3e6fd3326587313fd2a93a6a5fe398cf32c5c"
 }

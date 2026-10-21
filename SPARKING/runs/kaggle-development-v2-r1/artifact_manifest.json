@@ -1,0 +1,85 @@
+{
+  "files": [
+    {
+      "bytes": 8044,
+      "path": "Ag-diagnostics.json",
+      "sha256": "2230f22a596eea4d3307db09dbd82c3aa15ab0c1d2399c122e9d77fb85f5c306"
+    },
+    {
+      "bytes": 51993,
+      "path": "Ag-predictions.npz",
+      "sha256": "5691b271c4d9b51131d37c78c51aa4941f0f1a2aa6109441e6f3a9d951fc847f"
+    },
+    {
+      "bytes": 119493,
+      "path": "Ag-pseudo-calibration.npz",
+      "sha256": "5f160fe096c6d96fd72c6fa99ea497c8079c12ad8ccafca29666e704af7b8649"
+    },
+    {
+      "bytes": 8031,
+      "path": "B-diagnostics.json",
+      "sha256": "1360294cda7e851fd19446511b5a26ca7b0d04a16bc8ca775e21afe67c64ba85"
+    },
+    {
+      "bytes": 62514,
+      "path": "B-predictions.npz",
+      "sha256": "12b2aebb68977a9e944e60fb2aa2d69bf7be038c94c89b52177e4424bb74d38e"
+    },
+    {
+      "bytes": 119233,
+      "path": "B-pseudo-calibration.npz",
+      "sha256": "8256c8ae8259bc72d85ced8516f942d0d680141d64295f6f817d7d26b8c12dee"
+    },
+    {
+      "bytes": 8047,
+      "path": "Cu-diagnostics.json",
+      "sha256": "041bb82b44cf6a2b8c41eb44321810713864e7104df2314670359bc98352b943"
+    },
+    {
+      "bytes": 99885,
+      "path": "Cu-predictions.npz",
+      "sha256": "654c732c8569b34a9495289a4575ceadca429589a2f8a44ff3e9008076dd4f7b"
+    },
+    {
+      "bytes": 116980,
+      "path": "Cu-pseudo-calibration.npz",
+      "sha256": "b6e216edda105e819d1bb81704901d4156b3a56a0f8e3976af0f4da008ec6889"
+    },
+    {
+      "bytes": 598,
+      "path": "environment.json",
+      "sha256": "e67bfd0b85d3f38b4937bc8c90c58e996d11e052c8f6ecf5ff39b71d7a9929ef"
+    },
+    {
+      "bytes": 7629,
+      "path": "feature-schema.json",
+      "sha256": "7340c1e96a01f5163234e12a212ca0b43bdf3a8828cc5186fe4a58394db25e00"
+    },
+    {
+      "bytes": 266,
+      "path": "freeze-candidate.json",
+      "sha256": "99bea304ba287be21b4059582d1badb56ecff7e0d953c06699bcb6906b6518bb"
+    },
+    {
+      "bytes": 324,
+      "path": "gpu-admission.json",
+      "sha256": "ea7075cc4747346f13c6968fc0e54407e53a622e1a5a0f48d57b11bf2783242d"
+    },
+    {
+      "bytes": 324,
+      "path": "gpu-postflight.json",
+      "sha256": "ea7075cc4747346f13c6968fc0e54407e53a622e1a5a0f48d57b11bf2783242d"
+    },
+    {
+      "bytes": 1276,
+      "path": "receipt.json",
+      "sha256": "96d234d69779e69345de42135bef9994c6619a5f3358b29f71e46f9e28568e82"
+    },
+    {
+      "bytes": 15370,
+      "path": "results.json",
+      "sha256": "53380048ab96559edd334cbf869f29731203ec97891dd4b77e975e72bbbf1f4c"
+    }
+  ],
+  "schema_version": 1
+}

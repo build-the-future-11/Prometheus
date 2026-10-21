@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "run_id": "kaggle-development-v2-r1",
+  "analysis_status": "VERIFIED_POST_HOC_DESCRIPTIVE",
+  "primary_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "protected_outcomes_observed": false,
+  "selected_model": "risk_gate_t0.40",
+  "bootstrap": {
+    "status": "POST_HOC_NOT_PREREGISTERED",
+    "seed": 20261021,
+    "replicates": 20000,
+    "cluster_unit": "unique Matbench row_index across overlapping element holdouts",
+    "unique_cluster_count": 821
+  },
+  "selected_gate_effect": {
+    "macro_mae_improvement_ev": -0.00013043748510311863,
+    "cluster_bootstrap": {
+      "lower_95_ev": -0.0019636948533508507,
+      "upper_95_ev": 0.0014281323657897574,
+      "probability_improvement_gt_0": 0.45955,
+      "probability_improvement_gt_0_02_ev": 0.0
+    },
+    "per_element": {
+      "Cu": {
+        "n": 390,
+        "paired_mae_improvement_ev": -0.0019209181570758807,
+        "paired_row_bootstrap": {
+          "lower_95_ev": -0.006701576737073236,
+          "upper_95_ev": 0.0017898318828570086,
+          "probability_improvement_gt_0": 0.20065,
+          "probability_improvement_gt_0_02_ev": 0.0
+        }
+      },
+      "Ag": {
+        "n": 196,
+        "paired_mae_improvement_ev": 0.0009665842037214684,
+        "paired_row_bootstrap": {
+          "lower_95_ev": -0.0016636654489990848,
+          "upper_95_ev": 0.0035086926780018403,
+          "probability_improvement_gt_0": 0.77845,
+          "probability_improvement_gt_0_02_ev": 0.0
+        }
+      },
+      "B": {
+        "n": 238,
+        "paired_mae_improvement_ev": 0.0005630214980450564,
+        "paired_row_bootstrap": {
+          "lower_95_ev": -0.00039062645926258004,
+          "upper_95_ev": 0.0014470472007145022,
+          "probability_improvement_gt_0": 0.88705,
+          "probability_improvement_gt_0_02_ev": 0.0
+        }
+      }
+    }
+  },
+  "model_macro_mae": [
+    {
+      "model": "extra_trees_ensemble",
+      "per_element_mae_ev": {
+        "Cu": 0.7270764346764348,
+        "Ag": 0.3708231778425656,
+        "B": 1.0881248499399754
+      },
+      "macro_mae_ev": 0.7286748208196586
+    },
+    {
+      "model": "catboost_single_seed",
+      "per_element_mae_ev": {
+        "Cu": 0.6977885291960945,
+        "Ag": 0.40186366087935066,
+        "B": 1.2163923630622315
+      },
+      "macro_mae_ev": 0.7720148510458923
+    },
+    {
+      "model": "direct_hgb_squared",
+      "per_element_mae_ev": {
+        "Cu": 0.646040625785339,
+        "Ag": 0.4395438431043135,
+        "B": 1.2329450577375656
+      },
+      "macro_mae_ev": 0.772843175542406
+    },
+    {
+      "model": "risk_gate_t0.05",
+      "per_element_mae_ev": {
+        "Cu": 0.7077536257022518,
+        "Ag": 0.39502751550287596,
+        "B": 1.2265714038984408
+      },
+      "macro_mae_ev": 0.7764508483678562
+    },
+    {
+      "model": "risk_gate_t0.10",
+      "per_element_mae_ev": {
+        "Cu": 0.708902591920922,
+        "Ag": 0.39583777387301866,
+        "B": 1.2279006186535253
+      },
+      "macro_mae_ev": 0.7775469948158219
+    },
+    {
+      "model": "risk_gate_t0.20",
+      "per_element_mae_ev": {
+        "Cu": 0.7101193683179022,
+        "Ag": 0.39713146813246947,
+        "B": 1.2288552647675495
+      },
+      "macro_mae_ev": 0.778702033739307
+    },
+    {
+      "model": "catboost_ensemble",
+      "per_element_mae_ev": {
+        "Cu": 0.7095337198118489,
+        "Ag": 0.3991137273484922,
+        "B": 1.2299616868899166
+      },
+      "macro_mae_ev": 0.7795363780167527
+    },
+    {
+      "model": "risk_gate_t0.40",
+      "per_element_mae_ev": {
+        "Cu": 0.7114546379689246,
+        "Ag": 0.3981471431447708,
+        "B": 1.2293986653918716
+      },
+      "macro_mae_ev": 0.7796668155018557
+    },
+    {
+      "model": "constant_blend_0.75",
+      "per_element_mae_ev": {
+        "Cu": 0.7182389992321411,
+        "Ag": 0.4287705027503544,
+        "B": 1.24427941077498
+      },
+      "macro_mae_ev": 0.7970963042524918
+    },
+    {
+      "model": "constant_blend_0.50",
+      "per_element_mae_ev": {
+        "Cu": 0.7392173514389043,
+        "Ag": 0.4627994970636251,
+        "B": 1.262354164079607
+      },
+      "macro_mae_ev": 0.8214570041940455
+    },
+    {
+      "model": "constant_blend_0.25",
+      "per_element_mae_ev": {
+        "Cu": 0.7690775630823643,
+        "Ag": 0.5024417800130644,
+        "B": 1.2892135307770398
+      },
+      "macro_mae_ev": 0.8535776246241561
+    },
+    {
+      "model": "ridge",
+      "per_element_mae_ev": {
+        "Cu": 0.8020990628825793,
+        "Ag": 0.548399880334414,
+        "B": 1.3215706134430787
+      },
+      "macro_mae_ev": 0.8906898522200241
+    },
+    {
+      "model": "median",
+      "per_element_mae_ev": {
+        "Cu": 0.8237179487179487,
+        "Ag": 0.9652551020408163,
+        "B": 2.017058823529412
+      },
+      "macro_mae_ev": 1.2686772914293922
+    }
+  ],
+  "risk_calibration_diagnostics": {
+    "Cu": {
+      "pseudo_calibration_rows": 2069,
+      "pseudo_harm_fit_spearman": 0.6660190503727453,
+      "outer_risk_harm_spearman_descriptive": 0.30929260922615015,
+      "catboost_seed_std_mean_ev": 0.06941781437187006
+    },
+    "Ag": {
+      "pseudo_calibration_rows": 2123,
+      "pseudo_harm_fit_spearman": 0.6561587019605216,
+      "outer_risk_harm_spearman_descriptive": 0.5268389021068889,
+      "catboost_seed_std_mean_ev": 0.05582550692225567
+    },
+    "B": {
+      "pseudo_calibration_rows": 2105,
+      "pseudo_harm_fit_spearman": 0.7072929357317023,
+      "outer_risk_harm_spearman_descriptive": 0.2403977671023419,
+      "catboost_seed_std_mean_ev": 0.08458534730814779
+    }
+  },
+  "source_files": {
+    "results_json_sha256": "53380048ab96559edd334cbf869f29731203ec97891dd4b77e975e72bbbf1f4c",
+    "Cu_predictions_npz_sha256": "654c732c8569b34a9495289a4575ceadca429589a2f8a44ff3e9008076dd4f7b",
+    "Ag_predictions_npz_sha256": "5691b271c4d9b51131d37c78c51aa4941f0f1a2aa6109441e6f3a9d951fc847f",
+    "B_predictions_npz_sha256": "12b2aebb68977a9e944e60fb2aa2d69bf7be038c94c89b52177e4424bb74d38e"
+  }
+}

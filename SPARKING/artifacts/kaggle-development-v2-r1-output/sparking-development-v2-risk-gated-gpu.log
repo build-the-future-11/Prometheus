@@ -1,0 +1,1075 @@
+[{"stream_name":"stderr","time":2.075806248,"data":"/kaggle/src/script.py:55: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.\n"}
+,{"stream_name":"stderr","time":2.075855705,"data":"  tar.extractall(CHECKOUT)\n"}
+,{"stream_name":"stdout","time":2.112272782,"data":"+ /usr/bin/python3 -m pip install --disable-pip-version-check -r requirements-hosted-v2.txt\n"}
+,{"stream_name":"stdout","time":5.397420676,"data":"Ignoring colorama: markers 'sys_platform == \"win32\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.39792322,"data":"Ignoring contourpy: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.398535443,"data":"Ignoring networkx: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.39901467,"data":"Ignoring numpy: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.399671001,"data":"Ignoring scipy: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.400194873,"data":"Ignoring tomli: markers 'python_full_version \u003c= \"3.11\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.400650292,"data":"Ignoring typing-extensions: markers 'python_full_version \u003c \"3.13\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.487079969,"data":"Collecting bibtexparser==1.4.4 (from -r requirements-hosted-v2.txt (line 3))\n"}
+,{"stream_name":"stdout","time":5.5249094020000005,"data":"  Downloading bibtexparser-1.4.4.tar.gz (55 kB)\n"}
+,{"stream_name":"stdout","time":5.54820709,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.6/55.6 kB 2.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.5654206980000005,"data":"  Preparing metadata (setup.py): started\n"}
+,{"stream_name":"stdout","time":6.67873303,"data":"  Preparing metadata (setup.py): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":6.681949046,"data":"Requirement already satisfied: catboost==1.2.10 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 5)) (1.2.10)\n"}
+,{"stream_name":"stdout","time":6.743673237,"data":"Collecting certifi==2026.10.19 (from -r requirements-hosted-v2.txt (line 7))\n"}
+,{"stream_name":"stdout","time":6.7528163249999995,"data":"  Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)\n"}
+,{"stream_name":"stdout","time":7.094943394,"data":"Collecting charset-normalizer==3.5.2 (from -r requirements-hosted-v2.txt (line 9))\n"}
+,{"stream_name":"stdout","time":7.104140305,"data":"  Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)\n"}
+,{"stream_name":"stdout","time":7.125010745,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 2.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.130705878,"data":"Requirement already satisfied: cloudpickle==3.1.2 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 11)) (3.1.2)\n"}
+,{"stream_name":"stdout","time":7.295495609,"data":"Collecting contourpy==1.4.0 (from -r requirements-hosted-v2.txt (line 19))\n"}
+,{"stream_name":"stdout","time":7.304874892,"data":"  Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)\n"}
+,{"stream_name":"stdout","time":7.324491102,"data":"Requirement already satisfied: coverage==7.16.2 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 21)) (7.16.2)\n"}
+,{"stream_name":"stdout","time":7.325900616,"data":"Requirement already satisfied: cycler==0.12.1 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 23)) (0.12.1)\n"}
+,{"stream_name":"stdout","time":7.369268411,"data":"Collecting dnspython==2.9.0 (from -r requirements-hosted-v2.txt (line 25))\n"}
+,{"stream_name":"stdout","time":7.378060327,"data":"  Downloading dnspython-2.9.0-py3-none-any.whl.metadata (5.7 kB)\n"}
+,{"stream_name":"stdout","time":7.792067204,"data":"Collecting fonttools==4.67.0 (from -r requirements-hosted-v2.txt (line 27))\n"}
+,{"stream_name":"stdout","time":7.802771099,"data":"  Downloading fonttools-4.67.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)\n"}
+,{"stream_name":"stdout","time":7.834556342,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.2/137.2 kB 4.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.851109503,"data":"Requirement already satisfied: graphviz==0.21 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 29)) (0.21)\n"}
+,{"stream_name":"stdout","time":7.897667693,"data":"Collecting idna==3.20 (from -r requirements-hosted-v2.txt (line 31))\n"}
+,{"stream_name":"stdout","time":7.906852758,"data":"  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)\n"}
+,{"stream_name":"stdout","time":7.955927646,"data":"Collecting iniconfig==2.3.1 (from -r requirements-hosted-v2.txt (line 33))\n"}
+,{"stream_name":"stdout","time":7.964808369,"data":"  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)\n"}
+,{"stream_name":"stdout","time":7.980841182,"data":"Requirement already satisfied: joblib==1.6.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 35)) (1.6.0)\n"}
+,{"stream_name":"stdout","time":7.982305214,"data":"Requirement already satisfied: kiwisolver==1.5.1 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 40)) (1.5.1)\n"}
+,{"stream_name":"stdout","time":8.576790305,"data":"Collecting lxml==6.1.3 (from -r requirements-hosted-v2.txt (line 42))\n"}
+,{"stream_name":"stdout","time":8.586639897,"data":"  Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)\n"}
+,{"stream_name":"stdout","time":8.717799121,"data":"Collecting matminer==0.10.1 (from -r requirements-hosted-v2.txt (line 44))\n"}
+,{"stream_name":"stdout","time":8.729131391,"data":"  Downloading matminer-0.10.1-py3-none-any.whl.metadata (4.6 kB)\n"}
+,{"stream_name":"stdout","time":9.09988947,"data":"Collecting matplotlib==3.11.2 (from -r requirements-hosted-v2.txt (line 46))\n"}
+,{"stream_name":"stdout","time":9.109774604,"data":"  Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)\n"}
+,{"stream_name":"stdout","time":9.128468866,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.3/80.3 kB 4.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":9.216208899,"data":"Collecting monty==2026.10.21 (from -r requirements-hosted-v2.txt (line 51))\n"}
+,{"stream_name":"stdout","time":9.230753418,"data":"  Downloading monty-2026.10.21-py3-none-any.whl.metadata (5.5 kB)\n"}
+,{"stream_name":"stdout","time":9.249786649,"data":"Requirement already satisfied: mpmath==1.3.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 55)) (1.3.0)\n"}
+,{"stream_name":"stdout","time":9.376898478,"data":"Collecting narwhals==2.27.1 (from -r requirements-hosted-v2.txt (line 57))\n"}
+,{"stream_name":"stdout","time":9.388586992,"data":"  Downloading narwhals-2.27.1-py3-none-any.whl.metadata (15 kB)\n"}
+,{"stream_name":"stdout","time":9.47384478,"data":"Collecting networkx==3.7 (from -r requirements-hosted-v2.txt (line 63))\n"}
+,{"stream_name":"stdout","time":9.483174434,"data":"  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)\n"}
+,{"stream_name":"stdout","time":10.040666543,"data":"Collecting numpy==2.5.4 (from -r requirements-hosted-v2.txt (line 78))\n"}
+,{"stream_name":"stdout","time":10.050206922,"data":"  Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)\n"}
+,{"stream_name":"stdout","time":10.656002774,"data":"Collecting orjson==3.13.0 (from -r requirements-hosted-v2.txt (line 91))\n"}
+,{"stream_name":"stdout","time":10.665625394,"data":"  Downloading orjson-3.13.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)\n"}
+,{"stream_name":"stdout","time":10.682679282,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.2/42.2 kB 2.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.688418573,"data":"Requirement already satisfied: packaging==26.3 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 93)) (26.3)\n"}
+,{"stream_name":"stdout","time":10.721553101,"data":"Collecting palettable==3.3.3 (from -r requirements-hosted-v2.txt (line 98))\n"}
+,{"stream_name":"stdout","time":10.731922958,"data":"  Downloading palettable-3.3.3-py2.py3-none-any.whl.metadata (3.3 kB)\n"}
+,{"stream_name":"stdout","time":10.753476532,"data":"Requirement already satisfied: pandas==2.3.3 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 100)) (2.3.3)\n"}
+,{"stream_name":"stdout","time":11.251883811999999,"data":"Collecting pillow==13.0.0 (from -r requirements-hosted-v2.txt (line 105))\n"}
+,{"stream_name":"stdout","time":11.261774551,"data":"  Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)\n"}
+,{"stream_name":"stdout","time":11.381378658,"data":"Collecting plotly==7.1.0 (from -r requirements-hosted-v2.txt (line 107))\n"}
+,{"stream_name":"stdout","time":11.390582809,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":11.455726057,"data":"Collecting pluggy==1.7.0 (from -r requirements-hosted-v2.txt (line 111))\n"}
+,{"stream_name":"stdout","time":11.464870943,"data":"  Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)\n"}
+,{"stream_name":"stdout","time":11.477743629,"data":"Requirement already satisfied: pygments==2.21.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 115)) (2.21.0)\n"}
+,{"stream_name":"stdout","time":11.75712491,"data":"Collecting pymatgen==2026.9.24 (from -r requirements-hosted-v2.txt (line 117))\n"}
+,{"stream_name":"stdout","time":11.767862062,"data":"  Downloading pymatgen-2026.9.24-py3-none-any.whl.metadata (13 kB)\n"}
+,{"stream_name":"stdout","time":11.859123421,"data":"Collecting pymatgen-core==2026.10.16 (from -r requirements-hosted-v2.txt (line 121))\n"}
+,{"stream_name":"stdout","time":11.870824926000001,"data":"  Downloading pymatgen_core-2026.10.16-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (13 kB)\n"}
+,{"stream_name":"stdout","time":12.637883465,"data":"Collecting pymongo==4.19.0 (from -r requirements-hosted-v2.txt (line 123))\n"}
+,{"stream_name":"stdout","time":12.648822135,"data":"  Downloading pymongo-4.19.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)\n"}
+,{"stream_name":"stdout","time":12.741087153,"data":"Collecting pyparsing==3.3.3 (from -r requirements-hosted-v2.txt (line 125))\n"}
+,{"stream_name":"stdout","time":12.750503012,"data":"  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)\n"}
+,{"stream_name":"stdout","time":12.873947277,"data":"Collecting pytest==9.1.1 (from -r requirements-hosted-v2.txt (line 129))\n"}
+,{"stream_name":"stdout","time":12.8829113,"data":"  Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)\n"}
+,{"stream_name":"stdout","time":12.946935504,"data":"Collecting pytest-cov==7.1.0 (from -r requirements-hosted-v2.txt (line 133))\n"}
+,{"stream_name":"stdout","time":12.955741136,"data":"  Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)\n"}
+,{"stream_name":"stdout","time":12.976703483,"data":"Requirement already satisfied: python-dateutil==2.9.0.post0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 135)) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":13.086110262,"data":"Collecting pytz==2026.5 (from -r requirements-hosted-v2.txt (line 139))\n"}
+,{"stream_name":"stdout","time":13.095569203,"data":"  Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)\n"}
+,{"stream_name":"stdout","time":13.115886974,"data":"Requirement already satisfied: requests==2.34.2 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 141)) (2.34.2)\n"}
+,{"stream_name":"stdout","time":13.117634167,"data":"Requirement already satisfied: ruamel-yaml==0.19.1 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 145)) (0.19.1)\n"}
+,{"stream_name":"stdout","time":13.330225977,"data":"Collecting scikit-learn==1.9.1 (from -r requirements-hosted-v2.txt (line 147))\n"}
+,{"stream_name":"stdout","time":13.339690435,"data":"  Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)\n"}
+,{"stream_name":"stdout","time":13.669495572,"data":"Collecting scipy==1.18.1 (from -r requirements-hosted-v2.txt (line 158))\n"}
+,{"stream_name":"stdout","time":13.678833203,"data":"  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)\n"}
+,{"stream_name":"stdout","time":13.697767011,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 3.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.715071776,"data":"Requirement already satisfied: six==1.17.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 165)) (1.17.0)\n"}
+,{"stream_name":"stdout","time":13.858983567,"data":"Collecting spglib==2.8.0 (from -r requirements-hosted-v2.txt (line 169))\n"}
+,{"stream_name":"stdout","time":13.870039382,"data":"  Downloading spglib-2.8.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.2 kB)\n"}
+,{"stream_name":"stdout","time":13.890887136,"data":"Requirement already satisfied: sympy==1.14.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 171)) (1.14.0)\n"}
+,{"stream_name":"stdout","time":13.927990507,"data":"Collecting tabulate==0.10.0 (from -r requirements-hosted-v2.txt (line 175))\n"}
+,{"stream_name":"stdout","time":13.936919252,"data":"  Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)\n"}
+,{"stream_name":"stdout","time":13.95407008,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 2.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.993464258,"data":"Collecting threadpoolctl==3.7.0 (from -r requirements-hosted-v2.txt (line 177))\n"}
+,{"stream_name":"stdout","time":14.002441983,"data":"  Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)\n"}
+,{"stream_name":"stdout","time":14.118484776,"data":"Collecting tqdm==4.70.1 (from -r requirements-hosted-v2.txt (line 181))\n"}
+,{"stream_name":"stdout","time":14.12749035,"data":"  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)\n"}
+,{"stream_name":"stdout","time":14.145393694,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.4/57.4 kB 3.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.198229913,"data":"Collecting tzdata==2026.5 (from -r requirements-hosted-v2.txt (line 187))\n"}
+,{"stream_name":"stdout","time":14.206874099,"data":"  Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":14.269451659,"data":"Collecting uncertainties==3.2.3 (from -r requirements-hosted-v2.txt (line 189))\n"}
+,{"stream_name":"stdout","time":14.27861099,"data":"  Downloading uncertainties-3.2.3-py3-none-any.whl.metadata (7.0 kB)\n"}
+,{"stream_name":"stdout","time":14.293194658,"data":"Requirement already satisfied: urllib3==2.8.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v2.txt (line 191)) (2.8.0)\n"}
+,{"stream_name":"stdout","time":14.784994893,"data":"Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)\n"}
+,{"stream_name":"stdout","time":14.804852607,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 136.5/136.5 kB 7.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.814550792,"data":"Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)\n"}
+,{"stream_name":"stdout","time":14.83825208,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 254.7/254.7 kB 11.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.847068173,"data":"Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)\n"}
+,{"stream_name":"stdout","time":14.866876567,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 384.7/384.7 kB 21.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.87561069,"data":"Downloading dnspython-2.9.0-py3-none-any.whl (354 kB)\n"}
+,{"stream_name":"stdout","time":14.895946458,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 354.8/354.8 kB 18.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.909355322,"data":"Downloading fonttools-4.67.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)\n"}
+,{"stream_name":"stdout","time":14.964536274,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 101.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.973910119,"data":"Downloading idna-3.20-py3-none-any.whl (69 kB)\n"}
+,{"stream_name":"stdout","time":14.990784699,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 4.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.999914412999999,"data":"Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)\n"}
+,{"stream_name":"stdout","time":15.025357059,"data":"Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)\n"}
+,{"stream_name":"stdout","time":15.07704449,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 108.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.086391014,"data":"Downloading matminer-0.10.1-py3-none-any.whl (5.3 MB)\n"}
+,{"stream_name":"stdout","time":15.14252608,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 97.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.151931957,"data":"Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)\n"}
+,{"stream_name":"stdout","time":15.252986527000001,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 100.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.264829265,"data":"Downloading monty-2026.10.21-py3-none-any.whl (63 kB)\n"}
+,{"stream_name":"stdout","time":15.283349417,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.2/63.2 kB 3.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.292509402,"data":"Downloading narwhals-2.27.1-py3-none-any.whl (483 kB)\n"}
+,{"stream_name":"stdout","time":15.313429112,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 483.2/483.2 kB 25.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.32245444,"data":"Downloading networkx-3.7-py3-none-any.whl (2.1 MB)\n"}
+,{"stream_name":"stdout","time":15.359645463,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 62.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.369101961,"data":"Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)\n"}
+,{"stream_name":"stdout","time":15.513248517,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 91.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.524383264,"data":"Downloading orjson-3.13.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)\n"}
+,{"stream_name":"stdout","time":15.541802918,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.4/130.4 kB 7.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.552805275,"data":"Downloading palettable-3.3.3-py2.py3-none-any.whl (332 kB)\n"}
+,{"stream_name":"stdout","time":15.571027348,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 332.3/332.3 kB 20.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.580011387999999,"data":"Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)\n"}
+,{"stream_name":"stdout","time":15.656137879,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 97.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.669279167,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":15.795058097,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 78.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.804218003999999,"data":"Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)\n"}
+,{"stream_name":"stdout","time":15.829942944999999,"data":"Downloading pymatgen-2026.9.24-py3-none-any.whl (825 kB)\n"}
+,{"stream_name":"stdout","time":15.85406512,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 825.8/825.8 kB 37.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.864524594,"data":"Downloading pymatgen_core-2026.10.16-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.6 MB)\n"}
+,{"stream_name":"stdout","time":15.922442938,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 83.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.934009366,"data":"Downloading pymongo-4.19.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.1 MB)\n"}
+,{"stream_name":"stdout","time":15.958488267,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 47.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.967680111,"data":"Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)\n"}
+,{"stream_name":"stdout","time":15.984844223,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 7.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.993736261,"data":"Downloading pytest-9.1.1-py3-none-any.whl (386 kB)\n"}
+,{"stream_name":"stdout","time":16.011793384,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 386.5/386.5 kB 24.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.020667932,"data":"Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":16.044538265,"data":"Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)\n"}
+,{"stream_name":"stdout","time":16.066865042,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 506.3/506.3 kB 25.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.082731512,"data":"Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)\n"}
+,{"stream_name":"stdout","time":16.174684961,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 101.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.183974557,"data":"Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)\n"}
+,{"stream_name":"stdout","time":16.475411036,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 61.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.486202809,"data":"Downloading spglib-2.8.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (979 kB)\n"}
+,{"stream_name":"stdout","time":16.509222031,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 979.1/979.1 kB 47.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.518601177,"data":"Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)\n"}
+,{"stream_name":"stdout","time":16.542375239,"data":"Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)\n"}
+,{"stream_name":"stdout","time":16.562232018,"data":"Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)\n"}
+,{"stream_name":"stdout","time":16.578952348,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 4.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.588228167,"data":"Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)\n"}
+,{"stream_name":"stdout","time":16.607632683,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.0/348.0 kB 19.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.616922529,"data":"Downloading uncertainties-3.2.3-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":16.635591009,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.1/60.1 kB 3.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":17.05796113,"data":"Building wheels for collected packages: bibtexparser\n"}
+,{"stream_name":"stdout","time":17.05887215,"data":"  Building wheel for bibtexparser (setup.py): started\n"}
+,{"stream_name":"stdout","time":18.337528365,"data":"  Building wheel for bibtexparser (setup.py): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":18.338152448,"data":"  Created wheel for bibtexparser: filename=bibtexparser-1.4.4-py3-none-any.whl size=43688 sha256=fd58a33ae5643829a76e222f5b497965415427716c76df8ef0bee707973900e1\n"}
+,{"stream_name":"stdout","time":18.338554324,"data":"  Stored in directory: /root/.cache/pip/wheels/43/ca/d8/0d315657fcf8ff8694a2f6701589bd1eaa602a85b7a7810063\n"}
+,{"stream_name":"stdout","time":18.341103603,"data":"Successfully built bibtexparser\n"}
+,{"stream_name":"stdout","time":20.667439532,"data":"Installing collected packages: pytz, uncertainties, tzdata, tqdm, threadpoolctl, tabulate, pyparsing, pluggy, pillow, palettable, orjson, numpy, networkx, narwhals, lxml, iniconfig, idna, fonttools, dnspython, charset-normalizer, certifi, spglib, scipy, pytest, pymongo, plotly, monty, contourpy, bibtexparser, scikit-learn, pytest-cov, matplotlib, pymatgen-core, pymatgen, matminer\n"}
+,{"stream_name":"stdout","time":20.667612382,"data":"  Attempting uninstall: pytz\n"}
+,{"stream_name":"stdout","time":20.988037148,"data":"    Found existing installation: pytz 2025.2\n"}
+,{"stream_name":"stdout","time":21.025032484,"data":"    Uninstalling pytz-2025.2:\n"}
+,{"stream_name":"stdout","time":21.466062075,"data":"      Successfully uninstalled pytz-2025.2\n"}
+,{"stream_name":"stdout","time":21.652583866,"data":"  Attempting uninstall: tzdata\n"}
+,{"stream_name":"stdout","time":21.965630983,"data":"    Found existing installation: tzdata 2026.3\n"}
+,{"stream_name":"stdout","time":22.00418841,"data":"    Uninstalling tzdata-2026.3:\n"}
+,{"stream_name":"stdout","time":22.435464793,"data":"      Successfully uninstalled tzdata-2026.3\n"}
+,{"stream_name":"stdout","time":22.564523463,"data":"  Attempting uninstall: tqdm\n"}
+,{"stream_name":"stdout","time":22.91093909,"data":"    Found existing installation: tqdm 4.67.3\n"}
+,{"stream_name":"stdout","time":22.921740312,"data":"    Uninstalling tqdm-4.67.3:\n"}
+,{"stream_name":"stdout","time":22.971406951,"data":"      Successfully uninstalled tqdm-4.67.3\n"}
+,{"stream_name":"stdout","time":23.038884215,"data":"  Attempting uninstall: threadpoolctl\n"}
+,{"stream_name":"stdout","time":23.330095225,"data":"    Found existing installation: threadpoolctl 3.6.0\n"}
+,{"stream_name":"stdout","time":23.334639344,"data":"    Uninstalling threadpoolctl-3.6.0:\n"}
+,{"stream_name":"stdout","time":41.701302626,"data":"      Successfully uninstalled threadpoolctl-3.6.0\n"}
+,{"stream_name":"stdout","time":41.725985258,"data":"  Attempting uninstall: tabulate\n"}
+,{"stream_name":"stdout","time":42.004669092,"data":"    Found existing installation: tabulate 0.9.0\n"}
+,{"stream_name":"stdout","time":42.009527117,"data":"    Uninstalling tabulate-0.9.0:\n"}
+,{"stream_name":"stdout","time":42.02736192,"data":"      Successfully uninstalled tabulate-0.9.0\n"}
+,{"stream_name":"stdout","time":42.058096497,"data":"  Attempting uninstall: pyparsing\n"}
+,{"stream_name":"stdout","time":42.242088918,"data":"    Found existing installation: pyparsing 3.3.2\n"}
+,{"stream_name":"stdout","time":42.246714624,"data":"    Uninstalling pyparsing-3.3.2:\n"}
+,{"stream_name":"stdout","time":42.27984954,"data":"      Successfully uninstalled pyparsing-3.3.2\n"}
+,{"stream_name":"stdout","time":42.376099763,"data":"  Attempting uninstall: pluggy\n"}
+,{"stream_name":"stdout","time":42.732677514,"data":"    Found existing installation: pluggy 1.6.0\n"}
+,{"stream_name":"stdout","time":42.736657092,"data":"    Uninstalling pluggy-1.6.0:\n"}
+,{"stream_name":"stdout","time":42.753999984000004,"data":"      Successfully uninstalled pluggy-1.6.0\n"}
+,{"stream_name":"stdout","time":42.790788237,"data":"  Attempting uninstall: pillow\n"}
+,{"stream_name":"stdout","time":42.889616469,"data":"    Found existing installation: pillow 12.3.0\n"}
+,{"stream_name":"stdout","time":42.89987238,"data":"    Uninstalling pillow-12.3.0:\n"}
+,{"stream_name":"stdout","time":43.11902918,"data":"      Successfully uninstalled pillow-12.3.0\n"}
+,{"stream_name":"stdout","time":43.923632229,"data":"  Attempting uninstall: orjson\n"}
+,{"stream_name":"stdout","time":44.264293422,"data":"    Found existing installation: orjson 3.12.0\n"}
+,{"stream_name":"stdout","time":44.269642952,"data":"    Uninstalling orjson-3.12.0:\n"}
+,{"stream_name":"stdout","time":44.283503372,"data":"      Successfully uninstalled orjson-3.12.0\n"}
+,{"stream_name":"stdout","time":44.306452807,"data":"  Attempting uninstall: numpy\n"}
+,{"stream_name":"stdout","time":44.497360519,"data":"    Found existing installation: numpy 2.1.3\n"}
+,{"stream_name":"stdout","time":44.544910902,"data":"    Uninstalling numpy-2.1.3:\n"}
+,{"stream_name":"stdout","time":45.600920435,"data":"      Successfully uninstalled numpy-2.1.3\n"}
+,{"stream_name":"stdout","time":47.80563866,"data":"  Attempting uninstall: networkx\n"}
+,{"stream_name":"stdout","time":48.049313498,"data":"    Found existing installation: networkx 3.6.1\n"}
+,{"stream_name":"stdout","time":48.09048098,"data":"    Uninstalling networkx-3.6.1:\n"}
+,{"stream_name":"stdout","time":48.579932964,"data":"      Successfully uninstalled networkx-3.6.1\n"}
+,{"stream_name":"stdout","time":50.011082797,"data":"  Attempting uninstall: narwhals\n"}
+,{"stream_name":"stdout","time":50.292790718,"data":"    Found existing installation: narwhals 2.25.0\n"}
+,{"stream_name":"stdout","time":50.307576557,"data":"    Uninstalling narwhals-2.25.0:\n"}
+,{"stream_name":"stdout","time":50.492832355,"data":"      Successfully uninstalled narwhals-2.25.0\n"}
+,{"stream_name":"stdout","time":50.929188746,"data":"  Attempting uninstall: lxml\n"}
+,{"stream_name":"stdout","time":51.34840538,"data":"    Found existing installation: lxml 6.1.2\n"}
+,{"stream_name":"stdout","time":51.358399415,"data":"    Uninstalling lxml-6.1.2:\n"}
+,{"stream_name":"stdout","time":51.558397182,"data":"      Successfully uninstalled lxml-6.1.2\n"}
+,{"stream_name":"stdout","time":51.861797153,"data":"  Attempting uninstall: iniconfig\n"}
+,{"stream_name":"stdout","time":52.175488168,"data":"    Found existing installation: iniconfig 2.3.0\n"}
+,{"stream_name":"stdout","time":52.179088654,"data":"    Uninstalling iniconfig-2.3.0:\n"}
+,{"stream_name":"stdout","time":52.190161441,"data":"      Successfully uninstalled iniconfig-2.3.0\n"}
+,{"stream_name":"stdout","time":52.209275026,"data":"  Attempting uninstall: idna\n"}
+,{"stream_name":"stdout","time":52.541459858,"data":"    Found existing installation: idna 3.19\n"}
+,{"stream_name":"stdout","time":52.545985231,"data":"    Uninstalling idna-3.19:\n"}
+,{"stream_name":"stdout","time":52.575180678,"data":"      Successfully uninstalled idna-3.19\n"}
+,{"stream_name":"stdout","time":52.633929057,"data":"  Attempting uninstall: fonttools\n"}
+,{"stream_name":"stdout","time":52.786538726,"data":"    Found existing installation: fonttools 4.64.0\n"}
+,{"stream_name":"stdout","time":52.826203805,"data":"    Uninstalling fonttools-4.64.0:\n"}
+,{"stream_name":"stdout","time":53.278844237,"data":"      Successfully uninstalled fonttools-4.64.0\n"}
+,{"stream_name":"stdout","time":54.348875657,"data":"  Attempting uninstall: dnspython\n"}
+,{"stream_name":"stdout","time":54.441179412,"data":"    Found existing installation: dnspython 2.8.0\n"}
+,{"stream_name":"stdout","time":54.453435919,"data":"    Uninstalling dnspython-2.8.0:\n"}
+,{"stream_name":"stdout","time":54.580601787,"data":"      Successfully uninstalled dnspython-2.8.0\n"}
+,{"stream_name":"stdout","time":54.866668149,"data":"  Attempting uninstall: charset-normalizer\n"}
+,{"stream_name":"stdout","time":55.044370141,"data":"    Found existing installation: charset-normalizer 3.4.9\n"}
+,{"stream_name":"stdout","time":55.050252688,"data":"    Uninstalling charset-normalizer-3.4.9:\n"}
+,{"stream_name":"stdout","time":56.233651728,"data":"      Successfully uninstalled charset-normalizer-3.4.9\n"}
+,{"stream_name":"stdout","time":56.287761917,"data":"  Attempting uninstall: certifi\n"}
+,{"stream_name":"stdout","time":56.532809526,"data":"    Found existing installation: certifi 2026.7.22\n"}
+,{"stream_name":"stdout","time":56.5365607,"data":"    Uninstalling certifi-2026.7.22:\n"}
+,{"stream_name":"stdout","time":56.550473562,"data":"      Successfully uninstalled certifi-2026.7.22\n"}
+,{"stream_name":"stdout","time":56.643151043,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":56.890293786,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":56.977258714,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":59.209122229,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":63.845635999,"data":"  Attempting uninstall: pytest\n"}
+,{"stream_name":"stdout","time":64.025272155,"data":"    Found existing installation: pytest 8.4.2\n"}
+,{"stream_name":"stdout","time":64.03446856,"data":"    Uninstalling pytest-8.4.2:\n"}
+,{"stream_name":"stdout","time":65.342475438,"data":"      Successfully uninstalled pytest-8.4.2\n"}
+,{"stream_name":"stdout","time":65.651693312,"data":"  Attempting uninstall: pymongo\n"}
+,{"stream_name":"stdout","time":65.757433901,"data":"    Found existing installation: pymongo 4.18.2\n"}
+,{"stream_name":"stdout","time":65.76979627,"data":"    Uninstalling pymongo-4.18.2:\n"}
+,{"stream_name":"stdout","time":65.932271373,"data":"      Successfully uninstalled pymongo-4.18.2\n"}
+,{"stream_name":"stdout","time":66.419649671,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":66.662967926,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":67.684139958,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":79.504009751,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":82.299723517,"data":"  Attempting uninstall: contourpy\n"}
+,{"stream_name":"stdout","time":82.630652158,"data":"    Found existing installation: contourpy 1.3.3\n"}
+,{"stream_name":"stdout","time":82.63567785,"data":"    Uninstalling contourpy-1.3.3:\n"}
+,{"stream_name":"stdout","time":82.663607848,"data":"      Successfully uninstalled contourpy-1.3.3\n"}
+,{"stream_name":"stdout","time":82.757048887,"data":"  Attempting uninstall: scikit-learn\n"}
+,{"stream_name":"stdout","time":83.104642993,"data":"    Found existing installation: scikit-learn 1.6.1\n"}
+,{"stream_name":"stdout","time":83.15849601,"data":"    Uninstalling scikit-learn-1.6.1:\n"}
+,{"stream_name":"stdout","time":84.254034172,"data":"      Successfully uninstalled scikit-learn-1.6.1\n"}
+,{"stream_name":"stdout","time":86.669288839,"data":"  Attempting uninstall: matplotlib\n"}
+,{"stream_name":"stdout","time":86.882521959,"data":"    Found existing installation: matplotlib 3.10.0\n"}
+,{"stream_name":"stdout","time":86.913432727,"data":"    Uninstalling matplotlib-3.10.0:\n"}
+,{"stream_name":"stdout","time":88.879873266,"data":"      Successfully uninstalled matplotlib-3.10.0\n"}
+,{"stream_name":"stderr","time":93.453557818,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":93.453594567,"data":"bigframes 2.48.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":93.453600861,"data":"ydata-profiling 4.18.4 requires matplotlib\u003c=3.10,\u003e=3.5, but you have matplotlib 3.11.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453604978,"data":"ydata-profiling 4.18.4 requires numpy\u003c2.4,\u003e=1.22, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453609445,"data":"ydata-profiling 4.18.4 requires scipy\u003c1.17,\u003e=1.8, but you have scipy 1.18.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453613114,"data":"google-colab 1.0.0 requires jupyter-server==2.20.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453616641,"data":"google-colab 1.0.0 requires pandas==2.2.3, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.45362018,"data":"google-colab 1.0.0 requires requests==2.32.4, but you have requests 2.34.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453623573,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453626983,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453630606,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":93.453634263,"data":"numba 0.61.2 requires numpy\u003c2.3,\u003e=1.24, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stdout","time":93.453977773,"data":"Successfully installed bibtexparser-1.4.4 certifi-2026.10.19 charset-normalizer-3.5.2 contourpy-1.4.0 dnspython-2.9.0 fonttools-4.67.0 idna-3.20 iniconfig-2.3.1 lxml-6.1.3 matminer-0.10.1 matplotlib-3.11.2 monty-2026.10.21 narwhals-2.27.1 networkx-3.7 numpy-2.5.4 orjson-3.13.0 palettable-3.3.3 pillow-13.0.0 plotly-7.1.0 pluggy-1.7.0 pymatgen-2026.9.24 pymatgen-core-2026.10.16 pymongo-4.19.0 pyparsing-3.3.3 pytest-9.1.1 pytest-cov-7.1.0 pytz-2026.5 scikit-learn-1.9.1 scipy-1.18.1 spglib-2.8.0 tabulate-0.10.0 threadpoolctl-3.7.0 tqdm-4.70.1 tzdata-2026.5 uncertainties-3.2.3\n"}
+,{"stream_name":"stdout","time":94.111768976,"data":"+ /usr/bin/python3 -m pip install --disable-pip-version-check --no-deps -e .\n"}
+,{"stream_name":"stdout","time":95.073384113,"data":"Obtaining file:///kaggle/working/sparking-v2-source\n"}
+,{"stream_name":"stdout","time":95.076365027,"data":"  Installing build dependencies: started\n"}
+,{"stream_name":"stdout","time":99.20387804,"data":"  Installing build dependencies: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":99.204845225,"data":"  Checking if build backend supports build_editable: started\n"}
+,{"stream_name":"stdout","time":99.277036232,"data":"  Checking if build backend supports build_editable: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":99.278101218,"data":"  Getting requirements to build editable: started\n"}
+,{"stream_name":"stdout","time":99.390677592,"data":"  Getting requirements to build editable: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":99.394268233,"data":"  Installing backend dependencies: started\n"}
+,{"stream_name":"stdout","time":102.359324307,"data":"  Installing backend dependencies: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":102.360368646,"data":"  Preparing editable metadata (pyproject.toml): started\n"}
+,{"stream_name":"stdout","time":102.511133873,"data":"  Preparing editable metadata (pyproject.toml): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":102.894057705,"data":"Building wheels for collected packages: sparking-materials\n"}
+,{"stream_name":"stdout","time":102.895130366,"data":"  Building editable for sparking-materials (pyproject.toml): started\n"}
+,{"stream_name":"stdout","time":102.965415367,"data":"  Building editable for sparking-materials (pyproject.toml): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":102.966063552,"data":"  Created wheel for sparking-materials: filename=sparking_materials-0.1.0-py3-none-any.whl size=3905 sha256=65d3353bd3dcd3deb9ebece7aa20e45b7f687a0721c1f4a4e1ea458459ae3f75\n"}
+,{"stream_name":"stdout","time":102.966401231,"data":"  Stored in directory: /tmp/pip-ephem-wheel-cache-03t9dwi6/wheels/68/37/67/d59dbe9ccf697290dd7d723f8342ba7052106cfab71a85ec30\n"}
+,{"stream_name":"stdout","time":102.969105561,"data":"Successfully built sparking-materials\n"}
+,{"stream_name":"stdout","time":102.969529444,"data":"Installing collected packages: sparking-materials\n"}
+,{"stream_name":"stdout","time":103.004208548,"data":"Successfully installed sparking-materials-0.1.0\n"}
+,{"stream_name":"stdout","time":103.081297709,"data":"+ /usr/bin/python3 -m pip freeze --all\n"}
+,{"stream_name":"stdout","time":104.953985281,"data":"+ /usr/bin/python3 -m pytest -q\n"}
+,{"stream_name":"stdout","time":112.635863814,"data":"..................                                                       [100%]\n"}
+,{"stream_name":"stdout","time":112.635903471,"data":"18 passed in 5.20s\n"}
+,{"stream_name":"stdout","time":113.16004116,"data":"+ /usr/bin/python3 scripts/run_successor_v2.py --root /kaggle/working/sparking-v2-source --run-id kaggle-development-v2-r1 --task-type GPU\n"}
+,{"stream_name":"stderr","time":126.156287081,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":163.158658494,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":199.365810703,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":235.738473563,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":272.141635307,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":309.25805294,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":345.743556841,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":382.279434871,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":418.812202505,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":455.368461481,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":492.288141277,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":528.954487329,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":565.43806996,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":601.801347112,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":638.311817148,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":675.589636466,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":712.168264928,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":748.772465709,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":785.44322611,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":822.077457436,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":858.960097084,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":895.329520741,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":932.073535158,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":969.107408966,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1005.28042018,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1041.960651131,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1078.591456235,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1115.332500443,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1151.770602371,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1188.38912207,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1225.314455456,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1261.707087951,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1297.82121536,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1334.070126863,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1370.085115589,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1406.737387876,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1443.392953157,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1479.845654454,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1516.656225655,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1553.50017361,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1590.556408178,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1627.295353661,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1663.756937921,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1700.530168133,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1736.993497162,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1774.075491217,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1810.556941984,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1847.258426905,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1884.035499393,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1920.50931299,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1957.815689709,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1994.553642974,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2030.70752809,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2067.296891297,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2103.942294129,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2141.790630781,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2178.74228126,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2215.213444471,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2251.967758432,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2288.320515753,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":2397.197727344,"data":"SPARKING_V2_OUTER_COMPLETE=Cu\n"}
+,{"stream_name":"stderr","time":2397.848519969,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2434.918852325,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2471.827123278,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2508.572441475,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2545.262481442,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2582.320963935,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2619.319923084,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2656.222080353,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2692.868093429,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2729.721493673,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2766.886421354,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2803.653160994,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2840.649398125,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2877.572771617,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2914.247699327,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2951.568774992,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2988.345569439,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3024.755663775,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3061.763623894,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3098.50239561,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3135.894484619,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3172.445283288,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3209.117522464,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3245.649489902,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3282.385492752,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3319.199180485,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3355.857142722,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3392.6300821,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3429.617467366,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3466.393156819,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3503.465468018,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3540.526060752,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3577.391215861,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3614.057334886,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3650.509170269,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3687.425434152,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3724.501608368,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3761.271077942,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3798.241482118,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3835.055434095,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3872.041247308,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3908.874398831,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3945.625086723,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":3982.230113356,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4019.095360059,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4056.498744324,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4093.355425041,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4130.143689154,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4166.97561108,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4203.986581212,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4241.070970517,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4277.849240139,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4314.752555068,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4351.434048192,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4388.158586492,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4426.117958177,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4462.845889903,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4499.483317715,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4536.484483913,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4573.310467564,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":4687.137745858,"data":"SPARKING_V2_OUTER_COMPLETE=Ag\n"}
+,{"stream_name":"stderr","time":4687.711637367,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4724.117958709,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4760.098954542,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4796.478278186,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4832.834478996,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4869.432406485,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4906.110561794,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4942.786447754,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":4979.135833729,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5015.838419167,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5053.019197063,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5089.719060958,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5126.299183247,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5162.722238652,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5199.218937302,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5235.969623994,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5272.63541139,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5308.967046785,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5345.315828518,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5381.723222287,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5418.429799117,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5454.509467218,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5490.668715323,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5526.550496298,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5563.034392713,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5600.039169165,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5636.727420091,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5673.264265783,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5709.894373563,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5746.61853806,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5783.90899441,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5820.180638362,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5856.907101336,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5893.324508473,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5929.712172975,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":5966.636862493,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6002.918708552,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6039.328072927,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6076.041454224,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6112.961716443,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6150.431216078,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6187.090627334,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6223.761720979,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6260.300233795,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6297.036804771,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6334.463281994,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6370.865846377,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6407.644374996,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6444.22651411,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6480.680468173,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6517.632746417,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6554.243561364,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6590.970493404,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6627.746366166,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6664.171442521,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6702.014983637,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6738.772861847,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6775.440270612,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6812.222343881,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":6848.737539157,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":6961.032609536,"data":"SPARKING_V2_OUTER_COMPLETE=B\n"}
+,{"stream_name":"stdout","time":6961.077262,"data":"{\n"}
+,{"stream_name":"stdout","time":6961.077307353,"data":"  \"development_admission\": {\n"}
+,{"stream_name":"stdout","time":6961.077312761,"data":"    \"admission_rule\": {\n"}
+,{"stream_name":"stdout","time":6961.077316331,"data":"      \"maximum_active_fraction_each_element\": 0.9,\n"}
+,{"stream_name":"stdout","time":6961.077320537,"data":"      \"minimum_active_fraction_each_element\": 0.01,\n"}
+,{"stream_name":"stdout","time":6961.07732457,"data":"      \"minimum_improved_elements\": 2,\n"}
+,{"stream_name":"stdout","time":6961.077340858,"data":"      \"minimum_macro_mae_improvement_over_catboost_ev\": 0.02,\n"}
+,{"stream_name":"stdout","time":6961.077345065,"data":"      \"require_all_pseudo_exclusions\": true,\n"}
+,{"stream_name":"stdout","time":6961.077348818,"data":"      \"require_nonconstant_catboost_predictions\": true\n"}
+,{"stream_name":"stdout","time":6961.077352673,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.07735604,"data":"    \"all_pseudo_exclusions_complete\": true,\n"}
+,{"stream_name":"stdout","time":6961.077359742,"data":"    \"catboost_predictions_nonconstant\": true,\n"}
+,{"stream_name":"stdout","time":6961.077366182,"data":"    \"gate_activity_within_bounds\": true,\n"}
+,{"stream_name":"stdout","time":6961.07736959,"data":"    \"improved_element_count\": 2,\n"}
+,{"stream_name":"stdout","time":6961.077373063,"data":"    \"macro_mae_improvement_over_catboost_ev\": -0.0001304374851031076,\n"}
+,{"stream_name":"stdout","time":6961.077376624,"data":"    \"passed\": false,\n"}
+,{"stream_name":"stdout","time":6961.077380428,"data":"    \"per_element_improvement_ev\": {\n"}
+,{"stream_name":"stdout","time":6961.07738367,"data":"      \"Ag\": 0.0009665842037214212,\n"}
+,{"stream_name":"stdout","time":6961.077386633,"data":"      \"B\": 0.000563021498044991,\n"}
+,{"stream_name":"stdout","time":6961.077389686,"data":"      \"Cu\": -0.001920918157075735\n"}
+,{"stream_name":"stdout","time":6961.077393272,"data":"    }\n"}
+,{"stream_name":"stdout","time":6961.077396288,"data":"  },\n"}
+,{"stream_name":"stdout","time":6961.077399562,"data":"  \"official_fold_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":6961.077402692,"data":"  \"phase\": \"DEVELOPMENT\",\n"}
+,{"stream_name":"stdout","time":6961.077406972,"data":"  \"protected_confirmatory_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":6961.077410586,"data":"  \"rows\": [\n"}
+,{"stream_name":"stdout","time":6961.077414072,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.077417345,"data":"      \"bias_ev\": -0.8237179487179487,\n"}
+,{"stream_name":"stdout","time":6961.077420819,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.077424681,"data":"      \"mae_ev\": 0.8237179487179487,\n"}
+,{"stream_name":"stdout","time":6961.077428261,"data":"      \"median_ae_ev\": 0.0,\n"}
+,{"stream_name":"stdout","time":6961.077431715,"data":"      \"model\": \"median\",\n"}
+,{"stream_name":"stdout","time":6961.077443106,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.077446844,"data":"      \"rmse_ev\": 1.3056817651307198,\n"}
+,{"stream_name":"stdout","time":6961.077450445,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.077453896,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.077457298,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.077460589,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.077463992,"data":"      \"bias_ev\": 0.5040265655670916,\n"}
+,{"stream_name":"stdout","time":6961.077467587,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.077479724,"data":"      \"mae_ev\": 0.8020990628825793,\n"}
+,{"stream_name":"stdout","time":6961.077483278,"data":"      \"median_ae_ev\": 0.6620942022555851,\n"}
+,{"stream_name":"stdout","time":6961.077486749,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":6961.077490383,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.077493754,"data":"      \"rmse_ev\": 1.0509054028850886,\n"}
+,{"stream_name":"stdout","time":6961.077497232,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.077500874,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.077504519,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.077507797,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.077511146,"data":"      \"bias_ev\": 0.2815237022920491,\n"}
+,{"stream_name":"stdout","time":6961.077514626,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.077518051,"data":"      \"mae_ev\": 0.646040625785339,\n"}
+,{"stream_name":"stdout","time":6961.077521922,"data":"      \"median_ae_ev\": 0.4163094370812109,\n"}
+,{"stream_name":"stdout","time":6961.07752575,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":6961.077529216,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.077532681,"data":"      \"rmse_ev\": 0.9643557773760326,\n"}
+,{"stream_name":"stdout","time":6961.077536309,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.077539605,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.077543069,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.077546052,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.077549313,"data":"      \"bias_ev\": 0.43119399267399233,\n"}
+,{"stream_name":"stdout","time":6961.078083852,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.078185211,"data":"      \"mae_ev\": 0.7270764346764348,\n"}
+,{"stream_name":"stdout","time":6961.078229463,"data":"      \"median_ae_ev\": 0.45543333333333436,\n"}
+,{"stream_name":"stdout","time":6961.078278135,"data":"      \"model\": \"extra_trees_ensemble\",\n"}
+,{"stream_name":"stdout","time":6961.078374626,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.078422281,"data":"      \"rmse_ev\": 1.1155852686462133,\n"}
+,{"stream_name":"stdout","time":6961.078456923,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.078561282,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.078623794,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.0786482,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.078681381,"data":"      \"bias_ev\": 0.3780209658026806,\n"}
+,{"stream_name":"stdout","time":6961.078731053,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.07877259,"data":"      \"mae_ev\": 0.6977885291960945,\n"}
+,{"stream_name":"stdout","time":6961.078830146,"data":"      \"median_ae_ev\": 0.4324691666704108,\n"}
+,{"stream_name":"stdout","time":6961.078880772,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":6961.078939197,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.078987979,"data":"      \"rmse_ev\": 1.0257184605948473,\n"}
+,{"stream_name":"stdout","time":6961.079022387,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.079082706,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.079134664,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.079177253,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.07922404,"data":"      \"bias_ev\": 0.39285260167813857,\n"}
+,{"stream_name":"stdout","time":6961.07926169,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.07931106,"data":"      \"mae_ev\": 0.7095337198118489,\n"}
+,{"stream_name":"stdout","time":6961.079366465,"data":"      \"median_ae_ev\": 0.41688189534303655,\n"}
+,{"stream_name":"stdout","time":6961.079417721,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":6961.079456843,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.079505848,"data":"      \"rmse_ev\": 1.0440913012980002,\n"}
+,{"stream_name":"stdout","time":6961.079553627,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.079627631,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.079675311,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.079712622,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.079766135,"data":"      \"bias_ev\": 0.4762330745948533,\n"}
+,{"stream_name":"stdout","time":6961.07981044,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.079869903,"data":"      \"mae_ev\": 0.7690775630823643,\n"}
+,{"stream_name":"stdout","time":6961.079921622,"data":"      \"median_ae_ev\": 0.6149607064998899,\n"}
+,{"stream_name":"stdout","time":6961.079962257,"data":"      \"model\": \"constant_blend_0.25\",\n"}
+,{"stream_name":"stdout","time":6961.080019011,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.080092135,"data":"      \"rmse_ev\": 1.0305988373339732,\n"}
+,{"stream_name":"stdout","time":6961.080129071,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.08016177,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.080211985,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.080233809,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.080278076,"data":"      \"bias_ev\": 0.448439583622615,\n"}
+,{"stream_name":"stdout","time":6961.080310864,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.080367729,"data":"      \"mae_ev\": 0.7392173514389043,\n"}
+,{"stream_name":"stdout","time":6961.080427016,"data":"      \"median_ae_ev\": 0.5120759737025548,\n"}
+,{"stream_name":"stdout","time":6961.080468566,"data":"      \"model\": \"constant_blend_0.50\",\n"}
+,{"stream_name":"stdout","time":6961.080490585,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.080561487,"data":"      \"rmse_ev\": 1.0225777766768351,\n"}
+,{"stream_name":"stdout","time":6961.080614599,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.080663781,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.080692341,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.080746453,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.080771801,"data":"      \"bias_ev\": 0.42064609265037683,\n"}
+,{"stream_name":"stdout","time":6961.080793681,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.0808184,"data":"      \"mae_ev\": 0.7182389992321411,\n"}
+,{"stream_name":"stdout","time":6961.080869389,"data":"      \"median_ae_ev\": 0.46553852419244124,\n"}
+,{"stream_name":"stdout","time":6961.080926131,"data":"      \"model\": \"constant_blend_0.75\",\n"}
+,{"stream_name":"stdout","time":6961.080980837,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.081030788,"data":"      \"rmse_ev\": 1.0271300810173352,\n"}
+,{"stream_name":"stdout","time":6961.081079306,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.081129624,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.081171299,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.081203546,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.081269903,"data":"      \"bias_ev\": 0.3959526178460695,\n"}
+,{"stream_name":"stdout","time":6961.081301379,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.081323032,"data":"      \"gate_active_fraction\": 0.18717948717948718,\n"}
+,{"stream_name":"stdout","time":6961.081385952,"data":"      \"gate_mean\": 0.9202237852336875,\n"}
+,{"stream_name":"stdout","time":6961.081444249,"data":"      \"gate_min\": 5.451742904398084e-42,\n"}
+,{"stream_name":"stdout","time":6961.081488751,"data":"      \"mae_ev\": 0.7077536257022518,\n"}
+,{"stream_name":"stdout","time":6961.081567174,"data":"      \"mean_abs_change_from_catboost_ev\": 0.017588080744404093,\n"}
+,{"stream_name":"stdout","time":6961.081629228,"data":"      \"median_ae_ev\": 0.4390248981343355,\n"}
+,{"stream_name":"stdout","time":6961.081683575,"data":"      \"model\": \"risk_gate_t0.05\",\n"}
+,{"stream_name":"stdout","time":6961.081739085,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.081778015,"data":"      \"rmse_ev\": 1.040280521484352,\n"}
+,{"stream_name":"stdout","time":6961.081812835,"data":"      \"temperature_ev\": 0.05,\n"}
+,{"stream_name":"stdout","time":6961.081839405,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.081864327,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.081886072,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.081928795,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.081968107,"data":"      \"bias_ev\": 0.3960457488924977,\n"}
+,{"stream_name":"stdout","time":6961.081998824,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.082036936,"data":"      \"gate_active_fraction\": 0.18717948717948718,\n"}
+,{"stream_name":"stdout","time":6961.082078579,"data":"      \"gate_mean\": 0.9462149650842457,\n"}
+,{"stream_name":"stdout","time":6961.082118633,"data":"      \"gate_min\": 2.3348967652549617e-21,\n"}
+,{"stream_name":"stdout","time":6961.082160699,"data":"      \"mae_ev\": 0.708902591920922,\n"}
+,{"stream_name":"stdout","time":6961.082214157,"data":"      \"mean_abs_change_from_catboost_ev\": 0.01315729422691997,\n"}
+,{"stream_name":"stdout","time":6961.082251135,"data":"      \"median_ae_ev\": 0.4390248981343355,\n"}
+,{"stream_name":"stdout","time":6961.082285624,"data":"      \"model\": \"risk_gate_t0.10\",\n"}
+,{"stream_name":"stdout","time":6961.08234092,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.082401906,"data":"      \"rmse_ev\": 1.0417443384057137,\n"}
+,{"stream_name":"stdout","time":6961.082448542,"data":"      \"temperature_ev\": 0.1,\n"}
+,{"stream_name":"stdout","time":6961.082491306,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.08251195,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.082547365,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.082598308,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.082640253,"data":"      \"bias_ev\": 0.3965454680995071,\n"}
+,{"stream_name":"stdout","time":6961.082689873,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.08273479,"data":"      \"gate_active_fraction\": 0.18717948717948718,\n"}
+,{"stream_name":"stdout","time":6961.082784116,"data":"      \"gate_mean\": 0.9657306782026324,\n"}
+,{"stream_name":"stdout","time":6961.082829566,"data":"      \"gate_min\": 4.832076950189185e-11,\n"}
+,{"stream_name":"stdout","time":6961.082864251,"data":"      \"mae_ev\": 0.7101193683179022,\n"}
+,{"stream_name":"stdout","time":6961.082882706,"data":"      \"mean_abs_change_from_catboost_ev\": 0.009695389127447468,\n"}
+,{"stream_name":"stdout","time":6961.082922711,"data":"      \"median_ae_ev\": 0.4390248981343355,\n"}
+,{"stream_name":"stdout","time":6961.082967992,"data":"      \"model\": \"risk_gate_t0.20\",\n"}
+,{"stream_name":"stdout","time":6961.083003011,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.083026711,"data":"      \"rmse_ev\": 1.0430858123817195,\n"}
+,{"stream_name":"stdout","time":6961.083053149,"data":"      \"temperature_ev\": 0.2,\n"}
+,{"stream_name":"stdout","time":6961.083095961,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.083141448,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.083180734,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.083225753,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.083259435,"data":"      \"bias_ev\": 0.3970138622161826,\n"}
+,{"stream_name":"stdout","time":6961.083295317,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":6961.08335638,"data":"      \"gate_active_fraction\": 0.18717948717948718,\n"}
+,{"stream_name":"stdout","time":6961.083400161,"data":"      \"gate_mean\": 0.9779562717456641,\n"}
+,{"stream_name":"stdout","time":6961.083452485,"data":"      \"gate_min\": 6.951314228395365e-06,\n"}
+,{"stream_name":"stdout","time":6961.083476159,"data":"      \"mae_ev\": 0.7114546379689246,\n"}
+,{"stream_name":"stdout","time":6961.083525546,"data":"      \"mean_abs_change_from_catboost_ev\": 0.007480831891886289,\n"}
+,{"stream_name":"stdout","time":6961.083564342,"data":"      \"median_ae_ev\": 0.4390248981343355,\n"}
+,{"stream_name":"stdout","time":6961.083599325,"data":"      \"model\": \"risk_gate_t0.40\",\n"}
+,{"stream_name":"stdout","time":6961.083650763,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.083682324,"data":"      \"rmse_ev\": 1.0440312082905068,\n"}
+,{"stream_name":"stdout","time":6961.083723576,"data":"      \"temperature_ev\": 0.4,\n"}
+,{"stream_name":"stdout","time":6961.083769666,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":6961.083818077,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":6961.083857906,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.083884361,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.083930739,"data":"      \"bias_ev\": -0.9652551020408163,\n"}
+,{"stream_name":"stdout","time":6961.083971804,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.083992855,"data":"      \"mae_ev\": 0.9652551020408163,\n"}
+,{"stream_name":"stdout","time":6961.084050537,"data":"      \"median_ae_ev\": 0.185,\n"}
+,{"stream_name":"stdout","time":6961.084096544,"data":"      \"model\": \"median\",\n"}
+,{"stream_name":"stdout","time":6961.084145324,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.084195309,"data":"      \"rmse_ev\": 1.4994660614324538,\n"}
+,{"stream_name":"stdout","time":6961.084237089,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.084279511,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.084343421,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.084393741,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.084437788,"data":"      \"bias_ev\": 0.04286534329324753,\n"}
+,{"stream_name":"stdout","time":6961.084487047,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.08452352,"data":"      \"mae_ev\": 0.548399880334414,\n"}
+,{"stream_name":"stdout","time":6961.084578728,"data":"      \"median_ae_ev\": 0.3571275319314664,\n"}
+,{"stream_name":"stdout","time":6961.084640909,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":6961.084666256,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.084684167,"data":"      \"rmse_ev\": 0.852985645084183,\n"}
+,{"stream_name":"stdout","time":6961.084716563,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.084753921,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.08479297,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.084832875,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.084888324,"data":"      \"bias_ev\": -0.03842482718718669,\n"}
+,{"stream_name":"stdout","time":6961.084933607,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.084980293,"data":"      \"mae_ev\": 0.4395438431043135,\n"}
+,{"stream_name":"stdout","time":6961.085036659,"data":"      \"median_ae_ev\": 0.20346847912726096,\n"}
+,{"stream_name":"stdout","time":6961.08509187,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":6961.085145373,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.085190066,"data":"      \"rmse_ev\": 0.7811578477614303,\n"}
+,{"stream_name":"stdout","time":6961.085225697,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.085248877,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.085290665,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.085347751,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.085398603,"data":"      \"bias_ev\": 0.014578862973760685,\n"}
+,{"stream_name":"stdout","time":6961.085445318,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.08547424,"data":"      \"mae_ev\": 0.3708231778425656,\n"}
+,{"stream_name":"stdout","time":6961.085493478,"data":"      \"median_ae_ev\": 0.17622380952381195,\n"}
+,{"stream_name":"stdout","time":6961.085544008,"data":"      \"model\": \"extra_trees_ensemble\",\n"}
+,{"stream_name":"stdout","time":6961.085596968,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.085678896,"data":"      \"rmse_ev\": 0.6850380758616019,\n"}
+,{"stream_name":"stdout","time":6961.085704619,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.085728187,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.085753072,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.085777518,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.085800303,"data":"      \"bias_ev\": 0.058891519613751886,\n"}
+,{"stream_name":"stdout","time":6961.085842954,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.085891449,"data":"      \"mae_ev\": 0.40186366087935066,\n"}
+,{"stream_name":"stdout","time":6961.085931856,"data":"      \"median_ae_ev\": 0.20479060349740053,\n"}
+,{"stream_name":"stdout","time":6961.085997954,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":6961.086047731,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.086069532,"data":"      \"rmse_ev\": 0.676857413715641,\n"}
+,{"stream_name":"stdout","time":6961.086120951,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.086160343,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.086183899,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.086207753,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.086254173,"data":"      \"bias_ev\": 0.04662901856449201,\n"}
+,{"stream_name":"stdout","time":6961.086310381,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.086381217,"data":"      \"mae_ev\": 0.3991137273484922,\n"}
+,{"stream_name":"stdout","time":6961.086445224,"data":"      \"median_ae_ev\": 0.21573008990527753,\n"}
+,{"stream_name":"stdout","time":6961.086482319,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":6961.086514543,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.086570735,"data":"      \"rmse_ev\": 0.6812853204643478,\n"}
+,{"stream_name":"stdout","time":6961.086618308,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.086673137,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.086705552,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.0867291,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.086763862,"data":"      \"bias_ev\": 0.04380626211105865,\n"}
+,{"stream_name":"stdout","time":6961.086815548,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.086852344,"data":"      \"mae_ev\": 0.5024417800130644,\n"}
+,{"stream_name":"stdout","time":6961.086894323,"data":"      \"median_ae_ev\": 0.32125354978358606,\n"}
+,{"stream_name":"stdout","time":6961.086933816,"data":"      \"model\": \"constant_blend_0.25\",\n"}
+,{"stream_name":"stdout","time":6961.086974895,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.087019215,"data":"      \"rmse_ev\": 0.7922774392982697,\n"}
+,{"stream_name":"stdout","time":6961.0870393,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.087082517,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.087117431,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.087178313,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.087220995,"data":"      \"bias_ev\": 0.04474718092886976,\n"}
+,{"stream_name":"stdout","time":6961.087265407,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.087316525,"data":"      \"mae_ev\": 0.4627994970636251,\n"}
+,{"stream_name":"stdout","time":6961.087373272,"data":"      \"median_ae_ev\": 0.27209444247611364,\n"}
+,{"stream_name":"stdout","time":6961.087407821,"data":"      \"model\": \"constant_blend_0.50\",\n"}
+,{"stream_name":"stdout","time":6961.087450055,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.087492216,"data":"      \"rmse_ev\": 0.7419596217999732,\n"}
+,{"stream_name":"stdout","time":6961.087526263,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.087563507,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.087605155,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.087673723,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.087737189,"data":"      \"bias_ev\": 0.045688099746680894,\n"}
+,{"stream_name":"stdout","time":6961.087783693,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.087846251,"data":"      \"mae_ev\": 0.4287705027503544,\n"}
+,{"stream_name":"stdout","time":6961.087907014,"data":"      \"median_ae_ev\": 0.24605260671721824,\n"}
+,{"stream_name":"stdout","time":6961.087970775,"data":"      \"model\": \"constant_blend_0.75\",\n"}
+,{"stream_name":"stdout","time":6961.088003847,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.088052097,"data":"      \"rmse_ev\": 0.7042628269341552,\n"}
+,{"stream_name":"stdout","time":6961.08809018,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.088112195,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.088167563,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.088204756,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.088249419,"data":"      \"bias_ev\": 0.03768142747567908,\n"}
+,{"stream_name":"stdout","time":6961.088299178,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.088354173,"data":"      \"gate_active_fraction\": 0.1326530612244898,\n"}
+,{"stream_name":"stdout","time":6961.088407344,"data":"      \"gate_mean\": 0.9372985071055097,\n"}
+,{"stream_name":"stdout","time":6961.08845831,"data":"      \"gate_min\": 0.00013023252370914678,\n"}
+,{"stream_name":"stdout","time":6961.088512048,"data":"      \"mae_ev\": 0.39502751550287596,\n"}
+,{"stream_name":"stdout","time":6961.088560297,"data":"      \"mean_abs_change_from_catboost_ev\": 0.01255554493666512,\n"}
+,{"stream_name":"stdout","time":6961.088585765,"data":"      \"median_ae_ev\": 0.17371648788216357,\n"}
+,{"stream_name":"stdout","time":6961.08860448,"data":"      \"model\": \"risk_gate_t0.05\",\n"}
+,{"stream_name":"stdout","time":6961.088651595,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.088710003,"data":"      \"rmse_ev\": 0.6820558378379774,\n"}
+,{"stream_name":"stdout","time":6961.088736163,"data":"      \"temperature_ev\": 0.05,\n"}
+,{"stream_name":"stdout","time":6961.088791955,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.088837187,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.088878017,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.08892165,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.088955965,"data":"      \"bias_ev\": 0.0401137407587662,\n"}
+,{"stream_name":"stdout","time":6961.088998159,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.089033757,"data":"      \"gate_active_fraction\": 0.1326530612244898,\n"}
+,{"stream_name":"stdout","time":6961.089089597,"data":"      \"gate_mean\": 0.9562639486224631,\n"}
+,{"stream_name":"stdout","time":6961.089112947,"data":"      \"gate_min\": 0.011411946534625317,\n"}
+,{"stream_name":"stdout","time":6961.089162521,"data":"      \"mae_ev\": 0.39583777387301866,\n"}
+,{"stream_name":"stdout","time":6961.089188629,"data":"      \"mean_abs_change_from_catboost_ev\": 0.009448859786449035,\n"}
+,{"stream_name":"stdout","time":6961.089224587,"data":"      \"median_ae_ev\": 0.17371648788216357,\n"}
+,{"stream_name":"stdout","time":6961.089250946,"data":"      \"model\": \"risk_gate_t0.10\",\n"}
+,{"stream_name":"stdout","time":6961.089301916,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.089349506,"data":"      \"rmse_ev\": 0.681600248554133,\n"}
+,{"stream_name":"stdout","time":6961.089372746,"data":"      \"temperature_ev\": 0.1,\n"}
+,{"stream_name":"stdout","time":6961.089390439,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.089447011,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.089488169,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.089536911,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.089575575,"data":"      \"bias_ev\": 0.04270238735092887,\n"}
+,{"stream_name":"stdout","time":6961.089623114,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.089675792,"data":"      \"gate_active_fraction\": 0.1326530612244898,\n"}
+,{"stream_name":"stdout","time":6961.089706069,"data":"      \"gate_mean\": 0.9722320860311353,\n"}
+,{"stream_name":"stdout","time":6961.089770237,"data":"      \"gate_min\": 0.10682671264541148,\n"}
+,{"stream_name":"stdout","time":6961.089813487,"data":"      \"mae_ev\": 0.39713146813246947,\n"}
+,{"stream_name":"stdout","time":6961.089861652,"data":"      \"mean_abs_change_from_catboost_ev\": 0.006211510265509853,\n"}
+,{"stream_name":"stdout","time":6961.089887637,"data":"      \"median_ae_ev\": 0.1753656304551656,\n"}
+,{"stream_name":"stdout","time":6961.0899098,"data":"      \"model\": \"risk_gate_t0.20\",\n"}
+,{"stream_name":"stdout","time":6961.08998762,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.090025719,"data":"      \"rmse_ev\": 0.6813083339356895,\n"}
+,{"stream_name":"stdout","time":6961.090073945,"data":"      \"temperature_ev\": 0.2,\n"}
+,{"stream_name":"stdout","time":6961.090128251,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.090168504,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.090205416,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.090252185,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.090299405,"data":"      \"bias_ev\": 0.04453323559471345,\n"}
+,{"stream_name":"stdout","time":6961.090345692,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":6961.090405436,"data":"      \"gate_active_fraction\": 0.1326530612244898,\n"}
+,{"stream_name":"stdout","time":6961.090468145,"data":"      \"gate_mean\": 0.983721150824195,\n"}
+,{"stream_name":"stdout","time":6961.090512545,"data":"      \"gate_min\": 0.32684355989587965,\n"}
+,{"stream_name":"stdout","time":6961.090566327,"data":"      \"mae_ev\": 0.3981471431447708,\n"}
+,{"stream_name":"stdout","time":6961.090629502,"data":"      \"mean_abs_change_from_catboost_ev\": 0.00368358136410677,\n"}
+,{"stream_name":"stdout","time":6961.090679927,"data":"      \"median_ae_ev\": 0.19661796288651848,\n"}
+,{"stream_name":"stdout","time":6961.090726475,"data":"      \"model\": \"risk_gate_t0.40\",\n"}
+,{"stream_name":"stdout","time":6961.090766329,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.090829893,"data":"      \"rmse_ev\": 0.681223151572271,\n"}
+,{"stream_name":"stdout","time":6961.090868413,"data":"      \"temperature_ev\": 0.4,\n"}
+,{"stream_name":"stdout","time":6961.090918424,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":6961.090960665,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":6961.091036731,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.091105538,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.09115213,"data":"      \"bias_ev\": -2.017058823529412,\n"}
+,{"stream_name":"stdout","time":6961.091202095,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.091261784,"data":"      \"mae_ev\": 2.017058823529412,\n"}
+,{"stream_name":"stdout","time":6961.091304106,"data":"      \"median_ae_ev\": 0.0,\n"}
+,{"stream_name":"stdout","time":6961.091356674,"data":"      \"model\": \"median\",\n"}
+,{"stream_name":"stdout","time":6961.091387434,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.091422691,"data":"      \"rmse_ev\": 3.1005983429063515,\n"}
+,{"stream_name":"stdout","time":6961.091474784,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.091529109,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.091564339,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.091595945,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.091642069,"data":"      \"bias_ev\": -0.7427868988718126,\n"}
+,{"stream_name":"stdout","time":6961.091678455,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.091712042,"data":"      \"mae_ev\": 1.3215706134430787,\n"}
+,{"stream_name":"stdout","time":6961.09176347,"data":"      \"median_ae_ev\": 0.8848929933729042,\n"}
+,{"stream_name":"stdout","time":6961.091820945,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":6961.09186771,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.091920021,"data":"      \"rmse_ev\": 1.9144329773574327,\n"}
+,{"stream_name":"stdout","time":6961.091976386,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.092018004,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.09205216,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.092094859,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.092131415,"data":"      \"bias_ev\": -1.0264170449474264,\n"}
+,{"stream_name":"stdout","time":6961.092183773,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.092227148,"data":"      \"mae_ev\": 1.2329450577375656,\n"}
+,{"stream_name":"stdout","time":6961.092261618,"data":"      \"median_ae_ev\": 0.31727136293670977,\n"}
+,{"stream_name":"stdout","time":6961.092300628,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":6961.092343954,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.092375345,"data":"      \"rmse_ev\": 1.9467040649024265,\n"}
+,{"stream_name":"stdout","time":6961.092396425,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.092448764,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.09250758,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.092560625,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.092597006,"data":"      \"bias_ev\": -0.8408939975990389,\n"}
+,{"stream_name":"stdout","time":6961.092661058,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.092705435,"data":"      \"mae_ev\": 1.0881248499399754,\n"}
+,{"stream_name":"stdout","time":6961.092741828,"data":"      \"median_ae_ev\": 0.3308809523809544,\n"}
+,{"stream_name":"stdout","time":6961.092783257,"data":"      \"model\": \"extra_trees_ensemble\",\n"}
+,{"stream_name":"stdout","time":6961.092820014,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.092863773,"data":"      \"rmse_ev\": 1.7320463650419744,\n"}
+,{"stream_name":"stdout","time":6961.092885934,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.092941715,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.09299168,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.093036351,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.093077344,"data":"      \"bias_ev\": -1.0056815074220165,\n"}
+,{"stream_name":"stdout","time":6961.093126006,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.093168396,"data":"      \"mae_ev\": 1.2163923630622315,\n"}
+,{"stream_name":"stdout","time":6961.093208921,"data":"      \"median_ae_ev\": 0.39721893062391833,\n"}
+,{"stream_name":"stdout","time":6961.093242916,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":6961.093268411,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.093287959,"data":"      \"rmse_ev\": 1.9157346798678971,\n"}
+,{"stream_name":"stdout","time":6961.093318302,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.093364159,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.093391522,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.093436226,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.093474061,"data":"      \"bias_ev\": -1.0098007546528551,\n"}
+,{"stream_name":"stdout","time":6961.093513048,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.093561836,"data":"      \"mae_ev\": 1.2299616868899166,\n"}
+,{"stream_name":"stdout","time":6961.093592506,"data":"      \"median_ae_ev\": 0.37089246986797486,\n"}
+,{"stream_name":"stdout","time":6961.093643849,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":6961.093685497,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.093715499,"data":"      \"rmse_ev\": 1.9216179171263348,\n"}
+,{"stream_name":"stdout","time":6961.093758855,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.093788774,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.093840682,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.093887887,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.093924133,"data":"      \"bias_ev\": -0.8095403628170732,\n"}
+,{"stream_name":"stdout","time":6961.093954842,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.094000989,"data":"      \"mae_ev\": 1.2892135307770398,\n"}
+,{"stream_name":"stdout","time":6961.094040058,"data":"      \"median_ae_ev\": 0.8004119083386398,\n"}
+,{"stream_name":"stdout","time":6961.094074576,"data":"      \"model\": \"constant_blend_0.25\",\n"}
+,{"stream_name":"stdout","time":6961.094120524,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.094142812,"data":"      \"rmse_ev\": 1.8946965147732129,\n"}
+,{"stream_name":"stdout","time":6961.094171662,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.094196946,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.094220709,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.094250993,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.094304486,"data":"      \"bias_ev\": -0.8762938267623337,\n"}
+,{"stream_name":"stdout","time":6961.094375939,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.094412378,"data":"      \"mae_ev\": 1.262354164079607,\n"}
+,{"stream_name":"stdout","time":6961.094473691,"data":"      \"median_ae_ev\": 0.66884781546416,\n"}
+,{"stream_name":"stdout","time":6961.094512727,"data":"      \"model\": \"constant_blend_0.50\",\n"}
+,{"stream_name":"stdout","time":6961.094538196,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.094562864,"data":"      \"rmse_ev\": 1.8892879438997687,\n"}
+,{"stream_name":"stdout","time":6961.094586089,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.094615322,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.094643615,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.094666625,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.094710307,"data":"      \"bias_ev\": -0.9430472907075942,\n"}
+,{"stream_name":"stdout","time":6961.09474859,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.09477297,"data":"      \"mae_ev\": 1.24427941077498,\n"}
+,{"stream_name":"stdout","time":6961.094796375,"data":"      \"median_ae_ev\": 0.5407810418216472,\n"}
+,{"stream_name":"stdout","time":6961.094819042,"data":"      \"model\": \"constant_blend_0.75\",\n"}
+,{"stream_name":"stdout","time":6961.094844033,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.094866967,"data":"      \"rmse_ev\": 1.898329734373724,\n"}
+,{"stream_name":"stdout","time":6961.094889267,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.094911905,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.094935777,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.09496042,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.094989303,"data":"      \"bias_ev\": -1.0139377222111028,\n"}
+,{"stream_name":"stdout","time":6961.095013015,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.095036121,"data":"      \"gate_active_fraction\": 0.19327731092436976,\n"}
+,{"stream_name":"stdout","time":6961.095058393,"data":"      \"gate_mean\": 0.9205664680569065,\n"}
+,{"stream_name":"stdout","time":6961.095083325,"data":"      \"gate_min\": 0.020039150829788854,\n"}
+,{"stream_name":"stdout","time":6961.095105385,"data":"      \"mae_ev\": 1.2265714038984408,\n"}
+,{"stream_name":"stdout","time":6961.095130868,"data":"      \"mean_abs_change_from_catboost_ev\": 0.008689639098068542,\n"}
+,{"stream_name":"stdout","time":6961.095154115,"data":"      \"median_ae_ev\": 0.37089246986797486,\n"}
+,{"stream_name":"stdout","time":6961.095176482,"data":"      \"model\": \"risk_gate_t0.05\",\n"}
+,{"stream_name":"stdout","time":6961.095199244,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.095222669,"data":"      \"rmse_ev\": 1.9231238768840058,\n"}
+,{"stream_name":"stdout","time":6961.095245827,"data":"      \"temperature_ev\": 0.05,\n"}
+,{"stream_name":"stdout","time":6961.095269082,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.09529181,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.09531362,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.095382601,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.095438345,"data":"      \"bias_ev\": -1.012678784568075,\n"}
+,{"stream_name":"stdout","time":6961.095525652,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.095580497,"data":"      \"gate_active_fraction\": 0.19327731092436976,\n"}
+,{"stream_name":"stdout","time":6961.095608047,"data":"      \"gate_mean\": 0.9506569753369628,\n"}
+,{"stream_name":"stdout","time":6961.095663717,"data":"      \"gate_min\": 0.14155970764941858,\n"}
+,{"stream_name":"stdout","time":6961.09570721,"data":"      \"mae_ev\": 1.2279006186535253,\n"}
+,{"stream_name":"stdout","time":6961.095753845,"data":"      \"mean_abs_change_from_catboost_ev\": 0.005585743729057808,\n"}
+,{"stream_name":"stdout","time":6961.095799949,"data":"      \"median_ae_ev\": 0.37089246986797486,\n"}
+,{"stream_name":"stdout","time":6961.095855868,"data":"      \"model\": \"risk_gate_t0.10\",\n"}
+,{"stream_name":"stdout","time":6961.095906676,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.095952105,"data":"      \"rmse_ev\": 1.922717701526233,\n"}
+,{"stream_name":"stdout","time":6961.095993189,"data":"      \"temperature_ev\": 0.1,\n"}
+,{"stream_name":"stdout","time":6961.096019662,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.096024478,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.096027833,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.096030906,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.096034163,"data":"      \"bias_ev\": -1.01157706337399,\n"}
+,{"stream_name":"stdout","time":6961.096037631,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.096041609,"data":"      \"gate_active_fraction\": 0.19327731092436976,\n"}
+,{"stream_name":"stdout","time":6961.096044835,"data":"      \"gate_mean\": 0.9718676437486713,\n"}
+,{"stream_name":"stdout","time":6961.096047854,"data":"      \"gate_min\": 0.37624421277864006,\n"}
+,{"stream_name":"stdout","time":6961.096051446,"data":"      \"mae_ev\": 1.2288552647675495,\n"}
+,{"stream_name":"stdout","time":6961.096055013,"data":"      \"mean_abs_change_from_catboost_ev\": 0.0032658641993565762,\n"}
+,{"stream_name":"stdout","time":6961.096065949,"data":"      \"median_ae_ev\": 0.37089246986797486,\n"}
+,{"stream_name":"stdout","time":6961.096069261,"data":"      \"model\": \"risk_gate_t0.20\",\n"}
+,{"stream_name":"stdout","time":6961.096072696,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.096075871,"data":"      \"rmse_ev\": 1.922343784575892,\n"}
+,{"stream_name":"stdout","time":6961.096079154,"data":"      \"temperature_ev\": 0.2,\n"}
+,{"stream_name":"stdout","time":6961.096082231,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.096085653,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.096136333,"data":"    },\n"}
+,{"stream_name":"stdout","time":6961.096246938,"data":"    {\n"}
+,{"stream_name":"stdout","time":6961.096290669,"data":"      \"bias_ev\": -1.010803229923484,\n"}
+,{"stream_name":"stdout","time":6961.096339823,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":6961.096370316,"data":"      \"gate_active_fraction\": 0.19327731092436976,\n"}
+,{"stream_name":"stdout","time":6961.096409392,"data":"      \"gate_mean\": 0.9848556764896746,\n"}
+,{"stream_name":"stdout","time":6961.096443884,"data":"      \"gate_min\": 0.6133874899104481,\n"}
+,{"stream_name":"stdout","time":6961.096463934,"data":"      \"mae_ev\": 1.2293986653918716,\n"}
+,{"stream_name":"stdout","time":6961.096500789,"data":"      \"mean_abs_change_from_catboost_ev\": 0.001785535608885453,\n"}
+,{"stream_name":"stdout","time":6961.096546971,"data":"      \"median_ae_ev\": 0.37089246986797486,\n"}
+,{"stream_name":"stdout","time":6961.096585858,"data":"      \"model\": \"risk_gate_t0.40\",\n"}
+,{"stream_name":"stdout","time":6961.096626079,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.096653558,"data":"      \"rmse_ev\": 1.9220461682706538,\n"}
+,{"stream_name":"stdout","time":6961.096661991,"data":"      \"temperature_ev\": 0.4,\n"}
+,{"stream_name":"stdout","time":6961.096675646,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":6961.096681958,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":6961.096699443,"data":"    }\n"}
+,{"stream_name":"stdout","time":6961.096739707,"data":"  ],\n"}
+,{"stream_name":"stdout","time":6961.096767287,"data":"  \"run_id\": \"kaggle-development-v2-r1\",\n"}
+,{"stream_name":"stdout","time":6961.096787746,"data":"  \"schema_version\": 2,\n"}
+,{"stream_name":"stdout","time":6961.096842502,"data":"  \"scientific_disposition\": \"DEVELOPMENT_NOT_SUPPORTED\",\n"}
+,{"stream_name":"stdout","time":6961.096861923,"data":"  \"selection\": {\n"}
+,{"stream_name":"stdout","time":6961.096877873,"data":"    \"candidates\": [\n"}
+,{"stream_name":"stdout","time":6961.096900072,"data":"      {\n"}
+,{"stream_name":"stdout","time":6961.096924094,"data":"        \"macro_mae_ev\": 0.7764508483678562,\n"}
+,{"stream_name":"stdout","time":6961.096946748,"data":"        \"model\": \"risk_gate_t0.05\",\n"}
+,{"stream_name":"stdout","time":6961.09697174,"data":"        \"temperature_ev\": 0.05\n"}
+,{"stream_name":"stdout","time":6961.097013646,"data":"      },\n"}
+,{"stream_name":"stdout","time":6961.097045552,"data":"      {\n"}
+,{"stream_name":"stdout","time":6961.097080612,"data":"        \"macro_mae_ev\": 0.7775469948158219,\n"}
+,{"stream_name":"stdout","time":6961.09710474,"data":"        \"model\": \"risk_gate_t0.10\",\n"}
+,{"stream_name":"stdout","time":6961.097128468,"data":"        \"temperature_ev\": 0.1\n"}
+,{"stream_name":"stdout","time":6961.09716171,"data":"      },\n"}
+,{"stream_name":"stdout","time":6961.097178994,"data":"      {\n"}
+,{"stream_name":"stdout","time":6961.097214217,"data":"        \"macro_mae_ev\": 0.778702033739307,\n"}
+,{"stream_name":"stdout","time":6961.097238526,"data":"        \"model\": \"risk_gate_t0.20\",\n"}
+,{"stream_name":"stdout","time":6961.097252638,"data":"        \"temperature_ev\": 0.2\n"}
+,{"stream_name":"stdout","time":6961.097269224,"data":"      },\n"}
+,{"stream_name":"stdout","time":6961.09729642,"data":"      {\n"}
+,{"stream_name":"stdout","time":6961.097317895,"data":"        \"macro_mae_ev\": 0.7796668155018557,\n"}
+,{"stream_name":"stdout","time":6961.097396862,"data":"        \"model\": \"risk_gate_t0.40\",\n"}
+,{"stream_name":"stdout","time":6961.097437177,"data":"        \"temperature_ev\": 0.4\n"}
+,{"stream_name":"stdout","time":6961.097465406,"data":"      }\n"}
+,{"stream_name":"stdout","time":6961.097480889,"data":"    ],\n"}
+,{"stream_name":"stdout","time":6961.097496065,"data":"    \"selected\": {\n"}
+,{"stream_name":"stdout","time":6961.097532145,"data":"      \"macro_mae_ev\": 0.7796668155018557,\n"}
+,{"stream_name":"stdout","time":6961.097557508,"data":"      \"model\": \"risk_gate_t0.40\",\n"}
+,{"stream_name":"stdout","time":6961.097580459,"data":"      \"temperature_ev\": 0.4\n"}
+,{"stream_name":"stdout","time":6961.09760277,"data":"    }\n"}
+,{"stream_name":"stdout","time":6961.097626915,"data":"  },\n"}
+,{"stream_name":"stdout","time":6961.097652965,"data":"  \"status\": \"SUCCESS\"\n"}
+,{"stream_name":"stdout","time":6961.097673527,"data":"}\n"}
+,{"stream_name":"stdout","time":6961.704902702,"data":"+ /usr/bin/python3 scripts/verify_successor_v2.py /kaggle/working/sparking-v2-source/runs/kaggle-development-v2-r1\n"}
+,{"stream_name":"stdout","time":6961.895995749,"data":"{\n"}
+,{"stream_name":"stdout","time":6961.896021419,"data":"  \"gpu_admitted\": true,\n"}
+,{"stream_name":"stdout","time":6961.896025448,"data":"  \"manifest\": {\n"}
+,{"stream_name":"stdout","time":6961.896028894,"data":"    \"changed\": [],\n"}
+,{"stream_name":"stdout","time":6961.896032236,"data":"    \"extra\": [],\n"}
+,{"stream_name":"stdout","time":6961.896035622,"data":"    \"missing\": [],\n"}
+,{"stream_name":"stdout","time":6961.896038919,"data":"    \"valid\": true\n"}
+,{"stream_name":"stdout","time":6961.896042227,"data":"  },\n"}
+,{"stream_name":"stdout","time":6961.896045393,"data":"  \"metric_comparisons\": 156,\n"}
+,{"stream_name":"stdout","time":6961.89604877,"data":"  \"protected_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":6961.896052152,"data":"  \"run_receipt_status\": \"SUCCESS\",\n"}
+,{"stream_name":"stdout","time":6961.896055653,"data":"  \"scientific_disposition\": \"DEVELOPMENT_NOT_SUPPORTED\",\n"}
+,{"stream_name":"stdout","time":6961.896059543,"data":"  \"status\": \"VERIFIED\"\n"}
+,{"stream_name":"stdout","time":6961.896062974,"data":"}\n"}
+,{"stream_name":"stdout","time":6961.946708279,"data":"SPARKING_V2_COMPLETE=DEVELOPMENT_NOT_SUPPORTED\n"}
+,{"stream_name":"stderr","time":6963.852160456,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":6963.852207359,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":6964.099469657,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":6964.099511332,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":6964.937260508,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":6965.444408495,"data":"[NbConvertApp] Writing 296261 bytes to __results__.html\n"}
+]
