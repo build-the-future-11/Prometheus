@@ -3,12 +3,12 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-21T16:39:16+05:30",
+  "updated_at": "2026-10-21T16:43:16+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Atlas.git",
   "git_branch": "codex/ml4materials-research-execution",
-  "phase": "SUCCESSOR_V2_FROZEN_HOSTED_EXECUTION_PENDING",
+  "phase": "SUCCESSOR_V2_WAITING_FOR_KAGGLE_GPU_SLOT",
   "disposition": "NOT_EVALUATED",
   "research_question": "Does support-gating a nonlinear residual improve composition-only experimental band-gap prediction under preregistered element exclusion relative to the identical ungated residual model, without practically degrading official Matbench MAE?",
   "hypothesis": "A regularized linear component is safer for descriptor-space extrapolation, while nonlinear residual corrections are useful in-support but brittle out-of-support; attenuating only the residual as support distance increases will reduce leave-one-element-out MAE.",
@@ -110,6 +110,10 @@
     {
       "date": "2026-10-21",
       "event": "Preserved all v1 results and diagnostics at commit c04873557b522962833aafca3759caf6a3fa488b, then froze the separately versioned GPU risk-gated v2 development protocol before any v2 outcomes."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Uploaded and byte-roundtrip-verified the private v2 source dataset. Kaggle refused the first GPU kernel submission because the account maximum of two batch GPU sessions was reached; no v2 execution or scientific outcome occurred."
     }
   ],
   "hosted_development": {
@@ -172,7 +176,7 @@
   },
   "successor_v2": {
     "study_id": "sparking-development-v2-risk-gated-gpu",
-    "status": "FROZEN_HOSTED_EXECUTION_PENDING",
+    "status": "FROZEN_WAITING_FOR_GPU_SLOT",
     "protocol": "protocols/development-v2.json",
     "protocol_explanation": "docs/PROTOCOL_V2.md",
     "parent_commit": "c04873557b522962833aafca3759caf6a3fa488b",
@@ -190,6 +194,9 @@
       "Te"
     ],
     "protected_outcomes_observed": false,
-    "confirmation_admission": "PENDING_DEVELOPMENT_RULE"
+    "confirmation_admission": "PENDING_DEVELOPMENT_RULE",
+    "hosted_launch": "artifacts/kaggle-development-v2-launch.json",
+    "private_source_dataset": "ryangomez010/sparking-source-v2-20261021",
+    "source_roundtrip_sha256": "915dfeaba793c5e70f90a21cb6e9aaa24db57783dfb8d195812e3a2385e04582"
   }
 }
