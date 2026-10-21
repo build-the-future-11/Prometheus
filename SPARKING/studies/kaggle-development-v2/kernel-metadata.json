@@ -1,0 +1,15 @@
+{
+  "id": "ryangomez010/sparking-development-v2-risk-gated-gpu",
+  "title": "SPARKING v2 risk-gated GPU development",
+  "code_file": "sparking-development-v2-20261021.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "ryangomez010/sparking-source-v2-20261021"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

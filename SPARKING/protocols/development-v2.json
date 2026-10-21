@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "study_id": "sparking-development-v2-risk-gated-gpu",
+  "parent_study": "sparking-development-v1",
+  "parent_commit": "c04873557b522962833aafca3759caf6a3fa488b",
+  "phase": "DEVELOPMENT",
+  "status": "FROZEN_BEFORE_DEVELOPMENT",
+  "frozen_at": "2026-10-21T16:39:16+05:30",
+  "research_question": "Can a gate calibrated only on pseudo-element exclusions inside each training set improve unseen-element experimental band-gap MAE by shrinking a strong direct GPU ensemble toward ridge when predicted direct-model harm is positive?",
+  "hypothesis": "Cross-fitted pseudo-element exclusions expose model-risk patterns that transfer to unseen-element shifts; a calibrated convex gate will improve a strong direct ensemble without sacrificing ordinary benchmark accuracy.",
+  "falsifier": "Development does not justify protected confirmation unless the selected gate improves macro-MAE over the identical ungated CatBoost ensemble by more than 0.02 eV, improves at least two of three development elements, is non-degenerate, and has finite fully retained evidence.",
+  "dataset": "matbench_expt_gap",
+  "dataset_version": "Matbench v0.1",
+  "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+  "development_elements": ["Cu", "Ag", "B"],
+  "protected_confirmatory_elements": ["Li", "Zn", "Ga", "Se", "Te"],
+  "pseudo_exclusion_elements": ["Na", "Mg", "Al", "Si", "P", "Ca", "Fe", "K", "Ti", "Mn", "Ni"],
+  "minimum_pseudo_holdout_rows": 100,
+  "representation": {
+    "name": "v1 fractions and periodic moments plus Magpie ElementProperty and Stoichiometry",
+    "matminer_version": "0.10.1",
+    "target_independent": true,
+    "missing_value_policy": "training-median imputation"
+  },
+  "catboost": {
+    "version": "1.2.10",
+    "task_type": "GPU",
+    "devices": "0",
+    "iterations": 1200,
+    "depth": 8,
+    "learning_rate": 0.035,
+    "l2_leaf_reg": 5.0,
+    "random_strength": 0.5,
+    "border_count": 128,
+    "bagging_temperature": 1.0,
+    "thread_count": -1,
+    "seeds": [20261021, 20261022, 20261023, 20261024, 20261025]
+  },
+  "extra_trees": {
+    "n_estimators": 700,
+    "max_features": 0.75,
+    "min_samples_leaf": 1,
+    "seeds": [20261021, 20261022, 20261023]
+  },
+  "corrected_hgb": {
+    "loss": "squared_error",
+    "max_iter": 180,
+    "learning_rate": 0.055,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 12,
+    "l2_regularization": 0.1,
+    "random_state": 20261020
+  },
+  "harm_model": {
+    "target": "absolute_error_direct_minus_absolute_error_ridge",
+    "learning_rate": 0.05,
+    "max_iter": 160,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 24,
+    "l2_regularization": 1.0,
+    "random_state": 20261021,
+    "pseudo_elements_equal_weight": true
+  },
+  "gate_temperatures_ev": [0.05, 0.1, 0.2, 0.4],
+  "selection_rule": "Minimize macro MAE across Cu, Ag, and B. Candidates within 0.005 eV of the minimum choose the largest temperature, which is the least aggressive shrinkage.",
+  "development_admission_rule": {
+    "minimum_macro_mae_improvement_over_catboost_ev": 0.02,
+    "minimum_improved_elements": 2,
+    "minimum_active_fraction_each_element": 0.01,
+    "maximum_active_fraction_each_element": 0.9,
+    "require_nonconstant_catboost_predictions": true,
+    "require_all_pseudo_exclusions": true
+  },
+  "future_confirmatory_success_rule": {
+    "minimum_macro_mae_improvement_over_catboost_ev": 0.01,
+    "minimum_improved_elements": 4,
+    "maximum_official_mae_degradation_ev": 0.02
+  },
+  "controls": [
+    "median",
+    "ridge",
+    "direct_hgb_squared",
+    "extra_trees_ensemble",
+    "catboost_single_seed",
+    "catboost_ensemble",
+    "constant_blend_0.25",
+    "constant_blend_0.50",
+    "constant_blend_0.75"
+  ],
+  "primary_metric": "element-macro mean absolute error in eV",
+  "secondary_metrics": [
+    "per-element MAE",
+    "RMSE",
+    "median absolute error",
+    "bias",
+    "seed dispersion",
+    "gate activity",
+    "risk-harm Spearman correlation",
+    "wall time",
+    "peak host RSS",
+    "GPU identity and utilization"
+  ],
+  "max_host_rss_mib": 12288,
+  "require_no_rising_pageout": true,
+  "hosted_accelerator": "GPU",
+  "protected_outcomes_must_remain_unobserved": true
+}

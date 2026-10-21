@@ -30,6 +30,14 @@ The selected gate affects only 1 of 824 development prediction cases.
 Confirmation is on hold for development review; changes require a versioned
 successor rather than edits to the frozen v1 study.
 
+A separately versioned [v2 successor protocol](docs/PROTOCOL_V2.md) is now
+frozen before execution. It replaces the ineffective distance gate with a
+training-only pseudo-element risk calibrator around a five-seed GPU CatBoost
+ensemble, adds corrected and strong baselines, and has an explicit development
+stop rule. V1 evidence remains immutable. V2 has no numerical results yet and
+does not authorize protected confirmation until its development admission rule
+passes.
+
 ## Reproduce
 
 ```bash
