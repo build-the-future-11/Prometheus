@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE_VERIFIED",
+  "kernel": "ryangomez010/sparking-development-diagnostics-v1",
+  "source_archive_sha256": "4c32369080d0a9f947f9743543d9764f6deb742117f080ab2b0f25235e100320",
+  "launcher_sha256": "372800dbcd6a8449f33df53571ed0e5ebabc32480391ce00495fb6bf85f18320",
+  "files": {
+    "scripts/diagnose_development_v1.py": "997cc15bd5156efddb1f9db7943494b9829a52c8eeb935614bf6c7b2eaf4fb8e",
+    "protocols/diagnostic-v1.json": "af142bd429cc62556fdf45a4103fe8fde3e06320cf1fe5f969409bf43f1d7e02",
+    "diagnostic-reference-results.json": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb"
+  },
+  "requested_kernel": "ryangomez010/sparking-diagnostic-v1-20261021",
+  "kernel_version": 1,
+  "saved_launcher_matches": true,
+  "private": true,
+  "accelerator": "CPU",
+  "timeout_seconds": 1800,
+  "verification": "artifacts/diagnostic-verification-v1.json"
+}

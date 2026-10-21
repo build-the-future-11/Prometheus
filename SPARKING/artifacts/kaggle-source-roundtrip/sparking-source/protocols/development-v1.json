@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "study_id": "sparking-development-v1",
+  "phase": "DEVELOPMENT",
+  "dataset": "matbench_expt_gap",
+  "dataset_version": "Matbench v0.1",
+  "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+  "unit_of_analysis": "element-exclusion scenario",
+  "development_elements": ["Cu", "Ag", "B"],
+  "protected_confirmatory_elements": ["Li", "Zn", "Ga", "Se", "Te"],
+  "models": ["median", "ridge", "direct_hgb", "residual_ungated", "sparking"],
+  "residual_model": {
+    "max_iter": 180,
+    "learning_rate": 0.055,
+    "max_leaf_nodes": 31,
+    "l2_regularization": 0.1,
+    "min_samples_leaf": 12,
+    "random_state": 20261020
+  },
+  "gate_grid": {
+    "support_quantile": [0.8, 0.9, 0.95, 0.99],
+    "power": [1.0, 2.0]
+  },
+  "selection_rule": "Minimize macro leave-one-element-out MAE; ties within 0.002 eV choose the lower-power and then higher-support-quantile gate.",
+  "primary_metric": "macro mean absolute error in eV",
+  "secondary_metrics": ["per-element MAE", "RMSE", "median absolute error", "wall time", "peak RSS"],
+  "confirmatory_success_rule": {
+    "macro_mae_improvement_over_ungated_ev": 0.01,
+    "minimum_improved_elements": 4,
+    "maximum_official_mae_degradation_ev": 0.02
+  },
+  "max_rss_mib": 512,
+  "require_no_rising_pageout": true,
+  "status": "FROZEN_BEFORE_DEVELOPMENT"
+}
+

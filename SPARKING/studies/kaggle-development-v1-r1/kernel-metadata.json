@@ -1,0 +1,21 @@
+{
+  "id": "ryangomez010/sparking-development-v1-20261020",
+  "title": "SPARKING development v1 20261020",
+  "code_file": "sparking-development-v1-20261020.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "materials-science",
+    "matbench",
+    "uncertainty"
+  ],
+  "dataset_sources": [
+    "ryangomez010/sparking-source-v1-20261020"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

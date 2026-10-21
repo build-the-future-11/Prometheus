@@ -1,0 +1,8 @@
+{
+  "architecture_change_after_freeze": "PROHIBITED",
+  "power": 1.0,
+  "schema_version": 1,
+  "selection_rule": "Minimize macro leave-one-element-out MAE; ties within 0.002 eV choose the lower-power and then higher-support-quantile gate.",
+  "source_run_id": "kaggle-development-v1-r1",
+  "support_quantile": 0.99
+}

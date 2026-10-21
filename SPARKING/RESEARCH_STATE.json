@@ -3,12 +3,12 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-20T23:10:00+05:30",
+  "updated_at": "2026-10-21T12:09:23.844393+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Atlas.git",
   "git_branch": "codex/ml4materials-research-execution",
-  "phase": "DEVELOPMENT_HOSTED_AUTHORIZATION_REQUIRED",
+  "phase": "DEVELOPMENT_DIAGNOSTICS_COMPLETE",
   "disposition": "NOT_EVALUATED",
   "research_question": "Does support-gating a nonlinear residual improve composition-only experimental band-gap prediction under preregistered element exclusion relative to the identical ungated residual model, without practically degrading official Matbench MAE?",
   "hypothesis": "A regularized linear component is safer for descriptor-space extrapolation, while nonlinear residual corrections are useful in-support but brittle out-of-support; attenuating only the residual as support distance increases will reduce leave-one-element-out MAE.",
@@ -49,7 +49,13 @@
   },
   "protected_evaluation": {
     "status": "UNOPENED_BY_SPARKING",
-    "confirmatory_elements": ["Li", "Zn", "Ga", "Se", "Te"],
+    "confirmatory_elements": [
+      "Li",
+      "Zn",
+      "Ga",
+      "Se",
+      "Te"
+    ],
     "rule": "No gate hyperparameter or model architecture may change after confirmatory outcomes are observed."
   },
   "failures": [
@@ -88,7 +94,76 @@
     {
       "date": "2026-10-20",
       "event": "Retained a manifest-valid local resource refusal before model fitting. Hosted execution is waiting for explicit authorization to export the source archive to the user's Kaggle account."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "User authorized private Kaggle upload and development execution. Source roundtrip verified across 43 files; kernel version 1 launched on CPU and reported RUNNING. No completed development results yet."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Private Kaggle kernel version 1 completed. Downloaded source and output archives verified; 36 development comparison rows and aggregates validated. Both local and hosted tests passed (12 each). The frozen tie rule selected q=0.99, power=1. Protected confirmation remains unopened."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Development-only diagnostic run completed and verified. Reproduced all 36 original cells; verified 48 metric sets from saved predictions. Identified absolute-loss direct baseline collapse, weak novelty distance contribution, nearly inactive selected gate, and weak residual-risk ordering. No protected evaluation run."
     }
-  ]
+  ],
+  "hosted_development": {
+    "schema_version": 1,
+    "recorded_at": "2026-10-21T10:25:20.545374+05:30",
+    "kernel": "ryangomez010/sparking-development-v1-20261020",
+    "kernel_version": 1,
+    "run_id": "kaggle-development-v1-r1",
+    "status": "COMPLETE_VERIFIED",
+    "private": true,
+    "accelerator": "CPU",
+    "timeout_seconds": 7200,
+    "launcher_sha256": "811247a2bb4bc550a7cf95c1fe256e72a0341b5049ecd90a2a6e2bac1db992a9",
+    "saved_launcher_matches": true,
+    "source_verification": "artifacts/kaggle-source-roundtrip-verification.json",
+    "local_tests": {
+      "passed": 12
+    },
+    "authorized_scope": "Development only: all eight frozen gate settings and four baselines across Cu/Ag/B",
+    "completed_verification_at": "2026-10-21T10:28:47.225031+05:30",
+    "comparison": "artifacts/development-comparison-v1.json",
+    "result": "runs/kaggle-development-v1-r1/results.json",
+    "receipt": "runs/kaggle-development-v1-r1/receipt.json",
+    "row_count": 36,
+    "peak_rss_mib": 237.03125,
+    "elapsed_seconds": 10.838494062423706,
+    "pageout_delta": 0,
+    "hosted_tests_passed": 12,
+    "results_sha256": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb",
+    "archive_sha256": "e78850dfb06f7c3b6d349a4807fe3c1f306bf86945b96574ca5878c993707b03"
+  },
+  "disposition_scope": "Protected confirmatory claims C1/C2; development is complete and verified.",
+  "development_findings": {
+    "selected_gate": {
+      "support_quantile": 0.99,
+      "power": 1.0
+    },
+    "selected_macro_mae_ev": 0.9526055173652302,
+    "selected_improvement_over_ungated_ev": 4.417005888305662e-06,
+    "best_numerical_gate": {
+      "support_quantile": 0.8,
+      "power": 2.0
+    },
+    "best_numerical_macro_mae_ev": 0.9523607662895834,
+    "interpretation": "Negligible development benefit from support gating; no confirmatory inference. All eight settings are within the preregistered 0.002 eV selection tolerance.",
+    "caveat": "Resolved by diagnostic v1: direct absolute-error HGB predicts zero for every training/test row, due to zero-median nonnegative targets and uniform initial gradients. Squared-error direct baseline substantially improves development error; original v1 is preserved."
+  },
+  "confirmation_readiness": {
+    "status": "HOLD_FOR_DEVELOPMENT_REVIEW",
+    "reason": "Direct absolute-error baseline collapses; corrected direct squared-error baseline outperforms residual architecture; gating has negligible benefit and weak risk discrimination. Any redesign requires a versioned successor."
+  },
+  "development_diagnostics": {
+    "run_id": "kaggle-diagnostic-v1-r1",
+    "status": "COMPLETE_VERIFIED",
+    "report": "docs/DEVELOPMENT_DIAGNOSIS_V1.md",
+    "verification": "artifacts/diagnostic-verification-v1.json",
+    "direct_squared_macro_mae_ev": 0.7605916513831056,
+    "original_ungated_macro_mae_ev": 0.9526099343711185,
+    "protected_outcomes_observed": false
+  }
 }
-

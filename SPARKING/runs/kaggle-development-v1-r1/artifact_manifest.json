@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "bytes": 817301,
+      "path": "development-Ag.joblib",
+      "sha256": "3c18c754aa858ad7534a2309688e1fbc48b3ede47db5f40d801e1330d34457a3"
+    },
+    {
+      "bytes": 805790,
+      "path": "development-B.joblib",
+      "sha256": "399f12acd381d89c32ae9930d30488e802fd476aa551ea2256068bf27363d512"
+    },
+    {
+      "bytes": 792380,
+      "path": "development-Cu.joblib",
+      "sha256": "630b4e76d2df220402bd05b06cb33776e1f2fd5d6f6a148b5eeb85ed2c7262a9"
+    },
+    {
+      "bytes": 336,
+      "path": "environment.json",
+      "sha256": "4e33fa85dd97b42b0f8954a597ea7628a78fef1f8fc44ae0ec379cf4851d52bf"
+    },
+    {
+      "bytes": 317,
+      "path": "freeze_candidate.json",
+      "sha256": "38ca99152c21778c271a677b8c1c065fc1392d12e810d75bc52a4a15af6d4234"
+    },
+    {
+      "bytes": 1338,
+      "path": "receipt.json",
+      "sha256": "cf9a4e980ace1000c9f92dd62ca39ded3859b458eb5fb22d61d4e3437e3245f8"
+    },
+    {
+      "bytes": 16412,
+      "path": "results.json",
+      "sha256": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb"
+    }
+  ],
+  "schema_version": 1
+}

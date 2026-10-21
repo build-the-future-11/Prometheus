@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "bytes": 10085,
+      "path": "Ag-diagnostics.json",
+      "sha256": "90b55dd29f00ad35d3e2443f3c4a317d867fcb619c4ae6dfb1c2ebb3ed641b60"
+    },
+    {
+      "bytes": 97882,
+      "path": "Ag-predictions.npz",
+      "sha256": "abce31bbab67d10b4c93009fb2b30b8ed3d7e84e493405eca3c67f1fffa0ba22"
+    },
+    {
+      "bytes": 10044,
+      "path": "B-diagnostics.json",
+      "sha256": "3d17804d124f81657e19e7ba69c2b256ab5f7ceae32bb272d196f10f19b6c5e4"
+    },
+    {
+      "bytes": 103825,
+      "path": "B-predictions.npz",
+      "sha256": "33421266e8b5d75fadc8f2f330eaf0f9a16130df14399f64ce420f8f49674806"
+    },
+    {
+      "bytes": 10211,
+      "path": "Cu-diagnostics.json",
+      "sha256": "72d40a69556d0f051177106fbd74835f99a9edd0d0dd905396891ace63da3017"
+    },
+    {
+      "bytes": 129146,
+      "path": "Cu-predictions.npz",
+      "sha256": "2d2ea63ab192126d289bd6bdf23cd2fa6804b8de04c88d81c7cecaa3f2d961f3"
+    },
+    {
+      "bytes": 1583,
+      "path": "diagnostic_protocol.json",
+      "sha256": "4f1c9abffae3dc1be3399c07b1aec236282f71943a94e5d501b521a09820c2db"
+    },
+    {
+      "bytes": 227,
+      "path": "environment.json",
+      "sha256": "9539474e498754bb978113d87981e4c5b6b8ae0fba13660374edae7d069599ad"
+    },
+    {
+      "bytes": 2672,
+      "path": "receipt.json",
+      "sha256": "b1c865453c6bf1fdfc0de89639cd45f20bcf9bf6c0f4f31b47ea9f5954111771"
+    },
+    {
+      "bytes": 35386,
+      "path": "results.json",
+      "sha256": "c8bc3a289ef31ecf8785cddfb8be262574ea3bd465cf04fa2e8d4d7948e1c094"
+    }
+  ],
+  "schema_version": 1
+}

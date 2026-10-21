@@ -51,7 +51,22 @@ measurement.
 
 ## Current status
 
-`NOT_EVALUATED`. The local development attempt was `FAILED_RETAINED` after the
-pageout counter increased by eight during featurization. No model was fitted and
-no performance claim is authorized from that run.
+Protected confirmatory claims remain `NOT_EVALUATED`. Hosted development run
+`kaggle-development-v1-r1` completed on 2026-10-21 with verified evidence for all
+eight settings and four baselines across Cu/Ag/B. The best numerical gate's
+macro-MAE improvement over the ungated model was only 0.000249 eV. All eight
+settings fell within the frozen 0.002 eV tie tolerance; the selection rule chose
+quantile 0.99, power 1, with improvement of 0.000004417 eV. This is negligible
+development benefit, not confirmatory support. Follow-up diagnostics established
+that direct absolute-error HGB predicts zero for all training and test examples
+in each holdout: zero-heavy nonnegative targets initialize at zero and give
+uniform initial gradients. A squared-error direct comparator with otherwise
+identical settings achieved 0.760592 eV macro-MAE, better than the current
+residual model. These exploratory results require a versioned successor before
+adoption. See [diagnosis and measured repairs](docs/DEVELOPMENT_DIAGNOSIS_V1.md).
+
+The earlier local `FAILED_RETAINED` attempt remains preserved: pageouts increased
+by eight during featurization before any model fit. See the
+[development results report](docs/DEVELOPMENT_RESULTS_V1.md) for comparisons,
+runtime provenance, and limitations.
 

@@ -1,0 +1,111 @@
+{
+  "elapsed_seconds": 20.428877115249634,
+  "resource_observations": [
+    {
+      "elapsed_seconds": 0.0001430511474609375,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 183.40625,
+      "phase": "admission"
+    },
+    {
+      "elapsed_seconds": 0.5029740333557129,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 189.78125,
+      "phase": "features"
+    },
+    {
+      "elapsed_seconds": 3.5853161811828613,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 220.64453125,
+      "phase": "Cu_original"
+    },
+    {
+      "elapsed_seconds": 5.1470701694488525,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 223.41015625,
+      "phase": "Cu_direct_squared"
+    },
+    {
+      "elapsed_seconds": 6.7862701416015625,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 223.53515625,
+      "phase": "Cu_residual_squared"
+    },
+    {
+      "elapsed_seconds": 7.200932025909424,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 224.76171875,
+      "phase": "Cu_complete"
+    },
+    {
+      "elapsed_seconds": 10.258097410202026,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 238.42578125,
+      "phase": "Ag_original"
+    },
+    {
+      "elapsed_seconds": 11.906813859939575,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 238.42578125,
+      "phase": "Ag_direct_squared"
+    },
+    {
+      "elapsed_seconds": 13.560325860977173,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 238.42578125,
+      "phase": "Ag_residual_squared"
+    },
+    {
+      "elapsed_seconds": 13.87794280052185,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 238.42578125,
+      "phase": "Ag_complete"
+    },
+    {
+      "elapsed_seconds": 16.864420175552368,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 243.03515625,
+      "phase": "B_original"
+    },
+    {
+      "elapsed_seconds": 18.467477798461914,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 243.03515625,
+      "phase": "B_direct_squared"
+    },
+    {
+      "elapsed_seconds": 20.096118927001953,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 243.03515625,
+      "phase": "B_residual_squared"
+    },
+    {
+      "elapsed_seconds": 20.42528486251831,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 243.03515625,
+      "phase": "B_complete"
+    },
+    {
+      "elapsed_seconds": 20.4269859790802,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 243.03515625,
+      "phase": "complete"
+    }
+  ],
+  "status": "SUCCESS"
+}

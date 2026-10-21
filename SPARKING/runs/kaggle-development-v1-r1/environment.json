@@ -1,0 +1,12 @@
+{
+  "git": {
+    "commit": "5f81dc5a9edf8e2997c1a22b30ff71b53b82f827",
+    "project_status": [],
+    "source_transport": "versioned_hosted_archive"
+  },
+  "machine": "x86_64",
+  "pid": 116,
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]"
+}

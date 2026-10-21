@@ -1,0 +1,29 @@
+{
+  "elapsed_seconds": 0.35579919815063477,
+  "resource_observations": [
+    {
+      "elapsed_seconds": 0.00780487060546875,
+      "pageout_delta": 0,
+      "pageouts": 1072262,
+      "peak_rss_mib": 125.015625,
+      "phase": "admission"
+    },
+    {
+      "elapsed_seconds": 0.05419278144836426,
+      "pageout_delta": 0,
+      "pageouts": 1072262,
+      "peak_rss_mib": 125.015625,
+      "phase": "data_loaded"
+    },
+    {
+      "elapsed_seconds": 0.34333109855651855,
+      "pageout_delta": 8,
+      "pageouts": 1072270,
+      "peak_rss_mib": 129.265625,
+      "phase": "features_built"
+    }
+  ],
+  "run_id": "local-development-v1-r1",
+  "schema_version": 1,
+  "status": "FAILED_RETAINED"
+}

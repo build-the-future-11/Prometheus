@@ -1,0 +1,21 @@
+{
+  "id": "ryangomez010/sparking-development-v1-20261020",
+  "id_no": 139953518,
+  "title": "SPARKING development v1 20261020",
+  "code_file": "sparking-development-v1-20261020.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "ryangomez010/sparking-source-v1-20261020"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:81b1e7c4b4f0f2a7e0a33943c95754b1b7af6b30d65221633a284b6b601cd84a",
+  "machine_shape": "None"
+}

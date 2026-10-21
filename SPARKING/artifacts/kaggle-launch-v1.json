@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-21T10:25:20.545374+05:30",
+  "kernel": "ryangomez010/sparking-development-v1-20261020",
+  "kernel_version": 1,
+  "run_id": "kaggle-development-v1-r1",
+  "status": "RUNNING",
+  "private": true,
+  "accelerator": "CPU",
+  "timeout_seconds": 7200,
+  "launcher_sha256": "811247a2bb4bc550a7cf95c1fe256e72a0341b5049ecd90a2a6e2bac1db992a9",
+  "saved_launcher_matches": true,
+  "source_verification": "artifacts/kaggle-source-roundtrip-verification.json",
+  "local_tests": {
+    "passed": 12
+  },
+  "authorized_scope": "Development only: all eight frozen gate settings and four baselines across Cu/Ag/B"
+}

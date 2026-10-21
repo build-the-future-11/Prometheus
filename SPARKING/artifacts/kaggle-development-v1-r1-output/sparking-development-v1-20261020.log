@@ -1,0 +1,702 @@
+[{"stream_name":"stdout","time":12.887061335,"data":"HOSTED_SOURCE_VERIFIED=43 files\n"}
+,{"stream_name":"stdout","time":12.887118077,"data":"+ /usr/bin/python3 -m pip install -e .[dev]\n"}
+,{"stream_name":"stdout","time":18.628129983,"data":"Obtaining file:///kaggle/working/sparking-source\n"}
+,{"stream_name":"stdout","time":18.631975854,"data":"  Installing build dependencies: started\n"}
+,{"stream_name":"stdout","time":25.294936226,"data":"  Installing build dependencies: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":25.296541619,"data":"  Checking if build backend supports build_editable: started\n"}
+,{"stream_name":"stdout","time":25.41276806,"data":"  Checking if build backend supports build_editable: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":25.414325251,"data":"  Getting requirements to build editable: started\n"}
+,{"stream_name":"stdout","time":25.580864649,"data":"  Getting requirements to build editable: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":25.586557202,"data":"  Installing backend dependencies: started\n"}
+,{"stream_name":"stdout","time":29.618534438,"data":"  Installing backend dependencies: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":29.620148659,"data":"  Preparing editable metadata (pyproject.toml): started\n"}
+,{"stream_name":"stdout","time":29.852348498,"data":"  Preparing editable metadata (pyproject.toml): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":30.352424863,"data":"Requirement already satisfied: joblib\u003c2,\u003e=1.4 in /usr/local/lib/python3.13/dist-packages (from sparking-materials==0.1.0) (1.6.0)\n"}
+,{"stream_name":"stdout","time":30.356498665,"data":"Requirement already satisfied: matplotlib\u003c4,\u003e=3.8 in /usr/local/lib/python3.13/dist-packages (from sparking-materials==0.1.0) (3.10.0)\n"}
+,{"stream_name":"stdout","time":30.366891886,"data":"Requirement already satisfied: numpy\u003c3,\u003e=1.26 in /usr/local/lib/python3.13/dist-packages (from sparking-materials==0.1.0) (2.1.3)\n"}
+,{"stream_name":"stdout","time":30.370944462,"data":"Requirement already satisfied: scikit-learn\u003c2,\u003e=1.5 in /usr/local/lib/python3.13/dist-packages (from sparking-materials==0.1.0) (1.6.1)\n"}
+,{"stream_name":"stdout","time":30.497877197,"data":"Collecting pytest-cov\u003c8,\u003e=5 (from sparking-materials==0.1.0)\n"}
+,{"stream_name":"stdout","time":30.549720195,"data":"  Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)\n"}
+,{"stream_name":"stdout","time":30.592171344,"data":"Requirement already satisfied: pytest\u003c10,\u003e=8 in /usr/local/lib/python3.13/dist-packages (from sparking-materials==0.1.0) (8.4.2)\n"}
+,{"stream_name":"stdout","time":30.596859979,"data":"Requirement already satisfied: cloudpickle\u003e=3.0 in /usr/local/lib/python3.13/dist-packages (from joblib\u003c2,\u003e=1.4-\u003esparking-materials==0.1.0) (3.1.2)\n"}
+,{"stream_name":"stdout","time":30.60212888,"data":"Requirement already satisfied: contourpy\u003e=1.0.1 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (1.3.3)\n"}
+,{"stream_name":"stdout","time":30.603857932,"data":"Requirement already satisfied: cycler\u003e=0.10 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (0.12.1)\n"}
+,{"stream_name":"stdout","time":30.609806591,"data":"Requirement already satisfied: fonttools\u003e=4.22.0 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (4.64.0)\n"}
+,{"stream_name":"stdout","time":30.612223843,"data":"Requirement already satisfied: kiwisolver\u003e=1.3.1 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (1.5.1)\n"}
+,{"stream_name":"stdout","time":30.617733422,"data":"Requirement already satisfied: packaging\u003e=20.0 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (26.3)\n"}
+,{"stream_name":"stdout","time":30.619781125,"data":"Requirement already satisfied: pillow\u003e=8 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (12.3.0)\n"}
+,{"stream_name":"stdout","time":30.621399702,"data":"Requirement already satisfied: pyparsing\u003e=2.3.1 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (3.3.2)\n"}
+,{"stream_name":"stdout","time":30.623099531,"data":"Requirement already satisfied: python-dateutil\u003e=2.7 in /usr/local/lib/python3.13/dist-packages (from matplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":30.636403161,"data":"Requirement already satisfied: iniconfig\u003e=1 in /usr/local/lib/python3.13/dist-packages (from pytest\u003c10,\u003e=8-\u003esparking-materials==0.1.0) (2.3.0)\n"}
+,{"stream_name":"stdout","time":30.638715455,"data":"Requirement already satisfied: pluggy\u003c2,\u003e=1.5 in /usr/local/lib/python3.13/dist-packages (from pytest\u003c10,\u003e=8-\u003esparking-materials==0.1.0) (1.6.0)\n"}
+,{"stream_name":"stdout","time":30.640391006,"data":"Requirement already satisfied: pygments\u003e=2.7.2 in /usr/local/lib/python3.13/dist-packages (from pytest\u003c10,\u003e=8-\u003esparking-materials==0.1.0) (2.21.0)\n"}
+,{"stream_name":"stdout","time":30.644828244,"data":"Requirement already satisfied: coverage\u003e=7.10.6 in /usr/local/lib/python3.13/dist-packages (from coverage[toml]\u003e=7.10.6-\u003epytest-cov\u003c8,\u003e=5-\u003esparking-materials==0.1.0) (7.16.2)\n"}
+,{"stream_name":"stdout","time":30.668557095,"data":"Requirement already satisfied: scipy\u003e=1.6.0 in /usr/local/lib/python3.13/dist-packages (from scikit-learn\u003c2,\u003e=1.5-\u003esparking-materials==0.1.0) (1.16.3)\n"}
+,{"stream_name":"stdout","time":30.671431074,"data":"Requirement already satisfied: threadpoolctl\u003e=3.1.0 in /usr/local/lib/python3.13/dist-packages (from scikit-learn\u003c2,\u003e=1.5-\u003esparking-materials==0.1.0) (3.6.0)\n"}
+,{"stream_name":"stdout","time":30.716045407,"data":"Requirement already satisfied: six\u003e=1.5 in /usr/local/lib/python3.13/dist-packages (from python-dateutil\u003e=2.7-\u003ematplotlib\u003c4,\u003e=3.8-\u003esparking-materials==0.1.0) (1.17.0)\n"}
+,{"stream_name":"stdout","time":30.754066937,"data":"Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":30.78952631,"data":"Building wheels for collected packages: sparking-materials\n"}
+,{"stream_name":"stdout","time":30.791924244,"data":"  Building editable for sparking-materials (pyproject.toml): started\n"}
+,{"stream_name":"stdout","time":30.86808757,"data":"  Building editable for sparking-materials (pyproject.toml): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":30.869267205,"data":"  Created wheel for sparking-materials: filename=sparking_materials-0.1.0-py3-none-any.whl size=3191 sha256=df968f9d90b724781bcd5b8b8acd89989a70d47444553a7cb722f4bd5e9687d3\n"}
+,{"stream_name":"stdout","time":30.869762729,"data":"  Stored in directory: /tmp/pip-ephem-wheel-cache-c89aulp7/wheels/c9/f6/b2/6bedbef074edd72eef088d277bb784d0f584f6c8ea1a00b335\n"}
+,{"stream_name":"stdout","time":30.873022214,"data":"Successfully built sparking-materials\n"}
+,{"stream_name":"stdout","time":33.788762994,"data":"Installing collected packages: pytest-cov, sparking-materials\n"}
+,{"stream_name":"stdout","time":33.930497986,"data":"Successfully installed pytest-cov-7.1.0 sparking-materials-0.1.0\n"}
+,{"stream_name":"stdout","time":34.121465305,"data":"+ /usr/bin/python3 -m pytest -q\n"}
+,{"stream_name":"stdout","time":45.874898474,"data":"............                                                             [100%]\n"}
+,{"stream_name":"stdout","time":45.875392961,"data":"12 passed in 7.14s\n"}
+,{"stream_name":"stdout","time":46.502911532,"data":"+ /usr/bin/python3 -m sparking prepare\n"}
+,{"stream_name":"stdout","time":48.303666213,"data":"{\n"}
+,{"stream_name":"stdout","time":48.303699246,"data":"  \"canonical_composition_count\": 4601,\n"}
+,{"stream_name":"stdout","time":48.30370556,"data":"  \"dataset\": \"matbench_expt_gap\",\n"}
+,{"stream_name":"stdout","time":48.303711018,"data":"  \"official_split_canonical_sha256\": \"69bc38097c78dd752cdc5506d21b08f32bc3def921b2aac6fc3c8681a1adb566\",\n"}
+,{"stream_name":"stdout","time":48.303717181,"data":"  \"row_count\": 4604,\n"}
+,{"stream_name":"stdout","time":48.303723324,"data":"  \"schema_version\": 1,\n"}
+,{"stream_name":"stdout","time":48.303729057,"data":"  \"source_sha256\": \"783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2\",\n"}
+,{"stream_name":"stdout","time":48.30373544,"data":"  \"source_url\": \"https://ml.materialsproject.org/projects/matbench_expt_gap.json.gz\",\n"}
+,{"stream_name":"stdout","time":48.303740694,"data":"  \"target_max_ev\": 11.7,\n"}
+,{"stream_name":"stdout","time":48.303746063,"data":"  \"target_min_ev\": 0.0\n"}
+,{"stream_name":"stdout","time":48.30375092,"data":"}\n"}
+,{"stream_name":"stdout","time":48.635413206,"data":"+ /usr/bin/python3 -m sparking preflight --output artifacts/preflight-kaggle-development-v1-r1.json\n"}
+,{"stream_name":"stdout","time":50.273686123,"data":"{\n"}
+,{"stream_name":"stdout","time":50.273751998,"data":"  \"finite_targets\": true,\n"}
+,{"stream_name":"stdout","time":50.273798071,"data":"  \"resource_observations\": [\n"}
+,{"stream_name":"stdout","time":50.273803682,"data":"    {\n"}
+,{"stream_name":"stdout","time":50.273807678,"data":"      \"elapsed_seconds\": 0.0001537799835205078,\n"}
+,{"stream_name":"stdout","time":50.273811896,"data":"      \"pageout_delta\": 0,\n"}
+,{"stream_name":"stdout","time":50.273816548,"data":"      \"pageouts\": 0,\n"}
+,{"stream_name":"stdout","time":50.273839232,"data":"      \"peak_rss_mib\": 182.26953125,\n"}
+,{"stream_name":"stdout","time":50.273846979,"data":"      \"phase\": \"admission\"\n"}
+,{"stream_name":"stdout","time":50.273854028,"data":"    },\n"}
+,{"stream_name":"stdout","time":50.273860241,"data":"    {\n"}
+,{"stream_name":"stdout","time":50.273866291,"data":"      \"elapsed_seconds\": 0.053621768951416016,\n"}
+,{"stream_name":"stdout","time":50.273872229,"data":"      \"pageout_delta\": 0,\n"}
+,{"stream_name":"stdout","time":50.273877909,"data":"      \"pageouts\": 0,\n"}
+,{"stream_name":"stdout","time":50.273883695,"data":"      \"peak_rss_mib\": 183.51953125,\n"}
+,{"stream_name":"stdout","time":50.273889319,"data":"      \"phase\": \"data_validation\"\n"}
+,{"stream_name":"stdout","time":50.27389501,"data":"    }\n"}
+,{"stream_name":"stdout","time":50.273900263,"data":"  ],\n"}
+,{"stream_name":"stdout","time":50.273905461,"data":"  \"rows\": 4604,\n"}
+,{"stream_name":"stdout","time":50.273913172,"data":"  \"schema_version\": 1,\n"}
+,{"stream_name":"stdout","time":50.273923222,"data":"  \"status\": \"ADMITTED\"\n"}
+,{"stream_name":"stdout","time":50.273942269,"data":"}\n"}
+,{"stream_name":"stdout","time":50.601937727,"data":"+ /usr/bin/python3 -m sparking develop --run-id kaggle-development-v1-r1\n"}
+,{"stream_name":"stdout","time":63.042068805,"data":"{\n"}
+,{"stream_name":"stdout","time":63.042113157,"data":"  \"candidate_summary\": [\n"}
+,{"stream_name":"stdout","time":63.042127486,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042131201,"data":"      \"macro_mae_ev\": 0.9524833935709701,\n"}
+,{"stream_name":"stdout","time":63.042134565,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042137792,"data":"      \"support_quantile\": 0.8\n"}
+,{"stream_name":"stdout","time":63.042141251,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042144286,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042147159,"data":"      \"macro_mae_ev\": 0.9523607662895834,\n"}
+,{"stream_name":"stdout","time":63.042150368,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042153321,"data":"      \"support_quantile\": 0.8\n"}
+,{"stream_name":"stdout","time":63.042156273,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042159087,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042162009,"data":"      \"macro_mae_ev\": 0.9526293928325972,\n"}
+,{"stream_name":"stdout","time":63.042164971,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042167889,"data":"      \"support_quantile\": 0.9\n"}
+,{"stream_name":"stdout","time":63.042170832,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042173767,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042176607,"data":"      \"macro_mae_ev\": 0.9526398649510809,\n"}
+,{"stream_name":"stdout","time":63.042179582,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042182524,"data":"      \"support_quantile\": 0.9\n"}
+,{"stream_name":"stdout","time":63.04218558,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042188395,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042191201,"data":"      \"macro_mae_ev\": 0.9526448995229715,\n"}
+,{"stream_name":"stdout","time":63.042194351,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042197468,"data":"      \"support_quantile\": 0.95\n"}
+,{"stream_name":"stdout","time":63.042200466,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.04220334,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042206161,"data":"      \"macro_mae_ev\": 0.9526742116662897,\n"}
+,{"stream_name":"stdout","time":63.042209079,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042211967,"data":"      \"support_quantile\": 0.95\n"}
+,{"stream_name":"stdout","time":63.042214975,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042217779,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042220571,"data":"      \"macro_mae_ev\": 0.9526055173652302,\n"}
+,{"stream_name":"stdout","time":63.042223513,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042226451,"data":"      \"support_quantile\": 0.99\n"}
+,{"stream_name":"stdout","time":63.042229359,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042273556,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042283401,"data":"      \"macro_mae_ev\": 0.9526011915106686,\n"}
+,{"stream_name":"stdout","time":63.042288795,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042294336,"data":"      \"support_quantile\": 0.99\n"}
+,{"stream_name":"stdout","time":63.042298787,"data":"    }\n"}
+,{"stream_name":"stdout","time":63.042303049,"data":"  ],\n"}
+,{"stream_name":"stdout","time":63.04230739,"data":"  \"control_macro_mae_ev\": {\n"}
+,{"stream_name":"stdout","time":63.042311805,"data":"    \"direct_hgb\": 1.2686772914293922,\n"}
+,{"stream_name":"stdout","time":63.042331281,"data":"    \"median\": 1.2686772914293922,\n"}
+,{"stream_name":"stdout","time":63.042335913,"data":"    \"residual_ungated\": 0.9526099343711185,\n"}
+,{"stream_name":"stdout","time":63.042342681,"data":"    \"ridge\": 1.0269054185344044\n"}
+,{"stream_name":"stdout","time":63.042347056,"data":"  },\n"}
+,{"stream_name":"stdout","time":63.042356102,"data":"  \"phase\": \"DEVELOPMENT\",\n"}
+,{"stream_name":"stdout","time":63.042359727,"data":"  \"protected_confirmatory_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":63.042362999,"data":"  \"rows\": [\n"}
+,{"stream_name":"stdout","time":63.04236592,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042368865,"data":"      \"bias_ev\": -0.8237179487179487,\n"}
+,{"stream_name":"stdout","time":63.042371892,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042374942,"data":"      \"mae_ev\": 0.8237179487179487,\n"}
+,{"stream_name":"stdout","time":63.042378007,"data":"      \"median_ae_ev\": 0.0,\n"}
+,{"stream_name":"stdout","time":63.042381062,"data":"      \"model\": \"median\",\n"}
+,{"stream_name":"stdout","time":63.042384161,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042387137,"data":"      \"rmse_ev\": 1.3056817651307198,\n"}
+,{"stream_name":"stdout","time":63.042390233,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042393315,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.04239621,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042399,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042402003,"data":"      \"bias_ev\": 0.7460418790981772,\n"}
+,{"stream_name":"stdout","time":63.042405151,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042408179,"data":"      \"mae_ev\": 0.9726322141670015,\n"}
+,{"stream_name":"stdout","time":63.042411135,"data":"      \"median_ae_ev\": 0.7786209139789527,\n"}
+,{"stream_name":"stdout","time":63.04241425,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":63.042417255,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042420186,"data":"      \"rmse_ev\": 1.197190188243939,\n"}
+,{"stream_name":"stdout","time":63.04242346,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042426545,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042429436,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042432257,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04243516,"data":"      \"bias_ev\": -0.8237179487179487,\n"}
+,{"stream_name":"stdout","time":63.042438239,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042441379,"data":"      \"mae_ev\": 0.8237179487179487,\n"}
+,{"stream_name":"stdout","time":63.042444377,"data":"      \"median_ae_ev\": 0.0,\n"}
+,{"stream_name":"stdout","time":63.042447305,"data":"      \"model\": \"direct_hgb\",\n"}
+,{"stream_name":"stdout","time":63.042450316,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042453489,"data":"      \"rmse_ev\": 1.3056817651307198,\n"}
+,{"stream_name":"stdout","time":63.042456407,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042459298,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042462185,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042464981,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042467789,"data":"      \"bias_ev\": 0.5952894147979612,\n"}
+,{"stream_name":"stdout","time":63.042474556,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042477719,"data":"      \"mae_ev\": 0.8356460474758636,\n"}
+,{"stream_name":"stdout","time":63.042482651,"data":"      \"median_ae_ev\": 0.7143666052452694,\n"}
+,{"stream_name":"stdout","time":63.042485826,"data":"      \"model\": \"residual_ungated\",\n"}
+,{"stream_name":"stdout","time":63.042488821,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042491712,"data":"      \"rmse_ev\": 1.0466056740952716,\n"}
+,{"stream_name":"stdout","time":63.042494771,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042497832,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042500833,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042503629,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042506434,"data":"      \"bias_ev\": 0.5947630855271896,\n"}
+,{"stream_name":"stdout","time":63.042509372,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042512542,"data":"      \"gate_mean\": 0.9941914458891216,\n"}
+,{"stream_name":"stdout","time":63.042515522,"data":"      \"gate_min\": 0.6004718524788635,\n"}
+,{"stream_name":"stdout","time":63.042518483,"data":"      \"mae_ev\": 0.8351197182050918,\n"}
+,{"stream_name":"stdout","time":63.042521452,"data":"      \"median_ae_ev\": 0.7067887887098606,\n"}
+,{"stream_name":"stdout","time":63.042524414,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042527524,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042530387,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042533292,"data":"      \"rmse_ev\": 1.046143340780152,\n"}
+,{"stream_name":"stdout","time":63.042536248,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042539296,"data":"      \"support_quantile\": 0.8,\n"}
+,{"stream_name":"stdout","time":63.042542237,"data":"      \"support_threshold\": 5.918809467777309,\n"}
+,{"stream_name":"stdout","time":63.042545217,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042548111,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042551004,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042553802,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042556623,"data":"      \"bias_ev\": 0.594390972244401,\n"}
+,{"stream_name":"stdout","time":63.042559585,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042562561,"data":"      \"gate_mean\": 0.989484517389323,\n"}
+,{"stream_name":"stdout","time":63.04256553,"data":"      \"gate_min\": 0.360566445619398,\n"}
+,{"stream_name":"stdout","time":63.042568466,"data":"      \"mae_ev\": 0.834747604922303,\n"}
+,{"stream_name":"stdout","time":63.042578437,"data":"      \"median_ae_ev\": 0.7049291157721808,\n"}
+,{"stream_name":"stdout","time":63.042581607,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042584737,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042587596,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042590499,"data":"      \"rmse_ev\": 1.0457969365958075,\n"}
+,{"stream_name":"stdout","time":63.042593447,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042596514,"data":"      \"support_quantile\": 0.8,\n"}
+,{"stream_name":"stdout","time":63.042599445,"data":"      \"support_threshold\": 5.918809467777309,\n"}
+,{"stream_name":"stdout","time":63.042602482,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042608385,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042611552,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042614378,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04261726,"data":"      \"bias_ev\": 0.5950530865498704,\n"}
+,{"stream_name":"stdout","time":63.042620342,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042623313,"data":"      \"gate_mean\": 0.9983745893191955,\n"}
+,{"stream_name":"stdout","time":63.042626263,"data":"      \"gate_min\": 0.6953996506445096,\n"}
+,{"stream_name":"stdout","time":63.042629327,"data":"      \"mae_ev\": 0.8354097192277727,\n"}
+,{"stream_name":"stdout","time":63.042632452,"data":"      \"median_ae_ev\": 0.7143666052452694,\n"}
+,{"stream_name":"stdout","time":63.042635448,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042638465,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042641342,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042644287,"data":"      \"rmse_ev\": 1.0464950897295482,\n"}
+,{"stream_name":"stdout","time":63.042647234,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042650329,"data":"      \"support_quantile\": 0.9,\n"}
+,{"stream_name":"stdout","time":63.042653363,"data":"      \"support_threshold\": 6.854506200636001,\n"}
+,{"stream_name":"stdout","time":63.042656486,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042660982,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042666102,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042669282,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042672099,"data":"      \"bias_ev\": 0.5948841502465108,\n"}
+,{"stream_name":"stdout","time":63.042687327,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.04269037,"data":"      \"gate_mean\": 0.9971067210950677,\n"}
+,{"stream_name":"stdout","time":63.04269338,"data":"      \"gate_min\": 0.483580674116506,\n"}
+,{"stream_name":"stdout","time":63.04269645,"data":"      \"mae_ev\": 0.8352407829244131,\n"}
+,{"stream_name":"stdout","time":63.042699429,"data":"      \"median_ae_ev\": 0.7077719864735244,\n"}
+,{"stream_name":"stdout","time":63.042702388,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042705315,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042708182,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042711113,"data":"      \"rmse_ev\": 1.046423116118407,\n"}
+,{"stream_name":"stdout","time":63.042714142,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042717655,"data":"      \"support_quantile\": 0.9,\n"}
+,{"stream_name":"stdout","time":63.042720609,"data":"      \"support_threshold\": 6.854506200636001,\n"}
+,{"stream_name":"stdout","time":63.042723571,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042726481,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042729382,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042732202,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042735031,"data":"      \"bias_ev\": 0.5951340175228511,\n"}
+,{"stream_name":"stdout","time":63.042737966,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042740908,"data":"      \"gate_mean\": 0.9991790744038862,\n"}
+,{"stream_name":"stdout","time":63.04274388,"data":"      \"gate_min\": 0.7775439542852478,\n"}
+,{"stream_name":"stdout","time":63.042759613,"data":"      \"mae_ev\": 0.8354906502007534,\n"}
+,{"stream_name":"stdout","time":63.042762783,"data":"      \"median_ae_ev\": 0.7143666052452694,\n"}
+,{"stream_name":"stdout","time":63.04276622,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042791379,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042796279,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042800926,"data":"      \"rmse_ev\": 1.0465405357206883,\n"}
+,{"stream_name":"stdout","time":63.042805883,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042810177,"data":"      \"support_quantile\": 0.95,\n"}
+,{"stream_name":"stdout","time":63.042814989,"data":"      \"support_threshold\": 7.664196913207561,\n"}
+,{"stream_name":"stdout","time":63.042820172,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042825376,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042830262,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042834185,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042838822,"data":"      \"bias_ev\": 0.5950107100159668,\n"}
+,{"stream_name":"stdout","time":63.042843884,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042849179,"data":"      \"gate_mean\": 0.9985008618273707,\n"}
+,{"stream_name":"stdout","time":63.042854023,"data":"      \"gate_min\": 0.6045746008455395,\n"}
+,{"stream_name":"stdout","time":63.042858954,"data":"      \"mae_ev\": 0.835367342693869,\n"}
+,{"stream_name":"stdout","time":63.042863743,"data":"      \"median_ae_ev\": 0.7143666052452694,\n"}
+,{"stream_name":"stdout","time":63.042868926,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042873713,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042878053,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.042882441,"data":"      \"rmse_ev\": 1.0464934393216165,\n"}
+,{"stream_name":"stdout","time":63.042887536,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042892268,"data":"      \"support_quantile\": 0.95,\n"}
+,{"stream_name":"stdout","time":63.042897211,"data":"      \"support_threshold\": 7.664196913207561,\n"}
+,{"stream_name":"stdout","time":63.042901721,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042906434,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.042910502,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.042915306,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.042920733,"data":"      \"bias_ev\": 0.5952761637802964,\n"}
+,{"stream_name":"stdout","time":63.042925754,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.042930946,"data":"      \"gate_mean\": 0.9999470860224203,\n"}
+,{"stream_name":"stdout","time":63.042935978,"data":"      \"gate_min\": 0.9793635487439314,\n"}
+,{"stream_name":"stdout","time":63.042941228,"data":"      \"mae_ev\": 0.8356327964581987,\n"}
+,{"stream_name":"stdout","time":63.042946578,"data":"      \"median_ae_ev\": 0.7143666052452694,\n"}
+,{"stream_name":"stdout","time":63.042951532,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.042955867,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042960126,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.042964451,"data":"      \"rmse_ev\": 1.0466001307604356,\n"}
+,{"stream_name":"stdout","time":63.042974512,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.042981642,"data":"      \"support_quantile\": 0.99,\n"}
+,{"stream_name":"stdout","time":63.042986213,"data":"      \"support_threshold\": 9.653518679971109,\n"}
+,{"stream_name":"stdout","time":63.042993098,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.042997455,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.043002476,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043007594,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04301227,"data":"      \"bias_ev\": 0.5952631862166117,\n"}
+,{"stream_name":"stdout","time":63.043016731,"data":"      \"element\": \"Cu\",\n"}
+,{"stream_name":"stdout","time":63.043022288,"data":"      \"gate_mean\": 0.9998952640015598,\n"}
+,{"stream_name":"stdout","time":63.043027926,"data":"      \"gate_min\": 0.9591529606083069,\n"}
+,{"stream_name":"stdout","time":63.043033459,"data":"      \"mae_ev\": 0.8356198188945139,\n"}
+,{"stream_name":"stdout","time":63.043038711,"data":"      \"median_ae_ev\": 0.7143666052452694,\n"}
+,{"stream_name":"stdout","time":63.04304426,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043049999,"data":"      \"n\": 390,\n"}
+,{"stream_name":"stdout","time":63.043054378,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.043059472,"data":"      \"rmse_ev\": 1.0465947652115788,\n"}
+,{"stream_name":"stdout","time":63.043065016,"data":"      \"support_distance_mean\": 3.485836073244849,\n"}
+,{"stream_name":"stdout","time":63.043070268,"data":"      \"support_quantile\": 0.99,\n"}
+,{"stream_name":"stdout","time":63.043076721,"data":"      \"support_threshold\": 9.653518679971109,\n"}
+,{"stream_name":"stdout","time":63.043081303,"data":"      \"test_n\": 390,\n"}
+,{"stream_name":"stdout","time":63.043085554,"data":"      \"train_n\": 4214\n"}
+,{"stream_name":"stdout","time":63.043089704,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043094,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043098138,"data":"      \"bias_ev\": -0.9652551020408163,\n"}
+,{"stream_name":"stdout","time":63.043102677,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043107134,"data":"      \"mae_ev\": 0.9652551020408163,\n"}
+,{"stream_name":"stdout","time":63.043111194,"data":"      \"median_ae_ev\": 0.185,\n"}
+,{"stream_name":"stdout","time":63.043115516,"data":"      \"model\": \"median\",\n"}
+,{"stream_name":"stdout","time":63.04312,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043124293,"data":"      \"rmse_ev\": 1.4994660614324538,\n"}
+,{"stream_name":"stdout","time":63.043128663,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043132838,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043137034,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043141154,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043145206,"data":"      \"bias_ev\": 0.38849155318323175,\n"}
+,{"stream_name":"stdout","time":63.043149474,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043153772,"data":"      \"mae_ev\": 0.6954573899942968,\n"}
+,{"stream_name":"stdout","time":63.043157948,"data":"      \"median_ae_ev\": 0.5216547729107973,\n"}
+,{"stream_name":"stdout","time":63.043162181,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":63.043166629,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043178107,"data":"      \"rmse_ev\": 0.9182422335065394,\n"}
+,{"stream_name":"stdout","time":63.043182389,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043187096,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043192096,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043197112,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043213209,"data":"      \"bias_ev\": -0.9652551020408163,\n"}
+,{"stream_name":"stdout","time":63.043218648,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043223055,"data":"      \"mae_ev\": 0.9652551020408163,\n"}
+,{"stream_name":"stdout","time":63.04322747,"data":"      \"median_ae_ev\": 0.185,\n"}
+,{"stream_name":"stdout","time":63.043250478,"data":"      \"model\": \"direct_hgb\",\n"}
+,{"stream_name":"stdout","time":63.04326346,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.04326811,"data":"      \"rmse_ev\": 1.4994660614324538,\n"}
+,{"stream_name":"stdout","time":63.043272722,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043277039,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043281368,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043285562,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043289762,"data":"      \"bias_ev\": 0.35778060847095416,\n"}
+,{"stream_name":"stdout","time":63.043294096,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043298819,"data":"      \"mae_ev\": 0.5911177251159294,\n"}
+,{"stream_name":"stdout","time":63.043303315,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.04330795,"data":"      \"model\": \"residual_ungated\",\n"}
+,{"stream_name":"stdout","time":63.043312337,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043324653,"data":"      \"rmse_ev\": 0.8136129129955392,\n"}
+,{"stream_name":"stdout","time":63.04332903,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.04335186,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043356904,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043362138,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043367262,"data":"      \"bias_ev\": 0.35874027751417126,\n"}
+,{"stream_name":"stdout","time":63.043372338,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.0433778,"data":"      \"gate_mean\": 0.9883237603466228,\n"}
+,{"stream_name":"stdout","time":63.043382488,"data":"      \"gate_min\": 0.6479110182825828,\n"}
+,{"stream_name":"stdout","time":63.043387095,"data":"      \"mae_ev\": 0.5916152523289699,\n"}
+,{"stream_name":"stdout","time":63.043391554,"data":"      \"median_ae_ev\": 0.4648219705834519,\n"}
+,{"stream_name":"stdout","time":63.043396064,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043400658,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043404977,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.043409363,"data":"      \"rmse_ev\": 0.8141299240743842,\n"}
+,{"stream_name":"stdout","time":63.043413909,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.043418664,"data":"      \"support_quantile\": 0.8,\n"}
+,{"stream_name":"stdout","time":63.043423201,"data":"      \"support_threshold\": 5.8950988227990315,\n"}
+,{"stream_name":"stdout","time":63.043427575,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043432202,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043447582,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043452127,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043457045,"data":"      \"bias_ev\": 0.359500746380682,\n"}
+,{"stream_name":"stdout","time":63.043462483,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.04346801,"data":"      \"gate_mean\": 0.9788154563765563,\n"}
+,{"stream_name":"stdout","time":63.043473428,"data":"      \"gate_min\": 0.41978868761197335,\n"}
+,{"stream_name":"stdout","time":63.043479303,"data":"      \"mae_ev\": 0.5919508034947799,\n"}
+,{"stream_name":"stdout","time":63.043483822,"data":"      \"median_ae_ev\": 0.46375738068861005,\n"}
+,{"stream_name":"stdout","time":63.043488212,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043492716,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043497068,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.043501498,"data":"      \"rmse_ev\": 0.8145740640927646,\n"}
+,{"stream_name":"stdout","time":63.043505861,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.043510581,"data":"      \"support_quantile\": 0.8,\n"}
+,{"stream_name":"stdout","time":63.043516228,"data":"      \"support_threshold\": 5.8950988227990315,\n"}
+,{"stream_name":"stdout","time":63.043520647,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043525011,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043529289,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043533513,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04355745,"data":"      \"bias_ev\": 0.35803405431934254,\n"}
+,{"stream_name":"stdout","time":63.043563433,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043569037,"data":"      \"gate_mean\": 0.9968820794661984,\n"}
+,{"stream_name":"stdout","time":63.043658321,"data":"      \"gate_min\": 0.75252551877643,\n"}
+,{"stream_name":"stdout","time":63.043666204,"data":"      \"mae_ev\": 0.5913711709643179,\n"}
+,{"stream_name":"stdout","time":63.04367162,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.043676933,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043682158,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043686429,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.043690699,"data":"      \"rmse_ev\": 0.8140391857749708,\n"}
+,{"stream_name":"stdout","time":63.043695331,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.043700078,"data":"      \"support_quantile\": 0.9,\n"}
+,{"stream_name":"stdout","time":63.043704619,"data":"      \"support_threshold\": 6.8469468409786085,\n"}
+,{"stream_name":"stdout","time":63.043708995,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043713052,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043717348,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043721648,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043725914,"data":"      \"bias_ev\": 0.3582043894881681,\n"}
+,{"stream_name":"stdout","time":63.043730334,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.04373491,"data":"      \"gate_mean\": 0.994282261331052,\n"}
+,{"stream_name":"stdout","time":63.043742087,"data":"      \"gate_min\": 0.5662946564097352,\n"}
+,{"stream_name":"stdout","time":63.043746719,"data":"      \"mae_ev\": 0.5915415061331433,\n"}
+,{"stream_name":"stdout","time":63.043760814,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.043766123,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043771033,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043776209,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.043780966,"data":"      \"rmse_ev\": 0.8144066168924115,\n"}
+,{"stream_name":"stdout","time":63.043785654,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.043790983,"data":"      \"support_quantile\": 0.9,\n"}
+,{"stream_name":"stdout","time":63.043796729,"data":"      \"support_threshold\": 6.8469468409786085,\n"}
+,{"stream_name":"stdout","time":63.0438012,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043805488,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043809901,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043814196,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043825475,"data":"      \"bias_ev\": 0.3580119268561637,\n"}
+,{"stream_name":"stdout","time":63.043829891,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043834381,"data":"      \"gate_mean\": 0.9989514588417472,\n"}
+,{"stream_name":"stdout","time":63.043843359,"data":"      \"gate_min\": 0.8432521903504065,\n"}
+,{"stream_name":"stdout","time":63.043847821,"data":"      \"mae_ev\": 0.5913490435011389,\n"}
+,{"stream_name":"stdout","time":63.043852311,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.043874764,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043880419,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043885879,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.043891335,"data":"      \"rmse_ev\": 0.8139107735744163,\n"}
+,{"stream_name":"stdout","time":63.043896802,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.043901312,"data":"      \"support_quantile\": 0.95,\n"}
+,{"stream_name":"stdout","time":63.043910569,"data":"      \"support_threshold\": 7.672434723882545,\n"}
+,{"stream_name":"stdout","time":63.043915011,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043919414,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.043923829,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.043928379,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.043932583,"data":"      \"bias_ev\": 0.3581972399662346,\n"}
+,{"stream_name":"stdout","time":63.043936926,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.043941381,"data":"      \"gate_mean\": 0.9980404076002679,\n"}
+,{"stream_name":"stdout","time":63.043945915,"data":"      \"gate_min\": 0.7110742565307583,\n"}
+,{"stream_name":"stdout","time":63.043950444,"data":"      \"mae_ev\": 0.5915343566112099,\n"}
+,{"stream_name":"stdout","time":63.043973302,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.043979453,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.043985348,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.043990589,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.043995917,"data":"      \"rmse_ev\": 0.8141792887261189,\n"}
+,{"stream_name":"stdout","time":63.044000404,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.044009508,"data":"      \"support_quantile\": 0.95,\n"}
+,{"stream_name":"stdout","time":63.044014004,"data":"      \"support_threshold\": 7.672434723882545,\n"}
+,{"stream_name":"stdout","time":63.044019162,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.044023447,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.044027705,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044031944,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044036299,"data":"      \"bias_ev\": 0.35778060847095416,\n"}
+,{"stream_name":"stdout","time":63.044040684,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.044045065,"data":"      \"gate_mean\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.044049524,"data":"      \"gate_min\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.044056203,"data":"      \"mae_ev\": 0.5911177251159294,\n"}
+,{"stream_name":"stdout","time":63.04407683,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.044081938,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.044086441,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.044091254,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.044096444,"data":"      \"rmse_ev\": 0.8136129129955392,\n"}
+,{"stream_name":"stdout","time":63.044101988,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.044106949,"data":"      \"support_quantile\": 0.99,\n"}
+,{"stream_name":"stdout","time":63.044112455,"data":"      \"support_threshold\": 9.762151851973822,\n"}
+,{"stream_name":"stdout","time":63.044117652,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.044121975,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.04412632,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044130569,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044134756,"data":"      \"bias_ev\": 0.35778060847095416,\n"}
+,{"stream_name":"stdout","time":63.044139252,"data":"      \"element\": \"Ag\",\n"}
+,{"stream_name":"stdout","time":63.044143618,"data":"      \"gate_mean\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.044147964,"data":"      \"gate_min\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.04415247,"data":"      \"mae_ev\": 0.5911177251159294,\n"}
+,{"stream_name":"stdout","time":63.044176457,"data":"      \"median_ae_ev\": 0.46548384381997676,\n"}
+,{"stream_name":"stdout","time":63.044181269,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.044188123,"data":"      \"n\": 196,\n"}
+,{"stream_name":"stdout","time":63.044193017,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.044198085,"data":"      \"rmse_ev\": 0.8136129129955392,\n"}
+,{"stream_name":"stdout","time":63.044203797,"data":"      \"support_distance_mean\": 3.6458580909550427,\n"}
+,{"stream_name":"stdout","time":63.044209182,"data":"      \"support_quantile\": 0.99,\n"}
+,{"stream_name":"stdout","time":63.044213769,"data":"      \"support_threshold\": 9.762151851973822,\n"}
+,{"stream_name":"stdout","time":63.044218152,"data":"      \"test_n\": 196,\n"}
+,{"stream_name":"stdout","time":63.044222465,"data":"      \"train_n\": 4408\n"}
+,{"stream_name":"stdout","time":63.044226774,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044230925,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044235035,"data":"      \"bias_ev\": -2.017058823529412,\n"}
+,{"stream_name":"stdout","time":63.044261489,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044271394,"data":"      \"mae_ev\": 2.017058823529412,\n"}
+,{"stream_name":"stdout","time":63.044276202,"data":"      \"median_ae_ev\": 0.0,\n"}
+,{"stream_name":"stdout","time":63.044280727,"data":"      \"model\": \"median\",\n"}
+,{"stream_name":"stdout","time":63.04428516,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044289483,"data":"      \"rmse_ev\": 3.1005983429063515,\n"}
+,{"stream_name":"stdout","time":63.044294809,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044300249,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044305735,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044310895,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044316074,"data":"      \"bias_ev\": -0.8762784925225056,\n"}
+,{"stream_name":"stdout","time":63.044320515,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044324984,"data":"      \"mae_ev\": 1.412626651441915,\n"}
+,{"stream_name":"stdout","time":63.044329319,"data":"      \"median_ae_ev\": 0.9850389816101967,\n"}
+,{"stream_name":"stdout","time":63.04433378,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":63.044338174,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044342493,"data":"      \"rmse_ev\": 2.040805436215626,\n"}
+,{"stream_name":"stdout","time":63.04434695,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044351319,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044355643,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044359781,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044364061,"data":"      \"bias_ev\": -2.017058823529412,\n"}
+,{"stream_name":"stdout","time":63.044368526,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044375289,"data":"      \"mae_ev\": 2.017058823529412,\n"}
+,{"stream_name":"stdout","time":63.044396947,"data":"      \"median_ae_ev\": 0.0,\n"}
+,{"stream_name":"stdout","time":63.044402625,"data":"      \"model\": \"direct_hgb\",\n"}
+,{"stream_name":"stdout","time":63.044408303,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044413245,"data":"      \"rmse_ev\": 3.1005983429063515,\n"}
+,{"stream_name":"stdout","time":63.044418485,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044423035,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044427404,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044431568,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04443568,"data":"      \"bias_ev\": -0.9923073196014449,\n"}
+,{"stream_name":"stdout","time":63.044440009,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.04444446,"data":"      \"mae_ev\": 1.4310660305215626,\n"}
+,{"stream_name":"stdout","time":63.044448847,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.044453276,"data":"      \"model\": \"residual_ungated\",\n"}
+,{"stream_name":"stdout","time":63.044457731,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.0444617,"data":"      \"rmse_ev\": 2.183389768302678,\n"}
+,{"stream_name":"stdout","time":63.044466036,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044470378,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.04447783,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.04448218,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04449436,"data":"      \"bias_ev\": -0.9901550123511331,\n"}
+,{"stream_name":"stdout","time":63.04450012,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044505688,"data":"      \"gate_mean\": 0.982035002580821,\n"}
+,{"stream_name":"stdout","time":63.044511086,"data":"      \"gate_min\": 0.6894122412095148,\n"}
+,{"stream_name":"stdout","time":63.044516475,"data":"      \"mae_ev\": 1.430715210178849,\n"}
+,{"stream_name":"stdout","time":63.044520858,"data":"      \"median_ae_ev\": 0.7151166783333871,\n"}
+,{"stream_name":"stdout","time":63.044525336,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.04452982,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044534098,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.04453844,"data":"      \"rmse_ev\": 2.182661584698079,\n"}
+,{"stream_name":"stdout","time":63.044542774,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.044547205,"data":"      \"support_quantile\": 0.8,\n"}
+,{"stream_name":"stdout","time":63.044551615,"data":"      \"support_threshold\": 5.945454661511961,\n"}
+,{"stream_name":"stdout","time":63.044556095,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044560504,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044564841,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044569085,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044584659,"data":"      \"bias_ev\": -0.9882928550783382,\n"}
+,{"stream_name":"stdout","time":63.044604433,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044609722,"data":"      \"gate_mean\": 0.9664736851665068,\n"}
+,{"stream_name":"stdout","time":63.044614974,"data":"      \"gate_min\": 0.47528923832952624,\n"}
+,{"stream_name":"stdout","time":63.044620295,"data":"      \"mae_ev\": 1.4303838904516673,\n"}
+,{"stream_name":"stdout","time":63.04462559,"data":"      \"median_ae_ev\": 0.7151166783333871,\n"}
+,{"stream_name":"stdout","time":63.044629797,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.04463421,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044638469,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.044643007,"data":"      \"rmse_ev\": 2.182088153291474,\n"}
+,{"stream_name":"stdout","time":63.04464738,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.044651838,"data":"      \"support_quantile\": 0.8,\n"}
+,{"stream_name":"stdout","time":63.044656237,"data":"      \"support_threshold\": 5.945454661511961,\n"}
+,{"stream_name":"stdout","time":63.044660742,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044665113,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044669439,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044673599,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.04467791,"data":"      \"bias_ev\": -0.992036213835124,\n"}
+,{"stream_name":"stdout","time":63.044682241,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044688916,"data":"      \"gate_mean\": 0.9981000961279858,\n"}
+,{"stream_name":"stdout","time":63.044693385,"data":"      \"gate_min\": 0.8013593233138526,\n"}
+,{"stream_name":"stdout","time":63.044700121,"data":"      \"mae_ev\": 1.431107288305701,\n"}
+,{"stream_name":"stdout","time":63.044705558,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.044716874,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.04472288,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.04472747,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.044731835,"data":"      \"rmse_ev\": 2.183385340647608,\n"}
+,{"stream_name":"stdout","time":63.044736235,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.044740713,"data":"      \"support_quantile\": 0.9,\n"}
+,{"stream_name":"stdout","time":63.044745092,"data":"      \"support_threshold\": 6.91088036960818,\n"}
+,{"stream_name":"stdout","time":63.044749472,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044753866,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044758206,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044762393,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044766625,"data":"      \"bias_ev\": -0.9917825404862833,\n"}
+,{"stream_name":"stdout","time":63.04477114,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044775499,"data":"      \"gate_mean\": 0.9964030309860259,\n"}
+,{"stream_name":"stdout","time":63.044782432,"data":"      \"gate_min\": 0.6421767650620358,\n"}
+,{"stream_name":"stdout","time":63.044791775,"data":"      \"mae_ev\": 1.4311373057956862,\n"}
+,{"stream_name":"stdout","time":63.044811313,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.044816877,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.044822214,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044827494,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.044832765,"data":"      \"rmse_ev\": 2.1833823236718937,\n"}
+,{"stream_name":"stdout","time":63.044837267,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.04484176,"data":"      \"support_quantile\": 0.9,\n"}
+,{"stream_name":"stdout","time":63.044846179,"data":"      \"support_threshold\": 6.91088036960818,\n"}
+,{"stream_name":"stdout","time":63.044850637,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044854966,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044859345,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.04486352,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044867721,"data":"      \"bias_ev\": -0.9922783452559856,\n"}
+,{"stream_name":"stdout","time":63.044874339,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044878733,"data":"      \"gate_mean\": 0.9995586477120055,\n"}
+,{"stream_name":"stdout","time":63.044883222,"data":"      \"gate_min\": 0.8949581554573243,\n"}
+,{"stream_name":"stdout","time":63.044887786,"data":"      \"mae_ev\": 1.4310950048670221,\n"}
+,{"stream_name":"stdout","time":63.044894336,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.04491577,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.04492127,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.044925837,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.044931794,"data":"      \"rmse_ev\": 2.1833941526277547,\n"}
+,{"stream_name":"stdout","time":63.044936782,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.044941396,"data":"      \"support_quantile\": 0.95,\n"}
+,{"stream_name":"stdout","time":63.044951261,"data":"      \"support_threshold\": 7.718071741642957,\n"}
+,{"stream_name":"stdout","time":63.044955836,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.04496017,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.044964563,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.044968828,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.044973307,"data":"      \"bias_ev\": -0.9922524144292177,\n"}
+,{"stream_name":"stdout","time":63.044977856,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.044982376,"data":"      \"gate_mean\": 0.9991636558824352,\n"}
+,{"stream_name":"stdout","time":63.044986715,"data":"      \"gate_min\": 0.8009501000195762,\n"}
+,{"stream_name":"stdout","time":63.044993645,"data":"      \"mae_ev\": 1.4311209356937902,\n"}
+,{"stream_name":"stdout","time":63.045014682,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.045020131,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.045025005,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.04503045,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.045035743,"data":"      \"rmse_ev\": 2.183398154004545,\n"}
+,{"stream_name":"stdout","time":63.045040272,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.045044755,"data":"      \"support_quantile\": 0.95,\n"}
+,{"stream_name":"stdout","time":63.045049146,"data":"      \"support_threshold\": 7.718071741642957,\n"}
+,{"stream_name":"stdout","time":63.045053605,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.045057922,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.045062253,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.045066407,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.045070531,"data":"      \"bias_ev\": -0.9923073196014449,\n"}
+,{"stream_name":"stdout","time":63.045074935,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.045079409,"data":"      \"gate_mean\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.045083784,"data":"      \"gate_min\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.045088197,"data":"      \"mae_ev\": 1.4310660305215626,\n"}
+,{"stream_name":"stdout","time":63.045100244,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.045120816,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.045126471,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.045131323,"data":"      \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.04513581,"data":"      \"rmse_ev\": 2.183389768302678,\n"}
+,{"stream_name":"stdout","time":63.045141158,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.045146337,"data":"      \"support_quantile\": 0.99,\n"}
+,{"stream_name":"stdout","time":63.045150774,"data":"      \"support_threshold\": 9.792931238696816,\n"}
+,{"stream_name":"stdout","time":63.045155221,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.045159583,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.045163927,"data":"    },\n"}
+,{"stream_name":"stdout","time":63.045168044,"data":"    {\n"}
+,{"stream_name":"stdout","time":63.045172215,"data":"      \"bias_ev\": -0.9923073196014449,\n"}
+,{"stream_name":"stdout","time":63.045176684,"data":"      \"element\": \"B\",\n"}
+,{"stream_name":"stdout","time":63.045181098,"data":"      \"gate_mean\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.045189624,"data":"      \"gate_min\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.045194355,"data":"      \"mae_ev\": 1.4310660305215626,\n"}
+,{"stream_name":"stdout","time":63.045198777,"data":"      \"median_ae_ev\": 0.7063825516846947,\n"}
+,{"stream_name":"stdout","time":63.045221254,"data":"      \"model\": \"sparking\",\n"}
+,{"stream_name":"stdout","time":63.045227312,"data":"      \"n\": 238,\n"}
+,{"stream_name":"stdout","time":63.045232384,"data":"      \"power\": 2.0,\n"}
+,{"stream_name":"stdout","time":63.045237383,"data":"      \"rmse_ev\": 2.183389768302678,\n"}
+,{"stream_name":"stdout","time":63.045259712,"data":"      \"support_distance_mean\": 4.244059428926932,\n"}
+,{"stream_name":"stdout","time":63.045264822,"data":"      \"support_quantile\": 0.99,\n"}
+,{"stream_name":"stdout","time":63.04526933,"data":"      \"support_threshold\": 9.792931238696816,\n"}
+,{"stream_name":"stdout","time":63.045273725,"data":"      \"test_n\": 238,\n"}
+,{"stream_name":"stdout","time":63.045278056,"data":"      \"train_n\": 4366\n"}
+,{"stream_name":"stdout","time":63.045282464,"data":"    }\n"}
+,{"stream_name":"stdout","time":63.045286726,"data":"  ],\n"}
+,{"stream_name":"stdout","time":63.045290951,"data":"  \"run_id\": \"kaggle-development-v1-r1\",\n"}
+,{"stream_name":"stdout","time":63.045295566,"data":"  \"schema_version\": 1,\n"}
+,{"stream_name":"stdout","time":63.045300008,"data":"  \"selected_gate\": {\n"}
+,{"stream_name":"stdout","time":63.045304426,"data":"    \"macro_mae_ev\": 0.9526055173652302,\n"}
+,{"stream_name":"stdout","time":63.045308919,"data":"    \"power\": 1.0,\n"}
+,{"stream_name":"stdout","time":63.045315732,"data":"    \"support_quantile\": 0.99\n"}
+,{"stream_name":"stdout","time":63.045338913,"data":"  },\n"}
+,{"stream_name":"stdout","time":63.045344155,"data":"  \"status\": \"SUCCESS\"\n"}
+,{"stream_name":"stdout","time":63.045349271,"data":"}\n"}
+,{"stream_name":"stdout","time":63.364179585,"data":"+ /usr/bin/python3 -m sparking verify --run-id kaggle-development-v1-r1\n"}
+,{"stream_name":"stdout","time":64.924754722,"data":"{\n"}
+,{"stream_name":"stdout","time":64.924814217,"data":"  \"changed\": [],\n"}
+,{"stream_name":"stdout","time":64.924821419,"data":"  \"extra\": [],\n"}
+,{"stream_name":"stdout","time":64.924826968,"data":"  \"missing\": [],\n"}
+,{"stream_name":"stdout","time":64.924831443,"data":"  \"valid\": true\n"}
+,{"stream_name":"stdout","time":64.924836453,"data":"}\n"}
+,{"stream_name":"stdout","time":67.773568499,"data":"HOSTED_RUN_COMPLETE=kaggle-development-v1-r1\n"}
+,{"stream_name":"stdout","time":67.773602126,"data":"HOSTED_ARCHIVE_SHA256=e78850dfb06f7c3b6d349a4807fe3c1f306bf86945b96574ca5878c993707b03\n"}
+,{"stream_name":"stderr","time":70.696498658,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":70.696541855,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":71.149177036,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":71.149207703,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":72.213684008,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":73.815047302,"data":"[NbConvertApp] Writing 302478 bytes to __results__.html\n"}
+]

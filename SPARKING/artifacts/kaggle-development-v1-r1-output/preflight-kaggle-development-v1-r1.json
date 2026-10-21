@@ -1,0 +1,22 @@
+{
+  "finite_targets": true,
+  "resource_observations": [
+    {
+      "elapsed_seconds": 0.0001537799835205078,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 182.26953125,
+      "phase": "admission"
+    },
+    {
+      "elapsed_seconds": 0.053621768951416016,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 183.51953125,
+      "phase": "data_validation"
+    }
+  ],
+  "rows": 4604,
+  "schema_version": 1,
+  "status": "ADMITTED"
+}

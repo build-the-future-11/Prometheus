@@ -1,0 +1,114 @@
+"""Hosted development runner; all accepted evidence is emitted to /kaggle/working."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+
+RUN_ID = "kaggle-development-v1-r1"
+WORKING = Path("/kaggle/working")
+CHECKOUT = WORKING / "sparking-source"
+SOURCE_DATASET = Path("/kaggle/input/sparking-source-v1-20261020")
+
+
+def run(command: list[str], cwd: Path | None = None) -> None:
+    print("+", " ".join(command), flush=True)
+    subprocess.run(command, cwd=cwd, check=True, env=os.environ.copy())
+
+
+if CHECKOUT.exists():
+    raise FileExistsError(f"Refusing to overwrite existing checkout: {CHECKOUT}")
+if not SOURCE_DATASET.exists():
+    candidates = list(Path("/kaggle/input").rglob("source-revision.txt"))
+    candidates = [path.parent for path in candidates if "sparking-source-v1-20261020" in str(path)]
+    if len(candidates) != 1:
+        raise RuntimeError(f"Expected one SPARKING source mount, found {candidates}")
+    SOURCE_DATASET = candidates[0]
+archive = SOURCE_DATASET / "sparking-source.tar.gz"
+expanded = SOURCE_DATASET / "sparking-source"
+if archive.is_file():
+    CHECKOUT.mkdir(parents=True)
+    shutil.unpack_archive(str(archive), str(CHECKOUT), "gztar")
+elif expanded.is_dir():
+    shutil.copytree(expanded, CHECKOUT)
+else:
+    raise FileNotFoundError(f"No SPARKING archive or expanded source under {SOURCE_DATASET}")
+project = CHECKOUT
+expected_hashes = {'.gitignore': 'da376b812163f6f0854749cc32e08e47b8c1bf7d05bf67744e56a35f7f07717b', 'DATA_CARD.md': '387978935306cfdc1381b32e0c54eac104a0b306a26e7d08c9a100e70bfc3c4a', 'INTAKE_AUDIT.md': '4f09b6a39175f9ed9ca4c667d9dc3cdad1bd04cd816b5a163cd0c40d2475381d', 'LICENSE': 'a56375dd72bcfc4da4eaaf953c5bd9d372f0f15593b6217a706ae6b75bf3a9bc', 'MODEL_CARD.md': '7e006a1de068ba451510761079fcabf5253a116b0dd98d55e93c7750d62b53e4', 'PROTOCOL.md': 'c5e54c080113a98b8d3cb5e1d6647b99d1307099b4ad33eeac75333952e5c3a5', 'README.md': '361b14d16264c1232fc9d045306784ecad3bf8789ef2186093b66389c419d358', 'RESEARCH_FEATURE_MEGA_CHECKLIST.md': 'b0bcae0cb5d3bcf9085809036686b2efd14334b95e4e07a54208dfdfe57e5a8a', 'RESEARCH_STATE.json': 'a5881ec79f3886b0c60e2959ccc32f5372e89e814e5547037eec783d410c554a', 'artifacts/coverage.json': '9da399aaf5c33c56614e86e4f3dedd253d9a8a84c8ee138394f7300430b32212', 'artifacts/paper_receipt.json': '391faf4b586ac120fa45191000e7ec689c12402809c068636c2bb5deb2f1444c', 'artifacts/preflight-local-20261020.json': 'db4e9fc3fdd5adadc978186cda44551d2bd8b53732f3f4bd8b724da0b5db0049', 'data/dataset_receipt.json': '7d1445d7af523205cba0e88fc7585528cc78d0341e964e9adaf872a96d95a88c', 'output/pdf/main.pdf': '74720910586e8be073d0e4d54419a4da6994c633bd88b8f5d9d526c6e92924c8', 'paper/STYLE_PROVENANCE.json': '31114aa3584bef5423b9c9c1cf5974cfed12bab9df8603d87cca5873541401b4', 'paper/arxiv.sty': 'cd8144d29299de66b4856524176369d397cae94158e39483434c8c83e537d199', 'paper/main.tex': '80baf4c56233876b67f1302c012f1f3f61b53f39f3e855c963e82bf59ef08a0d', 'paper/references.bib': '67dc61250e17c287d7529a383a79fedc71db73ba1a26ffa456898e7a8636ca29', 'protocols/development-v1.json': 'd8f6afc29cc43c71e6dbdd84b76bdc70e3a4ccda8732b83d7983cfe271001dff', 'pyproject.toml': '3691e09ddcb3d6d57475dd2f882038cd8191db65a722d6424bbc37a23d390cc7', 'runs/local-development-v1-r1/artifact_manifest.json': 'bd09512f2cf0364ee767c87f0a538debb6ef53aa024dd161d734c66f1f6cf146', 'runs/local-development-v1-r1/failures.json': 'fa6841d3c5e63d7e37a6ef784336ffa428a3a4bc603963e253349909f2af1449', 'runs/local-development-v1-r1/receipt.json': 'ab57a241f22690015a24d69edee7280d3a924393bb2ff5f74fda1bff6bfebc18', 'src/sparking/__init__.py': '3ea76e9d859e2a262debb3cdcb9dd812208dc355192709a4d84f6cd08df404fd', 'src/sparking/__main__.py': 'd7815f9da17bcd8e79d1d47170e5795e29cc5837f97d1049664813068a9e563f', 'src/sparking/chemistry.py': '260cf0dca1a21c85acec5b66b525cd94ae5b6f73aeaaac106d3c7805ac82f521', 'src/sparking/cli.py': '5c1e2a3439d6701491d9046f12fc0b6a60ff6bfdb2d1d5ad66b3542620979621', 'src/sparking/data.py': '45b61c58e189d65912adef3acdde757857008167d5534cc52de36f8b4b978133', 'src/sparking/evidence.py': 'a30aaf0d9011d7e1feaf208ac723d0a540508f3abe769e1ea45473f63a9327cb', 'src/sparking/experiment.py': '3fe57124d91a33922aadb8d74784e8f6235680e04e6104c763e9ae1d7e879cc8', 'src/sparking/metrics.py': '10ba5ac36a6d78dfcc2af5a4370b797c65493a19c634adbe137400f150784db7', 'src/sparking/model.py': '06c0e147c71b956cd1019b3a885216b6905d45a01ce8d6cc8ac002914b8978ee', 'studies/kaggle-development-v1/kernel-metadata.json': '5bd042f0e90393cddc49ea78e95a3fb456005c112ed1b9bcc202208a50cb3614', 'studies/kaggle-development-v1/sparking-development-v1-20261020.py': '9daf33e14f9536a7458bd3b3e258ef5d68631cb20eaec1f22d2e2dc304fa90df', 'studies/kaggle-source-dataset/.gitignore': 'c862a5e4145fba6317188971a88a1e14aff9d30028767aefee485d1562af3702', 'studies/kaggle-source-dataset/dataset-metadata.json': '2a56ce9e3e2790f32bf66dff2c3a43df906b7601670d29dd68f44e15f71acdf3', 'tests/test_chemistry.py': 'b885d185b79468ce14b4839086a626750140b3326785a05223e14af2cb497978', 'tests/test_cli.py': '6c15b573f0123a3e455efb43d554d5d139377b74b9acec647bda2df56d172c50', 'tests/test_data.py': '77dc3a9f1626daaa37a20e90c443436057a5a0a24de2921a0d1c3aed1365ff40', 'tests/test_evidence.py': 'bfafceff12951f13cda5f879de7062aef8537ce62aba6100df427b990bf591fc', 'tests/test_metrics.py': '45f33f8f7b0f216395542296e05aec320fe6cb5adf01390b6e8c5ac14f29a774', 'tests/test_model.py': '4495a0d5164907491d7d356658dcdf5ebb7c3818712c339c6d9c7ff71e697b2c', 'uv.lock': 'b9d701cbc45c5671501cb3976479d8b0951ae9ae25dc4f471ed76b20ffa8c134'}
+observed_hashes = {
+    path.relative_to(project).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+    for path in project.rglob("*") if path.is_file()
+}
+if observed_hashes != expected_hashes:
+    raise RuntimeError("Hosted source does not match the locally verified archive")
+source_revision = (SOURCE_DATASET / "source-revision.txt").read_text().strip()
+if source_revision != '5f81dc5a9edf8e2997c1a22b30ff71b53b82f827':
+    raise RuntimeError("Hosted source revision differs from verified bundle")
+(WORKING / "source-verification.json").write_text(json.dumps({
+    "valid": True, "file_count": len(expected_hashes), "source_revision": source_revision,
+    "archive_sha256": '4c32369080d0a9f947f9743543d9764f6deb742117f080ab2b0f25235e100320',
+    "files": expected_hashes,
+}, indent=2, sort_keys=True) + "\n")
+print(f"HOSTED_SOURCE_VERIFIED={len(expected_hashes)} files", flush=True)
+os.environ.update(
+    {
+        "MPLBACKEND": "Agg",
+        "MPLCONFIGDIR": "/tmp/sparking-matplotlib",
+        "XDG_CACHE_HOME": "/tmp/sparking-cache",
+        "LOKY_MAX_CPU_COUNT": str(os.cpu_count() or 2),
+        "PYTHONHASHSEED": "0",
+        "SPARKING_SOURCE_COMMIT": source_revision,
+    }
+)
+run([sys.executable, "-m", "pip", "install", "-e", ".[dev]"], cwd=project)
+run([sys.executable, "-m", "pytest", "-q"], cwd=project)
+run([sys.executable, "-m", "sparking", "prepare"], cwd=project)
+run(
+    [
+        sys.executable,
+        "-m",
+        "sparking",
+        "preflight",
+        "--output",
+        f"artifacts/preflight-{RUN_ID}.json",
+    ],
+    cwd=project,
+)
+run([sys.executable, "-m", "sparking", "develop", "--run-id", RUN_ID], cwd=project)
+run([sys.executable, "-m", "sparking", "verify", "--run-id", RUN_ID], cwd=project)
+
+environment_path = project / "artifacts" / f"pip-freeze-{RUN_ID}.txt"
+environment_path.write_text(
+    subprocess.run(
+        [sys.executable, "-m", "pip", "freeze", "--all"],
+        text=True,
+        capture_output=True,
+        check=True,
+    ).stdout
+)
+archive_base = WORKING / RUN_ID
+result_archive = Path(
+    shutil.make_archive(
+        str(archive_base),
+        "gztar",
+        root_dir=project,
+        base_dir="runs/" + RUN_ID,
+    )
+)
+digest = hashlib.sha256(result_archive.read_bytes()).hexdigest()
+(WORKING / f"{RUN_ID}.sha256").write_text(f"{digest}  {result_archive.name}\n")
+summary = json.loads((project / "runs" / RUN_ID / "results.json").read_text())
+(WORKING / "development-summary.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
+(WORKING / f"preflight-{RUN_ID}.json").write_text(
+    (project / "artifacts" / f"preflight-{RUN_ID}.json").read_text()
+)
+print(f"HOSTED_RUN_COMPLETE={RUN_ID}")
+print(f"HOSTED_ARCHIVE_SHA256={digest}")
+
+

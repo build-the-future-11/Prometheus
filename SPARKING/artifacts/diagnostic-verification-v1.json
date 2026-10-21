@@ -1,0 +1,17 @@
+{
+  "status": "VERIFIED",
+  "archive_sha256": "00de4e2fa8d33cecae3df8b234c45be0aa77bfdd1b5296b5d6ccaf397c2f4788",
+  "manifest": {
+    "valid": true,
+    "missing": [],
+    "extra": [],
+    "changed": []
+  },
+  "per_example_metric_comparisons": 48,
+  "original_comparisons_reproduced": 36,
+  "protocol_and_script_match_local": true,
+  "protected_evaluation_performed": false,
+  "elapsed_seconds": 20.428877115249634,
+  "peak_rss_mib": 243.03515625,
+  "pageout_delta": 0
+}

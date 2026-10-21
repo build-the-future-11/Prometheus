@@ -1,0 +1,57 @@
+{
+  "elapsed_seconds": 10.838494062423706,
+  "resource_observations": [
+    {
+      "elapsed_seconds": 0.0001125335693359375,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 183.1015625,
+      "phase": "admission"
+    },
+    {
+      "elapsed_seconds": 0.05727982521057129,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 184.3515625,
+      "phase": "data_loaded"
+    },
+    {
+      "elapsed_seconds": 0.5000596046447754,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 189.4765625,
+      "phase": "features_built"
+    },
+    {
+      "elapsed_seconds": 4.124701261520386,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 220.734375,
+      "phase": "holdout_Cu"
+    },
+    {
+      "elapsed_seconds": 7.517454385757446,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 234.60546875,
+      "phase": "holdout_Ag"
+    },
+    {
+      "elapsed_seconds": 10.834712028503418,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 237.03125,
+      "phase": "holdout_B"
+    },
+    {
+      "elapsed_seconds": 10.838329792022705,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 237.03125,
+      "phase": "complete"
+    }
+  ],
+  "run_id": "kaggle-development-v1-r1",
+  "schema_version": 1,
+  "status": "SUCCESS"
+}

@@ -1,0 +1,245 @@
+{
+  "artifact_manifest_verification": {
+    "changed": [],
+    "extra": [],
+    "missing": [],
+    "valid": true
+  },
+  "comparisons": [
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.3741373769248869,
+        "B": -0.5859927930078492,
+        "Cu": 0.011928098757914896
+      },
+      "improvement_over_ungated_ev": -0.31606735705827377,
+      "macro_mae_ev": 1.2686772914293922,
+      "mae_by_element_ev": {
+        "Ag": 0.9652551020408163,
+        "B": 2.017058823529412,
+        "Cu": 0.8237179487179487
+      },
+      "model": "median",
+      "power": null,
+      "support_quantile": null
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.10433966487836743,
+        "B": 0.018439379079647544,
+        "Cu": -0.13698616669113794
+      },
+      "improvement_over_ungated_ev": -0.07429548416328595,
+      "macro_mae_ev": 1.0269054185344044,
+      "mae_by_element_ev": {
+        "Ag": 0.6954573899942968,
+        "B": 1.412626651441915,
+        "Cu": 0.9726322141670015
+      },
+      "model": "ridge",
+      "power": null,
+      "support_quantile": null
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.3741373769248869,
+        "B": -0.5859927930078492,
+        "Cu": 0.011928098757914896
+      },
+      "improvement_over_ungated_ev": -0.31606735705827377,
+      "macro_mae_ev": 1.2686772914293922,
+      "mae_by_element_ev": {
+        "Ag": 0.9652551020408163,
+        "B": 2.017058823529412,
+        "Cu": 0.8237179487179487
+      },
+      "model": "direct_hgb",
+      "power": null,
+      "support_quantile": null
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": 0.0,
+        "B": 0.0,
+        "Cu": 0.0
+      },
+      "improvement_over_ungated_ev": 0.0,
+      "macro_mae_ev": 0.9526099343711185,
+      "mae_by_element_ev": {
+        "Ag": 0.5911177251159294,
+        "B": 1.4310660305215626,
+        "Cu": 0.8356460474758636
+      },
+      "model": "residual_ungated",
+      "power": null,
+      "support_quantile": null
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.0004975272130405273,
+        "B": 0.0003508203427136092,
+        "Cu": 0.0005263292707717859
+      },
+      "improvement_over_ungated_ev": 0.00012654080014828928,
+      "macro_mae_ev": 0.9524833935709702,
+      "mae_by_element_ev": {
+        "Ag": 0.5916152523289699,
+        "B": 1.430715210178849,
+        "Cu": 0.8351197182050918
+      },
+      "model": "sparking",
+      "power": 1.0,
+      "support_quantile": 0.8
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.0008330783788504936,
+        "B": 0.0006821400698953095,
+        "Cu": 0.00089844255356053
+      },
+      "improvement_over_ungated_ev": 0.0002491680815351153,
+      "macro_mae_ev": 0.9523607662895834,
+      "mae_by_element_ev": {
+        "Ag": 0.5919508034947799,
+        "B": 1.4303838904516673,
+        "Cu": 0.834747604922303
+      },
+      "model": "sparking",
+      "power": 2.0,
+      "support_quantile": 0.8
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.0002534458483884894,
+        "B": -4.1257784138437614e-05,
+        "Cu": 0.00023632824809083353
+      },
+      "improvement_over_ungated_ev": -1.9458461478697824e-05,
+      "macro_mae_ev": 0.9526293928325972,
+      "mae_by_element_ev": {
+        "Ag": 0.5913711709643179,
+        "B": 1.431107288305701,
+        "Cu": 0.8354097192277727
+      },
+      "model": "sparking",
+      "power": 1.0,
+      "support_quantile": 0.9
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.0004237810172138534,
+        "B": -7.127527412364998e-05,
+        "Cu": 0.00040526455145051266
+      },
+      "improvement_over_ungated_ev": -2.9930579962330246e-05,
+      "macro_mae_ev": 0.9526398649510809,
+      "mae_by_element_ev": {
+        "Ag": 0.5915415061331433,
+        "B": 1.4311373057956862,
+        "Cu": 0.8352407829244131
+      },
+      "model": "sparking",
+      "power": 2.0,
+      "support_quantile": 0.9
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.0002313183852095113,
+        "B": -2.8974345459564788e-05,
+        "Cu": 0.00015539727511015844
+      },
+      "improvement_over_ungated_ev": -3.4965151852972554e-05,
+      "macro_mae_ev": 0.9526448995229715,
+      "mae_by_element_ev": {
+        "Ag": 0.5913490435011389,
+        "B": 1.4310950048670221,
+        "Cu": 0.8354906502007534
+      },
+      "model": "sparking",
+      "power": 1.0,
+      "support_quantile": 0.95
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": -0.00041663149528048393,
+        "B": -5.490517222761504e-05,
+        "Cu": 0.0002787047819945432
+      },
+      "improvement_over_ungated_ev": -6.427729517118526e-05,
+      "macro_mae_ev": 0.9526742116662897,
+      "mae_by_element_ev": {
+        "Ag": 0.5915343566112099,
+        "B": 1.4311209356937902,
+        "Cu": 0.835367342693869
+      },
+      "model": "sparking",
+      "power": 2.0,
+      "support_quantile": 0.95
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": 0.0,
+        "B": 0.0,
+        "Cu": 1.3251017664916986e-05
+      },
+      "improvement_over_ungated_ev": 4.417005888305662e-06,
+      "macro_mae_ev": 0.9526055173652302,
+      "mae_by_element_ev": {
+        "Ag": 0.5911177251159294,
+        "B": 1.4310660305215626,
+        "Cu": 0.8356327964581987
+      },
+      "model": "sparking",
+      "power": 1.0,
+      "support_quantile": 0.99
+    },
+    {
+      "improvement_by_element_ev": {
+        "Ag": 0.0,
+        "B": 0.0,
+        "Cu": 2.6228581349707625e-05
+      },
+      "improvement_over_ungated_ev": 8.742860449902542e-06,
+      "macro_mae_ev": 0.9526011915106686,
+      "mae_by_element_ev": {
+        "Ag": 0.5911177251159294,
+        "B": 1.4310660305215626,
+        "Cu": 0.8356198188945139
+      },
+      "model": "sparking",
+      "power": 2.0,
+      "support_quantile": 0.99
+    }
+  ],
+  "development_elements": [
+    "Cu",
+    "Ag",
+    "B"
+  ],
+  "elapsed_seconds": 10.838494062423706,
+  "pageout_delta": 0,
+  "peak_rss_mib": 237.03125,
+  "results_sha256": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb",
+  "row_count": 36,
+  "run_id": "kaggle-development-v1-r1",
+  "schema_version": 1,
+  "scope": "Development selection only; confirmation remains unrun",
+  "selected_gate": {
+    "improvement_by_element_ev": {
+      "Ag": 0.0,
+      "B": 0.0,
+      "Cu": 1.3251017664916986e-05
+    },
+    "improvement_over_ungated_ev": 4.417005888305662e-06,
+    "macro_mae_ev": 0.9526055173652302,
+    "mae_by_element_ev": {
+      "Ag": 0.5911177251159294,
+      "B": 1.4310660305215626,
+      "Cu": 0.8356327964581987
+    },
+    "model": "sparking",
+    "power": 1.0,
+    "support_quantile": 0.99
+  },
+  "verified": true
+}

@@ -16,6 +16,20 @@ The predecessor study in `../ML4-Material Discovery` remains immutable and
 resource-blocked. SPARKING is a separately versioned successor. Its current
 machine-readable disposition is always recorded in `RESEARCH_STATE.json`.
 
+Development completed on Kaggle on 2026-10-21: all eight gate settings and four
+baselines were evaluated across Cu/Ag/B, with the downloaded evidence verified.
+The best numerical gate improved macro-MAE by only 0.000249 eV over the ungated
+control. The frozen tie rule selected quantile 0.99, power 1. Protected
+confirmation remains unrun. See [development results](docs/DEVELOPMENT_RESULTS_V1.md).
+
+Follow-up [development diagnostics](docs/DEVELOPMENT_DIAGNOSIS_V1.md) reproduced
+the original scores and identified a collapsed absolute-error direct boosting
+baseline. With the same tree settings, squared-error direct boosting achieved
+0.760592 eV macro-MAE versus 0.952610 for the original ungated residual model.
+The selected gate affects only 1 of 824 development prediction cases.
+Confirmation is on hold for development review; changes require a versioned
+successor rather than edits to the frozen v1 study.
+
 ## Reproduce
 
 ```bash
