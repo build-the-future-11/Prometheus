@@ -1,0 +1,92 @@
+{
+  "primary_disposition": "SUPPORTED",
+  "primary_against_zero": {
+    "all_converged": true,
+    "baseline": "zero_laplace",
+    "ci95": [
+      0.27283395883120143,
+      0.28221656968440056
+    ],
+    "grid": 129,
+    "iteration_reduction": 0.2772524758737994,
+    "online_time_reduction": 0.21720376185432805,
+    "proposed": "structured_laplace",
+    "regime": "iid",
+    "rtol": 1e-06,
+    "time_ci95": [
+      0.21457264783012753,
+      0.2207585380095684
+    ],
+    "training_block_effects": [
+      0.28605964348151847,
+      0.2738855277687998,
+      0.2734132901412313,
+      0.2811750749250749,
+      0.27172884305237244
+    ],
+    "training_block_time_effects": [
+      0.21749009394326113,
+      0.21486264912525355,
+      0.21328519035678084,
+      0.2238133156597758,
+      0.21656756018656892
+    ]
+  },
+  "primary_against_physics": {
+    "all_converged": true,
+    "baseline": "physics_laplace",
+    "ci95": [
+      0.20935671405800083,
+      0.21503525987900987
+    ],
+    "grid": 129,
+    "iteration_reduction": 0.21172005282299403,
+    "online_time_reduction": 0.26071203259327325,
+    "proposed": "structured_laplace",
+    "regime": "iid",
+    "rtol": 1e-06,
+    "time_ci95": [
+      0.2563382812972241,
+      0.2651754188556404
+    ],
+    "training_block_effects": [
+      0.21807203213453213,
+      0.20957141816516817,
+      0.2104801014957265,
+      0.21189639608757255,
+      0.20858031623197065
+    ],
+    "training_block_time_effects": [
+      0.2678858440162077,
+      0.2594185300046638,
+      0.2568027200273572,
+      0.2651193507047663,
+      0.25433371821337114
+    ]
+  },
+  "direct_ratio_of_mean_times": 5.614298118444339,
+  "s1_confirmatory": {
+    "disposition": "NEGATIVE",
+    "passed": false,
+    "phase": "confirmatory",
+    "rule": {
+      "minimum_ci_lower": 0.05,
+      "minimum_mean_reduction": 0.15,
+      "primary_split": "iid_test"
+    }
+  },
+  "artifact_chain": {
+    "raw": "s2-confirmatory/metrics.jsonl",
+    "analysis": "s2-confirmatory/analysis.json",
+    "table": "paper/primary_table.tex",
+    "figure": "paper/figures/primary.pdf"
+  },
+  "scope": "Synthetic 1D fixed family; no SOTA, real-world data or independent investigator reproduction claim",
+  "source_artifact_hashes": {
+    "s2-confirmatory/analysis.json": "4fe3e6cd42a78a24e58784f14f032dbb88784f781b8bce180516f0f1060bbbb0",
+    "s2-confirmatory/metrics.jsonl": "68134b68fad96748eb96ce18dfeca47ada50d8a80e870e4b985d3c570a17ffe7",
+    "s2-confirmatory/config.json": "4d46f1b674f99f93c2bdf94b49a22dd15bf5348d01714850c490c57ad848b806",
+    "s2-confirmatory/receipt.json": "a5ad24b2781e385de641d69421a6cd6accd7c2109feb99c24608ba2c52ed998c",
+    "s1-confirmatory/analysis.json": "a2b83546327847ec2cd3f94935a62df60ac7d09f0cbe6c12c4aaae231c53b67b"
+  }
+}

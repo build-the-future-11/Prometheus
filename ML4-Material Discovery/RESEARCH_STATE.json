@@ -1,0 +1,184 @@
+{
+  "schema_version": 2,
+  "updated_date": "2026-10-22",
+  "project": "ML4-Material Discovery",
+  "question": "Can a composition-only CPU model improve experimental band-gap prediction and fixed-pool selection, and which calibration and distribution-shift claims survive adversarial evaluation?",
+  "scope": "Matbench experimental band gap; retrospective development evidence; no new-material discovery or state-of-the-art claim",
+  "phase": "BOUNDED_DEVELOPMENT_COMPLETE_PUBLISHED",
+  "canonical_predecessor_status": "MIXED",
+  "predecessors": [
+    {
+      "study": "development-v1",
+      "run": "kaggle-development-v1-r1",
+      "status": "COMPLETED",
+      "disposition": "positive prediction and retrospective ranking; mixed element holdouts"
+    },
+    {
+      "study": "quantile-composition-v2",
+      "run": "kaggle-quantile-composition-v2-r1",
+      "status": "COMPLETED",
+      "disposition": "NEGATIVE"
+    }
+  ],
+  "protected_evaluation": "All existing Matbench labels and official-fold results have been inspected. New splits of these same data remain DEVELOPMENT, never untouched confirmation. Independent/external prospective evidence is absent.",
+  "development_budget": {
+    "new_scientific_configurations": 1,
+    "maximum_hosted_attempts_including_infrastructure_repairs": 3,
+    "maximum_cpu_hours_per_attempt": 1,
+    "paid_compute_authorized": false,
+    "stop_rule": "Complete the predeclared matrix and accept SUPPORTED, MIXED, NEGATIVE, INCONCLUSIVE, or INVALID; no score-driven retries."
+  },
+  "resource_contract": {
+    "max_process_rss_mib": 512,
+    "no_rising_pageouts": true,
+    "hosted_cpu_preferred": true
+  },
+  "repository": {
+    "root": "/Volumes/PRO-BLADE/Atlas",
+    "project_subdirectory": "ML4-Material Discovery",
+    "remote": "https://github.com/build-the-future-11/Atlas.git",
+    "preserve_unrelated_work": true
+  },
+  "data_contract": "configs/data_contract.json",
+  "history": [
+    "EXECUTION_LOG.md",
+    "runs/",
+    "analysis/",
+    "artifacts/"
+  ],
+  "preservation": "Do not alter frozen v1/v2 protocols, run outputs, checkpoint bytes, or failure receipts. Superseding audit conclusions live outside historical run directories.",
+  "release": {
+    "scientific_certification": false,
+    "independent_replication": false,
+    "prospective_validation": false,
+    "paper": "paper/main.tex",
+    "style": "paper/arxiv.sty",
+    "publication": {
+      "status": "PUBLISHED_PAYLOAD_REMOTE_REF_AND_TREE_VERIFIED",
+      "repository": "https://github.com/build-the-future-11/Atlas",
+      "private": true,
+      "branch": "codex/ml4materials-evidence-release-20261021",
+      "verified_payload_commit": "0083fe78e7e397f0aa38f47af84843c24df32795",
+      "verified_project_tree": "6908817fbcd5b8ddfac6e669da7a143e6b7c814d",
+      "pull_request": "https://github.com/build-the-future-11/Atlas/pull/54",
+      "pull_request_state": "DRAFT",
+      "merged_to_main": false,
+      "payload_files": 276,
+      "scope": "ML4-Material Discovery only",
+      "verification": [
+        "git ls-remote matches local payload commit",
+        "GitHub tree API matches local project tree",
+        "Every committed project file matches original workspace bytes"
+      ],
+      "note": "This receipt refers to the verified research payload commit; a subsequent documentation-only commit records this receipt."
+    },
+    "tests": {
+      "hosted_passed": 58,
+      "failed": 0,
+      "release_passed": 72
+    },
+    "paper_verified": true,
+    "software_verified": true,
+    "arxiv_source_package": "releases/20261021-hardening/arxiv-source-20261021-hardening.tar.gz",
+    "arxiv_submitted": false,
+    "paper_verification": "artifacts/paper-hardening-verification-20261021.json",
+    "software_verification": "artifacts/software-hardening-verification-20261021.json",
+    "paper_author": {
+      "name": "Ryan Gomez",
+      "affiliation": null,
+      "source": "User supplied exact author name in this chat"
+    },
+    "same_operator_computational_reproduction": true,
+    "software_version": "0.1.1",
+    "previous_source_package": "releases/20261021/arxiv-source-20261021.tar.gz",
+    "latest_release_directory": "releases/20261021-hardening"
+  },
+  "next": [
+    "Choose a venue and complete venue-specific submission requirements",
+    "Independently operated reproduction and protected external validation before broader scientific claims"
+  ],
+  "successor": {
+    "study": "robust-aggregation-v3",
+    "run": "kaggle-robust-aggregation-v3-r1",
+    "status": "COMPLETED_NUMERICALLY_VERIFIED",
+    "primary_disposition": "SUPPORTED",
+    "mae_ev": {
+      "train_median": 0.9758574222995001,
+      "et_mean": 0.4738701831206095,
+      "hist_gradient_boosting": 0.5487799401837339,
+      "et_fractions_median": 0.5425499644321456,
+      "random_forest": 0.5199485932549666,
+      "ridge": 0.8150135315627152,
+      "et_median_96": 0.42686104812648873,
+      "et_median": 0.4256217642293089
+    },
+    "notebook": "https://www.kaggle.com/code/ryangomez010/ml4-material-discovery-robust-aggregation-v3"
+  },
+  "audit": "FLAW_AUDIT.md",
+  "predecessor_numeric_verification": [
+    "artifacts/numerical-audit-v1-20261021.json",
+    "artifacts/numerical-audit-v2-20261021.json"
+  ],
+  "terminal_scientific_disposition": "MIXED_SCOPE_LIMITED_DEVELOPMENT",
+  "outstanding_external_requirements": [
+    "Independently operated reproduction",
+    "Protected external or prospective validation",
+    "Venue-specific submission requirements"
+  ],
+  "verification_followup": {
+    "status": "COMPLETED_VERIFIED",
+    "protocol": "PROTOCOLS/v3-reproduction-20261021.md",
+    "purpose": "Adversarial release audit and exact computational reproduction",
+    "budget": {
+      "scientific_configurations": 0,
+      "exact_reproduction_runs": 1,
+      "infrastructure_retries": 1,
+      "max_cpu_hours_per_attempt": 1
+    },
+    "reproduction_run": "kaggle-robust-aggregation-v3-reproduction-r1",
+    "reproduction_disposition": "EXACT_SCIENTIFIC_REPRODUCTION",
+    "comparison": "artifacts/reproduction-comparison-20261021.json",
+    "adversarial_audit": "artifacts/adversarial-audit-20261021.json",
+    "tests_passed": 72
+  },
+  "local_closeout_20261021": {
+    "status": "COMPLETED_VERIFIED_PUBLISHED",
+    "scope": "Post-release verification, literature-boundary repair, and manuscript visual hardening; no scientific protocol, run artifact, metric, or disposition changed",
+    "tests_passed": 72,
+    "numeric_verification_runs": [
+      "kaggle-robust-aggregation-v3-r1",
+      "kaggle-robust-aggregation-v3-reproduction-r1"
+    ],
+    "reproduction_disposition": "EXACT_SCIENTIFIC_REPRODUCTION",
+    "paper_compile": "SUCCESS_WITH_NONFATAL_UNDERFULL_VBOX_WARNINGS",
+    "paper_pages": 12,
+    "paper_sha256": "0c21f22650a59e7b710b6704bd0a8dfc1b1a2ef55abc754c979bf38303dfc11d",
+    "paper_source_sha256": "866b1d2c1bd50e07b7b106fdb798ea4c13741eab8d4c75ec4355ab8073f0e8d3",
+    "bibliography_sha256": "4d1df319f746edebc1ef0d2ca90c9646812ae80cd3fc7fa85189a0cad2e734a2",
+    "literature_audit_sha256": "e6daadb412997dc8d4051291a199d275f4aa9ae386965389802417a48924718e",
+    "visual_review": "ALL_12_PAGES_INSPECTED_NO_REMAINING_LAYOUT_DEFECTS",
+    "flaw_count": 38,
+    "remote_publication_changed": true,
+    "note": "The verified private GitHub payload and release 0.1.1 remain the scientific snapshot. The post-release documentation and paper improvements are now on the same private release branch; they have not been submitted to arXiv."
+  },
+  "kaggle_readiness_20261022": {
+    "status": "READY_TO_STAGE_IMMUTABLE_REPRODUCTION_AND_VERIFICATION_ONLY",
+    "scope": "The retained exact v3 source bundle and replay stager can generate a private Kaggle submission with a new immutable run identity. A changed model, dataset, split, aggregation rule, or scientific claim requires a separately versioned successor protocol before Kaggle submission.",
+    "remote_branch": "codex/ml4materials-evidence-release-20261021",
+    "remote_commit": "fd67abdf30d21e6ed3ccfc92fd8df37cac360e81",
+    "remote_matches_local_before_this_receipt": true,
+    "release_tests_passed": 72,
+    "replay_staging_tests_passed": 5,
+    "current_full_suite_passed": 77,
+    "primary_numeric_verification": "NUMERICALLY_VERIFIED",
+    "same_operator_reproduction": "EXACT_SCIENTIFIC_REPRODUCTION",
+    "resampling_verification": "RESAMPLING_VERIFIED",
+    "new_scientific_run_submitted": false,
+    "evidence": [
+      "artifacts/kaggle-readiness-20261022.json",
+      "artifacts/numerical-audit-v3-20261021.json",
+      "artifacts/reproduction-comparison-20261021.json",
+      "artifacts/resampling-audit-v3-20261021.json"
+    ]
+  }
+}

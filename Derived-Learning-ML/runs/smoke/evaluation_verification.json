@@ -1,0 +1,55 @@
+{
+  "checked_result_count": 8,
+  "results": [
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.2481852942275736,
+      "recorded_nmse": 0.2481852942275736,
+      "task_id": "final-heldout_high_correlation-s301"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.005133249444121256,
+      "recorded_nmse": 0.005133249444121256,
+      "task_id": "final-heldout_high_correlation-s301"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.5850521095579758,
+      "recorded_nmse": 0.5850521095579758,
+      "task_id": "final-heldout_high_correlation-s301"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.14318968310585736,
+      "recorded_nmse": 0.14318968310585736,
+      "task_id": "final-heldout_high_correlation-s301"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.020231616802425436,
+      "recorded_nmse": 0.020231616802425436,
+      "task_id": "long_horizon-heldout_high_correlation_long-s401"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.008128662316929556,
+      "recorded_nmse": 0.008128662316929556,
+      "task_id": "long_horizon-heldout_high_correlation_long-s401"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.591940798460915,
+      "recorded_nmse": 0.591940798460915,
+      "task_id": "long_horizon-heldout_high_correlation_long-s401"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.05772646451390677,
+      "recorded_nmse": 0.05772646451390677,
+      "task_id": "long_horizon-heldout_high_correlation_long-s401"
+    }
+  ],
+  "schema_version": "derived-learning.evaluation-verification.v1",
+  "status": "VERIFIED"
+}

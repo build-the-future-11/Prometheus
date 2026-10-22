@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "version": "0.1.1",
+  "tests_passed": 72,
+  "test_receipt": "artifacts/pytest-hardening-20261021.xml",
+  "build": "uv build --offline",
+  "source_archive_entries": 138,
+  "no_nested_release_archives": true,
+  "historical_documentation_retained_in_source": true,
+  "final_wheel_identical_to_inference_tested_wheel": true,
+  "inference_receipt": "artifacts/clean-install-hardening-20261021.json",
+  "packages": "releases/20261021-hardening/manifest.json"
+}

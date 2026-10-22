@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 1,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "capacity_one",
+  "task_id": "dimension-90013",
+  "task_sha256": "1951cd64009cce312f57dc0da584f61e3d126bc5251714f66148a6a5cd64961a",
+  "utc": "2026-10-21T05:54:13.430305+00:00"
+}

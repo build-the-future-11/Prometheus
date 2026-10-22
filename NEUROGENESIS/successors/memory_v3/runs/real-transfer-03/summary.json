@@ -1,0 +1,160 @@
+{
+  "artificial_delay_hours": 4,
+  "block_interpretation": "descriptive contiguous time blocks; no IID claim",
+  "independent_datasets": 1,
+  "results": {
+    "all_update": {
+      "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 177, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+      "status": "FAILED"
+    },
+    "baseline": {
+      "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 172, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+      "status": "FAILED"
+    },
+    "candidate": {
+      "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 177, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+      "status": "FAILED"
+    },
+    "capacity_one": {
+      "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 177, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+      "status": "FAILED"
+    },
+    "frozen": {
+      "peak_state_bytes": 968,
+      "status": "COMPLETED",
+      "test_block_mse_original_units": [
+        3.658197424892704,
+        7.410696202531645,
+        9.751458046767539,
+        12.34718274111675,
+        6.94368174726989,
+        5.655486725663717,
+        5.820832266325224
+      ],
+      "test_mse_original_units": 7.606413881748073,
+      "test_mse_scaled": 0.07606413881748073,
+      "test_scored": 4668,
+      "test_updates": 0,
+      "total_usage": {
+        "archive_writes": 0,
+        "cache_writes": 0,
+        "coordinate_ops": 364158,
+        "dot_products": 9357,
+        "evictions": 0,
+        "gradients": 0,
+        "labels": 7670,
+        "loss_scores": 7670,
+        "memory_predictions": 0,
+        "predictions": 9357,
+        "skips": 0,
+        "updates": 0
+      },
+      "total_wall_seconds": 2.448998541000037
+    },
+    "knn": {
+      "peak_state_bytes": 5576,
+      "status": "COMPLETED",
+      "test_block_mse_original_units": [
+        0.2682117310443491,
+        0.2824355368026254,
+        0.6450985786336542,
+        2.599613649182177,
+        0.7513503206794938,
+        0.8544107318443602,
+        0.4245184236733533
+      ],
+      "test_mse_original_units": 0.9137417880605542,
+      "test_mse_scaled": 0.009137417880605542,
+      "test_scored": 4668,
+      "test_updates": 0,
+      "total_usage": {
+        "archive_writes": 0,
+        "cache_writes": 7670,
+        "coordinate_ops": 15601836,
+        "dot_products": 9357,
+        "evictions": 7638,
+        "gradients": 0,
+        "labels": 7670,
+        "loss_scores": 7670,
+        "memory_predictions": 0,
+        "predictions": 9357,
+        "skips": 0,
+        "updates": 0
+      },
+      "total_wall_seconds": 5.961621374999595
+    },
+    "last_observation": {
+      "peak_state_bytes": 968,
+      "status": "COMPLETED",
+      "test_block_mse_original_units": [
+        1.7637124463519314,
+        3.7721940928270046,
+        4.359298486932599,
+        4.203032994923858,
+        2.4719968798751952,
+        2.2191276864728193,
+        3.3827400768245837
+      ],
+      "test_mse_original_units": 3.2289867180805483,
+      "test_mse_scaled": 0.03228986718080548,
+      "test_scored": 4668,
+      "test_updates": 0,
+      "total_usage": {
+        "archive_writes": 0,
+        "cache_writes": 0,
+        "coordinate_ops": 364158,
+        "dot_products": 9357,
+        "evictions": 0,
+        "gradients": 0,
+        "labels": 7670,
+        "loss_scores": 7670,
+        "memory_predictions": 0,
+        "predictions": 9357,
+        "skips": 0,
+        "updates": 0
+      },
+      "total_wall_seconds": 1.9879919579998386
+    },
+    "no_bank": {
+      "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 172, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+      "status": "FAILED"
+    },
+    "replay": {
+      "peak_state_bytes": 5576,
+      "status": "COMPLETED",
+      "test_block_mse_original_units": [
+        0.1803463773634706,
+        0.1951078135775309,
+        0.4185032384750002,
+        1.29428261978632,
+        0.5940142713598845,
+        0.5752535971964511,
+        0.3058457242849736
+      ],
+      "test_mse_original_units": 0.5516973710884138,
+      "test_mse_scaled": 0.005516973710884138,
+      "test_scored": 4668,
+      "test_updates": 9336,
+      "total_usage": {
+        "archive_writes": 0,
+        "cache_writes": 7670,
+        "coordinate_ops": 2235516,
+        "dot_products": 24696,
+        "evictions": 7638,
+        "gradients": 15339,
+        "labels": 7670,
+        "loss_scores": 7670,
+        "memory_predictions": 0,
+        "predictions": 9357,
+        "skips": 0,
+        "updates": 15339
+      },
+      "total_wall_seconds": 3.330924625000989
+    },
+    "uniform_bank": {
+      "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 177, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+      "status": "FAILED"
+    }
+  },
+  "utc": "2026-10-21T06:01:10.647100+00:00"
+}

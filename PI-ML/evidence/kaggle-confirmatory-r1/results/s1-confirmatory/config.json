@@ -1,0 +1,54 @@
+{
+  "controls": {
+    "jacobi_relaxation": 0.8,
+    "jacobi_steps": 4
+  },
+  "data": {
+    "calibration": {
+      "count": 48,
+      "seed": 120000
+    },
+    "common": {
+      "coefficient_scale": 0.45,
+      "source_scale": 1.0
+    },
+    "iid_test": {
+      "count": 128,
+      "seed": 130000
+    },
+    "ood_test": {
+      "coefficient_scale": 0.9,
+      "count": 128,
+      "seed": 140000
+    },
+    "train": {
+      "count": 192,
+      "seed": 110000
+    }
+  },
+  "decision": {
+    "minimum_ci_lower": 0.05,
+    "minimum_mean_reduction": 0.15,
+    "primary_split": "iid_test"
+  },
+  "frozen": true,
+  "frozen_at_utc": "2026-10-20T16:45:00Z",
+  "grid_points": 65,
+  "model": {
+    "bootstrap_seed": 17711,
+    "ensemble_members": 5,
+    "ridge": 0.0001
+  },
+  "modes": 4,
+  "phase": "confirmatory",
+  "solver": {
+    "atol": 1e-12,
+    "max_iterations": 63,
+    "rtol": 1e-10
+  },
+  "statistics": {
+    "bootstrap_repeats": 10000,
+    "bootstrap_seed": 19901
+  },
+  "study_version": "PIML-WARMSTART-S1-confirmatory-v1"
+}

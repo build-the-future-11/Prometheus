@@ -1,0 +1,26 @@
+{
+  "schema_version": "neurogenesis.evaluation.v1",
+  "split": "evaluation",
+  "protected": true,
+  "admitted": false,
+  "run_count": 0,
+  "identities": [
+    {
+      "task_id": "eval-family-shift-1009",
+      "family": "heldout_delay_scale_shift",
+      "seed_commitment_sha256": "b2a5fbb1b86ea80f642ab0f169f9f074df84b56322f72113209e64c0c3d0a3b8"
+    },
+    {
+      "task_id": "eval-family-shift-1013",
+      "family": "heldout_delay_scale_shift",
+      "seed_commitment_sha256": "40bd001563085fc35165329ea1ff5c5ecbdbbeef7d0f84c766bc349c53336457"
+    },
+    {
+      "task_id": "eval-family-nonlinear-1019",
+      "family": "heldout_nonlinear_return",
+      "seed_commitment_sha256": "88a4d70f5b8eb6c6bb43f83da3c0bb76b409c7302d5afdefc396a4775dc34eea"
+    }
+  ],
+  "admission_requirement": "Create protocol v2 only after a dated local owner decision selects learned_rule or memory_weight and freezes mechanism-specific controls, costs, and falsifier thresholds."
+}
+

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "preserved": [
+    "published phase",
+    "Ryan Gomez authorship",
+    "release test count 72",
+    "exact reproduction status",
+    "publication identity",
+    "followup report exactly once"
+  ],
+  "checklist_contains_reproduction_and_test_count": true
+}

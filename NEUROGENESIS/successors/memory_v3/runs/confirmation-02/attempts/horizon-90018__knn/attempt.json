@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "knn",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "knn",
+  "task_id": "horizon-90018",
+  "task_sha256": "74d2b9b9542377c1979f34bd65ee437b3eb2eecf9f789eb5d522c404b4e1f38d",
+  "utc": "2026-10-21T05:56:12.207686+00:00"
+}

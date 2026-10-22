@@ -1,0 +1,53 @@
+{
+  "schema_version": "derived-learning.experiment-config.v1",
+  "study_id": "DLML-S1-P0",
+  "hypothesis": "Analytically derived block-residual targets improve held-out learning quality at equal accounted work and reduce work to a fixed quality threshold versus tuned Adam on grouped-additive tasks.",
+  "selection": {"meta_top_k": 2},
+  "success_criteria": {
+    "quality_threshold_nmse": 0.08,
+    "minimum_relative_equal_resource_improvement": 0.05
+  },
+  "budgets": {
+    "selection_work_units": 40000,
+    "final_work_units": 100000,
+    "long_horizon_work_units": 300000
+  },
+  "candidate_grid": {
+    "adam": [
+      {"learning_rate": 0.01},
+      {"learning_rate": 0.03},
+      {"learning_rate": 0.08}
+    ],
+    "analytic_residual": [
+      {"regularization": 0.01},
+      {"regularization": 0.1},
+      {"regularization": 1.0}
+    ],
+    "block_gradient_no_derivation": [
+      {"learning_rate": 0.005},
+      {"learning_rate": 0.02},
+      {"learning_rate": 0.08}
+    ]
+  },
+  "fixed_conditions": {
+    "fixed_normalized_lms": {"step_size": 0.25}
+  },
+  "splits": {
+    "meta_train": {
+      "seeds": [101, 102, 103],
+      "family": {"name": "meta_balanced", "dimension": 8, "group_size": 2, "train_examples": 64, "evaluation_examples": 128, "feature_correlation": 0.1, "coefficient_scale": 1.0, "noise_std": 0.1}
+    },
+    "development": {
+      "seeds": [201, 202, 203],
+      "family": {"name": "development_shift", "dimension": 8, "group_size": 2, "train_examples": 64, "evaluation_examples": 128, "feature_correlation": 0.3, "coefficient_scale": 1.2, "noise_std": 0.1}
+    },
+    "final": {
+      "seeds": [301, 302, 303, 304, 305],
+      "family": {"name": "heldout_high_correlation", "dimension": 8, "group_size": 2, "train_examples": 96, "evaluation_examples": 192, "feature_correlation": 0.6, "coefficient_scale": 1.4, "noise_std": 0.1}
+    },
+    "long_horizon": {
+      "seeds": [401, 402, 403],
+      "family": {"name": "heldout_high_correlation_long", "dimension": 8, "group_size": 2, "train_examples": 96, "evaluation_examples": 192, "feature_correlation": 0.7, "coefficient_scale": 1.4, "noise_std": 0.1}
+    }
+  }
+}

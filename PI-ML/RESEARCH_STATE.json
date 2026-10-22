@@ -1,0 +1,62 @@
+{
+  "project": "PI-ML",
+  "date": "2026-10-21",
+  "phase": "RESEARCH_COMPLETE_WITH_EXTERNAL_CI_GATE",
+  "scope": "Synthetic one-dimensional elliptic PDE solver study; no general ML superiority or novelty claim",
+  "repository": "https://github.com/build-the-future-11/Atlas",
+  "repository_subdirectory": "PI-ML",
+  "s1": {
+    "development": "COMPLETE_NEGATIVE_ENDPOINT",
+    "iteration_reduction": 0,
+    "confirmatory": "COMPLETE_NEGATIVE",
+    "preservation": "evidence/s1/SHA256.json"
+  },
+  "development_budget": {
+    "successor_candidates_max": 2,
+    "local_cpu_seconds_max": 600,
+    "kaggle_cpu_seconds_max": 3600,
+    "gpu_hours": 0,
+    "paid_compute": 0
+  },
+  "stopping_rule": "Stop after bounded valid evaluation; accept SUPPORTED, MIXED, NEGATIVE or INCONCLUSIVE. Never search until positive.",
+  "protected_boundary": "Do not generate S1 confirmatory or successor confirmatory outcomes before the respective source and protocol freeze.",
+  "claims": {
+    "s1_acceleration": "NEGATIVE_FROZEN_CONFIRMATION",
+    "successor": "SUPPORTED_NARROW_FROZEN_PRIMARY",
+    "kaggle": "DEVELOPMENT_AND_CONFIRMATION_COMPLETE_DOWNLOADED_VERIFIED",
+    "github": "RELEASE_PUBLISHED_REMOTE_REF_VERIFIED_PR_55",
+    "paper": "COMPLETE_12_PAGES_COMPILED_VISUALLY_REVIEWED",
+    "independent_reproduction": "NOT_DONE",
+    "clean_environment": "26_TESTS_FULL_REPLAY_AND_SEPARATE_IMPLEMENTATION_AUDIT_PASS",
+    "github_ci": "BLOCKED_ACCOUNT_BILLING_BEFORE_EXECUTION"
+  },
+  "host": "Initial free plus speculative memory below 512 MiB; heavy execution requires stable admission.",
+  "history": [
+    {
+      "event": "Initialized canonical state from user request; archived existing source, configs, tests and run byte-for-byte.",
+      "time_utc": "2026-10-21T04:54:56.747084+00:00"
+    },
+    {
+      "event": "Kaggle development r2 verified. Proceed to unchanged confirmatory candidate; direct solver remains faster.",
+      "time_utc": "2026-10-21T05:38:21.419579+00:00"
+    },
+    {
+      "time_utc": "2026-10-21T05:46:39.242883+00:00",
+      "event": "S1 confirmatory NEGATIVE; S2 confirmatory SUPPORTED. 17,280 rows, 2,880 cases, zero failures, matching source and artifacts. Final independent implementation audit remains pending."
+    },
+    {
+      "time_utc": "2026-10-21T06:13:52.206193+00:00",
+      "event": "Final hosted installed-wheel audit and separate reference/flux/statistics checks passed. Final 12-page paper compiled and every page visually inspected; frozen source unchanged. Publication and remote readback next."
+    },
+    {
+      "time_utc": "2026-10-21T06:24:31.707543+00:00",
+      "event": "Release fe85196 published and remote ref verified. PR55 open. GitHub runner blocked before steps by account billing/spending eligibility; hosted Kaggle tests and audit passed. Study reaches narrow SUPPORTED terminal conclusion; original S1 NEGATIVE preserved."
+    }
+  ],
+  "external_remaining": [
+    "Restore GitHub Actions billing/spending eligibility and rerun checks before merge",
+    "Independent investigator reproduction and venue submission are not performed"
+  ],
+  "release_commit": "fe851967cc1287da3f0e5e7603904151798b8b0d",
+  "pull_request": "https://github.com/build-the-future-11/Atlas/pull/55"
+}

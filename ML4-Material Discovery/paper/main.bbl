@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+
+\bibitem{dunn2020matbench}
+Alexander Dunn, Qi~Wang, Alex Ganose, Daniel Dopp, and Anubhav Jain.
+\newblock Benchmarking materials property prediction methods: the {Matbench}
+  test set and {Automatminer} reference algorithm.
+\newblock {\em npj Computational Materials}, 6:138, 2020.
+
+\bibitem{geurts2006extratrees}
+Pierre Geurts, Damien Ernst, and Louis Wehenkel.
+\newblock Extremely randomized trees.
+\newblock {\em Machine Learning}, 63:3--42, 2006.
+
+\bibitem{goodall2020roost}
+Rhys E.~A. Goodall and Alpha~A. Lee.
+\newblock Predicting materials properties without crystal structure: deep
+  representation learning from stoichiometry.
+\newblock {\em Nature Communications}, 11:6280, 2020.
+
+\bibitem{lei2018conformal}
+Jing Lei, Max G'Sell, Alessandro Rinaldo, Ryan~J. Tibshirani, and Larry
+  Wasserman.
+\newblock Distribution-free predictive inference for regression.
+\newblock {\em Journal of the American Statistical Association},
+  113(523):1094--1111, 2018.
+
+\bibitem{meinshausen2006qrf}
+Nicolai Meinshausen.
+\newblock Quantile regression forests.
+\newblock {\em Journal of Machine Learning Research}, 7:983--999, 2006.
+
+\bibitem{romano2019cqr}
+Yaniv Romano, Evan Patterson, and Emmanuel~J. Cand\`es.
+\newblock Conformalized quantile regression.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+
+\bibitem{wang2021crabnet}
+Anthony Yu-Tung Wang, Steven~K. Kauwe, Ryan~J. Murdock, and Taylor~D. Sparks.
+\newblock Compositionally restricted attention-based network for materials
+  property predictions.
+\newblock {\em npj Computational Materials}, 7:77, 2021.
+
+\bibitem{zhuo2018bandgaps}
+Y.~Zhuo, A.~Mansouri~Tehrani, and J.~Brgoch.
+\newblock Predicting the band gaps of inorganic solids by machine learning.
+\newblock {\em The Journal of Physical Chemistry Letters}, 9(7):1668--1673,
+  2018.
+
+\end{thebibliography}

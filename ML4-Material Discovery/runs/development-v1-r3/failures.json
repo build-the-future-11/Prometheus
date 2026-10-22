@@ -1,0 +1,8 @@
+[
+  {
+    "exception_type": "ResourceLimitError",
+    "message": "pageout guard refused phase data_validation: 1036530 > 1036491",
+    "traceback": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/ML4-Material Discovery/src/ml4materials/experiment.py\", line 391, in run_study\n    guard.check(\"data_validation\")\n  File \"/Volumes/PRO-BLADE/Atlas/ML4-Material Discovery/src/ml4materials/guards.py\", line 59, in check\n    raise ResourceLimitError(\nml4materials.guards.ResourceLimitError: pageout guard refused phase data_validation: 1036530 > 1036491\n",
+    "utc": "2026-10-20T16:49:57.096531Z"
+  }
+]

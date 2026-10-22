@@ -1,0 +1,8 @@
+\section{Results and evidence status}
+\subsection{Preserved S1 development}
+The completed original S1 run contains 368 generated cases and 768 condition-level metric rows. All 64 IID and all 64 coefficient-shifted learned-PCG evaluation cases converge. Both learned and zero initialization require 63 iterations on every evaluated case, yielding mean paired reduction 0\% and bootstrap interval [0\%,0\%] in each split. The original 15\%/5\% development success thresholds therefore fail. Artifact hashes and row counts were verified before successor work.
+
+The saved IID mean online measurements are 11.580 ms for learned initialization plus PCG and 8.095 ms for zero-PCG, compared with 0.102 ms for the direct tridiagonal solve. These predecessor timings use one pass and a fixed order; they are retained as historical observations rather than treated as precise comparative estimates. The learned prediction alone has mean relative solution error 4.709\% IID and 17.650\% under coefficient shift.
+
+\subsection{Prospective hosted stages}
+At this pre-result manuscript version, the private Kaggle development submission is accepted. S2 outcomes and the protected confirmation remain unavailable and are not inferred from source code, proofs, packaging, or engineering tests. The final results section will be generated only from retained, verified run artifacts. This sentence records the temporal protocol boundary and does not assert completion.

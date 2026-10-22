@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": false,
+    "uniform": false
+  },
+  "method": "all_update",
+  "task_id": "delay-91003",
+  "task_sha256": "3bfc5ce8a28bed20724bf38c9664ef747ee00a6ea852482666b69992790d8286",
+  "utc": "2026-10-21T09:56:20.922688+00:00"
+}

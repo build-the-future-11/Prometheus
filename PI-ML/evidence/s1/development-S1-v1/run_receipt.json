@@ -1,0 +1,9 @@
+{
+  "case_count": 368,
+  "config_sha256": "7c01d2fd0b455abbfdb10e4c751b86d79688c3d765d63e3b6ade172c27fe6ddb",
+  "metric_row_count": 768,
+  "phase": "development",
+  "scientific_disposition": "DEVELOPMENT_ONLY",
+  "status": "COMPLETE",
+  "study_version": "PIML-WARMSTART-S1-development-v1"
+}

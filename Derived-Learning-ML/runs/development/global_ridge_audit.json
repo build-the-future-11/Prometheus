@@ -1,0 +1,120 @@
+{
+  "algorithmic_relation": "analytic_residual is cyclic ridge backfitting/block coordinate minimization of the same strictly convex full-feature ridge objective; with positive regularization it converges to the unique global_ridge solution",
+  "by_split": {
+    "final": {
+      "analytic_terminal_mean_nmse": 0.003312269472945237,
+      "global_ridge_mean_nmse": 0.003053220610036406,
+      "max_analytic_kkt_residual": 2.6557658004731026,
+      "max_relative_parameter_distance": 0.04348912469812845,
+      "task_count": 5
+    },
+    "long_horizon": {
+      "analytic_terminal_mean_nmse": 0.004752535713575912,
+      "global_ridge_mean_nmse": 0.004748132000919835,
+      "max_analytic_kkt_residual": 0.03270699569181336,
+      "max_relative_parameter_distance": 0.0004732925342159203,
+      "task_count": 3
+    }
+  },
+  "inputs": {
+    "config_sha256": "2b93a9dde04ce6a7a03f9cdf49ab887e84d8039a3c30d937533c4c4698f0c470",
+    "results_sha256": "b55f95b9d0e5d86af287440c372b6e56635efa5115f3c69616a89163a1c9f67e",
+    "selection_sha256": "82d4dcddedfbe3b209030812fb4783f075940f1443bfe64641da26b57df89ba3",
+    "tasks_sha256": "e7ce0ba7c40c656032c387a351c8b9e120e8de28df908063f668dd498db46e78"
+  },
+  "manifest_verification_status": "VERIFIED",
+  "numerical_equivalence_status": "FINITE_BUDGET_NOT_NUMERICALLY_EQUIVALENT",
+  "records": [
+    {
+      "analytic_kkt_residual_max_abs": 0.5567489615300837,
+      "analytic_terminal_nmse": 0.0025649906423063384,
+      "global_ridge_kkt_residual_max_abs": 6.580153089075225e-14,
+      "global_ridge_nmse": 0.0026250608888393396,
+      "parameter_l2_distance_to_global_ridge": 0.01724080046022285,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.005705763378300105,
+      "split": "final",
+      "task_id": "final-heldout_high_correlation-s301"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 2.6557658004731026,
+      "analytic_terminal_nmse": 0.004897754306542155,
+      "global_ridge_kkt_residual_max_abs": 8.01581023779363e-14,
+      "global_ridge_nmse": 0.0038413466431780354,
+      "parameter_l2_distance_to_global_ridge": 0.11012700653250296,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.04348912469812845,
+      "split": "final",
+      "task_id": "final-heldout_high_correlation-s302"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.43588908894755785,
+      "analytic_terminal_nmse": 0.003268250809403044,
+      "global_ridge_kkt_residual_max_abs": 2.1432855490388647e-13,
+      "global_ridge_nmse": 0.0032399309726275144,
+      "parameter_l2_distance_to_global_ridge": 0.012785011148667197,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.004274147932511788,
+      "split": "final",
+      "task_id": "final-heldout_high_correlation-s303"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.47835352299164524,
+      "analytic_terminal_nmse": 0.0032961235128901073,
+      "global_ridge_kkt_residual_max_abs": 1.0269562977782698e-13,
+      "global_ridge_nmse": 0.0032337924929822103,
+      "parameter_l2_distance_to_global_ridge": 0.021911828770519656,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.008222825688376371,
+      "split": "final",
+      "task_id": "final-heldout_high_correlation-s304"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 1.6866965289728495,
+      "analytic_terminal_nmse": 0.0025342280935845376,
+      "global_ridge_kkt_residual_max_abs": 1.1257661469699087e-13,
+      "global_ridge_nmse": 0.002325972052554931,
+      "parameter_l2_distance_to_global_ridge": 0.06678724440582118,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.028921001350831005,
+      "split": "final",
+      "task_id": "final-heldout_high_correlation-s305"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.024570593512653068,
+      "analytic_terminal_nmse": 0.0046831850446073554,
+      "global_ridge_kkt_residual_max_abs": 5.6496474165612653e-14,
+      "global_ridge_nmse": 0.004677015787040713,
+      "parameter_l2_distance_to_global_ridge": 0.00117710184043336,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.0004409094723116904,
+      "split": "long_horizon",
+      "task_id": "long_horizon-heldout_high_correlation_long-s401"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.02563972909064427,
+      "analytic_terminal_nmse": 0.003787955706611452,
+      "global_ridge_kkt_residual_max_abs": 1.1850243009092765e-13,
+      "global_ridge_nmse": 0.003786553257460747,
+      "parameter_l2_distance_to_global_ridge": 0.00113540213033543,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.000366520336862604,
+      "split": "long_horizon",
+      "task_id": "long_horizon-heldout_high_correlation_long-s402"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.03270699569181336,
+      "analytic_terminal_nmse": 0.00578646638950893,
+      "global_ridge_kkt_residual_max_abs": 1.0044742815296104e-13,
+      "global_ridge_nmse": 0.005780826958258043,
+      "parameter_l2_distance_to_global_ridge": 0.0011864827099976555,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.0004732925342159203,
+      "split": "long_horizon",
+      "task_id": "long_horizon-heldout_high_correlation_long-s403"
+    }
+  ],
+  "schema_version": "derived-learning.global-ridge-audit.v1",
+  "status": "VERIFIED",
+  "study_id": "DLML-S1-P0"
+}

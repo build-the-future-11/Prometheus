@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-19T08:05:10Z",
+  "status": "SOFTWARE_VERIFIED_SCIENCE_RESOURCE_BLOCKED",
+  "python": "3.12.14",
+  "dependencies": {
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pytest": "8.4.2",
+    "pytest-cov": "6.3.0",
+    "scikit-learn": "1.9.1"
+  },
+  "lock": {
+    "offline_check": "PASS",
+    "resolved_packages": 29,
+    "sha256": "9dc008c1097d308480c5f3a4e67f489ac13f3079f3d6420ac71ea59cab4fb5dc"
+  },
+  "tests": {
+    "passed": 39,
+    "failed": 0,
+    "duration_seconds": 5.19,
+    "statement_coverage_percent": 67,
+    "junit_path": "artifacts/pytest.xml",
+    "junit_sha256": "6fd313fe44c4d41adf71ce30ca3ba9e0fcf0fc07307a799f83fadf85cb82ceb7",
+    "coverage_path": "artifacts/coverage.json",
+    "coverage_sha256": "574f8dd88d9c70ce0dce04f6e3c3e1963889c747ea1a2b5187d8b64a7de79c9e",
+    "retained_failed_expectation_receipt": {
+      "path": "artifacts/pytest-failed-expectations-20261019.xml",
+      "sha256": "72bc400d736d2ce524a71f5db185cbd43b0f4b7cf0fa99b4a9adb79e06e32a80",
+      "disposition": "two test assertions corrected; no production behavior changed"
+    }
+  },
+  "compileall": "PASS",
+  "data_prepare": {
+    "status": "PASS",
+    "rows": 4604,
+    "canonical_compositions": 4601
+  },
+  "package": {
+    "source_distribution": {
+      "path": "dist/ml4_material_discovery-0.1.0.tar.gz",
+      "sha256": "eede44d8ba06a97e1c88b0529011692c791bf04c30f9455f41d5a08b0a154f7a"
+    },
+    "wheel": {
+      "path": "dist/ml4_material_discovery-0.1.0-py3-none-any.whl",
+      "sha256": "fc6f8e2d7b70985b77eca57a90784dfd7e3e3e8981ffed92989bee8d46cc7ed5"
+    },
+    "clean_environment_install": "PASS",
+    "checkpoint_prediction_smoke": "PASS_USING_PARTIAL_FOLD_0_ENGINEERING_CHECKPOINT_ONLY",
+    "initial_offline_rebuild_attempt": "FAILED_NETWORK_RESOLUTION_RETAINED_IN_EXECUTION_TRANSCRIPT",
+    "final_rebuild": "PASS"
+  },
+  "failed_run_manifests": {
+    "development-v1": "6e5c54b85aa15cfbb6973d7a60da27591b881a6d19838dcea460f837b96c6ee9",
+    "development-v1-r2": "d3d4c4061a28586bbd576d402fb1cd686ae1ec3f34c5af98930ca47821551f92"
+  }
+}
+

@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "scope": "Clean wheel environment, full numerical replay, separate SciPy/flux/exact-bootstrap audit and manuscript build; no new scientific run",
+  "source_sha256": "709b16711f4c2bfc7e0ba53c2096a39acb474eac45d0bc4fde73f2a51e682fab",
+  "input_hashes": {
+    "development": "8b0e36ecced6e2d5dcbf1c41c1dd36952c0fdfe161d33846219e74763dabb0fe",
+    "confirmatory": "a8e97c3cee27c308409597c364f7621d479e3b70caa080fb5006057fff6272dc"
+  },
+  "wall_seconds": 193.02364659309387
+}

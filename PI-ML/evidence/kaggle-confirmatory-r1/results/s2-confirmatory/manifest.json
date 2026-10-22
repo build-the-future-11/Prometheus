@@ -1,0 +1,12 @@
+{
+  "analysis.json": "4fe3e6cd42a78a24e58784f14f032dbb88784f781b8bce180516f0f1060bbbb0",
+  "cases.jsonl": "d5bd5e5b3085d401129cca45d46c774cdadd5612cadd5dee2222068b18def57e",
+  "config.json": "4d46f1b674f99f93c2bdf94b49a22dd15bf5348d01714850c490c57ad848b806",
+  "environment.json": "6f0f9705bcb1e90ebfccf627c23d46b726bf6f56f4a86d67393b7a5462141480",
+  "metrics.jsonl": "68134b68fad96748eb96ce18dfeca47ada50d8a80e870e4b985d3c570a17ffe7",
+  "models.json": "f0f5b1f37c1ce7b348ead3f49e70317d0e78c70d7bb14cc9536661211a488c6e",
+  "offline_costs.json": "759268d40e0b0c7055216895721449bb1a7d684adcce555bae04f913328e2689",
+  "progress.json": "6a12d02bed68829741fc4988d7410dbbe30df0131495132f3b4069bfe0ada77e",
+  "receipt.json": "a5ad24b2781e385de641d69421a6cd6accd7c2109feb99c24608ba2c52ed998c",
+  "source_manifest.json": "6e95b1bdf75d5c893b55baf02e70651192d65b387c1a81765ecc63cc2e711e4b"
+}

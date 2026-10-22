@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-21T09:52:26Z",
+  "branch_ref": "refs/heads/codex/neurogenesis-memory-v4-20261021",
+  "commit": "dd71324e6e262ebd60bad5b57a7b3071802a7af5",
+  "tree": "aa31778fd1371a5d77c87916b5f01d243f44e114",
+  "parent": "b333c415ca9a50aa468b48ef7675b6984228e709",
+  "parent_remote_ref": "refs/remotes/origin/codex/neurogenesis-memory-v2-20261021",
+  "freeze_sha256": "33a8b559125404db0bf3fa4b05ae0a146b9a4ddb5978d63a24ce11c3bfb2d09c",
+  "source_and_lock_match_commit": true,
+  "protected_outcomes_seen_at_anchor": false,
+  "active_checkout_branch_unchanged": true,
+  "remote_v4_publication": false
+}

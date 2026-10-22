@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "nlms",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "nlms_0.5",
+  "task_id": "novel-1237",
+  "task_sha256": "39756b526c3e021ec4e6392d305737482127d6db477481f912e5149c50fc4587",
+  "utc": "2026-10-21T05:36:41.221909+00:00"
+}

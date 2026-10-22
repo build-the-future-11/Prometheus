@@ -1,0 +1,15 @@
+{
+  "duration_seconds": 15.991147249995265,
+  "finished_utc": "2026-10-20T16:07:13.450907Z",
+  "resources": {
+    "ending_pageouts": 1023941,
+    "max_allowed_rss_mib": 512.0,
+    "pageout_delta": 149,
+    "peak_observed_rss_mib": 160.3125,
+    "require_no_pageout_increase": true,
+    "starting_pageouts": 1023792
+  },
+  "run_id": "quantile-composition-v2-r1",
+  "started_utc": "2026-10-20T16:06:57.459671Z",
+  "status": "FAILED_RETAINED"
+}

@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{booktabs}
+
+\usepackage{hyperref}
+
+\title{A Fail-Closed Benchmark for Delayed-Label Online Adaptation}
+
+\author{NEUROGENESIS research workspace}
+
+\date{2026-10-20}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+This paper reports a verified development-only study of conventional online adaptation controls on a deterministic sequential regression benchmark with delayed labels, distractor shift, conflict, recurrence, and novelty.
+
+Across five fixed development identities, delayed SGD at learning rate 0.01 obtained mean prequential MSE 0.9484 (sample SD 0.0627) versus 1.0110 (SD 0.0671) for frozen prediction.
+
+The high-rate SGD control degraded MSE to 3.3480.
+
+The project has no approved learned-rule or memory-weight candidate; this paper makes no efficacy claim for either mechanism and reports no protected evaluation.
+
+\end{abstract}
+
+\section{Scope and protocol status}
+
+The scientific mechanism remains \texttt{SCOPE\_UNRESOLVED}. The retained protocol admits conventional development controls only and locks protected evaluation at zero runs. Each stream has 480 predictions, four informative and four distractor features, four regimes of equal length, and a four-step label delay. Predictions are scored before labels can update a method.
+
+\section{Verified development evidence}
+
+All 20 requested attempts completed and no attempt was discarded. The source bundle was independently verified before this package was assembled. The analysis artifact-map digest is \texttt{b39fa49ab15dea6072ecd8fe0de36bca2e4ac71b8b6a598db8075ccc277b4267}.
+
+\begin{table}[h]
+
+\centering
+
+\caption{Development-only conventional baseline results. Lower error is better.}
+
+\label{tab:baseline}
+
+\input{tables/development_baselines.tex}
+
+\end{table}
+
+\section{Interpretation and limitations}
+
+SGD at 0.01 improved overall development MSE on every paired identity, but its mean first-24 switch MSE was 1.9652, compared with 0.9611 for frozen prediction; its return-regime MSE was 2.2782, compared with 1.2241.
+
+This establishes a stability--plasticity tradeoff in a synthetic, small, development-only setting. It does not establish broad generalization, a learned update rule, a memory mechanism, protected-evaluation performance, independent replication, or publication readiness for a candidate mechanism.
+
+\section{Artifacts and reproduction}
+
+The vector figures in \texttt{figures/} show 24-step rolling MSE curves and the switch/return tradeoff. Exact source data, hashes, commands, and the verification receipt are in the reproducibility folder.
+
+\end{document}

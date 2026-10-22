@@ -1,0 +1,45 @@
+{
+  "attempt_id": "dev-delay-conflict-0101__no_adaptation",
+  "error": null,
+  "family": "delay_distractor_conflict_return",
+  "metrics": {
+    "adaptation_switch_mse": 0.9562285170384496,
+    "instability": {
+      "max_absolute_prediction": 0.0,
+      "max_update_norm": 0.0,
+      "nonfinite_predictions": 0
+    },
+    "primary": {
+      "direction": "lower_is_better",
+      "name": "prequential_mean_squared_error",
+      "value": 1.095095705901063
+    },
+    "regime_mse": {
+      "A_initial": 1.2073429028616987,
+      "A_return": 1.1796718654145442,
+      "B_conflict": 0.9399740525345995,
+      "C_novel": 1.0533940027934103
+    },
+    "resource_usage": {
+      "consolidations": 0,
+      "gradient_evaluations": 0,
+      "parameter_updates": 0,
+      "peak_state_bytes": 72,
+      "retrievals": 0,
+      "steps": 480,
+      "wall_seconds": 0.0025754999951459467,
+      "writes": 0
+    },
+    "retention_ratio_to_initial_late": 0.9675600415829406,
+    "retention_return_mse": 1.4643058338741533,
+    "undelivered_labels_at_horizon": 4
+  },
+  "policy_kind": "no_adaptation",
+  "policy_name": "no_adaptation",
+  "schema_version": "neurogenesis.result.v1",
+  "seed": 101,
+  "split": "development",
+  "status": "SUCCEEDED",
+  "task_id": "dev-delay-conflict-0101",
+  "trace_sha256": "9985c070e0c7b9d7c73dac1eafc48853c9383f5f01b6cc2f9adbb9279ecdd87b"
+}

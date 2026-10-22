@@ -1,0 +1,50 @@
+{
+  "analysis_status": "POST_HOC_EXPLORATORY_NOT_CONFIRMATORY",
+  "bootstrap": {
+    "interval": "percentile_95",
+    "repetitions": 20000,
+    "seed": 20261020
+  },
+  "independent_unit": "canonical_composition",
+  "independent_unit_count": 4601,
+  "interpretation_boundary": "Intervals and tail probabilities were computed after observing the development run. They quantify this retained benchmark artifact and do not convert it into a frozen confirmatory, prospective, or independently replicated study.",
+  "official_split_prediction": {
+    "bootstrap_probability_proposed_mae_below_ridge": 1.0,
+    "group_weighted_mae_difference_95_interval_ev": [
+      -0.351028875867822,
+      -0.31288265107213514
+    ],
+    "group_weighted_mae_difference_proposed_minus_ridge_ev": -0.33204632255778405,
+    "group_weighted_proposed_mae_95_interval_ev": [
+      0.45951676614910675,
+      0.5033511697140001
+    ],
+    "group_weighted_proposed_mae_ev": 0.4810440520945751,
+    "relative_mae_reduction_vs_ridge": 0.4083756651279413
+  },
+  "ranking_budget_50": {
+    "greedy_hits": 15,
+    "greedy_precision": 0.3,
+    "population": 4601,
+    "proposed_hits": 38,
+    "proposed_precision": 0.76,
+    "random_mean_hits_64_replicates": 3.578125,
+    "random_selection_probability_of_at_least_proposed_hits": 1.5253908447180538e-35,
+    "target_window_hits": 308
+  },
+  "run_id": "kaggle-development-v1-r1",
+  "schema_version": 1,
+  "source_hashes": {
+    "artifact_manifest_sha256": "4dd4550e77cfbd81fb0237bba8aa20999a6b443b2b87d15d0cac70f057ca7445",
+    "oof_predictions_csv_sha256": "a01af9a30737fbf43df2056ca7f79190151b7ae50994d0030dcf246821f00761",
+    "results_json_sha256": "defc5fd28404180b0d0d1b9bf21757427eddc0c2e45cad7493b20329f8df083d"
+  },
+  "uncertainty": {
+    "group_weighted_90_coverage": 0.88904585959574,
+    "group_weighted_90_coverage_95_interval": [
+      0.8799174092588568,
+      0.8980656379048033
+    ],
+    "nominal_coverage": 0.9
+  }
+}

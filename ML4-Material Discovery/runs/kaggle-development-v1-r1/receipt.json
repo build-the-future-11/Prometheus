@@ -1,0 +1,38 @@
+{
+  "command": "ml4materials run --run-id kaggle-development-v1-r1",
+  "dependencies": {
+    "joblib": "1.6.0",
+    "matplotlib": "3.10.0",
+    "numpy": "2.1.3",
+    "scikit-learn": "1.6.1"
+  },
+  "duration_seconds": 59.68753081800003,
+  "finished_utc": "2026-10-20T17:36:59.170661Z",
+  "git": {
+    "head": null,
+    "root": null,
+    "scoped_status": null
+  },
+  "inputs": {
+    "data_contract_sha256": "ff0e56a4be2cdface84f178ed923670c80fa0aa9f8ff56331720eab1c1feba1a",
+    "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+    "metadata_sha256": "a637a1fe146b70f5f663fd480a2475362dc446741893c3048ec992219ba2a0b0",
+    "split_sha256": "94c17bc3dac32c67d33d69289927a5fec174497e74bbc47293e23d3d147e9a6d",
+    "study_config_sha256": "b4d7878b346519f2b37eed9a31e345bf1a4d8e35942983c344e72aa5ebf28fa5"
+  },
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "resources": {
+    "ending_pageouts": 0,
+    "max_allowed_rss_mib": 512.0,
+    "pageout_delta": 0,
+    "pageout_monitor_available": true,
+    "peak_observed_rss_mib": 387.640625,
+    "require_no_pageout_increase": true,
+    "starting_pageouts": 0
+  },
+  "run_id": "kaggle-development-v1-r1",
+  "schema_version": 1,
+  "started_utc": "2026-10-20T17:35:59.483128Z",
+  "status": "COMPLETED"
+}

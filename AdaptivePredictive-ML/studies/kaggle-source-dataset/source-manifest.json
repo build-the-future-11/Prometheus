@@ -1,0 +1,27 @@
+{
+  "archive": "adaptive-predictive-source.tar.gz",
+  "archive_sha256": "3fad2cb3b3f39a68e10d8a4a76b8fd77ff38cc827c2f7b04a816dc9b747ed2dd",
+  "file_count": 18,
+  "files": {
+    ".gitignore": "f6ed2da39a91d67e255e1addf73ac4cdc8d0644545e943ab8731429722da9d3f",
+    "README.md": "343b069278df1d8fde102bd2fef083155473240f076123ce7f1d80722c07839d",
+    "RESEARCH_STATE.json": "a33accbf1b6c91232216ecd821670454c0a3a1fb1bef06cd7549e0c4bcac7220",
+    "docs/FLAW_AUDIT.md": "c6422fa2008944839732e07d2ac9aede1fa1a206c78fb6e6ed08f9434c9b1005",
+    "docs/PROTOCOL_DRAFT.md": "31bf40203e88a63f175e8e9dd5e8ba7575c962869c685ec28c6000000b345bd3",
+    "protocols/development-v1.json": "01910ee378d996bef8782ccbdfbcbe2309698741f131f24f1d8b32e3b751d8ec",
+    "pyproject.toml": "123308195cf76d38a77b3ac06e2928c53e8ac7025345c4afd4c3abf20d3170af",
+    "src/adaptive_predictive/__init__.py": "8df0edcee4dd8ed28abfa4e4ce489ed8fa2e77f27a35bc0930b316aee608c0e5",
+    "src/adaptive_predictive/cli.py": "6eced321f8bee3bbb5650e34d475d449e7c40c9d8f85ac8c0a9c1b7b74f6169b",
+    "src/adaptive_predictive/data.py": "6190533841bfed279698f9e681b5fbbc0d5f7f37bbc752788de48cbcd048a546",
+    "src/adaptive_predictive/experiment.py": "a4c98161f8639e619e90f742487419193a44043b9c84096e86af0a38834e8712",
+    "src/adaptive_predictive/model.py": "c868a4ac7a162be2ae4ec2bb701212c2b9c58713d3838658d9c0ed37be74ca54",
+    "src/adaptive_predictive/statistics.py": "38cda5a23d0b729a33714d2e55cb310aee176c0c7009ba51201d9daf5e745ebe",
+    "tests/test_data.py": "7cf18f9c18581c642fc74fb9daed98c8f9be59b12cc9ebb0e8d1058994890447",
+    "tests/test_experiment.py": "1b0440bdbbf06c076dc41fc1c3418f23ffa5cfc18273a92daa0a529a0176ff1f",
+    "tests/test_model.py": "2c2b4c39619fd91d338ebbb1c95ab487ed944dba3a8b32d27613004ac41620d3",
+    "tests/test_statistics.py": "6c5c9cd26c786728b5e287e4c7125b35b61e0ef9c75338920823410e7cdb9874",
+    "uv.lock": "f2261478536762533bfb8752b64e78e6a6844ce9b64df49108b5bf5d3cc04904"
+  },
+  "schema_version": "adaptive-predictive.source-manifest.v1",
+  "secret_scan_policy": "No credentials, local data, .git objects, virtual environments, caches, or protected results are included."
+}

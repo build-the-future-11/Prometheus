@@ -1,9 +1,0 @@
-{
-  "name": "atlas-tiny-example",
-  "version": "0.1.0",
-  "license": "CC0-1.0",
-  "task_description": "Tiny deterministic exact-match benchmark used only for Atlas CI and documentation.",
-  "metric": "exact_match",
-  "dataset_sha256": "c8b5f117707f84139cb57d19261aab461117125572a059711cae012094a584db",
-  "case_count": 3
-}

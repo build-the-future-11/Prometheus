@@ -1,0 +1,11 @@
+method,mse_original_units,scored,test_updates
+all_update,FAILED,,
+baseline,FAILED,,
+candidate,FAILED,,
+capacity_one,FAILED,,
+frozen,7.606413881748073,4668,0
+knn,0.9137417880605542,4668,0
+last_observation,3.2289867180805483,4668,0
+no_bank,FAILED,,
+replay,0.5516973710884138,4668,9336
+uniform_bank,FAILED,,

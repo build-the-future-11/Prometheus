@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 1.0,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "bank_e1.0_a0.05_k8",
+  "task_id": "base-1237",
+  "task_sha256": "bf397e65b98996e1c7f417492b7fc86b2b0c54a11836ada9c648493d8c915a98",
+  "utc": "2026-10-21T05:36:08.433843+00:00"
+}

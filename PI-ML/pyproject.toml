@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piml-auditable-elliptic"
+version = "1.0.0"
+description = "Evidence-bound study of learned warm starts for elliptic PDE solvers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "PI-ML contributors"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.optional-dependencies]
+research = ["numpy>=1.26,<3", "matplotlib>=3.8,<4"]
+
+
+[project.scripts]
+piml = "piml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

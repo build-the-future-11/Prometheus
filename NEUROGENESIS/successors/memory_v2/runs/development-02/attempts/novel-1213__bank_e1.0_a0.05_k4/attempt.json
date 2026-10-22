@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 1.0,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "bank_e1.0_a0.05_k4",
+  "task_id": "novel-1213",
+  "task_sha256": "ad2bae5057f3b07cbffa05321dff31f2f68e14661731c7b779c76a913c93493e",
+  "utc": "2026-10-21T05:36:25.595694+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "time_utc": "2026-10-21T05:04:13.088178+00:00",
+  "status": "BLOCKED_LOCAL_HEAVY_EXECUTION",
+  "rule": "512 MiB free-plus-speculative, stable pageouts",
+  "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     3851.\nPages active:                                 177045.\nPages inactive:                               161618.\nPages speculative:                             14394.\nPages throttled:                                   0.\nPages wired down:                             222063.\nPages purgeable:                                   2.\n\"Translation faults\":                      103139324.\nPages copy-on-write:                         2414876.\nPages zero filled:                          87908754.\nPages reactivated:                          26816151.\nPages purged:                                1490639.\nFile-backed pages:                            128350.\nAnonymous pages:                              224707.\nPages stored in compressor:                  1835919.\nPages occupied by compressor:                 430215.\nDecompressions:                             21491948.\nCompressions:                               26248830.\nPageins:                                     6744824.\nPageouts:                                      41380.\nSwapins:                                      174882.\nSwapouts:                                     749588.\n",
+  "route": "Kaggle CPU; no weakened admission"
+}

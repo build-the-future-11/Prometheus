@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.05,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "adam",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "adam_0.05",
+  "task_id": "base-1237",
+  "task_sha256": "bf397e65b98996e1c7f417492b7fc86b2b0c54a11836ada9c648493d8c915a98",
+  "utc": "2026-10-21T05:40:40.467780+00:00"
+}

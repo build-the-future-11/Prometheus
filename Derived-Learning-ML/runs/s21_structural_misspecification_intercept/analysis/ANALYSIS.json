@@ -1,0 +1,44 @@
+{
+  "by_split": {
+    "final": {
+      "analysis_scope": "descriptive paired bootstrap; not a replacement for the protocol primary endpoint",
+      "paired_bootstrap_mean_delta": {
+        "bootstrap_95_ci_high": 0.002135382218244741,
+        "bootstrap_95_ci_low": -0.028110043420038356,
+        "count": 5,
+        "mean": -0.012987330600896806,
+        "median": -0.007894746062408364
+      },
+      "paired_task_count": 5,
+      "primary_minus_adam_equal_resource_nmse": [
+        0.006373837355689305,
+        -0.007894746062408364,
+        -0.02854982046864174,
+        0.0029119912211267307,
+        -0.037777915050249966
+      ],
+      "primary_win_count": 3
+    },
+    "long_horizon": {
+      "analysis_scope": "descriptive paired bootstrap; not a replacement for the protocol primary endpoint",
+      "paired_bootstrap_mean_delta": {
+        "bootstrap_95_ci_high": 0.0004638434949958192,
+        "bootstrap_95_ci_low": -0.0003177572953978913,
+        "count": 5,
+        "mean": 9.317742066696776e-05,
+        "median": 0.00011974283695315169
+      },
+      "paired_task_count": 5,
+      "primary_minus_adam_equal_resource_nmse": [
+        0.00011974283695315169,
+        -0.0006045844856693572,
+        0.00020277765808995873,
+        2.218932192865619e-05,
+        0.0007257617720324294
+      ],
+      "primary_win_count": 1
+    }
+  },
+  "run_dir": "runs/s21_structural_misspecification_intercept",
+  "schema_version": "derived-learning.saved-output-analysis.v1"
+}

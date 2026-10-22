@@ -1,0 +1,15 @@
+{
+  "id": "ryangomez010/ml4-material-discovery-quantile-v2",
+  "title": "ML4 Material Discovery quantile v2",
+  "code_file": "run_hosted_quantile.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [
+    "ryangomez010/ml4-material-discovery-source"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

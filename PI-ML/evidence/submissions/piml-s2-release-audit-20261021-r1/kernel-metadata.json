@@ -1,0 +1,17 @@
+{
+  "id": "ryangomez010/piml-s2-release-audit-20261021-r1",
+  "title": "piml-s2-release-audit-20261021-r1",
+  "code_file": "release_job.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [
+    "ryangomez010/piml-s2-development-20261021-r2",
+    "ryangomez010/piml-s2-confirmatory-20261021-r1"
+  ]
+}

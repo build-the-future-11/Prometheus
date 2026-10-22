@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "bank_c0.1_a0.5_k8",
+  "task_id": "novel-1249",
+  "task_sha256": "59e60e32666632c1c2746611ee8958037b19437c9e6ed0bb4dda4c0fcac6b0e1",
+  "utc": "2026-10-21T05:41:09.268377+00:00"
+}

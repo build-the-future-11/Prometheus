@@ -1,0 +1,67 @@
+{
+  "config_path": "configs/development.json",
+  "config_sha256": "2b93a9dde04ce6a7a03f9cdf49ab887e84d8039a3c30d937533c4c4698f0c470",
+  "environment": {
+    "executable": "/opt/homebrew/opt/python@3.15/bin/python3.15",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "python_hash_seed": "0",
+    "third_party_runtime_dependencies": []
+  },
+  "git_commit_at_execution": "21b9338f23df46b32af734cb33903528a1899e8a",
+  "git_worktree_clean_at_execution": false,
+  "outputs": {
+    "results.jsonl": "b55f95b9d0e5d86af287440c372b6e56635efa5115f3c69616a89163a1c9f67e",
+    "selection.json": "82d4dcddedfbe3b209030812fb4783f075940f1443bfe64641da26b57df89ba3",
+    "selection_attempts.jsonl": "395d4588220698d6f574ccc35af55ec20740a426ba83213b6a93412d764f3736",
+    "summary.json": "d2e0c77b09726a8d061a9a2adb29af503b67283ab7ec164afc6e2fa58659a249",
+    "tasks.json": "e7ce0ba7c40c656032c387a351c8b9e120e8de28df908063f668dd498db46e78"
+  },
+  "resource_scope": {
+    "learned_target_generator_training_steps": 0,
+    "paid_services": false,
+    "remote_compute": false,
+    "teacher_calls": 0,
+    "worker_count": 1
+  },
+  "schema_version": "derived-learning.run-manifest.v1",
+  "selected_hyperparameters": {
+    "adam": {
+      "learning_rate": 0.08
+    },
+    "analytic_residual": {
+      "regularization": 0.1
+    },
+    "block_gradient_no_derivation": {
+      "learning_rate": 0.08
+    }
+  },
+  "source_tree_sha256": "a8d23a40a3bf6647fea8ab54e276ee26dadaca1fc2ee42b0fbec899f457fe71a",
+  "split_separation": {
+    "development_task_ids": [
+      "development-development_shift-s201",
+      "development-development_shift-s202",
+      "development-development_shift-s203"
+    ],
+    "final_task_ids": [
+      "final-heldout_high_correlation-s301",
+      "final-heldout_high_correlation-s302",
+      "final-heldout_high_correlation-s303",
+      "final-heldout_high_correlation-s304",
+      "final-heldout_high_correlation-s305"
+    ],
+    "final_used_for_selection": false,
+    "long_horizon_task_ids": [
+      "long_horizon-heldout_high_correlation_long-s401",
+      "long_horizon-heldout_high_correlation_long-s402",
+      "long_horizon-heldout_high_correlation_long-s403"
+    ],
+    "meta_train_task_ids": [
+      "meta_train-meta_balanced-s101",
+      "meta_train-meta_balanced-s102",
+      "meta_train-meta_balanced-s103"
+    ]
+  },
+  "status": "COMPLETE",
+  "study_id": "DLML-S1-P0"
+}

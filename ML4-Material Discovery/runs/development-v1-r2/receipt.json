@@ -1,0 +1,30 @@
+{
+  "command_time": {
+    "real_seconds": 31.44,
+    "user_seconds": 29.80,
+    "system_seconds": 1.10
+  },
+  "completed_checkpoint_files": [
+    {
+      "path": "models/fold_0.joblib",
+      "reload_prediction_identity_required_before_progress": true,
+      "sha256": "bcf09ca3ac77e1a4d53207b8c4ff5bb02e4c950a91e8be8eb918a3948a10a7a2"
+    },
+    {
+      "path": "models/fold_1.joblib",
+      "reload_prediction_identity_required_before_progress": true,
+      "sha256": "d7d00f05380a466ecdec1bd94825ed6e9fa9ff96784778624d55ca390028ba65"
+    }
+  ],
+  "duration_seconds": 9.796815541005344,
+  "finished_utc": "2026-10-19T07:57:30.333822Z",
+  "resources": {
+    "ending_pageouts_at_refusal": 522782,
+    "pageout_delta_at_refusal": 39,
+    "starting_pageouts": 522743
+  },
+  "run_id": "development-v1-r2",
+  "started_utc": "2026-10-19T07:57:20.536938Z",
+  "status": "FAILED_RETAINED",
+  "stop_phase": "official_fold_1"
+}

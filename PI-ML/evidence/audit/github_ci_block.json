@@ -1,0 +1,13 @@
+{
+  "status": "BLOCKED_BEFORE_EXECUTION",
+  "run_id": 39554946524,
+  "head_sha": "fe851967cc1287da3f0e5e7603904151798b8b0d",
+  "job_ids": [
+    119072438937,
+    119072439432
+  ],
+  "steps_executed": 0,
+  "github_annotation": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+  "url": "https://github.com/build-the-future-11/Atlas/actions/runs/39554946524",
+  "alternative_evidence": "Kaggle release-audit r2 installed wheel; all 26 tests and full numerical/analysis replay passed. This is not a claim of GitHub CI success."
+}

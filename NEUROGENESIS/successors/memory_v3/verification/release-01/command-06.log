@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/audit.py", line 71, in <module>
+    result=audit(a.input)
+  File "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/audit.py", line 57, in audit
+    raise ValueError('aggregate mismatch')
+ValueError: aggregate mismatch

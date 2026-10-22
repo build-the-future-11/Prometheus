@@ -1,0 +1,23 @@
+test_failed_attempts_are_retained_in_denominators (test_aggregation.AggregationTests.test_failed_attempts_are_retained_in_denominators) ... ok
+test_output_is_complete_and_never_overwritten (test_analyze_bundle.AnalyzeBundleTests.test_output_is_complete_and_never_overwritten) ... ok
+test_v1_analysis_recomputes_verified_baseline_summary (test_analyze_bundle.AnalyzeBundleTests.test_v1_analysis_recomputes_verified_baseline_summary) ... ok
+test_checkpoint_restoration_preserves_prediction_and_adam_state (test_policies.PolicyTests.test_checkpoint_restoration_preserves_prediction_and_adam_state) ... ok
+test_large_features_remain_finite_under_gradient_clipping (test_policies.PolicyTests.test_large_features_remain_finite_under_gradient_clipping) ... ok
+test_squared_error_gradient_matches_finite_difference (test_policies.PolicyTests.test_squared_error_gradient_matches_finite_difference) ... ok
+test_candidate_interfaces_fail_closed_until_one_scope_is_approved (test_protocol.ProtocolTests.test_candidate_interfaces_fail_closed_until_one_scope_is_approved) ... ok
+test_current_protocol_is_unresolved_and_development_only (test_protocol.ProtocolTests.test_current_protocol_is_unresolved_and_development_only) ... ok
+test_duplicate_json_keys_are_rejected (test_protocol.ProtocolTests.test_duplicate_json_keys_are_rejected) ... ok
+test_registered_identity_sets_are_disjoint (test_protocol.ProtocolTests.test_registered_identity_sets_are_disjoint) ... ok
+test_no_adaptation_is_a_true_frozen_control (test_runner.RunnerTests.test_no_adaptation_is_a_true_frozen_control) ... ok
+test_prediction_precedes_current_label_and_delay_is_enforced (test_runner.RunnerTests.test_prediction_precedes_current_label_and_delay_is_enforced) ... ok
+test_shorter_horizon_and_larger_parameter_scale_are_supported (test_runner.RunnerTests.test_shorter_horizon_and_larger_parameter_scale_are_supported) ... ok
+test_state_reset_is_exact_and_independent (test_runner.RunnerTests.test_state_reset_is_exact_and_independent) ... ok
+test_policy_type_drift_is_rejected (test_serialization.SerializationTests.test_policy_type_drift_is_rejected) ... ok
+test_generation_is_deterministic_and_contains_required_regimes (test_tasks.TaskTests.test_generation_is_deterministic_and_contains_required_regimes) ... ok
+test_labels_are_delayed_and_distractors_exist (test_tasks.TaskTests.test_labels_are_delayed_and_distractors_exist) ... ok
+test_returning_regime_reuses_target_mapping (test_tasks.TaskTests.test_returning_regime_reuses_target_mapping) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.377s
+
+OK

@@ -1,0 +1,31 @@
+{
+  "study_version": "quantile-composition-v2",
+  "parent_study": "development-v1",
+  "objective": "Evaluate direct conditional-quantile composition models against the frozen composition-only baselines for experimental inorganic band-gap intervals.",
+  "raw_data_contract": "configs/data_contract.json",
+  "official_folds": ["fold_0", "fold_1", "fold_2", "fold_3", "fold_4"],
+  "target_unit": "eV",
+  "interval_coverages": [0.5, 0.8, 0.9, 0.95],
+  "point_model": {
+    "loss": "absolute_error",
+    "n_estimators": 160,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 4,
+    "subsample": 1.0,
+    "seed": 20261020
+  },
+  "quantile_model": {
+    "n_estimators": 160,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 4,
+    "subsample": 1.0,
+    "seed": 20261020
+  },
+  "max_rss_mib": 512,
+  "require_no_pageout_increase": true,
+  "preregistered_primary_endpoint": "pooled official-split out-of-fold MAE for the point model",
+  "preregistered_uncertainty_endpoint": "observed 90% coverage and mean interval score on official outer-test rows",
+  "status": "IMPLEMENTED_NOT_EXECUTED_RESOURCE_GATED"
+}

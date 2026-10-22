@@ -1,0 +1,21 @@
+{
+  "status": "VERIFIED",
+  "utc": "2026-10-21T06:29:49.164123+00:00",
+  "repository": "https://github.com/build-the-future-11/Atlas",
+  "private_repository": true,
+  "branch": "codex/neurogenesis-memory-v2-20261021",
+  "commit": "b333c415ca9a50aa468b48ef7675b6984228e709",
+  "local_subtree": "6f7a83ac1ce569be2131a82111c2452b274fc1e9",
+  "github_api_subtree": "6f7a83ac1ce569be2131a82111c2452b274fc1e9",
+  "remote_ref_matches": true,
+  "manifest_files_verified_against_git_blobs": 7609,
+  "blob_mismatches": [],
+  "pull_request": "https://github.com/build-the-future-11/Atlas/pull/56",
+  "draft": true,
+  "merged": false,
+  "release_manifest_sha256": "fc77940d1182135f51ae0f7e00b19a5a9da88072eaad7083b89f53b6e39e8109",
+  "receipt_scope": "Local post-push receipt, intentionally excluded from its self-identifying release commit",
+  "scientific_disposition": "MIXED",
+  "hosted_execution": false,
+  "independent_external_replication": false
+}

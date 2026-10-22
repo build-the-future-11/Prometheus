@@ -1,0 +1,46 @@
+{
+  "artifact_status": "VALID",
+  "scientific_comparison": "INVALID_NUMERICAL_FAILURE",
+  "methods": 10,
+  "completed": [
+    "frozen",
+    "knn",
+    "last_observation",
+    "replay"
+  ],
+  "failed": [
+    {
+      "method": "all_update",
+      "predictions_before_failure": 710,
+      "reason": "RLS lost positive covariance"
+    },
+    {
+      "method": "baseline",
+      "predictions_before_failure": 710,
+      "reason": "RLS lost positive covariance"
+    },
+    {
+      "method": "candidate",
+      "predictions_before_failure": 6702,
+      "reason": "RLS lost positive covariance"
+    },
+    {
+      "method": "capacity_one",
+      "predictions_before_failure": 2425,
+      "reason": "RLS lost positive covariance"
+    },
+    {
+      "method": "no_bank",
+      "predictions_before_failure": 710,
+      "reason": "RLS lost positive covariance"
+    },
+    {
+      "method": "uniform_bank",
+      "predictions_before_failure": 6702,
+      "reason": "RLS lost positive covariance"
+    }
+  ],
+  "trace_rows": 55387,
+  "exact_replay": false,
+  "external_replication": false
+}

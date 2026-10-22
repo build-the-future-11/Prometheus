@@ -1,0 +1,10 @@
+\begin{table}[htbp]\centering\small
+\caption{Identical frozen-source executions. Predictions, split files and all 20 checkpoints match byte for byte; both runs record zero pageout increase. Timing differences are environmental, not a model speedup.}
+\begin{tabular}{lrrr}
+\toprule
+Execution & Cells & Seconds & Peak RSS (MiB) \\
+\midrule
+Original v3 & 20 & 424.3 & 372.9 \\
+Fresh reproduction & 20 & 369.8 & 372.1 \\
+\bottomrule
+\end{tabular}\end{table}

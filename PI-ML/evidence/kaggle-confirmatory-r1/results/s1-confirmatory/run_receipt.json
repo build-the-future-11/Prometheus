@@ -1,0 +1,9 @@
+{
+  "case_count": 496,
+  "config_sha256": "d435d1159da774a4da45984e8515fe82fcc4d3f39f2dda908cb1584e1ec857a8",
+  "metric_row_count": 1536,
+  "phase": "confirmatory",
+  "scientific_disposition": "NEGATIVE",
+  "status": "COMPLETE",
+  "study_version": "PIML-WARMSTART-S1-confirmatory-v1"
+}

@@ -1,0 +1,20 @@
+{
+  "beijing": {
+    "file": "PRSA_data_2010.1.1-2014.12.31.csv",
+    "sha256": "4127f868775e31b3956522adc0ec75af8937dde6a3896e8beed3a376c6d27f1c",
+    "archive_sha256": "40cdd29c24918e855133dce280ff59779bb0b5852898e05bafcf422a4cc0a175",
+    "source": "https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data",
+    "download": "https://archive.ics.uci.edu/static/public/381/beijing%2Bpm2%2B5%2Bdata.zip",
+    "license": "CC BY 4.0",
+    "attribution": "Chen, S. (2015). Beijing PM2.5. UCI Machine Learning Repository. doi:10.24432/C5JS49",
+    "protected_year": 2014,
+    "warmup_year": 2013
+  },
+  "air": {
+    "file": "AirQualityUCI.csv",
+    "sha256": "13277ae5d8581e80b7be09d47c7d3d06fe9b8e957078f2cf6e859f955e62f996",
+    "source": "https://archive.ics.uci.edu/dataset/360/air+quality",
+    "attribution": "De Vito et al., UCI Air Quality",
+    "scope": "exposed v3 regression data; not a new protected evaluation"
+  }
+}

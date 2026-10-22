@@ -1,0 +1,194 @@
+[
+  {
+    "fit_seconds": 0.012388488999988567,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 0,
+    "train_generation_seconds": 0.09075934599999869
+  },
+  {
+    "fit_seconds": 0.006653833000001441,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 0,
+    "train_generation_seconds": 0.09075934599999869
+  },
+  {
+    "fit_seconds": 0.010734089999999696,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 0,
+    "train_generation_seconds": 0.09075934599999869
+  },
+  {
+    "fit_seconds": 0.010719629000021769,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 0,
+    "train_generation_seconds": 0.09075934599999869
+  },
+  {
+    "fit_seconds": 0.013644395000000031,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 0,
+    "train_generation_seconds": 0.16552720300001056
+  },
+  {
+    "fit_seconds": 0.0077088539999863315,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 0,
+    "train_generation_seconds": 0.16552720300001056
+  },
+  {
+    "fit_seconds": 0.012118853000004037,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 0,
+    "train_generation_seconds": 0.16552720300001056
+  },
+  {
+    "fit_seconds": 0.012433357999981354,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 0,
+    "train_generation_seconds": 0.16552720300001056
+  },
+  {
+    "fit_seconds": 0.012428717999995342,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 1,
+    "train_generation_seconds": 0.09521549600000867
+  },
+  {
+    "fit_seconds": 0.007155060999991747,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 1,
+    "train_generation_seconds": 0.09521549600000867
+  },
+  {
+    "fit_seconds": 0.010774010000005774,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 1,
+    "train_generation_seconds": 0.09521549600000867
+  },
+  {
+    "fit_seconds": 0.01083149499999081,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 1,
+    "train_generation_seconds": 0.09521549600000867
+  },
+  {
+    "fit_seconds": 0.013416823999989447,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 1,
+    "train_generation_seconds": 0.16681977499999334
+  },
+  {
+    "fit_seconds": 0.009116394999978183,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 1,
+    "train_generation_seconds": 0.16681977499999334
+  },
+  {
+    "fit_seconds": 0.014088030000010576,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 1,
+    "train_generation_seconds": 0.16681977499999334
+  },
+  {
+    "fit_seconds": 0.014323167000014791,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 1,
+    "train_generation_seconds": 0.16681977499999334
+  },
+  {
+    "fit_seconds": 0.012191414999989547,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 2,
+    "train_generation_seconds": 0.08816924800001402
+  },
+  {
+    "fit_seconds": 0.006598174999993489,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 2,
+    "train_generation_seconds": 0.08816924800001402
+  },
+  {
+    "fit_seconds": 0.010720926999994163,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 2,
+    "train_generation_seconds": 0.08816924800001402
+  },
+  {
+    "fit_seconds": 0.010816833999996334,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 2,
+    "train_generation_seconds": 0.08816924800001402
+  },
+  {
+    "fit_seconds": 0.014969082999982675,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 2,
+    "train_generation_seconds": 0.16939816300001098
+  },
+  {
+    "fit_seconds": 0.009078402999989521,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 2,
+    "train_generation_seconds": 0.16939816300001098
+  },
+  {
+    "fit_seconds": 0.014333579000009422,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 2,
+    "train_generation_seconds": 0.16939816300001098
+  },
+  {
+    "fit_seconds": 0.014254779999987477,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 2,
+    "train_generation_seconds": 0.16939816300001098
+  }
+]

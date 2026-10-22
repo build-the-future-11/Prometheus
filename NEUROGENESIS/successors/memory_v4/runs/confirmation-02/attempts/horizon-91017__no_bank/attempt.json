@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "no_bank",
+  "task_id": "horizon-91017",
+  "task_sha256": "47421a1fbc999c5328b9ea3d4b5d96bf4d983ed7876a7d00def5a62de85afcf7",
+  "utc": "2026-10-21T09:59:08.757709+00:00"
+}

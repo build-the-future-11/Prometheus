@@ -1,0 +1,165 @@
+{
+  "by_split": {
+    "final": {
+      "common_budget_by_task": {
+        "final-s2_final_structural_misspecification-s1301": 150912,
+        "final-s2_final_structural_misspecification-s1302": 150912,
+        "final-s2_final_structural_misspecification-s1303": 150912,
+        "final-s2_final_structural_misspecification-s1304": 150912,
+        "final-s2_final_structural_misspecification-s1305": 150912
+      },
+      "interpretation": "NOT_SUPPORTED_ON_ADMITTED_MATRIX",
+      "methods": {
+        "adam": {
+          "equal_resource_mean_nmse": 0.9648195839306373,
+          "mean_terminal_work_units": 150912.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.9648195839306373,
+          "terminal_population_std_nmse": 0.19248900485404563,
+          "threshold_reached_count": 0
+        },
+        "analytic_residual": {
+          "equal_resource_mean_nmse": 0.9583920548656197,
+          "mean_terminal_work_units": 158400.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.9583694463232962,
+          "terminal_population_std_nmse": 0.19573030358244586,
+          "threshold_reached_count": 0
+        },
+        "block_gradient_no_derivation": {
+          "equal_resource_mean_nmse": 1.0055007989415268,
+          "mean_terminal_work_units": 153960.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 1.0001041596305045,
+          "terminal_population_std_nmse": 0.17346250028642246,
+          "threshold_reached_count": 0
+        },
+        "block_jacobi_residual": {
+          "equal_resource_mean_nmse": 217977.43157082345,
+          "mean_terminal_work_units": 158400.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 1012269.2906499745,
+          "terminal_population_std_nmse": 326028.70879872266,
+          "threshold_reached_count": 0
+        },
+        "fixed_normalized_lms": {
+          "equal_resource_mean_nmse": 0.9593091916045623,
+          "mean_terminal_work_units": 154560.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.9592216577247928,
+          "terminal_population_std_nmse": 0.1946206389152123,
+          "threshold_reached_count": 0
+        }
+      },
+      "paired_primary_minus_adam_equal_resource_nmse": [
+        -0.017548778002629994,
+        0.014283446564511193,
+        -0.017442042097693733,
+        -0.024907816346702694,
+        0.013477544557427779
+      ],
+      "paired_primary_win_count": 3,
+      "paired_task_count": 5,
+      "quality_threshold_nmse": 0.35,
+      "relative_equal_resource_improvement_vs_adam": 0.00666189738690008,
+      "schema_version": "derived-learning.summary.v1",
+      "success_criteria": {
+        "efficiency_pass": false,
+        "overall_pass": false,
+        "quality_pass": false
+      }
+    },
+    "long_horizon": {
+      "common_budget_by_task": {
+        "long_horizon-s2_long_horizon_structural_misspecification-s1401": 451616,
+        "long_horizon-s2_long_horizon_structural_misspecification-s1402": 451616,
+        "long_horizon-s2_long_horizon_structural_misspecification-s1403": 451616,
+        "long_horizon-s2_long_horizon_structural_misspecification-s1404": 451616,
+        "long_horizon-s2_long_horizon_structural_misspecification-s1405": 451616
+      },
+      "interpretation": "NOT_SUPPORTED_ON_ADMITTED_MATRIX",
+      "methods": {
+        "adam": {
+          "equal_resource_mean_nmse": 1.2680381053919159,
+          "mean_terminal_work_units": 452736.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 1.2679746873427056,
+          "terminal_population_std_nmse": 0.055549230434301156,
+          "threshold_reached_count": 0
+        },
+        "analytic_residual": {
+          "equal_resource_mean_nmse": 1.2636956658302836,
+          "mean_terminal_work_units": 460800.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 1.2636998088572071,
+          "terminal_population_std_nmse": 0.05435362449859928,
+          "threshold_reached_count": 0
+        },
+        "block_gradient_no_derivation": {
+          "equal_resource_mean_nmse": 1.2534433128367606,
+          "mean_terminal_work_units": 451616.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 1.2534433128367606,
+          "terminal_population_std_nmse": 0.05503277935457775,
+          "threshold_reached_count": 0
+        },
+        "block_jacobi_residual": {
+          "equal_resource_mean_nmse": 4.520527751013921e+22,
+          "mean_terminal_work_units": 460800.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 2.647822655757045e+23,
+          "terminal_population_std_nmse": 3.93911287621612e+23,
+          "threshold_reached_count": 0
+        },
+        "fixed_normalized_lms": {
+          "equal_resource_mean_nmse": 1.267492827432592,
+          "mean_terminal_work_units": 453376.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 1.2675158153113557,
+          "terminal_population_std_nmse": 0.0549960311096879,
+          "threshold_reached_count": 0
+        }
+      },
+      "paired_primary_minus_adam_equal_resource_nmse": [
+        -0.00622765306542683,
+        -0.006035360441673632,
+        -0.0058908004527000735,
+        0.0008964640509852018,
+        -0.004454847899346248
+      ],
+      "paired_primary_win_count": 4,
+      "paired_task_count": 5,
+      "quality_threshold_nmse": 0.35,
+      "relative_equal_resource_improvement_vs_adam": 0.003424533965633582,
+      "schema_version": "derived-learning.summary.v1",
+      "success_criteria": {
+        "efficiency_pass": false,
+        "overall_pass": false,
+        "quality_pass": false
+      }
+    }
+  },
+  "primary_split": "final",
+  "schema_version": "derived-learning.multi-split-summary.v1",
+  "study_id": "DLML-S2-P0"
+}

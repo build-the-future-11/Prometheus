@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "knn",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "knn",
+  "task_id": "novel-90004",
+  "task_sha256": "28131005d698928f9cf941ffda8868a284ed017a542ef9bab1bb721695d3968c",
+  "utc": "2026-10-21T05:48:53.682746+00:00"
+}

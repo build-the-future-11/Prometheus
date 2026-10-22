@@ -1,0 +1,9 @@
+{
+  "artifact_map_sha256": "72a0af4d162df46fddd5ca987bd6101f8c1283d0b8be4adc3325e4b83e11e00e",
+  "attempts": 210,
+  "exact_replay": false,
+  "failed": 0,
+  "status": "VALID",
+  "trace_rows": 201600,
+  "utc": "2026-10-21T06:13:07.567900+00:00"
+}

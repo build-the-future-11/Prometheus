@@ -1,0 +1,1 @@
+{"bias":0.0,"feature_dim":8,"max_update_norm":0.0,"optimizer_state":{},"policy_type":"no_adaptation","schema_version":"neurogenesis.linear-policy.v1","usage":{"consolidations":0,"gradient_evaluations":0,"parameter_updates":0,"peak_state_bytes":72,"retrievals":0,"steps":480,"wall_seconds":0.002394750001258217,"writes":0},"weights":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]}

@@ -1,0 +1,16 @@
+{
+  "architecture.pdf": "2079155673e46df065590be539be83137a61927b8efd7dfce79086ea2ebbaa7d",
+  "architecture.png": "f6cedd14b7a2ea892466f915221d3771f4080738e3278febe4b4f41f90c6dbd8",
+  "claims.json": "3da1ed1c5989eebb3af563e8a9f0b3f2e8ae0c4cd68918febf6398c4c640f869",
+  "condition_heatmap.pdf": "4dd3d85266636eeda7e118bd5b95ae7112f549c5433914079a390555224b9a0b",
+  "condition_heatmap.png": "3926d26f1590374285e38ceb781cd456f160b046b35f61fcc403f796b8d5cfcd",
+  "efficiency.pdf": "3503c41a86a8795a6552d4884b04dd53713d4d8d1e6f255690e15d9078b5cb80",
+  "efficiency.png": "575f08e35e807f1706e976f0856e61a6bfeb9a659da5ae4088d8275873d671a1",
+  "learning_curves.pdf": "5a27d07c631c171a0d3948b6b1fa7d2a8d7cef00af7349b7c6df8686c6609d5b",
+  "learning_curves.png": "288d3bc038c29fcf62cd775f94d0199c6d9629c6d652b862f35a44deb32a14f2",
+  "primary_results.csv": "dee2b66843c07c4285dc47d3d404c40313e856be58f00a0aef0b1222ff117c1c",
+  "real_results.csv": "150f7cab869aaa9f2c6c56a01e381b3fa496454c1f43bdb66d9acfa3af8435c4",
+  "real_transfer.pdf": "d98d138cf493687e377d63263568e7e9e71c8510e28aa2dc8a75f35aefed6e24",
+  "real_transfer.png": "a522a4e25739057bcc1f39cea43a91529d54a42ad89f0be3158436f3864a5cf2",
+  "results.tex": "b7634c14912adf79a179da70976732232c4c1b61f4658c19777ef694c71f7567"
+}

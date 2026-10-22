@@ -1,0 +1,19 @@
+{
+  "command_time": {
+    "real_seconds": 24.57,
+    "user_seconds": 19.55,
+    "system_seconds": 1.31
+  },
+  "completed_checkpoint_files": [],
+  "duration_seconds": 0.7037900419963989,
+  "finished_utc": "2026-10-19T07:55:50.283889Z",
+  "resources": {
+    "ending_pageouts_at_refusal": 522496,
+    "pageout_delta_at_refusal": 2,
+    "starting_pageouts": 522494
+  },
+  "run_id": "development-v1",
+  "started_utc": "2026-10-19T07:55:49.580078Z",
+  "status": "FAILED_RETAINED",
+  "stop_phase": "data_validation"
+}

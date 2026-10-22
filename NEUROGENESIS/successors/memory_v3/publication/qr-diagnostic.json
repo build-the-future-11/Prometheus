@@ -1,0 +1,21 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "protected_data_already_exposed": true,
+  "math_cases": 30,
+  "math_max_abs_error": 5.551115123125783e-16,
+  "results": {
+    "baseline": {
+      "status": "COMPLETED",
+      "mse_original_units": 2.4526977230053646e+62,
+      "max_abs_weight": 1.850086414072846e+47,
+      "predictions": 9357
+    },
+    "candidate": {
+      "status": "COMPLETED",
+      "mse_original_units": 0.7650012412304655,
+      "max_abs_weight": 104914988.74873154,
+      "predictions": 9357
+    }
+  },
+  "warning": "No change to frozen v3. No efficacy claim; conditioning and full replay qualification remain required."
+}

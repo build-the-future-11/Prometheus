@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "knn",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "knn",
+  "task_id": "dimension-91016",
+  "task_sha256": "6b908643ff287532d68cc50673d2f2a1a107a3ab07663a6b64a7b409c7ba38f0",
+  "utc": "2026-10-21T09:58:22.112144+00:00"
+}

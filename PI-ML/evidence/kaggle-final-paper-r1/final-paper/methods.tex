@@ -1,0 +1,79 @@
+\section{Problem formulation}
+On $[0,1]$ we solve the dimensionless boundary-value problem
+\begin{equation}
+ -\frac{d}{dx}\left(a(x)\frac{du}{dx}\right)=f(x),\qquad u(0)=u(1)=0,\quad a(x)>0.
+\end{equation}
+The coefficient and source coordinates are $c,d\in\mathbb R^4$:
+\begin{equation}
+ a(x)=\exp\!\left(\sum_{j=1}^{4}c_j\sin(j\pi x)\right),\qquad
+ f(x)=\sum_{j=1}^{4}d_j\sin(j\pi x).
+\end{equation}
+Independently sampled coordinates obey $c_j\sim U[-s,s]$ and $d_j\sim U[-1,1]$. The training and IID value is $s=0.45$; coefficient OOD uses $s=0.9$. A distinct forcing shift adds independently sampled modes 5 through 8. The trained predictor retains its four-mode input interface; the correction algorithm always receives the complete forcing.
+
+Let $N$ be the total number of grid points, $h=1/(N-1)$, and $n=N-2$ the interior dimension. Arithmetic face coefficients $a_{i+1/2}=(a_i+a_{i+1})/2$ define the tridiagonal matrix
+\begin{equation}
+ A_{ii}=h^{-2}(a_{i-1/2}+a_{i+1/2}),\qquad A_{i,i+1}=A_{i+1,i}=-h^{-2}a_{i+1/2}.
+\end{equation}
+Training targets solve this discrete system. Thus error against a target measures discrete-solver agreement, not continuum discretization error. A separate manufactured-solution refinement test checks the expected second-order trend for a smooth constant-coefficient case.
+
+\begin{proposition}[Positive definiteness and classical spectral control]
+For nonzero $v$ with zero boundary extension,
+$v^TAv=h^{-2}\sum_{i=0}^{N-2}a_{i+1/2}(v_{i+1}-v_i)^2>0$.
+If $T$ is the tridiagonal matrix with diagonal 2 and adjacent entries $-1$, then
+\begin{equation}
+ a_{\min} v^T(h^{-2}T)v\le v^TAv\le a_{\max}v^T(h^{-2}T)v.
+\end{equation}
+Consequently the symmetrically Laplacian-preconditioned matrix has condition number at most $a_{\max}/a_{\min}$.
+\end{proposition}
+\begin{proof}
+Expand the tridiagonal quadratic form into squared adjacent differences. Bound every positive face coefficient between its minimum and maximum, then apply the generalized Rayleigh quotient. No learned component is involved. The bound is independent of grid resolution for fixed coefficient bounds; it can still be poor for large coefficient contrast.
+\end{proof}
+
+\section{Predictors and numerical correction}
+\subsection{Chronological training and inference}
+Training first generates coefficient/source samples and computes their discrete targets with Thomas elimination. For $m$ samples, the design $X\in\mathbb R^{m\times p}$ and target matrix $Y\in\mathbb R^{m\times n}$ define
+\begin{equation}
+ W=\arg\min_{W\in\mathbb R^{p\times n}}\|XW-Y\|_F^2+
+ \operatorname{tr}(W^T\Lambda W).
+\end{equation}
+We solve the augmented least-squares system $[X;\sqrt{\Lambda}]W=[Y;0]$ in double precision using one multi-output factorization. The ridge value is $10^{-4}$. There are no gradient steps, epochs, online updates, or test-based normalization. The quadratic control weakens only its intercept penalty by $10^{-6}$, matching S1's convention. All other feature coefficients receive the full penalty.
+
+For $z=[c,d]\in\mathbb R^8$, the control feature map is
+\begin{equation}
+ \phi_q(c,d)=[1,z,\{z_i z_j:1\le i\le j\le8\}]\in\mathbb R^{45}.
+\end{equation}
+The source-linear ablation and proposed feature maps are
+\begin{align}
+ \phi_1(c,d)&=[1,c]\otimes d\in\mathbb R^{20},\\
+ \phi_2(c,d)&=[1,c,\{c_i c_j:1\le i\le j\le4\}]\otimes d\in\mathbb R^{60}.
+\end{align}
+Inference computes $\hat u=\phi W$ on the interior and appends exact zero boundaries. The model has $pn$ fitted scalar coefficients. A shuffled-label control uses the identical 60-feature architecture and training inputs with a fixed independently seeded permutation of target rows. It measures the importance of the learned input/target pairing with matched parameter count and fitting procedure. Because 45 and 60 differ, the quadratic/structured comparison does not isolate architecture from capacity.
+
+\begin{proposition}[Exact source superposition]
+For either source-linear feature family, fixed $c$, and scalars $\alpha,\beta$,
+$\hat u(c,\alpha d+\beta e)=\alpha\hat u(c,d)+\beta\hat u(c,e)$ in exact arithmetic. In particular $\hat u(c,0)=0$.
+\end{proposition}
+\begin{proof}
+The coefficient-dependent factor of the tensor product is fixed. Distribute the tensor product over the linear source combination and multiply by the fixed fitted weight matrix.
+\end{proof}
+The proposition does not imply a uniform approximation bound, robustness to unseen coefficient contrast, or fewer Krylov iterations. Polynomial truncation can fail outside its training regime; unrepresented source frequencies must be recovered by numerical correction.
+
+With $p$ features and $n$ outputs, fitting costs approximately $O(mp^2+p^3+mpn+p^2n)$ and inference $O(pn)$, with $O(pn)$ model storage. S1 instead refactors normal equations separately for each output and ensemble member. S2's multi-output implementation is checked against the S1 quadratic predictor on a small identical problem; changing the feature family remains a scientific change, not merely an optimization.
+
+\subsection{Preconditioned conjugate gradients}
+All iterative methods use the same PCG implementation. The diagonal preconditioner is $M=\operatorname{diag}(A)$; the stronger reference preconditioner is $M=T$. A positive scalar factor in $M$ does not change exact-arithmetic PCG iterates. Each online solve includes construction and factorization of its preconditioner. Tridiagonal factors are reused within that solve, but not silently amortized across distinct methods or cases.
+
+Starting from $x_0$, compute $r_0=b-Ax_0$, $z_0=M^{-1}r_0$, $p_0=z_0$. At step $k$ use
+\begin{align}
+ \alpha_k&=\frac{r_k^Tz_k}{p_k^TAp_k},&x_{k+1}&=x_k+\alpha_kp_k,\\
+ r_{k+1}&=r_k-\alpha_kAp_k,&z_{k+1}&=M^{-1}r_{k+1},\\
+ \beta_k&=\frac{r_{k+1}^Tz_{k+1}}{r_k^Tz_k},&p_{k+1}&=z_{k+1}+\beta_kp_k.
+\end{align}
+Nonfinite or nonpositive curvature ends the attempted iteration. The limit is $4n$ iterations. On apparent recursive-residual convergence, recompute $b-Ax$; if the true residual fails, restart PCG from it. Every output receives a final independent acceptance check
+\begin{equation}
+ \|b-Ax\|_2\le\max(10^{-12},\tau\|b\|_2).
+\end{equation}
+We retain the returned solution, recurrence history, restart count, operator applications, accuracy, timing, and acceptance flag. Failures remain in the denominator.
+
+The physics-only initial field solves the constant-coefficient reference equation
+$x_0=(h^{-2}\bar a T)^{-1}b$, where $\bar a$ is the mean face diffusivity. The direct baseline solves $Ax=b$ by Thomas elimination and applies the same final acceptance criterion. Its zero Krylov iteration count is not a basis for a meaningful relative-iteration comparison; only time and accuracy are compared with it.

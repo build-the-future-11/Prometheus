@@ -1,0 +1,79 @@
+{
+  "schema_version": "adaptive-predictive.protocol.v1",
+  "protocol_id": "pjm-daily-development-v2",
+  "predecessor": {
+    "protocol_id": "pjm-daily-development-v1",
+    "sha256": "01910ee378d996bef8782ccbdfbcbe2309698741f131f24f1d8b32e3b751d8ec"
+  },
+  "amendment_reason": "The v1 comparison confounded a drift-dependent share rate with a drift-directed redistribution target. V2 adds one mechanism-off control for each component and changes no data boundary or protected-data rule.",
+  "stage": "DEVELOPMENT",
+  "model_revision": 2,
+  "dataset": "kaggle:robikscube/hourly-energy-consumption",
+  "license": "CC0-1.0",
+  "registered_files": [
+    "AEP_hourly.csv",
+    "COMED_hourly.csv",
+    "DAYTON_hourly.csv",
+    "DEOK_hourly.csv",
+    "DOM_hourly.csv",
+    "DUQ_hourly.csv",
+    "EKPC_hourly.csv",
+    "FE_hourly.csv",
+    "PJME_hourly.csv",
+    "PJMW_hourly.csv"
+  ],
+  "aggregation": "Daily arithmetic mean of all finite positive hourly MW observations; reject days with fewer than 20 observations; no interpolation.",
+  "model_input_start": "2015-01-01",
+  "development_start": "2016-01-01",
+  "development_end": "2016-12-31",
+  "protected_start": "2017-01-01",
+  "season": 7,
+  "model_config": {
+    "forgetting_factors": [0.9, 0.97, 0.995],
+    "lags": [1, 2, 3],
+    "ridge": 10.0,
+    "eta": 0.35,
+    "base_share": 0.01,
+    "max_share": 0.03,
+    "drift_gain": 0.02,
+    "fast_rate": 0.2,
+    "slow_rate": 0.02,
+    "prediction_clip": 8.0,
+    "loss_clip": 8.0
+  },
+  "methods": [
+    "seasonal_naive",
+    "uniform",
+    "hedge",
+    "adahedge",
+    "fixed_share",
+    "adaptive_share",
+    "directed_fixed_share",
+    "ddfs"
+  ],
+  "mechanism_definitions": {
+    "common_drift_signal": "Every expert-aggregation mode uses the same fast-versus-slow statistic of the mean capped normalized loss across the identical expert bank. The detector is independent of ensemble weights.",
+    "fixed_share": "constant base share rate with a uniform redistribution target",
+    "adaptive_share": "drift-dependent share rate with a uniform redistribution target",
+    "directed_fixed_share": "constant base share rate with a drift-directed redistribution target",
+    "ddfs": "drift-dependent share rate with a drift-directed redistribution target"
+  },
+  "primary_development_comparison": "ddfs minus fixed_share MASE",
+  "strong_aggregation_comparison": "ddfs minus adahedge MASE; AdaHedge uses the identical expert bank and capped causal expert losses, with no tuned learning-rate parameter",
+  "required_mechanism_contrasts": [
+    "ddfs minus adaptive_share MASE isolates the directed-target increment",
+    "ddfs minus directed_fixed_share MASE isolates the adaptive-rate increment",
+    "directed_fixed_share minus fixed_share MASE isolates direction at constant share rate",
+    "adaptive_share minus fixed_share MASE isolates share-rate adaptation with a uniform target"
+  ],
+  "secondary_model_comparison": "best preregistered adaptive expert ensemble minus seasonal_naive MASE",
+  "bootstrap": {
+    "block_length": 7,
+    "repetitions": 5000,
+    "seed": 20261021,
+    "resampling": "Synchronized moving blocks across the ten date-aligned PJM series, preserving shared temporal shocks before equal-series aggregation."
+  },
+  "decision_rule": "Do not advance a directed-redistribution claim unless the DDFS-versus-adaptive_share contrast is favorable in aggregate and is not reversed in a majority of registered series. Overall predictive benefit still requires the registered DDFS-versus-fixed_share practical threshold.",
+  "protected_data_policy": "The development runner must not parse values dated 2017-01-01 or later.",
+  "status": "COMPLETE_NEGATIVE_ADVANCEMENT_GATES_FAILED"
+}

@@ -1,0 +1,27 @@
+{
+  "admitted_claim": "The saved study reports its frozen endpoint disposition within its declared synthetic matrix; the analytic update is an instrumented classical backfitting baseline, not a novel learned target mechanism.",
+  "baseline_audit": {
+    "numerical_equivalence_status": "FINITE_BUDGET_NOT_NUMERICALLY_EQUIVALENT",
+    "path": "runs/development/global_ridge_audit.json",
+    "sha256": "f1f5f5f1c6a9118626b567ba57dbf39d5f36fbebc66c474c263b3b432daf2a54"
+  },
+  "blocked_claims": [
+    "general learning superiority",
+    "novelty of partial-residual target construction",
+    "real-world utility",
+    "independent reproduction"
+  ],
+  "blockers": [
+    "internally executed synthetic evidence only",
+    "no independent reproduction receipt",
+    "analytic residual update is classical cyclic ridge backfitting/block coordinate minimization",
+    "at least one registered robustness or long-horizon endpoint failed"
+  ],
+  "broad_superiority_claim_allowed": false,
+  "disposition": "MIXED",
+  "manifest_verification_status": "VERIFIED",
+  "novel_derived_target_mechanism_claim_allowed": false,
+  "schema_version": "derived-learning.claim-status.v1",
+  "study_id": "DLML-S1-P0",
+  "submission_ready": false
+}

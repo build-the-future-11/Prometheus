@@ -1,0 +1,50 @@
+[
+  {
+    "canonical_composition": "Cu:1|Se:5|In:3",
+    "source_formulas": [
+      "In1.5Cu0.5Se2.5",
+      "In3CuSe5"
+    ],
+    "source_ids": [
+      "mb-expt-gap-1785",
+      "mb-expt-gap-1829"
+    ],
+    "source_targets_ev": [
+      1.24,
+      0.6
+    ],
+    "target_span_ev": 0.64
+  },
+  {
+    "canonical_composition": "S:5|Cu:9",
+    "source_formulas": [
+      "Cu1.8S1",
+      "Cu9S5"
+    ],
+    "source_ids": [
+      "mb-expt-gap-1087",
+      "mb-expt-gap-1121"
+    ],
+    "source_targets_ev": [
+      2.3,
+      0.0
+    ],
+    "target_span_ev": 2.3
+  },
+  {
+    "canonical_composition": "Se:1|Te:1",
+    "source_formulas": [
+      "Te0.5Se0.5",
+      "TeSe"
+    ],
+    "source_ids": [
+      "mb-expt-gap-3856",
+      "mb-expt-gap-3881"
+    ],
+    "source_targets_ev": [
+      1.0,
+      1.58
+    ],
+    "target_span_ev": 0.5800000000000001
+  }
+]

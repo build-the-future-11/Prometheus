@@ -1,0 +1,6 @@
+# Core versions checked by the successful Kaggle predecessor and v3 launcher.
+# Full observed environment is recorded per hosted run.
+numpy==2.1.3
+scikit-learn==1.6.1
+joblib==1.6.0
+matplotlib==3.10.0

@@ -1,0 +1,8 @@
+{
+  "delivery_revision": 3,
+  "source_sha256": "b4293b7dcfac04d31e358cb95e0670a915a89d406625a86832ca132cc157934d",
+  "notebook_sha256": "beaf22c1e402212b19bb41f12460eafd404f5726727be20225498a6b64d15fef",
+  "arithmetic_auditor_sha256": "86e868085dc6f92f0269e1defa07a30c5a0c2fa04dcb89d6fea2c0f2d36b8054",
+  "hosted_execution": false,
+  "source_unchanged": true
+}

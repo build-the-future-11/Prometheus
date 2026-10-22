@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "baseline",
+  "task_id": "dimension-91013",
+  "task_sha256": "3b4b276d17c74c2b086081670641ae86a853f14f174db053ce836f20e7634720",
+  "utc": "2026-10-21T09:58:14.839320+00:00"
+}

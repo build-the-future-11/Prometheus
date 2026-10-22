@@ -1,0 +1,6 @@
+{
+  "status": "REJECTED_BEFORE_EXECUTION",
+  "error": "The kernel source must be less than 1 megabytes in size.",
+  "title_warning": "Metadata warning was incidental, not the rejection cause.",
+  "repair": "Do not embed already-retained S1 raw evidence into executable source; retain it locally and in GitHub release. No scientific changes."
+}

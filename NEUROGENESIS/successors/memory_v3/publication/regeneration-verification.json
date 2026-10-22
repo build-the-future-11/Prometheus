@@ -1,0 +1,18 @@
+{
+  "status": "VALID",
+  "matches": {
+    "primary_results.csv": true,
+    "real_results.csv": true,
+    "results.tex": true,
+    "condition_heatmap.pdf": true,
+    "learning_curves.pdf": true,
+    "real_transfer.pdf": true
+  },
+  "intentional_visual_revisions": [
+    "efficiency label offsets",
+    "architecture edge routing"
+  ],
+  "pdf_pages": 10,
+  "pdf_claim_tokens_checked": true,
+  "pdf_sha256": "af1182f5a7a757a950f8306cf2776cd20ee5d336a8686811438e4c65427f7a76"
+}

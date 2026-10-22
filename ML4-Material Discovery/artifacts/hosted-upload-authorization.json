@@ -1,0 +1,8 @@
+{
+  "destination": "ryangomez010/ml4-material-discovery-source",
+  "visibility": "private",
+  "ownership_evidence": "kaggle datasets list --mine -s ml4-material-discovery-source --csv returned this exact dataset on 2026-10-21",
+  "user_authorization": "User explicitly requested real Kaggle experiments and full implementation; transport contains enumerated project source, tests, config, protocol and pinned public Matbench inputs only.",
+  "excluded": "credentials, user attachments, unrelated projects, caches, local environment files",
+  "bundle_sha256": "b54be749fc45aaa81625a5fea82e61c83f968db9e9798ee5e49416e6bd0787fb"
+}

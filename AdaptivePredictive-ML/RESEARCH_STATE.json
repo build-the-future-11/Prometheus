@@ -1,0 +1,150 @@
+{
+  "schema_version": "adaptive-predictive.research-state.v1",
+  "project": "Adaptive Predictive ML",
+  "model_name": "Regret- and Drift-Directed Fixed Share (RDDFS)",
+  "state_updated": "2026-10-21",
+  "phase": "DEVELOPMENT_REVISION_2_COMPLETE_NEGATIVE_CONFIRMATION_NOT_ADMITTED",
+  "research_question": "Does causal drift-directed probability redistribution across matched multi-timescale recursive least-squares experts reduce temporally ordered prequential scaled absolute error relative to constant fixed share on non-stationary real-world univariate forecasting tasks?",
+  "hypothesis": "When recent ensemble loss rises above its slow baseline, reallocating fixed-share mass toward shorter-memory experts will adapt faster than uniform redistribution while preserving long-memory accuracy outside shifts.",
+  "hypothesis_revision_2": "When a mode-independent causal mean expert-bank loss rises above its slow baseline, increasing share and directing it using memory length plus relative expert loss will adapt faster than matched uniform-target and constant-rate controls without sacrificing stable-regime accuracy.",
+  "falsifier": "The hypothesis is not supported if the frozen confirmatory paired effect versus constant fixed share fails to exceed the practical threshold, its uncertainty interval includes no benefit, or predefined robustness slices reverse the effect.",
+  "contribution_boundary": "The study does not claim novelty for expert aggregation, fixed share, time-varying Markov expert transitions, RLS, adaptive forgetting, drift detection, or adaptive conformal prediction individually. It tests one causal resource-light joint policy for adapting share rate and redistribution target; mechanism claims require the revision-2 isolating controls.",
+  "primary_endpoint": "Paired mean difference in per-timestamp absolute error divided by the training seasonal-naive scale: MASE(DDFS) - MASE(constant fixed share). Lower is better.",
+  "practical_effect_threshold": "At least 0.01 absolute MASE improvement and at least 1 percent relative improvement, both versus constant fixed share.",
+  "protected_boundary": "Final temporal segment of each confirmatory series; no result may be inspected before the freeze receipt binds protocol, source, data manifest, splits, model configuration, statistics, and exclusions.",
+  "development_budget": {
+    "maximum_model_revisions": 3,
+    "maximum_registered_configurations": 12,
+    "test_data_access": 0
+  },
+  "compute_budget": {
+    "local": "Engineering checks only while free-plus-speculative memory is below 512 MiB or pageout rises.",
+    "kaggle": "CPU notebook, at most 4 vCPU, 16 GiB RAM, 2 hours per stage, no accelerator required."
+  },
+  "repositories": {
+    "working_directory": "/Volumes/PRO-BLADE/Atlas/AdaptivePredictive-ML",
+    "enclosing_git_root": "/Volumes/PRO-BLADE/Atlas",
+    "enclosing_remote": "https://github.com/build-the-future-11/Atlas.git",
+    "publication_status": "NOT_COMMITTED_NOT_PUSHED",
+    "dirty_parent_boundary": "Parent checkout contains unrelated tracked deletions and SPARKING edits; never reset or absorb them."
+  },
+  "manuscript": {
+    "status": "COMPILED_DEVELOPMENT_STAGE_NEGATIVE_RESULT_NOT_SUBMISSION_READY",
+    "source": "paper/main.tex",
+    "pdf": "paper/main.pdf",
+    "pdf_sha256": "daeacab04c4f79d6e5a4fcc75f9b9d4b1139ff09a3f7c18df4b6d1ed7e11f821",
+    "pages": 8,
+    "visual_qa": "All pages rendered and inspected; no clipping, overlap, broken references, or unreadable figures found."
+  },
+  "external_execution_authorization": {
+    "authorized_at": "2026-10-21T16:40:33+05:30",
+    "scope": "Build and secret-scan the revision-2 allowlisted source, upload it as a private Kaggle dataset, launch the private development-v2 CPU notebook in a free slot, and retrieve and verify its artifacts.",
+    "paid_compute_authorized": false,
+    "protected_confirmation_authorized": "Authorized in principle only after a digest-bound confirmatory freeze, valid development gate, and untouched protected runner; no current development artifact may access protected dates.",
+    "status": "COMPLETED_DEVELOPMENT_SCOPE; PROTECTED_CONFIRMATION_NOT_ADMITTED_AFTER_FAILED_GATE"
+  },
+  "datasets": [
+    {
+      "id": "kaggle:robikscube/hourly-energy-consumption",
+      "stage": "development-v2",
+      "registered_series": 10,
+      "daily_window": "2015-01-01 through 2016-12-31",
+      "evaluation_window": "2016-01-01 through 2016-12-31",
+      "protected_data_access": 0,
+      "input_hashes_receipt": "artifacts/kaggle-development-v2-r1/development-analysis-v2.json"
+    },
+    {
+      "id": "kaggle:ryangomez010/adaptive-predictive-source-v2-20261021",
+      "visibility": "private",
+      "source_manifest_sha256": "4548ba0486279fa45706aa61412ea4efb3bd90803996f38ab708fe7a10a53ebc",
+      "verified_file_count": 23
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-ENGINEERING-001",
+      "text": "The implementation enforces causal predict-then-update ordering and a matched mechanism-off comparison.",
+      "status": "VERIFIED_HOSTED_25_TESTS_AND_INDEPENDENT_LEDGER_RECOMPUTATION"
+    },
+    {
+      "id": "C-SCIENCE-001",
+      "text": "DDFS improves confirmatory MASE over constant fixed share by the registered practical threshold.",
+      "status": "NOT_ADMITTED; DEVELOPMENT_GATE_FAILED"
+    },
+    {
+      "id": "C-MECHANISM-001",
+      "text": "Drift-directed redistribution adds predictive value beyond adapting only the total share rate.",
+      "status": "CONTRADICTED_IN_DEVELOPMENT; 0_OF_10_SERIES_FAVORABLE"
+    }
+  ],
+  "failures": [
+    {
+      "date": "2026-10-21",
+      "type": "RESOURCE_ADMISSION",
+      "detail": "Three local vm_stat observations failed the immutable gate. The latest had 3,640 free plus 18,834 speculative 16-KiB pages (368,214,016 bytes, approximately 351 MiB), below 512 MiB; cumulative pageouts rose from 233,391 to 246,234. No Python import, test, secret scan, bundle build, or experiment was admitted."
+    },
+    {
+      "date": "2026-10-21",
+      "type": "EXTERNAL_AUTH",
+      "detail": "GitHub CLI reported invalid stored tokens for both configured accounts; no push attempted."
+    },
+    {
+      "date": "2026-10-21",
+      "type": "KAGGLE_CLIENT",
+      "detail": "No kaggle executable was installed at initial inspection; credentials.json exists but was not read or exposed."
+    },
+    {
+      "date": "2026-10-21",
+      "type": "EXTERNAL_TRANSMISSION_APPROVAL",
+      "detail": "The earlier revision-1 upload was not authorized. On 2026-10-21 at 16:40:33 +05:30, the user explicitly authorized the revision-2 allowlisted private Kaggle upload and free CPU development run. Execution remains pending the immutable local resource gate."
+    },
+    {
+      "date": "2026-10-21",
+      "type": "HYPOTHESIS_FALSIFICATION",
+      "detail": "The registered Kaggle development-v2 run completed on all ten series. DDFS was worse than fixed share by +0.003195193449453197 MASE (95% synchronized moving-block CI +0.0014690581194003352 to +0.004907738240006376) and worse than adaptive_share by +0.001023616406604363 (95% CI +0.0004661806514595297 to +0.0015807069269040872), with zero favorable series for either contrast. Both advancement gates failed; protected confirmation was not admitted."
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-20",
+      "event": "Read-only inspection found the directory empty and untracked; checklist created from parent commit 21b9338."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Initialized DDFS v0.1 source, tests, protocol state, and evidence bundle format without altering parent changes."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Synthetic smoke v1 was negative against constant fixed share (MASE 0.84378 vs 0.82397). Preserved the run; identified a one-step-late drift update and unqualified short-memory targeting. Revision 1 uses the just-observed loss only for the next forecast and directs share by both memory and causal per-expert recent loss."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Bounded six-configuration by three-seed synthetic grid found no mean advantage for RDDFS over constant fixed share. Selected the least-negative configuration only for real-data development; no positive mechanism claim. Data intake then exposed that the loader validated out-of-window values. Repaired it to skip protected rows before value parsing and added a regression test."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Adversarial audit found that revision 1 confounded drift-dependent share amount with drift-directed share target. Created development protocol revision 2 with adaptive-share and directed-fixed-share mechanism controls, broadened the novelty review, and left all revision-1 artifacts immutable. Source and tests were edited but not executed because resource admission failed."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "A second revision-2 audit found that mode-specific ensemble loss would make detector state diverge across controls. Revision 2 now derives the detector from mean capped expert-bank loss, which is identical across modes; added a longitudinal detector-equivalence test. Still unexecuted due resource refusal."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "User explicitly authorized the private revision-2 Kaggle source upload and free CPU development-v2 launch. A fresh admission sample had only 145,915,904 free-plus-speculative bytes, so bundle build, tests, secret scan, and upload remained fail-closed."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Built and secret-scanned an allowlisted deterministic source bundle, uploaded it as private Kaggle dataset ryangomez010/adaptive-predictive-source-v2-20261021, and completed private CPU kernel ryangomez010/adaptive-predictive-development-v2-20261021. Hosted source verification matched 23 files and the manifest; 25 tests passed."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Downloaded and hash-verified the development artifacts. A standard-library verifier independently recomputed all metrics and registered point contrasts from 3,660 raw prediction rows with no discrepancies. DDFS lost to every mechanism control and AdaHedge on all ten series, so the protocol terminated before protected confirmation."
+    },
+    {
+      "date": "2026-10-21",
+      "event": "Generated a complete eight-page negative-result manuscript, tables, and vector figures directly from verified JSON; compiled it warning-free with Tectonic and visually inspected every rendered page. Added statistical, failure, reproducibility, and skeptical-review reports plus a one-command paper reproduction script."
+    }
+  ]
+}
+

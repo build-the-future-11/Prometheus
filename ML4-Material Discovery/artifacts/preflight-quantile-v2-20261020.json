@@ -1,0 +1,26 @@
+{
+  "config_path": "configs/studies/quantile-composition-v2.json",
+  "config_sha256": "561c119d9a1b9b891161c5d0347609e697f19b979d19ec830632db404331dc7f",
+  "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+  "free_disk_bytes": 179076259840,
+  "max_rss_mib": 512,
+  "objective": "Evaluate direct conditional-quantile composition models against the frozen composition-only baselines for experimental inorganic band-gap intervals.",
+  "observed": {
+    "max_rss_mib": 150.203125,
+    "pageouts": 1024597,
+    "phase": "preflight"
+  },
+  "official_split_sha256": "94c17bc3dac32c67d33d69289927a5fec174497e74bbc47293e23d3d147e9a6d",
+  "require_no_pageout_increase": true,
+  "resources": {
+    "ending_pageouts": 1024597,
+    "max_allowed_rss_mib": 512.0,
+    "pageout_delta": 0,
+    "peak_observed_rss_mib": 150.203125,
+    "require_no_pageout_increase": true,
+    "starting_pageouts": 1024597
+  },
+  "schema_version": 1,
+  "status": "ADMITTED_AT_PREFLIGHT",
+  "study_version": "quantile-composition-v2"
+}

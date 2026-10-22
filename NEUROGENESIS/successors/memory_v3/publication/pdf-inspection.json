@@ -1,0 +1,15 @@
+{
+  "status": "PASSED",
+  "pages_rendered_and_visually_inspected": 10,
+  "pdf_sha256": "af1182f5a7a757a950f8306cf2776cd20ee5d336a8686811438e4c65427f7a76",
+  "checks": [
+    "no clipped text or tables",
+    "all five figures legible",
+    "efficiency labels separated",
+    "architecture arrows avoid text",
+    "page numbers and bibliography present",
+    "primary results and failure boundary present"
+  ],
+  "compiler": "Tectonic; successful build; underfull vbox spacing warnings only",
+  "utc": "2026-10-21T06:23:24.078079+00:00"
+}

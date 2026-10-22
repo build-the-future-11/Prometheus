@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": false,
+    "uniform": false
+  },
+  "method": "all_update",
+  "task_id": "base-90004",
+  "task_sha256": "a2c0715a8e97f6bbc512a808f6b503735203ee395b1f2be145b4bedc097cbf81",
+  "utc": "2026-10-21T05:47:22.091782+00:00"
+}

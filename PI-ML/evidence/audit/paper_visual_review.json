@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "pages": 12,
+  "pdf_sha256": "58fcd72205fb5fb67bc1f5d5217e456f4ffb7034f4b2f62cac0a4446607ce1eb",
+  "render": "pdftoppm, every final page inspected; pages 1-10 also text-identical to prior checked render",
+  "checks": [
+    "No clipped equations or overlapping tables",
+    "All plotted labels and references present",
+    "Appendix retains all 108 matrix rows",
+    "Final model-flow diagram and offline-cost table inspected"
+  ],
+  "compiler": "Tectonic 0.17.0, official pinned release on Kaggle",
+  "compiler_limitations": "Underfull bibliography boxes only; no undefined references or overfull boxes",
+  "scope": "Visual and artifact QA; not peer review"
+}

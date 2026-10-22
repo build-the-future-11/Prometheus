@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "candidate",
+  "task_id": "distractor-91004",
+  "task_sha256": "4a2f280841426f501dd3b5cea8d8493b305ec482b344469be0aa1fc2f5538f9e",
+  "utc": "2026-10-21T09:57:30.419335+00:00"
+}

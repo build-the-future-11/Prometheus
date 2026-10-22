@@ -1,0 +1,92 @@
+{
+  "all_update": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 1001794,
+    "failed": 0,
+    "mse": 0.3946723240198533,
+    "state_bytes": 5456,
+    "updates": 1091.4285714285713,
+    "wall_seconds": 0.5322122559930644
+  },
+  "baseline": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 805774.8571428572,
+    "failed": 0,
+    "mse": 0.4635720438394138,
+    "state_bytes": 3280,
+    "updates": 1091.4285714285713,
+    "wall_seconds": 0.45537680058572994
+  },
+  "candidate": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 546681.5857142857,
+    "failed": 0,
+    "mse": 0.3122517347129047,
+    "state_bytes": 5456,
+    "updates": 487.0857142857143,
+    "wall_seconds": 0.46678708780000305
+  },
+  "capacity_one": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 748719.2142857143,
+    "failed": 0,
+    "mse": 0.4661794088761899,
+    "state_bytes": 3504,
+    "updates": 967.0285714285715,
+    "wall_seconds": 0.4331768895285547
+  },
+  "frozen": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 28491.428571428572,
+    "failed": 0,
+    "mse": 1.0098801206211625,
+    "state_bytes": 1992,
+    "updates": 0,
+    "wall_seconds": 0.2844115386499912
+  },
+  "knn": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 1061280,
+    "failed": 0,
+    "mse": 0.8820854724210404,
+    "state_bytes": 5576,
+    "updates": 0,
+    "wall_seconds": 0.5070904937857189
+  },
+  "no_bank": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 805774.8571428572,
+    "failed": 0,
+    "mse": 0.4635720438394138,
+    "state_bytes": 3280,
+    "updates": 1091.4285714285713,
+    "wall_seconds": 0.40088061849285495
+  },
+  "replay": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 187782,
+    "failed": 0,
+    "mse": 0.9002105728236488,
+    "state_bytes": 5576,
+    "updates": 2181.8571428571427,
+    "wall_seconds": 0.3348447128143432
+  },
+  "uniform_bank": {
+    "attempted": 140,
+    "completed": 140,
+    "coordinate_ops": 546681.5857142857,
+    "failed": 0,
+    "mse": 0.9564456848352736,
+    "state_bytes": 5456,
+    "updates": 487.0857142857143,
+    "wall_seconds": 0.4372300907141185
+  }
+}

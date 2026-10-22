@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "last",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "last",
+  "task_id": "base-1223",
+  "task_sha256": "ee9e75c570f25b65aa102c9cf9cb98e9db4bb262ad85737a3f5ff08264fb65d4",
+  "utc": "2026-10-21T05:36:05.649404+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "replay",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "replay",
+  "task_id": "delay-90002",
+  "task_sha256": "3b25b4b93e054814e7994d57bd6f2ea653527c75e89622dbbd4dc8f5be33c612",
+  "utc": "2026-10-21T05:50:00.678101+00:00"
+}

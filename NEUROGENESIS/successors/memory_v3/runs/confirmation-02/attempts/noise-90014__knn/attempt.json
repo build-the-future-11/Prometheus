@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "knn",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "knn",
+  "task_id": "noise-90014",
+  "task_sha256": "c283cdfa1d8930dd1564a00c64de84afc08ebef5a4dbaf38ea3d6e13de3d186f",
+  "utc": "2026-10-21T05:52:17.330705+00:00"
+}

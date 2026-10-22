@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 1.0,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "rls_1.0",
+  "task_id": "novel-1213",
+  "task_sha256": "ad2bae5057f3b07cbffa05321dff31f2f68e14661731c7b779c76a913c93493e",
+  "utc": "2026-10-21T05:36:31.898997+00:00"
+}

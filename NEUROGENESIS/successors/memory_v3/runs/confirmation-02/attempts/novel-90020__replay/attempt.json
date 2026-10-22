@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "replay",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "replay",
+  "task_id": "novel-90020",
+  "task_sha256": "6a5d54b1b0c62e46b3075b46e3265e30c32743f43c69b4cd4a4b254d7296d75b",
+  "utc": "2026-10-21T05:49:55.702843+00:00"
+}

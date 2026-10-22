@@ -1,0 +1,307 @@
+{
+  "checked_result_count": 50,
+  "results": [
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.5940439295272996,
+      "recorded_nmse": 0.5940439295272996,
+      "task_id": "final-s2_final_structural_misspecification-s1301"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.5766741251676373,
+      "recorded_nmse": 0.5766741251676373,
+      "task_id": "final-s2_final_structural_misspecification-s1301"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1039529.8529060052,
+      "recorded_nmse": 1039529.8529060052,
+      "task_id": "final-s2_final_structural_misspecification-s1301"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.661328926001448,
+      "recorded_nmse": 0.661328926001448,
+      "task_id": "final-s2_final_structural_misspecification-s1301"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.5794029938131261,
+      "recorded_nmse": 0.5794029938131261,
+      "task_id": "final-s2_final_structural_misspecification-s1301"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.9649572367583774,
+      "recorded_nmse": 0.9649572367583774,
+      "task_id": "final-s2_final_structural_misspecification-s1302"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.9793699787056334,
+      "recorded_nmse": 0.9793699787056334,
+      "task_id": "final-s2_final_structural_misspecification-s1302"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1361864.2693608347,
+      "recorded_nmse": 1361864.2693608347,
+      "task_id": "final-s2_final_structural_misspecification-s1302"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.0163357122053498,
+      "recorded_nmse": 1.0163357122053498,
+      "task_id": "final-s2_final_structural_misspecification-s1302"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.9799855760301672,
+      "recorded_nmse": 0.9799855760301672,
+      "task_id": "final-s2_final_structural_misspecification-s1302"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.0595850055183829,
+      "recorded_nmse": 1.0595850055183829,
+      "task_id": "final-s2_final_structural_misspecification-s1303"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.0416101430229097,
+      "recorded_nmse": 1.0416101430229097,
+      "task_id": "final-s2_final_structural_misspecification-s1303"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 431477.42563231726,
+      "recorded_nmse": 431477.42563231726,
+      "task_id": "final-s2_final_structural_misspecification-s1303"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.092588866686584,
+      "recorded_nmse": 1.092588866686584,
+      "task_id": "final-s2_final_structural_misspecification-s1303"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.045501876580213,
+      "recorded_nmse": 1.045501876580213,
+      "task_id": "final-s2_final_structural_misspecification-s1303"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.1221485887770495,
+      "recorded_nmse": 1.1221485887770495,
+      "task_id": "final-s2_final_structural_misspecification-s1304"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.0971912516840638,
+      "recorded_nmse": 1.0971912516840638,
+      "task_id": "final-s2_final_structural_misspecification-s1304"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1272981.9089661075,
+      "recorded_nmse": 1272981.9089661075,
+      "task_id": "final-s2_final_structural_misspecification-s1304"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.1010431177025166,
+      "recorded_nmse": 1.1010431177025166,
+      "task_id": "final-s2_final_structural_misspecification-s1304"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.0908465523634006,
+      "recorded_nmse": 1.0908465523634006,
+      "task_id": "final-s2_final_structural_misspecification-s1304"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.083363159072077,
+      "recorded_nmse": 1.083363159072077,
+      "task_id": "final-s2_final_structural_misspecification-s1305"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.097001733036237,
+      "recorded_nmse": 1.097001733036237,
+      "task_id": "final-s2_final_structural_misspecification-s1305"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 955492.996384608,
+      "recorded_nmse": 955492.996384608,
+      "task_id": "final-s2_final_structural_misspecification-s1305"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.1292241755566246,
+      "recorded_nmse": 1.1292241755566246,
+      "task_id": "final-s2_final_structural_misspecification-s1305"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.100371289837057,
+      "recorded_nmse": 1.100371289837057,
+      "task_id": "final-s2_final_structural_misspecification-s1305"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.336790449435549,
+      "recorded_nmse": 1.336790449435549,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1401"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.330522660958324,
+      "recorded_nmse": 1.330522660958324,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1401"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 5.533043837645887e+21,
+      "recorded_nmse": 5.533043837645887e+21,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1401"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.3076592303475318,
+      "recorded_nmse": 1.3076592303475318,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1401"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.3362734844979627,
+      "recorded_nmse": 1.3362734844979627,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1401"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.332261452456808,
+      "recorded_nmse": 1.332261452456808,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1402"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.3263744864769913,
+      "recorded_nmse": 1.3263744864769913,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1402"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 2.9427597785337712e+23,
+      "recorded_nmse": 2.9427597785337712e+23,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1402"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.3247156215436333,
+      "recorded_nmse": 1.3247156215436333,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1402"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.3304133761875414,
+      "recorded_nmse": 1.3304133761875414,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1402"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.2037306942603883,
+      "recorded_nmse": 1.2037306942603883,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1403"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.197836421377724,
+      "recorded_nmse": 1.197836421377724,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1403"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1.4040760309805548e+21,
+      "recorded_nmse": 1.4040760309805548e+21,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1403"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.1801337983739215,
+      "recorded_nmse": 1.1801337983739215,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1403"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.2035397793064355,
+      "recorded_nmse": 1.2035397793064355,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1403"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.2279710046202668,
+      "recorded_nmse": 1.2279710046202668,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1404"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.229095636793854,
+      "recorded_nmse": 1.229095636793854,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1404"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1.0196757724885248e+24,
+      "recorded_nmse": 1.0196757724885248e+24,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1404"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.2412883106676027,
+      "recorded_nmse": 1.2412883106676027,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1404"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.2283881602326239,
+      "recorded_nmse": 1.2283881602326239,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1404"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 1.2391198359405153,
+      "recorded_nmse": 1.2391198359405153,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1405"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 1.2346698386791422,
+      "recorded_nmse": 1.2346698386791422,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1405"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 3.022457667993948e+21,
+      "recorded_nmse": 3.022457667993948e+21,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1405"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 1.2134196032511133,
+      "recorded_nmse": 1.2134196032511133,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1405"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 1.2389642763322153,
+      "recorded_nmse": 1.2389642763322153,
+      "task_id": "long_horizon-s2_long_horizon_structural_misspecification-s1405"
+    }
+  ],
+  "schema_version": "derived-learning.evaluation-verification.v1",
+  "status": "VERIFIED"
+}

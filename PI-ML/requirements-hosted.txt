@@ -1,0 +1,3 @@
+# Exact numeric dependency of original Kaggle execution
+numpy==2.1.3
+# Visualization and independent audit are separately recorded in the release receipt.

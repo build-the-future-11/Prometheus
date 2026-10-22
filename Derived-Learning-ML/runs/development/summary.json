@@ -1,0 +1,141 @@
+{
+  "by_split": {
+    "final": {
+      "common_budget_by_task": {
+        "final-heldout_high_correlation-s301": 100152,
+        "final-heldout_high_correlation-s302": 100152,
+        "final-heldout_high_correlation-s303": 100152,
+        "final-heldout_high_correlation-s304": 100152,
+        "final-heldout_high_correlation-s305": 100152
+      },
+      "interpretation": "SUPPORTED_ON_ADMITTED_MATRIX",
+      "methods": {
+        "adam": {
+          "equal_resource_mean_nmse": 0.02413953556180478,
+          "mean_terminal_work_units": 101376.0,
+          "median_work_units_to_threshold": 41184,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.022609451974230754,
+          "terminal_population_std_nmse": 0.007471098504221995,
+          "threshold_reached_count": 5
+        },
+        "analytic_residual": {
+          "equal_resource_mean_nmse": 0.003475022085095329,
+          "mean_terminal_work_units": 108160.0,
+          "median_work_units_to_threshold": 10816,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.003312269472945237,
+          "terminal_population_std_nmse": 0.0008578734791390313,
+          "threshold_reached_count": 5
+        },
+        "block_gradient_no_derivation": {
+          "equal_resource_mean_nmse": 0.1678041698834418,
+          "mean_terminal_work_units": 100152.0,
+          "median_work_units_to_threshold": 92448,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.1678041698834418,
+          "terminal_population_std_nmse": 0.061696452213578355,
+          "threshold_reached_count": 1
+        },
+        "fixed_normalized_lms": {
+          "equal_resource_mean_nmse": 0.014104092087522743,
+          "mean_terminal_work_units": 100672.0,
+          "median_work_units_to_threshold": 54208,
+          "tasks_failed": 0,
+          "tasks_succeeded": 5,
+          "terminal_mean_nmse": 0.01255216981759497,
+          "terminal_population_std_nmse": 0.004007915086576093,
+          "threshold_reached_count": 5
+        }
+      },
+      "paired_primary_minus_adam_equal_resource_nmse": [
+        -0.028866372663369878,
+        -0.014155931138275082,
+        -0.020349499811442493,
+        -0.030540594777656103,
+        -0.009410168992803714
+      ],
+      "paired_primary_win_count": 5,
+      "paired_task_count": 5,
+      "quality_threshold_nmse": 0.08,
+      "relative_equal_resource_improvement_vs_adam": 0.85604436853401,
+      "schema_version": "derived-learning.summary.v1",
+      "success_criteria": {
+        "efficiency_pass": true,
+        "overall_pass": true,
+        "quality_pass": true
+      }
+    },
+    "long_horizon": {
+      "common_budget_by_task": {
+        "long_horizon-heldout_high_correlation_long-s401": 300456,
+        "long_horizon-heldout_high_correlation_long-s402": 300456,
+        "long_horizon-heldout_high_correlation_long-s403": 300456
+      },
+      "interpretation": "NOT_SUPPORTED_ON_ADMITTED_MATRIX",
+      "methods": {
+        "adam": {
+          "equal_resource_mean_nmse": 0.0047009502280032315,
+          "mean_terminal_work_units": 300960.0,
+          "median_work_units_to_threshold": 41184,
+          "tasks_failed": 0,
+          "tasks_succeeded": 3,
+          "terminal_mean_nmse": 0.004711368226639913,
+          "terminal_population_std_nmse": 0.0007324501765820659,
+          "threshold_reached_count": 3
+        },
+        "analytic_residual": {
+          "equal_resource_mean_nmse": 0.004753904334353082,
+          "mean_terminal_work_units": 302848.0,
+          "median_work_units_to_threshold": 10816,
+          "tasks_failed": 0,
+          "tasks_succeeded": 3,
+          "terminal_mean_nmse": 0.004752535713575912,
+          "terminal_population_std_nmse": 0.0008173609459223531,
+          "threshold_reached_count": 3
+        },
+        "block_gradient_no_derivation": {
+          "equal_resource_mean_nmse": 0.04448678481777615,
+          "mean_terminal_work_units": 300456.0,
+          "median_work_units_to_threshold": 215712,
+          "tasks_failed": 0,
+          "tasks_succeeded": 3,
+          "terminal_mean_nmse": 0.04448678481777615,
+          "terminal_population_std_nmse": 0.015247916451813854,
+          "threshold_reached_count": 3
+        },
+        "fixed_normalized_lms": {
+          "equal_resource_mean_nmse": 0.0049107616196297455,
+          "mean_terminal_work_units": 302016.0,
+          "median_work_units_to_threshold": 65824,
+          "tasks_failed": 0,
+          "tasks_succeeded": 3,
+          "terminal_mean_nmse": 0.004893566600177607,
+          "terminal_population_std_nmse": 0.0009117127329912303,
+          "threshold_reached_count": 3
+        }
+      },
+      "paired_primary_minus_adam_equal_resource_nmse": [
+        1.2691264858422958e-05,
+        -4.92974678624478e-05,
+        0.0001954685220535773
+      ],
+      "paired_primary_win_count": 1,
+      "paired_task_count": 3,
+      "quality_threshold_nmse": 0.08,
+      "relative_equal_resource_improvement_vs_adam": -0.01126455371392935,
+      "schema_version": "derived-learning.summary.v1",
+      "success_criteria": {
+        "efficiency_pass": true,
+        "overall_pass": false,
+        "quality_pass": false
+      }
+    }
+  },
+  "primary_split": "final",
+  "schema_version": "derived-learning.multi-split-summary.v1",
+  "study_id": "DLML-S1-P0"
+}

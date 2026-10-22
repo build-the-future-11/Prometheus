@@ -1,0 +1,9 @@
+{
+  "delivery_revision": 2,
+  "frozen_source_unchanged": true,
+  "source_sha256": "b4293b7dcfac04d31e358cb95e0670a915a89d406625a86832ca132cc157934d",
+  "notebook_sha256": "47128a539f538f4a88ac40ddca05afa8ce1a63ba88d816f97aba5ab8b108a79f",
+  "supplementary_auditor_sha256": "6267c15b8d77f6f1e31887d46d8d8848789a5af7949c76e7bf3c4c475414c84a",
+  "hosted_execution": false,
+  "purpose": "failure-aware evidence packaging, not a relaxed efficacy gate"
+}

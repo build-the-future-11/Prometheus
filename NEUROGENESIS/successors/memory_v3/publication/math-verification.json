@@ -1,0 +1,8 @@
+{
+  "status": "VALID",
+  "cases": 60,
+  "max_abs_coefficient_error": 1.970645868709653e-15,
+  "tolerance": 1e-10,
+  "method": "pivoted Gaussian elimination of batch weighted normal equations; full and skipped update sequences",
+  "scope": "mathematical implementation check, not efficacy or independent external replication"
+}

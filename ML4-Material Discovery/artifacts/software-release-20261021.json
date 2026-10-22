@@ -1,0 +1,10 @@
+{
+  "build": "PASS: uv build --offline",
+  "clean_wheel_install": "PASS",
+  "tests_passed": 58,
+  "tests_failed": 0,
+  "test_receipt": "artifacts/pytest-release-20261021.xml",
+  "inference_receipt": "artifacts/clean-install-inference.json",
+  "packages": "releases/20261021/manifest.json",
+  "scientific_retraining_in_clean_environment": false
+}

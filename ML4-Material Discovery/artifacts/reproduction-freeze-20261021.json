@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_BEFORE_REPRODUCTION",
+  "run_id": "kaggle-robust-aggregation-v3-reproduction-r1",
+  "original_run": "kaggle-robust-aggregation-v3-r1",
+  "bundle_sha256": "b54be749fc45aaa81625a5fea82e61c83f968db9e9798ee5e49416e6bd0787fb",
+  "launcher_sha256": "6e4e98fa0b76654f86e303634f603bd5de7d5a56913885565215c9b4151b5b0a",
+  "protocol_sha256": "1de826243007a64035a36682ceff70b8abdadf63210f6043150fa3f4e16b3a2b",
+  "scope": "same-operator exact computational reproduction; no additional scientific configuration"
+}

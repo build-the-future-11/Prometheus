@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.76\linewidth,
+  height=6.8cm,
+  xmin=-0.001,
+  xmax=0.017,
+  xlabel={Left-minus-right MASE (positive is worse)},
+  ytick={0,1,2,3,4,5},
+  yticklabels={\textsc{DDFS} $-$ AdaHedge,Adaptive share $-$ fixed share,Directed fixed $-$ fixed share,\textsc{DDFS} $-$ directed fixed,\textsc{DDFS} $-$ adaptive share,\textsc{DDFS} $-$ fixed share},
+  yticklabel style={font=\scriptsize},
+  xticklabel style={font=\small},
+  grid=major,
+  grid style={gray!20},
+  axis line style={black!60},
+  extra x ticks={0},
+  extra x tick style={grid=major,grid style={black,dashed,thick}},
+]
+\addplot[black,thick,mark=none] coordinates {(0.001469058,5) (0.004907738,5)};
+\addplot[black,thick,mark=none] coordinates {(0.000466181,4) (0.001580707,4)};
+\addplot[black,thick,mark=none] coordinates {(0.001247223,3) (0.004240128,3)};
+\addplot[black,thick,mark=none] coordinates {(0.000207960,2) (0.000687862,2)};
+\addplot[black,thick,mark=none] coordinates {(0.000980533,1) (0.003360222,1)};
+\addplot[black,thick,mark=none] coordinates {(0.005537159,0) (0.015176084,0)};
+\addplot+[only marks,mark=*,mark size=2.3pt,red!75!black] coordinates {(0.003195193,5) (0.001023616,4) (0.002746613,3) (0.000448580,2) (0.002171577,1) (0.010253415,0)};
+\end{axis}
+\end{tikzpicture}

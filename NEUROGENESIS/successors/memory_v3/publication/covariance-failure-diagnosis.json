@@ -1,0 +1,38 @@
+{
+  "no_bank": {
+    "predictions": 710,
+    "min_eigenvalue": -0.46559586318484636,
+    "max_eigenvalue": 1630571419246892.0,
+    "asymmetry": 0.0
+  },
+  "all_update": {
+    "predictions": 710,
+    "min_eigenvalue": -0.46559586318484636,
+    "max_eigenvalue": 1630571419246892.0,
+    "asymmetry": 0.0
+  },
+  "uniform_bank": {
+    "predictions": 6702,
+    "min_eigenvalue": -11415.067086438694,
+    "max_eigenvalue": 4.651775724197229e+19,
+    "asymmetry": 0.0
+  },
+  "capacity_one": {
+    "predictions": 2425,
+    "min_eigenvalue": -238007758156741.03,
+    "max_eigenvalue": 7.806995703665989e+29,
+    "asymmetry": 0.0
+  },
+  "candidate": {
+    "predictions": 6702,
+    "min_eigenvalue": -11415.067086438694,
+    "max_eigenvalue": 4.651775724197229e+19,
+    "asymmetry": 0.0
+  },
+  "baseline": {
+    "predictions": 710,
+    "min_eigenvalue": -0.46559586318484636,
+    "max_eigenvalue": 1630571419246892.0,
+    "asymmetry": 0.0
+  }
+}

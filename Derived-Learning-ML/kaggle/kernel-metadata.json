@@ -1,0 +1,16 @@
+{
+  "id": "ryangomez010/derived-learning-s3-real-data-gpu-r1",
+  "title": "Derived Learning S3 real data GPU r1",
+  "code_file": "run_hosted_s3.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [
+    "ryangomez010/derived-learning-s3-frozen-source",
+    "camnugent/california-housing-prices"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

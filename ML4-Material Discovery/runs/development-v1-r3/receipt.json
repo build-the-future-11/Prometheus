@@ -1,0 +1,22 @@
+{
+  "completed_checkpoint_files": [],
+  "completed_events": [],
+  "duration_seconds": 0.4843440830009058,
+  "finished_utc": "2026-10-20T16:49:57.102763Z",
+  "inputs": {
+    "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+    "metadata_sha256": "a637a1fe146b70f5f663fd480a2475362dc446741893c3048ec992219ba2a0b0",
+    "split_sha256": "94c17bc3dac32c67d33d69289927a5fec174497e74bbc47293e23d3d147e9a6d"
+  },
+  "resources": {
+    "ending_pageouts": 1036530,
+    "max_allowed_rss_mib": 512.0,
+    "pageout_delta": 39,
+    "peak_observed_rss_mib": 136.328125,
+    "require_no_pageout_increase": true,
+    "starting_pageouts": 1036491
+  },
+  "run_id": "development-v1-r3",
+  "started_utc": "2026-10-20T16:49:56.618416Z",
+  "status": "FAILED_RETAINED"
+}

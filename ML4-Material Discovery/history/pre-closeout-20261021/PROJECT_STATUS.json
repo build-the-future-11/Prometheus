@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "project_identity": "composition-only experimental band-gap prediction and fixed-pool ranking",
+  "canonical_status": "EXECUTED_DEVELOPMENT_MIXED_NOT_CONFIRMATORY",
+  "independent_replication": false,
+  "prospective_validation": false,
+  "release_certified": false,
+  "work_packages": [
+    {
+      "id": "P01",
+      "name": "Matbench experimental band-gap prediction",
+      "primary_endpoint": "official-split pooled out-of-fold MAE in eV",
+      "status": "EXECUTED_DEVELOPMENT_PRIMARY_ENDPOINT_POSITIVE"
+    },
+    {
+      "id": "P01-R",
+      "name": "Fixed-pool uncertainty-aware candidate ranking",
+      "primary_endpoint": "precision at budget 50 for 1.1-1.6 eV",
+      "status": "EXECUTED_RETROSPECTIVE_ENDPOINT_POSITIVE"
+    },
+    {
+      "id": "P01-G",
+      "name": "Element-holdout composition generalization",
+      "primary_endpoint": "MAE for each prespecified held-out element",
+      "status": "EXECUTED_MIXED"
+    },
+    {
+      "id": "P01-Q",
+      "name": "Direct-quantile gradient-boosting successor",
+      "primary_endpoint": "pooled official-split point MAE and direct interval calibration",
+      "status": "EXECUTED_NEGATIVE"
+    }
+  ],
+  "latest_verified_run": {
+    "run_id": "kaggle-development-v1-r1",
+    "kaggle_notebook": "https://www.kaggle.com/code/ryangomez010/ml4-material-discovery-development-v1",
+    "kaggle_script_version_id": 360508051,
+    "archive_sha256": "2711de841291c1361bb8b383df55f17f01ad64b3182466779677173294bba421",
+    "artifact_manifest_valid": true,
+    "release_gate_passed": true,
+    "scientific_scope": "development evidence only; not prospective or independently replicated"
+  },
+  "latest_verified_successor": {
+    "run_id": "kaggle-quantile-composition-v2-r1",
+    "kaggle_notebook": "https://www.kaggle.com/code/ryangomez010/ml4-material-discovery-quantile-v2",
+    "archive_sha256": "7317f446e715811e953828b57b74d88637634f66daa5edb3479b0e9b7de430d6",
+    "artifact_manifest_valid": true,
+    "scientific_disposition": "NEGATIVE; point model collapsed to the fold median and intervals over-covered"
+  }
+}

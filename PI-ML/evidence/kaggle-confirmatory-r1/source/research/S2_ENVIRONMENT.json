@@ -1,0 +1,11 @@
+{
+  "python": "3.13.15",
+  "numpy": "2.1.3",
+  "dtype": "float64",
+  "blas_threads": 1,
+  "host": "Kaggle CPU",
+  "gpu": false,
+  "paid_compute": false,
+  "verification_rule": "record and reject Python/NumPy mismatch in confirmatory hosted wrapper",
+  "max_wall_seconds": 2400
+}

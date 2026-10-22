@@ -1,0 +1,322 @@
+[
+  {
+    "fit_seconds": 0.013809995000002573,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 0,
+    "train_generation_seconds": 0.10220481299998596
+  },
+  {
+    "fit_seconds": 0.006986624000006714,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 0,
+    "train_generation_seconds": 0.10220481299998596
+  },
+  {
+    "fit_seconds": 0.011794396000027518,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 0,
+    "train_generation_seconds": 0.10220481299998596
+  },
+  {
+    "fit_seconds": 0.011425142000007327,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 0,
+    "train_generation_seconds": 0.10220481299998596
+  },
+  {
+    "fit_seconds": 0.014094815000021299,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 0,
+    "train_generation_seconds": 0.1910518929999796
+  },
+  {
+    "fit_seconds": 0.008052429000002803,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 0,
+    "train_generation_seconds": 0.1910518929999796
+  },
+  {
+    "fit_seconds": 0.013006195000002663,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 0,
+    "train_generation_seconds": 0.1910518929999796
+  },
+  {
+    "fit_seconds": 0.01290376299999707,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 0,
+    "train_generation_seconds": 0.1910518929999796
+  },
+  {
+    "fit_seconds": 0.012650278000023718,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 1,
+    "train_generation_seconds": 0.10356763700002602
+  },
+  {
+    "fit_seconds": 0.007485712999994121,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 1,
+    "train_generation_seconds": 0.10356763700002602
+  },
+  {
+    "fit_seconds": 0.0120219249999991,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 1,
+    "train_generation_seconds": 0.10356763700002602
+  },
+  {
+    "fit_seconds": 0.01185506400003078,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 1,
+    "train_generation_seconds": 0.10356763700002602
+  },
+  {
+    "fit_seconds": 0.014092863999962901,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 1,
+    "train_generation_seconds": 0.19177462700002934
+  },
+  {
+    "fit_seconds": 0.008360949000007167,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 1,
+    "train_generation_seconds": 0.19177462700002934
+  },
+  {
+    "fit_seconds": 0.013380037999979777,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 1,
+    "train_generation_seconds": 0.19177462700002934
+  },
+  {
+    "fit_seconds": 0.013386448000005657,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 1,
+    "train_generation_seconds": 0.19177462700002934
+  },
+  {
+    "fit_seconds": 0.012731244000008246,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 2,
+    "train_generation_seconds": 0.1268159649999916
+  },
+  {
+    "fit_seconds": 0.007031600999994225,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 2,
+    "train_generation_seconds": 0.1268159649999916
+  },
+  {
+    "fit_seconds": 0.012510491000000457,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 2,
+    "train_generation_seconds": 0.1268159649999916
+  },
+  {
+    "fit_seconds": 0.011467941000034898,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 2,
+    "train_generation_seconds": 0.1268159649999916
+  },
+  {
+    "fit_seconds": 0.014332287000001998,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 2,
+    "train_generation_seconds": 0.19364625000002889
+  },
+  {
+    "fit_seconds": 0.008321800000032908,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 2,
+    "train_generation_seconds": 0.19364625000002889
+  },
+  {
+    "fit_seconds": 0.014610349000008682,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 2,
+    "train_generation_seconds": 0.19364625000002889
+  },
+  {
+    "fit_seconds": 0.013892373000032876,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 2,
+    "train_generation_seconds": 0.19364625000002889
+  },
+  {
+    "fit_seconds": 0.013828246999992189,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 3,
+    "train_generation_seconds": 0.10217259099999865
+  },
+  {
+    "fit_seconds": 0.0072956440000098155,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 3,
+    "train_generation_seconds": 0.10217259099999865
+  },
+  {
+    "fit_seconds": 0.012391980999950647,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 3,
+    "train_generation_seconds": 0.10217259099999865
+  },
+  {
+    "fit_seconds": 0.011523807999992641,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 3,
+    "train_generation_seconds": 0.10217259099999865
+  },
+  {
+    "fit_seconds": 0.014462407999985771,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 3,
+    "train_generation_seconds": 0.19144637600004444
+  },
+  {
+    "fit_seconds": 0.008194025999955556,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 3,
+    "train_generation_seconds": 0.19144637600004444
+  },
+  {
+    "fit_seconds": 0.01368355300002122,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 3,
+    "train_generation_seconds": 0.19144637600004444
+  },
+  {
+    "fit_seconds": 0.013069588999996995,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 3,
+    "train_generation_seconds": 0.19144637600004444
+  },
+  {
+    "fit_seconds": 0.012660533999962809,
+    "grid": 65,
+    "model": "quadratic",
+    "parameter_count": 2835,
+    "rep": 4,
+    "train_generation_seconds": 0.10311039900000196
+  },
+  {
+    "fit_seconds": 0.007287284000028649,
+    "grid": 65,
+    "model": "linear",
+    "parameter_count": 1260,
+    "rep": 4,
+    "train_generation_seconds": 0.10311039900000196
+  },
+  {
+    "fit_seconds": 0.011656969000000572,
+    "grid": 65,
+    "model": "structured",
+    "parameter_count": 3780,
+    "rep": 4,
+    "train_generation_seconds": 0.10311039900000196
+  },
+  {
+    "fit_seconds": 0.01202673200003801,
+    "grid": 65,
+    "model": "shuffled",
+    "parameter_count": 3780,
+    "rep": 4,
+    "train_generation_seconds": 0.10311039900000196
+  },
+  {
+    "fit_seconds": 0.014394195000022592,
+    "grid": 129,
+    "model": "quadratic",
+    "parameter_count": 5715,
+    "rep": 4,
+    "train_generation_seconds": 0.18979687699999204
+  },
+  {
+    "fit_seconds": 0.008877417000007881,
+    "grid": 129,
+    "model": "linear",
+    "parameter_count": 2540,
+    "rep": 4,
+    "train_generation_seconds": 0.18979687699999204
+  },
+  {
+    "fit_seconds": 0.01312740200000917,
+    "grid": 129,
+    "model": "structured",
+    "parameter_count": 7620,
+    "rep": 4,
+    "train_generation_seconds": 0.18979687699999204
+  },
+  {
+    "fit_seconds": 0.01377898800001276,
+    "grid": 129,
+    "model": "shuffled",
+    "parameter_count": 7620,
+    "rep": 4,
+    "train_generation_seconds": 0.18979687699999204
+  }
+]

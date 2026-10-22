@@ -1,0 +1,31 @@
+{
+  "schema_version": "derived-learning.experiment-config.v1",
+  "study_id": "DLML-S2.1-P0",
+  "protocol_path": "PROTOCOL_S21.md",
+  "hypothesis": "After adding the necessary affine baseline capacity, exact additive residual targets do not retain an S1-sized equal-resource quality advantage over tuned Adam when the supplied block partition is wrong and responses include unmodeled interaction and quadratic structure.",
+  "selection": {"meta_top_k": 2},
+  "record_checkpoint_weights": true,
+  "fit_intercept": true,
+  "success_criteria": {
+    "quality_threshold_nmse": 0.35,
+    "minimum_relative_equal_resource_improvement": 0.05
+  },
+  "budgets": {
+    "selection_work_units": 50000,
+    "final_work_units": 150000,
+    "long_horizon_work_units": 450000
+  },
+  "candidate_grid": {
+    "adam": [{"learning_rate": 0.01}, {"learning_rate": 0.03}, {"learning_rate": 0.08}],
+    "analytic_residual": [{"regularization": 0.01}, {"regularization": 0.1}, {"regularization": 1.0}],
+    "block_jacobi_residual": [{"regularization": 0.01}, {"regularization": 0.1}, {"regularization": 1.0}],
+    "block_gradient_no_derivation": [{"learning_rate": 0.005}, {"learning_rate": 0.02}, {"learning_rate": 0.08}]
+  },
+  "fixed_conditions": {"fixed_normalized_lms": {"step_size": 0.25}},
+  "splits": {
+    "meta_train": {"seeds": [2101, 2102, 2103], "family": {"name": "s21_meta", "dimension": 8, "group_size": 2, "train_examples": 96, "evaluation_examples": 192, "feature_correlation": 0.25, "coefficient_scale": 1.0, "noise_std": 0.1, "interaction_strength": 0.35, "nonlinear_kind": "linear", "supplied_partition": "interleaved"}},
+    "development": {"seeds": [2201, 2202, 2203], "family": {"name": "s21_development", "dimension": 8, "group_size": 2, "train_examples": 96, "evaluation_examples": 192, "feature_correlation": 0.45, "coefficient_scale": 1.2, "noise_std": 0.1, "interaction_strength": 0.55, "nonlinear_kind": "quadratic", "supplied_partition": "interleaved"}},
+    "final": {"seeds": [2301, 2302, 2303, 2304, 2305], "family": {"name": "s21_final_structural_misspecification", "dimension": 8, "group_size": 2, "train_examples": 128, "evaluation_examples": 256, "feature_correlation": 0.6, "coefficient_scale": 1.4, "noise_std": 0.1, "interaction_strength": 0.8, "nonlinear_kind": "quadratic", "supplied_partition": "interleaved"}},
+    "long_horizon": {"seeds": [2401, 2402, 2403, 2404, 2405], "family": {"name": "s21_long_horizon_structural_misspecification", "dimension": 8, "group_size": 2, "train_examples": 128, "evaluation_examples": 256, "feature_correlation": 0.7, "coefficient_scale": 1.4, "noise_std": 0.1, "interaction_strength": 0.8, "nonlinear_kind": "quadratic", "supplied_partition": "interleaved"}}
+  }
+}

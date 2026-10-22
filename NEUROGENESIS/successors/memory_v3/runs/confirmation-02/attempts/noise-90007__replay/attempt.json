@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "replay",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "replay",
+  "task_id": "noise-90007",
+  "task_sha256": "bce256553645797c11dc85f76c9cdc8ad44b11b0349bf5f5fc660f568bf8bd8b",
+  "utc": "2026-10-21T05:51:51.125799+00:00"
+}

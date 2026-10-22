@@ -1,0 +1,20 @@
+{
+  "study_version": "PIML-WARMSTART-S1-development-v1",
+  "phase": "development",
+  "frozen": false,
+  "grid_points": 65,
+  "modes": 4,
+  "data": {
+    "common": {"coefficient_scale": 0.45, "source_scale": 1.0},
+    "train": {"seed": 10000, "count": 192},
+    "calibration": {"seed": 20000, "count": 48},
+    "iid_test": {"seed": 30000, "count": 64},
+    "ood_test": {"seed": 40000, "count": 64, "coefficient_scale": 0.9}
+  },
+  "model": {"ridge": 0.0001, "ensemble_members": 5, "bootstrap_seed": 7711},
+  "solver": {"rtol": 1e-10, "atol": 1e-12, "max_iterations": 63},
+  "controls": {"jacobi_steps": 4, "jacobi_relaxation": 0.8},
+  "statistics": {"bootstrap_seed": 9901, "bootstrap_repeats": 5000},
+  "decision": {"primary_split": "iid_test", "minimum_mean_reduction": 0.15, "minimum_ci_lower": 0.05}
+}
+

@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "baseline",
+  "task_id": "noise-90017",
+  "task_sha256": "9cc6486892c2141f09e247152fdbeb6ce9495ce67ea516f9d849fe532e3c77ea",
+  "utc": "2026-10-21T05:52:25.779134+00:00"
+}

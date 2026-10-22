@@ -1,0 +1,82 @@
+{
+  "attempt_count": 20,
+  "bundle": "results/development/shared-baselines-v1-20261019",
+  "claim_boundary": "Development-only baseline characterization; no candidate mechanism or protected evaluation was run.",
+  "development_selected_standard_baseline": "sgd_lr_0p01",
+  "failure_count": 0,
+  "paired_against_no_adaptation": {
+    "mechanism_off_adam_lr_0p01": {
+      "comparison": "policy_mse_minus_no_adaptation_mse",
+      "mean_difference": -0.013175865571145006,
+      "paired_seed_count": 5,
+      "sample_stdev": 0.05778003963358153
+    },
+    "sgd_lr_0p01": {
+      "comparison": "policy_mse_minus_no_adaptation_mse",
+      "mean_difference": -0.06260376600875665,
+      "paired_seed_count": 5,
+      "sample_stdev": 0.0356314569597163
+    },
+    "sgd_lr_0p05": {
+      "comparison": "policy_mse_minus_no_adaptation_mse",
+      "mean_difference": 2.3369456420187174,
+      "paired_seed_count": 5,
+      "sample_stdev": 0.1834583327445135
+    }
+  },
+  "policy_summaries": {
+    "mechanism_off_adam_lr_0p01": {
+      "adaptation_switch_mse_mean": 1.9225497146919945,
+      "attempted": 5,
+      "failed": 0,
+      "failed_attempt_ids": [],
+      "parameter_updates_total": 2380,
+      "peak_state_bytes_max": 224,
+      "primary_mse_mean": 0.997839128282927,
+      "primary_mse_sample_stdev": 0.09430514585536942,
+      "retention_return_mse_mean": 1.9003443072611563,
+      "succeeded": 5,
+      "wall_seconds_mean": 0.005930583601002582
+    },
+    "no_adaptation": {
+      "adaptation_switch_mse_mean": 0.9611343157329287,
+      "attempted": 5,
+      "failed": 0,
+      "failed_attempt_ids": [],
+      "parameter_updates_total": 0,
+      "peak_state_bytes_max": 72,
+      "primary_mse_mean": 1.011014993854072,
+      "primary_mse_sample_stdev": 0.06706185760461905,
+      "retention_return_mse_mean": 1.224064069553227,
+      "succeeded": 5,
+      "wall_seconds_mean": 0.002369907996035181
+    },
+    "sgd_lr_0p01": {
+      "adaptation_switch_mse_mean": 1.9651792155309191,
+      "attempted": 5,
+      "failed": 0,
+      "failed_attempt_ids": [],
+      "parameter_updates_total": 2380,
+      "peak_state_bytes_max": 72,
+      "primary_mse_mean": 0.9484112278453154,
+      "primary_mse_sample_stdev": 0.06274941982182712,
+      "retention_return_mse_mean": 2.2781569365163916,
+      "succeeded": 5,
+      "wall_seconds_mean": 0.004344675198080949
+    },
+    "sgd_lr_0p05": {
+      "adaptation_switch_mse_mean": 6.7382988803285855,
+      "attempted": 5,
+      "failed": 0,
+      "failed_attempt_ids": [],
+      "parameter_updates_total": 2380,
+      "peak_state_bytes_max": 72,
+      "primary_mse_mean": 3.347960635872789,
+      "primary_mse_sample_stdev": 0.21614954470983805,
+      "retention_return_mse_mean": 12.200635662787644,
+      "succeeded": 5,
+      "wall_seconds_mean": 0.0038371750008082016
+    }
+  },
+  "schema_version": "neurogenesis.aggregate.v1"
+}

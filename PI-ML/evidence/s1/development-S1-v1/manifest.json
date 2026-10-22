@@ -1,0 +1,40 @@
+{
+  "completed_unix": 1792515289.4787421,
+  "config_sha256": "7c01d2fd0b455abbfdb10e4c751b86d79688c3d765d63e3b6ade172c27fe6ddb",
+  "files": {
+    "analysis.json": {
+      "bytes": 11575,
+      "sha256": "2f4278b26afd5d75bc698c1d83469928102c677e58bf90c50b24a9f4a83cb5c4"
+    },
+    "calibration.json": {
+      "bytes": 60,
+      "sha256": "c6ee1d692a20f30c950c5e7d029737439234aaada0f8ca5bde4bb11e2e110190"
+    },
+    "cases.jsonl": {
+      "bytes": 1537272,
+      "sha256": "d5fd5c4f83d0748bb7129a04b4928dcff38a1255c8b88dc89d4900df33f44179"
+    },
+    "config.json": {
+      "bytes": 973,
+      "sha256": "0436eb8060945f42b3ad965805215a7db07a62f13efbea6ebcf1f1f704553e66"
+    },
+    "environment.json": {
+      "bytes": 209,
+      "sha256": "a922c90c910ef9fc9fda409587244822fcea1f880d7b18334a110f18591dfcb0"
+    },
+    "metrics.csv": {
+      "bytes": 125497,
+      "sha256": "5e4745fb6965470e8c766950f1153cf1f9e5f7889f7d180bf41003884015b457"
+    },
+    "model.json": {
+      "bytes": 476100,
+      "sha256": "47f2ed2d09c92221a3cfcc61a3ef15233749e668748eeaeb528dafc2fefff087"
+    },
+    "run_receipt.json": {
+      "bytes": 291,
+      "sha256": "488753b8c45381535c642f3618e8f644b54dd1b424cedc93bc3614ce54f39ec0"
+    }
+  },
+  "schema_version": 1,
+  "started_unix": 1792515237.576173
+}

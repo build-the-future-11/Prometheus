@@ -1,0 +1,22 @@
+{
+  "study_version": "robust-aggregation-v3",
+  "parent_study": "development-v1",
+  "evaluation_class": "DEVELOPMENT_PREVIOUSLY_INSPECTED_LABELS",
+  "raw_data_contract": "configs/data_contract.json",
+  "split_seeds": [20261021, 20261022, 20261023],
+  "n_folds": 5,
+  "calibration_fraction": 0.2,
+  "model_seeds": [7,17,29],
+  "extra_trees": {"n_estimators_per_seed": 96, "max_depth": 22, "min_samples_leaf": 2, "max_features": 0.7, "n_jobs": 1},
+  "interval_coverages": [0.5,0.8,0.9,0.95],
+  "sigma_floor_ev": 0.05,
+  "target_window_ev": [1.1,1.6],
+  "ranking_budgets": [10,25,50,100],
+  "random_replicates": 64,
+  "holdout_elements": ["Li","Zn","Ga","Se","Te"],
+  "bootstrap_repetitions": 5000,
+  "minimum_mae_improvement_ev": 0.01,
+  "max_rss_mib": 512,
+  "require_no_pageout_increase": true,
+  "max_wall_seconds": 3600
+}

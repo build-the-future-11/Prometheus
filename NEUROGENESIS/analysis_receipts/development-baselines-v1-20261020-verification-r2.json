@@ -1,0 +1,8 @@
+{
+  "derived_artifact_count": 6,
+  "derived_artifact_map_sha256": "b2c69b644054ea90ca8ce3b5ee410674a433718ee5bb5d157a4114ba0b74d2ae",
+  "errors": [],
+  "input_artifact_map_sha256": "b39fa49ab15dea6072ecd8fe0de36bca2e4ac71b8b6a598db8075ccc277b4267",
+  "schema_version": "neurogenesis.analysis-verification.v1",
+  "status": "VALID"
+}

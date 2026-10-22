@@ -1,0 +1,30 @@
+{
+  "study_version": "development-v1",
+  "objective": "Calibrated experimental band-gap prediction from composition with an evaluated fixed-pool candidate-selection policy.",
+  "primary_property": "experimental band gap",
+  "target_unit": "eV",
+  "candidate_target_window_ev": [1.1, 1.6],
+  "candidate_budgets": [10, 25, 50, 100],
+  "random_policy_replicates": 64,
+  "official_folds": ["fold_0", "fold_1", "fold_2", "fold_3", "fold_4"],
+  "model_seeds": [7, 17, 29],
+  "permutation_seeds": [101, 211, 307],
+  "calibration_fraction": 0.2,
+  "calibration_seed": 731,
+  "interval_coverages": [0.5, 0.8, 0.9, 0.95],
+  "abstention_coverages": [1.0, 0.8, 0.6, 0.4, 0.2],
+  "ridge_alphas": [0.001, 0.01, 0.1, 1.0, 10.0, 100.0],
+  "extra_trees": {
+    "n_estimators_per_seed": 96,
+    "max_depth": 22,
+    "min_samples_leaf": 2,
+    "max_features": 0.7,
+    "n_jobs": 1
+  },
+  "element_holdouts": ["Li", "Zn", "Ga", "Se", "Te"],
+  "minimum_holdout_rows": 100,
+  "max_rss_mib": 512,
+  "require_no_pageout_increase": true,
+  "raw_data_contract": "configs/data_contract.json"
+}
+

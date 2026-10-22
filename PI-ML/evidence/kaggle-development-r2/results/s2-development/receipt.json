@@ -1,0 +1,11 @@
+{
+  "case_count": 1368,
+  "config_sha256": "0e261e00f06defd4633dd21848596a4855a977f852d1739debb4745755e3c78d",
+  "cpu_seconds": 22.709886423,
+  "disposition": "DEVELOPMENT_ONLY",
+  "max_rss_bytes": 91185152,
+  "metric_rows": 3888,
+  "phase": "development",
+  "status": "COMPLETE",
+  "wall_seconds": 22.72840942900001
+}

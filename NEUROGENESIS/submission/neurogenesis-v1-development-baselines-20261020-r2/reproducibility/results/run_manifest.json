@@ -1,0 +1,12 @@
+{
+  "attempt_count": 20,
+  "config_sha256": "afc3ac551932410f42d015503796827765fd83e1ad325a0fdff8e8ebe816ce7b",
+  "matrix_id": "shared-baselines-v1-20261019",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "protocol_sha256": "288d3d2ae15976a4e80e101ceb3312b9099de123dee4762797b2364e25fcce2b",
+  "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "schema_version": "neurogenesis.run-bundle.v1",
+  "serial_execution": true,
+  "source_sha256": "dd30603f4d35bdc662300b54d51e7f797bbed10d07dc0880eac7a33b3607c8d3",
+  "split": "development"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/kaggle/src/script.py", line 33, in <module>
+    command([sys.executable,'-m','venv',str(venv)])
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/src/script.py", line 29, in command
+    if completed.returncode:raise RuntimeError('command failed: '+str(args))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: command failed: ['/usr/bin/python3', '-m', 'venv', '/kaggle/working/clean-venv']

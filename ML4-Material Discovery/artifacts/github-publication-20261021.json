@@ -1,0 +1,19 @@
+{
+  "status": "PUBLISHED_PAYLOAD_REMOTE_REF_AND_TREE_VERIFIED",
+  "repository": "https://github.com/build-the-future-11/Atlas",
+  "private": true,
+  "branch": "codex/ml4materials-evidence-release-20261021",
+  "verified_payload_commit": "0083fe78e7e397f0aa38f47af84843c24df32795",
+  "verified_project_tree": "6908817fbcd5b8ddfac6e669da7a143e6b7c814d",
+  "pull_request": "https://github.com/build-the-future-11/Atlas/pull/54",
+  "pull_request_state": "DRAFT",
+  "merged_to_main": false,
+  "payload_files": 276,
+  "scope": "ML4-Material Discovery only",
+  "verification": [
+    "git ls-remote matches local payload commit",
+    "GitHub tree API matches local project tree",
+    "Every committed project file matches original workspace bytes"
+  ],
+  "note": "This receipt refers to the verified research payload commit; a subsequent documentation-only commit records this receipt."
+}

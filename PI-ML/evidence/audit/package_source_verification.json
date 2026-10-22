@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "frozen_source_files": 21,
+  "wheel_modules_match": true,
+  "wheel_sha256": "3aabf5399b01215cd1620d11e9fe4e2ec7e9053d80b5fa47b226fda32cacfa1b",
+  "scope": "Hosted tested wheel; accompanying hosted sdist is the pre-final-editorial snapshot. Full final repository and research supplement are authoritative for final documentation."
+}

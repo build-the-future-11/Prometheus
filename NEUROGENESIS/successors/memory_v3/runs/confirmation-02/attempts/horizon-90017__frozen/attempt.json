@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "frozen",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "frozen",
+  "task_id": "horizon-90017",
+  "task_sha256": "da4e394a1ce7694ac04e9bcefba0f5e55c3d425cb8ebed1d0533ca77d4b0cc05",
+  "utc": "2026-10-21T05:56:08.462437+00:00"
+}

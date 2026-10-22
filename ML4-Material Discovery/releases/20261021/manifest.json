@@ -1,0 +1,41 @@
+{
+  "scope": "Paper source and PDF, installable software, exact pre-execution Kaggle source; raw evidence and checkpoints are in runs/",
+  "arxiv_submission": false,
+  "files": [
+    {
+      "path": "releases/20261021/README.md",
+      "bytes": 1492,
+      "sha256": "af77f07f7892d54b6ef81d606da087c8370683f3d13ba6e11f3c7d228566377e"
+    },
+    {
+      "path": "releases/20261021/arxiv-source-20261021.tar.gz",
+      "bytes": 54042,
+      "sha256": "bd93093d6af7aa8e50facc036687e53ceef0a19f717540da913171648483243d"
+    },
+    {
+      "path": "releases/20261021/ml4_material_discovery-0.1.0-py3-none-any.whl",
+      "bytes": 50947,
+      "sha256": "e237c75f88f5d7d58dcd1f83f2c395fd3e0d02ae4e6200e5b4001f5b1399e369"
+    },
+    {
+      "path": "releases/20261021/ml4_material_discovery-0.1.0.tar.gz",
+      "bytes": 1857582,
+      "sha256": "08ce2735e757be26a2d91abff2392efcf4ce843b475f389ade165aac2cbae6ef"
+    },
+    {
+      "path": "releases/20261021/paper.pdf",
+      "bytes": 150668,
+      "sha256": "f3a77005b2655fe7ed283f7b2f3306f4085ce925681756abf1f525a7e8b9f558"
+    },
+    {
+      "path": "releases/20261021/robust-source.bundle",
+      "bytes": 5476381,
+      "sha256": "b54be749fc45aaa81625a5fea82e61c83f968db9e9798ee5e49416e6bd0787fb"
+    },
+    {
+      "path": "releases/20261021/robust-source.sha256",
+      "bytes": 87,
+      "sha256": "157c2b0dddc9155a71a664bb35eedcb1976a8fbae8a869a4911d29da7476f190"
+    }
+  ]
+}

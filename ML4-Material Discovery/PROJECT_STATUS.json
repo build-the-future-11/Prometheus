@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "canonical_state": "RESEARCH_STATE.json",
+  "canonical_status": "EXECUTED_DEVELOPMENT_MIXED_NOT_CONFIRMATORY",
+  "latest_verified_run": "kaggle-robust-aggregation-v3-r1",
+  "primary_aggregation_disposition": "SUPPORTED",
+  "independent_replication": false,
+  "prospective_validation": false,
+  "release_certified": false,
+  "hosted_tests_passed": 58,
+  "verified_metrics": {
+    "train_median": 0.9758574222995001,
+    "et_mean": 0.4738701831206095,
+    "hist_gradient_boosting": 0.5487799401837339,
+    "et_fractions_median": 0.5425499644321456,
+    "random_forest": 0.5199485932549666,
+    "ridge": 0.8150135315627152,
+    "et_median_96": 0.42686104812648873,
+    "et_median": 0.4256217642293089
+  },
+  "numerical_audit": "artifacts/numerical-audit-v3-20261021.json",
+  "bounded_computational_study_complete": true,
+  "software_release_verified": true,
+  "paper_verified": true,
+  "github_published": true,
+  "github_pull_request": "https://github.com/build-the-future-11/Atlas/pull/54",
+  "arxiv_submitted": false,
+  "release_tests_passed": 72,
+  "computational_reproduction": "EXACT_SAME_OPERATOR",
+  "reproduction_receipt": "artifacts/reproduction-comparison-20261021.json",
+  "software_version": "0.1.1"
+}

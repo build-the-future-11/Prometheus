@@ -1,0 +1,14 @@
+\begin{table}[htbp]\centering\small
+\caption{Measured outer-cell fit/prediction costs. Shared ExtraTrees timing includes calibration predictions; checkpoint I/O is outside that timer. Node counts are retained in the raw cost table.}
+\begin{tabular}{lrrr}
+\toprule
+Model operation & Cells & Mean seconds & Max seconds \\
+\midrule
+fractions only & 15 & 4.612 & 4.700 \\
+hist gradient boosting & 15 & 1.737 & 1.856 \\
+random forest & 15 & 10.239 & 10.680 \\
+ridge & 15 & 0.062 & 0.099 \\
+shared extra trees & 15 & 5.801 & 5.879 \\
+train median & 15 & 0.001 & 0.001 \\
+\bottomrule
+\end{tabular}\end{table}

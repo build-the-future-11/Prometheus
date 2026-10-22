@@ -1,0 +1,142 @@
+{
+  "algorithmic_relation": "analytic_residual is cyclic ridge backfitting/block coordinate minimization of the same strictly convex full-feature ridge objective; with positive regularization it converges to the unique global_ridge solution",
+  "by_split": {
+    "final": {
+      "analytic_terminal_mean_nmse": 0.7118253137315179,
+      "global_ridge_mean_nmse": 0.7113962620726481,
+      "max_analytic_kkt_residual": 2.8009288908239887,
+      "max_relative_parameter_distance": 0.0228870579168093,
+      "task_count": 5
+    },
+    "long_horizon": {
+      "analytic_terminal_mean_nmse": 0.8222659746462432,
+      "global_ridge_mean_nmse": 0.8219553427441266,
+      "max_analytic_kkt_residual": 0.37920762190253265,
+      "max_relative_parameter_distance": 0.00425432636151112,
+      "task_count": 5
+    }
+  },
+  "inputs": {
+    "config_sha256": "f8e5ae802fb39d6b10224a11178de9225f9358fa677f58deb6762887c2bf5b7b",
+    "results_sha256": "4e010f0df50bf636b76e7463d006e60c6b41f359f50eb1d9607832c671e861d3",
+    "selection_sha256": "fbae55e5f95ad13c5d931fc72b0c8fc6f75cf7b1de507ac477e5a0a82f78cc4c",
+    "tasks_sha256": "83c623f2ff806f6ca8578047e11885a56925fa556f9cd92fce95c3a75f463eb4"
+  },
+  "manifest_verification_status": "VERIFIED",
+  "numerical_equivalence_status": "FINITE_BUDGET_NOT_NUMERICALLY_EQUIVALENT",
+  "records": [
+    {
+      "analytic_kkt_residual_max_abs": 0.871158489834847,
+      "analytic_terminal_nmse": 0.7070249440308372,
+      "global_ridge_kkt_residual_max_abs": 1.258437798412615e-13,
+      "global_ridge_nmse": 0.7061816276310151,
+      "parameter_l2_distance_to_global_ridge": 0.029185469311837423,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.009464991078149196,
+      "split": "final",
+      "task_id": "final-s21_final_structural_misspecification-s2301"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 1.174521566106738,
+      "analytic_terminal_nmse": 0.6796111118816419,
+      "global_ridge_kkt_residual_max_abs": 8.688882946472631e-14,
+      "global_ridge_nmse": 0.6792796170212375,
+      "parameter_l2_distance_to_global_ridge": 0.02653874149055679,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.008887398772875922,
+      "split": "final",
+      "task_id": "final-s21_final_structural_misspecification-s2302"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 1.7691406142405337,
+      "analytic_terminal_nmse": 0.75540337456669,
+      "global_ridge_kkt_residual_max_abs": 2.5096591471651664e-13,
+      "global_ridge_nmse": 0.7588060323298363,
+      "parameter_l2_distance_to_global_ridge": 0.03765903834652198,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.012865278343379447,
+      "split": "final",
+      "task_id": "final-s21_final_structural_misspecification-s2303"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.6282382945533449,
+      "analytic_terminal_nmse": 0.6471611965060003,
+      "global_ridge_kkt_residual_max_abs": 1.3768153284132723e-13,
+      "global_ridge_nmse": 0.6463940241971424,
+      "parameter_l2_distance_to_global_ridge": 0.012458287960633387,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.004275478444869136,
+      "split": "final",
+      "task_id": "final-s21_final_structural_misspecification-s2304"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 2.8009288908239887,
+      "analytic_terminal_nmse": 0.76992594167242,
+      "global_ridge_kkt_residual_max_abs": 1.7197354651443675e-13,
+      "global_ridge_nmse": 0.766320009184009,
+      "parameter_l2_distance_to_global_ridge": 0.07985379937649617,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.0228870579168093,
+      "split": "final",
+      "task_id": "final-s21_final_structural_misspecification-s2305"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.007087611274111616,
+      "analytic_terminal_nmse": 0.8287959543989349,
+      "global_ridge_kkt_residual_max_abs": 2.0694557179012918e-13,
+      "global_ridge_nmse": 0.8287960804565788,
+      "parameter_l2_distance_to_global_ridge": 0.00031978555962396615,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.0001078800407820394,
+      "split": "long_horizon",
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2401"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.37920762190253265,
+      "analytic_terminal_nmse": 0.7513856660249986,
+      "global_ridge_kkt_residual_max_abs": 4.1511238890734603e-13,
+      "global_ridge_nmse": 0.7503949557274135,
+      "parameter_l2_distance_to_global_ridge": 0.019127190744037247,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.00425432636151112,
+      "split": "long_horizon",
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2402"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.2796383771564806,
+      "analytic_terminal_nmse": 0.8487028348187866,
+      "global_ridge_kkt_residual_max_abs": 2.520761377411418e-13,
+      "global_ridge_nmse": 0.8483142183850484,
+      "parameter_l2_distance_to_global_ridge": 0.01096358442659051,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.003291009140682317,
+      "split": "long_horizon",
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2403"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.17827368305622504,
+      "analytic_terminal_nmse": 0.8265403104405072,
+      "global_ridge_kkt_residual_max_abs": 1.6442402994698568e-13,
+      "global_ridge_nmse": 0.8263611566139297,
+      "parameter_l2_distance_to_global_ridge": 0.006430375368341512,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 0.0018335497863690396,
+      "split": "long_horizon",
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2404"
+    },
+    {
+      "analytic_kkt_residual_max_abs": 0.0035218787705130483,
+      "analytic_terminal_nmse": 0.8559051075479883,
+      "global_ridge_kkt_residual_max_abs": 1.3816725541460073e-13,
+      "global_ridge_nmse": 0.855910302537662,
+      "parameter_l2_distance_to_global_ridge": 0.00011118053275748577,
+      "regularization": 0.1,
+      "relative_parameter_distance_to_global_ridge": 3.0453856040171733e-05,
+      "split": "long_horizon",
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2405"
+    }
+  ],
+  "schema_version": "derived-learning.global-ridge-audit.v1",
+  "status": "VERIFIED",
+  "study_id": "DLML-S2.1-P0"
+}

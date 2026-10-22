@@ -1,0 +1,12 @@
+{
+  "canonical_composition_count": 4601,
+  "canonical_compositions_sha256": "2e4aac0f928486ef5ddd9f91ff509c63228d5d74df4b7242b6cdecaa963e3195",
+  "contract_version": 1,
+  "dataset_name": "matbench_expt_gap",
+  "dataset_version": "Matbench v0.1",
+  "identifiers_sha256": "e0aa5214f1879cf46142aaa25d626d1af16bd72461a083c72494026e84937f72",
+  "row_count": 4604,
+  "source_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+  "split_source_sha256": "94c17bc3dac32c67d33d69289927a5fec174497e74bbc47293e23d3d147e9a6d",
+  "upstream_metadata_sha256": "a637a1fe146b70f5f663fd480a2475362dc446741893c3048ec992219ba2a0b0"
+}

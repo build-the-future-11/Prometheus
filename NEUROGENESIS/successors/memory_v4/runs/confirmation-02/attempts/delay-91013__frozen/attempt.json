@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "frozen",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "frozen",
+  "task_id": "delay-91013",
+  "task_sha256": "8307ac0d248494f1c5e1e058d53ccce55b26ff59455418bfa225bc5f327cc432",
+  "utc": "2026-10-21T09:56:52.935045+00:00"
+}

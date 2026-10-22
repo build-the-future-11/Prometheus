@@ -1,0 +1,11 @@
+{
+  "case_count": 2880,
+  "config_sha256": "40f128626fc549dba1f480882abbc0d2b877905d2d13c0202c5be91e56225224",
+  "cpu_seconds": 175.59195125099998,
+  "disposition": "SUPPORTED",
+  "max_rss_bytes": 200523776,
+  "metric_rows": 17280,
+  "phase": "confirmatory",
+  "status": "COMPLETE",
+  "wall_seconds": 175.75347298999998
+}

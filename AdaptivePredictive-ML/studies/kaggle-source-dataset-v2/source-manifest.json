@@ -1,0 +1,32 @@
+{
+  "archive": "adaptive-predictive-source-v2.tar.gz",
+  "archive_sha256": "4548ba0486279fa45706aa61412ea4efb3bd90803996f38ab708fe7a10a53ebc",
+  "file_count": 23,
+  "files": {
+    ".gitignore": "f6ed2da39a91d67e255e1addf73ac4cdc8d0644545e943ab8731429722da9d3f",
+    "LICENSE": "87c078ab9d90a3044f359e6b563d4e6afea7aa060897cf4f21618687b3856796",
+    "README.md": "c673479ad86b5fad056342fc84d704170b93cfafa4e84050729ae00dcb13f716",
+    "RESEARCH_STATE.json": "d94c49a2664aefb088c2a0e19f0acf867d0317cb9c9e30206e3960fc0440c968",
+    "docs/DATA_CARD.md": "6fedf512fcf1b340d367cca2a0afe328087bd568222cc43c06ca834b8bbf60ad",
+    "docs/FLAW_AUDIT.md": "7a7b2bdb46e1bc18423e21b20bb4e743de42f54a3b66ef4fddc1e63b2dbe2df5",
+    "docs/LITERATURE_REVIEW.md": "514d58af955253644ce6abb4faa127c067426d22ef63e05876f43ef69a2c8a8e",
+    "docs/PROTOCOL_DRAFT.md": "31bf40203e88a63f175e8e9dd5e8ba7575c962869c685ec28c6000000b345bd3",
+    "docs/PROTOCOL_DRAFT_V0.3.md": "3983af9ca7402fd156f72e16d7543ef6123556aab44be78b317275681d656b65",
+    "protocols/development-v1.json": "01910ee378d996bef8782ccbdfbcbe2309698741f131f24f1d8b32e3b751d8ec",
+    "protocols/development-v2.json": "22892c1c467dec44e3b5c323cc5e730a8ceb04c7d711e787d5bad2b757ff6fe4",
+    "pyproject.toml": "123308195cf76d38a77b3ac06e2928c53e8ac7025345c4afd4c3abf20d3170af",
+    "src/adaptive_predictive/__init__.py": "8df0edcee4dd8ed28abfa4e4ce489ed8fa2e77f27a35bc0930b316aee608c0e5",
+    "src/adaptive_predictive/cli.py": "6eced321f8bee3bbb5650e34d475d449e7c40c9d8f85ac8c0a9c1b7b74f6169b",
+    "src/adaptive_predictive/data.py": "fd2b08e1eee93d48f0d9fbd0c3c880b72dc978fac29c8e535c829ccc00963b48",
+    "src/adaptive_predictive/experiment.py": "ba2ed578be2944ac92ab189aa1dcea87330836ea0aefded98abb43c88a95c265",
+    "src/adaptive_predictive/model.py": "707b44d36aa923537b0eba69d7c6f2c536e321b18cce38a054dcb1bda63b8ec6",
+    "src/adaptive_predictive/statistics.py": "38ddd0c745213b99f02f070d7d469fe158d3c92523290581cfcfdfb041184af1",
+    "tests/test_data.py": "6e26f1baef6b7369f95ccf1a088b8d0b94034a3484a115e3430d2b702fe5fd14",
+    "tests/test_experiment.py": "1b0440bdbbf06c076dc41fc1c3418f23ffa5cfc18273a92daa0a529a0176ff1f",
+    "tests/test_model.py": "d557a2ba3c3f4a9db729101fcc547357cf3f465addcf2e9b327b8812453ad18c",
+    "tests/test_statistics.py": "0d38089f897241ae93af9b22ee10ee32c9d6e09d838997f321b49c7cfa211793",
+    "uv.lock": "f2261478536762533bfb8752b64e78e6a6844ce9b64df49108b5bf5d3cc04904"
+  },
+  "schema_version": "adaptive-predictive.source-manifest.v1",
+  "secret_exclusion_policy": "An explicit source allowlist excludes credential files, local data, .git objects, virtual environments, caches, and result directories; external secret scanning is still required before upload."
+}

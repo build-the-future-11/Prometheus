@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "baseline",
+  "task_id": "novel-90016",
+  "task_sha256": "ca191e8ef438e49475bba97a33ea5c10909c7f889a28f6be6cbc8da19951058a",
+  "utc": "2026-10-21T05:49:42.836244+00:00"
+}

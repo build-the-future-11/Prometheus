@@ -1,0 +1,6 @@
+{
+  "phase": "confirmatory",
+  "source_sha256": "ed02e5dd2680f2ba0ab86af1ff8981477044566f91a38daa10c924e044dc35e5",
+  "source_files": 30,
+  "kernel": "ryangomez010/piml-s2-confirmatory-20261021-r1"
+}

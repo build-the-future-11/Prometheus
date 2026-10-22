@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": true
+  },
+  "method": "uniform_bank",
+  "task_id": "base-91010",
+  "task_sha256": "f54ff85a41328519c3be268d316bdf8fee64368b37eb9e328a4fa3855ae91e08",
+  "utc": "2026-10-21T09:54:52.040125+00:00"
+}

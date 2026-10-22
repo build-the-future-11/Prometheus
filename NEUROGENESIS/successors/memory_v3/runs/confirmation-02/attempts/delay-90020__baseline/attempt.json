@@ -1,0 +1,22 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "baseline",
+  "task_id": "delay-90020",
+  "task_sha256": "c4be660edcdd20b2387bf2c15817fb6946a8d8992d88504706ccd4d4ca1c8848",
+  "utc": "2026-10-21T05:50:59.648538+00:00"
+}

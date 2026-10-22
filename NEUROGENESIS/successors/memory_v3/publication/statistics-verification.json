@@ -1,0 +1,13 @@
+{
+  "status": "VALID",
+  "seeds": 20,
+  "primary_attempts_per_method": 100,
+  "relative_mse_change": -0.3601437434798927,
+  "ci95": [
+    -0.38044047972551753,
+    -0.33998994291717777
+  ],
+  "mean_update_reduction": 0.5855180369127517,
+  "maximum_difference": 1.1102230246251565e-16,
+  "external_replication": false
+}

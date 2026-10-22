@@ -1,0 +1,96 @@
+{
+  "rationale": {
+    "adam": {
+      "development_mean_nmse": {
+        "{\"learning_rate\":0.03}": 0.5945866516412363,
+        "{\"learning_rate\":0.08}": 0.40603947702785453
+      },
+      "meta_train_mean_nmse": {
+        "{\"learning_rate\":0.01}": 0.6569327610805601,
+        "{\"learning_rate\":0.03}": 0.2200284294014846,
+        "{\"learning_rate\":0.08}": 0.1077818661027592
+      },
+      "retained_after_meta_train": [
+        "{\"learning_rate\":0.08}",
+        "{\"learning_rate\":0.03}"
+      ],
+      "selected": {
+        "learning_rate": 0.08
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    },
+    "analytic_residual": {
+      "development_mean_nmse": {
+        "{\"regularization\":0.01}": 0.4139731016689073,
+        "{\"regularization\":0.1}": 0.4135952454673355
+      },
+      "meta_train_mean_nmse": {
+        "{\"regularization\":0.01}": 0.06171814939401119,
+        "{\"regularization\":0.1}": 0.06177189068573222,
+        "{\"regularization\":1.0}": 0.06247090196399494
+      },
+      "retained_after_meta_train": [
+        "{\"regularization\":0.01}",
+        "{\"regularization\":0.1}"
+      ],
+      "selected": {
+        "regularization": 0.1
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    },
+    "block_gradient_no_derivation": {
+      "development_mean_nmse": {
+        "{\"learning_rate\":0.02}": 0.8476432578557024,
+        "{\"learning_rate\":0.08}": 0.5316544960719819
+      },
+      "meta_train_mean_nmse": {
+        "{\"learning_rate\":0.005}": 0.9044295650532522,
+        "{\"learning_rate\":0.02}": 0.6597672019607792,
+        "{\"learning_rate\":0.08}": 0.23345798329825274
+      },
+      "retained_after_meta_train": [
+        "{\"learning_rate\":0.08}",
+        "{\"learning_rate\":0.02}"
+      ],
+      "selected": {
+        "learning_rate": 0.08
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    },
+    "block_jacobi_residual": {
+      "development_mean_nmse": {
+        "{\"regularization\":0.1}": 19.118745024280653,
+        "{\"regularization\":1.0}": 17.768505067390752
+      },
+      "meta_train_mean_nmse": {
+        "{\"regularization\":0.01}": 1.5268603319342546,
+        "{\"regularization\":0.1}": 1.5163571283986268,
+        "{\"regularization\":1.0}": 1.4159672598597257
+      },
+      "retained_after_meta_train": [
+        "{\"regularization\":1.0}",
+        "{\"regularization\":0.1}"
+      ],
+      "selected": {
+        "regularization": 1.0
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    }
+  },
+  "schema_version": "derived-learning.selection.v1",
+  "selected": {
+    "adam": {
+      "learning_rate": 0.08
+    },
+    "analytic_residual": {
+      "regularization": 0.1
+    },
+    "block_gradient_no_derivation": {
+      "learning_rate": 0.08
+    },
+    "block_jacobi_residual": {
+      "regularization": 1.0
+    }
+  },
+  "uses_final_split": false
+}

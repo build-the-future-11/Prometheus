@@ -1,0 +1,30 @@
+{
+  "version": "0.1.1",
+  "files": [
+    {
+      "path": "releases/20261021-hardening/README.md",
+      "bytes": 949,
+      "sha256": "8f585c09c48a35ddd9aad538a2cf164f5aae29af900e089fffedaf4172e7c8fb"
+    },
+    {
+      "path": "releases/20261021-hardening/arxiv-source-20261021-hardening.tar.gz",
+      "bytes": 57561,
+      "sha256": "4a0e07736d40163c93906521106d100da385b391e2a20f8b57fe88ed1f48faa8"
+    },
+    {
+      "path": "releases/20261021-hardening/ml4_material_discovery-0.1.1-py3-none-any.whl",
+      "bytes": 51212,
+      "sha256": "8f181dac9f95fe331b85baead3d525a782512272eeb718724b31c0dc947e85e9"
+    },
+    {
+      "path": "releases/20261021-hardening/ml4_material_discovery-0.1.1.tar.gz",
+      "bytes": 1875976,
+      "sha256": "b6d4ac7c07e412ad2bce50af676b18d83cca56800461bdbc7e0ce8ee8b4db032"
+    },
+    {
+      "path": "releases/20261021-hardening/paper.pdf",
+      "bytes": 153987,
+      "sha256": "81ad56ccaecd9ed2463a33e0f52ad639bce6bcd9c7c59c2a1126369f2590654d"
+    }
+  ]
+}

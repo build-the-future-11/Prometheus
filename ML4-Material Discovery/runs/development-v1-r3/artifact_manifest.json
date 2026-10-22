@@ -1,0 +1,17 @@
+{
+  "files": {
+    "events.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "failures.json": {
+      "bytes": 629,
+      "sha256": "f96f0d1db581b7d23ade9e573c215fd8bc2e61b9ece65a7b7ba179a9bfcec719"
+    },
+    "receipt.json": {
+      "bytes": 783,
+      "sha256": "9d47078faae4549c9a94273164b56db84160390056dfa829ed86183e81ecef18"
+    }
+  },
+  "schema_version": 1
+}

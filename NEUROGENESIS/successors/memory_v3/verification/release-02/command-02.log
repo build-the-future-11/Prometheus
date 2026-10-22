@@ -1,0 +1,10 @@
+{
+  "schema_version": "neurogenesis.bundle-verification.v1",
+  "status": "VALID",
+  "errors": [],
+  "verified_attempts": 20,
+  "verified_trace_rows": 9600,
+  "protected_evaluation_runs": 0,
+  "artifact_count": 84,
+  "artifact_map_sha256": "f353206d36fd03ec596a2b4006ef181715c524c43ec13e53d07e2ec28dc089d6"
+}

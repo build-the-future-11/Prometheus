@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-21",
+  "scope": "APPROVED_MEMORY_WEIGHT",
+  "decision_maker": "Codex acting under delegated research-design instruction",
+  "authority_sha256": "061905155868890da7b221c95527dfe0e927baf89284138953108c75ae8089e1",
+  "authority_excerpt": "Generate multiple possible mechanisms and approaches. Compare multiple implementations of the underlying abstraction and choose the strongest testable version.",
+  "rationale": "Bounded predictor bank has a finite auditable implementation and directly tests the v1 recurrence failure. Learned-rule meta-training adds unbounded architecture and meta-data choices unsupported by an original charter.",
+  "novelty_boundary": "Expert reuse and gradient skipping are established; this is a narrow empirical study, not a claimed foundational invention.",
+  "protected_predecessor_evaluation": "unadmitted; unchanged"
+}

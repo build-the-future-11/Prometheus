@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "frozen",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "frozen",
+  "task_id": "novel-91016",
+  "task_sha256": "f0216172237de363d23a6b74b0152b2ef884c62c1399876f61b22e0f1847d960",
+  "utc": "2026-10-21T09:55:59.308197+00:00"
+}

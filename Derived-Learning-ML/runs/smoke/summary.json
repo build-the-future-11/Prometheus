@@ -1,0 +1,129 @@
+{
+  "by_split": {
+    "final": {
+      "common_budget_by_task": {
+        "final-heldout_high_correlation-s301": 21216
+      },
+      "interpretation": "NOT_SUPPORTED_ON_ADMITTED_MATRIX",
+      "methods": {
+        "adam": {
+          "equal_resource_mean_nmse": 0.2481852942275736,
+          "mean_terminal_work_units": 21216.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.2481852942275736,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 0
+        },
+        "analytic_residual": {
+          "equal_resource_mean_nmse": 0.007434559765687423,
+          "mean_terminal_work_units": 21760.0,
+          "median_work_units_to_threshold": 5440,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.005133249444121256,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 1
+        },
+        "block_gradient_no_derivation": {
+          "equal_resource_mean_nmse": 0.6342031468661848,
+          "mean_terminal_work_units": 23184.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.5850521095579758,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 0
+        },
+        "fixed_normalized_lms": {
+          "equal_resource_mean_nmse": 0.16258013029732052,
+          "mean_terminal_work_units": 21472.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.14318968310585736,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 0
+        }
+      },
+      "paired_primary_minus_adam_equal_resource_nmse": [
+        -0.2407507344618862
+      ],
+      "paired_primary_win_count": 1,
+      "paired_task_count": 1,
+      "quality_threshold_nmse": 0.08,
+      "relative_equal_resource_improvement_vs_adam": 0.97004431794065,
+      "schema_version": "derived-learning.summary.v1",
+      "success_criteria": {
+        "efficiency_pass": false,
+        "overall_pass": false,
+        "quality_pass": true
+      }
+    },
+    "long_horizon": {
+      "common_budget_by_task": {
+        "long_horizon-heldout_high_correlation_long-s401": 40800
+      },
+      "interpretation": "SUPPORTED_ON_ADMITTED_MATRIX",
+      "methods": {
+        "adam": {
+          "equal_resource_mean_nmse": 0.020231616802425436,
+          "mean_terminal_work_units": 40800.0,
+          "median_work_units_to_threshold": 26112,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.020231616802425436,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 1
+        },
+        "analytic_residual": {
+          "equal_resource_mean_nmse": 0.00911362598467805,
+          "mean_terminal_work_units": 43520.0,
+          "median_work_units_to_threshold": 10880,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.008128662316929556,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 1
+        },
+        "block_gradient_no_derivation": {
+          "equal_resource_mean_nmse": 0.6259359419520455,
+          "mean_terminal_work_units": 42504.0,
+          "median_work_units_to_threshold": null,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.591940798460915,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 0
+        },
+        "fixed_normalized_lms": {
+          "equal_resource_mean_nmse": 0.06443923824309096,
+          "mean_terminal_work_units": 40992.0,
+          "median_work_units_to_threshold": 37088,
+          "tasks_failed": 0,
+          "tasks_succeeded": 1,
+          "terminal_mean_nmse": 0.05772646451390677,
+          "terminal_population_std_nmse": 0.0,
+          "threshold_reached_count": 1
+        }
+      },
+      "paired_primary_minus_adam_equal_resource_nmse": [
+        -0.011117990817747387
+      ],
+      "paired_primary_win_count": 1,
+      "paired_task_count": 1,
+      "quality_threshold_nmse": 0.08,
+      "relative_equal_resource_improvement_vs_adam": 0.5495354586003489,
+      "schema_version": "derived-learning.summary.v1",
+      "success_criteria": {
+        "efficiency_pass": true,
+        "overall_pass": true,
+        "quality_pass": true
+      }
+    }
+  },
+  "primary_split": "final",
+  "schema_version": "derived-learning.multi-split-summary.v1",
+  "study_id": "DLML-S1-SMOKE"
+}

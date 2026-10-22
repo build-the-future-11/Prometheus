@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "python": "3.12.14",
+  "environment": ".venv-verify",
+  "installed_wheel": "dist/ml4_material_discovery-0.1.0-py3-none-any.whl",
+  "dependencies": "requirements-hosted.txt plus resolved transitive versions",
+  "checkpoint": "runs/kaggle-robust-aggregation-v3-r1/models/repeat_0_fold_0.joblib",
+  "formulas": [
+    "GaAs",
+    "ZnO",
+    "OZn"
+  ],
+  "point_predictions_ev": [
+    0.44999998807907104,
+    3.2899999618530273,
+    3.2899999618530273
+  ],
+  "equivalent_formula_prediction_and_interval": "EXACT",
+  "scope": "clean wheel installation and inference; not independent training reproduction",
+  "wheel_sha256": "e237c75f88f5d7d58dcd1f83f2c395fd3e0d02ae4e6200e5b4001f5b1399e369",
+  "verified_source_module": "/Volumes/PRO-BLADE/Atlas/ML4-Material Discovery/.venv-verify/lib/python3.12/site-packages/ml4materials/robust.py",
+  "results": [
+    {
+      "composition": "GaAs",
+      "prediction_ev": 0.44999998807907104,
+      "lower_90_ev": -0.3799978364778619,
+      "upper_90_ev": 1.279997812636004,
+      "unseen_elements": [],
+      "scope": "single development fold; not a discovery or OOD validation"
+    },
+    {
+      "composition": "ZnO",
+      "prediction_ev": 3.2899999618530273,
+      "lower_90_ev": 1.2433337193901166,
+      "upper_90_ev": 5.336666204315938,
+      "unseen_elements": [],
+      "scope": "single development fold; not a discovery or OOD validation"
+    },
+    {
+      "composition": "OZn",
+      "prediction_ev": 3.2899999618530273,
+      "lower_90_ev": 1.2433337193901166,
+      "upper_90_ev": 5.336666204315938,
+      "unseen_elements": [],
+      "scope": "single development fold; not a discovery or OOD validation"
+    }
+  ],
+  "pyplot_loaded": false,
+  "post_freeze_engineering_change": "lazy plotting imports only; exact point and equivalent-formula interval checks pass"
+}

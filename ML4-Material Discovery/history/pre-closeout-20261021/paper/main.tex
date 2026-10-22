@@ -1,0 +1,228 @@
+\documentclass[11pt]{article}
+\usepackage{arxiv}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\graphicspath{{figures/}}
+\fancyhead[L]{ML4-Material Discovery}
+\fancyhead[R]{\thepage}
+
+\title{Uncertainty-Aware Composition Models for Retrospective Experimental Band-Gap Candidate Ranking}
+\author{ML4-Material Discovery contributors}
+\date{Evidence-locked development report: 20 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study a bounded materials-informatics question: whether composition-only models can predict experimental inorganic band gaps and improve retrospective selection of compositions in a prespecified 1.1--1.6~eV target window. The study uses all 4,604 rows of the Matbench v0.1 \texttt{matbench\_expt\_gap} task, exact official five-fold splits, a fixed 128-dimensional composition representation, train-median and ridge baselines, and a three-seed ExtraTrees ensemble with group-isolated normalized split-conformal calibration. A hash-bound Kaggle execution completed under a 512~MiB/no-pageout contract. The ensemble achieved 0.481~eV mean absolute error (MAE), compared with 0.813~eV for ridge and 0.976~eV for the fold median. At budget 50, calibrated target-window probability selected 38 target-window compositions (precision 0.760), versus 15 for greedy point ranking and a mean 3.58 over 64 random rankings. Nominal 90\% intervals attained 0.889 coverage with 1.604~eV mean width. Element-holdout results were mixed: the ensemble beat ridge for Li, Zn, Ga, and Te MAE, but not Se, and 90\% coverage fell to 0.525 for Se. A separately frozen direct-quantile successor was negative: its point prediction collapsed to the fold median (MAE 0.976~eV) and its 90\% intervals over-covered at 0.939 with 2.749~eV width. The result therefore supports in-distribution development utility and retrospective ranking, while rejecting a broad generalization or discovery claim. No ranked composition is evidence of stability, synthesizability, safety, novelty, or device performance.
+\end{abstract}
+
+\section{Introduction}
+Experimental band gaps are scientifically and technologically important, but composition alone does not determine a material's crystal structure, polymorph, defect population, measurement conditions, or sample quality. A composition-only model is therefore useful only if its decision boundary and uncertainty are evaluated explicitly. Matbench supplies versioned tasks and common validation splits for materials-property benchmarking \cite{dunn2020matbench}; the experimental-gap task traces to the compilation and modeling work of Zhuo, Mansouri Tehrani, and Brgoch \cite{zhuo2018bandgaps}.
+
+The central question in this work is not whether another unrestricted predictor can be made to score well. It is:
+\begin{quote}
+Can a fixed, composition-only ensemble provide lower out-of-fold error than simple baselines and a useful uncertainty-derived ranking for a fixed historical target-window decision, while exposing where its uncertainty and extrapolation fail?
+\end{quote}
+The contribution is an evidence-bound evaluation connecting each claim to pinned inputs, row-level out-of-fold predictions, uncertainty consequences, candidate ledgers, retained failures, and artifact hashes. It is not a state-of-the-art claim and not prospective materials discovery.
+
+\section{Related work and novelty boundary}
+Matbench established standardized nested-cross-validation tasks spanning composition and structure inputs \cite{dunn2020matbench}. Learned composition representations such as Roost \cite{goodall2020roost} and attention-based CrabNet \cite{wang2021crabnet} can learn element interactions without crystal structures. Those architectures are stronger representation-learning comparators than the hand-built model studied here; consequently, the present ExtraTrees estimator is not claimed as architecturally novel.
+
+Extremely randomized trees provide a computationally simple nonlinear ensemble \cite{geurts2006extratrees}. Ensemble dispersion is often used as a working uncertainty signal, but raw dispersion is not automatically a calibrated predictive distribution. Split conformal inference provides marginal finite-sample coverage under exchangeability when calibration and evaluation are correctly separated \cite{lei2018conformal}. Direct quantile models can adapt interval widths, and conformalized quantile regression supplies a route to calibrated adaptive intervals \cite{romano2019cqr}. Our separately versioned direct-quantile study deliberately tests the unconformalized precursor and records its negative outcome.
+
+The narrow novelty boundary is therefore operational: canonical-composition duplicate auditing, group-isolated calibration inside official folds, uncertainty-linked abstention, fixed-pool target-window ranking, and an immutable claim-to-artifact chain are evaluated together. Any claim that the underlying tree model or probability score is a new learning algorithm would exceed the evidence.
+
+\section{Problem formulation}
+Let a formula $c_i$ contain elements $e\in\mathcal{E}$ with normalized stoichiometric fractions $f_{ie}$, and let $y_i\in\mathbb{R}_{\ge 0}$ be its measured experimental gap in eV. The frozen dataset is
+\[
+\mathcal{D}=\{(c_i,y_i)\}_{i=1}^{4604}.
+\]
+The prediction task estimates $\hat y(c)$. The primary endpoint is pooled official-split out-of-fold MAE,
+\[
+\mathrm{MAE}=\frac{1}{n}\sum_{i=1}^n |y_i-\hat y_i|.
+\]
+Secondary endpoints are RMSE, $R^2$, Spearman correlation, interval coverage and width, error under uncertainty-based abstention, and prespecified element holdouts.
+
+The decision task ranks the fixed canonical-composition pool for the target window $W=[1.1,1.6]$~eV. For budget $b$, precision is
+\[
+\mathrm{Precision@}b=\frac{1}{b}\sum_{i\in S_b}\mathbf{1}\{y_i\in W\},
+\]
+where $S_b$ is selected without access to evaluation labels. Labels are revealed only to the retrospective evaluator.
+
+\section{Data contract and integrity audit}
+The input artifact contains 4,604 rows and 4,601 locally canonicalized compositions. Dataset, official split, and upstream metadata SHA-256 values are, respectively,
+\begin{center}
+\small\ttfamily
+783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2\\
+94c17bc3dac32c67d33d69289927a5fec174497e74bbc47293e23d3d147e9a6d\\
+a637a1fe146b70f5f663fd480a2475362dc446741893c3048ec992219ba2a0b0.
+\end{center}
+The audit found three equivalent-composition pairs with target spans 0.58, 0.64, and 2.30~eV. Two canonical groups cross official train/test boundaries in folds 0--3. Exact official rows remain unchanged for benchmark comparability, but local calibration and element-holdout splits isolate canonical groups. Candidate ranking collapses each group while preserving every source row and target span. Thus official metrics are benchmark-comparable but not strictly canonical-composition-leakage-free.
+
+\section{Methods}
+\subsection{Representation}
+Each composition is parsed into 118 element fractions in atomic-number order and ten invariant global features: element count; fraction entropy, minimum, maximum, and $\ell_2$ norm; and weighted atomic-number mean, standard deviation, minimum, maximum, and range. Hence $x(c)\in\mathbb{R}^{128}$. Equivalent element order, parenthetical expansion, and uniform formula scaling are required to produce identical features. Train element counts are fitted only on the applicable training partition and are used for novelty diagnostics, not target construction.
+
+\subsection{Models}
+The trivial predictor is the outer-training median. The linear baseline is a standardized ridge model with $\alpha\in\{10^{-3},10^{-2},10^{-1},1,10,100\}$ selected inside outer training. The proposed predictor averages three ExtraTrees regressors with seeds 7, 17, and 29. Each contains 96 trees, maximum depth 22, minimum leaf size 2, 70\% feature subsampling, no bootstrap, and one CPU worker. No hyperparameter was changed after observing a result.
+
+\subsection{Normalized split-conformal intervals}
+Within each outer-training fold, a label-blind SHA-256 partition assigns canonical groups to an approximately 80/20 proper-training/calibration split using seed 731. Let $s(x)$ be the standard deviation of all 288 tree predictions. The floor $s_0$ is the fifth percentile of positive calibration dispersions. A robust scale $a$ is fitted from calibration residual ratios, and normalized scores are
+\[
+r_j=\frac{|y_j-\hat y_j|}{a\max\{s(x_j),s_0\}}.
+\]
+For nominal coverage $q$, the finite-sample higher quantile $Q_q$ of calibration scores yields
+\[
+C_q(x)=\left[\hat y(x)-Q_q a\max\{s(x),s_0\},
+\hat y(x)+Q_q a\max\{s(x),s_0\}\right].
+\]
+Coverage is marginal under the calibration assumptions; it is not guaranteed conditionally or under element shift.
+
+\subsection{Ranking policies}
+Four policies use only out-of-fold predictions and uncertainty: random selection (64 fixed replicates), greedy distance to the window center, maximum uncertainty, and a Gaussian working score
+\[
+p_W(x)=\Phi\!\left(\frac{1.6-\hat y(x)}{\sigma(x)}\right)-
+\Phi\!\left(\frac{1.1-\hat y(x)}{\sigma(x)}\right),
+\]
+where $\sigma(x)=a\max\{s(x),s_0\}$. This score orders candidates; it is not asserted to be a true conditional probability.
+
+\subsection{Frozen execution and statistical audit}
+The official five-fold split, features, models, seeds, endpoints, 512~MiB RSS ceiling, and no-rising-pageout rule were frozen before successful execution. Four earlier macOS attempts were retained as resource failures. Kaggle run \texttt{kaggle-development-v1-r1} completed without pageouts. A post-hoc exploratory audit bootstrapped 4,601 canonical compositions 20,000 times. Because this audit was specified after observing development results, its intervals do not convert the experiment into confirmatory evidence.
+
+\section{Results}
+\subsection{Official-split prediction}
+\begin{table}[H]
+\centering
+\caption{Pooled out-of-fold prediction metrics from the verified primary run.}
+\begin{tabular}{lrrrr}
+\toprule
+Model & MAE (eV) & RMSE (eV) & $R^2$ & Spearman \\
+\midrule
+ExtraTrees ensemble & 0.481 & 0.906 & 0.607 & 0.772 \\
+Ridge baseline & 0.813 & 1.161 & 0.354 & 0.647 \\
+Train median & 0.976 & 1.744 & $-0.456$ & 0.000 \\
+\bottomrule
+\end{tabular}
+\label{tab:prediction}
+\end{table}
+
+The exploratory canonical-group bootstrap estimates a 0.332~eV MAE reduction versus ridge (95\% percentile interval 0.313--0.351~eV) and a 40.8\% relative reduction. The ensemble won in each official fold. Three label permutations on fold 0 produced mean MAE 1.119~eV versus 0.484~eV unpermuted, and all five serialized checkpoints reproduced predictions bit-for-bit.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\linewidth]{parity.png}
+\caption{Out-of-fold prediction versus experiment. The large mass at zero gap and high-gap underprediction show why a single MAE is insufficient. Source hash is recorded in the run artifact manifest.}
+\label{fig:parity}
+\end{figure}
+
+\subsection{Uncertainty and abstention}
+Observed coverages at nominal 50, 80, 90, and 95\% were 0.505, 0.794, 0.889, and 0.948. The 90\% interval mean width was 1.604~eV. The canonical-group bootstrap interval for 90\% coverage was 0.880--0.898, indicating mild overall under-coverage rather than exact calibration.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\linewidth]{calibration.png}
+\caption{Marginal split-conformal coverage on official out-of-fold rows.}
+\label{fig:calibration}
+\end{figure}
+
+Retaining the lowest-uncertainty 80, 60, 40, and 20\% yielded MAE 0.283, 0.176, 0.090, and 0.025~eV. This strong risk--coverage pattern is partly explained by the dataset's large, easily recognized zero-gap mode and must not be generalized to arbitrary nonmetal candidates.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\linewidth]{abstention.png}
+\caption{Out-of-fold MAE after uncertainty-based abstention.}
+\label{fig:abstention}
+\end{figure}
+
+\subsection{Fixed-pool ranking}
+The pool contains 4,601 canonical compositions, of which 308 (6.69\%) fall in the target window. Table~\ref{tab:ranking} reports the primary budget. Under simple random selection, the exact hypergeometric probability of at least 38 hits in 50 draws is $1.53\times10^{-35}$; this post-hoc tail calculation describes the retained pool and is not a prospective success probability.
+
+\begin{table}[H]
+\centering
+\caption{Retrospective ranking at budget 50. Source: \texttt{tables/ranking.csv}.}
+\begin{tabular}{lrrr}
+\toprule
+Policy & Hits & Precision & Enrichment vs. pool \\
+\midrule
+Calibrated target probability & 38 & 0.760 & 11.35$\times$ \\
+Greedy point prediction & 15 & 0.300 & 4.48$\times$ \\
+Random (64 replicates, mean) & 3.58 & 0.072 & 1.07$\times$ \\
+Maximum uncertainty & 0 & 0.000 & 0.00$\times$ \\
+\bottomrule
+\end{tabular}
+\label{tab:ranking}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\linewidth]{ranking.png}
+\caption{Precision across prespecified labeling budgets. Maximum uncertainty seeks ignorance, not target-window membership, and is therefore an intentionally distinct control.}
+\label{fig:ranking}
+\end{figure}
+
+\subsection{Element-holdout generalization}
+\begin{table}[H]
+\centering
+\caption{Custom element-holdout results; these are not official Matbench leaderboard results.}
+\begin{tabular}{lrrrr}
+\toprule
+Held-out element & Test $n$ & Ensemble MAE & Ridge MAE & 90\% coverage \\
+\midrule
+Li & 346 & 1.104 & 1.429 & 0.919 \\
+Zn & 213 & 0.499 & 0.763 & 0.817 \\
+Ga & 371 & 0.605 & 0.651 & 0.779 \\
+Se & 676 & 0.974 & 0.879 & 0.525 \\
+Te & 418 & 0.678 & 0.702 & 0.679 \\
+\bottomrule
+\end{tabular}
+\label{tab:holdout}
+\end{table}
+
+The broad generalization hypothesis is not supported. Although the ensemble improves MAE for four of five held-out elements, it loses to ridge on Se and interval coverage deteriorates for Zn, Ga, Se, and Te. This is a \emph{mixed} result, not a basis for narrowing the confirmatory claim after the fact.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\linewidth]{subgroups.png}
+\caption{Official-split subgroup MAE. Oxygen-containing formulas are substantially harder than non-oxygen formulas.}
+\label{fig:subgroups}
+\end{figure}
+
+\subsection{Negative direct-quantile successor}
+The separately frozen \texttt{quantile-composition-v2} study used gradient-boosted median and direct conditional-quantile models. Its point predictor returned fold-median behavior: pooled MAE 0.976~eV, RMSE 1.744~eV, $R^2=-0.456$, and Spearman 0. The direct 90\% interval achieved 0.939 coverage with 2.749~eV width and 3.491~eV mean interval score. This successor therefore fails its point-prediction objective and is less sharp than the v1 split-conformal interval. The negative result is retained under run \texttt{kaggle-quantile-composition-v2-r1}; no post-result hyperparameter rescue was attempted.
+
+\section{Failure analysis and threats to validity}
+\begin{enumerate}
+\item \textbf{Benchmark leakage.} Canonical duplicates cross official folds. The effect is small in row count but invalidates a claim of strict composition isolation.
+\item \textbf{Retrospective selection.} Candidate labels already exist and are used after ordering. Ranking utility is historical, not prospective discovery.
+\item \textbf{Fold-specific scores.} Candidate scores combine predictions from separately fitted folds and calibrators; their common scale is empirically useful but not guaranteed conditionally comparable.
+\item \textbf{Gaussian working model.} The target-window score treats calibrated dispersion as Gaussian. Conformal marginal coverage does not validate that density assumption.
+\item \textbf{Composition ambiguity.} Formula features cannot distinguish phases, structures, polymorphs, defects, or conditions.
+\item \textbf{OOD miscalibration.} Element holdouts directly demonstrate that marginal official-split calibration does not transfer reliably.
+\item \textbf{Post-hoc inference.} Bootstrap intervals and the hypergeometric tail were computed after development results and are descriptive only.
+\item \textbf{Baseline scope.} Ridge and median are necessary controls but not the strongest modern composition learners. Roost, CrabNet, and comparable tuned baselines remain required for any state-of-the-art claim.
+\item \textbf{No independent replication.} The local verifier checked the downloaded Kaggle artifact, but this is not an independent implementation or independently operated reproduction.
+\end{enumerate}
+
+\section{Reproducibility and evidence chain}
+The successful primary run used Python 3.13.15, NumPy 2.1.3, scikit-learn 1.6.1, Matplotlib 3.10.0, and joblib 1.6.0 on Kaggle Linux. It completed in 59.7~s, peaked at 387.6~MiB RSS, and recorded zero pageouts. The archived run SHA-256 is
+\begin{center}
+\small\ttfamily 2711de841291c1361bb8b383df55f17f01ad64b3182466779677173294bba421.
+\end{center}
+The quantile successor archive SHA-256 is
+\begin{center}
+\small\ttfamily 7317f446e715811e953828b57b74d88637634f66daa5edb3479b0e9b7de430d6.
+\end{center}
+Both downloaded archives match their hosted checksums and pass local artifact-manifest verification. The primary numerical-paper gate passes only for the complete v1 run. Every figure in this paper is copied from that verified run and retains the corresponding manifest hash.
+
+\section{Conclusion}
+The frozen development study yields a solid positive in-distribution result: the composition-only ExtraTrees ensemble materially improves over ridge, and its calibrated target-window score produces strong retrospective enrichment. The same evidence also rules out a broad success claim. Marginal coverage is slightly low, several element shifts are badly miscalibrated, Se extrapolation loses to ridge, and the direct-quantile successor is negative. The defensible terminal disposition is therefore \textbf{MIXED}: positive development evidence for official-split prediction and fixed-pool ranking, negative evidence for the tested direct-quantile successor, and insufficient evidence for prospective discovery, universal generalization, or release as a validated materials model.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

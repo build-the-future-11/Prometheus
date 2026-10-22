@@ -1,0 +1,26 @@
+{
+  "attempt_id": "dev-delay-conflict-0211__sgd_lr_0p01",
+  "policy": {
+    "hyperparameters": {
+      "gradient_clip": 10.0,
+      "learning_rate": 0.01
+    },
+    "kind": "standard_sgd",
+    "name": "sgd_lr_0p01"
+  },
+  "status": "STARTED",
+  "task": {
+    "feature_dim": 8,
+    "identity": {
+      "family": "delay_distractor_conflict_return",
+      "seed": 211,
+      "split": "development",
+      "task_id": "dev-delay-conflict-0211"
+    },
+    "informative_dim": 4,
+    "label_delay": 4,
+    "noise_std": 0.05,
+    "regime_length": 120,
+    "steps": 480
+  }
+}

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurogenesis-research"
+version = "0.1.0"
+description = "Evidence-bound benchmark infrastructure for an unresolved adaptive-learning mechanism"
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "NEUROGENESIS research owners"}]
+dependencies = []
+
+[project.scripts]
+neurogenesis = "neurogenesis.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["neurogenesis*"]
+

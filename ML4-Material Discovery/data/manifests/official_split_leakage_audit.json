@@ -1,0 +1,35 @@
+[
+  {
+    "canonical_composition_overlap_count": 1,
+    "fold": "fold_0",
+    "overlapping_canonical_compositions": [
+      "Se:1|Te:1"
+    ]
+  },
+  {
+    "canonical_composition_overlap_count": 1,
+    "fold": "fold_1",
+    "overlapping_canonical_compositions": [
+      "Se:1|Te:1"
+    ]
+  },
+  {
+    "canonical_composition_overlap_count": 1,
+    "fold": "fold_2",
+    "overlapping_canonical_compositions": [
+      "S:5|Cu:9"
+    ]
+  },
+  {
+    "canonical_composition_overlap_count": 1,
+    "fold": "fold_3",
+    "overlapping_canonical_compositions": [
+      "S:5|Cu:9"
+    ]
+  },
+  {
+    "canonical_composition_overlap_count": 0,
+    "fold": "fold_4",
+    "overlapping_canonical_compositions": []
+  }
+]

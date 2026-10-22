@@ -1,0 +1,14 @@
+{
+  "id": "ryangomez010/piml-paper-release-20261021-r1",
+  "title": "piml-paper-release-20261021-r1",
+  "code_file": "render_job.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}

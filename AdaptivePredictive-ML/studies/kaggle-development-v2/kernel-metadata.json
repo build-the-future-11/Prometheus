@@ -1,0 +1,18 @@
+{
+  "id": "ryangomez010/adaptive-predictive-development-v2-20261021",
+  "title": "Adaptive Predictive development v2 20261021",
+  "code_file": "adaptive-predictive-development-v2-20261021.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": ["time-series", "concept-drift", "online-learning"],
+  "dataset_sources": [
+    "robikscube/hourly-energy-consumption",
+    "ryangomez010/adaptive-predictive-source-v2-20261021"
+  ],
+  "kernel_sources": [],
+  "competition_sources": []
+}

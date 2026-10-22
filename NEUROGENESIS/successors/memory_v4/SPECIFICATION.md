@@ -1,0 +1,27 @@
+# Persistent-ridge memory v4
+
+This is a new objective following the closed v3 study, not a correction to its frozen results. One mechanism, eight development configurations, and one protected campaign are permitted. No positive outcome is guaranteed. Failed attempts remain in the denominator.
+
+## Active estimator and numerical claim
+
+Append a constant 1 to each feature vector; the intercept is penalized. For each accepted label n, with lambda in (0,1] and rho=1, set A_n=lambda A_(n-1)+x_n x_n^T+(1-lambda)rho I and b_n=lambda b_(n-1)+x_n y_n, starting A_0=rho I, b_0=0. Cholesky and triangular solves produce w_n=A_n^-1 b_n. The periodic control updates A,b on every delivered label but solves every third label. Memory-gated skips do not advance this accepted-label clock.
+
+Induction gives A_n=rho I+sum_i lambda^(n-i)x_i x_i^T. It follows that A_n >= rho I in exact arithmetic, even without persistent excitation. The unique minimizer is the penalized exponentially weighted squared-error solution. If ||x_i||<=B and lambda<1, lambda_max(A_n)<=rho+B^2/(1-lambda), and ||w_n||<=BY/[rho(1-lambda)] when |y_i|<=Y. These conditional bounds do not imply predictive accuracy, distribution-free safety, or perfect floating-point behavior. Gaussian synthetic inputs are not globally bounded. Every computed solve checks positive Cholesky pivots and a scaled backward residual <=1e-10. A failed check is a failed attempt, never silently clipped.
+
+## Memory and feedback
+
+The v3 bank/gate is unchanged: save active weights every 32 accepted updates; FIFO capacity 4 or 8; score historical predictions only when their delayed targets arrive. An expert needs 8 scored predictions and exponential loss <= the absolute ceiling (.02 or .1) and <.9 times active loss to qualify. Select the qualifying expert with smallest loss and then ID. Alpha is .2 or .5. On an accepted memory gate, skip the active sufficient-statistics and weight update. Prediction can use a frozen expert; there is no gradient through the bank. No regime ID, boundary, future label, RNG, or evaluation split reaches the policy. Pending tickets include only predictions made when that example arrived. State continues across temporal boundaries.
+
+## Evaluation and decision
+
+Synthetic generation, label timing and descriptive switch metrics are implemented in engine.py. Development: five fresh seeds, base/novel conditions, 22 configurations, 220 attempts. Select candidate and baseline separately by equal-weight mean MSE, lexical tie break. Freeze all source, data identity, configuration and protocol before confirmation. Confirmation: 20 fresh seeds, seven conditions, ten methods, 1400 attempts. Primary seed-level paired effects average MSE across base, delay, noise, distractor and dimension before taking candidate/baseline minus one. Fixed 10,000 seed-bootstrap draws produce a percentile interval. Support requires upper limit <=.02 and mean weight-update reduction >=.20, with no failures. Novel and longer-horizon conditions are descriptive stress tests. Ablations: all-update, one-slot bank, uniform bank and no bank. Controls: selected baseline, replay, kNN, frozen and periodic. Weight solves, sufficient-statistic updates, scalar operation estimates, numeric state and measured wall time are distinct costs. No speed claim follows from update counts alone.
+
+Air Quality is an exposed regression test using the already observed full 9357-hour sequence, 40 percent warmup, original v3 physical scales, 4-hour artificial delay. Its outcomes cannot establish new protected transfer. New transfer is Beijing PM2.5, selected before model outcomes: 2013 warmup and 2014 evaluation, chronological hourly samples. Inputs are DEWP/50, TEMP/50, (PRES-1000)/100, Iws/1000, Is/24, Ir/24, four wind-category indicators (NE,NW,SE,cv), sine/cosine hour and six missing indicators. Missing numerical features are zero plus flag. Target is PM2.5/100, absent targets remain unscored and undelivered without compressing time. No pollutant target lags are used. Four-hour target delay is artificial; contemporaneous weather availability is an assumption. Eleven methods include last-observation persistence. All must complete; descriptive transfer support requires candidate MSE <=1.02 times the synthetic-selected baseline and at least 20 percent fewer weight solves in evaluation. One stream does not support cross-dataset generalization or IID confidence claims. Seven contiguous blocks are descriptive only.
+
+## Boundaries
+
+Resource admission requires 512 MiB reclaimable memory and no rising pageouts on macOS, process peak RSS <512 MiB, numeric state <=128 KiB, and 1800 seconds per phase. Retain resource refusals and retry only in a fresh run after recovery. Local execution does not establish Kaggle execution or independent external reproduction. This small linear controlled study is not a state-of-the-art benchmark. Persistent regularization and memory reuse are established ideas; the contribution under test is this specific combination and its measured limitations. Source and artifact hashes, raw predictions, checkpoints, failures and exact replay evidence are mandatory.
+
+## Prior arithmetic erratum
+
+The v3 supplementary auditor reconciled about 2.9e-15 difference between a streamed running sum and Python 3.15 builtin sum. It was not a change to the scoring definition or evidence of model error. V3 artifacts remain unchanged.

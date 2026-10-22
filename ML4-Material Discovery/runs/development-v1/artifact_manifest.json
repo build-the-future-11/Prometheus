@@ -1,0 +1,13 @@
+{
+  "files": {
+    "failures.json": {
+      "bytes": 625,
+      "sha256": "a60ab20f12d217e81ab2c90ca41281d77eacd366a89601f782b6f27fea7030e6"
+    },
+    "receipt.json": {
+      "bytes": 511,
+      "sha256": "022f4ccf5e77d7fcbeeba9adf103266054ccc88b499ccce4310ef2a636da35cf"
+    }
+  },
+  "schema_version": 1
+}

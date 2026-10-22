@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "e1e46b15dfb3379eea657a12ee0edc655b8c9b14484be339d98263ea9ac921e2",
+  "archive_bytes": 170365830,
+  "run_id": "kaggle-robust-aggregation-v3-reproduction-r1",
+  "notebook": "https://www.kaggle.com/code/ryangomez010/ml4-material-discovery-v3-reproduction",
+  "status": "COMPLETED_HASH_NUMERIC_AND_REPRODUCTION_VERIFIED",
+  "comparison": "artifacts/reproduction-comparison-20261021.json"
+}

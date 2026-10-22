@@ -1,0 +1,20 @@
+\section{Implementation and artifact contracts}
+The source files \texttt{src/piml/s2.py} and \texttt{tests/test\_s2.py} implement the successor and its numerical checks. Legacy S1 source, tests, configs and raw development evidence are preserved under \texttt{evidence/s1}; \texttt{SHA256.json} binds those files byte for byte. The active legacy report formatter receives only a Python 3.11 syntax compatibility repair; the archived source is unchanged.
+
+Each S2 run retains \texttt{config.json}, \texttt{source\_manifest.json}, \texttt{environment.json}, \texttt{cases.jsonl}, \texttt{metrics.jsonl}, \texttt{models.json}, \texttt{offline\_costs.json}, \texttt{analysis.json}, \texttt{receipt.json}, \texttt{progress.json}, a file manifest and verification receipt. An unsuccessful execution additionally retains a failure record and available partial measurements. Output directories are never overwritten.
+
+\section{Reproduction commands}
+From the project directory, install the research extra and use one thread:
+\begin{verbatim}
+python -m pip install '.[research]'
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1 PYTHONPATH=src
+python -m unittest discover -s tests -v
+python -m piml verify evidence/s1/development-S1-v1
+python -m piml.s2 run configs/s2_development.json NEW_DEV_DIR
+python -m piml.s2 verify NEW_DEV_DIR
+\end{verbatim}
+Confirmatory execution additionally requires the frozen configuration and source receipt. Use a new output directory for an explicitly labeled replication; never present a second run as a new independent protected experiment. Exact delivery and artifact hashes are recorded in the release ledger rather than inferred from the presence of these commands.
+
+\section{Adversarial checks and claim mapping}
+The flaw register covers endpoint saturation, direct-solver competitiveness, weak classical controls, prior art, structural misspecification, repeated factorization, recursive-residual drift, invalid uncertainty claims, timing order, training replication, multiplicity, semantic verification, provenance, packaging, resources, synthetic scope, shared reference code, unequal capacity, source drift and independent reproduction. A fix is accepted only when its stated evidence exists. The machine-readable claim ledger maps every retained numerical statement to its run, analysis and rendered table. Proofs establish only SPD, spectral equivalence and source superposition, not learned performance.

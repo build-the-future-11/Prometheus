@@ -1,0 +1,93 @@
+{
+  "status": "INVALID",
+  "scope": "artifact verification; not a successful real-transfer comparison",
+  "real_transfer_scientific_status": "INVALID_NUMERICAL_FAILURE",
+  "historical_files_unchanged": 626,
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "successors/memory_v3",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "scripts/verify_bundle.py",
+        "--root",
+        ".",
+        "--bundle",
+        "results/development/shared-baselines-v1-20261019",
+        "--output",
+        "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/verification/release-01/v1.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "successors/memory_v2/experiment.py",
+        "verify",
+        "--input",
+        "successors/memory_v2/runs/development-02",
+        "--output",
+        "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/verification/release-01/v2.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "successors/memory_v3/experiment.py",
+        "verify",
+        "--input",
+        "successors/memory_v3/runs/development-01",
+        "--output",
+        "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/verification/release-01/v3-development.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "successors/memory_v3/experiment.py",
+        "verify",
+        "--input",
+        "successors/memory_v3/runs/confirmation-02",
+        "--output",
+        "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/verification/release-01/v3-confirmation.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.15/bin/python3.15",
+        "successors/memory_v3/audit.py",
+        "successors/memory_v3/runs/confirmation-02",
+        "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/verification/release-01/v3-separate-audit.json"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "external_replication": false
+}

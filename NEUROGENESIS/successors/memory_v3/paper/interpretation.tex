@@ -1,0 +1,4 @@
+\subsection{Interpretation of controls and costs}
+The no-recurrence condition gives pooled MSE 0.3444 for the candidate and 0.3394 for RLS (1.48\% higher), so the improvement does not extend to every registered condition. Capacity one and uniform averaging do not reproduce the primary accuracy benefit. Baseline and no-bank predictions coincide because both instantiate the selected RLS configuration; they are not separate independent replications.
+
+On the primary conditions, the candidate uses 37.43\% fewer counted coordinate operations than RLS, but maximum numerical state is 5456 versus 3280 bytes. Mean recorded attempt time is 0.3959 versus 0.3958 seconds, including serialization on a shared host. Thus the recorded timing does not establish a speed advantage despite fewer active updates and counted operations.

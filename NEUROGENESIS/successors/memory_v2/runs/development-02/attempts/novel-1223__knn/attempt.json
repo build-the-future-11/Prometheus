@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "knn",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "knn",
+  "task_id": "novel-1223",
+  "task_sha256": "a3d5b7520a218474bfed0f6d135ac2bf5e7fa5ef109f96b32eb20375f43421b8",
+  "utc": "2026-10-21T05:36:38.752071+00:00"
+}

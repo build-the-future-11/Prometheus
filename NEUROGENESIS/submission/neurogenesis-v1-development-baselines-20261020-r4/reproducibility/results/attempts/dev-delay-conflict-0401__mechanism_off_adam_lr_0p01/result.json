@@ -1,0 +1,45 @@
+{
+  "attempt_id": "dev-delay-conflict-0401__mechanism_off_adam_lr_0p01",
+  "error": null,
+  "family": "delay_distractor_conflict_return",
+  "metrics": {
+    "adaptation_switch_mse": 1.9726002149752997,
+    "instability": {
+      "max_absolute_prediction": 2.1685433894787294,
+      "max_update_norm": 0.02999999915119918,
+      "nonfinite_predictions": 0
+    },
+    "primary": {
+      "direction": "lower_is_better",
+      "name": "prequential_mean_squared_error",
+      "value": 1.098426258239661
+    },
+    "regime_mse": {
+      "A_initial": 0.4681891658812913,
+      "A_return": 0.995191490132579,
+      "B_conflict": 2.3500132331224974,
+      "C_novel": 0.5803111438222748
+    },
+    "resource_usage": {
+      "consolidations": 0,
+      "gradient_evaluations": 476,
+      "parameter_updates": 476,
+      "peak_state_bytes": 224,
+      "retrievals": 0,
+      "steps": 480,
+      "wall_seconds": 0.0057446669961791486,
+      "writes": 0
+    },
+    "retention_ratio_to_initial_late": 17.9342784492961,
+    "retention_return_mse": 2.109458057878611,
+    "undelivered_labels_at_horizon": 4
+  },
+  "policy_kind": "mechanism_off_standard_adam",
+  "policy_name": "mechanism_off_adam_lr_0p01",
+  "schema_version": "neurogenesis.result.v1",
+  "seed": 401,
+  "split": "development",
+  "status": "SUCCEEDED",
+  "task_id": "dev-delay-conflict-0401",
+  "trace_sha256": "3cb065c02d2dba5ae9aa0a8a16e91813d0da35b4f5da5f384becb858a355ec3b"
+}

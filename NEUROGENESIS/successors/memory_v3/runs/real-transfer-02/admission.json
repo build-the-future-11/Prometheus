@@ -1,0 +1,18 @@
+{
+  "after": {
+    "pageouts": 94410,
+    "platform": "darwin",
+    "raw": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4102.\nPages active:                                 194282.\nPages inactive:                               177404.\nPages speculative:                             14404.\nPages throttled:                                   0.\nPages wired down:                             209102.\nPages purgeable:                                   2.\n\"Translation faults\":                      228248483.\nPages copy-on-write:                         5086311.\nPages zero filled:                         139130849.\nPages reactivated:                          78586867.\nPages purged:                                4434850.\nFile-backed pages:                            133573.\nAnonymous pages:                              252517.\nPages stored in compressor:                  1607268.\nPages occupied by compressor:                 409832.\nDecompressions:                             67414411.\nCompressions:                               78017250.\nPageins:                                    15053805.\nPageouts:                                      94410.\nSwapins:                                      769657.\nSwapouts:                                    1441664.\n",
+    "reclaimable_bytes": 3209789440,
+    "rss": 27672576
+  },
+  "allowed": false,
+  "before": {
+    "pageouts": 94408,
+    "platform": "darwin",
+    "raw": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     5973.\nPages active:                                 187339.\nPages inactive:                               168848.\nPages speculative:                             18065.\nPages throttled:                                   0.\nPages wired down:                             220568.\nPages purgeable:                                 481.\n\"Translation faults\":                      228220587.\nPages copy-on-write:                         5085373.\nPages zero filled:                         139123566.\nPages reactivated:                          78576019.\nPages purged:                                4434317.\nFile-backed pages:                            137566.\nAnonymous pages:                              236686.\nPages stored in compressor:                  1608767.\nPages occupied by compressor:                 408104.\nDecompressions:                             67402159.\nCompressions:                               78006148.\nPageins:                                    15053660.\nPageouts:                                      94408.\nSwapins:                                      769625.\nSwapouts:                                    1441664.\n",
+    "reclaimable_bytes": 3160244224,
+    "rss": 27672576
+  },
+  "utc": "2026-10-21T05:58:50.942556+00:00"
+}

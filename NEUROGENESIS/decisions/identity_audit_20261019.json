@@ -1,0 +1,41 @@
+{
+  "schema_version": "neurogenesis.identity-audit.v1",
+  "date": "2026-10-19",
+  "workspace": "/Volumes/PRO-BLADE/Atlas/NEUROGENESIS",
+  "local_findings": {
+    "initial_workspace_contents": [],
+    "nearest_git_root": "/Volumes/PRO-BLADE/Atlas",
+    "git_head": "21b9338f23df46b32af734cb33903528a1899e8a",
+    "git_remote": "https://github.com/build-the-future-11/Atlas.git",
+    "git_identity": "Atlas research orchestration, not a NEUROGENESIS mechanism repository",
+    "qualifying_neurogenesis_charter_found": false,
+    "qualifying_owner_decision_found": false,
+    "paper_draft_found": false,
+    "experiment_manifest_found": false,
+    "existing_neurogenesis_code_found": false,
+    "unrelated_parent_worktree_changes_preserved": true
+  },
+  "historical_leads": [
+    {
+      "description": "The current owner instruction reports an older learned-loss or learned-rule description.",
+      "qualifies_as_scope_approval": false
+    },
+    {
+      "description": "The current owner instruction reports an older memory-based adaptation description that substitutes for some weight updates.",
+      "qualifies_as_scope_approval": false
+    },
+    {
+      "description": "A same-day observed planning preview labelled NEUROGENESIS 'Learning through generated memory'. It was not a local decision artifact and did not define the mechanism contract.",
+      "observed_at": "2026-10-19T06:59:48Z",
+      "qualifies_as_scope_approval": false
+    }
+  ],
+  "owner_instruction_source": "User request submitted 2026-10-19T07:26:59Z; it requires the shared-infrastructure fallback when approval cannot be established.",
+  "resolution": {
+    "status": "SCOPE_UNRESOLVED",
+    "approved_mechanism": null,
+    "permitted_work": "shared benchmark, conventional baselines, isolated candidate interfaces, development-only execution",
+    "forbidden_work": "candidate mechanism execution, protected evaluation, efficacy claims"
+  }
+}
+

@@ -1,0 +1,307 @@
+{
+  "checked_result_count": 50,
+  "results": [
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.7008326534201943,
+      "recorded_nmse": 0.7008326534201943,
+      "task_id": "final-s21_final_structural_misspecification-s2301"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.7070249440308372,
+      "recorded_nmse": 0.7070249440308372,
+      "task_id": "final-s21_final_structural_misspecification-s2301"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 2480323.3661003886,
+      "recorded_nmse": 2480323.3661003886,
+      "task_id": "final-s21_final_structural_misspecification-s2301"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.7424185510451058,
+      "recorded_nmse": 0.7424185510451058,
+      "task_id": "final-s21_final_structural_misspecification-s2301"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.707280537006241,
+      "recorded_nmse": 0.707280537006241,
+      "task_id": "final-s21_final_structural_misspecification-s2301"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.6875358618795168,
+      "recorded_nmse": 0.6875358618795168,
+      "task_id": "final-s21_final_structural_misspecification-s2302"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.6796111118816419,
+      "recorded_nmse": 0.6796111118816419,
+      "task_id": "final-s21_final_structural_misspecification-s2302"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 720302.2721285734,
+      "recorded_nmse": 720302.2721285734,
+      "task_id": "final-s21_final_structural_misspecification-s2302"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.7254769325758756,
+      "recorded_nmse": 0.7254769325758756,
+      "task_id": "final-s21_final_structural_misspecification-s2302"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.6797450600147824,
+      "recorded_nmse": 0.6797450600147824,
+      "task_id": "final-s21_final_structural_misspecification-s2302"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.7827315301730541,
+      "recorded_nmse": 0.7827315301730541,
+      "task_id": "final-s21_final_structural_misspecification-s2303"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.75540337456669,
+      "recorded_nmse": 0.75540337456669,
+      "task_id": "final-s21_final_structural_misspecification-s2303"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 9357605.285249759,
+      "recorded_nmse": 9357605.285249759,
+      "task_id": "final-s21_final_structural_misspecification-s2303"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.7789579298181225,
+      "recorded_nmse": 0.7789579298181225,
+      "task_id": "final-s21_final_structural_misspecification-s2303"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.7630002601888904,
+      "recorded_nmse": 0.7630002601888904,
+      "task_id": "final-s21_final_structural_misspecification-s2303"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.6447294179726384,
+      "recorded_nmse": 0.6447294179726384,
+      "task_id": "final-s21_final_structural_misspecification-s2304"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.6471611965060003,
+      "recorded_nmse": 0.6471611965060003,
+      "task_id": "final-s21_final_structural_misspecification-s2304"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 29501.707279285387,
+      "recorded_nmse": 29501.707279285387,
+      "task_id": "final-s21_final_structural_misspecification-s2304"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.7268538324248712,
+      "recorded_nmse": 0.7268538324248712,
+      "task_id": "final-s21_final_structural_misspecification-s2304"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.6492030376701127,
+      "recorded_nmse": 0.6492030376701127,
+      "task_id": "final-s21_final_structural_misspecification-s2304"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.8072280685730162,
+      "recorded_nmse": 0.8072280685730162,
+      "task_id": "final-s21_final_structural_misspecification-s2305"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.76992594167242,
+      "recorded_nmse": 0.76992594167242,
+      "task_id": "final-s21_final_structural_misspecification-s2305"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 347918.9665907827,
+      "recorded_nmse": 347918.9665907827,
+      "task_id": "final-s21_final_structural_misspecification-s2305"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.7511365483049178,
+      "recorded_nmse": 0.7511365483049178,
+      "task_id": "final-s21_final_structural_misspecification-s2305"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.7471156630475437,
+      "recorded_nmse": 0.7471156630475437,
+      "task_id": "final-s21_final_structural_misspecification-s2305"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.8287467222785633,
+      "recorded_nmse": 0.8287467222785633,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2401"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.8287959543989349,
+      "recorded_nmse": 0.8287959543989349,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2401"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 6.413264325183098e+22,
+      "recorded_nmse": 6.413264325183098e+22,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2401"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.8373113186374217,
+      "recorded_nmse": 0.8373113186374217,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2401"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.8286717817726914,
+      "recorded_nmse": 0.8286717817726914,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2401"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.7522291189619598,
+      "recorded_nmse": 0.7522291189619598,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2402"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.7513856660249986,
+      "recorded_nmse": 0.7513856660249986,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2402"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1.3766277884334557e+25,
+      "recorded_nmse": 1.3766277884334557e+25,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2402"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.7312546056865954,
+      "recorded_nmse": 0.7312546056865954,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2402"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.7481434332060287,
+      "recorded_nmse": 0.7481434332060287,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2402"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.8485215102054363,
+      "recorded_nmse": 0.8485215102054363,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2403"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.8487028348187866,
+      "recorded_nmse": 0.8487028348187866,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2403"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1.1857784538140299e+23,
+      "recorded_nmse": 1.1857784538140299e+23,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2403"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.855235576936467,
+      "recorded_nmse": 0.855235576936467,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2403"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.8481477370871779,
+      "recorded_nmse": 0.8481477370871779,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2403"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.8264946446590453,
+      "recorded_nmse": 0.8264946446590453,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2404"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.8265403104405072,
+      "recorded_nmse": 0.8265403104405072,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2404"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1.2341371201730936e+24,
+      "recorded_nmse": 1.2341371201730936e+24,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2404"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.8256259974064659,
+      "recorded_nmse": 0.8256259974064659,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2404"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.8264862133369191,
+      "recorded_nmse": 0.8264862133369191,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2404"
+    },
+    {
+      "method": "adam",
+      "recomputed_nmse": 0.8552315215141041,
+      "recorded_nmse": 0.8552315215141041,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2405"
+    },
+    {
+      "method": "analytic_residual",
+      "recomputed_nmse": 0.8559051075479883,
+      "recorded_nmse": 0.8559051075479883,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2405"
+    },
+    {
+      "method": "block_jacobi_residual",
+      "recomputed_nmse": 1.78337505984069e+20,
+      "recorded_nmse": 1.78337505984069e+20,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2405"
+    },
+    {
+      "method": "block_gradient_no_derivation",
+      "recomputed_nmse": 0.8727054194916363,
+      "recorded_nmse": 0.8727054194916363,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2405"
+    },
+    {
+      "method": "fixed_normalized_lms",
+      "recomputed_nmse": 0.855897238288151,
+      "recorded_nmse": 0.855897238288151,
+      "task_id": "long_horizon-s21_long_horizon_structural_misspecification-s2405"
+    }
+  ],
+  "schema_version": "derived-learning.evaluation-verification.v1",
+  "status": "VERIFIED"
+}

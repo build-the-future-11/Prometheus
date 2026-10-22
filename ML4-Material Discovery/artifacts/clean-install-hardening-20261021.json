@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "version": "0.1.1",
+  "wheel_sha256": "8f181dac9f95fe331b85baead3d525a782512272eeb718724b31c0dc947e85e9",
+  "module": "/Volumes/PRO-BLADE/Atlas/ML4-Material Discovery/.venv-verify/lib/python3.12/site-packages/ml4materials/__init__.py",
+  "predictions_and_intervals": "EXACT_MATCH_TO_PREVIOUS_RELEASE",
+  "results": [
+    {
+      "composition": "GaAs",
+      "prediction_ev": 0.44999998807907104,
+      "lower_90_ev": -0.3799978364778619,
+      "upper_90_ev": 1.279997812636004,
+      "unseen_elements": [],
+      "scope": "single development fold; not a discovery or OOD validation"
+    },
+    {
+      "composition": "ZnO",
+      "prediction_ev": 3.2899999618530273,
+      "lower_90_ev": 1.2433337193901166,
+      "upper_90_ev": 5.336666204315938,
+      "unseen_elements": [],
+      "scope": "single development fold; not a discovery or OOD validation"
+    },
+    {
+      "composition": "OZn",
+      "prediction_ev": 3.2899999618530273,
+      "lower_90_ev": 1.2433337193901166,
+      "upper_90_ev": 5.336666204315938,
+      "unseen_elements": [],
+      "scope": "single development fold; not a discovery or OOD validation"
+    }
+  ],
+  "pyplot_loaded": false,
+  "scope": "Installed wheel verification; fresh scientific reproduction recorded separately",
+  "final_package_reinstallation": "PASS: all returned prediction and interval fields match original"
+}

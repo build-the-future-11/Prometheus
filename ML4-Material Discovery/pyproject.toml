@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ml4-material-discovery"
+version = "0.1.1"
+description = "Evidence-bound composition-only band-gap prediction and candidate ranking"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { file = "LICENSE" }
+authors = [{ name = "ML4-Material Discovery contributors" }]
+dependencies = [
+  "joblib>=1.4,<2",
+  "matplotlib>=3.9,<4",
+  "numpy>=2.0,<3",
+  "scikit-learn>=1.5,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+]
+
+[project.scripts]
+ml4materials = "ml4materials.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ml4materials"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/artifacts",
+  "/data/raw",
+  "/dist",
+  "/runs",
+  "/releases",
+  "/output",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+markers = [
+  "integration: reads the pinned local benchmark artifacts",
+]
+

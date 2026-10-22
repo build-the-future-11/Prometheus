@@ -1,0 +1,27 @@
+{
+  "checkpoint_sha256": "86ef1f79306d24f2ca9f67180becd0b386b072b043fa17bc609d02a112254993",
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.5,
+    "cache": 32,
+    "capacity": 8,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "rls",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "failure": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/experiment.py\", line 133, in execute\n    runner.advance()\n    ~~~~~~~~~~~~~~^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 282, in advance\n    before = self.deliver(t)\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 274, in deliver\n    self.policy.observe(p[\"x\"], p[\"y\"], p[\"ticket\"])\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 172, in observe\n    self.rls(x,target)\n    ~~~~~~~~^^^^^^^^^^\n  File \"/Volumes/PRO-BLADE/Atlas/NEUROGENESIS/successors/memory_v3/engine.py\", line 130, in rls\n    raise ArithmeticError(\"RLS lost positive covariance\")\nArithmeticError: RLS lost positive covariance\n",
+  "method": "no_bank",
+  "process_peak_rss_bytes": 100712448,
+  "status": "FAILED",
+  "task_id": "uci-air-quality",
+  "task_sha256": "3270539c32ac34700630988971ac0afb4d7bbcd534a54a58a0b222d217b1b21d",
+  "trace_sha256": "e08d64705232faf35dbf6682d09669acb45cd620bae220b31b6f9ee49e7e63e7",
+  "wall_seconds": 0.7653027910000674
+}

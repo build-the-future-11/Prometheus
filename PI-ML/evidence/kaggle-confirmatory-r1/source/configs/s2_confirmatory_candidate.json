@@ -1,0 +1,34 @@
+{
+  "study_version": "PIML-S2-source-linear-v1",
+  "phase": "confirmatory",
+  "frozen": false,
+  "grids": [
+    65,
+    129
+  ],
+  "regimes": [
+    "iid",
+    "coefficient_ood",
+    "forcing_ood"
+  ],
+  "rtols": [
+    1e-06,
+    1e-10
+  ],
+  "atol": 1e-12,
+  "train_count": 192,
+  "test_count": 32,
+  "repetitions": 5,
+  "seed_base": 3000000,
+  "ridge": 0.0001,
+  "timing_repeats": 3,
+  "bootstrap_seed": 82501,
+  "bootstrap_repeats": 10000,
+  "cpu_budget_seconds": 1800,
+  "primary": {
+    "grid": 129,
+    "rtol": 1e-06,
+    "minimum_mean": 0.15,
+    "minimum_lower": 0.05
+  }
+}

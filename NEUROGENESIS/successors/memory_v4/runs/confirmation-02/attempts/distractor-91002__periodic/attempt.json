@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "periodic",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "periodic",
+  "task_id": "distractor-91002",
+  "task_sha256": "7ebae86d317b078b729b71b5d00f7c77069fc44fecb87e6e7ee9f8957bbb3844",
+  "utc": "2026-10-21T09:57:28.793048+00:00"
+}

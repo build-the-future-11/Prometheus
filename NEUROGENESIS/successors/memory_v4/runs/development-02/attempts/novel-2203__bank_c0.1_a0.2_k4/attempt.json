@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.2,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "bank",
+    "loss_ceiling": 0.1,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "bank_c0.1_a0.2_k4",
+  "task_id": "novel-2203",
+  "task_sha256": "17b6c371397812d09c025185c4012e00c0c24bd37d4b33dadfd7cfe18684f9e2",
+  "utc": "2026-10-21T09:45:34.402057+00:00"
+}

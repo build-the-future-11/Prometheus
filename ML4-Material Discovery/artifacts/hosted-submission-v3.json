@@ -1,0 +1,14 @@
+{
+  "run_id": "kaggle-robust-aggregation-v3-r1",
+  "notebook": "https://www.kaggle.com/code/ryangomez010/ml4-material-discovery-robust-aggregation-v3",
+  "kernel_version": 1,
+  "status": "COMPLETED_HASH_AND_NUMERICALLY_VERIFIED",
+  "compute": "CPU; one hour maximum; 512 MiB process RSS; no rising pageouts",
+  "bundle_sha256": "b54be749fc45aaa81625a5fea82e61c83f968db9e9798ee5e49416e6bd0787fb",
+  "infrastructure_events": [
+    "Upload authorization review required ownership evidence; --mine established ownership; retry accepted",
+    "Expired OAuth access token refreshed through official SDK",
+    "Kaggle normalized notebook slug from title; returned URL used"
+  ],
+  "numeric_verification": "artifacts/numerical-audit-v3-20261021.json"
+}

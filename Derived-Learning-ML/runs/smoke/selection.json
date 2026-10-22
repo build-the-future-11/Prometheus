@@ -1,0 +1,71 @@
+{
+  "rationale": {
+    "adam": {
+      "development_mean_nmse": {
+        "{\"learning_rate\":0.01}": 0.8172994613901543,
+        "{\"learning_rate\":0.05}": 0.2508123110190753
+      },
+      "meta_train_mean_nmse": {
+        "{\"learning_rate\":0.01}": 0.7691328725932123,
+        "{\"learning_rate\":0.05}": 0.11278111453023441
+      },
+      "retained_after_meta_train": [
+        "{\"learning_rate\":0.05}",
+        "{\"learning_rate\":0.01}"
+      ],
+      "selected": {
+        "learning_rate": 0.05
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    },
+    "analytic_residual": {
+      "development_mean_nmse": {
+        "{\"regularization\":0.01}": 0.00286358559929743,
+        "{\"regularization\":0.1}": 0.0027962138581235085
+      },
+      "meta_train_mean_nmse": {
+        "{\"regularization\":0.01}": 0.005038777437664219,
+        "{\"regularization\":0.1}": 0.0051487380376686025
+      },
+      "retained_after_meta_train": [
+        "{\"regularization\":0.01}",
+        "{\"regularization\":0.1}"
+      ],
+      "selected": {
+        "regularization": 0.1
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    },
+    "block_gradient_no_derivation": {
+      "development_mean_nmse": {
+        "{\"learning_rate\":0.01}": 0.833243452797389,
+        "{\"learning_rate\":0.05}": 0.4508401368012573
+      },
+      "meta_train_mean_nmse": {
+        "{\"learning_rate\":0.01}": 0.9024612407510091,
+        "{\"learning_rate\":0.05}": 0.45495986247529924
+      },
+      "retained_after_meta_train": [
+        "{\"learning_rate\":0.05}",
+        "{\"learning_rate\":0.01}"
+      ],
+      "selected": {
+        "learning_rate": 0.05
+      },
+      "selection_rule": "lowest mean terminal development NMSE after predeclared meta-train top-k filter"
+    }
+  },
+  "schema_version": "derived-learning.selection.v1",
+  "selected": {
+    "adam": {
+      "learning_rate": 0.05
+    },
+    "analytic_residual": {
+      "regularization": 0.1
+    },
+    "block_gradient_no_derivation": {
+      "learning_rate": 0.05
+    }
+  },
+  "uses_final_split": false
+}

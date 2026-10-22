@@ -1,0 +1,18 @@
+{
+  "after": {
+    "pageouts": 229758,
+    "platform": "darwin",
+    "raw": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4041.\nPages active:                                 213241.\nPages inactive:                               206634.\nPages speculative:                              5118.\nPages throttled:                                   0.\nPages wired down:                             180834.\nPages purgeable:                                  10.\n\"Translation faults\":                      514071997.\nPages copy-on-write:                        15093210.\nPages zero filled:                         327751538.\nPages reactivated:                         186405049.\nPages purged:                               11683351.\nFile-backed pages:                            121934.\nAnonymous pages:                              303059.\nPages stored in compressor:                  1065422.\nPages occupied by compressor:                 399591.\nDecompressions:                            154258174.\nCompressions:                              175588427.\nPageins:                                    33691486.\nPageouts:                                     229758.\nSwapins:                                     1855130.\nSwapouts:                                    2798632.\n",
+    "reclaimable_bytes": 3535552512,
+    "rss": 27377664
+  },
+  "allowed": false,
+  "before": {
+    "pageouts": 229750,
+    "platform": "darwin",
+    "raw": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4406.\nPages active:                                 213090.\nPages inactive:                               207507.\nPages speculative:                              4259.\nPages throttled:                                   0.\nPages wired down:                             181926.\nPages purgeable:                                   8.\n\"Translation faults\":                      514025992.\nPages copy-on-write:                        15092157.\nPages zero filled:                         327722987.\nPages reactivated:                         186396081.\nPages purged:                               11682830.\nFile-backed pages:                            121135.\nAnonymous pages:                              303721.\nPages stored in compressor:                  1059000.\nPages occupied by compressor:                 398118.\nDecompressions:                            154250334.\nCompressions:                              175573353.\nPageins:                                    33690358.\nPageouts:                                     229750.\nSwapins:                                     1855130.\nSwapouts:                                    2798632.\n",
+    "reclaimable_bytes": 3541762048,
+    "rss": 27377664
+  },
+  "utc": "2026-10-21T10:09:55.036313+00:00"
+}

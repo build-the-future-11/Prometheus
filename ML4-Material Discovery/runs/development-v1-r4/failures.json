@@ -1,0 +1,8 @@
+[
+  {
+    "exception_type": "ResourceLimitError",
+    "message": "pageout guard refused phase official_fold_0: 1018190 > 1018149",
+    "traceback": "Traceback (most recent call last):\n  File \"/Volumes/PRO-BLADE/Atlas/ML4-Material Discovery/src/ml4materials/experiment.py\", line 567, in run_study\n    guard.check(f\"official_{fold_name}\")\n  File \"/Volumes/PRO-BLADE/Atlas/ML4-Material Discovery/src/ml4materials/guards.py\", line 59, in check\n    raise ResourceLimitError(\nml4materials.guards.ResourceLimitError: pageout guard refused phase official_fold_0: 1018190 > 1018149\n",
+    "utc": "2026-10-20T15:56:26.572356Z"
+  }
+]

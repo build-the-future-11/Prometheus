@@ -1,0 +1,22 @@
+{
+  "F01": "CLOSED: S1 original confirmation is NEGATIVE; sweep retained and S2 separately frozen.",
+  "F02": "CLOSED_BY_SCOPE: direct baseline measured and faster; no fastest-solver claim.",
+  "F03": "CLOSED: zero/physics Laplacian controls in every S2 cell.",
+  "F04": "CLOSED_BY_SCOPE: seven primary sources; controlled empirical contribution only.",
+  "F05": "CLOSED: source-linear model implemented, superposition tests and protected results.",
+  "F06": "CLOSED: multi-output least squares; S1 equivalence test passed.",
+  "F07": "CLOSED: independently recomputed residual acceptance and full numerical replay.",
+  "F08": "CLOSED_BY_WITHDRAWAL: original intervals preserved; coverage guarantee withdrawn; omitted from S2.",
+  "F09": "CLOSED: randomized repeated complete-path timing; offline costs retained.",
+  "F10": "CLOSED_WITH_LIMITATION: five independent training blocks, disjoint seed namespaces; limited tail precision explicitly stated.",
+  "F11": "CLOSED: joint primary rule frozen before outcomes; secondary matrix remains descriptive.",
+  "F12": "CLOSED_FOR_DECLARED_RUN: hashes, model refit, solver replay and analysis replay passed. Not adversarial-host attestation.",
+  "F13": "CLOSED: canonical JSON/Markdown, checkpoints, decisions and preserved archive.",
+  "F14": "CLOSED: installed wheel and source match, 12-page PDF visual inspection, archive manifests and remote Git release fe85196 verified. GitHub Actions has a separate account-billing admission block; no CI success claimed.",
+  "F15": "CLOSED: local refusal retained; actual private Kaggle CPU completion and downloaded archive hashes.",
+  "F16": "CLOSED_BY_SCOPE: synthetic 1D only; no real-world or multidimensional claims. Runtime is implementation-specific; optimized compiled production libraries and multidimensional workloads are not benchmarked.",
+  "F17": "CLOSED: fresh wheel environment; independent SciPy targets, flux residuals and full finite-bootstrap decision passed for 2,880 cases / 17,280 rows.",
+  "F18": "CLOSED_WITH_LIMITATION: matched shuffled control; unequal quadratic/structured capacity is disclosed.",
+  "F19": "CLOSED: source commit, freeze receipt, hosted source hashes and immutable output dirs.",
+  "F20": "CLOSED_WITH_EXTERNAL_LIMITATION: clean environment and separate implementation audit passed; independent investigator reproduction is not performed."
+}

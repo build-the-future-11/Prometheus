@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "3249f445b8aac4bb149262c1edcc0ef506447c59efa4f70f77ae3d0a4e431abc",
+  "archive_bytes": 170365712,
+  "run_id": "kaggle-robust-aggregation-v3-r1",
+  "notebook": "https://www.kaggle.com/code/ryangomez010/ml4-material-discovery-robust-aggregation-v3",
+  "status": "COMPLETED_HASH_AND_NUMERICALLY_VERIFIED",
+  "numeric_verification": "artifacts/numerical-audit-v3-20261021.json"
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "kaggle-robust-aggregation-v3-r1",
+  "status": "RESAMPLING_VERIFIED",
+  "bootstrap_interval_ev": [
+    -0.053930233616922126,
+    -0.04268203325767561
+  ],
+  "bootstrap_resamples": 5000,
+  "random_ranking_cells_checked": 12,
+  "random_replicates": 64,
+  "numpy_version": "2.1.3",
+  "scope": "Independent arithmetic implementation; shared specified NumPy RNG; not independent scientific replication"
+}

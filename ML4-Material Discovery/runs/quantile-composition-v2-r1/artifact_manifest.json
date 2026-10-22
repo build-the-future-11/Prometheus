@@ -1,0 +1,21 @@
+{
+  "files": {
+    "events.json": {
+      "bytes": 114,
+      "sha256": "89d9d650b8be6e7d399ccd8cdebed272fb90171533781d714f23f4fa196e8819"
+    },
+    "failures.json": {
+      "bytes": 643,
+      "sha256": "05d4df12359fba22dadaed3a1bb42e861a639892c748d127cd9b43c1ebf4efb7"
+    },
+    "models/fold_0.joblib": {
+      "bytes": 230485,
+      "sha256": "d8c315e8c0a0fdb0d4b0fac66d21445e952918886daa456f6cff10c9808ec24e"
+    },
+    "receipt.json": {
+      "bytes": 442,
+      "sha256": "cdfcf9a50cbbc1ccef4b96951344656d7d5819b925410fdf6e3918c40a8ad973"
+    }
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,27 @@
+{
+  "config_path": "configs/study.json",
+  "config_sha256": "b4d7878b346519f2b37eed9a31e345bf1a4d8e35942983c344e72aa5ebf28fa5",
+  "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+  "free_disk_bytes": 20846432256,
+  "max_rss_mib": 512,
+  "objective": "Calibrated experimental band-gap prediction from composition with an evaluated fixed-pool candidate-selection policy.",
+  "observed": {
+    "max_rss_mib": 207.28515625,
+    "pageouts": 0,
+    "phase": "preflight"
+  },
+  "official_split_sha256": "94c17bc3dac32c67d33d69289927a5fec174497e74bbc47293e23d3d147e9a6d",
+  "require_no_pageout_increase": true,
+  "resources": {
+    "ending_pageouts": 0,
+    "max_allowed_rss_mib": 512.0,
+    "pageout_delta": 0,
+    "pageout_monitor_available": true,
+    "peak_observed_rss_mib": 207.28515625,
+    "require_no_pageout_increase": true,
+    "starting_pageouts": 0
+  },
+  "schema_version": 1,
+  "status": "ADMITTED_AT_PREFLIGHT",
+  "study_version": "development-v1"
+}

@@ -1,0 +1,222 @@
+{
+  "adam_0.001": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 229512,
+    "failed": 0,
+    "mse": 0.9933086471429043,
+    "state_bytes": 800,
+    "updates": 956,
+    "wall_seconds": 0.3641910206009925
+  },
+  "adam_0.01": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 229512,
+    "failed": 0,
+    "mse": 0.9729492382439415,
+    "state_bytes": 800,
+    "updates": 956,
+    "wall_seconds": 0.47025909579933795
+  },
+  "adam_0.05": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 229512,
+    "failed": 0,
+    "mse": 0.6454816084134093,
+    "state_bytes": 800,
+    "updates": 956,
+    "wall_seconds": 0.20581492920027813
+  },
+  "bank_c0.02_a0.2_k4": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 966616.8,
+    "failed": 0,
+    "mse": 0.37061325570982406,
+    "state_bytes": 2016,
+    "updates": 865.7,
+    "wall_seconds": 0.3691086457009078
+  },
+  "bank_c0.02_a0.2_k8": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 855321,
+    "failed": 0,
+    "mse": 0.3298976859791219,
+    "state_bytes": 2656,
+    "updates": 687.5,
+    "wall_seconds": 0.25920698729933067
+  },
+  "bank_c0.02_a0.5_k4": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 946667.4,
+    "failed": 0,
+    "mse": 0.3685746525126213,
+    "state_bytes": 2016,
+    "updates": 845.4,
+    "wall_seconds": 0.2773595580991241
+  },
+  "bank_c0.02_a0.5_k8": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 840680.4,
+    "failed": 0,
+    "mse": 0.3239261624044051,
+    "state_bytes": 2656,
+    "updates": 673.4,
+    "wall_seconds": 0.37109669580058835
+  },
+  "bank_c0.1_a0.2_k4": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 941521.2,
+    "failed": 0,
+    "mse": 0.36740970462076405,
+    "state_bytes": 2016,
+    "updates": 840.5,
+    "wall_seconds": 0.3167930999003147
+  },
+  "bank_c0.1_a0.2_k8": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 822771,
+    "failed": 0,
+    "mse": 0.31058106603274416,
+    "state_bytes": 2656,
+    "updates": 655.7,
+    "wall_seconds": 0.32758117060002406
+  },
+  "bank_c0.1_a0.5_k4": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 897716.4,
+    "failed": 0,
+    "mse": 0.35852289285769107,
+    "state_bytes": 2016,
+    "updates": 796.5,
+    "wall_seconds": 0.33785330399914526
+  },
+  "bank_c0.1_a0.5_k8": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 753698.4,
+    "failed": 0,
+    "mse": 0.28601730241786955,
+    "state_bytes": 2656,
+    "updates": 587.1,
+    "wall_seconds": 0.2235122959998989
+  },
+  "frozen": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 23016,
+    "failed": 0,
+    "mse": 1.019293646910815,
+    "state_bytes": 656,
+    "updates": 0,
+    "wall_seconds": 0.0940534541998204
+  },
+  "knn": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 835608,
+    "failed": 0,
+    "mse": 0.8429983749807765,
+    "state_bytes": 3216,
+    "updates": 0,
+    "wall_seconds": 0.30207431239941795
+  },
+  "last": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 23016,
+    "failed": 0,
+    "mse": 2.041681570419401,
+    "state_bytes": 656,
+    "updates": 0,
+    "wall_seconds": 0.10447832919962821
+  },
+  "nlms_0.1": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 86112,
+    "failed": 0,
+    "mse": 1.0486206761826318,
+    "state_bytes": 656,
+    "updates": 956,
+    "wall_seconds": 0.11581033330003265
+  },
+  "nlms_0.5": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 86112,
+    "failed": 0,
+    "mse": 0.6522999383025321,
+    "state_bytes": 656,
+    "updates": 956,
+    "wall_seconds": 0.13229867909976747
+  },
+  "nlms_1.0": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 86112,
+    "failed": 0,
+    "mse": 0.5343595752119339,
+    "state_bytes": 656,
+    "updates": 956,
+    "wall_seconds": 0.32667101679980987
+  },
+  "periodic_3": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 471810,
+    "failed": 0,
+    "mse": 0.38516144465540303,
+    "state_bytes": 1376,
+    "updates": 318,
+    "wall_seconds": 0.1965434916997765
+  },
+  "replay": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 149142,
+    "failed": 0,
+    "mse": 0.6916474248037471,
+    "state_bytes": 3216,
+    "updates": 1911,
+    "wall_seconds": 0.2512775540992152
+  },
+  "rls_0.95": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 975192,
+    "failed": 0,
+    "mse": 0.3667590517425087,
+    "state_bytes": 1376,
+    "updates": 956,
+    "wall_seconds": 0.5052459499998804
+  },
+  "rls_0.99": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 975192,
+    "failed": 0,
+    "mse": 0.7600513660264804,
+    "state_bytes": 1376,
+    "updates": 956,
+    "wall_seconds": 0.5341439582014573
+  },
+  "rls_1.0": {
+    "attempted": 10,
+    "completed": 10,
+    "coordinate_ops": 975192,
+    "failed": 0,
+    "mse": 1.0025136399516892,
+    "state_bytes": 1376,
+    "updates": 956,
+    "wall_seconds": 0.23841894160068478
+  }
+}

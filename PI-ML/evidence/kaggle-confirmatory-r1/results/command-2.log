@@ -1,0 +1,3501 @@
+{
+  "summaries": [
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.24482503125,
+      "relative_error_mean": 0.0,
+      "residual_max": 1.0181033760351789e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 62.89375,
+      "time_ms_mean": 1.6295512875,
+      "relative_error_mean": 1.4300684126134853e-10,
+      "residual_max": 9.999654490859913e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 62.96875,
+      "time_ms_mean": 1.716233175,
+      "relative_error_mean": 7.596478168349362e-11,
+      "residual_max": 8.757661579439136e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 12.21875,
+      "time_ms_mean": 1.77779461875,
+      "relative_error_mean": 3.198627083887567e-09,
+      "residual_max": 9.857470792199102e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 11.2375,
+      "time_ms_mean": 1.8880284437500001,
+      "relative_error_mean": 4.789103139786074e-09,
+      "residual_max": 9.862524821661726e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 10.2125,
+      "time_ms_mean": 1.5956728249999999,
+      "relative_error_mean": 6.6027392905853935e-09,
+      "residual_max": 9.789153688227236e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 10.075,
+      "time_ms_mean": 1.5600282250000002,
+      "relative_error_mean": 7.63330966419896e-09,
+      "residual_max": 9.950855272885154e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 8.95625,
+      "time_ms_mean": 1.4354286437500001,
+      "relative_error_mean": 7.486898604134218e-09,
+      "residual_max": 9.999801344773085e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 12.3875,
+      "time_ms_mean": 1.8734527875,
+      "relative_error_mean": 3.216165086464277e-09,
+      "residual_max": 9.981029088834365e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.2484833,
+      "relative_error_mean": 0.0,
+      "residual_max": 2.898151294844154e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 62.9125,
+      "time_ms_mean": 1.6388616625,
+      "relative_error_mean": 9.419810811433612e-11,
+      "residual_max": 9.256926566239207e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.72692140625,
+      "relative_error_mean": 8.872319099303303e-15,
+      "residual_max": 1.1560163916630228e-12,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 21.4375,
+      "time_ms_mean": 2.9552411375000003,
+      "relative_error_mean": 4.45736642145636e-09,
+      "residual_max": 9.991742517872275e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 20.5125,
+      "time_ms_mean": 3.07776513125,
+      "relative_error_mean": 5.206356458375248e-09,
+      "residual_max": 9.971981171275337e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 19.59375,
+      "time_ms_mean": 2.8130757687499996,
+      "relative_error_mean": 5.181793582035968e-09,
+      "residual_max": 9.994057139860884e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 19.41875,
+      "time_ms_mean": 2.75130035,
+      "relative_error_mean": 5.133501178313011e-09,
+      "residual_max": 9.946316923462863e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 18.1875,
+      "time_ms_mean": 2.64240713125,
+      "relative_error_mean": 5.637599514167131e-09,
+      "residual_max": 9.984509896953251e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 22.35625,
+      "time_ms_mean": 3.15021505,
+      "relative_error_mean": 4.196384900604812e-09,
+      "residual_max": 9.995516731726358e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.24517916875,
+      "relative_error_mean": 0.0,
+      "residual_max": 6.382293098743451e-14,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 62.925,
+      "time_ms_mean": 1.63322163125,
+      "relative_error_mean": 1.47051603161999e-10,
+      "residual_max": 9.94722670535622e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 62.99375,
+      "time_ms_mean": 1.7140088625,
+      "relative_error_mean": 1.8687639663787248e-11,
+      "residual_max": 3.279719229536815e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 12.1875,
+      "time_ms_mean": 1.7693371625,
+      "relative_error_mean": 4.855504930966169e-09,
+      "residual_max": 9.965207348589176e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 11.2125,
+      "time_ms_mean": 1.8822478999999999,
+      "relative_error_mean": 7.2390847752590155e-09,
+      "residual_max": 9.639614295368035e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 11.3375,
+      "time_ms_mean": 1.74759283125,
+      "relative_error_mean": 7.87739643917398e-09,
+      "residual_max": 9.940896917617375e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 11.35625,
+      "time_ms_mean": 1.7227805125,
+      "relative_error_mean": 7.830005672208199e-09,
+      "residual_max": 9.794382212916942e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 11.325,
+      "time_ms_mean": 1.73235506875,
+      "relative_error_mean": 7.874773155020883e-09,
+      "residual_max": 9.833585631911526e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 12.3,
+      "time_ms_mean": 1.86806451875,
+      "relative_error_mean": 4.6521497359139346e-09,
+      "residual_max": 9.911915684527891e-07,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.24730585625,
+      "relative_error_mean": 0.0,
+      "residual_max": 1.0181033760351789e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.63449750625,
+      "relative_error_mean": 4.950706692437043e-15,
+      "residual_max": 5.29485921052502e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.71903121875,
+      "relative_error_mean": 8.405960962929765e-15,
+      "residual_max": 7.093214611444762e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 18.7375,
+      "time_ms_mean": 2.6096385499999997,
+      "relative_error_mean": 2.718065859866356e-13,
+      "residual_max": 9.927407702614332e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 17.7375,
+      "time_ms_mean": 2.7121625750000002,
+      "relative_error_mean": 3.8523757670416306e-13,
+      "residual_max": 9.987274862137224e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 16.9125,
+      "time_ms_mean": 2.44365948125,
+      "relative_error_mean": 2.9300363568815765e-13,
+      "residual_max": 9.62732039237755e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 16.8,
+      "time_ms_mean": 2.40837630625,
+      "relative_error_mean": 3.0093606080621484e-13,
+      "residual_max": 9.946880482804547e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 15.675,
+      "time_ms_mean": 2.28116764375,
+      "relative_error_mean": 3.6195084892254684e-13,
+      "residual_max": 9.828604897164782e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 18.93125,
+      "time_ms_mean": 2.70586090625,
+      "relative_error_mean": 2.396643571759935e-13,
+      "residual_max": 9.814842985618464e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.24923238125,
+      "relative_error_mean": 0.0,
+      "residual_max": 2.898151294844154e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.6460944375,
+      "relative_error_mean": 5.1438936728442295e-15,
+      "residual_max": 1.1767117236045848e-12,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.7360133125,
+      "relative_error_mean": 8.872319099303303e-15,
+      "residual_max": 1.1560163916630228e-12,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 31.1,
+      "time_ms_mean": 4.2011575812499995,
+      "relative_error_mean": 6.095107552393444e-13,
+      "residual_max": 9.658444825799745e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 30.19375,
+      "time_ms_mean": 4.31900999375,
+      "relative_error_mean": 6.180760047312142e-13,
+      "residual_max": 9.992403225514072e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 29.35,
+      "time_ms_mean": 4.0669743375,
+      "relative_error_mean": 5.326051291833202e-13,
+      "residual_max": 9.986462838550553e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 29.20625,
+      "time_ms_mean": 4.01659584375,
+      "relative_error_mean": 5.199885891813025e-13,
+      "residual_max": 9.94284999336641e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 28.11875,
+      "time_ms_mean": 3.8933684375,
+      "relative_error_mean": 5.399644546402579e-13,
+      "residual_max": 9.954838857777008e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 31.90625,
+      "time_ms_mean": 4.3978385,
+      "relative_error_mean": 5.394871561602487e-13,
+      "residual_max": 9.976779726173474e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.24983596875,
+      "relative_error_mean": 0.0,
+      "residual_max": 6.382293098743451e-14,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.645462,
+      "relative_error_mean": 3.947778890521945e-15,
+      "residual_max": 3.7438408225894835e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 63.0,
+      "time_ms_mean": 1.7240356187499999,
+      "relative_error_mean": 6.978839366682442e-15,
+      "residual_max": 4.4670439849123117e-13,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 18.8375,
+      "time_ms_mean": 2.62188803125,
+      "relative_error_mean": 3.185704963786541e-13,
+      "residual_max": 9.868432426538243e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 17.85625,
+      "time_ms_mean": 2.7229887374999997,
+      "relative_error_mean": 4.67021517335268e-13,
+      "residual_max": 9.870619331974724e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 18.025,
+      "time_ms_mean": 2.5959670750000003,
+      "relative_error_mean": 4.983812504072894e-13,
+      "residual_max": 9.972177118814187e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 18.01875,
+      "time_ms_mean": 2.5623916125,
+      "relative_error_mean": 5.090506567179764e-13,
+      "residual_max": 9.872572933125797e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 17.99375,
+      "time_ms_mean": 2.5805648875,
+      "relative_error_mean": 4.817382615896224e-13,
+      "residual_max": 9.935555539617004e-11,
+      "failures": 0
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 18.95625,
+      "time_ms_mean": 2.71683896875,
+      "relative_error_mean": 3.699846531043752e-13,
+      "residual_max": 9.971345043599312e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.4484959,
+      "relative_error_mean": 0.0,
+      "residual_max": 4.71620669628745e-13,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 126.06875,
+      "time_ms_mean": 3.2462261625,
+      "relative_error_mean": 2.2014462731950362e-10,
+      "residual_max": 9.886397397671878e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 126.9625,
+      "time_ms_mean": 3.35974590625,
+      "relative_error_mean": 6.052469213938912e-11,
+      "residual_max": 9.59738906580587e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 12.55625,
+      "time_ms_mean": 3.2116500125000003,
+      "relative_error_mean": 2.330115168646514e-09,
+      "residual_max": 9.86986730695984e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 11.55625,
+      "time_ms_mean": 3.3928353875000004,
+      "relative_error_mean": 3.9441542082574355e-09,
+      "residual_max": 9.9842154929844e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 10.54375,
+      "time_ms_mean": 2.85267484375,
+      "relative_error_mean": 4.869386133231681e-09,
+      "residual_max": 9.945292737591414e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 10.425,
+      "time_ms_mean": 2.7885636000000003,
+      "relative_error_mean": 4.938851779978347e-09,
+      "residual_max": 9.801500537639165e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 9.13125,
+      "time_ms_mean": 2.5179896875,
+      "relative_error_mean": 6.754898978526139e-09,
+      "residual_max": 9.80214660174909e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 12.61875,
+      "time_ms_mean": 3.3263196125,
+      "relative_error_mean": 2.578027520941103e-09,
+      "residual_max": 9.972769932200368e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.4525034625,
+      "relative_error_mean": 0.0,
+      "residual_max": 1.0539729087569195e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 126.3375,
+      "time_ms_mean": 3.26496245,
+      "relative_error_mean": 1.9768263319243948e-10,
+      "residual_max": 9.998690558277323e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 126.95625,
+      "time_ms_mean": 3.3723950812499996,
+      "relative_error_mean": 2.8215062443795042e-11,
+      "residual_max": 6.741144369793498e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 24.33125,
+      "time_ms_mean": 5.94969418125,
+      "relative_error_mean": 1.4606769762335838e-09,
+      "residual_max": 9.946889363886863e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 23.33125,
+      "time_ms_mean": 6.102512068749999,
+      "relative_error_mean": 2.038149555566826e-09,
+      "residual_max": 9.996344063521628e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 22.14375,
+      "time_ms_mean": 5.5214687875,
+      "relative_error_mean": 2.372001091001297e-09,
+      "residual_max": 9.976608396006674e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 21.875,
+      "time_ms_mean": 5.4357910125,
+      "relative_error_mean": 2.5289714333777343e-09,
+      "residual_max": 9.97897150962706e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 20.40625,
+      "time_ms_mean": 5.12903080625,
+      "relative_error_mean": 2.750117404131041e-09,
+      "residual_max": 9.994011956802895e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 25.55625,
+      "time_ms_mean": 6.302883431250001,
+      "relative_error_mean": 1.4619088879569042e-09,
+      "residual_max": 9.98022465156455e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.4539360375,
+      "relative_error_mean": 0.0,
+      "residual_max": 2.600986992180374e-13,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 126.1875,
+      "time_ms_mean": 3.2637479625,
+      "relative_error_mean": 3.1611496851344577e-10,
+      "residual_max": 9.923867632007514e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 126.91875,
+      "time_ms_mean": 3.3660408125,
+      "relative_error_mean": 7.281599470791811e-11,
+      "residual_max": 9.605090251260489e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 11.9,
+      "time_ms_mean": 3.088947725,
+      "relative_error_mean": 3.980319637366224e-09,
+      "residual_max": 9.980224371029285e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 10.90625,
+      "time_ms_mean": 3.2476975875,
+      "relative_error_mean": 6.242328138750564e-09,
+      "residual_max": 9.672610648356863e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 11.0875,
+      "time_ms_mean": 2.980877575,
+      "relative_error_mean": 6.608256697815511e-09,
+      "residual_max": 9.973095651577318e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 11.09375,
+      "time_ms_mean": 2.95132229375,
+      "relative_error_mean": 6.2862725475497215e-09,
+      "residual_max": 9.817597394300692e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 11.04375,
+      "time_ms_mean": 2.96060494375,
+      "relative_error_mean": 6.045132410765676e-09,
+      "residual_max": 9.9259722078316e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 12.03125,
+      "time_ms_mean": 3.20562005625,
+      "relative_error_mean": 3.904776499890124e-09,
+      "residual_max": 9.944890173364184e-07,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.45355410625000003,
+      "relative_error_mean": 0.0,
+      "residual_max": 4.71620669628745e-13,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 127.0,
+      "time_ms_mean": 3.308797625,
+      "relative_error_mean": 1.1478044989098082e-14,
+      "residual_max": 3.2750417121157337e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 127.0,
+      "time_ms_mean": 3.4113611625,
+      "relative_error_mean": 2.2033429884727185e-14,
+      "residual_max": 4.446974477409556e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 19.48125,
+      "time_ms_mean": 4.82590439375,
+      "relative_error_mean": 1.0641593787498846e-13,
+      "residual_max": 9.958378353460234e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 18.4875,
+      "time_ms_mean": 5.0355322625,
+      "relative_error_mean": 1.850114493905541e-13,
+      "residual_max": 9.950634776780106e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 17.45625,
+      "time_ms_mean": 4.45023783125,
+      "relative_error_mean": 2.008099013567456e-13,
+      "residual_max": 9.925386397517458e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 17.33125,
+      "time_ms_mean": 4.4055494875,
+      "relative_error_mean": 2.1258849336758083e-13,
+      "residual_max": 9.835162025444821e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 16.125,
+      "time_ms_mean": 4.1470857,
+      "relative_error_mean": 2.1994699032946601e-13,
+      "residual_max": 9.976364318969869e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 19.5625,
+      "time_ms_mean": 4.93354435,
+      "relative_error_mean": 1.2043486139239746e-13,
+      "residual_max": 9.962457654410602e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.4638560875,
+      "relative_error_mean": 0.0,
+      "residual_max": 1.0539729087569195e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 127.0,
+      "time_ms_mean": 3.30276393125,
+      "relative_error_mean": 1.438090160483748e-14,
+      "residual_max": 6.263476961327325e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 127.0,
+      "time_ms_mean": 3.3975278875000003,
+      "relative_error_mean": 3.118852677816459e-14,
+      "residual_max": 6.667118479088269e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 36.75625,
+      "time_ms_mean": 8.7958575375,
+      "relative_error_mean": 1.2694844845375583e-13,
+      "residual_max": 9.998516592460636e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 35.7625,
+      "time_ms_mean": 8.98024260625,
+      "relative_error_mean": 1.485032864108782e-13,
+      "residual_max": 9.99341911763317e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 34.725,
+      "time_ms_mean": 8.42634166875,
+      "relative_error_mean": 1.4904508886496978e-13,
+      "residual_max": 9.979888580772374e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 34.5,
+      "time_ms_mean": 8.371670375,
+      "relative_error_mean": 1.485504877975876e-13,
+      "residual_max": 9.997567115776742e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 33.09375,
+      "time_ms_mean": 8.07369148125,
+      "relative_error_mean": 1.600302347681324e-13,
+      "residual_max": 9.923003372142247e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 37.89375,
+      "time_ms_mean": 9.14779281875,
+      "relative_error_mean": 2.8404197377317766e-13,
+      "residual_max": 9.994355592505157e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "direct",
+      "n": 160,
+      "iterations_mean": 0.0,
+      "time_ms_mean": 0.45446995,
+      "relative_error_mean": 0.0,
+      "residual_max": 2.600986992180374e-13,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "zero_jacobi",
+      "n": 160,
+      "iterations_mean": 127.0,
+      "time_ms_mean": 3.2628501437499997,
+      "relative_error_mean": 1.1493145665200763e-14,
+      "residual_max": 2.206686355023205e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "quadratic_jacobi",
+      "n": 160,
+      "iterations_mean": 127.0,
+      "time_ms_mean": 3.36764236875,
+      "relative_error_mean": 2.0719727701333734e-14,
+      "residual_max": 2.7777029499491646e-12,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "zero_laplace",
+      "n": 160,
+      "iterations_mean": 18.59375,
+      "time_ms_mean": 4.6060506375,
+      "relative_error_mean": 1.978603476781669e-13,
+      "residual_max": 9.981867060112312e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "physics_laplace",
+      "n": 160,
+      "iterations_mean": 17.61875,
+      "time_ms_mean": 4.79472203125,
+      "relative_error_mean": 2.7614089948937545e-13,
+      "residual_max": 9.832683542426019e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "quadratic_laplace",
+      "n": 160,
+      "iterations_mean": 17.775,
+      "time_ms_mean": 4.54060514375,
+      "relative_error_mean": 2.936758806948731e-13,
+      "residual_max": 9.934592279341361e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "linear_laplace",
+      "n": 160,
+      "iterations_mean": 17.76875,
+      "time_ms_mean": 4.4919958,
+      "relative_error_mean": 2.920577901975634e-13,
+      "residual_max": 9.942890223212302e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "structured_laplace",
+      "n": 160,
+      "iterations_mean": 17.7,
+      "time_ms_mean": 4.497492287499999,
+      "relative_error_mean": 3.0935192459098407e-13,
+      "residual_max": 9.821213087901806e-11,
+      "failures": 0
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "method": "shuffled_laplace",
+      "n": 160,
+      "iterations_mean": 18.75,
+      "time_ms_mean": 4.7395987125,
+      "relative_error_mean": 2.001227917695302e-13,
+      "residual_max": 9.977678796221521e-11,
+      "failures": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.2713095299040055,
+      "ci95": [
+        0.267326029233924,
+        0.27647587808433394
+      ],
+      "training_block_effects": [
+        0.2736814477393521,
+        0.26694256264568766,
+        0.28058512667887664,
+        0.26793200403397777,
+        0.2674065084221334
+      ],
+      "online_time_reduction": 0.1918434367342604,
+      "time_ci95": [
+        0.18700060418266276,
+        0.19668626928585806
+      ],
+      "training_block_time_effects": [
+        0.19924697029122956,
+        0.18600277478013735,
+        0.19680919675206804,
+        0.18583922950517195,
+        0.1913190123426951
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.20519167872568608,
+      "ci95": [
+        0.2008220353992413,
+        0.210308325763289
+      ],
+      "training_block_effects": [
+        0.20893997495559996,
+        0.20207101925851925,
+        0.2139278205454676,
+        0.20020138664440135,
+        0.2008181922244422
+      ],
+      "online_time_reduction": 0.24023380917585763,
+      "time_ci95": [
+        0.23457175661514226,
+        0.24547082020114042
+      ],
+      "training_block_time_effects": [
+        0.24854076697186342,
+        0.23128448972775262,
+        0.24396704588737828,
+        0.23503826800507513,
+        0.2423384752872187
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.1235348332223332,
+      "ci95": [
+        0.11755945443445444,
+        0.129510212010212
+      ],
+      "training_block_effects": [
+        0.1313351578976579,
+        0.11555718586968587,
+        0.1304186265123765,
+        0.11631970460095459,
+        0.12404349123099122
+      ],
+      "online_time_reduction": 0.09781134573760877,
+      "time_ci95": [
+        0.08987214568232878,
+        0.10476812579726699
+      ],
+      "training_block_time_effects": [
+        0.1096965333577112,
+        0.09270178370539889,
+        0.10011708288487153,
+        0.08505880798309137,
+        0.10148252075697087
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.2797456862452993,
+      "ci95": [
+        0.2775626761332063,
+        0.28185851543778934
+      ],
+      "training_block_effects": [
+        0.27873524810565253,
+        0.28312093084611467,
+        0.2792465780747031,
+        0.27572622918017653,
+        0.2818994450198494
+      ],
+      "online_time_reduction": 0.2331285595512203,
+      "time_ci95": [
+        0.22943275771871763,
+        0.23682436138372293
+      ],
+      "training_block_time_effects": [
+        0.2374920467336361,
+        0.22947676334406686,
+        0.23140173109620724,
+        0.22840426540462364,
+        0.23886799117756755
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -4.88053695330648,
+      "time_ci95": [
+        -4.949797429073504,
+        -4.811276477539458
+      ],
+      "training_block_time_effects": [
+        -4.8916194116865,
+        -4.9946324817462155,
+        -4.8123830160544125,
+        -4.7699984719509825,
+        -4.9340513850942935
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.8056977758051925,
+      "ci95": [
+        0.8033982974910394,
+        0.8085159023948025
+      ],
+      "training_block_effects": [
+        0.8043858806963645,
+        0.8038434459805428,
+        0.8066402151377032,
+        0.8111599798124784,
+        0.8024593573988735
+      ],
+      "online_time_reduction": -0.09116950168298485,
+      "time_ci95": [
+        -0.10129554827888154,
+        -0.07797697697330545
+      ],
+      "training_block_time_effects": [
+        -0.0968123959082479,
+        -0.10222594689680896,
+        -0.08693088411069322,
+        -0.0669093512863417,
+        -0.10296893021283246
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.16290126685022024,
+      "ci95": [
+        0.1520583851290438,
+        0.1740806704092453
+      ],
+      "training_block_effects": [
+        0.1537441868634004,
+        0.14288919159503063,
+        0.1670251687283569,
+        0.1679420980050568,
+        0.18290568905925642
+      ],
+      "online_time_reduction": 0.11283592682230532,
+      "time_ci95": [
+        0.10199010997076194,
+        0.12257529923645508
+      ],
+      "training_block_time_effects": [
+        0.11728803510426655,
+        0.09415546751690052,
+        0.1252519841872514,
+        0.10403865500618903,
+        0.12344549229691915
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.12164556570564629,
+      "ci95": [
+        0.11387464038171251,
+        0.129946105568705
+      ],
+      "training_block_effects": [
+        0.11552722113615235,
+        0.1076983634352524,
+        0.12569312887944964,
+        0.12313905580140266,
+        0.13617005927597436
+      ],
+      "online_time_reduction": 0.14974578742892727,
+      "time_ci95": [
+        0.1357091666505883,
+        0.16342754029406012
+      ],
+      "training_block_time_effects": [
+        0.14989388227337702,
+        0.12425638063402454,
+        0.16481992671209486,
+        0.140956764638773,
+        0.16880198288636694
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.07682554150064126,
+      "ci95": [
+        0.0668393575387859,
+        0.08666900417782124
+      ],
+      "training_block_effects": [
+        0.06469878433879377,
+        0.06095210204594778,
+        0.08447982026050306,
+        0.08360862134782329,
+        0.09038837951013841
+      ],
+      "online_time_reduction": 0.0637519705047768,
+      "time_ci95": [
+        0.051886274413216006,
+        0.07329600264930156
+      ],
+      "training_block_time_effects": [
+        0.06652425671920681,
+        0.04101841439044267,
+        0.07929522364430583,
+        0.06207008559438347,
+        0.06985187217554523
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.19616100097753356,
+      "ci95": [
+        0.18758166965503337,
+        0.20474033230003372
+      ],
+      "training_block_effects": [
+        0.1836932815190762,
+        0.18773750695258876,
+        0.2083180538697084,
+        0.1950467713318369,
+        0.2060093912144575
+      ],
+      "online_time_reduction": 0.16733463278751542,
+      "time_ci95": [
+        0.15844080983950204,
+        0.17622845573552878
+      ],
+      "training_block_time_effects": [
+        0.16421971704442792,
+        0.16132439660719441,
+        0.18391792897057543,
+        0.15266776946934674,
+        0.17454335184603256
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -9.660421323589711,
+      "time_ci95": [
+        -10.323878386448817,
+        -8.996964260730604
+      ],
+      "training_block_time_effects": [
+        -10.119916950582216,
+        -10.831466043287389,
+        -8.996329515965995,
+        -9.71662594450488,
+        -8.637768163608072
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.6592749542528098,
+      "ci95": [
+        0.6383155800659767,
+        0.680234328439643
+      ],
+      "training_block_effects": [
+        0.6377768177163339,
+        0.6285291438979963,
+        0.6798585929171597,
+        0.658965977101223,
+        0.6912442396313364
+      ],
+      "online_time_reduction": -0.803886611655615,
+      "time_ci95": [
+        -0.909605845469627,
+        -0.6981673778416032
+      ],
+      "training_block_time_effects": [
+        -0.9120892040045222,
+        -0.9662566625336968,
+        -0.7114959433388658,
+        -0.7913374942716966,
+        -0.6382537541292939
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.06938802414905357,
+      "ci95": [
+        0.06248057498057498,
+        0.07680818721719458
+      ],
+      "training_block_effects": [
+        0.08183545161945897,
+        0.06691424894549894,
+        0.05965583895271395,
+        0.07544610720162191,
+        0.06308847402597403
+      ],
+      "online_time_reduction": 0.017716237279415133,
+      "time_ci95": [
+        0.011075335918833732,
+        0.02435713863999654
+      ],
+      "training_block_time_effects": [
+        0.019627766906460422,
+        0.020988755715165636,
+        0.00824061723508555,
+        0.0300902074315955,
+        0.009633839108768565
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": -0.01660931184828244,
+      "ci95": [
+        -0.023878928465325522,
+        -0.009346864328481976
+      ],
+      "training_block_effects": [
+        -0.002988361719979368,
+        -0.015080492424242425,
+        -0.027208468614718612,
+        -0.013442577642945291,
+        -0.024326658839526484
+      ],
+      "online_time_reduction": 0.07859589783764655,
+      "time_ci95": [
+        0.0717774573650684,
+        0.0872239883528378
+      ],
+      "training_block_time_effects": [
+        0.0808352998434648,
+        0.0770310596554019,
+        0.06819851997743376,
+        0.09418501610439597,
+        0.07272959360753628
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.00013270838638485704,
+      "ci95": [
+        -0.0037869769119769124,
+        0.004052393684746626
+      ],
+      "training_block_effects": [
+        -0.0002840909090909092,
+        0.005273372460872461,
+        -0.005853174603174603,
+        0.004999657205539559,
+        -0.003472222222222222
+      ],
+      "online_time_reduction": 0.007396332744630548,
+      "time_ci95": [
+        0.0038472643420313104,
+        0.01159597345884544
+      ],
+      "training_block_time_effects": [
+        0.003064455550947983,
+        0.009200914547296457,
+        0.003488075924246903,
+        0.015096958940894613,
+        0.006131258759766778
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.07764044432412273,
+      "ci95": [
+        0.07052617521367521,
+        0.08235675997334278
+      ],
+      "training_block_effects": [
+        0.0826702326472547,
+        0.0827769019175269,
+        0.06399420891608391,
+        0.0808895307371507,
+        0.07787134740259741
+      ],
+      "online_time_reduction": 0.06971112890458606,
+      "time_ci95": [
+        0.06699233753506469,
+        0.07301679710028706
+      ],
+      "training_block_time_effects": [
+        0.06738495084939929,
+        0.07200472089426518,
+        0.06625725111651602,
+        0.07523143791925696,
+        0.0676772837434928
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -6.080559409376193,
+      "time_ci95": [
+        -6.194426545738411,
+        -5.957127771184321
+      ],
+      "training_block_time_effects": [
+        -6.017844299714083,
+        -6.11613068822793,
+        -6.279385913583347,
+        -5.8660529783896775,
+        -6.123383166965929
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.8063239247311828,
+      "ci95": [
+        0.8039954557091654,
+        0.8082635688684074
+      ],
+      "training_block_effects": [
+        0.8073956733230926,
+        0.8083077316948285,
+        0.8022033410138248,
+        0.8086533538146441,
+        0.8050595238095238
+      ],
+      "online_time_reduction": -0.08299305430001905,
+      "time_ci95": [
+        -0.08749036199827455,
+        -0.07894855115971963
+      ],
+      "training_block_time_effects": [
+        -0.0774394450541079,
+        -0.08399778645197473,
+        -0.09196188499868006,
+        -0.07842663418429974,
+        -0.08313952081103279
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.16548884184342777,
+      "ci95": [
+        0.16382470832499224,
+        0.16716170771144734
+      ],
+      "training_block_effects": [
+        0.1680338466906835,
+        0.16694367296663828,
+        0.165060435482199,
+        0.16501944678726546,
+        0.16238680729035251
+      ],
+      "online_time_reduction": 0.12554980250969844,
+      "time_ci95": [
+        0.12156527748507588,
+        0.129349360341314
+      ],
+      "training_block_time_effects": [
+        0.13188024546235544,
+        0.12465924044633038,
+        0.1183084303927865,
+        0.12766210359395305,
+        0.12523899265306687
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.1165551228331128,
+      "ci95": [
+        0.11465881641578235,
+        0.1184375151751544
+      ],
+      "training_block_effects": [
+        0.11940817653278954,
+        0.11878243444997255,
+        0.11580635391024785,
+        0.11304186573875041,
+        0.11573678353380365
+      ],
+      "online_time_reduction": 0.15987633394599327,
+      "time_ci95": [
+        0.15361640976688137,
+        0.16469014655241
+      ],
+      "training_block_time_effects": [
+        0.16502752595725795,
+        0.16608248807167025,
+        0.14747930488294597,
+        0.16061660822831098,
+        0.16017574258978118
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.07451568774129431,
+      "ci95": [
+        0.07361271960650662,
+        0.07534454637845067
+      ],
+      "training_block_effects": [
+        0.07477916036762702,
+        0.07418245847616808,
+        0.07490245443733254,
+        0.07592037101615276,
+        0.07279399440919118
+      ],
+      "online_time_reduction": 0.06707571340238497,
+      "time_ci95": [
+        0.06197591603185924,
+        0.07264533677917324
+      ],
+      "training_block_time_effects": [
+        0.07549007858407432,
+        0.06542432961232292,
+        0.057707710671884335,
+        0.07222073263246237,
+        0.06453571551118087
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.1732835494348513,
+      "ci95": [
+        0.1697221970227109,
+        0.17663479923570868
+      ],
+      "training_block_effects": [
+        0.17390213707930804,
+        0.17958027710191948,
+        0.1705310277934769,
+        0.16783782606026282,
+        0.17456647913928924
+      ],
+      "online_time_reduction": 0.15737823215519234,
+      "time_ci95": [
+        0.14999744399513293,
+        0.16390204516756074
+      ],
+      "training_block_time_effects": [
+        0.1566878396007379,
+        0.165692849644908,
+        0.14273837422267444,
+        0.15602950360670045,
+        0.1657425937009409
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -8.2622761974968,
+      "time_ci95": [
+        -8.318836391044185,
+        -8.171333593425489
+      ],
+      "training_block_time_effects": [
+        -8.274956437709085,
+        -8.307312115810436,
+        -8.324678986640642,
+        -8.085677514259238,
+        -8.318755933064603
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.702579365079365,
+      "ci95": [
+        0.6988095238095238,
+        0.706547619047619
+      ],
+      "training_block_effects": [
+        0.7023809523809523,
+        0.6984126984126984,
+        0.704861111111111,
+        0.7098214285714285,
+        0.6974206349206349
+      ],
+      "online_time_reduction": -0.5973783229182852,
+      "time_ci95": [
+        -0.6227277363817935,
+        -0.5669043242880897
+      ],
+      "training_block_time_effects": [
+        -0.603741813664074,
+        -0.6041735634413204,
+        -0.5971155359913205,
+        -0.5444108406692691,
+        -0.6374498608254421
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.1017528381255457,
+      "ci95": [
+        0.09376916109289841,
+        0.11051070226792119
+      ],
+      "training_block_effects": [
+        0.09982082785364021,
+        0.08847014806367855,
+        0.10071997551437312,
+        0.10271538575908332,
+        0.11703785343695325
+      ],
+      "online_time_reduction": 0.07563798723298684,
+      "time_ci95": [
+        0.0653047754145309,
+        0.08608197712931051
+      ],
+      "training_block_time_effects": [
+        0.08389481911423,
+        0.06049383912024237,
+        0.07240513864948864,
+        0.06656553009134056,
+        0.09483060918963261
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.07245730158718991,
+      "ci95": [
+        0.0661350039204814,
+        0.07844406037129514
+      ],
+      "training_block_effects": [
+        0.07159991740206992,
+        0.06142827976520243,
+        0.07180795523542159,
+        0.07458222507137811,
+        0.08286813046187752
+      ],
+      "online_time_reduction": 0.10258281605565422,
+      "time_ci95": [
+        0.09360621637822106,
+        0.11228910375241877
+      ],
+      "training_block_time_effects": [
+        0.10147435287303361,
+        0.08761579567633332,
+        0.10543365631289778,
+        0.09759983017947957,
+        0.12079044523652689
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.04399870230569397,
+      "ci95": [
+        0.038598358097618836,
+        0.05000060591861531
+      ],
+      "training_block_effects": [
+        0.03689652014045523,
+        0.0382323103017286,
+        0.0427341296037265,
+        0.04731046757816529,
+        0.054820083904394225
+      ],
+      "online_time_reduction": 0.04325458096104403,
+      "time_ci95": [
+        0.039973151733109266,
+        0.047518624958550755
+      ],
+      "training_block_time_effects": [
+        0.03960843854522318,
+        0.044896049805707265,
+        0.039910010601418064,
+        0.04082886037226386,
+        0.05102954548060777
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.12294252224807405,
+      "ci95": [
+        0.11562243242715273,
+        0.13026261206899536
+      ],
+      "training_block_effects": [
+        0.11451636893236633,
+        0.11294583889135633,
+        0.13194817782377002,
+        0.1231877464883184,
+        0.1321144791045592
+      ],
+      "online_time_reduction": 0.115962747051364,
+      "time_ci95": [
+        0.11122092534331367,
+        0.12070456875941434
+      ],
+      "training_block_time_effects": [
+        0.11971989149828846,
+        0.10884146970003858,
+        0.12270727554874672,
+        0.10987658880674496,
+        0.11866850970300127
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -14.669485034588709,
+      "time_ci95": [
+        -15.554538504622409,
+        -13.797243201589776
+      ],
+      "training_block_time_effects": [
+        -15.494674416680063,
+        -16.090180696882012,
+        -14.00747601578594,
+        -14.538924110814072,
+        -13.216169932781462
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.5063492063492063,
+      "ci95": [
+        0.48273809523809524,
+        0.5299603174603175
+      ],
+      "training_block_effects": [
+        0.47718253968253965,
+        0.4732142857142857,
+        0.5277777777777778,
+        0.5128968253968254,
+        0.5406746031746033
+      ],
+      "online_time_reduction": -1.5533872531420971,
+      "time_ci95": [
+        -1.6623625696624917,
+        -1.4462858195470092
+      ],
+      "training_block_time_effects": [
+        -1.6986920518682105,
+        -1.7061844698956368,
+        -1.4508967764400353,
+        -1.5020598047847638,
+        -1.4091031627218396
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.044586517806836826,
+      "ci95": [
+        0.04094159759254321,
+        0.04884234369898659
+      ],
+      "training_block_effects": [
+        0.046069608216704895,
+        0.04299772317307063,
+        0.042370560519211495,
+        0.05273875738293055,
+        0.03875593974226656
+      ],
+      "online_time_reduction": 0.012651726241694203,
+      "time_ci95": [
+        0.008350983685589735,
+        0.019159810232119795
+      ],
+      "training_block_time_effects": [
+        0.012667288301445034,
+        0.008123335074981064,
+        0.02502288060330308,
+        0.008063121049244708,
+        0.00938200617949713
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": -0.010845401543299982,
+      "ci95": [
+        -0.014376519485846112,
+        -0.00689295106768017
+      ],
+      "training_block_effects": [
+        -0.009187139614771193,
+        -0.01205382970572599,
+        -0.012653130384108646,
+        -0.0034523653089829553,
+        -0.016880542702911124
+      ],
+      "online_time_reduction": 0.05123593971245329,
+      "time_ci95": [
+        0.04710730600174875,
+        0.055364573423157835
+      ],
+      "training_block_time_effects": [
+        0.057347640320659504,
+        0.04907277740947544,
+        0.05652740453249738,
+        0.04608986731617134,
+        0.04714200898346281
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.0013516140278448463,
+      "ci95": [
+        -0.0012976863112732677,
+        0.004102042769322181
+      ],
+      "training_block_effects": [
+        0.0008049242424242424,
+        0.0033603700043917436,
+        -0.0034420289855072463,
+        0.005557519482151835,
+        0.0004772853957636567
+      ],
+      "online_time_reduction": 0.004753756475734948,
+      "time_ci95": [
+        0.0025249135831242864,
+        0.006747664462380079
+      ],
+      "training_block_time_effects": [
+        0.0005238484875122623,
+        0.007351113547844883,
+        0.004840797890232949,
+        0.003955373790095803,
+        0.0070976486629888424
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.049441846724123106,
+      "ci95": [
+        0.0471141781800644,
+        0.05129909997578088
+      ],
+      "training_block_effects": [
+        0.05183506582355266,
+        0.05108871605382323,
+        0.04829585966214802,
+        0.04534165595693897,
+        0.05064793612415264
+      ],
+      "online_time_reduction": 0.047522501406407666,
+      "time_ci95": [
+        0.04183339485606198,
+        0.05325454583956972
+      ],
+      "training_block_time_effects": [
+        0.046238557865951616,
+        0.04571860549123901,
+        0.05810518861355267,
+        0.0377654464166893,
+        0.04978470864460576
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -9.433762560220535,
+      "time_ci95": [
+        -9.555957352853843,
+        -9.311567767587226
+      ],
+      "training_block_time_effects": [
+        -9.483352049374062,
+        -9.27333469550333,
+        -9.630379354609342,
+        -9.263908698777707,
+        -9.517838002838236
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 65,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.7009920634920634,
+      "ci95": [
+        0.6977182539682539,
+        0.7041666666666666
+      ],
+      "training_block_effects": [
+        0.7043650793650793,
+        0.7048611111111112,
+        0.6954365079365079,
+        0.7023809523809523,
+        0.6979166666666667
+      ],
+      "online_time_reduction": -0.5954296897536838,
+      "time_ci95": [
+        -0.6174888802080023,
+        -0.5745454397146499
+      ],
+      "training_block_time_effects": [
+        -0.5846507770360776,
+        -0.5830408048744768,
+        -0.6389937670910736,
+        -0.5609974058941092,
+        -0.6094656938726817
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.2772524758737994,
+      "ci95": [
+        0.27283395883120143,
+        0.28221656968440056
+      ],
+      "training_block_effects": [
+        0.28605964348151847,
+        0.2738855277687998,
+        0.2734132901412313,
+        0.2811750749250749,
+        0.27172884305237244
+      ],
+      "online_time_reduction": 0.21720376185432805,
+      "time_ci95": [
+        0.21457264783012753,
+        0.2207585380095684
+      ],
+      "training_block_time_effects": [
+        0.21749009394326113,
+        0.21486264912525355,
+        0.21328519035678084,
+        0.2238133156597758,
+        0.21656756018656892
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.21172005282299403,
+      "ci95": [
+        0.20935671405800083,
+        0.21503525987900987
+      ],
+      "training_block_effects": [
+        0.21807203213453213,
+        0.20957141816516817,
+        0.2104801014957265,
+        0.21189639608757255,
+        0.20858031623197065
+      ],
+      "online_time_reduction": 0.26071203259327325,
+      "time_ci95": [
+        0.2563382812972241,
+        0.2651754188556404
+      ],
+      "training_block_time_effects": [
+        0.2678858440162077,
+        0.2594185300046638,
+        0.2568027200273572,
+        0.2651193507047663,
+        0.25433371821337114
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.13583123473748474,
+      "ci95": [
+        0.13166012806637806,
+        0.1400023414085914
+      ],
+      "training_block_effects": [
+        0.1365345591908092,
+        0.13024198024198025,
+        0.1390115093240093,
+        0.1427270646020646,
+        0.13064106032856032
+      ],
+      "online_time_reduction": 0.11690772283937471,
+      "time_ci95": [
+        0.11189205172460367,
+        0.12322302386290582
+      ],
+      "training_block_time_effects": [
+        0.10933959809470838,
+        0.11787157765879314,
+        0.1155330001047267,
+        0.12822455165854527,
+        0.11356988668010015
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.28072082568381906,
+      "ci95": [
+        0.27333385246504444,
+        0.28985296668201077
+      ],
+      "training_block_effects": [
+        0.29562976086413584,
+        0.27566665870893814,
+        0.28670889210870826,
+        0.27586168856728066,
+        0.2697371281700326
+      ],
+      "online_time_reduction": 0.24467285410687842,
+      "time_ci95": [
+        0.23831951885072442,
+        0.25214986214397733
+      ],
+      "training_block_time_effects": [
+        0.2573738761742653,
+        0.2410768209009058,
+        0.24965318678286277,
+        0.23628589126213034,
+        0.2389744954142278
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -4.636308770309283,
+      "time_ci95": [
+        -4.779146328696681,
+        -4.493471211921883
+      ],
+      "training_block_time_effects": [
+        -4.4169401258441825,
+        -4.709494874508749,
+        -4.825390270004085,
+        -4.461990466706149,
+        -4.767728114483244
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "iid",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.9004305452551213,
+      "ci95": [
+        0.8974561400663845,
+        0.9034049504438583
+      ],
+      "training_block_effects": [
+        0.9048127663113871,
+        0.8996065023122111,
+        0.8971151084344988,
+        0.9038963586421532,
+        0.8967219905753566
+      ],
+      "online_time_reduction": 0.011097632686473811,
+      "time_ci95": [
+        -0.013467003376532963,
+        0.035922607852738396
+      ],
+      "training_block_time_effects": [
+        0.04919591416514107,
+        0.001141545547973171,
+        -0.007363688166305019,
+        0.039388984934573816,
+        -0.026874593049013976
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.17104563502826695,
+      "ci95": [
+        0.16584443412780092,
+        0.17656553827504973
+      ],
+      "training_block_effects": [
+        0.16875510809305316,
+        0.1733355677469111,
+        0.1702500675956144,
+        0.18077585206133995,
+        0.16211157964441616
+      ],
+      "online_time_reduction": 0.14497752950748094,
+      "time_ci95": [
+        0.14047309440944694,
+        0.14948196460551494
+      ],
+      "training_block_time_effects": [
+        0.14606183455399005,
+        0.15251385695391084,
+        0.14055924984984638,
+        0.14816013728288144,
+        0.1375925688967759
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.13197331309624383,
+      "ci95": [
+        0.12816600225403083,
+        0.13503159000849024
+      ],
+      "training_block_effects": [
+        0.13134767146783183,
+        0.133800206202667,
+        0.13331597979005433,
+        0.1366700241239841,
+        0.12473268389668185
+      ],
+      "online_time_reduction": 0.16831204436553468,
+      "time_ci95": [
+        0.16332998376532532,
+        0.17434165254129783
+      ],
+      "training_block_time_effects": [
+        0.16644919534433514,
+        0.1690315576642919,
+        0.16719626779847122,
+        0.1787425032326207,
+        0.16014069778795448
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.08280857557118607,
+      "ci95": [
+        0.0779117073017085,
+        0.08860967767198287
+      ],
+      "training_block_effects": [
+        0.08621604778713192,
+        0.07939258559843959,
+        0.08113528697949234,
+        0.09247991832478095,
+        0.07481903916608548
+      ],
+      "online_time_reduction": 0.07586644665759626,
+      "time_ci95": [
+        0.06899957962224806,
+        0.08253546912357007
+      ],
+      "training_block_time_effects": [
+        0.08136607740025731,
+        0.07471591157332258,
+        0.07474648905375776,
+        0.08553178554809016,
+        0.06297196971255348
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.2082629958540491,
+      "ci95": [
+        0.20460854528671307,
+        0.2118331537023522
+      ],
+      "training_block_effects": [
+        0.20448873188164202,
+        0.21011764152207324,
+        0.21252369605797972,
+        0.21200036743686412,
+        0.2021845423716864
+      ],
+      "online_time_reduction": 0.19164219781555702,
+      "time_ci95": [
+        0.18558479487584406,
+        0.19769960075527
+      ],
+      "training_block_time_effects": [
+        0.18446048776438997,
+        0.200566082834096,
+        0.19678581419997698,
+        0.193794209708204,
+        0.18260439457111818
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -10.376833090149223,
+      "time_ci95": [
+        -10.658318604445242,
+        -9.946242065273358
+      ],
+      "training_block_time_effects": [
+        -10.35863779446419,
+        -10.633364519378278,
+        -10.645688375960397,
+        -9.563048885479677,
+        -10.68342587546357
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "coefficient_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.8074878569111131,
+      "ci95": [
+        0.801788504835477,
+        0.816528662533181
+      ],
+      "training_block_effects": [
+        0.8070567080547706,
+        0.8022869457845863,
+        0.8012630371808362,
+        0.8247678415198101,
+        0.802064752015563
+      ],
+      "online_time_reduction": -0.8218241304802125,
+      "time_ci95": [
+        -0.8768256843091548,
+        -0.7399048912133107
+      ],
+      "training_block_time_effects": [
+        -0.8375247394503313,
+        -0.8894408657711754,
+        -0.8426344184528716,
+        -0.6612395439447687,
+        -0.8782810847819161
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.06910767106345667,
+      "ci95": [
+        0.06344779250569692,
+        0.07520776300260627
+      ],
+      "training_block_effects": [
+        0.0797203740907785,
+        0.06974994980509686,
+        0.06843884637034792,
+        0.059929913836163834,
+        0.06769927121489622
+      ],
+      "online_time_reduction": 0.03455077349762921,
+      "time_ci95": [
+        0.027369981872474025,
+        0.04558569203194568
+      ],
+      "training_block_time_effects": [
+        0.0562713604195998,
+        0.03094789731221434,
+        0.03258360373125403,
+        0.026420230855402925,
+        0.02653077516967496
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": -0.022867416488740015,
+      "ci95": [
+        -0.027385479104229105,
+        -0.017035890477986065
+      ],
+      "training_block_effects": [
+        -0.011289002051869699,
+        -0.025051510989010987,
+        -0.026684123168498167,
+        -0.029253819097569096,
+        -0.022058627136752135
+      ],
+      "online_time_reduction": 0.08609905806501215,
+      "time_ci95": [
+        0.07688627998152892,
+        0.09447358118435535
+      ],
+      "training_block_time_effects": [
+        0.10008289203894255,
+        0.09154943786854862,
+        0.08910324610679439,
+        0.07156112386416036,
+        0.07819859044661487
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.0027425204493219195,
+      "ci95": [
+        0.0004166926823176823,
+        0.005068348216326157
+      ],
+      "training_block_effects": [
+        0.004499462955345308,
+        -0.0007575757575757577,
+        0.002854567307692308,
+        0.0003720238095238095,
+        0.006744123931623931
+      ],
+      "online_time_reduction": 0.004168808918871261,
+      "time_ci95": [
+        -8.733123139400634e-05,
+        0.00919627525821554
+      ],
+      "training_block_time_effects": [
+        0.013166961518606527,
+        0.0034669840981504034,
+        0.00616191910515959,
+        0.00031857263009852244,
+        -0.00227039275765874
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.07893106074244813,
+      "ci95": [
+        0.07034400261760944,
+        0.0892234215678972
+      ],
+      "training_block_effects": [
+        0.09861297556610057,
+        0.08118049740292388,
+        0.07513909057059212,
+        0.07431435241637448,
+        0.0654083877562496
+      ],
+      "online_time_reduction": 0.07162153772332525,
+      "time_ci95": [
+        0.056728904954966006,
+        0.088786165354027
+      ],
+      "training_block_time_effects": [
+        0.10107095187165088,
+        0.07729408676546803,
+        0.06963232978694947,
+        0.06342388438971433,
+        0.046686435802843526
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -5.563684150107996,
+      "time_ci95": [
+        -5.709011226314557,
+        -5.44218551474099
+      ],
+      "training_block_time_effects": [
+        -5.3888304877758655,
+        -5.601283699233199,
+        -5.443152411144151,
+        -5.833540007065144,
+        -5.55161414532162
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-06,
+      "regime": "forcing_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.9057154858900087,
+      "ci95": [
+        0.9045265667618072,
+        0.9071222985513676
+      ],
+      "training_block_effects": [
+        0.9047107622131911,
+        0.9064756422924832,
+        0.9081416960837212,
+        0.9039619805220059,
+        0.9052873483386419
+      ],
+      "online_time_reduction": 0.05430459543584933,
+      "time_ci95": [
+        0.03683495435572785,
+        0.07177423651597083
+      ],
+      "training_block_time_effects": [
+        0.03144580961695476,
+        0.07515815498614456,
+        0.0801889921044988,
+        0.036553132073081154,
+        0.04817688839856741
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.17464942438966113,
+      "ci95": [
+        0.17078976173362614,
+        0.1787087511864547
+      ],
+      "training_block_effects": [
+        0.17524941234278163,
+        0.1678166613275225,
+        0.1768231980431637,
+        0.181681353827136,
+        0.17167649640770183
+      ],
+      "online_time_reduction": 0.14159303191781963,
+      "time_ci95": [
+        0.13603705691737836,
+        0.14669485213415348
+      ],
+      "training_block_time_effects": [
+        0.14262591437089994,
+        0.13744263689811648,
+        0.14532534217833143,
+        0.15009883097160232,
+        0.13247243517014795
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.12800773518622907,
+      "ci95": [
+        0.12461098467366975,
+        0.13101216989018594
+      ],
+      "training_block_effects": [
+        0.12858006568118543,
+        0.12123060191956157,
+        0.13237550116413774,
+        0.13086489072073437,
+        0.1269876164455263
+      ],
+      "online_time_reduction": 0.17816057545339878,
+      "time_ci95": [
+        0.1740009489474477,
+        0.18304273205395838
+      ],
+      "training_block_time_effects": [
+        0.17631067729246097,
+        0.17096136565740808,
+        0.18079776238852352,
+        0.18641018655211067,
+        0.1763228853764907
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.07650456307631734,
+      "ci95": [
+        0.07072438155580865,
+        0.08452917396085428
+      ],
+      "training_block_effects": [
+        0.07566658602690328,
+        0.06754825032106211,
+        0.07142941055500787,
+        0.09166894538532502,
+        0.07620962309328846
+      ],
+      "online_time_reduction": 0.06827718778380434,
+      "time_ci95": [
+        0.06219634052273548,
+        0.07584282652456956
+      ],
+      "training_block_time_effects": [
+        0.062239894230093296,
+        0.06164353034710532,
+        0.0729443721274371,
+        0.0813432887551058,
+        0.06321485345928016
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.17772722626236517,
+      "ci95": [
+        0.17079809863807752,
+        0.1846563538866528
+      ],
+      "training_block_effects": [
+        0.18344962979991247,
+        0.16940658925940422,
+        0.18884043895458202,
+        0.17870163192427505,
+        0.16823784137365205
+      ],
+      "online_time_reduction": 0.1605923102557155,
+      "time_ci95": [
+        0.15045688222166315,
+        0.17041009019539133
+      ],
+      "training_block_time_effects": [
+        0.17162122494644733,
+        0.1532035420389901,
+        0.17315776483188133,
+        0.1624924714202993,
+        0.14248654804095948
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -8.16829577690635,
+      "time_ci95": [
+        -8.442072321332256,
+        -7.866351823071983
+      ],
+      "training_block_time_effects": [
+        -7.932778502341549,
+        -8.251782044360917,
+        -8.294191296149734,
+        -7.701596438956212,
+        -8.661130602723333
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "iid",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.8466043307086615,
+      "ci95": [
+        0.8418799212598426,
+        0.8513287401574805
+      ],
+      "training_block_effects": [
+        0.8535925196850394,
+        0.8452263779527559,
+        0.8415354330708662,
+        0.8521161417322836,
+        0.8405511811023623
+      ],
+      "online_time_reduction": -0.45887922726442687,
+      "time_ci95": [
+        -0.4950918231652416,
+        -0.41776367840149764
+      ],
+      "training_block_time_effects": [
+        -0.39113026111505317,
+        -0.4822285691417372,
+        -0.4977682268328899,
+        -0.4244220327231087,
+        -0.4988470465093455
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.10521943376988456,
+      "ci95": [
+        0.10249508547831043,
+        0.10760855589484764
+      ],
+      "training_block_effects": [
+        0.10550185817162586,
+        0.10806561967815889,
+        0.10004247884345127,
+        0.10820484097314725,
+        0.1042823711830395
+      ],
+      "online_time_reduction": 0.08507426216642826,
+      "time_ci95": [
+        0.07839544996603896,
+        0.09174541574680642
+      ],
+      "training_block_time_effects": [
+        0.09098710017252275,
+        0.09488310358964289,
+        0.08412058408725634,
+        0.08309066779258072,
+        0.07228985519013859
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": 0.07818582813450951,
+      "ci95": [
+        0.07635078811581206,
+        0.07971018828294016
+      ],
+      "training_block_effects": [
+        0.07894718230366296,
+        0.08045637331952257,
+        0.07478629586103683,
+        0.07739378295232886,
+        0.07934550623599636
+      ],
+      "online_time_reduction": 0.10363041618241572,
+      "time_ci95": [
+        0.09623033389710273,
+        0.11103049846772872
+      ],
+      "training_block_time_effects": [
+        0.10414604837031706,
+        0.11635396609978764,
+        0.09689173024831675,
+        0.10914925588437566,
+        0.09161108030928153
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.049049700906030114,
+      "ci95": [
+        0.046327396979340275,
+        0.05129371548914115
+      ],
+      "training_block_effects": [
+        0.05125925060070584,
+        0.04999929446109923,
+        0.04813510325191377,
+        0.05197539089159741,
+        0.043879465324834305
+      ],
+      "online_time_reduction": 0.04127728125765609,
+      "time_ci95": [
+        0.03209371515739786,
+        0.049162101436729826
+      ],
+      "training_block_time_effects": [
+        0.04634193974999461,
+        0.0545745748345171,
+        0.035744842930103216,
+        0.0435977844047017,
+        0.02612726436896383
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.1312959878462783,
+      "ci95": [
+        0.12942258623071345,
+        0.1331701165648398
+      ],
+      "training_block_effects": [
+        0.12864596537737,
+        0.13479575232958046,
+        0.13279915389474115,
+        0.13065713486057245,
+        0.12958193276912744
+      ],
+      "online_time_reduction": 0.11987810992625789,
+      "time_ci95": [
+        0.11640883907292505,
+        0.12254038337340094
+      ],
+      "training_block_time_effects": [
+        0.1212969765373744,
+        0.12400591037315442,
+        0.12053678790759326,
+        0.12014739783994821,
+        0.11340347697321922
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -16.48121801374622,
+      "time_ci95": [
+        -16.911151438695427,
+        -15.760675012604604
+      ],
+      "training_block_time_effects": [
+        -16.74802297112008,
+        -16.743242335684883,
+        -17.021497295557392,
+        -15.083402630484699,
+        -16.80992483588404
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "coefficient_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.7105807086614173,
+      "ci95": [
+        0.7031003937007874,
+        0.723277559055118
+      ],
+      "training_block_effects": [
+        0.7074311023622047,
+        0.7044783464566929,
+        0.703001968503937,
+        0.7354822834645669,
+        0.702509842519685
+      ],
+      "online_time_reduction": -1.6646338819203321,
+      "time_ci95": [
+        -1.7301116534850487,
+        -1.539970106342634
+      ],
+      "training_block_time_effects": [
+        -1.724926869068695,
+        -1.7273400209006806,
+        -1.7169788015598049,
+        -1.4185105697508953,
+        -1.7354131483215858
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "zero_laplace",
+      "iteration_reduction": 0.04683582284013145,
+      "ci95": [
+        0.04159778667208377,
+        0.05295017101646083
+      ],
+      "training_block_effects": [
+        0.03963294317517421,
+        0.041921811620658625,
+        0.05868156575084821,
+        0.0467745014397386,
+        0.04716829221423758
+      ],
+      "online_time_reduction": 0.02128680119360533,
+      "time_ci95": [
+        0.017638601413759523,
+        0.027898420133048822
+      ],
+      "training_block_time_effects": [
+        0.017744231214856965,
+        0.018001683868654757,
+        0.03440200489036459,
+        0.018934655608935883,
+        0.017351430385214466
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "physics_laplace",
+      "iteration_reduction": -0.0094330304739575,
+      "ci95": [
+        -0.01450418342765479,
+        -0.0033809979627573692
+      ],
+      "training_block_effects": [
+        -0.014458364186982608,
+        -0.01666198521872864,
+        0.0026111975666824063,
+        -0.008375782203907204,
+        -0.010280218326851456
+      ],
+      "online_time_reduction": 0.06179500914617717,
+      "time_ci95": [
+        0.05849766935175003,
+        0.06484371281711175
+      ],
+      "training_block_time_effects": [
+        0.06313087809969742,
+        0.06270172642507149,
+        0.0670626746627942,
+        0.060328813672104666,
+        0.05575095287121807
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "quadratic_laplace",
+      "iteration_reduction": 0.0035434695585582314,
+      "ci95": [
+        0.0013458124477861318,
+        0.006595127992081654
+      ],
+      "training_block_effects": [
+        0.001488095238095238,
+        0.0010540674603174603,
+        0.004334886128364389,
+        0.001644736842105263,
+        0.009195562123908806
+      ],
+      "online_time_reduction": 0.005777651496945611,
+      "time_ci95": [
+        0.0009177466900394486,
+        0.011265438383767291
+      ],
+      "training_block_time_effects": [
+        -0.0009992556509172148,
+        0.0014253014640658495,
+        0.01627114573229522,
+        0.0037366418238999745,
+        0.00845442411538423
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "shuffled_laplace",
+      "iteration_reduction": 0.05419160108846126,
+      "ci95": [
+        0.04868016255926599,
+        0.0607381605496428
+      ],
+      "training_block_effects": [
+        0.05730066210883574,
+        0.04915970626544265,
+        0.06589440821085339,
+        0.05212505744890445,
+        0.04647817140827009
+      ],
+      "online_time_reduction": 0.04888717422745148,
+      "time_ci95": [
+        0.044155469190067874,
+        0.05404945101443211
+      ],
+      "training_block_time_effects": [
+        0.0518630692721308,
+        0.04738973680457964,
+        0.05848926048766709,
+        0.04533565974402787,
+        0.041358144828852
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "structured_laplace",
+      "baseline": "direct",
+      "iteration_reduction": null,
+      "ci95": null,
+      "training_block_effects": null,
+      "online_time_reduction": -8.928803695113285,
+      "time_ci95": [
+        -9.149319356415742,
+        -8.674932269845634
+      ],
+      "training_block_time_effects": [
+        -9.001760066106508,
+        -8.940514477204648,
+        -8.477462268639005,
+        -9.288522609223136,
+        -8.935759054393127
+      ],
+      "all_converged": true
+    },
+    {
+      "grid": 129,
+      "rtol": 1e-10,
+      "regime": "forcing_ood",
+      "proposed": "zero_laplace",
+      "baseline": "zero_jacobi",
+      "iteration_reduction": 0.8535925196850395,
+      "ci95": [
+        0.8515748031496063,
+        0.8556606791338581
+      ],
+      "training_block_effects": [
+        0.8533464566929134,
+        0.8548228346456692,
+        0.8570374015748031,
+        0.8501476377952757,
+        0.8526082677165354
+      ],
+      "online_time_reduction": -0.4113645282866479,
+      "time_ci95": [
+        -0.42599222042591006,
+        -0.3945747179812364
+      ],
+      "training_block_time_effects": [
+        -0.4196656322709759,
+        -0.4061272101622707,
+        -0.3802594983703986,
+        -0.43472275323210124,
+        -0.4160475473974931
+      ],
+      "all_converged": true
+    }
+  ],
+  "primary_passed": true,
+  "disposition": "SUPPORTED",
+  "inference_scope": "Three independent training blocks; bootstrap is descriptive and low precision. No iteration ratio against direct (zero iterations) has scientific meaning; use timing only."
+}

@@ -1,0 +1,216 @@
+test_cli_validate_and_score (test_benchmarks.BenchmarkTests.test_cli_validate_and_score) ... ok
+test_manifest_binds_case_count_and_digest (test_benchmarks.BenchmarkTests.test_manifest_binds_case_count_and_digest) ... ok
+test_manifest_rejects_changed_dataset (test_benchmarks.BenchmarkTests.test_manifest_rejects_changed_dataset) ... ok
+test_rejects_duplicate_case_ids (test_benchmarks.BenchmarkTests.test_rejects_duplicate_case_ids) ... ok
+test_rejects_duplicate_prediction_ids (test_benchmarks.BenchmarkTests.test_rejects_duplicate_prediction_ids) ... ok
+test_rejects_malformed_and_empty_datasets (test_benchmarks.BenchmarkTests.test_rejects_malformed_and_empty_datasets) ... ok
+test_rejects_non_string_case_fields_instead_of_coercing_them (test_benchmarks.BenchmarkTests.test_rejects_non_string_case_fields_instead_of_coercing_them) ... ok
+test_rejects_non_string_manifest_text_fields (test_benchmarks.BenchmarkTests.test_rejects_non_string_manifest_text_fields) ... ok
+test_rejects_non_string_prediction_fields_but_allows_blank_string_prediction (test_benchmarks.BenchmarkTests.test_rejects_non_string_prediction_fields_but_allows_blank_string_prediction) ... ok
+test_scores_exact_match_by_category (test_benchmarks.BenchmarkTests.test_scores_exact_match_by_category) ... ok
+test_aggregation_rule_is_frozen_and_applied (test_claims.ClaimTests.test_aggregation_rule_is_frozen_and_applied) ... ok
+test_explicit_failed_run_is_inconclusive_even_with_good_metric (test_claims.ClaimTests.test_explicit_failed_run_is_inconclusive_even_with_good_metric) ... ok
+test_malformed_metric_is_invalid_evidence (test_claims.ClaimTests.test_malformed_metric_is_invalid_evidence) ... ok
+test_missing_preregistered_run_is_inconclusive (test_claims.ClaimTests.test_missing_preregistered_run_is_inconclusive) ... ok
+test_mixed_seed_values_are_preserved (test_claims.ClaimTests.test_mixed_seed_values_are_preserved) ... ok
+test_not_supported_claim (test_claims.ClaimTests.test_not_supported_claim) ... ok
+test_spec_cannot_omit_a_preregistered_experiment (test_claims.ClaimTests.test_spec_cannot_omit_a_preregistered_experiment) ... ok
+test_spec_roundtrip_is_machine_readable (test_claims.ClaimTests.test_spec_roundtrip_is_machine_readable) ... ok
+test_supported_claim (test_claims.ClaimTests.test_supported_claim) ... ok
+test_tolerance_is_explicit_and_applied (test_claims.ClaimTests.test_tolerance_is_explicit_and_applied) ... ok
+test_allows_symlink_within_declaring_experiment (test_evidence.EvidenceTests.test_allows_symlink_within_declaring_experiment) ... ok
+test_hashes_complete_evidence (test_evidence.EvidenceTests.test_hashes_complete_evidence) ... ok
+test_rejects_artifact_traversal_before_reading_outside_root (test_evidence.EvidenceTests.test_rejects_artifact_traversal_before_reading_outside_root) ... ok
+test_rejects_duplicate_required_artifact_contract (test_evidence.EvidenceTests.test_rejects_duplicate_required_artifact_contract) ... ok
+test_rejects_non_object_json_artifacts (test_evidence.EvidenceTests.test_rejects_non_object_json_artifacts) ... ok
+test_rejects_symlinked_artifact_from_sibling_experiment (test_evidence.EvidenceTests.test_rejects_symlinked_artifact_from_sibling_experiment) ... ok
+test_rejects_symlinked_artifact_that_escapes_evidence_root (test_evidence.EvidenceTests.test_rejects_symlinked_artifact_that_escapes_evidence_root) ... ok
+test_rejects_symlinked_experiment_directory_to_sibling (test_evidence.EvidenceTests.test_rejects_symlinked_experiment_directory_to_sibling) ... ok
+test_rejects_unsafe_experiment_directory_name (test_evidence.EvidenceTests.test_rejects_unsafe_experiment_directory_name) ... ok
+test_reports_missing_artifacts (test_evidence.EvidenceTests.test_reports_missing_artifacts) ... ok
+test_artifact_handle_is_opened_once (test_evidence_snapshot.EvidenceSnapshotTests.test_artifact_handle_is_opened_once) ... FAIL
+test_binary_artifacts_stream_exact_bytes (test_evidence_snapshot.EvidenceSnapshotTests.test_binary_artifacts_stream_exact_bytes) ... ok
+test_declared_json_alias_cannot_hide_non_json_target (test_evidence_snapshot.EvidenceSnapshotTests.test_declared_json_alias_cannot_hide_non_json_target) ... ok
+test_duplicate_metric_key_cannot_promote_failed_score (test_evidence_snapshot.EvidenceSnapshotTests.test_duplicate_metric_key_cannot_promote_failed_score) ... ok
+test_duplicate_nested_key_is_invalid (test_evidence_snapshot.EvidenceSnapshotTests.test_duplicate_nested_key_is_invalid) ... ok
+test_even_median_is_finite_at_large_magnitudes (test_evidence_snapshot.EvidenceSnapshotTests.test_even_median_is_finite_at_large_magnitudes) ... ok
+test_exact_cancellation_and_ordinary_median_remain_defined (test_evidence_snapshot.EvidenceSnapshotTests.test_exact_cancellation_and_ordinary_median_remain_defined) ... ok
+test_exact_large_integer_metric_is_accepted (test_evidence_snapshot.EvidenceSnapshotTests.test_exact_large_integer_metric_is_accepted) ... ok
+test_failed_run_retains_metric_and_exact_artifact (test_evidence_snapshot.EvidenceSnapshotTests.test_failed_run_retains_metric_and_exact_artifact) ... ok
+test_json_resource_limit_refuses_before_full_read (test_evidence_snapshot.EvidenceSnapshotTests.test_json_resource_limit_refuses_before_full_read) ... ok
+test_large_json_integer_is_classified_invalid_without_crashing (test_evidence_snapshot.EvidenceSnapshotTests.test_large_json_integer_is_classified_invalid_without_crashing) ... ok
+test_lossy_integer_metric_cannot_satisfy_rounded_threshold (test_evidence_snapshot.EvidenceSnapshotTests.test_lossy_integer_metric_cannot_satisfy_rounded_threshold) ... ok
+test_lossy_or_underflowing_claim_criteria_fail_before_classification (test_evidence_snapshot.EvidenceSnapshotTests.test_lossy_or_underflowing_claim_criteria_fail_before_classification) ... ok
+test_metadata_probe_errors_are_retained (test_evidence_snapshot.EvidenceSnapshotTests.test_metadata_probe_errors_are_retained) ... ok
+test_nonfinite_numbers_anywhere_are_invalid (test_evidence_snapshot.EvidenceSnapshotTests.test_nonfinite_numbers_anywhere_are_invalid) ... ok
+test_nonzero_decimal_underflow_cannot_satisfy_zero_threshold (test_evidence_snapshot.EvidenceSnapshotTests.test_nonzero_decimal_underflow_cannot_satisfy_zero_threshold) ... ok
+test_nonzero_reduction_underflow_is_invalid_and_keeps_inputs (test_evidence_snapshot.EvidenceSnapshotTests.test_nonzero_reduction_underflow_is_invalid_and_keeps_inputs) ... ok
+test_observable_in_place_mutation_is_retained_as_invalid (test_evidence_snapshot.EvidenceSnapshotTests.test_observable_in_place_mutation_is_retained_as_invalid) ... ok
+test_path_replacement_after_capture_cannot_change_classification (test_evidence_snapshot.EvidenceSnapshotTests.test_path_replacement_after_capture_cannot_change_classification) ... ok
+test_receipt_binds_exact_utf8_bytes_and_claim_values (test_evidence_snapshot.EvidenceSnapshotTests.test_receipt_binds_exact_utf8_bytes_and_claim_values) ... ok
+test_representable_subnormal_and_signed_zero_are_retained (test_evidence_snapshot.EvidenceSnapshotTests.test_representable_subnormal_and_signed_zero_are_retained) ... ok
+test_undeclared_metric_is_rejected_before_any_artifact_read (test_evidence_snapshot.EvidenceSnapshotTests.test_undeclared_metric_is_rejected_before_any_artifact_read) ... ok
+test_unreadable_artifact_is_incomplete (test_evidence_snapshot.EvidenceSnapshotTests.test_unreadable_artifact_is_incomplete) ... ok
+test_utf8_and_nonobject_errors_are_reported_without_publication (test_evidence_snapshot.EvidenceSnapshotTests.test_utf8_and_nonobject_errors_are_reported_without_publication) ... ok
+test_valid_internal_alias_is_preserved_and_bound (test_evidence_snapshot.EvidenceSnapshotTests.test_valid_internal_alias_is_preserved_and_bound) ... ok
+test_checked_in_integration_validates_and_preserves_verdict (test_lam_jepa_adapter.LamJepaAdapterTests.test_checked_in_integration_validates_and_preserves_verdict) ... ok
+test_dry_run_constructs_frozen_command_order_without_execution (test_lam_jepa_adapter.LamJepaAdapterTests.test_dry_run_constructs_frozen_command_order_without_execution) ... ok
+test_forbidden_test_artifact_guard_fails_closed (test_lam_jepa_adapter.LamJepaAdapterTests.test_forbidden_test_artifact_guard_fails_closed) ... ok
+test_fresh_run_directory_cannot_be_overwritten (test_lam_jepa_adapter.LamJepaAdapterTests.test_fresh_run_directory_cannot_be_overwritten) ... ok
+test_accepts_finite_threshold (test_models.CriterionValidationTests.test_accepts_finite_threshold) ... ok
+test_rejects_non_finite_thresholds (test_models.CriterionValidationTests.test_rejects_non_finite_thresholds) ... ok
+test_accepts_valid_experiment_contract (test_models.ExperimentValidationTests.test_accepts_valid_experiment_contract) ... ok
+test_rejects_blank_perturbation (test_models.ExperimentValidationTests.test_rejects_blank_perturbation) ... ok
+test_rejects_blank_required_artifact (test_models.ExperimentValidationTests.test_rejects_blank_required_artifact) ... ok
+test_rejects_blank_treatment_or_control (test_models.ExperimentValidationTests.test_rejects_blank_treatment_or_control) ... ok
+test_rejects_boolean_or_non_integer_seed (test_models.ExperimentValidationTests.test_rejects_boolean_or_non_integer_seed) ... ok
+test_rejects_duplicate_required_artifact (test_models.ExperimentValidationTests.test_rejects_duplicate_required_artifact) ... ok
+test_accepts_valid_manifest_contract (test_models.RunManifestValidationTests.test_accepts_valid_manifest_contract) ... ok
+test_rejects_blank_or_non_string_evidence_requirement (test_models.RunManifestValidationTests.test_rejects_blank_or_non_string_evidence_requirement) ... ok
+test_rejects_blank_or_non_string_run_id (test_models.RunManifestValidationTests.test_rejects_blank_or_non_string_run_id) ... ok
+test_rejects_duplicate_evidence_requirements (test_models.RunManifestValidationTests.test_rejects_duplicate_evidence_requirements) ... ok
+test_cli_exports_without_percy_installed (test_percy.PercyExportTests.test_cli_exports_without_percy_installed) ... ok
+test_ids_are_deterministic_and_parent_depends_on_every_experiment (test_percy.PercyExportTests.test_ids_are_deterministic_and_parent_depends_on_every_experiment) ... ok
+test_retry_and_required_artifacts_propagate (test_percy.PercyExportTests.test_retry_and_required_artifacts_propagate) ... ok
+test_verifier_fails_on_failed_task_and_missing_artifact (test_percy.PercyExportTests.test_verifier_fails_on_failed_task_and_missing_artifact) ... ok
+test_verifier_passes_only_when_all_tasks_succeeded_and_artifacts_exist (test_percy.PercyExportTests.test_verifier_passes_only_when_all_tasks_succeeded_and_artifacts_exist) ... ok
+test_caller_supplied_root_symlink_is_allowed (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_caller_supplied_root_symlink_is_allowed) ... ok
+test_common_root_file_cannot_satisfy_an_experiment (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_common_root_file_cannot_satisfy_an_experiment) ... ok
+test_external_symlink_keeps_existing_root_escape_diagnostic (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_external_symlink_keeps_existing_root_escape_diagnostic) ... ok
+test_failed_dependency_cannot_be_rescued_by_existing_artifacts (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_failed_dependency_cannot_be_rescued_by_existing_artifacts) ... ok
+test_independent_regular_artifacts_succeed (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_independent_regular_artifacts_succeed) ... ok
+test_missing_artifact_remains_a_failure (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_missing_artifact_remains_a_failure) ... ok
+test_sibling_experiment_directory_symlink_is_rejected (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_sibling_experiment_directory_symlink_is_rejected) ... ok
+test_sibling_file_symlink_cannot_satisfy_another_experiment (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_sibling_file_symlink_cannot_satisfy_another_experiment) ... ok
+test_sibling_nested_directory_symlink_is_rejected (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_sibling_nested_directory_symlink_is_rejected) ... ok
+test_symlink_within_own_experiment_is_allowed (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_symlink_within_own_experiment_is_allowed) ... ok
+test_task_identity_protection_is_preserved (test_percy_artifact_ownership.PercyArtifactOwnershipTests.test_task_identity_protection_is_preserved) ... ok
+test_backslash_artifact_path_is_serialized_canonically (test_percy_artifact_path_canonicalization.PercyArtifactPathCanonicalizationTests.test_backslash_artifact_path_is_serialized_canonically) ... ok
+test_separator_aliases_are_rejected_as_duplicate_artifacts (test_percy_artifact_path_canonicalization.PercyArtifactPathCanonicalizationTests.test_separator_aliases_are_rejected_as_duplicate_artifacts) ... ok
+test_non_finite_numbers_fail_before_touching_destination (test_percy_atomic_export_write.PercyAtomicExportWriteTests.test_non_finite_numbers_fail_before_touching_destination) ... ok
+test_replace_failure_preserves_existing_export_and_cleans_temp_file (test_percy_atomic_export_write.PercyAtomicExportWriteTests.test_replace_failure_preserves_existing_export_and_cleans_temp_file) ... ok
+test_write_creates_missing_parent_directories (test_percy_atomic_export_write.PercyAtomicExportWriteTests.test_write_creates_missing_parent_directories) ... ok
+test_write_replaces_destination_with_complete_json_and_no_temp_file (test_percy_atomic_export_write.PercyAtomicExportWriteTests.test_write_replaces_destination_with_complete_json_and_no_temp_file) ... ok
+test_export_rejects_cross_platform_artifact_traversal (test_percy_boundaries.PercyBoundaryTests.test_export_rejects_cross_platform_artifact_traversal) ... ok
+test_export_rejects_experiment_directory_traversal (test_percy_boundaries.PercyBoundaryTests.test_export_rejects_experiment_directory_traversal) ... ok
+test_verifier_accepts_regular_files_inside_root (test_percy_boundaries.PercyBoundaryTests.test_verifier_accepts_regular_files_inside_root) ... ok
+test_verifier_rejects_cross_run_metadata_identity (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_cross_run_metadata_identity) ... ok
+test_verifier_rejects_expected_artifact_contract_drift (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_expected_artifact_contract_drift) ... ok
+test_verifier_rejects_experiment_id_traversal_even_if_payload_is_tampered (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_experiment_id_traversal_even_if_payload_is_tampered) ... ok
+test_verifier_rejects_parent_symlink_escape (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_parent_symlink_escape) ... ok
+test_verifier_rejects_rewritten_experiment_task_identity_even_if_contract_matches (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_rewritten_experiment_task_identity_even_if_contract_matches) ... ok
+test_verifier_rejects_rewritten_verification_task_identity (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_rewritten_verification_task_identity) ... ok
+test_verifier_rejects_tampered_parent_contract (test_percy_boundaries.PercyBoundaryTests.test_verifier_rejects_tampered_parent_contract) ... ok
+test_cli_export_normalizes_executor_paths_to_absolute (test_percy_cli_path_contract.PercyCliPathContractTests.test_cli_export_normalizes_executor_paths_to_absolute) ... ok
+test_cli_verification_accepts_only_declared_paths (test_percy_cli_path_contract.PercyCliPathContractTests.test_cli_verification_accepts_only_declared_paths) ... ok
+test_cli_verification_rejects_substitute_artifact_root (test_percy_cli_path_contract.PercyCliPathContractTests.test_cli_verification_rejects_substitute_artifact_root) ... ok
+test_cli_verification_rejects_substitute_status_file (test_percy_cli_path_contract.PercyCliPathContractTests.test_cli_verification_rejects_substitute_status_file) ... ok
+test_cli_verification_rejects_task_artifact_directory_drift (test_percy_cli_path_contract.PercyCliPathContractTests.test_cli_verification_rejects_task_artifact_directory_drift) ... ok
+test_rejects_duplicate_nested_key (test_percy_duplicate_json_keys.PercyDuplicateJsonKeyTests.test_rejects_duplicate_nested_key) ... ok
+test_rejects_duplicate_top_level_key (test_percy_duplicate_json_keys.PercyDuplicateJsonKeyTests.test_rejects_duplicate_top_level_key) ... ok
+test_valid_object_still_loads (test_percy_duplicate_json_keys.PercyDuplicateJsonKeyTests.test_valid_object_still_loads) ... ok
+test_library_verifier_rejects_substitute_runtime_artifact_root (test_percy_export_structure_contract.PercyExportStructureContractTests.test_library_verifier_rejects_substitute_runtime_artifact_root) ... ok
+test_verifier_rejects_experiment_artifact_directory_drift (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_experiment_artifact_directory_drift) ... ok
+test_verifier_rejects_experiment_dependency_topology_drift (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_experiment_dependency_topology_drift) ... ok
+test_verifier_rejects_experiment_working_directory_drift (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_experiment_working_directory_drift) ... ok
+test_verifier_rejects_missing_status_contract (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_missing_status_contract) ... ok
+test_verifier_rejects_relative_serialized_status_path (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_relative_serialized_status_path) ... ok
+test_verifier_rejects_relative_verification_working_directory (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_relative_verification_working_directory) ... ok
+test_verifier_rejects_success_status_contract_drift (test_percy_export_structure_contract.PercyExportStructureContractTests.test_verifier_rejects_success_status_contract_drift) ... ok
+test_boolean_seed_is_rejected_in_raw_manifest (test_percy_input_contract.PercyInputContractTests.test_boolean_seed_is_rejected_in_raw_manifest) ... ok
+test_execution_numeric_controls_require_actual_integers (test_percy_input_contract.PercyInputContractTests.test_execution_numeric_controls_require_actual_integers) ... ok
+test_execution_paths_are_canonicalized_before_serialization (test_percy_input_contract.PercyInputContractTests.test_execution_paths_are_canonicalized_before_serialization) ... FAIL
+test_execution_paths_must_be_absolute (test_percy_input_contract.PercyInputContractTests.test_execution_paths_must_be_absolute) ... ok
+test_manifest_text_fields_do_not_coerce_non_strings (test_percy_input_contract.PercyInputContractTests.test_manifest_text_fields_do_not_coerce_non_strings) ... ok
+test_resource_contract_rejects_coerced_slots_and_non_mapping_payloads (test_percy_input_contract.PercyInputContractTests.test_resource_contract_rejects_coerced_slots_and_non_mapping_payloads) ... ok
+test_valid_integer_controls_are_preserved_as_integers (test_percy_input_contract.PercyInputContractTests.test_valid_integer_controls_are_preserved_as_integers) ... ok
+test_verifier_rejects_non_string_export_identity_instead_of_coercing (test_percy_input_contract.PercyInputContractTests.test_verifier_rejects_non_string_export_identity_instead_of_coercing) ... ok
+test_serialized_artifact_paths_must_remain_canonical_posix (test_percy_serialized_contract_drift.PercySerializedContractDriftTests.test_serialized_artifact_paths_must_remain_canonical_posix) ... ok
+test_status_contract_format_drift_is_rejected (test_percy_serialized_contract_drift.PercySerializedContractDriftTests.test_status_contract_format_drift_is_rejected) ... ok
+test_unmodified_export_still_reaches_runtime_evidence_check (test_percy_serialized_contract_drift.PercySerializedContractDriftTests.test_unmodified_export_still_reaches_runtime_evidence_check) ... FAIL
+test_verifier_expected_artifacts_must_remain_empty (test_percy_serialized_contract_drift.PercySerializedContractDriftTests.test_verifier_expected_artifacts_must_remain_empty) ... ok
+test_rejects_tampered_experiment_command (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_experiment_command) ... ok
+test_rejects_tampered_experiment_metadata (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_experiment_metadata) ... ok
+test_rejects_tampered_experiment_resources (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_experiment_resources) ... ok
+test_rejects_tampered_experiment_retry_policy (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_experiment_retry_policy) ... ok
+test_rejects_tampered_experiment_timeout (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_experiment_timeout) ... ok
+test_rejects_tampered_verification_metadata (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_verification_metadata) ... ok
+test_rejects_tampered_verification_runtime_controls (test_percy_serialized_runtime_contract.PercySerializedRuntimeContractTests.test_rejects_tampered_verification_runtime_controls) ... ok
+test_load_accepts_standards_compliant_object (test_percy_strict_json_load.PercyStrictJsonLoadTests.test_load_accepts_standards_compliant_object) ... ok
+test_load_rejects_non_object_json (test_percy_strict_json_load.PercyStrictJsonLoadTests.test_load_rejects_non_object_json) ... ok
+test_load_rejects_non_standard_json_constants (test_percy_strict_json_load.PercyStrictJsonLoadTests.test_load_rejects_non_standard_json_constants) ... ok
+test_cli_writes_json_manifest (test_planner.PlannerTests.test_cli_writes_json_manifest) ... ok
+test_default_manifest_is_valid_and_complete (test_planner.PlannerTests.test_default_manifest_is_valid_and_complete) ... ok
+test_rejects_duplicate_seeds (test_planner.PlannerTests.test_rejects_duplicate_seeds) ... ok
+test_rejects_identical_treatment_and_control (test_planner.PlannerTests.test_rejects_identical_treatment_and_control) ... ok
+test_run_id_is_deterministic_for_same_question (test_planner.PlannerTests.test_run_id_is_deterministic_for_same_question) ... ok
+test_creation_time_is_excluded (test_planner_identity.PlannerIdentityTests.test_creation_time_is_excluded) ... ok
+test_digest_can_be_recomputed_from_saved_protocol (test_planner_identity.PlannerIdentityTests.test_digest_can_be_recomputed_from_saved_protocol) ... ok
+test_equivalent_whitespace_is_normalized_before_identity (test_planner_identity.PlannerIdentityTests.test_equivalent_whitespace_is_normalized_before_identity) ... ok
+test_every_protocol_input_changes_identity (test_planner_identity.PlannerIdentityTests.test_every_protocol_input_changes_identity) ... ok
+test_exact_threshold_not_rounded_prose_controls_identity (test_planner_identity.PlannerIdentityTests.test_exact_threshold_not_rounded_prose_controls_identity) ... ok
+test_execution_matrix_order_is_retained (test_planner_identity.PlannerIdentityTests.test_execution_matrix_order_is_retained) ... ok
+test_generated_protocol_semantics_remain_unchanged (test_planner_identity.PlannerIdentityTests.test_generated_protocol_semantics_remain_unchanged) ... ok
+test_new_manifest_does_not_mutate_an_existing_snapshot (test_planner_identity.PlannerIdentityTests.test_new_manifest_does_not_mutate_an_existing_snapshot) ... ok
+test_nonfinite_thresholds_remain_invalid (test_planner_identity.PlannerIdentityTests.test_nonfinite_thresholds_remain_invalid) ... ok
+test_question_changes_identity (test_planner_identity.PlannerIdentityTests.test_question_changes_identity) ... ok
+test_protected_workflows_bind_checkout_to_exact_source (test_workflow_supply_chain.WorkflowSupplyChainContractTests.test_protected_workflows_bind_checkout_to_exact_source) ... ok
+test_protected_workflows_pin_runner_and_remote_actions (test_workflow_supply_chain.WorkflowSupplyChainContractTests.test_protected_workflows_pin_runner_and_remote_actions) ... ok
+test_protected_workflows_remain_least_privilege_and_pr_safe (test_workflow_supply_chain.WorkflowSupplyChainContractTests.test_protected_workflows_remain_least_privilege_and_pr_safe) ... ok
+
+======================================================================
+FAIL: test_artifact_handle_is_opened_once (test_evidence_snapshot.EvidenceSnapshotTests.test_artifact_handle_is_opened_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/piml-atlas-parent-baseline/tests/test_evidence_snapshot.py", line 137, in test_artifact_handle_is_opened_once
+    self.assertEqual(len(opens), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_execution_paths_are_canonicalized_before_serialization (test_percy_input_contract.PercyInputContractTests.test_execution_paths_are_canonicalized_before_serialization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/piml-atlas-parent-baseline/tests/test_percy_input_contract.py", line 92, in test_execution_paths_are_canonicalized_before_serialization
+    self.assertEqual(verifier["artifact_directory"], "/tmp/evidence")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '/private/tmp/evidence' != '/tmp/evidence'
+- /private/tmp/evidence
+? --------
++ /tmp/evidence
+
+
+======================================================================
+FAIL: test_unmodified_export_still_reaches_runtime_evidence_check (test_percy_serialized_contract_drift.PercySerializedContractDriftTests.test_unmodified_export_still_reaches_runtime_evidence_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/piml-atlas-parent-baseline/tests/test_percy_serialized_contract_drift.py", line 84, in test_unmodified_export_still_reaches_runtime_evidence_check
+    self.assertEqual(errors, ["artifact root does not exist or cannot be resolved: /tmp/evidence"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['artifact root does not exist or cannot be resolved: /private/tmp/evidence'] != ['artifact root does not exist or cannot be resolved: /tmp/evidence']
+
+First differing element 0:
+'artifact root does not exist or cannot be resolved: /private/tmp/evidence'
+'artifact root does not exist or cannot be resolved: /tmp/evidence'
+
+- ['artifact root does not exist or cannot be resolved: /private/tmp/evidence']
+?                                                       --------
+
++ ['artifact root does not exist or cannot be resolved: /tmp/evidence']
+
+----------------------------------------------------------------------
+Ran 159 tests in 1.885s
+
+FAILED (failures=3)
+{
+  "case_count": 3,
+  "categories": [
+    "math",
+    "physics"
+  ],
+  "dataset_sha256": "5e51e3dc1e6f52e857d2d503c94bf9b1d2a811155fb8eeb6dcaa2b47138866f2",
+  "valid": true
+}
+scored 3 cases: 1 correct, 2 missing, accuracy=0.333333
+wrote 4 experiment tasks + verification task for does-a-calibrated-model-remain-reliable-under-co-3b0c216e495e3a2e to /private/var/folders/ct/lk8xnz1s6pvd55g05hqjv7k00000gn/T/tmp1mdmvgb8/percy-tasks.json
+wrote does-calibration-improve-under-controlled-multim-fff3731482334483 with 4 experiments to /var/folders/ct/lk8xnz1s6pvd55g05hqjv7k00000gn/T/tmplopgt0eu/run.json

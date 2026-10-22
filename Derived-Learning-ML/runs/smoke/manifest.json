@@ -1,0 +1,57 @@
+{
+  "config_path": "configs/smoke.json",
+  "config_sha256": "a02d625b23e2fe44acd1fcddeb4af4c5cd07abf3d03b6eb37a34386ea858f467",
+  "environment": {
+    "executable": "/opt/homebrew/opt/python@3.15/bin/python3.15",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "python_hash_seed": "0",
+    "third_party_runtime_dependencies": []
+  },
+  "git_commit_at_execution": "21b9338f23df46b32af734cb33903528a1899e8a",
+  "git_worktree_clean_at_execution": false,
+  "outputs": {
+    "results.jsonl": "1774c648660022c9e7fa0770ee481a7be032246a1deeed883d4ac409a3910de1",
+    "selection.json": "51d1d546dca54f4c5f8a675c742fb8f47f8707ff779f6b0b2371c770fdde7ac9",
+    "selection_attempts.jsonl": "b2b554cd560ccd7e22a9db27002e6103639c792ebbf89b1140ecb2899c072503",
+    "summary.json": "31776f80401263c767f4fe171e4994aef510b1c263f1b1365fcdcdf30e2384a6",
+    "tasks.json": "2ed52e53480f316eaaddd6c9f403b70ee06b80ff07e7aaa060a70e7f2ecbc5cf"
+  },
+  "resource_scope": {
+    "learned_target_generator_training_steps": 0,
+    "paid_services": false,
+    "remote_compute": false,
+    "teacher_calls": 0,
+    "worker_count": 1
+  },
+  "schema_version": "derived-learning.run-manifest.v1",
+  "selected_hyperparameters": {
+    "adam": {
+      "learning_rate": 0.05
+    },
+    "analytic_residual": {
+      "regularization": 0.1
+    },
+    "block_gradient_no_derivation": {
+      "learning_rate": 0.05
+    }
+  },
+  "source_tree_sha256": "24262b3019f99953800ebb02467230b924cef2b7a1b4f541bbe7b9f31139f349",
+  "split_separation": {
+    "development_task_ids": [
+      "development-development_shift-s201"
+    ],
+    "final_task_ids": [
+      "final-heldout_high_correlation-s301"
+    ],
+    "final_used_for_selection": false,
+    "long_horizon_task_ids": [
+      "long_horizon-heldout_high_correlation_long-s401"
+    ],
+    "meta_train_task_ids": [
+      "meta_train-meta_balanced-s101"
+    ]
+  },
+  "status": "COMPLETE",
+  "study_id": "DLML-S1-SMOKE"
+}

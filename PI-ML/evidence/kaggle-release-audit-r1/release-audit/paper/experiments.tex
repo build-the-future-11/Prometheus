@@ -1,0 +1,28 @@
+\section{Experimental methodology}
+\subsection{Predecessor and successor boundaries}
+S1 uses 192 training cases, 48 calibration cases, a five-member bootstrapped quadratic ridge ensemble, a 65-point grid and diagonal PCG with a maximum of 63 iterations. Its development set has 64 IID and 64 coefficient-OOD cases. Its original frozen confirmatory configuration uses separate seeds and 128 cases in each test split. The original success rule requires at least 15\% mean iteration reduction and a paired-bootstrap lower endpoint of at least 5\%, with every proposed IID solve converged. Its calibration scores pool spatial points; this manuscript makes no distribution-free coverage claim from those intervals.
+
+The development-only tolerance sweep reuses S1 development cases at $10^{-2},3\cdot10^{-3},10^{-3},3\cdot10^{-4},10^{-4},10^{-6},10^{-8},10^{-10}$. It is diagnostic and does not change S1's frozen endpoint. S2 is a separate study with new seeds, different features, stronger baselines, fresh acceptance checks and complete timing.
+
+\subsection{Evaluation matrix}
+S2 crosses grids $N\in\{65,129\}$, residual tolerances $\tau\in\{10^{-6},10^{-10}\}$, and IID, coefficient-OOD and forcing-OOD regimes. Nine methods are evaluated on every case: direct, zero/Jacobi, quadratic/Jacobi, zero/Laplacian, physics/Laplacian, quadratic/Laplacian, degree-one/Laplacian, structured/Laplacian and shuffled/Laplacian. This jointly tests the proposed predictor, its degree ablation, the value of learned pairing, the influence of preconditioning, resolution sensitivity, tolerance sensitivity and two specified distribution shifts.
+
+Development uses three independently generated training/evaluation blocks, each with 192 training cases per grid and 12 evaluation cases per regime and grid. The two candidate feature degrees are specified before outcomes. Confirmation uses five blocks and 32 evaluation cases per regime and grid. A predictor is fitted separately at each grid, so the grid comparison tests scaling with refitting rather than zero-shot resolution transfer. No new benchmark or hyperparameter is introduced after confirmation.
+
+The random seed base is 1,000,000 for development, 3,000,000 for confirmation and 9,000,000 for engineering smoke tests. Block $r$ adds $100000r$ and grid index $g$ adds $10000g$. Training uses offsets beginning at zero; regime index $j$ uses offsets beginning at $1000(j+1)$. Counts below 1000 and disjoint namespaces prevent sample overlap. The forcing-shift random stream adds 7,000,000 to its case seed; training-target shuffling uses the block/grid base plus 999. The complete generator inputs are retained with every case.
+
+\subsection{Primary endpoint and uncertainty}
+The prospective S2 primary cell is IID, $N=129$, $\tau=10^{-6}$. Within a block, each proposed/baseline pair has identical input and acceptance criterion. For case $i$ the iteration reduction is
+\begin{equation}
+ R_i=\frac{k_i^{\mathrm{base}}-k_i^{\mathrm{proposed}}}{\max(k_i^{\mathrm{base}},1)}.
+\end{equation}
+Average these within each training block, then average blocks equally. The primary claim passes only if the mean reduction is at least 15\% and the 95\% bootstrap lower endpoint is at least 5\% against \emph{both} zero/Laplacian and physics/Laplacian, and all compared solves converge. The conjunction prevents choosing the weaker baseline after observation. All other cells and comparisons are descriptive. A favorable subgroup does not replace the frozen primary claim.
+
+The bootstrap resamples complete training-block means, with 10,000 confirmation repeats and fixed seeds. Five independent fitted models provide limited tail resolution. Intervals are therefore descriptive rather than a high-powered population guarantee; every block effect is retained. Cases sharing a fitted model are not counted as independent training repetitions. We do not report significance claims from the exploratory matrix. Timing uses the analogous paired relative reduction, which is distinct from a ratio of aggregate mean times.
+
+\subsection{Cost accounting and verification}
+Methods execute in a deterministic randomized order on each timing pass. Each case receives two development passes or three confirmation passes; its reported time is the median. The timed path includes matrix assembly, inference where relevant, preconditioner construction, correction, and independently recomputed residual acceptance. Training data generation, model fitting and model loading are excluded from online time and explicitly separated. Fitting time, parameter count, process CPU time, peak RSS, Python/NumPy versions and thread environment are retained. No training amortization is assumed.
+
+The full source and configuration are frozen before protected execution. A confirmatory runner compares their digests with its freeze receipt and refuses changed inputs or an existing output directory. The verifier checks the complete case/method/tolerance matrix, hashes, regenerated inputs, model refits, replayed numerical solutions, true residuals, errors, timing medians and regenerated analysis. It does not infer external scientific replication from a same-code replay.
+
+Numerical tests include independently assembled dense-system solutions, exact zero forcing, constant-coefficient one-step Laplacian PCG, source superposition, nonfinite rejection, a manufactured-solution refinement check, source-lock rejection and rehashed-corruption detection. The hosted runner executes the tests before admitting the full matrix. CPU and wall budgets are bounded; infrastructure failures are preserved separately from scientific negatives.

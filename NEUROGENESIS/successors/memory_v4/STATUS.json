@@ -1,0 +1,83 @@
+{
+  "utc": "2026-10-21T10:04:26.891476+00:00",
+  "status": "SYNTHETIC_CONFIRMED_REAL_PENDING",
+  "source_frozen": true,
+  "model_attempts": 1620,
+  "expected_development_attempts": 220,
+  "expected_confirmation_attempts": 1400,
+  "tests": {
+    "passed": 26,
+    "failed": 0,
+    "command": "python3 -m unittest discover -s successors/memory_v4 -p 'test_*.py'",
+    "scope": "implementation and data contracts; not efficacy"
+  },
+  "resource_refusal": "runs/development-01/admission.json",
+  "development": {
+    "run": "runs/development-02",
+    "completed": 220,
+    "failed": 0,
+    "exact_replay_trace_rows": 211200,
+    "verification": "runs/development-02/verification.json",
+    "audit": "runs/development-02/audit.json",
+    "artifact_map_sha256": "4312865e6980d1cbc21a571b79f3af041d1aaa3d2a3b295f0c4a111c82c9e528",
+    "candidate": "bank_c0.1_a0.5_k8",
+    "baseline": "rls_0.95",
+    "lock": "runs/freeze.json",
+    "protected_outcomes_seen": false
+  },
+  "followup_probe": {
+    "pageouts_before": 222915,
+    "pageouts_after": 222919,
+    "interval_seconds": 2,
+    "reclaimable_bytes_after": 3697147904,
+    "stable": false
+  },
+  "confirmation_refusal": {
+    "run": "runs/confirmation-01",
+    "admission_allowed": false,
+    "pageouts_before": 222881,
+    "pageouts_after": 222882,
+    "model_attempts": 0,
+    "manifest_created": false,
+    "protected_outcomes_seen": false,
+    "next_run_id_after_resource_recovery": "runs/confirmation-02"
+  },
+  "confirmation": {
+    "run": "runs/confirmation-02",
+    "completed": 1400,
+    "failed": 0,
+    "exact_replay_trace_rows": 1536000,
+    "verification": "runs/confirmation-02/verification-exact.json",
+    "audit": "runs/confirmation-02/audit.json",
+    "analysis": "runs/analysis.json",
+    "artifact_map_sha256": "3a2380f272463d3c8ac26caeb1c4ebc960beff55f4b254936c5c66dcb1a39dea",
+    "disposition": "SUPPORTED",
+    "primary_relative_mse_change": -0.30624742879566585,
+    "primary_ci95": [-0.3396944205434064, -0.27437922850028507],
+    "mean_update_reduction": 0.5889052013422819,
+    "protected_outcomes_seen": true
+  },
+  "preconfirmation_anchor": {
+    "receipt": "runs/preconfirmation_anchor.json",
+    "commit": "dd71324e6e262ebd60bad5b57a7b3071802a7af5",
+    "tree": "aa31778fd1371a5d77c87916b5f01d243f44e114",
+    "parent": "b333c415ca9a50aa468b48ef7675b6984228e709",
+    "source_and_lock_match_commit": true
+  },
+  "system_disk_available_mib_approx": 5325,
+  "browser": "cua.getState timed out after 20 seconds; no hosted run submitted",
+  "hosted_execution": false,
+  "remote_v4_publication": false,
+  "predecessor_release_commit": "b333c415ca9a50aa468b48ef7675b6984228e709",
+  "protected_outcomes_seen": true,
+  "source_sha256": {
+    "audit.py": "a969ddab14057ed1aa8e4d6023b901888e5cc6c4a7484f479597bc52ec26be84",
+    "engine.py": "e8a21436bb458889128a632c3cbd99832868aadf31098946940e4d76a7f636c5",
+    "experiment.py": "9f1089d26331c7472f8981d646cb71d4dcbf2ddb033026a8aa35595aa4289bf9",
+    "real_transfer.py": "8a39e72dbc488640e48a1a0724a2163b82044ff47941cace099ee22404d16fd0",
+    "test_engine.py": "848698456aa97b21bb92eff329daa96b060663c72265fa15a543bc56d7d8d9dc",
+    "test_pipeline.py": "3834ad658147c5e60640993c4ae14f31eabe06c1b9716648486e8a98178b0add",
+    "test_ridge.py": "1d0113b110ad50416f9be03769066489f30bd25dfed28506ebb60b0ecde02db0",
+    "transfer.py": "ff46dd27c74bc6543df3fdbe9db1b4caa7ce2f68285892761896131cee197109"
+  }
+}

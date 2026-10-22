@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "cases": 2880,
+  "rows": 17280,
+  "max_relative_reference_difference": 0.0,
+  "independent_primary": [
+    {
+      "baseline": "zero_laplace",
+      "mean": 0.2772524758737994,
+      "exact_finite_bootstrap_ci95": [
+        0.2728339588312015,
+        0.28255345910217233
+      ],
+      "passed": true
+    },
+    {
+      "baseline": "physics_laplace",
+      "mean": 0.21172005282299403,
+      "exact_finite_bootstrap_ci95": [
+        0.20935671405800083,
+        0.21503525987900987
+      ],
+      "passed": true
+    }
+  ],
+  "scipy_reference": "scipy.linalg.solve_banded, separately assembled flux operator",
+  "flux_acceptance_roundoff_margin": "1e-11 * max(norm(rhs),1); does not replace the original strict gate",
+  "scope": "Independent implementation audit by the same research agent; not independent investigator reproduction"
+}

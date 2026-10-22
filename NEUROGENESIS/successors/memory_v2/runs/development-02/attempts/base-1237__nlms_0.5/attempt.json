@@ -1,0 +1,20 @@
+{
+  "config": {
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.99,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "nlms",
+    "minimum": 8,
+    "neighbors": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "nlms_0.5",
+  "task_id": "base-1237",
+  "task_sha256": "bf397e65b98996e1c7f417492b7fc86b2b0c54a11836ada9c648493d8c915a98",
+  "utc": "2026-10-21T05:36:09.343505+00:00"
+}

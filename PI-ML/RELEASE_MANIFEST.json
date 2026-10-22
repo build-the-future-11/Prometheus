@@ -1,0 +1,1275 @@
+{
+  "scope": "Complete curated research snapshot; immutable evidence retained. Generated archive checksums are separate to avoid self-reference.",
+  "excluded_generated_outputs": [
+    "RELEASE_MANIFEST.json",
+    "release/PI-ML-arxiv-source.zip",
+    "release/PI-ML-research-artifact.tar.gz",
+    "release/SHA256SUMS"
+  ],
+  "files": {
+    ".gitignore": {
+      "sha256": "14ee583a3caf4bf49c1b75a535d86b73397129e37932d4ebf1f294568a604e97",
+      "bytes": 290
+    },
+    "AGENTS.md": {
+      "sha256": "1369b33b3b3c344670b1633decc856d6517111d5d775aedf4978259514193372",
+      "bytes": 1117
+    },
+    "LICENSE": {
+      "sha256": "13a77a8a5db7f457b9b51cc56681a883eada9c364e8a324e80521d1b4c1a0b9e",
+      "bytes": 1075
+    },
+    "MANIFEST.in": {
+      "sha256": "2bb02a6ec2c295bd407e976c8964c0cf214a2a3d95d151f44272b17b48606da0",
+      "bytes": 239
+    },
+    "README.md": {
+      "sha256": "62c267ae5948e9c5a3844de0bfa3723247fb0ac06a0b068116225d7835bd8b02",
+      "bytes": 4377
+    },
+    "RESEARCH_STATE.json": {
+      "sha256": "71d0922b7ed73791df20f1057290436c4e4dcc87f916dc02a21b90a1bf02fc0a",
+      "bytes": 3235
+    },
+    "RESEARCH_STATE.md": {
+      "sha256": "3f43cf49259456c52af5d871be1778492d7471bd1f310500eae3c06ff711c1c0",
+      "bytes": 2713
+    },
+    "configs/confirmatory_v1.json": {
+      "sha256": "c35a8d0a2a7ed1847b987a4f4d9d28b857d97023e06cb3599c70ef9beac59616",
+      "bytes": 859
+    },
+    "configs/development_v1.json": {
+      "sha256": "56d71e946805f0a4d8ba27dca419052bc5fb8b047cab3fb77d54b5b00b33f49c",
+      "bytes": 806
+    },
+    "configs/s2_confirmatory.json": {
+      "sha256": "e3e25fcbcfba46e80f909f3e554c7e4e6bc84941513107999a4edd1b8a200444",
+      "bytes": 635
+    },
+    "configs/s2_confirmatory_candidate.json": {
+      "sha256": "12d5bb751ea4908a7030f3d7cc960d8aa79a8e678a813885c4b453de9fd22ac2",
+      "bytes": 581
+    },
+    "configs/s2_development.json": {
+      "sha256": "fa9a781ccee8f081421248b34a6aaa6a4a9d511833d37d8adde10a1c35e013dd",
+      "bytes": 579
+    },
+    "configs/s2_smoke.json": {
+      "sha256": "a2f9edd45d0d7a29b2da2abe49d62e00ac8378bf05a4d2d1508222306debe02d",
+      "bytes": 507
+    },
+    "evidence/audit/S1_ARCHIVE_RECHECK.json": {
+      "sha256": "95b9495e8721b8cb373071ae2d59e60b33c6f260c0e51ee7935827263e227433",
+      "bytes": 56
+    },
+    "evidence/audit/atlas_parent_baseline.json": {
+      "sha256": "2537f6d590b9bd8f0c27219e8c8c825b40eeed22b4c5e633f1d95a291a4f2635",
+      "bytes": 254
+    },
+    "evidence/audit/atlas_parent_baseline_tests.log": {
+      "sha256": "10af780f09b49eb57c5ca503e5c91232e42b68e313a6d0cabe85a4f7cf572f45",
+      "bytes": 27670
+    },
+    "evidence/audit/confirmatory_download_verification.json": {
+      "sha256": "ccc05c53ebaad7c9d55ba9543881c21dbb1cc9b89617d384497093e0c0a0ded4",
+      "bytes": 160
+    },
+    "evidence/audit/development_download_verification.json": {
+      "sha256": "51a7f58709237c2e7c6fca1e5b411e45ce1061ea5b69b6d46441259c42595d80",
+      "bytes": 160
+    },
+    "evidence/audit/final_paper_download_verification.json": {
+      "sha256": "f91a86b25fb5ca6524632fe38dd6e73ae50f441c575a8dc398c23592bb745f3c",
+      "bytes": 335
+    },
+    "evidence/audit/frozen_source_final_check.json": {
+      "sha256": "e5b92056d9e8fd817f18f7bd94d643de950b95f2c8126854cbf97f5dc2fdfd96",
+      "bytes": 101
+    },
+    "evidence/audit/github_ci_block.json": {
+      "sha256": "a18fb6cba137a69da927237568541861dadae1f8c16f9c349e1bb5fff6492728",
+      "bytes": 654
+    },
+    "evidence/audit/github_publication.json": {
+      "sha256": "7f0e2a1d5f742239e9832ee89bb3d00ab5b0424f10617d4eb7bd1c35e86e0aa8",
+      "bytes": 605
+    },
+    "evidence/audit/kaggle_submission_r1.json": {
+      "sha256": "80e33cd826454ad89a5935674f48fcae4567997c21392c7d9ce4e09be110712b",
+      "bytes": 344
+    },
+    "evidence/audit/local_resource_block.json": {
+      "sha256": "c3879867c24c45ff146eb0744983a43ca397a8c83ae1613214920cf25b58b63f",
+      "bytes": 1495
+    },
+    "evidence/audit/package_source_verification.json": {
+      "sha256": "e3809e7246014fbf1550b06bfa788865be18da0c8e41a87bce9a1befa2810fd5",
+      "bytes": 356
+    },
+    "evidence/audit/paper_visual_review.json": {
+      "sha256": "0d7dd928bd2ddfdf4c446327593ccd73190ae710ff791838c40d5cfbfa216bf2",
+      "bytes": 684
+    },
+    "evidence/audit/release_audit_download_verification.json": {
+      "sha256": "73b529b9c17f02b49ea300315b31e9ecb16005c554416b5e1ea5dc0797aed8b4",
+      "bytes": 162
+    },
+    "evidence/audit/secret_scan.json": {
+      "sha256": "3984ea59f84e2e0613cb9b7a75510843e2ee04a679ff965c88f7a4b407c2cd88",
+      "bytes": 230
+    },
+    "evidence/kaggle-confirmatory-r1/results/command-0.log": {
+      "sha256": "66def05472c896506ae4c044f7703285a1054ea4093bfb1fc653da2428018d27",
+      "bytes": 3131
+    },
+    "evidence/kaggle-confirmatory-r1/results/command-1.log": {
+      "sha256": "3997ad577c1ef0b226fc7b14270d7bcc1c1c5ef6413716fac3c7cef83518f333",
+      "bytes": 12529
+    },
+    "evidence/kaggle-confirmatory-r1/results/command-2.log": {
+      "sha256": "e0340c45761a4c00955c68d614221b376c107539706c92662c0a8cd9fa60d5e2",
+      "bytes": 91856
+    },
+    "evidence/kaggle-confirmatory-r1/results/hosted_receipt.json": {
+      "sha256": "ed79729329a708e8f7d0b76aae316337e5aa4a49d7c3002039d6bbba48ee5dd7",
+      "bytes": 251
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/analysis.json": {
+      "sha256": "a2b83546327847ec2cd3f94935a62df60ac7d09f0cbe6c12c4aaae231c53b67b",
+      "bytes": 11591
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/calibration.json": {
+      "sha256": "cca8588044471926d50e6dbc2fc48cf79343792814412b5b12aa265c80bbcdf8",
+      "bytes": 62
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/cases.jsonl": {
+      "sha256": "99c161561b6ecf71a8518ae294ec9c2dfa77dc78511bf1773ffa90113c1fa06f",
+      "bytes": 2075162
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/config.json": {
+      "sha256": "7045b4aa28bee0f51f7b7eb562813bdac36b3b6eb6cb47a0cfc73a27e9648174",
+      "bytes": 1026
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/environment.json": {
+      "sha256": "536680b1253803ee9d1a43b7a86a432e91b9f150a3dd242c30dde0794d5f14b2",
+      "bytes": 185
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/manifest.json": {
+      "sha256": "26f5f0e389781ba12dfa79ebf6d061a86121882c2bfc6f67f4e7c7228bfd8d91",
+      "bytes": 1284
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/metrics.csv": {
+      "sha256": "bf081b206c31ee2e71f25b15be9b8abb6551e7f53abb57b1b4929bbef42ed223",
+      "bytes": 252964
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/model.json": {
+      "sha256": "6a1edfb07d8d244abebefa42868d35099d080f73e1d6503c683cf39fdcafadc0",
+      "bytes": 476636
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/run_receipt.json": {
+      "sha256": "cf49b5fccd71fa37989f4bf0aa1430c797172fd331a75cf4af177388764dd3f4",
+      "bytes": 286
+    },
+    "evidence/kaggle-confirmatory-r1/results/s1-confirmatory/verification.json": {
+      "sha256": "7b00e8d8a9e98eead027c915b47400d0ccd78bd8e82cea02a4c648a13389b8b3",
+      "bytes": 188
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/analysis.json": {
+      "sha256": "4fe3e6cd42a78a24e58784f14f032dbb88784f781b8bce180516f0f1060bbbb0",
+      "bytes": 91856
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/cases.jsonl": {
+      "sha256": "d5bd5e5b3085d401129cca45d46c774cdadd5612cadd5dee2222068b18def57e",
+      "bytes": 17361618
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/config.json": {
+      "sha256": "4d46f1b674f99f93c2bdf94b49a22dd15bf5348d01714850c490c57ad848b806",
+      "bytes": 635
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/environment.json": {
+      "sha256": "6f0f9705bcb1e90ebfccf627c23d46b726bf6f56f4a86d67393b7a5462141480",
+      "bytes": 298
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/manifest.json": {
+      "sha256": "728309ff582b9e18cbd24110b668096e11696fe321a1a341d9d52a7770d0bfb1",
+      "bytes": 881
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/metrics.jsonl": {
+      "sha256": "68134b68fad96748eb96ce18dfeca47ada50d8a80e870e4b985d3c570a17ffe7",
+      "bytes": 53912855
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/models.json": {
+      "sha256": "f0f5b1f37c1ce7b348ead3f49e70317d0e78c70d7bb14cc9536661211a488c6e",
+      "bytes": 5781776
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/offline_costs.json": {
+      "sha256": "759268d40e0b0c7055216895721449bb1a7d684adcce555bae04f913328e2689",
+      "bytes": 7458
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/progress.json": {
+      "sha256": "6a12d02bed68829741fc4988d7410dbbe30df0131495132f3b4069bfe0ada77e",
+      "bytes": 57
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/receipt.json": {
+      "sha256": "a5ad24b2781e385de641d69421a6cd6accd7c2109feb99c24608ba2c52ed998c",
+      "bytes": 322
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/source_manifest.json": {
+      "sha256": "6e95b1bdf75d5c893b55baf02e70651192d65b387c1a81765ecc63cc2e711e4b",
+      "bytes": 2006
+    },
+    "evidence/kaggle-confirmatory-r1/results/s2-confirmatory/verification.json": {
+      "sha256": "59b921bea412f1176965ec51aff6c446b2983d0450a6b41de4f195dc91cfc3ac",
+      "bytes": 87
+    },
+    "evidence/kaggle-confirmatory-r1/source/configs/confirmatory_v1.json": {
+      "sha256": "c35a8d0a2a7ed1847b987a4f4d9d28b857d97023e06cb3599c70ef9beac59616",
+      "bytes": 859
+    },
+    "evidence/kaggle-confirmatory-r1/source/configs/development_v1.json": {
+      "sha256": "56d71e946805f0a4d8ba27dca419052bc5fb8b047cab3fb77d54b5b00b33f49c",
+      "bytes": 806
+    },
+    "evidence/kaggle-confirmatory-r1/source/configs/s2_confirmatory.json": {
+      "sha256": "e3e25fcbcfba46e80f909f3e554c7e4e6bc84941513107999a4edd1b8a200444",
+      "bytes": 635
+    },
+    "evidence/kaggle-confirmatory-r1/source/configs/s2_confirmatory_candidate.json": {
+      "sha256": "12d5bb751ea4908a7030f3d7cc960d8aa79a8e678a813885c4b453de9fd22ac2",
+      "bytes": 581
+    },
+    "evidence/kaggle-confirmatory-r1/source/configs/s2_development.json": {
+      "sha256": "fa9a781ccee8f081421248b34a6aaa6a4a9d511833d37d8adde10a1c35e013dd",
+      "bytes": 579
+    },
+    "evidence/kaggle-confirmatory-r1/source/configs/s2_smoke.json": {
+      "sha256": "a2f9edd45d0d7a29b2da2abe49d62e00ac8378bf05a4d2d1508222306debe02d",
+      "bytes": 507
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/DECISIONS.md": {
+      "sha256": "1d49c9a3cdef4ffb1ba8ec7df39a941b71b7e1a124f799e640bfe92f807af0a9",
+      "bytes": 1514
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/FLAW_CHECKLIST.md": {
+      "sha256": "0168cf168a3e61c40b3f0ceb84d7459e1167112ccf7141e3503be752f018a2d6",
+      "bytes": 4672
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/LITERATURE.md": {
+      "sha256": "eb473af961c712b75c942274de8e0c13fa1e78284f1c3f23401bb5752367011f",
+      "bytes": 2256
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/S1_FREEZE.json": {
+      "sha256": "033c4fd761538e085eaf6953da9cf786f8b4dd39ffe592638b98ef33fc93328d",
+      "bytes": 2473
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/S2_ENVIRONMENT.json": {
+      "sha256": "60209c71d02a116e085775a13b2f59e0a75897c5779ce37021412290efbcdd69",
+      "bytes": 279
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/S2_FREEZE.json": {
+      "sha256": "3c7218b553408449bb4f2782ae03515d1e14fcc3f250c109ed9b0dabf1a63215",
+      "bytes": 2473
+    },
+    "evidence/kaggle-confirmatory-r1/source/research/S2_SPECIFICATION.md": {
+      "sha256": "3ad05f71a8ae8f122e8f5068cc052ff31c48965dbf271541dc61cbe584053586",
+      "bytes": 9268
+    },
+    "evidence/kaggle-confirmatory-r1/source/scripts/development_tolerance_sweep.py": {
+      "sha256": "99651e73daf4e2d4d07a7f93c2fcceb3f15d0b3bf89b5540738a4dc02f634a24",
+      "bytes": 3285
+    },
+    "evidence/kaggle-confirmatory-r1/source/scripts/package_kaggle.py": {
+      "sha256": "a9b6efa8633177f287e0e4d7f82fc906c1eea422092d887933b83e7bcddd33e4",
+      "bytes": 4488
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/__init__.py": {
+      "sha256": "ac27a0b279196fec2641440eb87de4de1698b2fe84544ba6e5c0bfc2454693ff",
+      "bytes": 90
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/__main__.py": {
+      "sha256": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "bytes": 31
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/cli.py": {
+      "sha256": "9c719404a9f7991b8f58c9bc504b0078ccd39f7eeb39e95b8ea9bffa9ec08728",
+      "bytes": 1181
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/experiment.py": {
+      "sha256": "ac9dec2a1527ff0c13a4edd03560482b6ef288a77e218b109fa5839bd51f9620",
+      "bytes": 15853
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/metrics.py": {
+      "sha256": "f162235a906d218d8c65fec65cff0380bc7931115553ac140642fa0df19cd91b",
+      "bytes": 1439
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/model.py": {
+      "sha256": "2dfbd85955aa245eb4c34f508f8a22d56be9e140d3cfc0342d6807fca2c40ea3",
+      "bytes": 8201
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/pde.py": {
+      "sha256": "8b6dfb66c65b51bb15d33148fd630d3428c4995f39e237623ef5d1dd0a47068e",
+      "bytes": 5879
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/report.py": {
+      "sha256": "0465e398c70e67192fdd0617f4836be88fc49e2e43ae03c6aa650b3faf08fb85",
+      "bytes": 5209
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/s2.py": {
+      "sha256": "546750f8bc5f48702d26a29a74250167ea1074004a0d33bbb8e00d34055a4c44",
+      "bytes": 25344
+    },
+    "evidence/kaggle-confirmatory-r1/source/src/piml/statistics.py": {
+      "sha256": "bbb9c8d4ca7e96949681da18a087c32efd23be851dcb1c8ecf480aec759e816a",
+      "bytes": 1722
+    },
+    "evidence/kaggle-confirmatory-r1/source/tests/test_experiment.py": {
+      "sha256": "d5b80b7bc78c5afd8adc9a960970e20ff1191d9a3c16e85520d72f75f4015967",
+      "bytes": 2975
+    },
+    "evidence/kaggle-confirmatory-r1/source/tests/test_model.py": {
+      "sha256": "7ef6311735ffbdef325319218fb560a081d3d24465b3aacef1c322a8b3ba8e21",
+      "bytes": 2584
+    },
+    "evidence/kaggle-confirmatory-r1/source/tests/test_pde.py": {
+      "sha256": "ba6ab62e06569e7374ec35f90f88c38276a984f5605771c5df1de4d4830406b3",
+      "bytes": 1712
+    },
+    "evidence/kaggle-confirmatory-r1/source/tests/test_protocol.py": {
+      "sha256": "0bf07aab61af1f1eeb256d0e63dd680607704afb5d2471910ee5cc112325d150",
+      "bytes": 1048
+    },
+    "evidence/kaggle-confirmatory-r1/source/tests/test_s2.py": {
+      "sha256": "407552b000a72664982da507257183c86138cd3445253eb653f6b1862c7ab2c3",
+      "bytes": 5152
+    },
+    "evidence/kaggle-development-r2/results/command-0.log": {
+      "sha256": "088a57dcb3430bc1c2817a0e7a350fd7800ffd84ce2c9d6ded7fcc08fa762550",
+      "bytes": 3131
+    },
+    "evidence/kaggle-development-r2/results/command-1.log": {
+      "sha256": "683a68965fe038c2cf7a4fcee97c7b22446e1c0ac8f7cf29e11e0b9ef46e6cb6",
+      "bytes": 7627
+    },
+    "evidence/kaggle-development-r2/results/command-2.log": {
+      "sha256": "bdbdd3f98fccd1a633cf36d453aeb3c1432cd2bbe1ccee38fa208c2a8626c4f7",
+      "bytes": 85004
+    },
+    "evidence/kaggle-development-r2/results/hosted_receipt.json": {
+      "sha256": "06c2dc828fbd43623dffd63280df541e9487cb75ac2d66359bb91a38dda03b61",
+      "bytes": 250
+    },
+    "evidence/kaggle-development-r2/results/s1-tolerance-audit.json": {
+      "sha256": "683a68965fe038c2cf7a4fcee97c7b22446e1c0ac8f7cf29e11e0b9ef46e6cb6",
+      "bytes": 7627
+    },
+    "evidence/kaggle-development-r2/results/s2-development/analysis.json": {
+      "sha256": "79c6f3fe7b5581f5068c08e2bb57fec48a534ada54be890bd593b868829b54c5",
+      "bytes": 85004
+    },
+    "evidence/kaggle-development-r2/results/s2-development/cases.jsonl": {
+      "sha256": "97b150efc561230d87de757e1e71cfeee7d3821840803c112de8eaf820fc9bd8",
+      "bytes": 8241024
+    },
+    "evidence/kaggle-development-r2/results/s2-development/config.json": {
+      "sha256": "5304dd85e22fe016f889b0544c5c470ffaff828dd3957bf593b6181976f50a0f",
+      "bytes": 579
+    },
+    "evidence/kaggle-development-r2/results/s2-development/environment.json": {
+      "sha256": "6f0f9705bcb1e90ebfccf627c23d46b726bf6f56f4a86d67393b7a5462141480",
+      "bytes": 298
+    },
+    "evidence/kaggle-development-r2/results/s2-development/manifest.json": {
+      "sha256": "fd0eb6a8373369ef47e1338c8b5dc01f9e7fa444eaa94ffb74c6ad67f0f448fd",
+      "bytes": 881
+    },
+    "evidence/kaggle-development-r2/results/s2-development/metrics.jsonl": {
+      "sha256": "1fa57f4ca520bd3a8aaccb0cf3d2eca5700c35e4a65670703cbc806caad56191",
+      "bytes": 12083536
+    },
+    "evidence/kaggle-development-r2/results/s2-development/models.json": {
+      "sha256": "d4eaadfae0f0e190b58ed928d0a4171390482fa54dedb642bdb37f3ef4498b60",
+      "bytes": 3469619
+    },
+    "evidence/kaggle-development-r2/results/s2-development/offline_costs.json": {
+      "sha256": "44cba31ce3d0680d1aa4f8da5e89e3e7d3c70bb5cb853cbfb45287275014621a",
+      "bytes": 4485
+    },
+    "evidence/kaggle-development-r2/results/s2-development/progress.json": {
+      "sha256": "604fe67efce1adb503deda9d20741ff8e05793db4fd4b9718f78c857d8e6a96e",
+      "bytes": 56
+    },
+    "evidence/kaggle-development-r2/results/s2-development/receipt.json": {
+      "sha256": "d2920255a06f64ff634fb97982c8aaf7bd8545023dbddf66fdc478e1760d65f0",
+      "bytes": 319
+    },
+    "evidence/kaggle-development-r2/results/s2-development/source_manifest.json": {
+      "sha256": "a782e8b12cf317cc8d46fa06e0066321146997e8c273a33b097a882f07acd6b6",
+      "bytes": 1904
+    },
+    "evidence/kaggle-development-r2/results/s2-development/verification.json": {
+      "sha256": "7b119470f204ab6c29a73df2b5920cfcd77476dab0b4cdf04301573f3a2ccac9",
+      "bytes": 86
+    },
+    "evidence/kaggle-development-r2/source/configs/confirmatory_v1.json": {
+      "sha256": "c35a8d0a2a7ed1847b987a4f4d9d28b857d97023e06cb3599c70ef9beac59616",
+      "bytes": 859
+    },
+    "evidence/kaggle-development-r2/source/configs/development_v1.json": {
+      "sha256": "56d71e946805f0a4d8ba27dca419052bc5fb8b047cab3fb77d54b5b00b33f49c",
+      "bytes": 806
+    },
+    "evidence/kaggle-development-r2/source/configs/s2_confirmatory_candidate.json": {
+      "sha256": "12d5bb751ea4908a7030f3d7cc960d8aa79a8e678a813885c4b453de9fd22ac2",
+      "bytes": 581
+    },
+    "evidence/kaggle-development-r2/source/configs/s2_development.json": {
+      "sha256": "fa9a781ccee8f081421248b34a6aaa6a4a9d511833d37d8adde10a1c35e013dd",
+      "bytes": 579
+    },
+    "evidence/kaggle-development-r2/source/configs/s2_smoke.json": {
+      "sha256": "a2f9edd45d0d7a29b2da2abe49d62e00ac8378bf05a4d2d1508222306debe02d",
+      "bytes": 507
+    },
+    "evidence/kaggle-development-r2/source/research/DECISIONS.md": {
+      "sha256": "82d7a05668ce92f15665c8b00b6308f059ffd7fc44cd4ac9cf863a69c5053484",
+      "bytes": 786
+    },
+    "evidence/kaggle-development-r2/source/research/FLAW_CHECKLIST.md": {
+      "sha256": "0168cf168a3e61c40b3f0ceb84d7459e1167112ccf7141e3503be752f018a2d6",
+      "bytes": 4672
+    },
+    "evidence/kaggle-development-r2/source/research/LITERATURE.md": {
+      "sha256": "eb473af961c712b75c942274de8e0c13fa1e78284f1c3f23401bb5752367011f",
+      "bytes": 2256
+    },
+    "evidence/kaggle-development-r2/source/research/S2_SPECIFICATION.md": {
+      "sha256": "3ad05f71a8ae8f122e8f5068cc052ff31c48965dbf271541dc61cbe584053586",
+      "bytes": 9268
+    },
+    "evidence/kaggle-development-r2/source/runs/development/S1-tolerance-audit.json": {
+      "sha256": "683a68965fe038c2cf7a4fcee97c7b22446e1c0ac8f7cf29e11e0b9ef46e6cb6",
+      "bytes": 7627
+    },
+    "evidence/kaggle-development-r2/source/scripts/development_tolerance_sweep.py": {
+      "sha256": "99651e73daf4e2d4d07a7f93c2fcceb3f15d0b3bf89b5540738a4dc02f634a24",
+      "bytes": 3285
+    },
+    "evidence/kaggle-development-r2/source/scripts/package_kaggle.py": {
+      "sha256": "1e8ee2ee8c010a23e6b63bac586b49351ac4f0ce50b2ca65c5032ebc9adf0012",
+      "bytes": 4315
+    },
+    "evidence/kaggle-development-r2/source/src/piml/__init__.py": {
+      "sha256": "ac27a0b279196fec2641440eb87de4de1698b2fe84544ba6e5c0bfc2454693ff",
+      "bytes": 90
+    },
+    "evidence/kaggle-development-r2/source/src/piml/__main__.py": {
+      "sha256": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "bytes": 31
+    },
+    "evidence/kaggle-development-r2/source/src/piml/cli.py": {
+      "sha256": "9c719404a9f7991b8f58c9bc504b0078ccd39f7eeb39e95b8ea9bffa9ec08728",
+      "bytes": 1181
+    },
+    "evidence/kaggle-development-r2/source/src/piml/experiment.py": {
+      "sha256": "ac9dec2a1527ff0c13a4edd03560482b6ef288a77e218b109fa5839bd51f9620",
+      "bytes": 15853
+    },
+    "evidence/kaggle-development-r2/source/src/piml/metrics.py": {
+      "sha256": "f162235a906d218d8c65fec65cff0380bc7931115553ac140642fa0df19cd91b",
+      "bytes": 1439
+    },
+    "evidence/kaggle-development-r2/source/src/piml/model.py": {
+      "sha256": "2dfbd85955aa245eb4c34f508f8a22d56be9e140d3cfc0342d6807fca2c40ea3",
+      "bytes": 8201
+    },
+    "evidence/kaggle-development-r2/source/src/piml/pde.py": {
+      "sha256": "8b6dfb66c65b51bb15d33148fd630d3428c4995f39e237623ef5d1dd0a47068e",
+      "bytes": 5879
+    },
+    "evidence/kaggle-development-r2/source/src/piml/report.py": {
+      "sha256": "0465e398c70e67192fdd0617f4836be88fc49e2e43ae03c6aa650b3faf08fb85",
+      "bytes": 5209
+    },
+    "evidence/kaggle-development-r2/source/src/piml/s2.py": {
+      "sha256": "546750f8bc5f48702d26a29a74250167ea1074004a0d33bbb8e00d34055a4c44",
+      "bytes": 25344
+    },
+    "evidence/kaggle-development-r2/source/src/piml/statistics.py": {
+      "sha256": "bbb9c8d4ca7e96949681da18a087c32efd23be851dcb1c8ecf480aec759e816a",
+      "bytes": 1722
+    },
+    "evidence/kaggle-development-r2/source/tests/test_experiment.py": {
+      "sha256": "d5b80b7bc78c5afd8adc9a960970e20ff1191d9a3c16e85520d72f75f4015967",
+      "bytes": 2975
+    },
+    "evidence/kaggle-development-r2/source/tests/test_model.py": {
+      "sha256": "7ef6311735ffbdef325319218fb560a081d3d24465b3aacef1c322a8b3ba8e21",
+      "bytes": 2584
+    },
+    "evidence/kaggle-development-r2/source/tests/test_pde.py": {
+      "sha256": "ba6ab62e06569e7374ec35f90f88c38276a984f5605771c5df1de4d4830406b3",
+      "bytes": 1712
+    },
+    "evidence/kaggle-development-r2/source/tests/test_protocol.py": {
+      "sha256": "0bf07aab61af1f1eeb256d0e63dd680607704afb5d2471910ee5cc112325d150",
+      "bytes": 1048
+    },
+    "evidence/kaggle-development-r2/source/tests/test_s2.py": {
+      "sha256": "407552b000a72664982da507257183c86138cd3445253eb653f6b1862c7ab2c3",
+      "bytes": 5152
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/STYLE_PROVENANCE.json": {
+      "sha256": "09757432294c5e321d3ad995ca18d96f8df8407074b8ae908c0523a4ca14e8fb",
+      "bytes": 215
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/abstract.tex": {
+      "sha256": "740283343398ed70ccb0ea2f685ed3c55ab5ed799b7efa754bfda3b1bbe7e474",
+      "bytes": 1229
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/appendix.tex": {
+      "sha256": "174eb691e81b010c6ac70211c21f7f712166e19fae4e16047fa47c4b4c2f0ac1",
+      "bytes": 4662
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/arxiv.sty": {
+      "sha256": "08cbf7d94d1460e4002c29768c3d576f8c716e3ac173d3ead34e526d865fb59d",
+      "bytes": 8927
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/comparison_table.tex": {
+      "sha256": "708f15baa2b8aa4a67b6da792896fdd55776399f9bca3ff50577389c8c01822d",
+      "bytes": 425
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/compile.log": {
+      "sha256": "2f95c42957208be52737a7c22e17fa9aa69d7a2bc4f86c3bc539902a0280868e",
+      "bytes": 11996
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/discussion.tex": {
+      "sha256": "370e1ee5536a8243c7414faca57f9b343bcd885eb8b46c90dc6c9d1c637fcab7",
+      "bytes": 3253
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/evidence_facts.json": {
+      "sha256": "557ebd8397c1baa7ea065ac0a618b38df52af0c3a22ebfd0dc35184a48a3528c",
+      "bytes": 2765
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/experiments.tex": {
+      "sha256": "b86dc991a97d94e1570f5a40932a2942313ccc3b53374ebcb2333d8321abcc8b",
+      "bytes": 5634
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/figures/matrix.pdf": {
+      "sha256": "5035fab84a496e65f6413fa1bec3825898fd509c906fa0fe53cc904dc19133d2",
+      "bytes": 20349
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/figures/pipeline.pdf": {
+      "sha256": "563e261411e5572d95b133599312c7feb8c277d0c2f613c9d17f904baff01c92",
+      "bytes": 14643
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/figures/primary.pdf": {
+      "sha256": "cffef15ad14ca00f2fcac85b58a48528f44f53d53bab8cdfe6fb6a81951da810",
+      "bytes": 16927
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/figures/tolerance_scaling.pdf": {
+      "sha256": "24e78fb4e04543cdfa259e492e2e22e3deaa478b6a5716fe9630cea6974130de",
+      "bytes": 21645
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/full_matrix.tex": {
+      "sha256": "dd2c4c1499af602a2937b614bb9d0d0a083e9e6f07533f573f4a8d9ac11417f8",
+      "bytes": 7335
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/introduction.tex": {
+      "sha256": "6fdd9cb8252287c065669404759d8006ed1cc7cb83cbe18874e6b9a11e61923b",
+      "bytes": 3844
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/main.log": {
+      "sha256": "06649a1a1f6947740ef2b68a57ada19f80335ae0b4599344f86f64654e8a0648",
+      "bytes": 15135
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/main.pdf": {
+      "sha256": "58fcd72205fb5fb67bc1f5d5217e456f4ffb7034f4b2f62cac0a4446607ce1eb",
+      "bytes": 158587
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/main.tex": {
+      "sha256": "c4dc9bd9d762fee41cf891e211cc9b0e43ff4e5d9a80051610f4fa9b03475e06",
+      "bytes": 844
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/manifest.json": {
+      "sha256": "00cab320881da6a80ef87f6ac3f3514301bdef7608205ae192565aa496c1d3a5",
+      "bytes": 2050
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/methods.tex": {
+      "sha256": "281582d8257821f52f6f99060b17f0d61ce216cee9d587a089090b29d8bf9d8c",
+      "bytes": 6725
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/primary_table.tex": {
+      "sha256": "af0c459fd9aebe602a3905551e68a22078221e7aa753ed5e28554fa201d5f309",
+      "bytes": 579
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/references.tex": {
+      "sha256": "204f600ea3bf81e24bd9bb23f4c1b9e036c9ef7c4e4bb7465dc60025e0690c52",
+      "bytes": 1740
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/render_receipt.json": {
+      "sha256": "5926d5535d2e3cb3b088fd26026dd0b8f24b492eb5372833096f6a57cabfbcc4",
+      "bytes": 186
+    },
+    "evidence/kaggle-final-paper-r1/final-paper/results.tex": {
+      "sha256": "102d203d75e472fd0746c466f6af86c0f6211b0afddd80882a3eb94748a5aeae",
+      "bytes": 4812
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/command-0.log": {
+      "sha256": "148c7fd5ddd6940c7446262274f8ce58ec557569121c76e9cb0bb5c5da510641",
+      "bytes": 142
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/failure.txt": {
+      "sha256": "e661251b1d59b3008d6f9e6620f9df4c1719b16c0c4deec54a4c11f8ed40c4f9",
+      "bytes": 493
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/manifest.json": {
+      "sha256": "814f7ef603f0331316327f2ce394add49b94ddc484365f3eb3291e5948b50449",
+      "bytes": 1283
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/STYLE_PROVENANCE.json": {
+      "sha256": "09757432294c5e321d3ad995ca18d96f8df8407074b8ae908c0523a4ca14e8fb",
+      "bytes": 215
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/abstract.tex": {
+      "sha256": "36ea5083443e5017b606e4d85fc294ada80ddea87a4f4b7c06c0cc308d646866",
+      "bytes": 1036
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/appendix.tex": {
+      "sha256": "190044d8b65d3b61e9cad77eeb5d951d9e9bcdfea1028d138577dfb207320f32",
+      "bytes": 2464
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/arxiv.sty": {
+      "sha256": "08cbf7d94d1460e4002c29768c3d576f8c716e3ac173d3ead34e526d865fb59d",
+      "bytes": 8927
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/discussion.tex": {
+      "sha256": "f92f0ac15d43008327767c1ce3d0da996145906ae3978e510cc8848c928b7d12",
+      "bytes": 2981
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/experiments.tex": {
+      "sha256": "b86dc991a97d94e1570f5a40932a2942313ccc3b53374ebcb2333d8321abcc8b",
+      "bytes": 5634
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/introduction.tex": {
+      "sha256": "6fdd9cb8252287c065669404759d8006ed1cc7cb83cbe18874e6b9a11e61923b",
+      "bytes": 3844
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/main.tex": {
+      "sha256": "c4dc9bd9d762fee41cf891e211cc9b0e43ff4e5d9a80051610f4fa9b03475e06",
+      "bytes": 844
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/methods.tex": {
+      "sha256": "281582d8257821f52f6f99060b17f0d61ce216cee9d587a089090b29d8bf9d8c",
+      "bytes": 6725
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/references.tex": {
+      "sha256": "204f600ea3bf81e24bd9bb23f4c1b9e036c9ef7c4e4bb7465dc60025e0690c52",
+      "bytes": 1740
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/paper/results.tex": {
+      "sha256": "e43541ffef8b6b3783da9d1f8be632d2d35128c472228cbe22cb8a93c96fa365",
+      "bytes": 1449
+    },
+    "evidence/kaggle-release-audit-r1/release-audit/receipt.json": {
+      "sha256": "f8718d778d9cf84721a9b7dc42ce78f144be1f40b63a7c090f24caee5b35781a",
+      "bytes": 497
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-1.log": {
+      "sha256": "cd680067863714ce33bc9e25cfd7495c53f7ce3c27947ab17dfa701cc4f40d54",
+      "bytes": 457
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-10.log": {
+      "sha256": "6a0e7539ed78dbce108a3e9c59761bd26e0ac441dc18fede2ea4ac716d206e6b",
+      "bytes": 11985
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-11.log": {
+      "sha256": "84440967fd4210301dddf14d09db7915b1c47e25fb7df6f49f5dd42311b95abb",
+      "bytes": 11463
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-12.log": {
+      "sha256": "b0b47d53d858310af971a8b7eb9879cd0d199412bbbd5a6c622e35fea8c7441d",
+      "bytes": 571
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-2.log": {
+      "sha256": "0d0ae61f783e11c5ca9becdf90eefb9c32824b12c2a3aca96da65b1e98773b44",
+      "bytes": 4914
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-3.log": {
+      "sha256": "e666b31a889103c0e29704cf99e366b5baebe1f7f3169a26afd36111de3b67d0",
+      "bytes": 4409
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-4.log": {
+      "sha256": "0832ef3261c4cd8cd763a9d368c527695389dc5898bbaeb66522825247067c38",
+      "bytes": 307
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-5.log": {
+      "sha256": "8bcfeb4476eb75c600b6a3f924008ca57b5f6cb880fda4e52095fa04f7ff2d82",
+      "bytes": 175
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-6.log": {
+      "sha256": "d3f8eb5da33d733f4454ef74413f9034794286f0c43a1c367e94bf1b2920de28",
+      "bytes": 3233
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-7.log": {
+      "sha256": "86c8ecb81edcc86228a451569225e268f844672acfd781c1db70465abb90d33c",
+      "bytes": 189
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-8.log": {
+      "sha256": "b9f388bc6bbcafcce87614cccc9b004f09ffc51c952964290b63368630250610",
+      "bytes": 980
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/command-9.log": {
+      "sha256": "e3143abcea74c509ac9a2b9b510885b1156dfe99bf5d84292ab884bf8131b7c9",
+      "bytes": 236
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/independent_audit.json": {
+      "sha256": "65d84f6efa8e47ed0da1fba8e4fe0aa28b16852a8e89e9fbb5e6596f1d46bc25",
+      "bytes": 878
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/manifest.json": {
+      "sha256": "04bc7f40d72db2de714ce3fc41a187620c53b751a2edfa93be35b9991e8c9d0f",
+      "bytes": 4066
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/packages/piml_auditable_elliptic-1.0.0-py3-none-any.whl": {
+      "sha256": "3aabf5399b01215cd1620d11e9fe4e2ec7e9053d80b5fa47b226fda32cacfa1b",
+      "bytes": 25485
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/packages/piml_auditable_elliptic-1.0.0.tar.gz": {
+      "sha256": "2a92f6ccf7307c69bc5ec03d9ac0acecc4d7d48519e5c26b5c2199aea62fedd3",
+      "bytes": 101332
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/STYLE_PROVENANCE.json": {
+      "sha256": "09757432294c5e321d3ad995ca18d96f8df8407074b8ae908c0523a4ca14e8fb",
+      "bytes": 215
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/abstract.tex": {
+      "sha256": "740283343398ed70ccb0ea2f685ed3c55ab5ed799b7efa754bfda3b1bbe7e474",
+      "bytes": 1229
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/appendix.tex": {
+      "sha256": "f98c8a6f47d5d035c0015a35e68b31e015eeceffc5d4a82823aebb5f10d4f288",
+      "bytes": 2485
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/arxiv.sty": {
+      "sha256": "08cbf7d94d1460e4002c29768c3d576f8c716e3ac173d3ead34e526d865fb59d",
+      "bytes": 8927
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/comparison_table.tex": {
+      "sha256": "708f15baa2b8aa4a67b6da792896fdd55776399f9bca3ff50577389c8c01822d",
+      "bytes": 425
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/discussion.tex": {
+      "sha256": "370e1ee5536a8243c7414faca57f9b343bcd885eb8b46c90dc6c9d1c637fcab7",
+      "bytes": 3253
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/evidence_facts.json": {
+      "sha256": "557ebd8397c1baa7ea065ac0a618b38df52af0c3a22ebfd0dc35184a48a3528c",
+      "bytes": 2765
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/experiments.tex": {
+      "sha256": "b86dc991a97d94e1570f5a40932a2942313ccc3b53374ebcb2333d8321abcc8b",
+      "bytes": 5634
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/matrix.pdf": {
+      "sha256": "5035fab84a496e65f6413fa1bec3825898fd509c906fa0fe53cc904dc19133d2",
+      "bytes": 20349
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/matrix.png": {
+      "sha256": "0d2599cab47b5cf16d7eaddc7f01e98c9136d877e68ef7e1d28582fe964ca0a9",
+      "bytes": 157087
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/pipeline.pdf": {
+      "sha256": "563e261411e5572d95b133599312c7feb8c277d0c2f613c9d17f904baff01c92",
+      "bytes": 14643
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/pipeline.png": {
+      "sha256": "e847433514b5953234d58d25592cac9e23e811a903448d8f4e52bec7278a3a89",
+      "bytes": 47004
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/primary.pdf": {
+      "sha256": "cffef15ad14ca00f2fcac85b58a48528f44f53d53bab8cdfe6fb6a81951da810",
+      "bytes": 16927
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/primary.png": {
+      "sha256": "ad0192d38c0d2aa8703258b1c6dac5d84f5b5a7c7cc160f2c111da8e24eb0855",
+      "bytes": 61290
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/tolerance_scaling.pdf": {
+      "sha256": "24e78fb4e04543cdfa259e492e2e22e3deaa478b6a5716fe9630cea6974130de",
+      "bytes": 21645
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/figures/tolerance_scaling.png": {
+      "sha256": "455743ce40ea81c714fcedb560b5f4937027ddc055d703ddd3741456717dfc68",
+      "bytes": 99864
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/full_matrix.tex": {
+      "sha256": "dd2c4c1499af602a2937b614bb9d0d0a083e9e6f07533f573f4a8d9ac11417f8",
+      "bytes": 7335
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/introduction.tex": {
+      "sha256": "6fdd9cb8252287c065669404759d8006ed1cc7cb83cbe18874e6b9a11e61923b",
+      "bytes": 3844
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/main.log": {
+      "sha256": "cbd68e2aefbc4e70272f11ebe212776e4ac749655161da56799895bdcc098594",
+      "bytes": 15051
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/main.pdf": {
+      "sha256": "dba8ef11944aad9235301c8260daddd8ac752492cbfba6ea263e6d1cde1f910c",
+      "bytes": 143588
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/main.tex": {
+      "sha256": "c4dc9bd9d762fee41cf891e211cc9b0e43ff4e5d9a80051610f4fa9b03475e06",
+      "bytes": 844
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/methods.tex": {
+      "sha256": "281582d8257821f52f6f99060b17f0d61ce216cee9d587a089090b29d8bf9d8c",
+      "bytes": 6725
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/primary_table.tex": {
+      "sha256": "af0c459fd9aebe602a3905551e68a22078221e7aa753ed5e28554fa201d5f309",
+      "bytes": 579
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/references.tex": {
+      "sha256": "204f600ea3bf81e24bd9bb23f4c1b9e036c9ef7c4e4bb7465dc60025e0690c52",
+      "bytes": 1740
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/paper/results.tex": {
+      "sha256": "102d203d75e472fd0746c466f6af86c0f6211b0afddd80882a3eb94748a5aeae",
+      "bytes": 4812
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/pip_bootstrap_sha256.txt": {
+      "sha256": "fe1f1dc9ad74afdd8265f31860b489853c875dab718cb934f0b21092a7042547",
+      "bytes": 65
+    },
+    "evidence/kaggle-release-audit-r2/release-audit/receipt.json": {
+      "sha256": "1da902d2b14db5c4d2d3cd8870c46007c03cd48b7a9f255d206785e9a4fa8abd",
+      "bytes": 498
+    },
+    "evidence/s1/SHA256.json": {
+      "sha256": "ce73940aeaaeb999cbad8a50bb746ec404fb5a0dc15e930bbad5d94623a6788d",
+      "bytes": 2472
+    },
+    "evidence/s1/configs/confirmatory_v1.json": {
+      "sha256": "c35a8d0a2a7ed1847b987a4f4d9d28b857d97023e06cb3599c70ef9beac59616",
+      "bytes": 859
+    },
+    "evidence/s1/configs/development_v1.json": {
+      "sha256": "56d71e946805f0a4d8ba27dca419052bc5fb8b047cab3fb77d54b5b00b33f49c",
+      "bytes": 806
+    },
+    "evidence/s1/development-S1-v1/analysis.json": {
+      "sha256": "2f4278b26afd5d75bc698c1d83469928102c677e58bf90c50b24a9f4a83cb5c4",
+      "bytes": 11575
+    },
+    "evidence/s1/development-S1-v1/calibration.json": {
+      "sha256": "c6ee1d692a20f30c950c5e7d029737439234aaada0f8ca5bde4bb11e2e110190",
+      "bytes": 60
+    },
+    "evidence/s1/development-S1-v1/cases.jsonl": {
+      "sha256": "d5fd5c4f83d0748bb7129a04b4928dcff38a1255c8b88dc89d4900df33f44179",
+      "bytes": 1537272
+    },
+    "evidence/s1/development-S1-v1/config.json": {
+      "sha256": "0436eb8060945f42b3ad965805215a7db07a62f13efbea6ebcf1f1f704553e66",
+      "bytes": 973
+    },
+    "evidence/s1/development-S1-v1/environment.json": {
+      "sha256": "a922c90c910ef9fc9fda409587244822fcea1f880d7b18334a110f18591dfcb0",
+      "bytes": 209
+    },
+    "evidence/s1/development-S1-v1/manifest.json": {
+      "sha256": "9de9b041ba168eea11bbc8cd77c3e6b6d4eb8e6760bc76f055fc89bd1cfc86b1",
+      "bytes": 1282
+    },
+    "evidence/s1/development-S1-v1/metrics.csv": {
+      "sha256": "5e4745fb6965470e8c766950f1153cf1f9e5f7889f7d180bf41003884015b457",
+      "bytes": 125497
+    },
+    "evidence/s1/development-S1-v1/model.json": {
+      "sha256": "47f2ed2d09c92221a3cfcc61a3ef15233749e668748eeaeb528dafc2fefff087",
+      "bytes": 476100
+    },
+    "evidence/s1/development-S1-v1/run_receipt.json": {
+      "sha256": "488753b8c45381535c642f3618e8f644b54dd1b424cedc93bc3614ce54f39ec0",
+      "bytes": 291
+    },
+    "evidence/s1/development-S1-v1/verification.json": {
+      "sha256": "55950c9775fef602039b8b290959bd87154e239989ee616b5b051d5aaf3444b0",
+      "bytes": 187
+    },
+    "evidence/s1/src/piml/__init__.py": {
+      "sha256": "ac27a0b279196fec2641440eb87de4de1698b2fe84544ba6e5c0bfc2454693ff",
+      "bytes": 90
+    },
+    "evidence/s1/src/piml/__main__.py": {
+      "sha256": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "bytes": 31
+    },
+    "evidence/s1/src/piml/cli.py": {
+      "sha256": "9c719404a9f7991b8f58c9bc504b0078ccd39f7eeb39e95b8ea9bffa9ec08728",
+      "bytes": 1181
+    },
+    "evidence/s1/src/piml/experiment.py": {
+      "sha256": "ac9dec2a1527ff0c13a4edd03560482b6ef288a77e218b109fa5839bd51f9620",
+      "bytes": 15853
+    },
+    "evidence/s1/src/piml/metrics.py": {
+      "sha256": "f162235a906d218d8c65fec65cff0380bc7931115553ac140642fa0df19cd91b",
+      "bytes": 1439
+    },
+    "evidence/s1/src/piml/model.py": {
+      "sha256": "2dfbd85955aa245eb4c34f508f8a22d56be9e140d3cfc0342d6807fca2c40ea3",
+      "bytes": 8201
+    },
+    "evidence/s1/src/piml/pde.py": {
+      "sha256": "8b6dfb66c65b51bb15d33148fd630d3428c4995f39e237623ef5d1dd0a47068e",
+      "bytes": 5879
+    },
+    "evidence/s1/src/piml/report.py": {
+      "sha256": "98aa3f13cb16663aff75934883ddf98d07eaa46d2d515e00a0231cdc5580c7a9",
+      "bytes": 5133
+    },
+    "evidence/s1/src/piml/statistics.py": {
+      "sha256": "bbb9c8d4ca7e96949681da18a087c32efd23be851dcb1c8ecf480aec759e816a",
+      "bytes": 1722
+    },
+    "evidence/s1/tests/test_experiment.py": {
+      "sha256": "d5b80b7bc78c5afd8adc9a960970e20ff1191d9a3c16e85520d72f75f4015967",
+      "bytes": 2975
+    },
+    "evidence/s1/tests/test_model.py": {
+      "sha256": "7ef6311735ffbdef325319218fb560a081d3d24465b3aacef1c322a8b3ba8e21",
+      "bytes": 2584
+    },
+    "evidence/s1/tests/test_pde.py": {
+      "sha256": "ba6ab62e06569e7374ec35f90f88c38276a984f5605771c5df1de4d4830406b3",
+      "bytes": 1712
+    },
+    "evidence/s1/tests/test_protocol.py": {
+      "sha256": "0bf07aab61af1f1eeb256d0e63dd680607704afb5d2471910ee5cc112325d150",
+      "bytes": 1048
+    },
+    "evidence/submissions/piml-paper-release-20261021-r1/job_script_hashes.json": {
+      "sha256": "9ddbcbb7042f28c7bab546dbfe3a3b7d853f7e82546ae3a4e5622a70f48284e9",
+      "bytes": 90
+    },
+    "evidence/submissions/piml-paper-release-20261021-r1/kernel-metadata.json": {
+      "sha256": "97bef891d1eb42f95e0ee245e53bada0ee6c8eafef2c8ffdfc355f4f043f6436",
+      "bytes": 359
+    },
+    "evidence/submissions/piml-paper-release-20261021-r1/package_receipt.json": {
+      "sha256": "ae2684127ae627a62e8e3f9efa1a63365c6217ddf908025d8dd82ee8a940878c",
+      "bytes": 98
+    },
+    "evidence/submissions/piml-s2-confirmatory-20261021-r1/job_script_hashes.json": {
+      "sha256": "b66624ee179687039c5a7bfed09153f4b446a2be51450a84abe86df8813b3b69",
+      "bytes": 88
+    },
+    "evidence/submissions/piml-s2-confirmatory-20261021-r1/kernel-metadata.json": {
+      "sha256": "3dfbde931c7a63e292766009c127c6576d91e69d856a1df342e8d32fec3d078e",
+      "bytes": 362
+    },
+    "evidence/submissions/piml-s2-confirmatory-20261021-r1/package_receipt.json": {
+      "sha256": "3a68b0941e4a4848b955e49ccd2a85921c1fe7a97abb14155ee090169e983152",
+      "bytes": 200
+    },
+    "evidence/submissions/piml-s2-development-20261021-r1/job_script_hashes.json": {
+      "sha256": "55b7c01a2d0a3863de3efb48a0069e6b14cbd6e3b299f47f6a9e50ae426d80f0",
+      "bytes": 88
+    },
+    "evidence/submissions/piml-s2-development-20261021-r1/kernel-metadata.json": {
+      "sha256": "abb1eaca91b085bff40fced522ca16b2b6bb1d939721ad289cf1407a7f89727f",
+      "bytes": 360
+    },
+    "evidence/submissions/piml-s2-development-20261021-r1/package_receipt.json": {
+      "sha256": "9b1717278c367b6aa7bc0d52ea84f9e28c7e8910a365f0fba0fb37430ecaa440",
+      "bytes": 198
+    },
+    "evidence/submissions/piml-s2-development-20261021-r2/job_script_hashes.json": {
+      "sha256": "1d01368e5eb32b8baa0e70b88ae63a5d39d8efccb7c2c2f1d49e7d3e1ad2a33c",
+      "bytes": 88
+    },
+    "evidence/submissions/piml-s2-development-20261021-r2/kernel-metadata.json": {
+      "sha256": "ed9e03354088396b6c647f8ca570d1d5dc403ed16bc50e21e932241148437f3f",
+      "bytes": 360
+    },
+    "evidence/submissions/piml-s2-development-20261021-r2/package_receipt.json": {
+      "sha256": "945f5e0883eaa3a9205a53fb02609d4729dc6921e6e50b09e5f2b39949163f28",
+      "bytes": 198
+    },
+    "evidence/submissions/piml-s2-release-audit-20261021-r1/job_script_hashes.json": {
+      "sha256": "c775af4b555c8a3e9a489d1efd5c884883829dcc677485239ffa2bc8ba8f803d",
+      "bytes": 91
+    },
+    "evidence/submissions/piml-s2-release-audit-20261021-r1/kernel-metadata.json": {
+      "sha256": "c912957d4593b6a6e86b546d5a3dc6b426273dff5cb5089db739c501e6c750fa",
+      "bytes": 473
+    },
+    "evidence/submissions/piml-s2-release-audit-20261021-r1/package_receipt.json": {
+      "sha256": "894007782aeb634c916d8fa55a25d1f4184200bdba1f2b4e8f754174fd62d353",
+      "bytes": 289
+    },
+    "evidence/submissions/piml-s2-release-audit-20261021-r2/job_script_hashes.json": {
+      "sha256": "5b2f9752daf102f73e8ddc812ff1789f356793d722d2861e1256225ff89affab",
+      "bytes": 91
+    },
+    "evidence/submissions/piml-s2-release-audit-20261021-r2/kernel-metadata.json": {
+      "sha256": "5975103d475ec9b1bc7ae350c56be15dd412d9d8a98629cc43051a4c79cf0456",
+      "bytes": 473
+    },
+    "evidence/submissions/piml-s2-release-audit-20261021-r2/package_receipt.json": {
+      "sha256": "fa7233b089b6172c018238bf41da91399b58d53c4db1f2a28295233a79652532",
+      "bytes": 289
+    },
+    "paper/STYLE_PROVENANCE.json": {
+      "sha256": "09757432294c5e321d3ad995ca18d96f8df8407074b8ae908c0523a4ca14e8fb",
+      "bytes": 215
+    },
+    "paper/abstract.tex": {
+      "sha256": "740283343398ed70ccb0ea2f685ed3c55ab5ed799b7efa754bfda3b1bbe7e474",
+      "bytes": 1229
+    },
+    "paper/appendix.tex": {
+      "sha256": "174eb691e81b010c6ac70211c21f7f712166e19fae4e16047fa47c4b4c2f0ac1",
+      "bytes": 4662
+    },
+    "paper/arxiv.sty": {
+      "sha256": "08cbf7d94d1460e4002c29768c3d576f8c716e3ac173d3ead34e526d865fb59d",
+      "bytes": 8927
+    },
+    "paper/comparison_table.tex": {
+      "sha256": "708f15baa2b8aa4a67b6da792896fdd55776399f9bca3ff50577389c8c01822d",
+      "bytes": 425
+    },
+    "paper/discussion.tex": {
+      "sha256": "370e1ee5536a8243c7414faca57f9b343bcd885eb8b46c90dc6c9d1c637fcab7",
+      "bytes": 3253
+    },
+    "paper/evidence_facts.json": {
+      "sha256": "557ebd8397c1baa7ea065ac0a618b38df52af0c3a22ebfd0dc35184a48a3528c",
+      "bytes": 2765
+    },
+    "paper/experiments.tex": {
+      "sha256": "b86dc991a97d94e1570f5a40932a2942313ccc3b53374ebcb2333d8321abcc8b",
+      "bytes": 5634
+    },
+    "paper/figures/matrix.pdf": {
+      "sha256": "5035fab84a496e65f6413fa1bec3825898fd509c906fa0fe53cc904dc19133d2",
+      "bytes": 20349
+    },
+    "paper/figures/matrix.png": {
+      "sha256": "0d2599cab47b5cf16d7eaddc7f01e98c9136d877e68ef7e1d28582fe964ca0a9",
+      "bytes": 157087
+    },
+    "paper/figures/pipeline.pdf": {
+      "sha256": "563e261411e5572d95b133599312c7feb8c277d0c2f613c9d17f904baff01c92",
+      "bytes": 14643
+    },
+    "paper/figures/pipeline.png": {
+      "sha256": "e847433514b5953234d58d25592cac9e23e811a903448d8f4e52bec7278a3a89",
+      "bytes": 47004
+    },
+    "paper/figures/primary.pdf": {
+      "sha256": "cffef15ad14ca00f2fcac85b58a48528f44f53d53bab8cdfe6fb6a81951da810",
+      "bytes": 16927
+    },
+    "paper/figures/primary.png": {
+      "sha256": "ad0192d38c0d2aa8703258b1c6dac5d84f5b5a7c7cc160f2c111da8e24eb0855",
+      "bytes": 61290
+    },
+    "paper/figures/tolerance_scaling.pdf": {
+      "sha256": "24e78fb4e04543cdfa259e492e2e22e3deaa478b6a5716fe9630cea6974130de",
+      "bytes": 21645
+    },
+    "paper/figures/tolerance_scaling.png": {
+      "sha256": "455743ce40ea81c714fcedb560b5f4937027ddc055d703ddd3741456717dfc68",
+      "bytes": 99864
+    },
+    "paper/full_matrix.tex": {
+      "sha256": "dd2c4c1499af602a2937b614bb9d0d0a083e9e6f07533f573f4a8d9ac11417f8",
+      "bytes": 7335
+    },
+    "paper/introduction.tex": {
+      "sha256": "6fdd9cb8252287c065669404759d8006ed1cc7cb83cbe18874e6b9a11e61923b",
+      "bytes": 3844
+    },
+    "paper/main.tex": {
+      "sha256": "c4dc9bd9d762fee41cf891e211cc9b0e43ff4e5d9a80051610f4fa9b03475e06",
+      "bytes": 844
+    },
+    "paper/methods.tex": {
+      "sha256": "281582d8257821f52f6f99060b17f0d61ce216cee9d587a089090b29d8bf9d8c",
+      "bytes": 6725
+    },
+    "paper/primary_table.tex": {
+      "sha256": "af0c459fd9aebe602a3905551e68a22078221e7aa753ed5e28554fa201d5f309",
+      "bytes": 579
+    },
+    "paper/references.tex": {
+      "sha256": "204f600ea3bf81e24bd9bb23f4c1b9e036c9ef7c4e4bb7465dc60025e0690c52",
+      "bytes": 1740
+    },
+    "paper/results.tex": {
+      "sha256": "102d203d75e472fd0746c466f6af86c0f6211b0afddd80882a3eb94748a5aeae",
+      "bytes": 4812
+    },
+    "pyproject.toml": {
+      "sha256": "f015739b9a507ddc0c2a8f03c4f87734d5775fa14d2902c34e299f39c09e9419",
+      "bytes": 627
+    },
+    "release/PI-ML-study.pdf": {
+      "sha256": "58fcd72205fb5fb67bc1f5d5217e456f4ffb7034f4b2f62cac0a4446607ce1eb",
+      "bytes": 158587
+    },
+    "release/packages/piml_auditable_elliptic-1.0.0-py3-none-any.whl": {
+      "sha256": "3aabf5399b01215cd1620d11e9fe4e2ec7e9053d80b5fa47b226fda32cacfa1b",
+      "bytes": 25485
+    },
+    "release/packages/piml_auditable_elliptic-1.0.0.tar.gz": {
+      "sha256": "2a92f6ccf7307c69bc5ec03d9ac0acecc4d7d48519e5c26b5c2199aea62fedd3",
+      "bytes": 101332
+    },
+    "requirements-hosted.txt": {
+      "sha256": "c3c67ef9c4ead6a71389ded2a7457d95509f121446b196c00bcd11cd6533b17b",
+      "bytes": 155
+    },
+    "research/CHECKPOINTS.md": {
+      "sha256": "3a02ff1b70eb51cff21371db7eaa812e59da8191dcf8b1bbc6d08a1a26781a66",
+      "bytes": 1512
+    },
+    "research/DECISIONS.md": {
+      "sha256": "cf6c1d2acd975cc9abb735470d0b7854253e8fb7856390824361bbbe05db3109",
+      "bytes": 3633
+    },
+    "research/FLAW_ACCEPTANCE.json": {
+      "sha256": "5ae79cd089fe8d67878c2f44f97b1b8e2bea24b9b29b927926b8af885a263b61",
+      "bytes": 2374
+    },
+    "research/FLAW_CHECKLIST.md": {
+      "sha256": "9906d2894c832fdabb4da75d8654e6b770378992385126331f8cf426c9e066a1",
+      "bytes": 4706
+    },
+    "research/LITERATURE.md": {
+      "sha256": "ffbccc9c77e266f20dc3d220bd55b7394b60f5cffcb5a4333a16694b8b182dec",
+      "bytes": 2532
+    },
+    "research/RELEASE.md": {
+      "sha256": "36bd6a2d26ff71d04fe046aa42ca9e95112f2d2a0189e74477ff2c0cfe9f6a90",
+      "bytes": 5835
+    },
+    "research/S1_FREEZE.json": {
+      "sha256": "033c4fd761538e085eaf6953da9cf786f8b4dd39ffe592638b98ef33fc93328d",
+      "bytes": 2473
+    },
+    "research/S2_ENVIRONMENT.json": {
+      "sha256": "60209c71d02a116e085775a13b2f59e0a75897c5779ce37021412290efbcdd69",
+      "bytes": 279
+    },
+    "research/S2_FREEZE.json": {
+      "sha256": "3c7218b553408449bb4f2782ae03515d1e14fcc3f250c109ed9b0dabf1a63215",
+      "bytes": 2473
+    },
+    "research/S2_SPECIFICATION.md": {
+      "sha256": "3ad05f71a8ae8f122e8f5068cc052ff31c48965dbf271541dc61cbe584053586",
+      "bytes": 9268
+    },
+    "scripts/build_paper.py": {
+      "sha256": "3a5b97aab7cb3abd2133f697739b6304420d790dbaacdb7543ca4a3ee18ce9ac",
+      "bytes": 17526
+    },
+    "scripts/development_tolerance_sweep.py": {
+      "sha256": "99651e73daf4e2d4d07a7f93c2fcceb3f15d0b3bf89b5540738a4dc02f634a24",
+      "bytes": 3285
+    },
+    "scripts/independent_audit.py": {
+      "sha256": "8d250b321fff9ba5752984515a436a36031b2129cee22bfae729e6145bfad707",
+      "bytes": 5072
+    },
+    "scripts/package_finalize.py": {
+      "sha256": "f53374c7132bebadd5d921bc3203766520a7eddc1154a8bbe53d5a27c4bb23a9",
+      "bytes": 7070
+    },
+    "scripts/package_kaggle.py": {
+      "sha256": "a9b6efa8633177f287e0e4d7f82fc906c1eea422092d887933b83e7bcddd33e4",
+      "bytes": 4488
+    },
+    "scripts/package_paper_release.py": {
+      "sha256": "3e83a01690a427727b95984ce5ac1c04d3e94976ebb8c9aa5e297c5171049662",
+      "bytes": 3076
+    },
+    "scripts/package_release.py": {
+      "sha256": "79ef04680f6c806a53cb2e4ab1cbc2e41edbf59dce2d8d7c404b197312c93f5c",
+      "bytes": 2831
+    },
+    "scripts/verify_release.py": {
+      "sha256": "4745eff9a1e21ab607cf067f70afc94c0f639d0b40ee11fd3e05e89e3105e666",
+      "bytes": 917
+    },
+    "src/piml/__init__.py": {
+      "sha256": "ac27a0b279196fec2641440eb87de4de1698b2fe84544ba6e5c0bfc2454693ff",
+      "bytes": 90
+    },
+    "src/piml/__main__.py": {
+      "sha256": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "bytes": 31
+    },
+    "src/piml/cli.py": {
+      "sha256": "9c719404a9f7991b8f58c9bc504b0078ccd39f7eeb39e95b8ea9bffa9ec08728",
+      "bytes": 1181
+    },
+    "src/piml/experiment.py": {
+      "sha256": "ac9dec2a1527ff0c13a4edd03560482b6ef288a77e218b109fa5839bd51f9620",
+      "bytes": 15853
+    },
+    "src/piml/metrics.py": {
+      "sha256": "f162235a906d218d8c65fec65cff0380bc7931115553ac140642fa0df19cd91b",
+      "bytes": 1439
+    },
+    "src/piml/model.py": {
+      "sha256": "2dfbd85955aa245eb4c34f508f8a22d56be9e140d3cfc0342d6807fca2c40ea3",
+      "bytes": 8201
+    },
+    "src/piml/pde.py": {
+      "sha256": "8b6dfb66c65b51bb15d33148fd630d3428c4995f39e237623ef5d1dd0a47068e",
+      "bytes": 5879
+    },
+    "src/piml/report.py": {
+      "sha256": "0465e398c70e67192fdd0617f4836be88fc49e2e43ae03c6aa650b3faf08fb85",
+      "bytes": 5209
+    },
+    "src/piml/s2.py": {
+      "sha256": "546750f8bc5f48702d26a29a74250167ea1074004a0d33bbb8e00d34055a4c44",
+      "bytes": 25344
+    },
+    "src/piml/statistics.py": {
+      "sha256": "bbb9c8d4ca7e96949681da18a087c32efd23be851dcb1c8ecf480aec759e816a",
+      "bytes": 1722
+    },
+    "tests/test_experiment.py": {
+      "sha256": "d5b80b7bc78c5afd8adc9a960970e20ff1191d9a3c16e85520d72f75f4015967",
+      "bytes": 2975
+    },
+    "tests/test_model.py": {
+      "sha256": "7ef6311735ffbdef325319218fb560a081d3d24465b3aacef1c322a8b3ba8e21",
+      "bytes": 2584
+    },
+    "tests/test_pde.py": {
+      "sha256": "ba6ab62e06569e7374ec35f90f88c38276a984f5605771c5df1de4d4830406b3",
+      "bytes": 1712
+    },
+    "tests/test_protocol.py": {
+      "sha256": "0bf07aab61af1f1eeb256d0e63dd680607704afb5d2471910ee5cc112325d150",
+      "bytes": 1048
+    },
+    "tests/test_s2.py": {
+      "sha256": "407552b000a72664982da507257183c86138cd3445253eb653f6b1862c7ab2c3",
+      "bytes": 5152
+    }
+  }
+}

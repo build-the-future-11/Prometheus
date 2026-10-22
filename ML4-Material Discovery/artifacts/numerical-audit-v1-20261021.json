@@ -1,0 +1,21 @@
+{
+  "run_id": "kaggle-development-v1-r1",
+  "status": "NUMERICALLY_VERIFIED",
+  "manifest_files": 24,
+  "results_sha256": "defc5fd28404180b0d0d1b9bf21757427eddc0c2e45cad7493b20329f8df083d",
+  "recomputed": {
+    "proposed": {
+      "mae_ev": 0.48112579313789117,
+      "rmse_ev": 0.9055414690770345
+    },
+    "ridge": {
+      "mae_ev": 0.8131181705509457,
+      "rmse_ev": 1.161210831331329
+    },
+    "trivial": {
+      "mae_ev": 0.9759513466550825,
+      "rmse_ev": 1.7436030781628526
+    }
+  },
+  "scope": "artifact/row/metric verification; not independent training replication or scientific certification"
+}

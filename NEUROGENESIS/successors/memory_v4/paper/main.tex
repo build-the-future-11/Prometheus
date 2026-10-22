@@ -1,0 +1,164 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,graphicx,array,longtable,microtype}
+\usepackage[hidelinks]{hyperref}
+\title{NEUROGENESIS: Persistent-Ridge Predictor Memory\\under Delayed Feedback and Recurring Drift}
+\author{Ryan Gomez}
+\date{October 21, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We test whether a bounded bank of frozen online predictors can improve prediction while suppressing weight solves under delayed feedback and recurring drift. The mechanism assigns delayed credit only to prediction-time outputs, selects a qualifying historical predictor, and conditionally skips a persistent-ridge information update. A source- and protocol-locked confirmation executes 1,400 attempts across 20 fresh seeds, seven conditions, and ten methods. Over five registered primary conditions, the candidate reduces paired mean squared error by 30.62\% relative to the development-selected persistent-ridge baseline (fixed-bootstrap 95\% interval: 27.44--33.97\% reduction) while using 58.89\% fewer weight solves. The gate also improves error by 16.16\% against an otherwise matched always-update bank. It is not uniformly beneficial: on the novel-regime stress condition it is 0.29\% worse than the baseline. On exposed UCI Air Quality it is 74.30\% worse than the selected baseline. On preselected UCI Beijing PM2.5 it is 13.83\% better with 65.34\% fewer solves, but a last-observation control is substantially better than every learned method. All source, raw traces, checkpoints, failure receipts, and generation inputs are retained. Persistent regularization and expert reuse are established ideas; the contribution is a narrowly specified interaction study, not a state-of-the-art or universal-learning claim.
+\end{abstract}
+
+\section{Introduction}
+Online adaptation faces two coupled risks. Updating on newly available labels can overwrite a predictor useful for a recurring regime, while reusing an old predictor can delay acquisition of a genuinely new regime. Delayed labels sharpen this tradeoff because the error that governs an update refers to a prediction made in an earlier environment. A mechanism must therefore preserve the prediction-time outputs that earned delayed credit and must not access future labels or oracle regime identifiers.
+
+The NEUROGENESIS v3 predecessor implemented such a bank on covariance-form recursive least squares (RLS). It produced a favorable synthetic result but failed numerically on a chronological real stream. That failure remains part of the record. This v4 successor changes the estimator before observing its protected outcomes: instead of covariance-form forgetting, it maintains an information matrix with a permanent ridge floor and solves it by checked Cholesky factorization. V4 is a new objective, not a correction or replacement of v3.
+
+Our registered question is limited: under the declared synthetic generator family, can the frozen bank/gate attain mean squared error no more than two percent above a selected baseline while reducing weight solves by at least twenty percent? A separate chronological transfer asks for the same descriptive margins on one protected stream. The study distinguishes predictive error, information updates, weight solves, counted scalar arithmetic, numerical state, process memory, and wall time. Fewer solves alone are not a speed or energy result.
+
+\section{Related work and novelty boundary}
+Dynamic Weighted Majority creates, reweights, and removes experts under drift \cite{dwm}. Delayed-feedback online learning has a general theoretical treatment whose consequences depend on the adversarial or stochastic setting \cite{delay}. Variable-direction forgetting and subspace-of-information forgetting address robustness problems caused by uniform forgetting without persistent excitation \cite{vdf,sift}. These works establish that expert pools, delayed information, and rank-aware RLS are prior art.
+
+V4 does not reproduce those algorithms and makes no superiority claim over them. Its narrow contribution is an auditable interaction: a FIFO bank of frozen linear predictors, legally delayed exponentially weighted credit, a suppression gate, and a fixed-ridge information-form active estimator. The matched always-update bank, capacity-one bank, uniform bank, no-bank RLS, every-third-label periodic solve, replay, k-nearest-neighbor cache, and frozen controls probe simpler explanations within the frozen budget.
+
+\section{Problem and information boundary}
+At step $t$, feature vector $x_t\in\mathbb{R}^d$ arrives and is augmented with an intercept. The learner emits $\hat y_t$ before seeing $y_t$. A label predicted at $s$ is released at $s+D$ and can affect later predictions only after release. Missing targets remain on the clock but are not scored or delivered. The runner computes prequential squared error externally. No policy receives regime identity, a switch boundary, future target, evaluation split, or unregistered randomness.
+
+For synthetic task $q$, the reported loss is
+\[
+  \operatorname{MSE}_q=\frac{1}{|\mathcal O_q|}\sum_{t\in\mathcal O_q}(\hat y_t-y_t)^2,
+\]
+where $\mathcal O_q$ contains the observations with present targets. Synthetic tasks reset all state. Chronological real streams retain legally accumulated warmup state into evaluation.
+
+\section{Method}
+\begin{figure}[t]
+  \centering\includegraphics[width=\linewidth]{figures/architecture.pdf}
+  \caption{Prediction and feedback chronology. Tickets retain only outputs produced when an example arrived; a later label scores those saved outputs before the gate decides whether to update the active estimator.}
+  \label{fig:architecture}
+\end{figure}
+
+\subsection{Persistent-ridge estimator}
+Let $\tilde x_n$ denote an accepted augmented example, $\lambda\in(0,1]$ the forgetting factor, and $\rho=1$. Initialize $A_0=\rho I$ and $b_0=0$, then update
+\begin{align}
+ A_n &= \lambda A_{n-1}+\tilde x_n\tilde x_n^\top +(1-\lambda)\rho I,\\
+ b_n &= \lambda b_{n-1}+\tilde x_n y_n,\\
+ w_n &= A_n^{-1}b_n.
+\end{align}
+The implementation uses Cholesky and triangular solves; every solve requires positive pivots and a scaled backward residual at most $10^{-10}$. A failed check fails the entire attempt and remains in the denominator.
+
+Induction gives
+\[
+ A_n=\rho I+\sum_{i=1}^{n}\lambda^{n-i}\tilde x_i\tilde x_i^\top,
+\]
+so $A_n\succeq\rho I$ in exact arithmetic. If $\|\tilde x_i\|\le B$, $|y_i|\le Y$, and $\lambda<1$, then $\lambda_{\max}(A_n)\le\rho+B^2/(1-\lambda)$ and $\|w_n\|\le BY/[\rho(1-\lambda)]$. These conditional bounds establish neither predictive accuracy nor distribution-free or floating-point safety. Gaussian synthetic inputs are not globally bounded.
+
+\subsection{Delayed-credit memory gate}
+The active predictor is archived every 32 accepted updates. A FIFO bank holds at most $K$ frozen vectors. At prediction time, the runner saves the active output and every extant expert output in a ticket. When a label arrives, only experts that actually predicted that example receive exponentially weighted squared-loss credit. An expert is eligible after at least eight scored predictions when its loss is below an absolute ceiling $h$ and below $0.9$ times active loss. The eligible expert with the smallest loss is selected, breaking ties by immutable ID.
+
+If an archived expert qualifies and suppression is enabled, the active information update and solve are both skipped. Otherwise $A$, $b$, and $w$ advance. Skips do not advance the accepted-label forgetting clock. Prediction may use an archived expert; there is no gradient through the bank. V4 retains the v3 gate exactly and changes only the active numerical objective.
+
+\subsection{Complexity and accounting}
+Prediction requires $O(Kd)$ arithmetic; pending tickets require $O(DK)$ saved expert outputs in addition to delayed examples. The active estimator stores $O(d^2)$ information state and a solve is $O(d^3)$ in this direct implementation. We separately record predictions, information updates, Cholesky weight solves, estimated scalar operations, numerical-state bytes, serialized traces, process peak RSS, and wall time. These are reference-implementation measurements, not exact hardware FLOPs or energy.
+
+\section{Experimental methodology}
+\subsection{Development, freezing, and confirmation}
+Development uses five seeds on base recurrence and no-recurrence streams. The candidate grid has eight configurations: $h\in\{0.02,0.1\}$, credit rate $\alpha\in\{0.2,0.5\}$, and capacity $K\in\{4,8\}$. Fixed values are archive interval 32, minimum credit count 8, and relative gate 0.9. Fourteen conventional configurations complete a 22-configuration, 220-attempt matrix. Candidate and baseline are selected independently by equal-weight mean MSE with lexical tie breaking.
+
+Before confirmation, source, data identities, protocol, selection, and all configuration values were anchored in Git commit \texttt{dd71324e6e262ebd60bad5b57a7b3071802a7af5}. Confirmation contains exactly 20 fresh seeds, seven conditions, ten methods, and 1,400 attempts. The primary conditions are base recurrence, delay 16, noise standard deviation 0.2, larger distractor scale, and 16 observed dimensions. No-recurrence and double-horizon streams are descriptive stress tests.
+
+\subsection{Decision rule}
+For seed $s$, average MSE over the five primary conditions separately for candidate and selected baseline, then compute
+\[
+ \Delta_s=\frac{\overline{\operatorname{MSE}}_{\mathrm{candidate},s}}
+ {\overline{\operatorname{MSE}}_{\mathrm{baseline},s}}-1.
+\]
+A fixed 10,000-draw paired seed bootstrap with analysis seed 20261022 produces a percentile interval. Synthetic support requires the upper 95\% bound to be at most 0.02, mean weight-solve reduction to be at least 0.20, and every primary cell to complete validly. Development observations are not pooled with confirmation. Secondary comparisons are descriptive and do not form an unadjusted family of significance claims.
+
+\subsection{Chronological streams}
+UCI Air Quality is an exposed regression stream inherited from v3 \cite{air}. It uses the observed 9,357-row hourly file, 40\% chronological warmup, fixed physical scales, the v3 feature transform, and an artificial four-hour target delay. Because v3 outcomes were already seen, it cannot supply new protected transfer evidence.
+
+The protected stream is UCI Beijing PM2.5 \cite{beijing}. The year 2013 is warmup and 2014 is evaluation. Features comprise fixed-scale dew point, temperature, pressure, cumulative wind, snow, rain, four wind-direction indicators, sine/cosine hour, and six missingness flags. Missing numerical features become zero with their flag; missing PM2.5 targets remain unscored and undelivered without compressing time. No pollutant-target lag is used. The four-hour delay is imposed by the study, and contemporaneous weather availability is an assumption.
+
+All registered methods must complete. Descriptive transfer support requires candidate MSE no more than 1.02 times the synthetic-selected baseline and at least 20\% fewer evaluation-period weight solves. Seven contiguous blocks expose temporal variation but are not independent replicates; no IID interval or cross-dataset generalization claim follows.
+
+\section{Results}
+\input{results.tex}
+
+\section{Verification and reproducibility}
+The implementation is standard-library Python; publication generation additionally uses NumPy and Matplotlib. Twenty-six unit tests cover persistent-ridge agreement with independent batch solutions, finite long-stream behavior, delayed-feedback ordering, future-target exclusion, FIFO identity, gate eligibility, checkpoint restoration, data hashes, and chronological splits. Each attempt retains prediction traces, counters, complete checkpoints, identities, wall time, RSS, and success or failure.
+
+The main verifier recomputes metrics and can replay every trace exactly. A separate auditor checks arithmetic and feedback legality without importing the model or metric implementation. The confirmation replay validates 1,400 attempts and 1,536,000 trace rows; its separate audit observes a maximum streamed-versus-reference MSE difference of $2.66\times10^{-15}$. These complementary local code paths are not independent external replication or peer review.
+
+The hosted notebook embeds a hash-checked frozen source/data archive, executes tests and all registered runs, performs exact replay and separate audit, and emits a results archive. Hosted execution establishes platform portability only after the downloaded archive is hash-checked; it is not independent external reproduction.
+
+\section{Discussion and limitations}
+The confirmation supports the registered synthetic error/solve claim and the comparison against an otherwise matched always-update bank. It does not prove a universal causal mechanism. The candidate is slightly worse on the no-recurrence stress test, showing that archived reuse can be unhelpful when a regime does not return. The periodic control uses fewer solves than the candidate but substantially higher error, so solve count alone cannot explain the candidate's accuracy.
+
+The real streams are mixed. Persistent regularization removes the predecessor's numerical failure: every method completes. The gate fails badly on exposed Air Quality despite large solve suppression. It satisfies the predeclared descriptive candidate-versus-baseline margin on protected Beijing, but last-observation persistence obtains far lower MSE than all learned methods. Beijing PM2.5 is strongly autocorrelated at the hourly scale, and the absence of pollutant lags handicaps the learned models relative to persistence. The result is useful evidence about the chosen formulation, not evidence of best-in-class forecasting.
+
+This small linear study cannot establish efficacy for deep networks, learned objectives, causal reasoning, general intelligence, arbitrary drift, or production systems. The synthetic generators are fresh realizations of a declared family, not arbitrary real-world environments. Each real dataset is one correlated chronological stream, the delays are artificial, and the feature transforms are fixed rather than exhaustively tuned. The registered controls do not reproduce DWM, variable-direction forgetting, or SIFt-RLS.
+
+Fewer active solves are not automatically lower runtime, memory, or energy. Python wall times depend on serialization and shared-host conditions. The mathematical information floor changes the estimator relative to v3 and must be judged as a separately versioned hypothesis. A successful hosted replay remains controlled by the same authors and code, and therefore cannot be described as external validation.
+
+\section{Conclusion}
+The persistent-ridge memory gate achieves 30.62\% lower paired mean squared error and 58.89\% fewer weight solves than its selected persistent-ridge baseline over the registered synthetic primary conditions. It fails on exposed Air Quality, passes its narrow candidate-versus-baseline rule on protected Beijing, and loses decisively to last-observation persistence there. Exact replay, arithmetic audit, negative conditions, and chronological real-stream outcomes define the evidentiary boundary. The defensible contribution is a reproducible bounded mechanism study with explicit failure preservation, not a perfect model, state-of-the-art system, or general theory of memory.
+
+\appendix
+\section{Implementation correspondence}
+\begin{tabular}{p{.31\linewidth}p{.61\linewidth}}
+\toprule
+Scientific component & Executable implementation\\
+\midrule
+Persistent-ridge update and solve & \texttt{engine.Policy.rls}, checked Cholesky helpers\\
+Prediction and expert eligibility & \texttt{engine.Policy.predict}, gate selection\\
+Delayed prediction-time credit & \texttt{engine.Policy.observe}, saved tickets\\
+Label release boundary & \texttt{engine.Runner.deliver}, \texttt{advance}\\
+Selection and source lock & \texttt{experiment.freeze}, source map\\
+Paired analysis & \texttt{experiment.analyze}, fixed bootstrap\\
+Real data and clock & \texttt{transfer.py} loaders and runner\\
+Independent arithmetic audit & \texttt{audit.py}\\
+Paper figures and tables & \texttt{publication/generate.py}\\
+\bottomrule
+\end{tabular}
+
+\section{Reproduction commands}
+From \texttt{successors/memory\_v4}, use fresh output paths:
+\begin{verbatim}
+python3 -m unittest discover -s . -p 'test_*.py' -v
+python3 experiment.py develop --output runs/development
+python3 experiment.py verify --input runs/development \
+  --output runs/development/verification-exact.json --replay
+python3 experiment.py freeze --input runs/development \
+  --output runs/freeze.json
+python3 experiment.py confirm --lock runs/freeze.json \
+  --output runs/confirmation
+python3 experiment.py verify --input runs/confirmation \
+  --output runs/confirmation/verification-exact.json --replay
+python3 audit.py runs/confirmation runs/confirmation/audit.json
+python3 experiment.py analyze --input runs/confirmation \
+  --lock runs/freeze.json --output runs/analysis.json
+python3 transfer.py run --dataset air --lock runs/freeze.json \
+  --output runs/air-regression
+python3 transfer.py run --dataset beijing --lock runs/freeze.json \
+  --output runs/beijing-transfer
+\end{verbatim}
+Local runs additionally require 512 MiB reclaimable memory, a non-rising macOS pageout admission probe, process peak RSS below 512 MiB, numerical state at most 128 KiB, and a 1,800-second phase limit. Refusals create immutable receipts and no model attempts.
+
+\section{Authorship, data, and ethics}
+The report names Ryan Gomez, subject to owner verification before external submission. Implementation and drafting used AI assistance; this is not independent scientific review. No new human-subject data were collected. UCI provides the environmental datasets under their stated terms; exact downloaded file hashes and attribution are retained. No affiliation, venue acceptance, arXiv endorsement, production readiness, or external reproduction is claimed.
+
+\begin{thebibliography}{9}
+\bibitem{dwm} J. Z. Kolter and M. A. Maloof. Dynamic Weighted Majority: An Ensemble Method for Drifting Concepts. \emph{JMLR}, 8:2755--2790, 2007. \url{https://www.jmlr.org/papers/v8/kolter07a.html}.
+\bibitem{delay} P. Joulani, A. Gyorgy, and C. Szepesvari. Online Learning under Delayed Feedback. \emph{ICML, PMLR} 28(3):1453--1461, 2013. \url{https://proceedings.mlr.press/v28/joulani13.html}.
+\bibitem{vdf} K. Goel, A. L. Bruce, and D. S. Bernstein. Recursive Least Squares with Variable-Direction Forgetting. arXiv:2003.03523, 2020. \url{https://arxiv.org/abs/2003.03523}.
+\bibitem{sift} K. Lai and D. S. Bernstein. SIFt-RLS: Subspace of Information Forgetting Recursive Least Squares. arXiv:2404.10844, 2024. \url{https://arxiv.org/abs/2404.10844}.
+\bibitem{air} S. De Vito et al. Air Quality. UCI Machine Learning Repository. \url{https://archive.ics.uci.edu/dataset/360/air+quality}.
+\bibitem{beijing} S. Chen. Beijing PM2.5. UCI Machine Learning Repository, 2015. doi:10.24432/C5JS49. \url{https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data}.
+\end{thebibliography}
+
+\end{document}

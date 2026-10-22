@@ -1,0 +1,6 @@
+{
+  "status": "FAILED_PACKAGING",
+  "reason": "generator relative path could not be made relative to absolute source root",
+  "repair": "resolve runs path at generator entry; no research source/results changed",
+  "superseded_by": "../generated-02"
+}

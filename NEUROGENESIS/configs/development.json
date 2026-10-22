@@ -1,0 +1,156 @@
+{
+  "schema_version": "neurogenesis.development.v1",
+  "split": "development",
+  "matrix_id": "shared-baselines-v1-20261019",
+  "meta_train_identities": [
+    {
+      "identity": {
+        "task_id": "meta-smooth-0011",
+        "split": "meta_train",
+        "family": "piecewise_linear_smooth",
+        "seed": 11
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    },
+    {
+      "identity": {
+        "task_id": "meta-smooth-0017",
+        "split": "meta_train",
+        "family": "piecewise_linear_smooth",
+        "seed": 17
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    },
+    {
+      "identity": {
+        "task_id": "meta-smooth-0023",
+        "split": "meta_train",
+        "family": "piecewise_linear_smooth",
+        "seed": 23
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    }
+  ],
+  "tasks": [
+    {
+      "identity": {
+        "task_id": "dev-delay-conflict-0101",
+        "split": "development",
+        "family": "delay_distractor_conflict_return",
+        "seed": 101
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    },
+    {
+      "identity": {
+        "task_id": "dev-delay-conflict-0211",
+        "split": "development",
+        "family": "delay_distractor_conflict_return",
+        "seed": 211
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    },
+    {
+      "identity": {
+        "task_id": "dev-delay-conflict-0307",
+        "split": "development",
+        "family": "delay_distractor_conflict_return",
+        "seed": 307
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    },
+    {
+      "identity": {
+        "task_id": "dev-delay-conflict-0401",
+        "split": "development",
+        "family": "delay_distractor_conflict_return",
+        "seed": 401
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    },
+    {
+      "identity": {
+        "task_id": "dev-delay-conflict-0503",
+        "split": "development",
+        "family": "delay_distractor_conflict_return",
+        "seed": 503
+      },
+      "steps": 480,
+      "feature_dim": 8,
+      "informative_dim": 4,
+      "label_delay": 4,
+      "noise_std": 0.05,
+      "regime_length": 120
+    }
+  ],
+  "policies": [
+    {
+      "name": "no_adaptation",
+      "kind": "no_adaptation",
+      "hyperparameters": {}
+    },
+    {
+      "name": "sgd_lr_0p01",
+      "kind": "standard_sgd",
+      "hyperparameters": {
+        "learning_rate": 0.01,
+        "gradient_clip": 10.0
+      }
+    },
+    {
+      "name": "sgd_lr_0p05",
+      "kind": "standard_sgd",
+      "hyperparameters": {
+        "learning_rate": 0.05,
+        "gradient_clip": 10.0
+      }
+    },
+    {
+      "name": "mechanism_off_adam_lr_0p01",
+      "kind": "mechanism_off_standard_adam",
+      "hyperparameters": {
+        "learning_rate": 0.01,
+        "beta1": 0.9,
+        "beta2": 0.999,
+        "epsilon": 1e-08,
+        "gradient_clip": 10.0
+      }
+    }
+  ]
+}
+

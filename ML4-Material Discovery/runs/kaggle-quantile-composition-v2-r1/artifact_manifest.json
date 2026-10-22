@@ -1,0 +1,61 @@
+{
+  "files": {
+    "events.json": {
+      "bytes": 558,
+      "sha256": "8a4abc9d6585f3b1906e85dffc6cb70ea06b5b6ffb7297c8cf048f4857177f43"
+    },
+    "failures.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "figures/calibration.png": {
+      "bytes": 68016,
+      "sha256": "d8ad5aa654421bb3091f4f21d761ce1d47887b2203274ec5ad480b6465f6f58e"
+    },
+    "figures/parity.png": {
+      "bytes": 146841,
+      "sha256": "23e0da5b71286e3d2df2694a6db8740f4544f84114753418c8fbb79ebed44860"
+    },
+    "models/fold_0.joblib": {
+      "bytes": 230252,
+      "sha256": "9e5c75fe848ee4e2fae18c524502b6482c0886d68036c2f13da5725944e18e01"
+    },
+    "models/fold_1.joblib": {
+      "bytes": 217097,
+      "sha256": "4b189e7cd3a8987f8c47a126c3a9feec58da981cb5b278caf45c5e3dd5ae9797"
+    },
+    "models/fold_2.joblib": {
+      "bytes": 233229,
+      "sha256": "95d81e0756c3681dc26c96883521879572aa070be114513c0b9d469b1ae21c6c"
+    },
+    "models/fold_3.joblib": {
+      "bytes": 222073,
+      "sha256": "7b12b3811ad40a54e9a6de474f8b6230c9ad42537fd3939963b577ddb790d532"
+    },
+    "models/fold_4.joblib": {
+      "bytes": 222031,
+      "sha256": "457cb36c9e8feace9c92e0c1c57157b407df37a6c4763deb3891450019b26695"
+    },
+    "predictions/oof_predictions.csv": {
+      "bytes": 770476,
+      "sha256": "1c886f950784f789e2113950de20c47ef587681c388611cc2215254e162f4d2a"
+    },
+    "receipt.json": {
+      "bytes": 667,
+      "sha256": "0f3f26637e822e478f4fa3e747a813db84e7fa55c4e29d2b4c0c3e8d9af0b057"
+    },
+    "results.json": {
+      "bytes": 2893,
+      "sha256": "1bafae621ba65a6f30be58a78ae57f1d366d19844b11d6d3b32728642bcb79e8"
+    },
+    "tables/calibration.csv": {
+      "bytes": 328,
+      "sha256": "32e4a9938a31911c7000541e69c855cfee1b7000768b98c730ade873ada630e0"
+    },
+    "tables/folds.csv": {
+      "bytes": 783,
+      "sha256": "623d4040b2804686c18bf625c91644c6cc29b50fa9255f27156213250a78e2bb"
+    }
+  },
+  "schema_version": 1
+}

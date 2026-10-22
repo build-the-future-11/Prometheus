@@ -1,0 +1,23 @@
+{
+  "attempt_id": "dev-delay-conflict-0101__no_adaptation",
+  "policy": {
+    "hyperparameters": {},
+    "kind": "no_adaptation",
+    "name": "no_adaptation"
+  },
+  "status": "STARTED",
+  "task": {
+    "feature_dim": 8,
+    "identity": {
+      "family": "delay_distractor_conflict_return",
+      "seed": 101,
+      "split": "development",
+      "task_id": "dev-delay-conflict-0101"
+    },
+    "informative_dim": 4,
+    "label_delay": 4,
+    "noise_std": 0.05,
+    "regime_length": 120,
+    "steps": 480
+  }
+}

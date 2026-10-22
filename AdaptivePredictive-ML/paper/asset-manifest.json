@@ -1,0 +1,15 @@
+{
+  "claim_boundary": "Development-stage negative result; no protected confirmation, generalization, efficiency, or SOTA claim.",
+  "inputs": {
+    "artifacts/kaggle-development-v2-r1/development-analysis-v2.json": "fa7b25b6ea66e4d0c9b02dbeb1bc54dcd33428d766e34f8cfb7f4758e483a6e1",
+    "artifacts/kaggle-development-v2-r1/independent-verification-v2.json": "8b1f5b5471f737d5ecee8bb394b77ef71b433e0f634825f16f46698b8b1b052b"
+  },
+  "outputs": {
+    "paper/figures/contrasts.tex": "4f336796967a170e64f712b2579f620da43e34201cfdcba1aaf1678fd919805a",
+    "paper/figures/mase-bars.tex": "a66355e8934f9a3ccf9113cad21945950176a13b8349149ffb6cd25dff7cc226",
+    "paper/tables/contrasts.tex": "790db03ace48bcfa2f42be44c6e94e92b288d6fbcddc22739d552c8db742177f",
+    "paper/tables/results.tex": "d6134ebfed0d354382755f68ef95fe36760a35e68e1a11b67b978c5ce5464cbc",
+    "paper/tables/series-effects.tex": "7db38c98a1d1fac5611e89d1ee1a5b7530991b4dd3667413bc61fa2e940eaba2"
+  },
+  "schema_version": "adaptive-predictive.paper-assets.v1"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "platform": "Kaggle",
+  "requested_by_owner": true,
+  "observed_account": "ryangomez010",
+  "draft_created": "https://www.kaggle.com/code/ryangomez010/notebook09a8825ca5/edit",
+  "source_uploaded": false,
+  "experiment_started": false,
+  "results_downloaded": false,
+  "blocker": "Chrome automation repeatedly lost tab control, timed out, then reported transport closed. Native fallback also timed out. No Kaggle API credentials exist in conventional local locations.",
+  "prepared_notebook": "delivery/neurogenesis-memory-v3-evidence-r3.ipynb",
+  "source_archive_sha256": "b4293b7dcfac04d31e358cb95e0670a915a89d406625a86832ca132cc157934d",
+  "next_action": "Restore browser extension connection or configure Kaggle API locally; import the frozen notebook, Save and Run All on CPU, download neurogenesis-memory-v3-results.zip and verify all ARTIFACTS.json hashes. Do not tune on hosted confirmation outcomes.",
+  "claim_boundary": "Local scientific results and a prepared notebook do not establish hosted execution or independent external replication.",
+  "known_local_outcome": "SUPPORTED synthetic; six numerical failures prevent real comparison; overall MIXED"
+}

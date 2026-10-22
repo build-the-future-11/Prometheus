@@ -1,0 +1,29 @@
+{
+  "files": [
+    "audit.py",
+    "engine.py",
+    "experiment.py",
+    "real_transfer.py",
+    "test_engine.py",
+    "test_pipeline.py",
+    "test_ridge.py",
+    "transfer.py",
+    "SPECIFICATION.md",
+    "SUCCESSOR_CONTRACT.md",
+    "FLAW_CHECKLIST.md",
+    "RELATED_WORK.md",
+    "protocol.json",
+    "data/manifest.json",
+    "data/AirQualityUCI.csv",
+    "data/PRSA_data_2010.1.1-2014.12.31.csv",
+    "data/beijing-complete.zip",
+    "runs/freeze.json",
+    "runs/preconfirmation_anchor.json"
+  ],
+  "hosted_execution": false,
+  "notebook": "neurogenesis-memory-v4-frozen-evidence.ipynb",
+  "notebook_sha256": "d48949c6b6552a93da329ec0bc28886aad44e2601e24575444636e562a86d015",
+  "source_archive": "source-v4.zip",
+  "source_archive_bytes": 1283441,
+  "source_archive_sha256": "a71696f5bbc1089e59ef86e0f66867f741c5fba571f2fb613008a3de2295b4f1"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "EXPECTED_REJECTION",
+  "command": "real_transfer.verify(real-transfer-03, freeze.json, replay=True)",
+  "exit_code": 1,
+  "reason": "real transfer has failed cell",
+  "interpretation": "frozen efficacy verifier correctly refuses a scientific transfer comparison",
+  "supplementary_evidence_replay": "../real-outcome-01/replay.json"
+}

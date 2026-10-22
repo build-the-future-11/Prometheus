@@ -1,0 +1,13 @@
+{
+  "id": "ryangomez010/ml4-material-discovery-robust-aggregation-v3",
+  "title": "ML4 Material Discovery robust aggregation v3",
+  "code_file": "run_hosted_robust.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": ["ryangomez010/ml4-material-discovery-source"],
+  "competition_sources": [],
+  "kernel_sources": []
+}

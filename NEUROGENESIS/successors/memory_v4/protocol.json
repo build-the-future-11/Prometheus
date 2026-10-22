@@ -1,0 +1,95 @@
+{
+  "schema": "neurogenesis.memory.protocol.v4",
+  "study": "persistent-ridge-memory-v4-20261021",
+  "created": "2026-10-21",
+  "approved_mechanism": "APPROVED_MEMORY_WEIGHT",
+  "authority": "Renewed explicit owner request after v3 terminal mixed result; choose strongest defensible direction",
+  "development_seeds": [
+    2203,
+    2213,
+    2221,
+    2237,
+    2243
+  ],
+  "confirmation_seeds": [
+    91001,
+    91002,
+    91003,
+    91004,
+    91005,
+    91006,
+    91007,
+    91008,
+    91009,
+    91010,
+    91011,
+    91012,
+    91013,
+    91014,
+    91015,
+    91016,
+    91017,
+    91018,
+    91019,
+    91020
+  ],
+  "conditions": [
+    "base",
+    "novel",
+    "delay",
+    "noise",
+    "distractor",
+    "dimension",
+    "horizon"
+  ],
+  "primary_conditions": [
+    "base",
+    "delay",
+    "noise",
+    "distractor",
+    "dimension"
+  ],
+  "primary_endpoint": "paired seed-level relative mean prequential MSE over the five primary conditions",
+  "noninferiority_margin": 0.02,
+  "minimum_update_reduction": 0.2,
+  "superiority_margin": -0.05,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 20261022,
+  "phase_cpu_wall_seconds": 1800,
+  "process_rss_bytes": 536870912,
+  "algorithmic_state_bytes": 131072,
+  "paid_compute": false,
+  "gpu_required": false,
+  "max_mechanism_versions": 1,
+  "candidate_configs_per_version": 8,
+  "confirmation_policy": "one frozen campaign; exact verification replays allowed; no outcome-based redesign",
+  "v1_evaluation_admitted": false,
+  "real_transfer": "New Beijing PM2.5 stream: 2013 warmup, 2014 protected transfer; weather/calendar only; fixed scales; 4-hour artificial label delay. Old UCI Air Quality is exposed regression evidence only.",
+  "predecessor_protocol_sha256": "288d3d2ae15976a4e80e101ceb3312b9099de123dee4762797b2364e25fcce2b",
+  "version_ordinal": 1,
+  "predecessor_v2_protocol_sha256": "46e493b573f9e592d2b3b045a0c5a91b6bbed65930736889a876ce1a8c56113b",
+  "candidate_grid": {
+    "alpha": [
+      0.2,
+      0.5
+    ],
+    "loss_ceiling": [
+      0.02,
+      0.1
+    ],
+    "capacity": [
+      4,
+      8
+    ],
+    "active_update": "rls",
+    "forgetting": 0.95
+  },
+  "ridge": 1.0,
+  "predecessor_release_commit": "b333c415ca9a50aa468b48ef7675b6984228e709",
+  "real_support_rule": "All methods complete; candidate test MSE <=1.02 times selected baseline and >=20 percent fewer weight solves, descriptive single-stream criterion; no cross-dataset statistical claim.",
+  "numerical_support_rule": "No failed attempt in synthetic confirmation, exposed regression, or new transfer; residual/backward-error mathematical checks pass.",
+  "execution_budget": "1800 seconds per phase, 512 MiB process RSS, 128 KiB numerical state, CPU only; one candidate mechanism, one development grid, one confirmation; no protected-outcome redesign.",
+  "development_attempts": 220,
+  "confirmation_attempts": 1400,
+  "controls_note": "periodic solve every 3 labels included in baseline selection and confirmation; actual operations reported, not exact hardware compute matching"
+}

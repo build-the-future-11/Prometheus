@@ -1,0 +1,27 @@
+[
+  {
+    "event": "official_fold_complete",
+    "fold": "fold_0",
+    "utc": "2026-10-20T17:43:19.118185Z"
+  },
+  {
+    "event": "official_fold_complete",
+    "fold": "fold_1",
+    "utc": "2026-10-20T17:43:33.192682Z"
+  },
+  {
+    "event": "official_fold_complete",
+    "fold": "fold_2",
+    "utc": "2026-10-20T17:43:46.881196Z"
+  },
+  {
+    "event": "official_fold_complete",
+    "fold": "fold_3",
+    "utc": "2026-10-20T17:44:00.649190Z"
+  },
+  {
+    "event": "official_fold_complete",
+    "fold": "fold_4",
+    "utc": "2026-10-20T17:44:14.285058Z"
+  }
+]

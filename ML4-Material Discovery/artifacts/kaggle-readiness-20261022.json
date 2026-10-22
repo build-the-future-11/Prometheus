@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-22",
+  "status": "READY_TO_STAGE_IMMUTABLE_REPRODUCTION_AND_VERIFICATION_ONLY",
+  "remote": {
+    "branch": "codex/ml4materials-evidence-release-20261021",
+    "commit": "fd67abdf30d21e6ed3ccfc92fd8df37cac360e81",
+    "matched_local_tree_before_receipt": true
+  },
+  "checks": {
+    "release_tests": {
+      "status": "PASS",
+      "passed": 72
+    },
+    "replay_staging": {
+      "status": "PASS",
+      "dedicated_tests_passed": 5,
+      "full_suite_passed": 77,
+      "stager": "scripts/stage_kaggle_replay.py",
+      "verified_run_id": "kaggle-robust-aggregation-v3-replay-r2"
+    },
+    "primary_v3_numeric_verification": {
+      "status": "NUMERICALLY_VERIFIED",
+      "run_id": "kaggle-robust-aggregation-v3-r1"
+    },
+    "same_operator_reproduction": {
+      "status": "EXACT_SCIENTIFIC_REPRODUCTION",
+      "original_run": "kaggle-robust-aggregation-v3-r1",
+      "reproduction_run": "kaggle-robust-aggregation-v3-reproduction-r1",
+      "checkpoint_mismatches": 0
+    },
+    "fixed_resampling": {
+      "status": "RESAMPLING_VERIFIED",
+      "bootstrap_resamples": 5000,
+      "random_ranking_cells_checked": 12
+    }
+  },
+  "submission_boundary": "No new scientific run was submitted. scripts/stage_kaggle_replay.py creates a private exact-replay submission from the preserved source bundle under a validated new immutable run identity. A changed scientific method requires a versioned successor protocol and budget."
+}

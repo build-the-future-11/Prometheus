@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "pdf": "paper/main.pdf",
+  "sha256": "81ad56ccaecd9ed2463a33e0f52ad639bce6bcd9c7c59c2a1126369f2590654d",
+  "pages": 12,
+  "author": "Ryan Gomez",
+  "affiliation": null,
+  "visual_review": "All pages reviewed; appendix and references moved onto dedicated pages; final pages 10-12 re-rendered and reviewed",
+  "build": "tectonic --keep-logs --keep-intermediates paper/main.tex",
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "retained_warnings": [
+    "Underfull vbox",
+    "Original style font substitution"
+  ],
+  "evidence_map": "paper/generated/evidence-map.json",
+  "reproduction_receipt": "artifacts/reproduction-comparison-20261021.json",
+  "arxiv_submitted": false
+}

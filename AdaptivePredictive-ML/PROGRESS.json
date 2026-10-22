@@ -1,0 +1,74 @@
+{
+  "schema_version": "adaptive-predictive.progress.v1",
+  "updated_at": "2026-10-21T16:49:30+05:30",
+  "completed_operations": [
+    "Preserved the dirty enclosing Atlas checkout and all immutable revision-1 evidence.",
+    "Implemented revision-2 mechanism controls, a tuning-free AdaHedge comparator, a common causal drift detector, synchronized moving-block inference, and strict temporal-boundary validation.",
+    "Built the deterministic allowlisted source bundle, scanned the extracted upload payload with gitleaks, and verified Python syntax without starting a local numerical experiment.",
+    "Uploaded private Kaggle dataset ryangomez010/adaptive-predictive-source-v2-20261021; final remote status is ready.",
+    "Ran private CPU-only, no-internet Kaggle kernel ryangomez010/adaptive-predictive-development-v2-20261021; final remote status is COMPLETE.",
+    "Verified all 23 hosted source files against the source manifest and retained the complete source-verification receipt.",
+    "Passed 25 hosted engineering tests before the real-data evaluation.",
+    "Evaluated eight registered methods on ten registered PJM series over 366 days each, retaining 3,660 raw prediction rows.",
+    "Verified the downloaded archive and all inner artifact SHA-256 digests.",
+    "Independently recomputed every metric and all six registered point contrasts from raw predictions with a standard-library-only verifier; no discrepancies were found.",
+    "Applied the registered advancement gates and terminated before protected confirmation because both the overall and mechanism gates failed.",
+    "Generated all manuscript tables and vector figures from verified JSON with a hashed asset manifest.",
+    "Compiled an eight-page negative-result manuscript without TeX warnings and visually inspected every rendered page.",
+    "Added final experimental, statistical, failure, reproducibility, and skeptical-review reports plus a one-command paper reproduction script."
+  ],
+  "active_experiments": [],
+  "confirmed_results": [
+    {
+      "scope": "hosted engineering qualification",
+      "result": "25 of 25 tests passed after exact verification of the 23-file source payload.",
+      "claim_boundary": "This establishes the executed source identity and engineering behavior, not scientific benefit."
+    },
+    {
+      "scope": "registered real-data development-v2",
+      "result": "DDFS minus fixed-share MASE was +0.003195193449453197 with synchronized moving-block 95% CI [+0.0014690581194003352, +0.004907738240006376], probability of improvement 0.0, and 0 of 10 favorable series.",
+      "claim_boundary": "Development-only falsification; no protected confirmatory values were accessed."
+    },
+    {
+      "scope": "registered mechanism isolation",
+      "result": "DDFS minus adaptive-share MASE was +0.001023616406604363 with 95% CI [+0.0004661806514595297, +0.0015807069269040872] and 0 of 10 favorable series. Adaptive share and directed fixed share were also each worse than fixed share on all ten series.",
+      "claim_boundary": "The proposed adaptive-rate and directed-target increments were both contradicted on the development domain."
+    }
+  ],
+  "failed_experiments": [
+    {
+      "type": "RESOURCE_ADMISSION",
+      "date": "2026-10-21",
+      "detail": "Local heavy execution remained inadmissible: the latest pre-launch sample had 145,915,904 free-plus-speculative bytes, below 512 MiB, and pageouts were rising. Numerical execution was therefore delegated to the authorized free Kaggle CPU runner."
+    },
+    {
+      "type": "SCIENTIFIC_ADVANCEMENT_GATE",
+      "date": "2026-10-21",
+      "detail": "Both registered development advancement gates failed. The DDFS primary and directed-mechanism contrasts were unfavorable with confidence intervals entirely above zero and zero series wins. Protected confirmation was not scheduled."
+    }
+  ],
+  "pending_work": [
+    "No work remains for the revision-2 development protocol.",
+    "Any future scientific work must be a separately versioned successor with a new hypothesis and protocol; it must not reinterpret, overwrite, or selectively extend this negative result.",
+    "A broad publication would still require independent cross-domain evidence and independent reproduction; neither is claimed here."
+  ],
+  "resource_usage": {
+    "local_numerical_execution_admitted": false,
+    "hosted_runner": "Kaggle free CPU; GPU disabled; internet disabled",
+    "hosted_kernel_status": "COMPLETE",
+    "hosted_dataset_status": "ready",
+    "prediction_rows": 3660,
+    "series": 10,
+    "evaluation_days_per_series": 366,
+    "protected_data_access": 0
+  },
+  "blockers": [
+    "The registered scientific advancement condition failed; confirmation is protocol-inadmissible.",
+    "No cross-domain replication or independent reproduction exists.",
+    "The result does not support a positive performance, mechanism, generalization, efficiency, or SOTA claim."
+  ],
+  "next_executable_steps": [
+    "Preserve and report the negative development result with its exact artifact identities.",
+    "If research continues, register a successor question before looking for favorable replacements and keep the current evidence immutable."
+  ]
+}

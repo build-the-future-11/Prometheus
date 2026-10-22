@@ -1,0 +1,44 @@
+{
+  "schema_version": "adaptive-predictive.static-audit.v1",
+  "created_at": "2026-10-21T15:52:49+05:30",
+  "scope": "Static-only revision-2 audit; no Python process, import, test, bundle build, secret scan, or experiment was admitted.",
+  "json_validation": {
+    "tool": "jq",
+    "status": "PASS",
+    "files": [
+      "RESEARCH_STATE.json",
+      "PROGRESS.json",
+      "protocols/development-v1.json",
+      "protocols/development-v2.json",
+      "studies/kaggle-source-dataset-v2/dataset-metadata.json",
+      "studies/kaggle-development-v2/kernel-metadata.json"
+    ]
+  },
+  "sha256": {
+    "README.md": "c673479ad86b5fad056342fc84d704170b93cfafa4e84050729ae00dcb13f716",
+    "LICENSE": "87c078ab9d90a3044f359e6b563d4e6afea7aa060897cf4f21618687b3856796",
+    "RESEARCH_STATE.json": "f81b7b7b399ed1d1ce7b6e6da4a88c4ed9b44085249d775203ebb20eba3640e2",
+    "docs/DATA_CARD.md": "6fedf512fcf1b340d367cca2a0afe328087bd568222cc43c06ca834b8bbf60ad",
+    "docs/FLAW_AUDIT.md": "7a7b2bdb46e1bc18423e21b20bb4e743de42f54a3b66ef4fddc1e63b2dbe2df5",
+    "docs/LITERATURE_REVIEW.md": "514d58af955253644ce6abb4faa127c067426d22ef63e05876f43ef69a2c8a8e",
+    "docs/PROTOCOL_DRAFT_V0.3.md": "3983af9ca7402fd156f72e16d7543ef6123556aab44be78b317275681d656b65",
+    "protocols/development-v2.json": "22892c1c467dec44e3b5c323cc5e730a8ceb04c7d711e787d5bad2b757ff6fe4",
+    "src/adaptive_predictive/data.py": "fd2b08e1eee93d48f0d9fbd0c3c880b72dc978fac29c8e535c829ccc00963b48",
+    "src/adaptive_predictive/experiment.py": "ba2ed578be2944ac92ab189aa1dcea87330836ea0aefded98abb43c88a95c265",
+    "src/adaptive_predictive/model.py": "707b44d36aa923537b0eba69d7c6f2c536e321b18cce38a054dcb1bda63b8ec6",
+    "src/adaptive_predictive/statistics.py": "38ddd0c745213b99f02f070d7d469fe158d3c92523290581cfcfdfb041184af1",
+    "tests/test_data.py": "6e26f1baef6b7369f95ccf1a088b8d0b94034a3484a115e3430d2b702fe5fd14",
+    "tests/test_model.py": "d557a2ba3c3f4a9db729101fcc547357cf3f465addcf2e9b327b8812453ad18c",
+    "tests/test_statistics.py": "0d38089f897241ae93af9b22ee10ee32c9d6e09d838997f321b49c7cfa211793",
+    "scripts/build_kaggle_source.py": "a95a68168cacd900875997e3227698ba118f6c9338c853cc6c75a2d81f115afa",
+    "studies/kaggle-development-v2/adaptive-predictive-development-v2-20261021.py": "48e74eea006a80c49f0eee1b5708b1c279ca1cd81cf8bdb1026e0c012306bace",
+    "reports/EXECUTION_STATUS.md": "384a7c5b59f15e0b5521d971ac89e42d708f960f732614cc6fa87bab72ff0a0d"
+  },
+  "resource_admission": {
+    "threshold_bytes": 536870912,
+    "latest_free_plus_speculative_bytes": 368214016,
+    "pageouts_first": 233391,
+    "pageouts_latest": 246234,
+    "admitted": false
+  }
+}

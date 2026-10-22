@@ -1,0 +1,74 @@
+{
+  "config_path": "configs/s2_structural_misspecification.json",
+  "config_sha256": "741cf699c0543cec6fbb7aebc87e2f65071cbf0b493e0ca32fbfafd7004eef4d",
+  "environment": {
+    "executable": "/opt/homebrew/opt/python@3.15/bin/python3.15",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.15.0 (main, Oct  9 2026, 11:16:41) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "python_hash_seed": "0",
+    "third_party_runtime_dependencies": []
+  },
+  "git_commit_at_execution": "21b9338f23df46b32af734cb33903528a1899e8a",
+  "git_worktree_clean_at_execution": false,
+  "outputs": {
+    "results.jsonl": "2045b3e2f7a8ddb2f75b8f78d90a79788fecd5d0d6155a6d1e2b334d9cd9b90a",
+    "selection.json": "1313e66fb313edfccff4ea2dd43f96cc030286ef53992ab3cdff7fce446cbd11",
+    "selection_attempts.jsonl": "a6b8981441ef0d2699e1e9e086a0ae16cd2c56beb4722246d58d4921d805dd38",
+    "summary.json": "b742b5e126907f29095f3f0c2f89696fbebfc399a8d46da12c40eb34cc1c6f4b",
+    "tasks.json": "da8c74ae7027ca70dca02383b3364fc8f5eeaf23904b7c168db2c30d5450f644"
+  },
+  "protocol_path": "PROTOCOL_S2.md",
+  "protocol_sha256": "6c22b990308c91ced980019738a2d74a1264d394c3d23c3e456df2c929409d47",
+  "resource_scope": {
+    "learned_target_generator_training_steps": 0,
+    "paid_services": false,
+    "remote_compute": false,
+    "teacher_calls": 0,
+    "worker_count": 1
+  },
+  "schema_version": "derived-learning.run-manifest.v1",
+  "selected_hyperparameters": {
+    "adam": {
+      "learning_rate": 0.08
+    },
+    "analytic_residual": {
+      "regularization": 1.0
+    },
+    "block_gradient_no_derivation": {
+      "learning_rate": 0.08
+    },
+    "block_jacobi_residual": {
+      "regularization": 1.0
+    }
+  },
+  "source_tree_sha256": "42aef3aabc8bd4fef7f069e0441a1e2e14f52dad6efe15c976d0ca40530fea26",
+  "split_separation": {
+    "development_task_ids": [
+      "development-s2_development-s1201",
+      "development-s2_development-s1202",
+      "development-s2_development-s1203"
+    ],
+    "final_task_ids": [
+      "final-s2_final_structural_misspecification-s1301",
+      "final-s2_final_structural_misspecification-s1302",
+      "final-s2_final_structural_misspecification-s1303",
+      "final-s2_final_structural_misspecification-s1304",
+      "final-s2_final_structural_misspecification-s1305"
+    ],
+    "final_used_for_selection": false,
+    "long_horizon_task_ids": [
+      "long_horizon-s2_long_horizon_structural_misspecification-s1401",
+      "long_horizon-s2_long_horizon_structural_misspecification-s1402",
+      "long_horizon-s2_long_horizon_structural_misspecification-s1403",
+      "long_horizon-s2_long_horizon_structural_misspecification-s1404",
+      "long_horizon-s2_long_horizon_structural_misspecification-s1405"
+    ],
+    "meta_train_task_ids": [
+      "meta_train-s2_meta-s1101",
+      "meta_train-s2_meta-s1102",
+      "meta_train-s2_meta-s1103"
+    ]
+  },
+  "status": "COMPLETE",
+  "study_id": "DLML-S2-P0"
+}

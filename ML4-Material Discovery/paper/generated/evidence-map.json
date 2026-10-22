@@ -1,0 +1,538 @@
+{
+  "schema_version": 2,
+  "runs": [
+    "kaggle-development-v1-r1",
+    "kaggle-quantile-composition-v2-r1",
+    "kaggle-robust-aggregation-v3-r1"
+  ],
+  "verification": [
+    {
+      "run_id": "kaggle-development-v1-r1",
+      "status": "NUMERICALLY_VERIFIED",
+      "manifest_files": 24,
+      "results_sha256": "defc5fd28404180b0d0d1b9bf21757427eddc0c2e45cad7493b20329f8df083d",
+      "recomputed": {
+        "proposed": {
+          "mae_ev": 0.48112579313789117,
+          "rmse_ev": 0.9055414690770345
+        },
+        "ridge": {
+          "mae_ev": 0.8131181705509457,
+          "rmse_ev": 1.161210831331329
+        },
+        "trivial": {
+          "mae_ev": 0.9759513466550825,
+          "rmse_ev": 1.7436030781628526
+        }
+      },
+      "scope": "artifact/row/metric verification; not independent training replication or scientific certification"
+    },
+    {
+      "run_id": "kaggle-quantile-composition-v2-r1",
+      "status": "NUMERICALLY_VERIFIED",
+      "manifest_files": 14,
+      "results_sha256": "1bafae621ba65a6f30be58a78ae57f1d366d19844b11d6d3b32728642bcb79e8",
+      "recomputed": {
+        "quantile_point": {
+          "mae_ev": 0.9759513466550825,
+          "rmse_ev": 1.7436030781628526
+        },
+        "ridge": {
+          "mae_ev": 0.8131181705509457,
+          "rmse_ev": 1.161210831331329
+        }
+      },
+      "scope": "artifact/row/metric verification; not independent training replication or scientific certification"
+    },
+    {
+      "run_id": "kaggle-robust-aggregation-v3-r1",
+      "status": "NUMERICALLY_VERIFIED",
+      "manifest_files": 38,
+      "results_sha256": "0e363db4fbc2ff9f4f4d036af10f419d4404efdb71652f58e08f3349e316e2e1",
+      "recomputed": {
+        "repeat_0/et_mean": {
+          "mae_ev": 0.4761881329885646,
+          "rmse_ev": 0.8890334148172684
+        },
+        "repeat_0/et_median": {
+          "mae_ev": 0.4292659749798112,
+          "rmse_ev": 0.9173788278008902
+        },
+        "repeat_0/et_median_96": {
+          "mae_ev": 0.4307026013326792,
+          "rmse_ev": 0.9190761890108614
+        },
+        "repeat_0/et_fractions_median": {
+          "mae_ev": 0.5459870090765219,
+          "rmse_ev": 1.0599340541330111
+        },
+        "repeat_0/random_forest": {
+          "mae_ev": 0.5198793638248156,
+          "rmse_ev": 0.9426867494773393
+        },
+        "repeat_0/hist_gradient_boosting": {
+          "mae_ev": 0.554965181728177,
+          "rmse_ev": 0.9322580246554212
+        },
+        "repeat_0/ridge": {
+          "mae_ev": 0.8141869961539231,
+          "rmse_ev": 1.1616406562165442
+        },
+        "repeat_0/train_median": {
+          "mae_ev": 0.9758574222995001,
+          "rmse_ev": 1.7437445187729497
+        },
+        "repeat_1/et_mean": {
+          "mae_ev": 0.4749677539609323,
+          "rmse_ev": 0.874722527635042
+        },
+        "repeat_1/et_median": {
+          "mae_ev": 0.4282262909141001,
+          "rmse_ev": 0.9039673330698821
+        },
+        "repeat_1/et_median_96": {
+          "mae_ev": 0.4275185742700708,
+          "rmse_ev": 0.899815540813558
+        },
+        "repeat_1/et_fractions_median": {
+          "mae_ev": 0.5461324443427574,
+          "rmse_ev": 1.0281514943376489
+        },
+        "repeat_1/random_forest": {
+          "mae_ev": 0.5207800561372813,
+          "rmse_ev": 0.9191239247829972
+        },
+        "repeat_1/hist_gradient_boosting": {
+          "mae_ev": 0.5473491335937537,
+          "rmse_ev": 0.9047265486791259
+        },
+        "repeat_1/ridge": {
+          "mae_ev": 0.8145046513599411,
+          "rmse_ev": 1.1587484346810069
+        },
+        "repeat_1/train_median": {
+          "mae_ev": 0.9758574222995001,
+          "rmse_ev": 1.7437445187729497
+        },
+        "repeat_2/et_mean": {
+          "mae_ev": 0.47045466241233164,
+          "rmse_ev": 0.8613958878811574
+        },
+        "repeat_2/et_median": {
+          "mae_ev": 0.4193730267940154,
+          "rmse_ev": 0.8815036716423271
+        },
+        "repeat_2/et_median_96": {
+          "mae_ev": 0.4223619687767162,
+          "rmse_ev": 0.8830786904874224
+        },
+        "repeat_2/et_fractions_median": {
+          "mae_ev": 0.5355304398771575,
+          "rmse_ev": 1.0393607616770748
+        },
+        "repeat_2/random_forest": {
+          "mae_ev": 0.5191863598028029,
+          "rmse_ev": 0.9231926507305644
+        },
+        "repeat_2/hist_gradient_boosting": {
+          "mae_ev": 0.5440255052292711,
+          "rmse_ev": 0.8939668550672585
+        },
+        "repeat_2/ridge": {
+          "mae_ev": 0.8163489471742813,
+          "rmse_ev": 1.1624348329520748
+        },
+        "repeat_2/train_median": {
+          "mae_ev": 0.9758574222995001,
+          "rmse_ev": 1.7437445187729497
+        }
+      },
+      "scope": "artifact/row/metric verification; not independent training replication or scientific certification"
+    }
+  ],
+  "resampling_verification": {
+    "run_id": "kaggle-robust-aggregation-v3-r1",
+    "status": "RESAMPLING_VERIFIED",
+    "bootstrap_interval_ev": [
+      -0.053930233616922126,
+      -0.04268203325767561
+    ],
+    "bootstrap_resamples": 5000,
+    "random_ranking_cells_checked": 12,
+    "random_replicates": 64,
+    "numpy_version": "2.5.4",
+    "scope": "Independent arithmetic implementation; shared specified NumPy RNG; not independent scientific replication"
+  },
+  "reproduction_verification": {
+    "status": "EXACT_SCIENTIFIC_REPRODUCTION",
+    "original_run": "kaggle-robust-aggregation-v3-r1",
+    "reproduction_run": "kaggle-robust-aggregation-v3-reproduction-r1",
+    "executed_source_identity": "4254e809c6c92a383f2e65fe55e924d772a575e3fd47d6864a40d935be6a15d5",
+    "byte_comparisons": {
+      "config.json": {
+        "original": "23de584f3cf0792babde80a5b01091083d92a5505868db7811de519eeed47e63",
+        "reproduced": "23de584f3cf0792babde80a5b01091083d92a5505868db7811de519eeed47e63"
+      },
+      "units.json": {
+        "original": "11cace184fcd167fb8d707405a667da5a8db5a0a3a3c11f37f06789ad2925b31",
+        "reproduced": "11cace184fcd167fb8d707405a667da5a8db5a0a3a3c11f37f06789ad2925b31"
+      },
+      "splits.json": {
+        "original": "5fab45807b1263833bcd5be419d3c2f62347155ad68c63696c732fb422a3e145",
+        "reproduced": "5fab45807b1263833bcd5be419d3c2f62347155ad68c63696c732fb422a3e145"
+      },
+      "predictions/oof.csv": {
+        "original": "c703ec6ba52afd7491b78169c3cdb25d1cdeb1759bf67e4fd0f042f5299bd7c5",
+        "reproduced": "c703ec6ba52afd7491b78169c3cdb25d1cdeb1759bf67e4fd0f042f5299bd7c5"
+      },
+      "predictions/ranking.csv": {
+        "original": "78c96ecbc1a564175b4883fc971d6f34fd69878b03575defc29547107cc36719",
+        "reproduced": "78c96ecbc1a564175b4883fc971d6f34fd69878b03575defc29547107cc36719"
+      },
+      "predictions/holdouts.csv": {
+        "original": "69670ba99f04437b888da90713b8d334d4511399a48aa09c1ff244f5af98a48e",
+        "reproduced": "69670ba99f04437b888da90713b8d334d4511399a48aa09c1ff244f5af98a48e"
+      },
+      "quantile_diagnostic.json": {
+        "original": "e2466f6e303a9788e89541be815cbc05f4132ae5d79d9bc3168f0f64ce1add20",
+        "reproduced": "e2466f6e303a9788e89541be815cbc05f4132ae5d79d9bc3168f0f64ce1add20"
+      },
+      "tables/metrics.csv": {
+        "original": "43772fed68655dd76ea5c1bc7eb0a4690f33ff25032e9a6357c65fac156b7eaf",
+        "reproduced": "43772fed68655dd76ea5c1bc7eb0a4690f33ff25032e9a6357c65fac156b7eaf"
+      },
+      "tables/calibration.csv": {
+        "original": "5425d858d50c9df7ec2630ded7bf2b1fe8e27db8990a8fb56bf886557785fbe4",
+        "reproduced": "5425d858d50c9df7ec2630ded7bf2b1fe8e27db8990a8fb56bf886557785fbe4"
+      },
+      "tables/ranking.csv": {
+        "original": "333cb12c1db03377fee2e6055c1f029b22b8947227991e7c745c6cbe490ff86b",
+        "reproduced": "333cb12c1db03377fee2e6055c1f029b22b8947227991e7c745c6cbe490ff86b"
+      },
+      "tables/subgroups.csv": {
+        "original": "aee7bd0154a2c4ad8a3809af2a541124da166d4d6e62a40694b84d73ef248aed",
+        "reproduced": "aee7bd0154a2c4ad8a3809af2a541124da166d4d6e62a40694b84d73ef248aed"
+      }
+    },
+    "byte_mismatches": [],
+    "scientific_summary_exact_excluding_timing": true,
+    "tables_exact_excluding_timing": {
+      "tables/costs.csv": true,
+      "tables/probes.csv": true,
+      "tables/holdouts.csv": true
+    },
+    "checkpoint_bytes_equal": {
+      "holdout_Ga.joblib": true,
+      "holdout_Li.joblib": true,
+      "holdout_Se.joblib": true,
+      "holdout_Te.joblib": true,
+      "holdout_Zn.joblib": true,
+      "repeat_0_fold_0.joblib": true,
+      "repeat_0_fold_1.joblib": true,
+      "repeat_0_fold_2.joblib": true,
+      "repeat_0_fold_3.joblib": true,
+      "repeat_0_fold_4.joblib": true,
+      "repeat_1_fold_0.joblib": true,
+      "repeat_1_fold_1.joblib": true,
+      "repeat_1_fold_2.joblib": true,
+      "repeat_1_fold_3.joblib": true,
+      "repeat_1_fold_4.joblib": true,
+      "repeat_2_fold_0.joblib": true,
+      "repeat_2_fold_1.joblib": true,
+      "repeat_2_fold_2.joblib": true,
+      "repeat_2_fold_3.joblib": true,
+      "repeat_2_fold_4.joblib": true
+    },
+    "verification": [
+      {
+        "run_id": "kaggle-robust-aggregation-v3-r1",
+        "status": "NUMERICALLY_VERIFIED",
+        "manifest_files": 38,
+        "results_sha256": "0e363db4fbc2ff9f4f4d036af10f419d4404efdb71652f58e08f3349e316e2e1",
+        "recomputed": {
+          "repeat_0/et_mean": {
+            "mae_ev": 0.4761881329885646,
+            "rmse_ev": 0.8890334148172684
+          },
+          "repeat_0/et_median": {
+            "mae_ev": 0.4292659749798112,
+            "rmse_ev": 0.9173788278008902
+          },
+          "repeat_0/et_median_96": {
+            "mae_ev": 0.4307026013326792,
+            "rmse_ev": 0.9190761890108614
+          },
+          "repeat_0/et_fractions_median": {
+            "mae_ev": 0.5459870090765219,
+            "rmse_ev": 1.0599340541330111
+          },
+          "repeat_0/random_forest": {
+            "mae_ev": 0.5198793638248156,
+            "rmse_ev": 0.9426867494773393
+          },
+          "repeat_0/hist_gradient_boosting": {
+            "mae_ev": 0.554965181728177,
+            "rmse_ev": 0.9322580246554212
+          },
+          "repeat_0/ridge": {
+            "mae_ev": 0.8141869961539231,
+            "rmse_ev": 1.1616406562165442
+          },
+          "repeat_0/train_median": {
+            "mae_ev": 0.9758574222995001,
+            "rmse_ev": 1.7437445187729497
+          },
+          "repeat_1/et_mean": {
+            "mae_ev": 0.4749677539609323,
+            "rmse_ev": 0.874722527635042
+          },
+          "repeat_1/et_median": {
+            "mae_ev": 0.4282262909141001,
+            "rmse_ev": 0.9039673330698821
+          },
+          "repeat_1/et_median_96": {
+            "mae_ev": 0.4275185742700708,
+            "rmse_ev": 0.899815540813558
+          },
+          "repeat_1/et_fractions_median": {
+            "mae_ev": 0.5461324443427574,
+            "rmse_ev": 1.0281514943376489
+          },
+          "repeat_1/random_forest": {
+            "mae_ev": 0.5207800561372813,
+            "rmse_ev": 0.9191239247829972
+          },
+          "repeat_1/hist_gradient_boosting": {
+            "mae_ev": 0.5473491335937537,
+            "rmse_ev": 0.9047265486791259
+          },
+          "repeat_1/ridge": {
+            "mae_ev": 0.8145046513599411,
+            "rmse_ev": 1.1587484346810069
+          },
+          "repeat_1/train_median": {
+            "mae_ev": 0.9758574222995001,
+            "rmse_ev": 1.7437445187729497
+          },
+          "repeat_2/et_mean": {
+            "mae_ev": 0.47045466241233164,
+            "rmse_ev": 0.8613958878811574
+          },
+          "repeat_2/et_median": {
+            "mae_ev": 0.4193730267940154,
+            "rmse_ev": 0.8815036716423271
+          },
+          "repeat_2/et_median_96": {
+            "mae_ev": 0.4223619687767162,
+            "rmse_ev": 0.8830786904874224
+          },
+          "repeat_2/et_fractions_median": {
+            "mae_ev": 0.5355304398771575,
+            "rmse_ev": 1.0393607616770748
+          },
+          "repeat_2/random_forest": {
+            "mae_ev": 0.5191863598028029,
+            "rmse_ev": 0.9231926507305644
+          },
+          "repeat_2/hist_gradient_boosting": {
+            "mae_ev": 0.5440255052292711,
+            "rmse_ev": 0.8939668550672585
+          },
+          "repeat_2/ridge": {
+            "mae_ev": 0.8163489471742813,
+            "rmse_ev": 1.1624348329520748
+          },
+          "repeat_2/train_median": {
+            "mae_ev": 0.9758574222995001,
+            "rmse_ev": 1.7437445187729497
+          }
+        },
+        "scope": "artifact/row/metric verification; not independent training replication or scientific certification"
+      },
+      {
+        "run_id": "kaggle-robust-aggregation-v3-reproduction-r1",
+        "status": "NUMERICALLY_VERIFIED",
+        "manifest_files": 38,
+        "results_sha256": "7873d51e90660555dd681032e9b6cf3533afec7dbae10cc2473b0c0ece4a55f3",
+        "recomputed": {
+          "repeat_0/et_mean": {
+            "mae_ev": 0.4761881329885646,
+            "rmse_ev": 0.8890334148172684
+          },
+          "repeat_0/et_median": {
+            "mae_ev": 0.4292659749798112,
+            "rmse_ev": 0.9173788278008902
+          },
+          "repeat_0/et_median_96": {
+            "mae_ev": 0.4307026013326792,
+            "rmse_ev": 0.9190761890108614
+          },
+          "repeat_0/et_fractions_median": {
+            "mae_ev": 0.5459870090765219,
+            "rmse_ev": 1.0599340541330111
+          },
+          "repeat_0/random_forest": {
+            "mae_ev": 0.5198793638248156,
+            "rmse_ev": 0.9426867494773393
+          },
+          "repeat_0/hist_gradient_boosting": {
+            "mae_ev": 0.554965181728177,
+            "rmse_ev": 0.9322580246554212
+          },
+          "repeat_0/ridge": {
+            "mae_ev": 0.8141869961539231,
+            "rmse_ev": 1.1616406562165442
+          },
+          "repeat_0/train_median": {
+            "mae_ev": 0.9758574222995001,
+            "rmse_ev": 1.7437445187729497
+          },
+          "repeat_1/et_mean": {
+            "mae_ev": 0.4749677539609323,
+            "rmse_ev": 0.874722527635042
+          },
+          "repeat_1/et_median": {
+            "mae_ev": 0.4282262909141001,
+            "rmse_ev": 0.9039673330698821
+          },
+          "repeat_1/et_median_96": {
+            "mae_ev": 0.4275185742700708,
+            "rmse_ev": 0.899815540813558
+          },
+          "repeat_1/et_fractions_median": {
+            "mae_ev": 0.5461324443427574,
+            "rmse_ev": 1.0281514943376489
+          },
+          "repeat_1/random_forest": {
+            "mae_ev": 0.5207800561372813,
+            "rmse_ev": 0.9191239247829972
+          },
+          "repeat_1/hist_gradient_boosting": {
+            "mae_ev": 0.5473491335937537,
+            "rmse_ev": 0.9047265486791259
+          },
+          "repeat_1/ridge": {
+            "mae_ev": 0.8145046513599411,
+            "rmse_ev": 1.1587484346810069
+          },
+          "repeat_1/train_median": {
+            "mae_ev": 0.9758574222995001,
+            "rmse_ev": 1.7437445187729497
+          },
+          "repeat_2/et_mean": {
+            "mae_ev": 0.47045466241233164,
+            "rmse_ev": 0.8613958878811574
+          },
+          "repeat_2/et_median": {
+            "mae_ev": 0.4193730267940154,
+            "rmse_ev": 0.8815036716423271
+          },
+          "repeat_2/et_median_96": {
+            "mae_ev": 0.4223619687767162,
+            "rmse_ev": 0.8830786904874224
+          },
+          "repeat_2/et_fractions_median": {
+            "mae_ev": 0.5355304398771575,
+            "rmse_ev": 1.0393607616770748
+          },
+          "repeat_2/random_forest": {
+            "mae_ev": 0.5191863598028029,
+            "rmse_ev": 0.9231926507305644
+          },
+          "repeat_2/hist_gradient_boosting": {
+            "mae_ev": 0.5440255052292711,
+            "rmse_ev": 0.8939668550672585
+          },
+          "repeat_2/ridge": {
+            "mae_ev": 0.8163489471742813,
+            "rmse_ev": 1.1624348329520748
+          },
+          "repeat_2/train_median": {
+            "mae_ev": 0.9758574222995001,
+            "rmse_ev": 1.7437445187729497
+          }
+        },
+        "scope": "artifact/row/metric verification; not independent training replication or scientific certification"
+      }
+    ],
+    "resampling_verification": [
+      {
+        "run_id": "kaggle-robust-aggregation-v3-r1",
+        "status": "RESAMPLING_VERIFIED",
+        "bootstrap_interval_ev": [
+          -0.053930233616922126,
+          -0.04268203325767561
+        ],
+        "bootstrap_resamples": 5000,
+        "random_ranking_cells_checked": 12,
+        "random_replicates": 64,
+        "numpy_version": "2.5.4",
+        "scope": "Independent arithmetic implementation; shared specified NumPy RNG; not independent scientific replication"
+      },
+      {
+        "run_id": "kaggle-robust-aggregation-v3-reproduction-r1",
+        "status": "RESAMPLING_VERIFIED",
+        "bootstrap_interval_ev": [
+          -0.053930233616922126,
+          -0.04268203325767561
+        ],
+        "bootstrap_resamples": 5000,
+        "random_ranking_cells_checked": 12,
+        "random_replicates": 64,
+        "numpy_version": "2.5.4",
+        "scope": "Independent arithmetic implementation; shared specified NumPy RNG; not independent scientific replication"
+      }
+    ],
+    "runtime_seconds": [
+      424.255202667,
+      369.76024779000005
+    ],
+    "peak_rss_mib": [
+      372.8515625,
+      372.06640625
+    ],
+    "dependencies": [
+      {
+        "joblib": "1.6.0",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1",
+        "scipy": "1.16.3"
+      },
+      {
+        "joblib": "1.6.0",
+        "numpy": "2.1.3",
+        "scikit-learn": "1.6.1",
+        "scipy": "1.16.3"
+      }
+    ],
+    "scope": "Fresh Kaggle execution by the same operator using identical source; not independent scientific replication or protected external confirmation"
+  },
+  "claims": {
+    "historical_point_performance": "runs/kaggle-development-v1-r1/predictions/oof_predictions.csv",
+    "aggregation_effect": "runs/kaggle-robust-aggregation-v3-r1/predictions/oof.csv",
+    "retrospective_ranking": "runs/kaggle-robust-aggregation-v3-r1/predictions/ranking.csv",
+    "shift_failures": "runs/kaggle-robust-aggregation-v3-r1/predictions/holdouts.csv",
+    "quantile_mechanism": "runs/kaggle-robust-aggregation-v3-r1/quantile_diagnostic.json"
+  },
+  "files": {
+    "aggregation.pdf": "672ce249c7b0d711400a03fc68433613c1f00a24dbf4050153407c8d718566a4",
+    "aggregation.png": "625f6e138ba7686effb1e969130fd962f92840013f3818a9a0e29f1ce203d8a8",
+    "calibration.tex": "3ff075215161de4a5d421c31dd898d0ab425522710c58853aa4f5090445f03a2",
+    "calibration_shift.pdf": "b26b6fdfb97eccd348ffa02d19222bc42191b68e42b81b9bc969aa2ac7220f18",
+    "calibration_shift.png": "db680e2adf24cea38fa61ce9d8705b4e7c0ce9df412981e322e2ee051d835110",
+    "costs.tex": "1e12d5dc2ca91e8667e615ec6377893ee5a407ef870d01084e3fcccfdfd64fd5",
+    "diagnostic.tex": "4dd77eed7cb8f1f06d23284527191eef1be49cb61b99ee2d7c282f72b8233ac0",
+    "holdouts.tex": "6917a149a3c179df8e28d0978bb0949315f798c68cea78a347ade13dba69196b",
+    "numbers.tex": "1b26984691d004b0116003d09124e71f0aa1441bca8de6200a1424a41faccd89",
+    "probes.tex": "aff24011342d63d8d6df6c7e3e1efdbe56ebb096b7366d2bfa498d538ed3ff6e",
+    "ranking.tex": "d556e83766dee4a191f6ca52cbb60ec2c5c3ed225ea487497632c893aeb2b333",
+    "reproduction.tex": "9d035def99a673d7b0f7ab68cf2681a03f8390ff45d4af5a079d46dff261e2a6",
+    "selection.pdf": "c486228c8a82798b263326a1c38700cc08cfb1751fd0cd37f71b68b7c429ba97",
+    "selection.png": "d188c909490cca059cb085216f20c385e0495d9307c36b9a746b363544228337",
+    "subgroups.tex": "46bbcaf33a5eb9260393943adfc7e17a0943db43a5dfdc7c67a47e556610212f",
+    "v1.tex": "4aed0bb0b483aacecf3e2dcd4f92ca3e1643550a86ea65c2bc935fa789172fb4",
+    "v3.tex": "86920ce4505afdb8b2f2c5fe3c66966473c48309f9e832ab5b1d8064fe9d3fd5",
+    "workflow.pdf": "bd77a207b371fc391c1b78b5c10019cdeb981e3a384da7fd8e42b54d2b2a89a4",
+    "workflow.png": "309c678fec13ab26d81e8b36c3f591c68b888b058e5054bda20887a8378bb433"
+  }
+}

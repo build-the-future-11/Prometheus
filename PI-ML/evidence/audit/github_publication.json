@@ -1,0 +1,10 @@
+{
+  "status": "PUBLISHED_REMOTE_REF_VERIFIED",
+  "repository": "https://github.com/build-the-future-11/Atlas",
+  "branch": "codex/pi-ml-s2-study",
+  "release_commit": "fe851967cc1287da3f0e5e7603904151798b8b0d",
+  "remote_ref": "fe851967cc1287da3f0e5e7603904151798b8b0d",
+  "pull_request": "https://github.com/build-the-future-11/Atlas/pull/55",
+  "verified_at_utc": "2026-10-21T06:24:31.707543+00:00",
+  "scope": "Release commit contains frozen source, raw evidence, final paper, archives and 314-file manifest. A following documentation commit records this receipt. Branch published; main not merged."
+}

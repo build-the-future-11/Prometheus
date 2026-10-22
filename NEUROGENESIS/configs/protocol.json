@@ -1,0 +1,65 @@
+{
+  "schema_version": "neurogenesis.protocol.v1",
+  "project": "NEUROGENESIS",
+  "status": "SCOPE_UNRESOLVED",
+  "approved_mechanism": null,
+  "identity_decision": {
+    "audit_receipt": "decisions/identity_audit_20261019.json",
+    "qualifying_local_owner_source": null,
+    "decision": "shared_infrastructure_only"
+  },
+  "adaptation_problem": "Sequential regression under delayed labels, distractor shift, a conflicting regime, a returning regime, and a novel regime.",
+  "information_timing": {
+    "prediction_receives": [
+      "current features",
+      "time index",
+      "state produced only from labels whose availability time has arrived"
+    ],
+    "prediction_forbidden": [
+      "current target",
+      "future targets",
+      "evaluation identity outcomes"
+    ],
+    "label_rule": "A target may affect state only at or after label_available_at, always after its prediction."
+  },
+  "primary_endpoint": "prequential_mean_squared_error",
+  "secondary_endpoints": [
+    "adaptation_switch_mse",
+    "retention_return_mse",
+    "retention_ratio_to_initial_late",
+    "nonfinite_predictions",
+    "max_update_norm",
+    "wall_seconds",
+    "peak_state_bytes",
+    "parameter_updates"
+  ],
+  "run_budget": {
+    "max_steps": 480,
+    "max_gradient_evaluations": 480,
+    "max_parameter_updates": 480,
+    "max_retrievals": 0,
+    "max_writes": 0,
+    "max_consolidations": 0,
+    "max_state_bytes": 131072,
+    "max_wall_seconds": 60.0
+  },
+  "development_matrix_budget": {
+    "runs": 20,
+    "predictions": 9600,
+    "maximum_gradient_evaluations": 7200,
+    "maximum_parameter_updates": 7200,
+    "execution": "single_process_serial_cpu",
+    "paid_compute": false
+  },
+  "candidate_falsifiers": {
+    "learned_rule": "Under an owner-approved successor protocol, reject the learned mechanism if its held-out external prequential MSE fails to improve over the development-selected standard optimizer under total cost accounting, or if gradient, stability, horizon-transfer, parameter-scale, or checkpoint gates fail.",
+    "memory_weight": "Under an owner-approved successor protocol, reject the memory-weight mechanism if its held-out external prequential MSE fails to improve over information- and resource-matched cache, replay, and ordinary-update baselines, or if delayed-label, capacity, reset, or accounting gates fail."
+  },
+  "protected_evaluation": {
+    "manifest": "configs/evaluation.json",
+    "admitted": false,
+    "run_count": 0,
+    "admission_requirement": "A dated local owner decision selecting exactly one candidate line and a separately versioned protocol successor."
+  }
+}
+

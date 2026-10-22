@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "pdf": "paper/main.pdf",
+  "sha256": "f3a77005b2655fe7ed283f7b2f3306f4085ce925681756abf1f525a7e8b9f558",
+  "pages": 11,
+  "visual_review": "All 11 pages inspected; corrected equation 2 to 0.05 eV; corrected page 3 rendered and inspected again",
+  "numeric_evidence": "paper/generated/evidence-map.json",
+  "compile": "tectonic --keep-logs --keep-intermediates paper/main.tex",
+  "warnings": [
+    "One underfull vbox",
+    "Archived style uses unavailable font shapes; TeX substitutes defaults"
+  ],
+  "undefined_references": false,
+  "overfull_boxes": false,
+  "author_metadata": "Ryan Gomez; no affiliation listed; supplied by user",
+  "arxiv_submitted": false,
+  "author_update_verification": "Recompiled 11 pages; author metadata checked; title page visually inspected; pages 2-11 extracted text unchanged"
+}

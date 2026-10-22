@@ -1,0 +1,109 @@
+{
+  "attempted": 20,
+  "failed": 0,
+  "matrix_id": "shared-baselines-v1-20261019",
+  "schema_version": "neurogenesis.run-receipt.v1",
+  "statuses": [
+    {
+      "attempt_id": "dev-delay-conflict-0101__no_adaptation",
+      "result_sha256": "d907b2990ee20dca1ea3752f7d33322c7536b9ef1e3051c7fa45705601db468b",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0101__sgd_lr_0p01",
+      "result_sha256": "566989cad4bff1b1194f7a3a183cd7ce424a73850e034fc0fde912db2bd4ed4f",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0101__sgd_lr_0p05",
+      "result_sha256": "0b4434a29cb5109449aabdfd22a29c14aa0e5535b60f6f11a33aac2d88424003",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0101__mechanism_off_adam_lr_0p01",
+      "result_sha256": "d938cbc66657ad23b158e4e9d6236e67c35a6fd2b328fbe7c497119faad144eb",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0211__no_adaptation",
+      "result_sha256": "e9b315777a1621d65ad72e0a459f4534d2bfd65713b8d7d2f875b6867aeb0bc3",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0211__sgd_lr_0p01",
+      "result_sha256": "2cca717b97b4d54f72b48932f36f999d783084db76c06774866a851159adedf0",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0211__sgd_lr_0p05",
+      "result_sha256": "6c86ea995dc6f174e742c9831062e9b3a98bdaaacad8c29876a998f6ad7991fb",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0211__mechanism_off_adam_lr_0p01",
+      "result_sha256": "5847da14b95845e39ad6dd6a930840542df9fbb862c670fc19dbe48a79bf2385",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0307__no_adaptation",
+      "result_sha256": "adb6d31e65507cc2287b6ecfdebf0fe651d962e32a95e232864301cceced88ed",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0307__sgd_lr_0p01",
+      "result_sha256": "c7b11f094b0ff3a8b43b0498d0fd8ff9ce8c902ff573e88e0052c12f4c1f4728",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0307__sgd_lr_0p05",
+      "result_sha256": "3f2d6844e705cb79ebbb865805e9fb77942faee3322a63100e3df2d25f91e1ed",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0307__mechanism_off_adam_lr_0p01",
+      "result_sha256": "0c464d05a0a958cdda2d138029a3e3aa7f68ca4338a4b052f09dbac1b81988e4",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0401__no_adaptation",
+      "result_sha256": "c0b2dc847c64c8fd270ae6d2fd5290e441db77897c9002e724f15cb5ab63f34c",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0401__sgd_lr_0p01",
+      "result_sha256": "c3b4271f1adbc99db00ec315409cfa3a45c439a9568c5c054538de18a0fab769",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0401__sgd_lr_0p05",
+      "result_sha256": "e2080587507c8b5cf451d066dbb9b14640772e2fe5ecdfb63bd2b8a6a0a515e9",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0401__mechanism_off_adam_lr_0p01",
+      "result_sha256": "9420398b4077537fe304716bfaf05ee8a83e5cd11cd82b615410b4d2b9294409",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0503__no_adaptation",
+      "result_sha256": "c4cd3ba1a09c1752f54b2970a02f62bb616f6cfcf94b8967fab47018dfcb77d7",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0503__sgd_lr_0p01",
+      "result_sha256": "7eb09247d71304f3e60dafe9ee38b29963efe8d5c74ceb04cd68a016a1a53d2b",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0503__sgd_lr_0p05",
+      "result_sha256": "9ae39868afcb0c4215a7f4c376f9004b4cc08ef8c517dc1b2777b89ae689aa9d",
+      "status": "SUCCEEDED"
+    },
+    {
+      "attempt_id": "dev-delay-conflict-0503__mechanism_off_adam_lr_0p01",
+      "result_sha256": "f8b4b07d56c2da347c24a754dc90c4ccd6b4678ab22d7736908b7acaa356c857",
+      "status": "SUCCEEDED"
+    }
+  ],
+  "succeeded": 20
+}

@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{Equal-series mean MASE on the registered 2016 development window. Lower is better; every method has 3,660 timestamp-level predictions.}
+\label{tab:results}
+\begin{tabular}{r l S[table-format=1.6]}
+\toprule
+Rank & Method & {Mean MASE} \\
+\midrule
+1 & AdaHedge & 0.614409 \\
+2 & Hedge & 0.614465 \\
+3 & Fixed share & 0.621467 \\
+4 & Directed fixed share & 0.621916 \\
+5 & Adaptive share & 0.623639 \\
+6 & \textsc{DDFS} & 0.624662 \\
+7 & Uniform ensemble & 0.662893 \\
+8 & Seasonal naive & 1.026540 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,8 @@
+{
+  "status": "BASELINE_ENVIRONMENT_FAILURES",
+  "tests": 159,
+  "failures": 3,
+  "python": "3.14 macOS",
+  "root_source_tests_diff": "",
+  "note": "Same failures on untouched origin/main baseline; no PI-ML scientific failure or parent source change."
+}

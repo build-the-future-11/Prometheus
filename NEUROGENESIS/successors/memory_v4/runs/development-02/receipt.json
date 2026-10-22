@@ -1,0 +1,14 @@
+{
+  "completed": 220,
+  "expected": 220,
+  "failed": 0,
+  "post_resources": {
+    "pageouts": 214883,
+    "platform": "darwin",
+    "raw": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4454.\nPages active:                                 202671.\nPages inactive:                               194964.\nPages speculative:                              6988.\nPages throttled:                                   0.\nPages wired down:                             189841.\nPages purgeable:                                 472.\n\"Translation faults\":                      482908566.\nPages copy-on-write:                        14121335.\nPages zero filled:                         301548986.\nPages reactivated:                         175248933.\nPages purged:                               10867971.\nFile-backed pages:                            145128.\nAnonymous pages:                              259495.\nPages stored in compressor:                  1005966.\nPages occupied by compressor:                 410013.\nDecompressions:                            146427914.\nCompressions:                              166976980.\nPageins:                                    31670848.\nPageouts:                                     214883.\nSwapins:                                     1848341.\nSwapouts:                                    2751180.\n",
+    "reclaimable_bytes": 3381755904,
+    "rss": 35684352
+  },
+  "utc": "2026-10-21T09:46:13.923824+00:00",
+  "wall_seconds": 63.938610624998546
+}

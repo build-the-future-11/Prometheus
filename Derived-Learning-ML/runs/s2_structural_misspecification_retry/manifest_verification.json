@@ -1,0 +1,11 @@
+{
+  "checked": {
+    "results.jsonl": "2045b3e2f7a8ddb2f75b8f78d90a79788fecd5d0d6155a6d1e2b334d9cd9b90a",
+    "selection.json": "1313e66fb313edfccff4ea2dd43f96cc030286ef53992ab3cdff7fce446cbd11",
+    "selection_attempts.jsonl": "a6b8981441ef0d2699e1e9e086a0ae16cd2c56beb4722246d58d4921d805dd38",
+    "summary.json": "b742b5e126907f29095f3f0c2f89696fbebfc399a8d46da12c40eb34cc1c6f4b",
+    "tasks.json": "da8c74ae7027ca70dca02383b3364fc8f5eeaf23904b7c168db2c30d5450f644"
+  },
+  "schema_version": "derived-learning.manifest-verification.v1",
+  "status": "VERIFIED"
+}

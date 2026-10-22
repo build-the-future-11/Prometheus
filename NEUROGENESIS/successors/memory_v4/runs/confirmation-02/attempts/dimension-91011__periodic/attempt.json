@@ -1,0 +1,24 @@
+{
+  "config": {
+    "active_update": "rls",
+    "alpha": 0.05,
+    "cache": 32,
+    "capacity": 4,
+    "eta": 0.5,
+    "forgetting": 0.95,
+    "gate": 0.9,
+    "interval": 32,
+    "kind": "periodic",
+    "loss_ceiling": 0.02,
+    "minimum": 8,
+    "neighbors": 3,
+    "ridge": 1.0,
+    "solve_every": 3,
+    "suppress": true,
+    "uniform": false
+  },
+  "method": "periodic",
+  "task_id": "dimension-91011",
+  "task_sha256": "3223c428a6495ce4754b5dda264b98b1dd16472e583597889be2bd34d3b88fc9",
+  "utc": "2026-10-21T09:58:11.890535+00:00"
+}

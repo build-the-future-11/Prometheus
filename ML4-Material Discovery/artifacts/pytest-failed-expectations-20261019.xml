@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="39" time="6.075" timestamp="2026-10-19T13:33:05.639801+05:30" hostname="Ryans-Macbook-Air.local"><testcase classname="tests.test_chemistry" name="test_parentheses_and_decimal_formula_parsing" time="0.001" /><testcase classname="tests.test_chemistry" name="test_canonical_composition_is_scale_order_and_parenthesis_invariant[Fe2O3-Fe4O6]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_canonical_composition_is_scale_order_and_parenthesis_invariant[Ag(AuS)2-AgAu2S2]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_canonical_composition_is_scale_order_and_parenthesis_invariant[Te0.5Se0.5-TeSe]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_canonical_composition_is_scale_order_and_parenthesis_invariant[In1.5Cu0.5Se2.5-In3CuSe5]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_malformed_formula_fails_closed[]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_malformed_formula_fails_closed[Xx2O]" time="0.000" /><testcase classname="tests.test_chemistry" name="test_malformed_formula_fails_closed[Fe(OH]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_malformed_formula_fails_closed[Fe)O(]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_malformed_formula_fails_closed[2Fe]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_malformed_formula_fails_closed[Fe0O]" time="0.001" /><testcase classname="tests.test_chemistry" name="test_unit_conversion_round_trip" time="0.001" /><testcase classname="tests.test_cli" name="test_cli_exposes_all_required_interfaces" time="0.004" /><testcase classname="tests.test_data" name="test_pinned_dataset_and_official_splits" time="0.308" /><testcase classname="tests.test_data" name="test_upstream_duplicate_and_leakage_audit_is_stable" time="0.347" /><testcase classname="tests.test_data" name="test_custom_split_rejects_canonical_duplicate_leakage" time="0.001" /><testcase classname="tests.test_data" name="test_missing_target_fails_closed" time="0.015" /><testcase classname="tests.test_evaluation" name="test_regression_metrics_are_exact_for_perfect_prediction" time="0.001" /><testcase classname="tests.test_evaluation" name="test_abstention_and_calibration_have_prespecified_rows" time="0.002" /><testcase classname="tests.test_evaluation" name="test_subgroups_distinguish_formula_and_novel_element_cases" time="0.002" /><testcase classname="tests.test_features" name="test_features_are_formula_invariant" time="0.001" /><testcase classname="tests.test_features" name="test_featurizer_must_be_fit" time="0.000" /><testcase classname="tests.test_features" name="test_feature_schema_is_fixed_but_novelty_state_is_train_only" time="0.001" /><testcase classname="tests.test_features" name="test_missing_formula_fails" time="0.001" /><testcase classname="tests.test_guards" name="test_resource_guard_records_stable_state" time="0.001" /><testcase classname="tests.test_guards" name="test_resource_guard_refuses_memory_and_pageout_growth" time="0.001" /><testcase classname="tests.test_inference" name="test_checkpoint_prediction_and_label_blind_csv_ranking" time="0.055"><failure message="AssertionError: assert ['Xe'] == ['F', 'Xe']&#10;  &#10;  At index 0 diff: 'Xe' != 'F'&#10;  Right contains one more item: 'Xe'&#10;  Use -v to get more diff">tmp_path = PosixPath('/private/var/folders/ct/lk8xnz1s6pvd55g05hqjv7k00000gn/T/pytest-of-ryan/pytest-154/test_checkpoint_prediction_and0')
+
+    def test_checkpoint_prediction_and_label_blind_csv_ranking(tmp_path: Path) -&gt; None:
+        checkpoint = tmp_path / "model.joblib"
+        _checkpoint(checkpoint)
+        predictions = predict_formulas(checkpoint, ["GaAs", "XeF2"])
+        assert len(predictions) == 2
+        assert predictions[0]["composition"] == "GaAs"
+&gt;       assert predictions[1]["unseen_elements"] == ["F", "Xe"]
+E       AssertionError: assert ['Xe'] == ['F', 'Xe']
+E         
+E         At index 0 diff: 'Xe' != 'F'
+E         Right contains one more item: 'Xe'
+E         Use -v to get more diff
+
+tests/test_inference.py:45: AssertionError</failure></testcase><testcase classname="tests.test_models" name="test_ridge_scaler_is_fit_only_when_model_is_fit" time="0.005" /><testcase classname="tests.test_models" name="test_checkpoint_round_trip_is_prediction_identical" time="0.057" /><testcase classname="tests.test_models" name="test_label_permutation_degrades_synthetic_signal" time="0.018" /><testcase classname="tests.test_outputs" name="test_candidate_pool_collapses_duplicates_and_combines_uncertainty" time="0.001"><failure message="assert 0.5800000000000001 == 0.58">def test_candidate_pool_collapses_duplicates_and_combines_uncertainty() -&gt; None:
+        records = [
+            MaterialRecord("a", "TeSe", 1.58, "Se:1|Te:1"),
+            MaterialRecord("b", "Te0.5Se0.5", 1.0, "Se:1|Te:1"),
+            MaterialRecord("c", "GaAs", 1.4, "Ga:1|As:1"),
+        ]
+        metadata, targets, predictions, sigma = _candidate_pool(
+            records,
+            np.asarray(["fold_0", "fold_1", "fold_2"], dtype=object),
+            np.asarray([1.58, 1.0, 1.4]),
+            np.asarray([1.5, 1.1, 1.3]),
+            np.asarray([0.2, 0.3, 0.1]),
+        )
+        assert len(metadata) == len(targets) == 2
+        duplicate = next(row for row in metadata if row["source_row_count"] == 2)
+&gt;       assert duplicate["source_target_span_ev"] == 0.58
+E       assert 0.5800000000000001 == 0.58
+
+tests/test_outputs.py:37: AssertionError</failure></testcase><testcase classname="tests.test_outputs" name="test_pooled_calibration_and_artifact_manifest" time="0.004" /><testcase classname="tests.test_outputs" name="test_reports_and_figures_render_from_results" time="1.021" /><testcase classname="tests.test_protocol" name="test_compute_and_scope_are_frozen" time="0.001" /><testcase classname="tests.test_protocol" name="test_only_one_property_task_is_declared" time="0.000" /><testcase classname="tests.test_ranking" name="test_policy_construction_has_no_label_parameter" time="0.001" /><testcase classname="tests.test_ranking" name="test_ranking_policies_use_equal_budgets" time="0.001" /><testcase classname="tests.test_uncertainty" name="test_calibration_partition_is_deterministic_and_group_isolated" time="0.001" /><testcase classname="tests.test_uncertainty" name="test_conformal_intervals_and_probability_are_finite" time="0.001" /></testsuite></testsuites>

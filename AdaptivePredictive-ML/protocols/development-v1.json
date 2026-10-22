@@ -1,0 +1,44 @@
+{
+  "schema_version": "adaptive-predictive.protocol.v1",
+  "protocol_id": "pjm-daily-development-v1",
+  "stage": "DEVELOPMENT",
+  "dataset": "kaggle:robikscube/hourly-energy-consumption",
+  "license": "CC0-1.0",
+  "registered_files": [
+    "AEP_hourly.csv",
+    "COMED_hourly.csv",
+    "DAYTON_hourly.csv",
+    "DEOK_hourly.csv",
+    "DOM_hourly.csv",
+    "DUQ_hourly.csv",
+    "EKPC_hourly.csv",
+    "FE_hourly.csv",
+    "PJME_hourly.csv",
+    "PJMW_hourly.csv"
+  ],
+  "aggregation": "Daily arithmetic mean of all finite positive hourly MW observations; reject days with fewer than 20 observations; no interpolation.",
+  "model_input_start": "2015-01-01",
+  "development_start": "2016-01-01",
+  "development_end": "2016-12-31",
+  "protected_start": "2017-01-01",
+  "season": 7,
+  "model_config": {
+    "forgetting_factors": [0.9, 0.97, 0.995],
+    "lags": [1, 2, 3],
+    "ridge": 10.0,
+    "eta": 0.35,
+    "base_share": 0.01,
+    "max_share": 0.03,
+    "drift_gain": 0.02,
+    "fast_rate": 0.2,
+    "slow_rate": 0.02,
+    "prediction_clip": 8.0,
+    "loss_clip": 8.0
+  },
+  "methods": ["seasonal_naive", "uniform", "hedge", "fixed_share", "ddfs"],
+  "primary_development_comparison": "ddfs minus fixed_share MASE",
+  "secondary_model_comparison": "best preregistered adaptive expert ensemble minus seasonal_naive MASE",
+  "bootstrap": {"block_length": 7, "repetitions": 5000, "seed": 20261021},
+  "protected_data_policy": "The development runner must not parse values dated 2017-01-01 or later."
+}
+
