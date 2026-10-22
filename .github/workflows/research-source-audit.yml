@@ -1,0 +1,75 @@
+name: Research source audit
+
+on:
+  push:
+    branches: ['research/portfolio-completion-20261022']
+    paths: ['.github/workflows/research-source-audit.yml', 'tools/research_audit.py', 'tests_portfolio/**']
+
+permissions:
+  contents: read
+
+jobs:
+  source-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - name: Inspect tracked sources without executing research or protected evaluation
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import ast, hashlib, json, pathlib, subprocess, tarfile
+          root = pathlib.Path.cwd()
+          out = pathlib.Path('/tmp/research-source-audit')
+          out.mkdir()
+          allowed = {'.py', '.json', '.jsonl', '.md', '.toml', '.yaml', '.yml', '.tex', '.bib', '.sty', '.txt', '.csv', '.sh'}
+          rows, skipped, failures, links = [], [], [], []
+          total = 0
+          entries = subprocess.check_output(['git', 'ls-tree', '-r', '-z', 'HEAD']).split(b'\0')
+          with tarfile.open(out / 'source-text.tar.gz', 'w:gz') as archive:
+              for entry in entries:
+                  if not entry:
+                      continue
+                  meta, rawpath = entry.split(b'\t', 1)
+                  mode, kind, oid = meta.decode().split()
+                  path = rawpath.decode('utf-8')
+                  p = root / path
+                  if mode == '160000':
+                      links.append({'path': path, 'commit': oid, 'state': 'UNRESOLVED_GITLINK'})
+                      continue
+                  if mode != '100644' and mode != '100755':
+                      skipped.append({'path': path, 'reason': 'non-regular-file'})
+                      continue
+                  if p.suffix.lower() not in allowed or any(x.lower() in {'.env', 'credentials', 'secrets', '.venv', 'node_modules', '__pycache__'} for x in p.parts):
+                      continue
+                  size = p.stat().st_size
+                  if size > 2 * 1024 * 1024 or total + size > 100 * 1024 * 1024:
+                      skipped.append({'path': path, 'reason': 'bounded-artifact-size', 'bytes': size})
+                      continue
+                  data = p.read_bytes()
+                  digest = hashlib.sha256(data).hexdigest()
+                  rows.append({'path': path, 'bytes': size, 'sha256': digest, 'git_blob': oid})
+                  total += size
+                  if p.suffix == '.py':
+                      try:
+                          ast.parse(data, filename=path)
+                      except (SyntaxError, UnicodeError, ValueError) as exc:
+                          failures.append({'path': path, 'error': str(exc)})
+                  archive.add(p, arcname=path, recursive=False)
+          report = {'schema_version': 1, 'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(), 'scientific_execution': False, 'protected_evaluation_accessed': False, 'files': rows, 'skipped': skipped, 'unresolved_gitlinks': links, 'syntax_failures': failures, 'total_bytes': total}
+          (out / 'audit.json').write_text(json.dumps(report, indent=2) + '\n')
+          print(json.dumps({k: v for k, v in report.items() if k not in {'files', 'skipped'}}, indent=2))
+          print('Archived text files:', len(rows), 'Skipped files:', len(skipped))
+          PY
+      - name: Retain source audit and reproducible text snapshot
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: research-source-audit
+          path: /tmp/research-source-audit/
+          retention-days: 7
+          if-no-files-found: error
