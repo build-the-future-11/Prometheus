@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-22",
+  "repository": "build-the-future-11/Prometheus",
+  "working_branch": "research/portfolio-completion-20261022",
+  "baseline_commit": "22461b231d4c44fc41562bf24b128a67478524b3",
+  "portfolio_complete": false,
+  "external_submissions_in_this_session": 0,
+  "kaggle_jobs_launched_in_this_session": 0,
+  "new_blinded_confirmations_in_this_session": 0,
+  "engineering_receipt": "research-releases/2026-10-22-attempt-01/engineering-results.json",
+  "retained_session_evidence": "research-releases/2026-10-22-attempt-01/retention-manifest.json",
+  "rules": [
+    "Read this state and the selected project's own state before execution; update both after verified work.",
+    "Unit tests, hosted execution, scientific support, independent replication and publication are different states.",
+    "Never convert a repeated disclosed outcome into a new protected confirmation.",
+    "Preserve negative, invalid, failed and inconclusive outcomes with their original source identities.",
+    "Do not activate a blocked protected evaluation merely because another implementation or source package builds.",
+    "Do not merge or expose private repositories when repairing public monorepo gitlinks.",
+    "Do not run an unbounded search for a positive result. Successor hypotheses need new versions and protocols.",
+    "Worldcastr is out of scope and must remain untouched."
+  ],
+  "projects": [
+    {
+      "id": "AdaptivePredictive-ML",
+      "source": "PRESENT",
+      "engineering": {"tests_passed": 25, "tests_failed": 0, "tests_skipped": 0},
+      "scientific_state": "EXISTING_DEVELOPMENT_NEGATIVE",
+      "state_source": "AdaptivePredictive-ML/RESEARCH_STATE.json",
+      "protected_evaluation": "NOT_ADMITTED",
+      "paper_state": "EXISTING_NEGATIVE_RESULT_DRAFT_NOT_NEWLY_VERIFIED",
+      "next_gate": "Audit and publish the bounded negative result, or register a scientifically different successor before further development."
+    },
+    {
+      "id": "CAUSAL-ALPHA",
+      "source": "UNRESOLVED_MONOREPO_GITLINK",
+      "pinned_commit": "cf6bd681466875f17d67f2db284f73dde21985a3",
+      "engineering": {"tests_passed": null},
+      "scientific_state": "MONOREPO_REVISION_NOT_VERIFIED",
+      "protected_evaluation": "DO_NOT_RUN",
+      "next_gate": "Resolve the exact pinned commit and authorized private remote. Existence of a separate private repository does not prove that it contains this gitlink revision."
+    },
+    {
+      "id": "Derived-Learning-ML",
+      "source": "PRESENT",
+      "engineering": {"tests_passed": 30, "tests_failed": 0, "tests_skipped": 0},
+      "engineering_change": "Register dynamic test modules in sys.modules before exec_module; original frozen outcome-bearing study unchanged.",
+      "scientific_state": "PRIOR_SYNTHETIC_RESULT_LIMITED_REAL_DATA_S3_NOT_STARTED",
+      "state_source": "Derived-Learning-ML/HOSTED_EXECUTION_STATUS.md",
+      "source_package_receipt": "research-releases/2026-10-22-attempt-01/derived-preflight-provenance.json",
+      "fresh_source_bundle": "research-releases/2026-10-22-attempt-01/derived-preflight-source/releases/s3-r0/dlml-s3-source.bundle",
+      "protected_evaluation": "NO_NEW_RUN",
+      "next_gate": "Upload the newly hash-bound source bundle through an authorized Kaggle connection, perform the declared preflight, then execute the frozen S3 matrix once. No remote upload occurred here."
+    },
+    {
+      "id": "FIN-ML",
+      "source": "UNRESOLVED_MONOREPO_GITLINK",
+      "pinned_commit": "7a3639bd7a3f9753d50b93ef2dc59b0df110de7d",
+      "engineering": {"tests_passed": null},
+      "scientific_state": "UNVERIFIED",
+      "protected_evaluation": "DO_NOT_RUN",
+      "next_gate": "Recover the authorized source remote and exact pinned revision."
+    },
+    {
+      "id": "META-RenormalizedEngramNeuralNetworks",
+      "source": "NO_PYTHON_SOURCE_FOUND_IN_TRACKED_PROJECT",
+      "engineering": {"tests_passed": null},
+      "scientific_state": "UNVERIFIED",
+      "protected_evaluation": "DO_NOT_RUN",
+      "next_gate": "Recover the actual source and model contract. Bytecode caches do not establish a complete implementation or permit a scientific readiness claim."
+    },
+    {
+      "id": "ML4-Biocomputation",
+      "source": "UNRESOLVED_MONOREPO_GITLINK",
+      "pinned_commit": "bcb5b653c9ed4db25189984976d092cf41f000a1",
+      "engineering": {"tests_passed": null},
+      "scientific_state": "UNVERIFIED",
+      "protected_evaluation": "DO_NOT_RUN",
+      "next_gate": "Recover the authorized source remote and exact pinned revision before reviewing scientific or biological claims."
+    },
+    {
+      "id": "ML4-Material Discovery",
+      "source": "PRESENT",
+      "engineering": {"tests_passed": 77, "tests_failed": 0, "tests_skipped": 0},
+      "scientific_state": "EXISTING_MIXED_SCOPE_LIMITED_DEVELOPMENT",
+      "state_source": "ML4-Material Discovery/README.md",
+      "protected_evaluation": "BENCHMARK_ALREADY_EXPOSED_NEW_RANDOM_SPLIT_NOT_CONFIRMATION",
+      "paper_state": "EXISTING_MANUSCRIPT_NOT_NEWLY_VISUALLY_VERIFIED",
+      "next_gate": "Retain the MAE improvement together with positive-gap/RMSE and calibration failures; obtain genuinely new evidence before claiming confirmation."
+    },
+    {
+      "id": "NEUROGENESIS",
+      "source": "PRESENT",
+      "active_study": "successors/memory_v4",
+      "engineering": {"tests_passed": 26, "tests_failed": 0, "tests_skipped": 0},
+      "scientific_state": "MIXED_REAL_STREAM_REPRODUCTION_SYNTHETIC_PORTABILITY_CHECK_OPEN",
+      "state_source": "NEUROGENESIS/successors/memory_v4/STATUS.json",
+      "retained_real_evidence": "research-releases/2026-10-22-attempt-01/memory-v4-reproduction",
+      "new_blinded_confirmation": false,
+      "independent_investigator_replication": false,
+      "real_methods_executed": 22,
+      "air_relative_mse_change": 0.74303381153237,
+      "beijing_relative_mse_change": -0.1383360860703461,
+      "candidate_best_on_beijing": false,
+      "next_gate": "Resolve strict historical input regeneration using the recorded numerical platform, then regenerate and review the evidence-bound manuscript. Preserve the failed Linux verification."
+    },
+    {
+      "id": "PI-ML",
+      "source": "PRESENT",
+      "engineering": {"tests_passed": 26, "tests_failed": 0, "tests_skipped": 0},
+      "scientific_state": "EXISTING_SYNTHETIC_SCOPE_LIMITED_RESULT",
+      "state_source": "PI-ML/README.md",
+      "protected_evaluation": "NO_NEW_RUN",
+      "paper_state": "EXISTING_MANUSCRIPT_NOT_NEWLY_VERIFIED",
+      "next_gate": "Keep the direct-solver speed advantage and OOD limitations explicit; a learned warm-start improvement is not end-to-end solver superiority."
+    },
+    {
+      "id": "Project-32000",
+      "source": "UNRESOLVED_MONOREPO_GITLINK",
+      "pinned_commit": "f978fc12a1553798caf5dfb14b20a28210f237a2",
+      "engineering": {"tests_passed": null},
+      "scientific_state": "UNVERIFIED",
+      "protected_evaluation": "DO_NOT_RUN",
+      "next_gate": "Recover the authorized source remote and exact pinned revision."
+    },
+    {
+      "id": "SPARKING",
+      "source": "PRESENT",
+      "engineering": {"tests_passed": 21, "tests_failed": 0, "tests_skipped": 0},
+      "scientific_state": "EXISTING_V3_DEVELOPMENT_NOT_SUPPORTED",
+      "state_source": "SPARKING/RESEARCH_STATE.json",
+      "not_an_alias_of": "SPARK-SELECT",
+      "protected_evaluation": "CLOSED_DEVELOPMENT_GATE_FAILED",
+      "next_gate": "Preserve the predefined threshold failure and do not open held-out element evaluations; any materially different mechanism requires a successor protocol."
+    }
+  ],
+  "scope_limits": [
+    "This registry covers the 11 project roots actually present in the audited new-wave repository, not every name previously suggested in conversation.",
+    "Frontier16 and other idea-bank claims require their own source repositories and current artifacts; earlier reports are not fresh executions.",
+    "No claim is made that all papers, new architectures, external replications, venue requirements or Kaggle jobs are complete."
+  ]
+}
