@@ -3,6 +3,7 @@ import hashlib
 import io
 import json
 import statistics
+import sys
 import tarfile
 import tempfile
 import unittest
@@ -14,12 +15,15 @@ ROOT = Path(__file__).parents[1]
 SPEC = importlib.util.spec_from_file_location("run_s3_gpu_study", SCRIPT)
 MODULE = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
+# Match normal import semantics before executing dataclass declarations.
+sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
 
 VERIFIER_SCRIPT = ROOT / "scripts" / "verify_s3_hosted_archive.py"
 VERIFIER_SPEC = importlib.util.spec_from_file_location("verify_s3_hosted_archive", VERIFIER_SCRIPT)
 VERIFIER = importlib.util.module_from_spec(VERIFIER_SPEC)
 assert VERIFIER_SPEC.loader is not None
+sys.modules[VERIFIER_SPEC.name] = VERIFIER
 VERIFIER_SPEC.loader.exec_module(VERIFIER)
 
 
