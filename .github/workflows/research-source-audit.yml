@@ -13,11 +13,18 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          persist-credentials: false
-          submodules: false
-          lfs: false
+      - name: Fetch exact public source without initializing unresolved gitlinks
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = 'build-the-future-11/Prometheus'
+          case "$GITHUB_SHA" in (*[!0-9a-f]*|'') exit 1;; esac
+          test "${#GITHUB_SHA}" -eq 40
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c protocol.version=2 fetch --depth=1 --no-tags --no-recurse-submodules origin "$GITHUB_SHA"
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
       - name: Inspect tracked sources without executing research or protected evaluation
         shell: bash
         run: |
