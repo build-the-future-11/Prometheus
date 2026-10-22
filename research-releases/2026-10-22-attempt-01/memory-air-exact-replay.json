@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "transfer.py",
+    "verify",
+    "--input",
+    "/tmp/research-closeout/memory-v4-reproduction/air",
+    "--lock",
+    "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4/runs/freeze.json",
+    "--output",
+    "/tmp/research-closeout/memory-v4-reproduction/air/verification-exact.json",
+    "--replay"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4",
+  "elapsed_seconds": 18.96366580099999,
+  "log": "memory-air-exact-replay.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "returncode": 0,
+  "status": "PASS"
+}

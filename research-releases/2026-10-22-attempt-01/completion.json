@@ -1,0 +1,8 @@
+{
+  "engineering_all_passed": true,
+  "error": "Required step failed; retained log: memory-synthetic-artifact-reverification.log",
+  "external_submissions": 0,
+  "portfolio_complete": false,
+  "status": "BLOCKED_RETAINED",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/Prometheus/Prometheus/tools/research_complete.py\", line 210, in main\n    result[\"memory\"] = memory_reproduction(output, tests)\n                       ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Prometheus/Prometheus/tools/research_complete.py\", line 160, in memory_reproduction\n    require(command([sys.executable, \"experiment.py\", \"verify\", \"--input\", str(confirmation), \"--output\", str(out / \"synthetic-artifact-reverification.json\")], v4, output, \"memory-synthetic-artifact-reverification\", 600))\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/Prometheus/Prometheus/tools/research_complete.py\", line 65, in require\n    raise RuntimeError(\"Required step failed; retained log: \" + receipt[\"log\"])\nRuntimeError: Required step failed; retained log: memory-synthetic-artifact-reverification.log\n"
+}

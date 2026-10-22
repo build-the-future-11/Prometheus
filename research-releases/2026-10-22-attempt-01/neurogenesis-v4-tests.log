@@ -1,0 +1,31 @@
+test_absolute_gate_rejects_less_bad_but_inaccurate_expert (test_engine.ScientificContracts.test_absolute_gate_rejects_less_bad_but_inaccurate_expert) ... ok
+test_all_update_control_does_not_skip (test_engine.ScientificContracts.test_all_update_control_does_not_skip) ... ok
+test_capacity_and_eviction_identity (test_engine.ScientificContracts.test_capacity_and_eviction_identity) ... ok
+test_delayed_labels_and_zero_delay (test_engine.ScientificContracts.test_delayed_labels_and_zero_delay) ... ok
+test_future_targets_do_not_change_prefix (test_engine.ScientificContracts.test_future_targets_do_not_change_prefix) ... ok
+test_gate_skips_only_after_minimum_observations (test_engine.ScientificContracts.test_gate_skips_only_after_minimum_observations) ... ok
+test_missing_labels_preserve_clock (test_engine.ScientificContracts.test_missing_labels_preserve_clock) ... ok
+test_new_expert_cannot_score_prebirth_predictions (test_engine.ScientificContracts.test_new_expert_cannot_score_prebirth_predictions) ... ok
+test_nlms_exact_contraction (test_engine.ScientificContracts.test_nlms_exact_contraction) ... ok
+test_no_regime_metadata_influences_policy (test_engine.ScientificContracts.test_no_regime_metadata_influences_policy) ... ok
+test_reset_and_finite_contracts (test_engine.ScientificContracts.test_reset_and_finite_contracts) ... ok
+test_restore_rejects_changed_config_data_and_capacity (test_engine.ScientificContracts.test_restore_rejects_changed_config_data_and_capacity) ... ok
+test_resume_identical_for_every_method (test_engine.ScientificContracts.test_resume_identical_for_every_method) ... ok
+test_rls_bank_all_update_active_matches_rls (test_engine.ScientificContracts.test_rls_bank_all_update_active_matches_rls) ... ok
+test_scalar_rls_matches_batch_ridge (test_engine.ScientificContracts.test_scalar_rls_matches_batch_ridge) ... ok
+test_bootstrap_known_constant (test_pipeline.PipelineContracts.test_bootstrap_known_constant) ... ok
+test_duplicate_json_rejected (test_pipeline.PipelineContracts.test_duplicate_json_rejected) ... ok
+test_execution_hashes_and_no_overwrite (test_pipeline.PipelineContracts.test_execution_hashes_and_no_overwrite) ... ok
+test_failure_is_retained (test_pipeline.PipelineContracts.test_failure_is_retained) ... ok
+test_grid_and_split (test_pipeline.PipelineContracts.test_grid_and_split) ... ok
+test_real_dataset_identity_and_calendar (test_pipeline.PipelineContracts.test_real_dataset_identity_and_calendar) ... ok
+test_real_missing_rows_and_physical_scaling (test_pipeline.PipelineContracts.test_real_missing_rows_and_physical_scaling) ... ok
+test_objective_matches_independent_batch (test_ridge.PersistentRidgeContracts.test_objective_matches_independent_batch) ... ok
+test_periodic_updates_information_on_every_label (test_ridge.PersistentRidgeContracts.test_periodic_updates_information_on_every_label) ... ok
+test_skip_keeps_information_response_and_weights (test_ridge.PersistentRidgeContracts.test_skip_keeps_information_response_and_weights) ... ok
+test_unexcited_and_duplicate_features_remain_bounded (test_ridge.PersistentRidgeContracts.test_unexcited_and_duplicate_features_remain_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.489s
+
+OK

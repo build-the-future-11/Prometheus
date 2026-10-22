@@ -1,0 +1,24 @@
+{
+  "schema_version": "derived-learning.real-data-gpu.v1",
+  "study_id": "DLML-S3-R0",
+  "protocol_path": "PROTOCOL_S3_REAL_DATA.md",
+  "dataset": {
+    "kaggle_slug": "camnugent/california-housing-prices",
+    "filename": "housing.csv",
+    "target": "median_house_value",
+    "license": "CC0-1.0",
+    "categorical_column": "ocean_proximity",
+    "categorical_vocabulary": ["<1H OCEAN", "INLAND", "ISLAND", "NEAR BAY", "NEAR OCEAN"]
+  },
+  "seeds": [3101, 3102, 3103, 3104, 3105],
+  "split": {"train_fraction": 0.70, "development_fraction": 0.15, "test_fraction": 0.15},
+  "model": {"hidden_width": 32, "batch_size": 256, "total_example_passes": 240, "weight_decay": 0.0001},
+  "candidate_grid": {
+    "joint_block_mlp": [{"learning_rate": 0.001}, {"learning_rate": 0.003}],
+    "residual_block_mlp": [{"learning_rate": 0.001}, {"learning_rate": 0.003}],
+    "ridge": [{"alpha": 0.01}, {"alpha": 0.1}, {"alpha": 1.0}, {"alpha": 10.0}],
+    "hist_gradient_boosting": [{"learning_rate": 0.05, "max_leaf_nodes": 31}, {"learning_rate": 0.1, "max_leaf_nodes": 31}]
+  },
+  "success_criteria": {"minimum_relative_rmse_improvement": 0.02, "minimum_paired_wins": 4},
+  "resource_gate": {"minimum_available_mib": 512, "maximum_pageout_delta": 0}
+}

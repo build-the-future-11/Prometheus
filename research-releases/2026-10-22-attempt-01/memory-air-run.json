@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "transfer.py",
+    "run",
+    "--dataset",
+    "air",
+    "--lock",
+    "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4/runs/freeze.json",
+    "--output",
+    "/tmp/research-closeout/memory-v4-reproduction/air"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4",
+  "elapsed_seconds": 24.725385896999995,
+  "log": "memory-air-run.log",
+  "log_sha256": "af0ab8ea0aa47422f8f63e540371550589ae1b78528349a85cd7faa3412dae9e",
+  "returncode": 0,
+  "status": "PASS"
+}

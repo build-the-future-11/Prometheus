@@ -1,0 +1,60 @@
+{
+  "schema_version": "derived-learning.experiment-config.v1",
+  "study_id": "DLML-S2-P0",
+  "protocol_path": "PROTOCOL_S2.md",
+  "hypothesis": "Exact additive residual targets lose their S1 equal-resource quality advantage when the learner receives an incorrect block partition and the response contains unmodeled interactions; update ordering may change transient efficiency but does not repair structural misspecification.",
+  "selection": {"meta_top_k": 2},
+  "record_checkpoint_weights": true,
+  "success_criteria": {
+    "quality_threshold_nmse": 0.35,
+    "minimum_relative_equal_resource_improvement": 0.05
+  },
+  "budgets": {
+    "selection_work_units": 50000,
+    "final_work_units": 150000,
+    "long_horizon_work_units": 450000
+  },
+  "candidate_grid": {
+    "adam": [
+      {"learning_rate": 0.01},
+      {"learning_rate": 0.03},
+      {"learning_rate": 0.08}
+    ],
+    "analytic_residual": [
+      {"regularization": 0.01},
+      {"regularization": 0.1},
+      {"regularization": 1.0}
+    ],
+    "block_jacobi_residual": [
+      {"regularization": 0.01},
+      {"regularization": 0.1},
+      {"regularization": 1.0}
+    ],
+    "block_gradient_no_derivation": [
+      {"learning_rate": 0.005},
+      {"learning_rate": 0.02},
+      {"learning_rate": 0.08}
+    ]
+  },
+  "fixed_conditions": {
+    "fixed_normalized_lms": {"step_size": 0.25}
+  },
+  "splits": {
+    "meta_train": {
+      "seeds": [1101, 1102, 1103],
+      "family": {"name": "s2_meta", "dimension": 8, "group_size": 2, "train_examples": 96, "evaluation_examples": 192, "feature_correlation": 0.25, "coefficient_scale": 1.0, "noise_std": 0.1, "interaction_strength": 0.35, "nonlinear_kind": "linear", "supplied_partition": "interleaved"}
+    },
+    "development": {
+      "seeds": [1201, 1202, 1203],
+      "family": {"name": "s2_development", "dimension": 8, "group_size": 2, "train_examples": 96, "evaluation_examples": 192, "feature_correlation": 0.45, "coefficient_scale": 1.2, "noise_std": 0.1, "interaction_strength": 0.55, "nonlinear_kind": "quadratic", "supplied_partition": "interleaved"}
+    },
+    "final": {
+      "seeds": [1301, 1302, 1303, 1304, 1305],
+      "family": {"name": "s2_final_structural_misspecification", "dimension": 8, "group_size": 2, "train_examples": 128, "evaluation_examples": 256, "feature_correlation": 0.6, "coefficient_scale": 1.4, "noise_std": 0.1, "interaction_strength": 0.8, "nonlinear_kind": "quadratic", "supplied_partition": "interleaved"}
+    },
+    "long_horizon": {
+      "seeds": [1401, 1402, 1403, 1404, 1405],
+      "family": {"name": "s2_long_horizon_structural_misspecification", "dimension": 8, "group_size": 2, "train_examples": 128, "evaluation_examples": 256, "feature_correlation": 0.7, "coefficient_scale": 1.4, "noise_std": 0.1, "interaction_strength": 0.8, "nonlinear_kind": "quadratic", "supplied_partition": "interleaved"}
+    }
+  }
+}

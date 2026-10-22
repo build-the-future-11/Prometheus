@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\title{Analytic Partial-Residual Targets: A Controlled Mechanism Study and its Structural Boundary}
+\author{Anonymous authors}
+\date{Draft generated from recorded experiment artifacts}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study an exact partial-residual target update for grouped additive linear regression.  The update is an instrumented form of block-coordinate minimization/backfitting, rather than a learned target generator.  In the registered S1 synthetic additive matrix, it met the two registered endpoints against development-selected Adam on five final seeds, but failed the quality endpoint on a separate longer-horizon family.  We then registered two structural-misspecification successors with interleaved supplied groups and unmodeled nonlinear/interacting targets.  S2.1 adds a common affine intercept after S2 exposed that the initial nonlinear family had a mean-offset confound.  S2.1 failed both registered endpoints on its final and long-horizon families.  These internally executed synthetic findings establish a narrow boundary, not general learning superiority.
+\end{abstract}
+
+\section{Question and mechanism}
+For a grouped additive model $f(x)=\sum_g f_g(x_g)$, the proposed update constructs $t_g=y-\sum_{h\ne g} f_h(x_h)$ and solves a ridge subproblem for group $g$.  The method uses support labels and current predictions only.  It has no teacher, learned inverse, component labels, or trained target controller.  Consequently, its most accurate interpretation is partial-residual backfitting/block-coordinate minimization \cite{wright2015,buja1989}, not a general target-propagation result \cite{lee2015,jaderberg2016}.
+
+\section{Protocols and evidence boundary}
+S1 freezes selection on meta-training and development task families, with final and long-horizon labels excluded from selection.  It compares tuned full-batch Adam, sequential analytic residual updates, a no-derivation block-gradient ablation, and fixed normalized LMS under deterministic operation-proxy accounting.  S2 and S2.1 use distinct versioned protocols and seeds.  S2.1 keeps the same information boundary but adds a common learned intercept to all conditions.
+
+The tables and figures are generated from saved outputs and independently read back; no numeric result is entered by hand.  The exact commands, configuration hashes, and manifests are retained alongside each run.
+
+\section{Results}
+\input{generated_results.tex}
+
+In S1, the analytic method passed the five-seed final matrix but the longer-horizon matrix failed the registered quality criterion.  Thus even the original additive result does not support a persistent long-budget advantage.  S2's structural matrix was completed and verified, but its nonlinear target had a nonzero mean while no model fitted an intercept; it is retained as a negative run rather than used as a clean structural attribution.  S2.1 corrects that common-capacity omission prospectively.  It fails the registered quality and efficiency criteria in both final and long-horizon splits.  Its paired bootstrap intervals are descriptive only: the protocol endpoints, not post-hoc intervals, control the claim decision.
+
+\section{Limitations and negative evidence}
+The work remains synthetic, CPU-only, internally executed, and small-seed.  It has no independent reproduction, no real-data admission track, no neural block implementation, no learned controller, and no wall-clock or memory comparison under a separately frozen protocol.  The simultaneous/Jacobi residual ablation is numerically unstable in S2/S2.1 under the selected settings; this is retained as a result, not suppressed.  The paper therefore makes no publication-ready claim of general learning utility, deep credit assignment, or learned-target superiority.
+
+\section{Reproducibility}
+Run \texttt{sh scripts/run\_s21\_reproduction.sh OUTPUT\_DIRECTORY} from the repository root, then inspect the generated manifest and evaluation-verification receipts.  The existing S1 and S2 artifacts are preserved under \texttt{runs/}.  The external reproduction packet remains unfinished.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

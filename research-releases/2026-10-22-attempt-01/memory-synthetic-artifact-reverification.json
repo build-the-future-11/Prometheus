@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "experiment.py",
+    "verify",
+    "--input",
+    "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4/runs/confirmation-02",
+    "--output",
+    "/tmp/research-closeout/memory-v4-reproduction/synthetic-artifact-reverification.json"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4",
+  "elapsed_seconds": 0.26476660000002994,
+  "log": "memory-synthetic-artifact-reverification.log",
+  "log_sha256": "9858a7cdee1091255f66bb78ef1374e0aecb998002bd2e55770e97efa467aa59",
+  "returncode": 1,
+  "status": "FAIL"
+}

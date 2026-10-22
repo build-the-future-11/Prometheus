@@ -1,0 +1,136 @@
+[
+  {
+    "project": "AdaptivePredictive-ML",
+    "python_files": 17,
+    "reported_disposition": null,
+    "reported_phase": "DEVELOPMENT_REVISION_2_COMPLETE_NEGATIVE_CONFIRMATION_NOT_ADMITTED",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "SOURCE_PRESENT",
+    "state_sha256": "9880318ffb0241ee7e73c2f9aaeb0ec3bc6e59ef7feb3606369a34913ba55e95",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "6604b03b45143ba4219cefb91d8f888d2032be92"
+    }
+  },
+  {
+    "next_action": "Resolve exact source remote and pinned commit; do not guess or expose private code.",
+    "project": "CAUSAL-ALPHA",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "UNRESOLVED_GITLINK",
+    "tree": {
+      "kind": "commit",
+      "mode": "160000",
+      "oid": "cf6bd681466875f17d67f2db284f73dde21985a3"
+    }
+  },
+  {
+    "project": "Derived-Learning-ML",
+    "python_files": 21,
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "SOURCE_PRESENT",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "86591bd56c35fb2ddfea451955676e05908e8b64"
+    }
+  },
+  {
+    "next_action": "Resolve exact source remote and pinned commit; do not guess or expose private code.",
+    "project": "FIN-ML",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "UNRESOLVED_GITLINK",
+    "tree": {
+      "kind": "commit",
+      "mode": "160000",
+      "oid": "7a3639bd7a3f9753d50b93ef2dc59b0df110de7d"
+    }
+  },
+  {
+    "next_action": "Recover authoritative source; bytecode and names are not an implementation.",
+    "project": "META-RenormalizedEngramNeuralNetworks",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "NO_PYTHON_SOURCE",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "88d6750c98084b5cd91ba56bcb2b8c18bca8769e"
+    }
+  },
+  {
+    "next_action": "Resolve exact source remote and pinned commit; do not guess or expose private code.",
+    "project": "ML4-Biocomputation",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "UNRESOLVED_GITLINK",
+    "tree": {
+      "kind": "commit",
+      "mode": "160000",
+      "oid": "bcb5b653c9ed4db25189984976d092cf41f000a1"
+    }
+  },
+  {
+    "project": "ML4-Material Discovery",
+    "python_files": 53,
+    "reported_disposition": null,
+    "reported_phase": "BOUNDED_DEVELOPMENT_COMPLETE_PUBLISHED",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "SOURCE_PRESENT",
+    "state_sha256": "002abde7b67952ab95dd3d92241813221612ec5f10f3db665a65d1dd6113bfc3",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "73c94f0c415a27884c12b36ee89332980cad4ac5"
+    }
+  },
+  {
+    "project": "NEUROGENESIS",
+    "python_files": 123,
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "SOURCE_PRESENT",
+    "state_sha256": "60c42a272757653e937b89b1cdb37706ebdd9db274b6a55ce9737589b978bdf7",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "e0ab153ea81b6b260b12689cb245835c02932e6f"
+    }
+  },
+  {
+    "project": "PI-ML",
+    "python_files": 70,
+    "reported_disposition": null,
+    "reported_phase": "RESEARCH_COMPLETE_WITH_EXTERNAL_CI_GATE",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "SOURCE_PRESENT",
+    "state_sha256": "71d0922b7ed73791df20f1057290436c4e4dcc87f916dc02a21b90a1bf02fc0a",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "69da927686bb006ebaa46c966422996985d337e0"
+    }
+  },
+  {
+    "next_action": "Resolve exact source remote and pinned commit; do not guess or expose private code.",
+    "project": "Project-32000",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "UNRESOLVED_GITLINK",
+    "tree": {
+      "kind": "commit",
+      "mode": "160000",
+      "oid": "f978fc12a1553798caf5dfb14b20a28210f237a2"
+    }
+  },
+  {
+    "project": "SPARKING",
+    "python_files": 53,
+    "reported_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+    "reported_phase": "DEVELOPMENT_V3_COMPLETE",
+    "scientific_completion": "NOT_ESTABLISHED_BY_INVENTORY",
+    "source_status": "SOURCE_PRESENT",
+    "state_sha256": "a2ef7ec5a4fef6d6cd810daa73fe56fad75d613d668f8e3226ff73c5887e34ee",
+    "tree": {
+      "kind": "tree",
+      "mode": "040000",
+      "oid": "56ec054d7b48e8de7b0e8e53ad72bcd5e6fd3b22"
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    ".",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4",
+  "elapsed_seconds": 1.61810366200001,
+  "log": "neurogenesis-v4-tests.log",
+  "log_sha256": "dc156151038452f7bc4aac5831eea9ed59294c0914b0bfb1e15d1375137c0182",
+  "returncode": 0,
+  "status": "PASS"
+}

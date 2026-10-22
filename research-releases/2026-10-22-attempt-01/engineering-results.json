@@ -1,0 +1,142 @@
+[
+  {
+    "command": [
+      "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--disable-warnings",
+      "--junitxml=/tmp/research-closeout/AdaptivePredictive-ML-junit.xml"
+    ],
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 25
+    },
+    "cwd": "/home/runner/work/Prometheus/Prometheus/AdaptivePredictive-ML",
+    "elapsed_seconds": 4.624777440999992,
+    "log": "AdaptivePredictive-ML-tests.log",
+    "log_sha256": "8b6f0e55addde4c420c0a132add3bac2d8b0ceeafb91e04c034220782a41413e",
+    "project": "AdaptivePredictive-ML",
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--disable-warnings",
+      "--junitxml=/tmp/research-closeout/Derived-Learning-ML-junit.xml"
+    ],
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 30
+    },
+    "cwd": "/tmp/research-closeout/derived-preflight-source",
+    "elapsed_seconds": 0.9162792019999983,
+    "log": "Derived-Learning-ML-tests.log",
+    "log_sha256": "966eb2ae378252ebba69dc482ff4093043b0622b15afbdb6d21896935d5f336f",
+    "project": "Derived-Learning-ML",
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--disable-warnings",
+      "--junitxml=/tmp/research-closeout/ML4-Material_Discovery-junit.xml"
+    ],
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 77
+    },
+    "cwd": "/home/runner/work/Prometheus/Prometheus/ML4-Material Discovery",
+    "elapsed_seconds": 4.223287341999992,
+    "log": "ML4-Material_Discovery-tests.log",
+    "log_sha256": "7bbbb8e09cdf15e290b4dba912a371dd7001f0f009596585ec2b88a86f5d59c9",
+    "project": "ML4-Material Discovery",
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--disable-warnings",
+      "--junitxml=/tmp/research-closeout/PI-ML-junit.xml"
+    ],
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 26
+    },
+    "cwd": "/home/runner/work/Prometheus/Prometheus/PI-ML",
+    "elapsed_seconds": 1.5673045430000059,
+    "log": "PI-ML-tests.log",
+    "log_sha256": "8af2d16efc023ad25ac5c82310b039a8101a7f65f4bbd3e711eef7ff343c2c7e",
+    "project": "PI-ML",
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--disable-warnings",
+      "--junitxml=/tmp/research-closeout/SPARKING-junit.xml"
+    ],
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 21
+    },
+    "cwd": "/home/runner/work/Prometheus/Prometheus/SPARKING",
+    "elapsed_seconds": 2.0695937819999983,
+    "log": "SPARKING-tests.log",
+    "log_sha256": "e0658cfc37d28cc986c50d012de2154598716200ba1495e97438c86b6100b85c",
+    "project": "SPARKING",
+    "returncode": 0,
+    "status": "PASS"
+  },
+  {
+    "command": [
+      "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      ".",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4",
+    "elapsed_seconds": 1.61810366200001,
+    "log": "neurogenesis-v4-tests.log",
+    "log_sha256": "dc156151038452f7bc4aac5831eea9ed59294c0914b0bfb1e15d1375137c0182",
+    "project": "NEUROGENESIS/memory_v4",
+    "returncode": 0,
+    "status": "PASS"
+  }
+]

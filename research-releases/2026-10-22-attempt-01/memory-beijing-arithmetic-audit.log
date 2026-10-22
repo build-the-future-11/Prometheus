@@ -1,0 +1,1 @@
+{"status": "VALID", "max_mse_summation_difference": 2.864375403532904e-14, "mse_relative_tolerance": 1e-12, "mse_absolute_tolerance": 1e-15, "attempts": 11, "failed": [], "scored_trace_rows": 192720, "auditor": "separate arithmetic and timing implementation; not external replication", "artifact_map_sha256": "a6f62ec2c9be028eb4d9ebdc553c12b06ee811ea69f26cc23756ca9f71baa662"}

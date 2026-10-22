@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "audit.py",
+    "/tmp/research-closeout/memory-v4-reproduction/beijing",
+    "/tmp/research-closeout/memory-v4-reproduction/beijing/audit.json"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/NEUROGENESIS/successors/memory_v4",
+  "elapsed_seconds": 2.971672730000023,
+  "log": "memory-beijing-arithmetic-audit.log",
+  "log_sha256": "7cc52a6e62d6aebfb84fb8a217e9c00e8a604725420ce473f0cf20ea55b18491",
+  "returncode": 0,
+  "status": "PASS"
+}

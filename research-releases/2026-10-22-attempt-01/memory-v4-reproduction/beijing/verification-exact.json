@@ -1,0 +1,9 @@
+{
+  "exact_replay": true,
+  "failed": 0,
+  "methods": 11,
+  "scientific_comparison": "COMPLETE",
+  "status": "VALID",
+  "utc": "2026-10-22T09:03:21.815027+00:00",
+  "verified_trace_rows": 192720
+}

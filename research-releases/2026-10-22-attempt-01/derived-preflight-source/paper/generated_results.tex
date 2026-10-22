@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{Recorded equal-resource evaluation NMSE.  ``Fail'' means the predeclared composite endpoint was not supported; it does not mean a runtime error.}
+\begin{tabular}{llrrl}
+\toprule
+Study & Split & Adam & Analytic residual & Registered decision \\
+\midrule
+S1 & final & 0.024140 & 0.003475 & supported on admitted matrix \\
+S1 & long horizon & 0.004701 & 0.004754 & fail \\
+S2.1 & final & 0.724612 & 0.711624 & fail \\
+S2.1 & long horizon & 0.822250 & 0.822343 & fail \\
+\bottomrule
+\end{tabular}
+\label{tab:primary-results}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{S2.1 descriptive paired result based on the five frozen task pairs per split.  Intervals are deterministic percentile-bootstrap intervals for the mean paired NMSE difference (analytic residual minus Adam).}
+\begin{tabular}{lrrr}
+\toprule
+Split & analytic wins & mean difference & 95\% interval \\
+\midrule
+final & 3/5 & -0.0129873 & [-0.0281100, 0.0021354] \\
+long horizon & 1/5 & 0.0000932 & [-0.0003178, 0.0004638] \\
+\bottomrule
+\end{tabular}
+\label{tab:s21-paired}
+\end{table}

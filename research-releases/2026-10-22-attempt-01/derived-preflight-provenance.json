@@ -1,0 +1,9 @@
+{
+  "bundle_sha256": "5466796428f6f700aa36ff834a3580ac9323f11f2cac6ad64b64f456d3cb2dff",
+  "change": "Register dynamically loaded test modules in sys.modules before exec_module.",
+  "kaggle_uploaded": false,
+  "protected_training_executed": false,
+  "remote_source_update_required": true,
+  "study_sha256": "0407b6d9f34b3c2997a27e2f69fe289a8cfa42d97b95ba4d76cebcba1cdc2970",
+  "study_source_unchanged": true
+}

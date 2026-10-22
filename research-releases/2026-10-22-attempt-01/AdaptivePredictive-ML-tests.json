@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "-m",
+    "pytest",
+    "tests",
+    "-q",
+    "--disable-warnings",
+    "--junitxml=/tmp/research-closeout/AdaptivePredictive-ML-junit.xml"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/AdaptivePredictive-ML",
+  "elapsed_seconds": 4.624777440999992,
+  "log": "AdaptivePredictive-ML-tests.log",
+  "log_sha256": "8b6f0e55addde4c420c0a132add3bac2d8b0ceeafb91e04c034220782a41413e",
+  "returncode": 0,
+  "status": "PASS"
+}

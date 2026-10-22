@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+    "-m",
+    "pytest",
+    "tests",
+    "-q",
+    "--disable-warnings",
+    "--junitxml=/tmp/research-closeout/SPARKING-junit.xml"
+  ],
+  "cwd": "/home/runner/work/Prometheus/Prometheus/SPARKING",
+  "elapsed_seconds": 2.0695937819999983,
+  "log": "SPARKING-tests.log",
+  "log_sha256": "e0658cfc37d28cc986c50d012de2154598716200ba1495e97438c86b6100b85c",
+  "returncode": 0,
+  "status": "PASS"
+}
