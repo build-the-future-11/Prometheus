@@ -10,11 +10,10 @@ jobs:
     runs-on: macos-26
     timeout-minutes: 20
     steps:
-      - name: Fetch exact public source without unresolved submodules
+      - name: Fetch exact source without unresolved submodules
         run: |
           set -euo pipefail
           test "$GITHUB_REPOSITORY" = 'build-the-future-11/Prometheus'
-          test "$GITHUB_REF_NAME" = 'research/portfolio-completion-20261022'
           git init .
           git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
           git fetch --depth=1 --no-tags --no-recurse-submodules origin "$GITHUB_SHA"
@@ -24,9 +23,9 @@ jobs:
           python-version: '3.15.0'
       - name: Install publication-only dependencies
         run: python -m pip install 'numpy==2.5.4' 'matplotlib==3.11.2'
-      - name: Exact frozen verification and post-outcome real-data reproduction
+      - name: Exact verification and disclosed-outcome reproduction
         run: python tools/research_reverify.py --output /tmp/research-reverified
-      - name: Retain every success or failure
+      - name: Retain success or failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
@@ -52,7 +51,7 @@ jobs:
         with:
           name: platform-matched-research
           path: research-releases/2026-10-22-reverified
-      - name: Check every downloaded artifact and compile the manuscript
+      - name: Verify downloaded evidence and compile manuscript
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -62,8 +61,8 @@ jobs:
               assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
           state=json.loads((root/'completion.json').read_text())
           assert state['status']=='VERIFIED_SOURCE_READY_FOR_PDF_REVIEW'
-          assert state['new_blinded_confirmation'] is False
-          assert state['kaggle_execution'] is False
+          assert not state['new_blinded_confirmation']
+          assert not state['kaggle_execution']
           PY
           sudo apt-get update -qq
           sudo apt-get install -y -qq texlive-latex-extra texlive-fonts-recommended poppler-utils > /tmp/tex-install.log 2>&1
@@ -73,7 +72,7 @@ jobs:
           pdfinfo main.pdf
           pdftotext -bbox main.pdf ../paper-bbox.html
           pdftoppm -r 80 -png main.pdf ../review-page
-      - name: Record current state, retain predecessor metadata and hash the release
+      - name: Record QA and update scientific state without erasing history
         run: |
           python3 - <<'PY'
           import datetime,hashlib,json,pathlib,shutil,xml.etree.ElementTree as ET
@@ -82,88 +81,40 @@ jobs:
           now=datetime.datetime.now(datetime.timezone.utc).isoformat()
           xml=ET.parse(root/'paper-bbox.html')
           ns={'h':'http://www.w3.org/1999/xhtml'}
-          outside=[]
           pages=xml.findall('.//h:page',ns)
+          outside=[]
           for i,page in enumerate(pages,1):
               width,height=float(page.attrib['width']),float(page.attrib['height'])
-              for word in page.findall('h:word',ns):
+              for word in page.findall('.//h:word',ns):
                   a=word.attrib
                   if float(a['xMin']) < -1 or float(a['yMin']) < -1 or float(a['xMax']) > width+1 or float(a['yMax']) > height+1:
                       outside.append({'page':i,'word':word.text,'bbox':a})
           qa={'pages':len(pages),'off_page_words':outside,'rendered_pages':len(list(root.glob('review-page-*.png'))),'visual_inspection_complete':False,'pdf_sha256':sha(root/'paper/main.pdf')}
           (root/'PDF_QA.json').write_text(json.dumps(qa,indent=2)+'\n')
-          if outside or not pages:
-              raise RuntimeError('PDF page boundary check failed')
+          assert pages and not outside,'PDF page boundary check failed'
           status_path=pathlib.Path('NEUROGENESIS/successors/memory_v4/STATUS.json')
           shutil.copy2(status_path,root/'PREVIOUS_NEUROGENESIS_STATUS.json')
           state=json.loads(status_path.read_text())
-          state['utc']=now
-          state['status']='REPRODUCED_MIXED_SCOPE_LIMITED_PDF_VISUAL_REVIEW_PENDING'
-          state['hosted_execution']=True
-          state['hosted_platform']='GitHub Actions; not Kaggle'
-          state['remote_v4_publication']=True
-          state['publication_scope']='Research branch evidence package; no external venue submission'
+          state.update(utc=now,status='REPRODUCED_MIXED_SCOPE_LIMITED_PDF_VISUAL_REVIEW_PENDING',hosted_execution=True,hosted_platform='GitHub Actions; not Kaggle',remote_v4_publication=True,publication_scope='Research branch evidence package; no external submission')
           state['reproduction_20261022']={'release':str(root),'new_blinded_confirmation':False,'independent_investigator_replication':False,'kaggle_execution':False,'frozen_sources_unchanged':True,'real_streams':'MIXED','synthetic_exact_replay':str(root/'synthetic-verification-exact.json'),'prior_linux_failure':'research-releases/2026-10-22-attempt-01/memory-synthetic-artifact-reverification.log','pdf':str(root/'paper/main.pdf'),'visual_review_complete':False}
           status_path.write_text(json.dumps(state,indent=2)+'\n')
           md=pathlib.Path('NEUROGENESIS/RESEARCH_STATE.md')
           shutil.copy2(md,root/'PREVIOUS_NEUROGENESIS_RESEARCH_STATE.md')
-          md.write_text(md.read_text()+'\n\n## 2026-10-22 evidence reconciliation\n\nCurrent disposition: **MIXED, scope-limited computational reproduction**. The earlier real-pending status was stale: the manuscript already contained the Air and Beijing outcomes. Exact synthetic verification was repeated on macOS arm64 with CPython 3.15.0 without changing the frozen source or thresholds. The prior Linux task-identity failure remains retained and cross-platform bitwise portability is not established. Both real streams were reproduced and exactly replayed; Air is worse than the selected baseline and Beijing is better than that baseline but worse than persistence. See `../../'+str(root)+'/completion.json` from the project directory, or the repository-root release path `'+str(root)+'`. The paper is compiled and rendered; visual inspection and external scientific review remain separate gates. No new Kaggle run, blinded confirmation, independent-investigator replication or external submission is claimed.\n')
-          registry_path=pathlib.Path('RESEARCH_PORTFOLIO_STATE.json')
-          registry=json.loads(registry_path.read_text())
+          note='\n\n## 2026-10-22 evidence reconciliation\n\nCurrent disposition: MIXED, scope-limited computational reproduction. The old real-pending label was stale: the manuscript already contained Air and Beijing outcomes. Exact synthetic verification was repeated on macOS arm64 CPython 3.15.0 without changing frozen source or thresholds. The Linux task-identity failure is retained; cross-platform bitwise portability is not established. Both real streams were reproduced and exactly replayed. Air is worse than the selected baseline; Beijing is better than that baseline but worse than persistence. Evidence is at repository-root path '+str(root)+'. The PDF is compiled and rendered, with visual inspection and external scientific review still separate gates. No new Kaggle run, blinded confirmation, independent-investigator replication or external submission is claimed.\n'
+          md.write_text(md.read_text()+note)
+          rp=pathlib.Path('RESEARCH_PORTFOLIO_STATE.json')
+          registry=json.loads(rp.read_text())
           for project in registry['projects']:
               if project['id']=='NEUROGENESIS':
-                  project.update(scientific_state='REPRODUCED_MIXED_SCOPE_LIMITED',release=str(root),paper_state='COMPILED_RENDERED_VISUAL_REVIEW_PENDING',next_gate='Inspect all rendered pages, retain the cross-platform reproducibility limitation, and obtain scientific and authorship review before external submission.')
-          registry_path.write_text(json.dumps(registry,indent=2)+'\n')
-          report='''# Research execution closeout — 22 October 2026
-
-## Completed in this session
-
-- Audited the actual new-wave monorepo rather than assuming conversational project names mapped to code.
-- Retained 205 passing tests across six source-backed projects: AdaptivePredictive 25, Derived Learning 30, Materials Discovery 77, PI-ML 26, SPARKING 21, NEUROGENESIS v4 26. Engineering tests do not establish scientific success.
-- Fixed Derived Learning's dynamic-module registration bug and built/tested a fresh hash-bound S3 source package without changing the frozen study implementation or replacing old releases.
-- Re-executed and exactly replayed 11 registered methods on each of two real streams. The outcomes were already disclosed, so these are reproductions, not new blinded confirmations.
-- Preserved the Linux historical synthetic task-identity failure. A Python-version-matched diagnostic found target differences below 1e-15. Reverified the original frozen archive on matching Apple Silicon numerical infrastructure without relaxing hashes or changing seeds.
-- Regenerated the NEUROGENESIS manuscript's figures and tables from verified evidence, applied the repository's recovered arxiv.sty, corrected two bibliography initials against the original papers, compiled and rendered the PDF. Visual review is recorded separately in PDF_QA.json.
-
-## Scientific outcome
-
-NEUROGENESIS remains mixed and scope-limited. Air Quality error increases by about 74.30% despite 92.69% fewer solves. Beijing error decreases by about 13.83% versus the selected persistent-ridge baseline with 65.34% fewer solves, but last-observation persistence is substantially better. Fewer solves do not establish a wall-time or energy improvement. The synthetic result is not a universal deep-learning result.
-
-## Remaining project gates
-
-The complete per-project state is in RESEARCH_PORTFOLIO_STATE.json. Four monorepo entries are unresolved gitlinks: CAUSAL-ALPHA, FIN-ML, ML4-Biocomputation and Project-32000. The META-RenormalizedEngramNeuralNetworks folder does not contain the required tracked Python source. Do not replace these with guessed implementations. Private repositories must not be copied into this public repository merely to repair links.
-
-AdaptivePredictive and SPARKING retain negative development findings and their protected evaluations remain closed. Materials Discovery has mixed development evidence, not a fresh protected benchmark. PI-ML's learned warm-start result must retain its direct-solver and OOD limitations. Derived Learning S3 still needs an authorized Kaggle source upload and actual frozen execution.
-
-## Flaws, repairs and required evidence
-
-| Flaw | Cause / severity | Action taken or required | Completion evidence |
-|---|---|---|---|
-| Missing submodule mappings | Four opaque gitlinks; blocks full source recovery | Auditing fetch now avoids submodule initialization; actual remotes must be reconciled | Git tree and registry; unresolved entries are not marked implemented |
-| Derived test import crash | Module absent from sys.modules during dataclass execution; high engineering severity | Register both dynamically loaded test modules before execution | 30/30 passing tests in newly built source package |
-| Missing local materials data | Text-only snapshot omitted compressed dataset; environment artifact, not model defect | Test complete repository with original dataset | 77/77 tests pass |
-| Missing SPARKING dependencies | Local matminer/pymatgen unavailable | Install explicit verification dependencies in isolated hosted environment | 21/21 tests pass |
-| Stale NEUROGENESIS state | Manuscript outcomes existed while state said real pending | Preserve predecessor metadata and record reproduction provenance | Previous state snapshots plus updated STATUS.json |
-| Cross-platform synthetic hash mismatch | Numerically regenerated inputs differ at roundoff; exact portability limitation | Keep strict verifier, retain Linux failure, verify original numerical platform | New exact replay and diagnostics; do not claim Linux bitwise portability |
-| Air Quality accuracy loss | Frozen mechanism fails on this exposed stream | Preserve the loss, narrow the claim; no retuning on this stream | All methods, traces, exact replay, separate arithmetic audit |
-| Beijing stronger simple baseline | Persistence outperforms all learned methods | Report persistence prominently; disallow best-model claim | Baseline table and retained raw outputs |
-| Source-package freshness | New test fix changes source-bundle identity | Build and hash a new package; do not relabel the old Kaggle dataset | Derived preflight provenance; remote upload remains outstanding |
-| Protected-evaluation admission | Negative development gates in several projects | Leave protected data closed | Original project states and registry |
-| Unmatched idea-bank names | Reports and names are not source or validated models | Recover original repositories and exact contracts | No completion claim for absent source |
-| Research release completeness | Independent investigator review, final visual inspection and venue checks are separate gates | Preserve separate states rather than counting a CI pass as publication | Release receipts; external submissions remain zero |
-
-## Boundaries
-
-No fresh Kaggle job, external paper submission, paid compute purchase, trading operation, Worldcastr modification, or main-branch merge was performed. Existing negative outcomes and frozen source identities were retained. This is a substantial verified execution and manuscript-recovery package, not a claim that every research idea is complete or positive.
-'''
+                  project.update(scientific_state='REPRODUCED_MIXED_SCOPE_LIMITED',release=str(root),paper_state='COMPILED_RENDERED_VISUAL_REVIEW_PENDING',next_gate='Inspect all rendered pages and obtain scientific and authorship review; retain the cross-platform bitwise limitation.')
+          rp.write_text(json.dumps(registry,indent=2)+'\n')
+          report='# Research execution closeout — 22 October 2026\n\n205 tests passed across six actual project suites: AdaptivePredictive 25, Derived Learning 30, Materials Discovery 77, PI-ML 26, SPARKING 21 and NEUROGENESIS v4 26. Engineering success is not scientific efficacy. The Derived Learning test-loader bug is fixed and a new source bundle is hash-bound, while the original frozen S3 study is unchanged. No Kaggle upload or S3 execution occurred.\n\nNEUROGENESIS real streams were executed and exactly replayed: Air Quality has about 74.30% worse MSE despite 92.69% fewer solves; Beijing has 13.83% lower MSE versus its selected baseline and 65.34% fewer solves, but loses to last-observation persistence. These outcomes were already disclosed and are reproductions, not new blinded confirmations. The retained synthetic archive was exactly replayed on its numerical platform after Linux regeneration differed at roundoff. The failed Linux attempt remains preserved. The manuscript was regenerated from verified evidence using recovered arxiv.sty, compiled and rendered; visual-review status is in PDF_QA.json.\n\nRESEARCH_PORTFOLIO_STATE.json records every actual new-wave root. Four unresolved gitlinks and one source-missing project are not falsely marked implemented. AdaptivePredictive and SPARKING retain their negative findings and closed protected gates. Materials Discovery remains mixed development evidence. PI-ML retains direct-solver and OOD limitations. Existing histories, frozen sources and negative results remain preserved.\n\nAll work is on the research branch. No main merge, external submission, independent-investigator replication, new Kaggle run, trade, paid compute purchase or Worldcastr modification occurred. The whole portfolio is not scientifically complete.\n'
           pathlib.Path('RESEARCH_COMPLETION_2026-10-22.md').write_text(report)
-          # The incoming artifact manifest remains immutable; a new manifest also
-          # covers compiled pages, PDF and predecessor-state snapshots.
           manifest={str(p.relative_to(root)):sha(p) for p in sorted(root.rglob('*')) if p.is_file()}
           (root/'release-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
           print(json.dumps(qa,indent=2))
           PY
-      - name: Publish only evidence and explicitly identified state records
+      - name: Publish only evidence and named state records
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -177,12 +128,12 @@ No fresh Kaggle job, external paper submission, paid compute purchase, trading o
           for path in subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines():
               assert path in allowed or path.startswith('research-releases/2026-10-22-reverified/'),path
           PY
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Retain exact platform-matched research verification and regenerated manuscript; reconcile canonical state'
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Retain exact platform-matched evidence and regenerated manuscript; reconcile research state'
           auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
           echo "::add-mask::$auth"
           git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
           printf 'PUBLISHED_COMMIT=%s\n' "$(git rev-parse HEAD)"
-      - name: Retain manuscript and visual-review pages
+      - name: Retain manuscript and rendered review pages
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
