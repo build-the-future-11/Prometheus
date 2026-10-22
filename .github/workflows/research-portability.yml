@@ -1,0 +1,49 @@
+name: Research numerical portability
+on:
+  push:
+    branches: ['research/portfolio-completion-20261022']
+    paths: ['.github/workflows/research-portability.yml']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Fetch exact public source without submodules
+        run: |
+          set -euo pipefail
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 --no-tags --no-recurse-submodules origin "$GITHUB_SHA"
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.15.0'
+      - name: Compare generator identities and original trace targets, no model training
+        run: |
+          cd NEUROGENESIS/successors/memory_v4
+          python - <<'PY'
+          import gzip,json,pathlib,sys,platform,math
+          from engine import synthetic,digest
+          root=pathlib.Path('runs/confirmation-02')
+          results=[]
+          for condition in ['base','novel','delay','noise','distractor','dimension','horizon']:
+              path=root/'attempts'/f'{condition}-91001__candidate'
+              old=json.loads((path/'result.json').read_text())
+              trace=[json.loads(x) for x in gzip.open(path/'trace.jsonl.gz','rt')]
+              data=synthetic(91001,condition)
+              diffs=[abs(a['y']-b['target']) for a,b in zip(data,trace)]
+              row={'condition':condition,'stored_task_digest':old['task_sha256'],'current_task_digest':digest(data),'exact_task_match':old['task_sha256']==digest(data),'rows_equal':len(data)==len(trace),'max_target_absolute_difference':max(diffs),'target_exact_mismatches':sum(x!=0 for x in diffs)}
+              results.append(row)
+          report={'python':sys.version,'platform':platform.platform(),'original_environment':json.loads((root/'manifest.json').read_text())['environment'],'model_training_executed':False,'frozen_sources_changed':False,'results':results}
+          print(json.dumps(report,indent=2))
+          pathlib.Path('/tmp/portability.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Retain diagnostic
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: numerical-portability
+          path: /tmp/portability.json
+          retention-days: 30
+          if-no-files-found: error
