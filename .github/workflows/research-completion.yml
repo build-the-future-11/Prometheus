@@ -1,0 +1,105 @@
+name: Bounded research completion
+on:
+  push:
+    branches: ['research/portfolio-completion-20261022']
+    paths: ['.github/workflows/research-completion.yml', 'tools/research_complete.py']
+permissions:
+  contents: write
+concurrency:
+  group: research-completion-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Fetch exact public source without unresolved submodule initialization
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = 'build-the-future-11/Prometheus'
+          test "$GITHUB_REF_NAME" = 'research/portfolio-completion-20261022'
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c protocol.version=2 fetch --depth=1 --no-tags --no-recurse-submodules origin "$GITHUB_SHA"
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+      - name: Install declared CPU verification and document dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'pytest>=8,<9' 'numpy>=2,<3' 'matplotlib>=3.9,<4' 'scikit-learn>=1.5,<2' 'scipy>=1.13,<2' joblib catboost matminer pymatgen
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-extra texlive-fonts-recommended poppler-utils
+      - name: Execute original tests, fresh S3 preflight packaging and frozen reproduction
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/research_complete.py --output /tmp/research-closeout --reproduce-memory
+      - name: Publish only the new evidence directory on the research branch
+        if: success()
+        env:
+          PUBLISH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'research/portfolio-completion-20261022'
+          target='research-releases/2026-10-22-completion'
+          test ! -e "$target"
+          remote_head="$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)"
+          test "$remote_head" = "$GITHUB_SHA" || { echo 'Branch advanced; refusing stale publication'; exit 1; }
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('/tmp/research-closeout')
+          status=json.loads((p/'completion.json').read_text())
+          assert status['status']=='EXECUTION_FINISHED'
+          assert status['memory']['frozen_sources_unchanged'] is True
+          assert status['memory']['new_blinded_confirmation'] is False
+          assert sum(x.stat().st_size for x in p.rglob('*') if x.is_file()) < 100*1024**2
+          PY
+          mkdir -p "$(dirname "$target")"
+          cp -a /tmp/research-closeout "$target"
+          find "$target" -type d -name __pycache__ -prune -exec rm -rf '{}' +
+          git add -f -- "$target"
+          test "$(git diff --cached --name-only | grep -v '^research-releases/2026-10-22-completion/' | wc -l)" -eq 0
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Retain verified cross-project tests and post-outcome memory reproduction; no Kaggle or venue claim'
+          auth="$(printf 'x-access-token:%s' "$PUBLISH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$auth"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+          printf 'PUBLISHED_COMMIT=%s\n' "$(git rev-parse HEAD)"
+      - name: Retain compact receipts and test logs even after failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: research-completion-receipts
+          path: |
+            /tmp/research-closeout/*.json
+            /tmp/research-closeout/*.xml
+            /tmp/research-closeout/*.log
+            /tmp/research-closeout/memory-v4-reproduction/REPRODUCTION_RESULT.json
+            /tmp/research-closeout/memory-v4-reproduction/REPLICATION_CONTEXT.json
+            /tmp/research-closeout/memory-v4-reproduction/air/summary.json
+            /tmp/research-closeout/memory-v4-reproduction/beijing/summary.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Retain complete manuscript and rendered review pages
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: neurogenesis-evidence-bound-paper
+          path: |
+            /tmp/research-closeout/memory-v4-reproduction/paper/
+            /tmp/research-closeout/memory-v4-reproduction/page-*.png
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Retain all raw attempts, exact replay receipts and corrected S3 source
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: research-completion-full-evidence
+          path: /tmp/research-closeout/
+          retention-days: 30
+          if-no-files-found: warn
