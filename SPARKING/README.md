@@ -4,9 +4,9 @@ SPARKING is an evidence-bound study of support-aware composition-only materials 
 
 ## Status
 
-**SPARKING v3 is frozen and Kaggle-run-ready; it has no scientific result yet.** V3 tests a target-independent frequency-balanced Extra Trees mechanism on a fresh O/S/In/Ge/Sb/Ba/Co/F development panel. The exact private source packager, dual-GPU launcher, production evaluator, raw-artifact writer, and independent verifier are implemented. The local suite passes 21/21 and the bounded CPU integration dry run passes. Li, Zn, Ga, Se, and Te remain protected.
+**SPARKING v3 is frozen and running privately on Kaggle; it has no scientific result yet.** V3 tests a target-independent frequency-balanced Extra Trees mechanism on a fresh O/S/In/Ge/Sb/Ba/Co/F development panel. The exact private source packager, dual-GPU launcher, production evaluator, raw-artifact writer, and independent verifier are implemented. The local suite passes 21/21 and the bounded CPU integration dry run passes. Li, Zn, Ga, Se, and Te remain protected.
 
-The frozen contract and adversarial flaw audit are in [the v3 protocol](docs/PROTOCOL_V3.md). The private Kaggle kernel is configured as `ryangomez010/sparking-development-v3-frequency-balanced-forest-gpu`, backed by source dataset `ryangomez010/sparking-source-v3-20261022`. A hosted completion is required before any v3 performance claim.
+The frozen contract and adversarial flaw audit are in [the v3 protocol](docs/PROTOCOL_V3.md). Private Kaggle kernel version 1 is running as `ryangomez010/sparking-v3-frequency-balanced-forest`, backed by source dataset `ryangomez010/sparking-source-v3-20261022`. A hosted completion and independent recovery are required before any v3 performance claim.
 
 **SPARKING v2 remains complete with disposition `DEVELOPMENT_NOT_SUPPORTED`.** A private Kaggle version-1 run completed the frozen Cu/Ag/B development protocol on dual Tesla T4 GPUs. All 180 CatBoost fits completed, the hosted test suite passed 18/18, and an independent local verifier recomputed 156 metrics from the downloaded raw arrays with a valid manifest.
 

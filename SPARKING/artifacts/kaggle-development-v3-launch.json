@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-22T09:04:35+05:30",
+  "study_id": "sparking-development-v3-frequency-balanced-forest-gpu",
+  "run_id": "kaggle-development-v3-r1",
+  "scientific_source_commit": "5b57c71ae03174b69cde426676fa2000d2724dce",
+  "launcher_submission_commit": "32c5e9b57f391354af9a075ccddc865e00e5ec19",
+  "protocol_sha256": "999beae71fa7a000e627dd0830307b21471ef78ed1f034daa48276821fcf8d75",
+  "submitted_launcher_sha256": "f9fb5cc896615ba3f8f78c58b319d13b7e410f5d62e3d211d4cafe33c2eb1f93",
+  "submitted_kernel_metadata_sha256": "2f1a6218b1dc607ba66cbe2d955886d222c5af31ca8aa4e13fa9bbd4da8fa314",
+  "source_dataset": "ryangomez010/sparking-source-v3-20261022",
+  "source_dataset_url": "https://www.kaggle.com/datasets/ryangomez010/sparking-source-v3-20261022",
+  "source_dataset_private": true,
+  "source_file_count": 40,
+  "source_archive_sha256": "9467b930ff71ce462aaaa9e3eece40fc0b61e8b45b1d0812f02ff994d72c0553",
+  "downloaded_archive_sha256": "9467b930ff71ce462aaaa9e3eece40fc0b61e8b45b1d0812f02ff994d72c0553",
+  "source_roundtrip_verified": true,
+  "kernel": "ryangomez010/sparking-v3-frequency-balanced-forest",
+  "kernel_url": "https://www.kaggle.com/code/ryangomez010/sparking-v3-frequency-balanced-forest",
+  "kernel_version": 1,
+  "private": true,
+  "requested_accelerator": "nvidiaTeslaT4",
+  "catboost_devices": "0:1",
+  "status_at_recording": "RUNNING",
+  "scientific_disposition": "NOT_EVALUATED",
+  "protected_outcomes_observed": false,
+  "prelaunch_failures": [
+    {
+      "count": 2,
+      "stage": "SaveKernel before version creation",
+      "http_status": 400,
+      "message": "The title cannot exceed 50 characters.",
+      "scientific_execution_started": false,
+      "repair": "Shortened the display title only; scientific source and protocol remained unchanged."
+    }
+  ]
+}

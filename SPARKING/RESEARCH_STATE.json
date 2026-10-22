@@ -3,12 +3,12 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-22T08:55:57+05:30",
+  "updated_at": "2026-10-22T09:04:35+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Atlas.git",
   "git_branch": "codex/ml4materials-research-execution",
-  "phase": "DEVELOPMENT_V3_FROZEN_RUN_READY",
+  "phase": "DEVELOPMENT_V3_HOSTED_RUNNING",
   "disposition": "DEVELOPMENT_V3_NOT_EVALUATED",
   "research_question": "Does target-independent inverse-frequency weighting improve a randomized tree ensemble under fresh leave-one-element-out band-gap shifts, while retaining the v2 Extra Trees advantage over GPU CatBoost?",
   "hypothesis": "Stoichiometric inverse-frequency weighting computed only from each outer training set will reduce domination by common elemental environments and improve unseen-element macro MAE relative to an otherwise identical unweighted Extra Trees ensemble.",
@@ -128,6 +128,10 @@
     {
       "date": "2026-10-22",
       "event": "Preserved the completed v2 negative study and froze the separately versioned v3 frequency-balanced forest development protocol. Implemented the production runner, independent verifier, bounded CPU dry run, exact-source packager, and private dual-GPU Kaggle launcher. The fresh O/S/In/Ge/Sb/Ba/Co/F panel was selected from target-independent occurrence counts; protected Li/Zn/Ga/Se/Te scenarios remain unopened."
+    },
+    {
+      "date": "2026-10-22",
+      "event": "Pushed frozen v3 source commit 5b57c71ae03174b69cde426676fa2000d2724dce to GitHub, uploaded private source dataset ryangomez010/sparking-source-v3-20261022, and verified the downloaded archive byte-for-byte at SHA-256 9467b930ff71ce462aaaa9e3eece40fc0b61e8b45b1d0812f02ff994d72c0553. Kaggle accepted private GPU kernel version 1 as ryangomez010/sparking-v3-frequency-balanced-forest; live status was RUNNING. Two prelaunch requests were rejected before execution because the original title exceeded Kaggle's 50-character limit; the corrected launch retained identical scientific source."
     }
   ],
   "hosted_development": {
@@ -260,7 +264,7 @@
   },
   "successor_v3": {
     "study_id": "sparking-development-v3-frequency-balanced-forest-gpu",
-    "status": "FROZEN_RUN_READY_NOT_EVALUATED",
+    "status": "HOSTED_RUNNING_NOT_EVALUATED",
     "protocol": "protocols/development-v3.json",
     "protocol_explanation": "docs/PROTOCOL_V3.md",
     "parent_commit": "9d6161cd3b063fd844998b57c31a952361a11b92",
@@ -273,7 +277,14 @@
     "accelerator": "Kaggle GPU 0:1",
     "run_id": "kaggle-development-v3-r1",
     "private_source_dataset": "ryangomez010/sparking-source-v3-20261022",
-    "kernel": "ryangomez010/sparking-development-v3-frequency-balanced-forest-gpu",
+    "source_commit": "5b57c71ae03174b69cde426676fa2000d2724dce",
+    "protocol_sha256": "999beae71fa7a000e627dd0830307b21471ef78ed1f034daa48276821fcf8d75",
+    "source_archive_sha256": "9467b930ff71ce462aaaa9e3eece40fc0b61e8b45b1d0812f02ff994d72c0553",
+    "source_roundtrip_verified": true,
+    "kernel": "ryangomez010/sparking-v3-frequency-balanced-forest",
+    "kernel_version": 1,
+    "kernel_status": "RUNNING",
+    "hosted_launch": "artifacts/kaggle-development-v3-launch.json",
     "local_tests_passed": 21,
     "bounded_cpu_dry_run": "PASSED",
     "scientific_disposition": "NOT_EVALUATED"
