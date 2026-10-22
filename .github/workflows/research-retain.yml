@@ -1,0 +1,76 @@
+name: Retain research evidence
+on:
+  push:
+    branches: ['research/portfolio-completion-20261022']
+    paths: ['.github/workflows/research-retain.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  retain:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Fetch exact source without initializing unresolved gitlinks
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = 'build-the-future-11/Prometheus'
+          test "$GITHUB_REF_NAME" = 'research/portfolio-completion-20261022'
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 --no-tags --no-recurse-submodules origin "$GITHUB_SHA"
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+      - name: Recover immutable artifact and print exact failure
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/build-the-future-11/Prometheus/actions/artifacts/12413773773/zip' -o /tmp/retained.zip
+          python3 - <<'PY'
+          import hashlib, json, pathlib, stat, subprocess, zipfile
+          archive=pathlib.Path('/tmp/retained.zip')
+          expected='b48816bff54fcbdf7a62ad121f7c86e51c351cc47696d3f58018e3b64917bee6'
+          assert hashlib.sha256(archive.read_bytes()).hexdigest()==expected
+          target=pathlib.Path('research-releases/2026-10-22-attempt-01')
+          target.mkdir(parents=True,exist_ok=False)
+          with zipfile.ZipFile(archive) as z:
+              assert sum(x.file_size for x in z.infolist()) < 100*1024**2
+              for item in z.infolist():
+                  path=pathlib.PurePosixPath(item.filename)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert not stat.S_ISLNK(item.external_attr >> 16)
+                  z.extract(item,target)
+          print('=== ACTUAL SYNTHETIC VERIFICATION FAILURE ===')
+          print((target/'memory-synthetic-artifact-reverification.log').read_text())
+          print('=== ENGINEERING COUNTS ===')
+          for item in json.loads((target/'engineering-results.json').read_text()):
+              print(item['project'],item['status'],item.get('counts'))
+          root=pathlib.Path('NEUROGENESIS/successors/memory_v4')
+          manifest=json.loads((root/'runs/confirmation-02/manifest.json').read_text())
+          print('=== FROZEN SOURCE CHECK ===')
+          for name,digest in manifest['source'].items():
+              actual=hashlib.sha256((root/name).read_bytes()).hexdigest()
+              print(name,'MATCH' if digest==actual else 'MISMATCH',digest,actual)
+          print('=== FIRST RECORDED ARTIFACT ===')
+          first=sorted((root/'runs/confirmation-02/attempts').glob('*/result.json'))[0]
+          print(first)
+          print(first.read_text())
+          for name in ('trace.jsonl.gz','checkpoint.json.gz'):
+              p=first.parent/name
+              print(name,'exists=',p.exists(),'bytes=',p.stat().st_size if p.exists() else None)
+          files={str(p.relative_to(target)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(target.rglob('*')) if p.is_file()}
+          receipt={'source_workflow_run':39751744342,'source_artifact':12413773773,'archive_sha256':expected,'status':'RETAINED_BLOCKED_PUBLICATION_ATTEMPT','all_prior_files_preserved':True,'new_experiments_executed':False,'files':files}
+          (target/'retention-manifest.json').write_text(json.dumps(receipt,indent=2)+'\n')
+          PY
+      - name: Commit only retained evidence to the research branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git add -f -- research-releases/2026-10-22-attempt-01
+          test "$(git diff --cached --name-only | grep -v '^research-releases/2026-10-22-attempt-01/' | wc -l)" -eq 0
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Retain six passing suites and exact real-stream replays; preserve synthetic verification blocker'
+          auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$auth"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
