@@ -1,0 +1,63 @@
+name: Frozen research evidence snapshot
+on:
+  push:
+    branches: ['research/portfolio-completion-20261022']
+    paths: ['.github/workflows/research-evidence-snapshot.yml']
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Fetch exact public source without initializing gitlinks
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = 'build-the-future-11/Prometheus'
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c protocol.version=2 fetch --depth=1 --no-tags --no-recurse-submodules origin "$GITHUB_SHA"
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Package only existing frozen evidence and required dataset
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess, tarfile
+          root = pathlib.Path.cwd()
+          out = pathlib.Path('/tmp/frozen-evidence')
+          out.mkdir()
+          prefix = 'NEUROGENESIS/successors/memory_v4/runs/'
+          paths = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
+          selected = []
+          for name in paths:
+              p = root / name
+              keep = (name.startswith(prefix + 'confirmation-02/') or name.startswith(prefix + 'development-02/')) and name.endswith('.gz')
+              keep = keep or name == 'ML4-Material Discovery/data/raw/matbench_expt_gap.json.gz'
+              keep = keep or (name.endswith('/LICENSE') and p.is_file())
+              if keep:
+                  if not p.is_file() or p.is_symlink():
+                      raise RuntimeError('nonregular evidence path: ' + name)
+                  selected.append(p)
+          total = sum(p.stat().st_size for p in selected)
+          if total > 400 * 1024**2:
+              raise RuntimeError('bounded archive limit exceeded: ' + str(total))
+          rows = []
+          with tarfile.open(out / 'frozen-evidence.tar', 'w') as archive:
+              for p in selected:
+                  name = p.relative_to(root).as_posix()
+                  rows.append({'path': name, 'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()})
+                  archive.add(p, arcname=name, recursive=False)
+          report = {'source_commit': subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip(), 'scientific_execution': False, 'file_count': len(rows), 'total_bytes': total, 'files': rows}
+          (out / 'manifest.json').write_text(json.dumps(report, indent=2) + '\n')
+          print(json.dumps({k:v for k,v in report.items() if k != 'files'}, indent=2))
+          PY
+      - name: Retain exact evidence snapshot
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: frozen-evidence
+          path: /tmp/frozen-evidence/
+          retention-days: 7
+          compression-level: 0
+          if-no-files-found: error
