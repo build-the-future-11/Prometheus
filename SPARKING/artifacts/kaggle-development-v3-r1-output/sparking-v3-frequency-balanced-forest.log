@@ -1,0 +1,1437 @@
+[{"stream_name":"stderr","time":2.069675886,"data":"/kaggle/src/script.py:54: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.\n"}
+,{"stream_name":"stderr","time":2.069717632,"data":"  tar.extractall(CHECKOUT)\n"}
+,{"stream_name":"stdout","time":2.107656908,"data":"+ /usr/bin/python3 -m pip install --disable-pip-version-check -r requirements-hosted-v3.txt\n"}
+,{"stream_name":"stdout","time":5.149340172,"data":"Ignoring colorama: markers 'sys_platform == \"win32\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.149847076,"data":"Ignoring contourpy: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.150341327,"data":"Ignoring networkx: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.1508405,"data":"Ignoring numpy: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.15135492,"data":"Ignoring scipy: markers 'python_full_version \u003c \"3.12\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.151931748,"data":"Ignoring tomli: markers 'python_full_version \u003c= \"3.11\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.152335491,"data":"Ignoring typing-extensions: markers 'python_full_version \u003c \"3.13\"' don't match your environment\n"}
+,{"stream_name":"stdout","time":5.237287423,"data":"Collecting bibtexparser==1.4.4 (from -r requirements-hosted-v3.txt (line 3))\n"}
+,{"stream_name":"stdout","time":5.283301343,"data":"  Downloading bibtexparser-1.4.4.tar.gz (55 kB)\n"}
+,{"stream_name":"stdout","time":5.309654636,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.6/55.6 kB 1.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.32688423,"data":"  Preparing metadata (setup.py): started\n"}
+,{"stream_name":"stdout","time":6.418463833,"data":"  Preparing metadata (setup.py): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":6.421410028,"data":"Requirement already satisfied: catboost==1.2.10 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 5)) (1.2.10)\n"}
+,{"stream_name":"stdout","time":6.485696855,"data":"Collecting certifi==2026.10.19 (from -r requirements-hosted-v3.txt (line 7))\n"}
+,{"stream_name":"stdout","time":6.496463794,"data":"  Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)\n"}
+,{"stream_name":"stdout","time":6.840941267,"data":"Collecting charset-normalizer==3.5.2 (from -r requirements-hosted-v3.txt (line 9))\n"}
+,{"stream_name":"stdout","time":6.8524326030000005,"data":"  Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)\n"}
+,{"stream_name":"stdout","time":6.871691014,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 2.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.878512671,"data":"Requirement already satisfied: cloudpickle==3.1.2 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 11)) (3.1.2)\n"}
+,{"stream_name":"stdout","time":7.041384187,"data":"Collecting contourpy==1.4.0 (from -r requirements-hosted-v3.txt (line 19))\n"}
+,{"stream_name":"stdout","time":7.052433105,"data":"  Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)\n"}
+,{"stream_name":"stdout","time":7.074372443,"data":"Requirement already satisfied: coverage==7.16.2 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 21)) (7.16.2)\n"}
+,{"stream_name":"stdout","time":7.075661685,"data":"Requirement already satisfied: cycler==0.12.1 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 23)) (0.12.1)\n"}
+,{"stream_name":"stdout","time":7.144361894,"data":"Collecting dnspython==2.9.0 (from -r requirements-hosted-v3.txt (line 25))\n"}
+,{"stream_name":"stdout","time":7.160364167,"data":"  Downloading dnspython-2.9.0-py3-none-any.whl.metadata (5.7 kB)\n"}
+,{"stream_name":"stdout","time":7.584641174,"data":"Collecting fonttools==4.67.0 (from -r requirements-hosted-v3.txt (line 27))\n"}
+,{"stream_name":"stdout","time":7.596417177,"data":"  Downloading fonttools-4.67.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)\n"}
+,{"stream_name":"stdout","time":7.622402348,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.2/137.2 kB 5.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.639366113,"data":"Requirement already satisfied: graphviz==0.21 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 29)) (0.21)\n"}
+,{"stream_name":"stdout","time":7.688515114,"data":"Collecting idna==3.20 (from -r requirements-hosted-v3.txt (line 31))\n"}
+,{"stream_name":"stdout","time":7.699329757,"data":"  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)\n"}
+,{"stream_name":"stdout","time":7.758525527,"data":"Collecting iniconfig==2.3.1 (from -r requirements-hosted-v3.txt (line 33))\n"}
+,{"stream_name":"stdout","time":7.769359104,"data":"  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)\n"}
+,{"stream_name":"stdout","time":7.788536817,"data":"Requirement already satisfied: joblib==1.6.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 35)) (1.6.0)\n"}
+,{"stream_name":"stdout","time":7.790061446,"data":"Requirement already satisfied: kiwisolver==1.5.1 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 40)) (1.5.1)\n"}
+,{"stream_name":"stdout","time":8.382571308,"data":"Collecting lxml==6.1.3 (from -r requirements-hosted-v3.txt (line 42))\n"}
+,{"stream_name":"stdout","time":8.394068071,"data":"  Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)\n"}
+,{"stream_name":"stdout","time":8.463799143,"data":"Collecting matminer==0.10.1 (from -r requirements-hosted-v3.txt (line 44))\n"}
+,{"stream_name":"stdout","time":8.477256553,"data":"  Downloading matminer-0.10.1-py3-none-any.whl.metadata (4.6 kB)\n"}
+,{"stream_name":"stdout","time":8.826125467,"data":"Collecting matplotlib==3.11.2 (from -r requirements-hosted-v3.txt (line 46))\n"}
+,{"stream_name":"stdout","time":8.83724733,"data":"  Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)\n"}
+,{"stream_name":"stdout","time":8.857627869,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.3/80.3 kB 4.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.962124523,"data":"Collecting monty==2026.10.21 (from -r requirements-hosted-v3.txt (line 51))\n"}
+,{"stream_name":"stdout","time":8.973960859,"data":"  Downloading monty-2026.10.21-py3-none-any.whl.metadata (5.5 kB)\n"}
+,{"stream_name":"stdout","time":8.993803284,"data":"Requirement already satisfied: mpmath==1.3.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 55)) (1.3.0)\n"}
+,{"stream_name":"stdout","time":9.12254147,"data":"Collecting narwhals==2.27.1 (from -r requirements-hosted-v3.txt (line 57))\n"}
+,{"stream_name":"stdout","time":9.135707061,"data":"  Downloading narwhals-2.27.1-py3-none-any.whl.metadata (15 kB)\n"}
+,{"stream_name":"stdout","time":9.218525386,"data":"Collecting networkx==3.7 (from -r requirements-hosted-v3.txt (line 63))\n"}
+,{"stream_name":"stdout","time":9.228534944,"data":"  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)\n"}
+,{"stream_name":"stdout","time":9.794342016,"data":"Collecting numpy==2.5.4 (from -r requirements-hosted-v3.txt (line 78))\n"}
+,{"stream_name":"stdout","time":9.806157258,"data":"  Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)\n"}
+,{"stream_name":"stdout","time":10.440084654,"data":"Collecting orjson==3.13.0 (from -r requirements-hosted-v3.txt (line 91))\n"}
+,{"stream_name":"stdout","time":10.450836562,"data":"  Downloading orjson-3.13.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)\n"}
+,{"stream_name":"stdout","time":10.471081759,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.2/42.2 kB 1.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.476722845,"data":"Requirement already satisfied: packaging==26.3 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 93)) (26.3)\n"}
+,{"stream_name":"stdout","time":10.53007343,"data":"Collecting palettable==3.3.3 (from -r requirements-hosted-v3.txt (line 98))\n"}
+,{"stream_name":"stdout","time":10.542856663,"data":"  Downloading palettable-3.3.3-py2.py3-none-any.whl.metadata (3.3 kB)\n"}
+,{"stream_name":"stdout","time":10.56513845,"data":"Requirement already satisfied: pandas==2.3.3 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 100)) (2.3.3)\n"}
+,{"stream_name":"stdout","time":11.017480636,"data":"Collecting pillow==13.0.0 (from -r requirements-hosted-v3.txt (line 105))\n"}
+,{"stream_name":"stdout","time":11.028780475,"data":"  Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)\n"}
+,{"stream_name":"stdout","time":11.192093462,"data":"Collecting plotly==7.1.0 (from -r requirements-hosted-v3.txt (line 107))\n"}
+,{"stream_name":"stdout","time":11.203541439,"data":"  Downloading plotly-7.1.0-py3-none-any.whl.metadata (8.8 kB)\n"}
+,{"stream_name":"stdout","time":11.277538249,"data":"Collecting pluggy==1.7.0 (from -r requirements-hosted-v3.txt (line 111))\n"}
+,{"stream_name":"stdout","time":11.291380014,"data":"  Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)\n"}
+,{"stream_name":"stdout","time":11.310631343,"data":"Requirement already satisfied: pygments==2.21.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 115)) (2.21.0)\n"}
+,{"stream_name":"stdout","time":11.594016789,"data":"Collecting pymatgen==2026.9.24 (from -r requirements-hosted-v3.txt (line 117))\n"}
+,{"stream_name":"stdout","time":11.606572082,"data":"  Downloading pymatgen-2026.9.24-py3-none-any.whl.metadata (13 kB)\n"}
+,{"stream_name":"stdout","time":11.702978056,"data":"Collecting pymatgen-core==2026.10.16 (from -r requirements-hosted-v3.txt (line 121))\n"}
+,{"stream_name":"stdout","time":11.737210936,"data":"  Downloading pymatgen_core-2026.10.16-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (13 kB)\n"}
+,{"stream_name":"stdout","time":12.504509355,"data":"Collecting pymongo==4.19.0 (from -r requirements-hosted-v3.txt (line 123))\n"}
+,{"stream_name":"stdout","time":12.517596743,"data":"  Downloading pymongo-4.19.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)\n"}
+,{"stream_name":"stdout","time":12.618667216,"data":"Collecting pyparsing==3.3.3 (from -r requirements-hosted-v3.txt (line 125))\n"}
+,{"stream_name":"stdout","time":12.634533266,"data":"  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)\n"}
+,{"stream_name":"stdout","time":12.766142031,"data":"Collecting pytest==9.1.1 (from -r requirements-hosted-v3.txt (line 129))\n"}
+,{"stream_name":"stdout","time":12.778143339,"data":"  Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)\n"}
+,{"stream_name":"stdout","time":12.861274667,"data":"Collecting pytest-cov==7.1.0 (from -r requirements-hosted-v3.txt (line 133))\n"}
+,{"stream_name":"stdout","time":12.878244262,"data":"  Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)\n"}
+,{"stream_name":"stdout","time":12.895645522,"data":"Requirement already satisfied: python-dateutil==2.9.0.post0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 135)) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":13.027201298,"data":"Collecting pytz==2026.5 (from -r requirements-hosted-v3.txt (line 139))\n"}
+,{"stream_name":"stdout","time":13.037608093,"data":"  Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)\n"}
+,{"stream_name":"stdout","time":13.057246455,"data":"Requirement already satisfied: requests==2.34.2 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 141)) (2.34.2)\n"}
+,{"stream_name":"stdout","time":13.058905972,"data":"Requirement already satisfied: ruamel-yaml==0.19.1 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 145)) (0.19.1)\n"}
+,{"stream_name":"stdout","time":13.276800107,"data":"Collecting scikit-learn==1.9.1 (from -r requirements-hosted-v3.txt (line 147))\n"}
+,{"stream_name":"stdout","time":13.28769482,"data":"  Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)\n"}
+,{"stream_name":"stdout","time":13.620759145,"data":"Collecting scipy==1.18.1 (from -r requirements-hosted-v3.txt (line 158))\n"}
+,{"stream_name":"stdout","time":13.632049571,"data":"  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)\n"}
+,{"stream_name":"stdout","time":13.677277707,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 1.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":13.695093482,"data":"Requirement already satisfied: six==1.17.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 165)) (1.17.0)\n"}
+,{"stream_name":"stdout","time":13.861139119,"data":"Collecting spglib==2.8.0 (from -r requirements-hosted-v3.txt (line 169))\n"}
+,{"stream_name":"stdout","time":13.874241175,"data":"  Downloading spglib-2.8.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.2 kB)\n"}
+,{"stream_name":"stdout","time":13.895534949,"data":"Requirement already satisfied: sympy==1.14.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 171)) (1.14.0)\n"}
+,{"stream_name":"stdout","time":13.937041921,"data":"Collecting tabulate==0.10.0 (from -r requirements-hosted-v3.txt (line 175))\n"}
+,{"stream_name":"stdout","time":13.947849435,"data":"  Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)\n"}
+,{"stream_name":"stdout","time":13.9714661,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 1.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.014316599,"data":"Collecting threadpoolctl==3.7.0 (from -r requirements-hosted-v3.txt (line 177))\n"}
+,{"stream_name":"stdout","time":14.026771124,"data":"  Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)\n"}
+,{"stream_name":"stdout","time":14.153160975,"data":"Collecting tqdm==4.70.1 (from -r requirements-hosted-v3.txt (line 181))\n"}
+,{"stream_name":"stdout","time":14.164559616,"data":"  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)\n"}
+,{"stream_name":"stdout","time":14.183940074,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.4/57.4 kB 2.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.243527839,"data":"Collecting tzdata==2026.5 (from -r requirements-hosted-v3.txt (line 187))\n"}
+,{"stream_name":"stdout","time":14.253890386,"data":"  Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)\n"}
+,{"stream_name":"stdout","time":14.317426069,"data":"Collecting uncertainties==3.2.3 (from -r requirements-hosted-v3.txt (line 189))\n"}
+,{"stream_name":"stdout","time":14.327992363,"data":"  Downloading uncertainties-3.2.3-py3-none-any.whl.metadata (7.0 kB)\n"}
+,{"stream_name":"stdout","time":14.343258466,"data":"Requirement already satisfied: urllib3==2.8.0 in /usr/local/lib/python3.13/dist-packages (from -r requirements-hosted-v3.txt (line 191)) (2.8.0)\n"}
+,{"stream_name":"stdout","time":14.820978331,"data":"Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)\n"}
+,{"stream_name":"stdout","time":14.847380486,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 136.5/136.5 kB 5.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.860820084,"data":"Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)\n"}
+,{"stream_name":"stdout","time":14.887128721,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 254.7/254.7 kB 10.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.897769156,"data":"Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)\n"}
+,{"stream_name":"stdout","time":14.922644759,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 384.7/384.7 kB 18.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.938634289,"data":"Downloading dnspython-2.9.0-py3-none-any.whl (354 kB)\n"}
+,{"stream_name":"stdout","time":14.958395561,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 354.8/354.8 kB 19.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":14.971683412,"data":"Downloading fonttools-4.67.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)\n"}
+,{"stream_name":"stdout","time":15.088281719,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 48.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.100734065,"data":"Downloading idna-3.20-py3-none-any.whl (69 kB)\n"}
+,{"stream_name":"stdout","time":15.119544929,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 3.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.133172747,"data":"Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)\n"}
+,{"stream_name":"stdout","time":15.165874323,"data":"Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)\n"}
+,{"stream_name":"stdout","time":15.231837888,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 82.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.244701165,"data":"Downloading matminer-0.10.1-py3-none-any.whl (5.3 MB)\n"}
+,{"stream_name":"stdout","time":15.412075382,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 32.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.431516847,"data":"Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)\n"}
+,{"stream_name":"stdout","time":15.724945568,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 33.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.737500199,"data":"Downloading monty-2026.10.21-py3-none-any.whl (63 kB)\n"}
+,{"stream_name":"stdout","time":15.756181868,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.2/63.2 kB 3.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.769903607,"data":"Downloading narwhals-2.27.1-py3-none-any.whl (483 kB)\n"}
+,{"stream_name":"stdout","time":15.792177537,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 483.2/483.2 kB 23.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.803156366,"data":"Downloading networkx-3.7-py3-none-any.whl (2.1 MB)\n"}
+,{"stream_name":"stdout","time":15.834797164,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 73.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":15.845469079,"data":"Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)\n"}
+,{"stream_name":"stdout","time":16.018072728,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 78.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.029251136,"data":"Downloading orjson-3.13.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)\n"}
+,{"stream_name":"stdout","time":16.049124062,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.4/130.4 kB 7.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.069920207,"data":"Downloading palettable-3.3.3-py2.py3-none-any.whl (332 kB)\n"}
+,{"stream_name":"stdout","time":16.091189141,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 332.3/332.3 kB 16.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.104325573,"data":"Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)\n"}
+,{"stream_name":"stdout","time":16.218871922,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 63.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.230396251,"data":"Downloading plotly-7.1.0-py3-none-any.whl (9.7 MB)\n"}
+,{"stream_name":"stdout","time":16.340803366,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 89.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.364541041,"data":"Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)\n"}
+,{"stream_name":"stdout","time":16.398808188,"data":"Downloading pymatgen-2026.9.24-py3-none-any.whl (825 kB)\n"}
+,{"stream_name":"stdout","time":16.441242897,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 825.8/825.8 kB 20.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.455345031,"data":"Downloading pymatgen_core-2026.10.16-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.6 MB)\n"}
+,{"stream_name":"stdout","time":16.517731241,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 76.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.533546619,"data":"Downloading pymongo-4.19.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.1 MB)\n"}
+,{"stream_name":"stdout","time":16.559855468,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 43.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.570528512,"data":"Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)\n"}
+,{"stream_name":"stdout","time":16.589265184,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 7.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.602171639,"data":"Downloading pytest-9.1.1-py3-none-any.whl (386 kB)\n"}
+,{"stream_name":"stdout","time":16.622704299,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 386.5/386.5 kB 20.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.634368468,"data":"Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)\n"}
+,{"stream_name":"stdout","time":16.662142887999998,"data":"Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)\n"}
+,{"stream_name":"stdout","time":16.685668688,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 506.3/506.3 kB 23.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.703137195,"data":"Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)\n"}
+,{"stream_name":"stdout","time":16.909718236,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 44.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":16.920391418,"data":"Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)\n"}
+,{"stream_name":"stdout","time":17.268037283,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 59.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":17.280349482,"data":"Downloading spglib-2.8.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (979 kB)\n"}
+,{"stream_name":"stdout","time":17.308078981,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 979.1/979.1 kB 38.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":17.318731995,"data":"Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)\n"}
+,{"stream_name":"stdout","time":17.345914515,"data":"Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)\n"}
+,{"stream_name":"stdout","time":17.369374248,"data":"Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)\n"}
+,{"stream_name":"stdout","time":17.386143521,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 4.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":17.396902066,"data":"Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)\n"}
+,{"stream_name":"stdout","time":17.416008794,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.0/348.0 kB 20.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":17.426173224,"data":"Downloading uncertainties-3.2.3-py3-none-any.whl (60 kB)\n"}
+,{"stream_name":"stdout","time":17.445542917,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.1/60.1 kB 2.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":17.8659799,"data":"Building wheels for collected packages: bibtexparser\n"}
+,{"stream_name":"stdout","time":17.866754342,"data":"  Building wheel for bibtexparser (setup.py): started\n"}
+,{"stream_name":"stdout","time":19.173913933,"data":"  Building wheel for bibtexparser (setup.py): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":19.1746114,"data":"  Created wheel for bibtexparser: filename=bibtexparser-1.4.4-py3-none-any.whl size=43688 sha256=d8f50df2978177abf530e15d9db08a06895a9bdbdfa4729ef73dcd814dc03a38\n"}
+,{"stream_name":"stdout","time":19.175039606,"data":"  Stored in directory: /root/.cache/pip/wheels/43/ca/d8/0d315657fcf8ff8694a2f6701589bd1eaa602a85b7a7810063\n"}
+,{"stream_name":"stdout","time":19.177751354,"data":"Successfully built bibtexparser\n"}
+,{"stream_name":"stdout","time":21.509535608,"data":"Installing collected packages: pytz, uncertainties, tzdata, tqdm, threadpoolctl, tabulate, pyparsing, pluggy, pillow, palettable, orjson, numpy, networkx, narwhals, lxml, iniconfig, idna, fonttools, dnspython, charset-normalizer, certifi, spglib, scipy, pytest, pymongo, plotly, monty, contourpy, bibtexparser, scikit-learn, pytest-cov, matplotlib, pymatgen-core, pymatgen, matminer\n"}
+,{"stream_name":"stdout","time":21.509858866,"data":"  Attempting uninstall: pytz\n"}
+,{"stream_name":"stdout","time":21.819471924,"data":"    Found existing installation: pytz 2025.2\n"}
+,{"stream_name":"stdout","time":21.857244292,"data":"    Uninstalling pytz-2025.2:\n"}
+,{"stream_name":"stdout","time":22.286260724999998,"data":"      Successfully uninstalled pytz-2025.2\n"}
+,{"stream_name":"stdout","time":22.470691685,"data":"  Attempting uninstall: tzdata\n"}
+,{"stream_name":"stdout","time":22.797236211,"data":"    Found existing installation: tzdata 2026.3\n"}
+,{"stream_name":"stdout","time":22.835584782,"data":"    Uninstalling tzdata-2026.3:\n"}
+,{"stream_name":"stdout","time":23.250511314,"data":"      Successfully uninstalled tzdata-2026.3\n"}
+,{"stream_name":"stdout","time":23.391618006,"data":"  Attempting uninstall: tqdm\n"}
+,{"stream_name":"stdout","time":23.743093081,"data":"    Found existing installation: tqdm 4.67.3\n"}
+,{"stream_name":"stdout","time":23.752750921,"data":"    Uninstalling tqdm-4.67.3:\n"}
+,{"stream_name":"stdout","time":23.79451874,"data":"      Successfully uninstalled tqdm-4.67.3\n"}
+,{"stream_name":"stdout","time":23.862183994,"data":"  Attempting uninstall: threadpoolctl\n"}
+,{"stream_name":"stdout","time":24.178022249,"data":"    Found existing installation: threadpoolctl 3.6.0\n"}
+,{"stream_name":"stdout","time":24.18263223,"data":"    Uninstalling threadpoolctl-3.6.0:\n"}
+,{"stream_name":"stdout","time":41.239771977,"data":"      Successfully uninstalled threadpoolctl-3.6.0\n"}
+,{"stream_name":"stdout","time":41.270318382,"data":"  Attempting uninstall: tabulate\n"}
+,{"stream_name":"stdout","time":41.548825169,"data":"    Found existing installation: tabulate 0.9.0\n"}
+,{"stream_name":"stdout","time":41.55401167,"data":"    Uninstalling tabulate-0.9.0:\n"}
+,{"stream_name":"stdout","time":41.576238482,"data":"      Successfully uninstalled tabulate-0.9.0\n"}
+,{"stream_name":"stdout","time":41.612863039,"data":"  Attempting uninstall: pyparsing\n"}
+,{"stream_name":"stdout","time":41.795715108,"data":"    Found existing installation: pyparsing 3.3.2\n"}
+,{"stream_name":"stdout","time":41.800203558,"data":"    Uninstalling pyparsing-3.3.2:\n"}
+,{"stream_name":"stdout","time":41.830993875,"data":"      Successfully uninstalled pyparsing-3.3.2\n"}
+,{"stream_name":"stdout","time":41.928534106,"data":"  Attempting uninstall: pluggy\n"}
+,{"stream_name":"stdout","time":42.330090075,"data":"    Found existing installation: pluggy 1.6.0\n"}
+,{"stream_name":"stdout","time":42.334637,"data":"    Uninstalling pluggy-1.6.0:\n"}
+,{"stream_name":"stdout","time":42.354414837,"data":"      Successfully uninstalled pluggy-1.6.0\n"}
+,{"stream_name":"stdout","time":42.390835356,"data":"  Attempting uninstall: pillow\n"}
+,{"stream_name":"stdout","time":42.501582188,"data":"    Found existing installation: pillow 12.3.0\n"}
+,{"stream_name":"stdout","time":42.512706711,"data":"    Uninstalling pillow-12.3.0:\n"}
+,{"stream_name":"stdout","time":42.720327387,"data":"      Successfully uninstalled pillow-12.3.0\n"}
+,{"stream_name":"stdout","time":43.536329092,"data":"  Attempting uninstall: orjson\n"}
+,{"stream_name":"stdout","time":43.883046435,"data":"    Found existing installation: orjson 3.12.0\n"}
+,{"stream_name":"stdout","time":43.888178858,"data":"    Uninstalling orjson-3.12.0:\n"}
+,{"stream_name":"stdout","time":43.901425598,"data":"      Successfully uninstalled orjson-3.12.0\n"}
+,{"stream_name":"stdout","time":43.921867132,"data":"  Attempting uninstall: numpy\n"}
+,{"stream_name":"stdout","time":44.125223918,"data":"    Found existing installation: numpy 2.1.3\n"}
+,{"stream_name":"stdout","time":44.173569067,"data":"    Uninstalling numpy-2.1.3:\n"}
+,{"stream_name":"stdout","time":45.167658612,"data":"      Successfully uninstalled numpy-2.1.3\n"}
+,{"stream_name":"stdout","time":47.532390664,"data":"  Attempting uninstall: networkx\n"}
+,{"stream_name":"stdout","time":47.802157639,"data":"    Found existing installation: networkx 3.6.1\n"}
+,{"stream_name":"stdout","time":47.845638655,"data":"    Uninstalling networkx-3.6.1:\n"}
+,{"stream_name":"stdout","time":48.316361209,"data":"      Successfully uninstalled networkx-3.6.1\n"}
+,{"stream_name":"stdout","time":49.791429294,"data":"  Attempting uninstall: narwhals\n"}
+,{"stream_name":"stdout","time":50.078379457,"data":"    Found existing installation: narwhals 2.25.0\n"}
+,{"stream_name":"stdout","time":50.093265493,"data":"    Uninstalling narwhals-2.25.0:\n"}
+,{"stream_name":"stdout","time":50.260544923,"data":"      Successfully uninstalled narwhals-2.25.0\n"}
+,{"stream_name":"stdout","time":50.697038609,"data":"  Attempting uninstall: lxml\n"}
+,{"stream_name":"stdout","time":51.043411481,"data":"    Found existing installation: lxml 6.1.2\n"}
+,{"stream_name":"stdout","time":51.053395886,"data":"    Uninstalling lxml-6.1.2:\n"}
+,{"stream_name":"stdout","time":51.259207965,"data":"      Successfully uninstalled lxml-6.1.2\n"}
+,{"stream_name":"stdout","time":51.457267634,"data":"  Attempting uninstall: iniconfig\n"}
+,{"stream_name":"stdout","time":51.782980418,"data":"    Found existing installation: iniconfig 2.3.0\n"}
+,{"stream_name":"stdout","time":51.786360353,"data":"    Uninstalling iniconfig-2.3.0:\n"}
+,{"stream_name":"stdout","time":51.797430019,"data":"      Successfully uninstalled iniconfig-2.3.0\n"}
+,{"stream_name":"stdout","time":51.957723286,"data":"  Attempting uninstall: idna\n"}
+,{"stream_name":"stdout","time":52.291676594,"data":"    Found existing installation: idna 3.19\n"}
+,{"stream_name":"stdout","time":52.296232119,"data":"    Uninstalling idna-3.19:\n"}
+,{"stream_name":"stdout","time":52.324357281,"data":"      Successfully uninstalled idna-3.19\n"}
+,{"stream_name":"stdout","time":52.386120278,"data":"  Attempting uninstall: fonttools\n"}
+,{"stream_name":"stdout","time":52.537365332,"data":"    Found existing installation: fonttools 4.64.0\n"}
+,{"stream_name":"stdout","time":52.576789903,"data":"    Uninstalling fonttools-4.64.0:\n"}
+,{"stream_name":"stdout","time":52.991672061,"data":"      Successfully uninstalled fonttools-4.64.0\n"}
+,{"stream_name":"stdout","time":54.03228344,"data":"  Attempting uninstall: dnspython\n"}
+,{"stream_name":"stdout","time":54.12465447,"data":"    Found existing installation: dnspython 2.8.0\n"}
+,{"stream_name":"stdout","time":54.136678417,"data":"    Uninstalling dnspython-2.8.0:\n"}
+,{"stream_name":"stdout","time":54.252270326,"data":"      Successfully uninstalled dnspython-2.8.0\n"}
+,{"stream_name":"stdout","time":54.544651578,"data":"  Attempting uninstall: charset-normalizer\n"}
+,{"stream_name":"stdout","time":54.722044087,"data":"    Found existing installation: charset-normalizer 3.4.9\n"}
+,{"stream_name":"stdout","time":54.728004384,"data":"    Uninstalling charset-normalizer-3.4.9:\n"}
+,{"stream_name":"stdout","time":55.924777041,"data":"      Successfully uninstalled charset-normalizer-3.4.9\n"}
+,{"stream_name":"stdout","time":55.983201875,"data":"  Attempting uninstall: certifi\n"}
+,{"stream_name":"stdout","time":56.222042765,"data":"    Found existing installation: certifi 2026.7.22\n"}
+,{"stream_name":"stdout","time":56.226032899,"data":"    Uninstalling certifi-2026.7.22:\n"}
+,{"stream_name":"stdout","time":56.239356858,"data":"      Successfully uninstalled certifi-2026.7.22\n"}
+,{"stream_name":"stdout","time":56.318864387,"data":"  Attempting uninstall: scipy\n"}
+,{"stream_name":"stdout","time":56.582435996,"data":"    Found existing installation: scipy 1.16.3\n"}
+,{"stream_name":"stdout","time":56.679572175,"data":"    Uninstalling scipy-1.16.3:\n"}
+,{"stream_name":"stdout","time":58.763797865,"data":"      Successfully uninstalled scipy-1.16.3\n"}
+,{"stream_name":"stdout","time":63.498629981,"data":"  Attempting uninstall: pytest\n"}
+,{"stream_name":"stdout","time":63.684705222,"data":"    Found existing installation: pytest 8.4.2\n"}
+,{"stream_name":"stdout","time":63.694689101,"data":"    Uninstalling pytest-8.4.2:\n"}
+,{"stream_name":"stdout","time":65.046502319,"data":"      Successfully uninstalled pytest-8.4.2\n"}
+,{"stream_name":"stdout","time":65.345545687,"data":"  Attempting uninstall: pymongo\n"}
+,{"stream_name":"stdout","time":65.459468841,"data":"    Found existing installation: pymongo 4.18.2\n"}
+,{"stream_name":"stdout","time":65.472033984,"data":"    Uninstalling pymongo-4.18.2:\n"}
+,{"stream_name":"stdout","time":65.643523192,"data":"      Successfully uninstalled pymongo-4.18.2\n"}
+,{"stream_name":"stdout","time":66.151652001,"data":"  Attempting uninstall: plotly\n"}
+,{"stream_name":"stdout","time":66.397328758,"data":"    Found existing installation: plotly 5.24.1\n"}
+,{"stream_name":"stdout","time":67.442287689,"data":"    Uninstalling plotly-5.24.1:\n"}
+,{"stream_name":"stdout","time":78.682700312,"data":"      Successfully uninstalled plotly-5.24.1\n"}
+,{"stream_name":"stdout","time":81.341741685,"data":"  Attempting uninstall: contourpy\n"}
+,{"stream_name":"stdout","time":81.67983213,"data":"    Found existing installation: contourpy 1.3.3\n"}
+,{"stream_name":"stdout","time":81.685074932,"data":"    Uninstalling contourpy-1.3.3:\n"}
+,{"stream_name":"stdout","time":81.712433641,"data":"      Successfully uninstalled contourpy-1.3.3\n"}
+,{"stream_name":"stdout","time":81.807508584,"data":"  Attempting uninstall: scikit-learn\n"}
+,{"stream_name":"stdout","time":82.159338387,"data":"    Found existing installation: scikit-learn 1.6.1\n"}
+,{"stream_name":"stdout","time":82.232006663,"data":"    Uninstalling scikit-learn-1.6.1:\n"}
+,{"stream_name":"stdout","time":83.310609781,"data":"      Successfully uninstalled scikit-learn-1.6.1\n"}
+,{"stream_name":"stdout","time":85.750081742,"data":"  Attempting uninstall: matplotlib\n"}
+,{"stream_name":"stdout","time":85.962512171,"data":"    Found existing installation: matplotlib 3.10.0\n"}
+,{"stream_name":"stdout","time":85.993454503,"data":"    Uninstalling matplotlib-3.10.0:\n"}
+,{"stream_name":"stdout","time":87.9147736,"data":"      Successfully uninstalled matplotlib-3.10.0\n"}
+,{"stream_name":"stderr","time":92.052424689,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":92.052454159,"data":"bigframes 2.48.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":92.052463179,"data":"ydata-profiling 4.18.4 requires matplotlib\u003c=3.10,\u003e=3.5, but you have matplotlib 3.11.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052465786,"data":"ydata-profiling 4.18.4 requires numpy\u003c2.4,\u003e=1.22, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052468437,"data":"ydata-profiling 4.18.4 requires scipy\u003c1.17,\u003e=1.8, but you have scipy 1.18.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052470942,"data":"google-colab 1.0.0 requires jupyter-server==2.20.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052473404,"data":"google-colab 1.0.0 requires pandas==2.2.3, but you have pandas 2.3.3 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052475766,"data":"google-colab 1.0.0 requires requests==2.32.4, but you have requests 2.34.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052478057,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052480369,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052482815,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":92.052520741,"data":"numba 0.61.2 requires numpy\u003c2.3,\u003e=1.24, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stdout","time":92.052737016,"data":"Successfully installed bibtexparser-1.4.4 certifi-2026.10.19 charset-normalizer-3.5.2 contourpy-1.4.0 dnspython-2.9.0 fonttools-4.67.0 idna-3.20 iniconfig-2.3.1 lxml-6.1.3 matminer-0.10.1 matplotlib-3.11.2 monty-2026.10.21 narwhals-2.27.1 networkx-3.7 numpy-2.5.4 orjson-3.13.0 palettable-3.3.3 pillow-13.0.0 plotly-7.1.0 pluggy-1.7.0 pymatgen-2026.9.24 pymatgen-core-2026.10.16 pymongo-4.19.0 pyparsing-3.3.3 pytest-9.1.1 pytest-cov-7.1.0 pytz-2026.5 scikit-learn-1.9.1 scipy-1.18.1 spglib-2.8.0 tabulate-0.10.0 threadpoolctl-3.7.0 tqdm-4.70.1 tzdata-2026.5 uncertainties-3.2.3\n"}
+,{"stream_name":"stdout","time":92.781524891,"data":"+ /usr/bin/python3 -m pip install --disable-pip-version-check --no-deps -e .\n"}
+,{"stream_name":"stdout","time":93.779165874,"data":"Obtaining file:///kaggle/working/sparking-v3-source\n"}
+,{"stream_name":"stdout","time":93.782127281,"data":"  Installing build dependencies: started\n"}
+,{"stream_name":"stdout","time":97.952040054,"data":"  Installing build dependencies: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":97.952943134,"data":"  Checking if build backend supports build_editable: started\n"}
+,{"stream_name":"stdout","time":98.024951107,"data":"  Checking if build backend supports build_editable: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":98.025909565,"data":"  Getting requirements to build editable: started\n"}
+,{"stream_name":"stdout","time":98.137385127,"data":"  Getting requirements to build editable: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":98.140701521,"data":"  Installing backend dependencies: started\n"}
+,{"stream_name":"stdout","time":101.072026039,"data":"  Installing backend dependencies: finished with status 'done'\n"}
+,{"stream_name":"stdout","time":101.073070743,"data":"  Preparing editable metadata (pyproject.toml): started\n"}
+,{"stream_name":"stdout","time":101.244317502,"data":"  Preparing editable metadata (pyproject.toml): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":101.627392828,"data":"Building wheels for collected packages: sparking-materials\n"}
+,{"stream_name":"stdout","time":101.628565045,"data":"  Building editable for sparking-materials (pyproject.toml): started\n"}
+,{"stream_name":"stdout","time":101.697693574,"data":"  Building editable for sparking-materials (pyproject.toml): finished with status 'done'\n"}
+,{"stream_name":"stdout","time":101.69834916,"data":"  Created wheel for sparking-materials: filename=sparking_materials-0.1.0-py3-none-any.whl size=4181 sha256=05ca297bca2af7c2d7de615be73c559aff3d0d4cafd425f7766eecba9d294f4d\n"}
+,{"stream_name":"stdout","time":101.6987048,"data":"  Stored in directory: /tmp/pip-ephem-wheel-cache-4laauhe5/wheels/ce/e2/7e/e7519d3224da2ebb202698d824154f340c520a524cd9d7d37d\n"}
+,{"stream_name":"stdout","time":101.701262278,"data":"Successfully built sparking-materials\n"}
+,{"stream_name":"stdout","time":101.701668276,"data":"Installing collected packages: sparking-materials\n"}
+,{"stream_name":"stdout","time":101.734199242,"data":"Successfully installed sparking-materials-0.1.0\n"}
+,{"stream_name":"stdout","time":101.81241905,"data":"+ /usr/bin/python3 -m pip freeze --all\n"}
+,{"stream_name":"stdout","time":103.62827033,"data":"+ /usr/bin/python3 -m pytest -q\n"}
+,{"stream_name":"stdout","time":111.079797157,"data":".....................                                                    [100%]\n"}
+,{"stream_name":"stdout","time":111.079830992,"data":"21 passed in 4.99s\n"}
+,{"stream_name":"stdout","time":111.613073204,"data":"+ /usr/bin/python3 scripts/run_successor_v3.py --root /kaggle/working/sparking-v3-source --run-id kaggle-development-v3-r1 --task-type GPU\n"}
+,{"stream_name":"stderr","time":126.929049806,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":155.840071529,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":184.398758903,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":467.244399979,"data":"SPARKING_V3_OUTER_COMPLETE=O\n"}
+,{"stream_name":"stderr","time":470.256650603,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":499.072456831,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":527.861624276,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":830.327118402,"data":"SPARKING_V3_OUTER_COMPLETE=S\n"}
+,{"stream_name":"stderr","time":833.48593092,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":862.452370918,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":891.350170764,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":1217.385954993,"data":"SPARKING_V3_OUTER_COMPLETE=In\n"}
+,{"stream_name":"stderr","time":1220.582725134,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1249.461070197,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1278.382591821,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":1603.941360282,"data":"SPARKING_V3_OUTER_COMPLETE=Ge\n"}
+,{"stream_name":"stderr","time":1607.038076197,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1636.021361512,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":1664.93092086,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":1993.503979696,"data":"SPARKING_V3_OUTER_COMPLETE=Sb\n"}
+,{"stream_name":"stderr","time":1996.411038501,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2025.162797165,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2053.938604194,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":2387.723356718,"data":"SPARKING_V3_OUTER_COMPLETE=Ba\n"}
+,{"stream_name":"stderr","time":2390.902750218,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2419.751585682,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2448.618055297,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":2798.158725484,"data":"SPARKING_V3_OUTER_COMPLETE=Co\n"}
+,{"stream_name":"stderr","time":2801.377121273,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2830.041424937,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stderr","time":2858.729885267,"data":"Default metric period is 5 because MAE is/are not implemented for GPU\n"}
+,{"stream_name":"stdout","time":3203.818825514,"data":"SPARKING_V3_OUTER_COMPLETE=F\n"}
+,{"stream_name":"stdout","time":3203.866374708,"data":"{\n"}
+,{"stream_name":"stdout","time":3203.866400935,"data":"  \"development_admission\": {\n"}
+,{"stream_name":"stdout","time":3203.866405304,"data":"    \"admission_rule\": {\n"}
+,{"stream_name":"stdout","time":3203.866408659,"data":"      \"minimum_improved_elements_over_matched_unweighted_extra_trees\": 5,\n"}
+,{"stream_name":"stdout","time":3203.866412195,"data":"      \"minimum_macro_mae_improvement_over_catboost_ev\": 0.02,\n"}
+,{"stream_name":"stdout","time":3203.866415419,"data":"      \"minimum_macro_mae_improvement_over_matched_unweighted_extra_trees_ev\": 0.01,\n"}
+,{"stream_name":"stdout","time":3203.866418701,"data":"      \"require_all_development_elements\": true,\n"}
+,{"stream_name":"stdout","time":3203.866429682,"data":"      \"require_finite_manifest_valid_evidence\": true,\n"}
+,{"stream_name":"stdout","time":3203.866432406,"data":"      \"require_nondegenerate_weights_each_element\": true,\n"}
+,{"stream_name":"stdout","time":3203.866434816,"data":"      \"require_nonzero_exponent\": true\n"}
+,{"stream_name":"stdout","time":3203.866437251,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866439477,"data":"    \"all_development_elements_complete\": true,\n"}
+,{"stream_name":"stdout","time":3203.866442984,"data":"    \"finite_evidence\": true,\n"}
+,{"stream_name":"stdout","time":3203.86644675,"data":"    \"improved_element_count_over_matched_unweighted_extra_trees\": 5,\n"}
+,{"stream_name":"stdout","time":3203.866449448,"data":"    \"macro_mae_improvement_over_catboost_ev\": 0.041814193968347825,\n"}
+,{"stream_name":"stdout","time":3203.866451949,"data":"    \"macro_mae_improvement_over_matched_unweighted_extra_trees_ev\": 0.009123345453943471,\n"}
+,{"stream_name":"stdout","time":3203.866454453,"data":"    \"matched_unweighted_control\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.866456962,"data":"    \"passed\": false,\n"}
+,{"stream_name":"stdout","time":3203.866459394,"data":"    \"per_element_improvement_over_catboost_ev\": {\n"}
+,{"stream_name":"stdout","time":3203.866461798,"data":"      \"Ba\": 0.0068179732695468065,\n"}
+,{"stream_name":"stdout","time":3203.866464154,"data":"      \"Co\": 0.016545641521047066,\n"}
+,{"stream_name":"stdout","time":3203.866466513,"data":"      \"F\": 0.2574011875967779,\n"}
+,{"stream_name":"stdout","time":3203.866468928,"data":"      \"Ge\": 0.040594393021932684,\n"}
+,{"stream_name":"stdout","time":3203.866471256,"data":"      \"In\": 0.011574975828967049,\n"}
+,{"stream_name":"stdout","time":3203.866473572,"data":"      \"O\": 0.010510595844329007,\n"}
+,{"stream_name":"stdout","time":3203.866475935,"data":"      \"S\": -0.010085376522601108,\n"}
+,{"stream_name":"stdout","time":3203.866478344,"data":"      \"Sb\": 0.001154161186783187\n"}
+,{"stream_name":"stdout","time":3203.866480684,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866509666,"data":"    \"per_element_improvement_over_matched_unweighted_extra_trees_ev\": {\n"}
+,{"stream_name":"stdout","time":3203.866516854,"data":"      \"Ba\": 0.009399049979347263,\n"}
+,{"stream_name":"stdout","time":3203.866520596,"data":"      \"Co\": -0.00047217915590014314,\n"}
+,{"stream_name":"stdout","time":3203.866524192,"data":"      \"F\": 0.05266240079365114,\n"}
+,{"stream_name":"stdout","time":3203.866527739,"data":"      \"Ge\": 0.004185771081816225,\n"}
+,{"stream_name":"stdout","time":3203.866531296,"data":"      \"In\": -0.0031354078121835216,\n"}
+,{"stream_name":"stdout","time":3203.86653483,"data":"      \"O\": -0.009350227658851296,\n"}
+,{"stream_name":"stdout","time":3203.866540186,"data":"      \"S\": 0.015375693024312409,\n"}
+,{"stream_name":"stdout","time":3203.866547033,"data":"      \"Sb\": 0.004321663379355689\n"}
+,{"stream_name":"stdout","time":3203.866549446,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866551758,"data":"    \"selected_model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.866554222,"data":"    \"weights_nondegenerate_each_element\": true\n"}
+,{"stream_name":"stdout","time":3203.866556601,"data":"  },\n"}
+,{"stream_name":"stdout","time":3203.8665589,"data":"  \"official_fold_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":3203.866561311,"data":"  \"phase\": \"DEVELOPMENT\",\n"}
+,{"stream_name":"stdout","time":3203.866563685,"data":"  \"protected_confirmatory_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":3203.866569411,"data":"  \"rows\": [\n"}
+,{"stream_name":"stdout","time":3203.866571838,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866574105,"data":"      \"bias_ev\": -0.8316556587856535,\n"}
+,{"stream_name":"stdout","time":3203.866576508,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866578883,"data":"      \"mae_ev\": 1.4915420516831195,\n"}
+,{"stream_name":"stdout","time":3203.866581266,"data":"      \"median_ae_ev\": 1.0028301813630947,\n"}
+,{"stream_name":"stdout","time":3203.866583657,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.866586014,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866588338,"data":"      \"rmse_ev\": 2.0199453056768912,\n"}
+,{"stream_name":"stdout","time":3203.866590705,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866594115,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.866596479,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86659871,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86660097,"data":"      \"bias_ev\": -0.490678726341195,\n"}
+,{"stream_name":"stdout","time":3203.866603292,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866606109,"data":"      \"mae_ev\": 1.4379995731215556,\n"}
+,{"stream_name":"stdout","time":3203.866608439,"data":"      \"median_ae_ev\": 1.187970370352033,\n"}
+,{"stream_name":"stdout","time":3203.866610998,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.866613462,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866615763,"data":"      \"rmse_ev\": 1.8295694053676892,\n"}
+,{"stream_name":"stdout","time":3203.866618083,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866620394,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.866622692,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866624922,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866627144,"data":"      \"bias_ev\": -0.27862193967275356,\n"}
+,{"stream_name":"stdout","time":3203.866629472,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866631799,"data":"      \"mae_ev\": 1.4919448795663866,\n"}
+,{"stream_name":"stdout","time":3203.866634148,"data":"      \"median_ae_ev\": 1.227693605168489,\n"}
+,{"stream_name":"stdout","time":3203.866636563,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.866638929,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866641309,"data":"      \"rmse_ev\": 1.7663177309857978,\n"}
+,{"stream_name":"stdout","time":3203.866643672,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866645962,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.866648258,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866650538,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866652774,"data":"      \"bias_ev\": -0.31301624607417694,\n"}
+,{"stream_name":"stdout","time":3203.866655086,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866657406,"data":"      \"mae_ev\": 1.5039880848011757,\n"}
+,{"stream_name":"stdout","time":3203.866659818,"data":"      \"median_ae_ev\": 1.190902308998603,\n"}
+,{"stream_name":"stdout","time":3203.866662178,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.866664528,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866666873,"data":"      \"rmse_ev\": 1.783290164349107,\n"}
+,{"stream_name":"stdout","time":3203.866671122,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866673599,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.866675917,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866678146,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86668038,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.866682774,"data":"      \"bias_ev\": -0.26616866802582384,\n"}
+,{"stream_name":"stdout","time":3203.866685113,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866687464,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.866689831,"data":"      \"mae_ev\": 1.4841272612979954,\n"}
+,{"stream_name":"stdout","time":3203.866692172,"data":"      \"median_ae_ev\": 1.1579907407407384,\n"}
+,{"stream_name":"stdout","time":3203.86669454,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.866696938,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866699229,"data":"      \"rmse_ev\": 1.755074408908936,\n"}
+,{"stream_name":"stdout","time":3203.866701596,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866703887,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.86670618,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866708532,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866710771,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.866713157,"data":"      \"bias_ev\": -0.26616136595310885,\n"}
+,{"stream_name":"stdout","time":3203.866715505,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866717821,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.866720173,"data":"      \"mae_ev\": 1.48454250764526,\n"}
+,{"stream_name":"stdout","time":3203.866722556,"data":"      \"median_ae_ev\": 1.1627666666666654,\n"}
+,{"stream_name":"stdout","time":3203.866724894,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.866727282,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866729555,"data":"      \"rmse_ev\": 1.7554012112003374,\n"}
+,{"stream_name":"stdout","time":3203.866731875,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866737241,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.86673954,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866742616,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86674503,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.866747453,"data":"      \"bias_ev\": -0.28739946653075077,\n"}
+,{"stream_name":"stdout","time":3203.866749875,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866752371,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.8667548,"data":"      \"mae_ev\": 1.4934774889568467,\n"}
+,{"stream_name":"stdout","time":3203.866757141,"data":"      \"median_ae_ev\": 1.153742592592593,\n"}
+,{"stream_name":"stdout","time":3203.866759608,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.866762029,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866764335,"data":"      \"rmse_ev\": 1.7679294529374996,\n"}
+,{"stream_name":"stdout","time":3203.866766669,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866770047,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.866774336,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866776794,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866779107,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.866781548,"data":"      \"bias_ev\": -0.28894555555555523,\n"}
+,{"stream_name":"stdout","time":3203.866783964,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866786793,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.866789333,"data":"      \"mae_ev\": 1.495291121304791,\n"}
+,{"stream_name":"stdout","time":3203.866791791,"data":"      \"median_ae_ev\": 1.161594444444444,\n"}
+,{"stream_name":"stdout","time":3203.866794232,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.866796683,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866799076,"data":"      \"rmse_ev\": 1.7713514015303018,\n"}
+,{"stream_name":"stdout","time":3203.866801477,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866803909,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.866806273,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866808511,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866811333,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.866813845,"data":"      \"bias_ev\": -0.24439559293238167,\n"}
+,{"stream_name":"stdout","time":3203.866816299,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866818654,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.866821067,"data":"      \"mae_ev\": 1.513485684675501,\n"}
+,{"stream_name":"stdout","time":3203.866823513,"data":"      \"median_ae_ev\": 1.211390740740733,\n"}
+,{"stream_name":"stdout","time":3203.86682599,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.866828503,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866830961,"data":"      \"rmse_ev\": 1.7751764312643041,\n"}
+,{"stream_name":"stdout","time":3203.866833991,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.866836428,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.86683879,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866841066,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866843376,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.866845763,"data":"      \"bias_ev\": -0.24306771661569798,\n"}
+,{"stream_name":"stdout","time":3203.86684817,"data":"      \"element\": \"O\",\n"}
+,{"stream_name":"stdout","time":3203.866850513,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.866852936,"data":"      \"mae_ev\": 1.5143256982670743,\n"}
+,{"stream_name":"stdout","time":3203.86685528,"data":"      \"median_ae_ev\": 1.2164111111111096,\n"}
+,{"stream_name":"stdout","time":3203.866857627,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.866860143,"data":"      \"n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.86686253,"data":"      \"rmse_ev\": 1.7751253510800948,\n"}
+,{"stream_name":"stdout","time":3203.866864954,"data":"      \"test_n\": 1090,\n"}
+,{"stream_name":"stdout","time":3203.86686736,"data":"      \"train_n\": 3514\n"}
+,{"stream_name":"stdout","time":3203.8668698,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866872032,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866874359,"data":"      \"bias_ev\": -0.2686223543184708,\n"}
+,{"stream_name":"stdout","time":3203.866878464,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.866880981,"data":"      \"mae_ev\": 0.7702073603146092,\n"}
+,{"stream_name":"stdout","time":3203.866883333,"data":"      \"median_ae_ev\": 0.6536906736244956,\n"}
+,{"stream_name":"stdout","time":3203.866885683,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.866888035,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866890327,"data":"      \"rmse_ev\": 0.9524561742207606,\n"}
+,{"stream_name":"stdout","time":3203.866892657,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866894984,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.866897285,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866899629,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866901891,"data":"      \"bias_ev\": -0.3902473029424808,\n"}
+,{"stream_name":"stdout","time":3203.866904255,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.866906618,"data":"      \"mae_ev\": 0.7737378199190241,\n"}
+,{"stream_name":"stdout","time":3203.866908959,"data":"      \"median_ae_ev\": 0.6671984681433517,\n"}
+,{"stream_name":"stdout","time":3203.86691134,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.866913737,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866916068,"data":"      \"rmse_ev\": 0.9489565943195376,\n"}
+,{"stream_name":"stdout","time":3203.866918425,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866920734,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.866923027,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866926007,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866928248,"data":"      \"bias_ev\": -0.3951665958892873,\n"}
+,{"stream_name":"stdout","time":3203.866930655,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.866933005,"data":"      \"mae_ev\": 0.7420558629899925,\n"}
+,{"stream_name":"stdout","time":3203.866935366,"data":"      \"median_ae_ev\": 0.6473151361999376,\n"}
+,{"stream_name":"stdout","time":3203.86693771,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.866944769,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866947169,"data":"      \"rmse_ev\": 0.9170312553368165,\n"}
+,{"stream_name":"stdout","time":3203.866949538,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866951841,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.866954205,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866956415,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866958651,"data":"      \"bias_ev\": -0.37590256156837454,\n"}
+,{"stream_name":"stdout","time":3203.866961005,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.866963423,"data":"      \"mae_ev\": 0.7333560799645604,\n"}
+,{"stream_name":"stdout","time":3203.866965779,"data":"      \"median_ae_ev\": 0.6242674767219942,\n"}
+,{"stream_name":"stdout","time":3203.866968125,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.866970494,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.866972874,"data":"      \"rmse_ev\": 0.9049135443185575,\n"}
+,{"stream_name":"stdout","time":3203.866975535,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.86697786,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.866982062,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.866984457,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.866986676,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.866989055,"data":"      \"bias_ev\": -0.39866916041808576,\n"}
+,{"stream_name":"stdout","time":3203.866991391,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.866993962,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.866996341,"data":"      \"mae_ev\": 0.7588171495114739,\n"}
+,{"stream_name":"stdout","time":3203.866998672,"data":"      \"median_ae_ev\": 0.6697055555555574,\n"}
+,{"stream_name":"stdout","time":3203.867001019,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867003423,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867005683,"data":"      \"rmse_ev\": 0.9270828345803841,\n"}
+,{"stream_name":"stdout","time":3203.86700801,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867010317,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.8670126,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867014814,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867017023,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.867019396,"data":"      \"bias_ev\": -0.3986529822767543,\n"}
+,{"stream_name":"stdout","time":3203.867021711,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.867024039,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.867026397,"data":"      \"mae_ev\": 0.7592698875255616,\n"}
+,{"stream_name":"stdout","time":3203.867028729,"data":"      \"median_ae_ev\": 0.6748333333333314,\n"}
+,{"stream_name":"stdout","time":3203.867031061,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.867033431,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867035695,"data":"      \"rmse_ev\": 0.9274072118163668,\n"}
+,{"stream_name":"stdout","time":3203.867038009,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867040328,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.867042608,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867044829,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867047049,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.867049427,"data":"      \"bias_ev\": -0.391003192456259,\n"}
+,{"stream_name":"stdout","time":3203.867051741,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.867054055,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.867056375,"data":"      \"mae_ev\": 0.7434414564871615,\n"}
+,{"stream_name":"stdout","time":3203.867058738,"data":"      \"median_ae_ev\": 0.6560888888888886,\n"}
+,{"stream_name":"stdout","time":3203.867061069,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867063449,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867065723,"data":"      \"rmse_ev\": 0.9173355371535775,\n"}
+,{"stream_name":"stdout","time":3203.867068055,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867070369,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.867072668,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867074909,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867077141,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.867081317,"data":"      \"bias_ev\": -0.39114880708929683,\n"}
+,{"stream_name":"stdout","time":3203.867083738,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.867086075,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.867088414,"data":"      \"mae_ev\": 0.7439696319018398,\n"}
+,{"stream_name":"stdout","time":3203.867090881,"data":"      \"median_ae_ev\": 0.6600222222222203,\n"}
+,{"stream_name":"stdout","time":3203.867093212,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.86709561,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867097891,"data":"      \"rmse_ev\": 0.9173850467803986,\n"}
+,{"stream_name":"stdout","time":3203.867100211,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867102497,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.867104791,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867118241,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867120359,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.867122583,"data":"      \"bias_ev\": -0.38651013406043977,\n"}
+,{"stream_name":"stdout","time":3203.867124749,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.86712695,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.867129136,"data":"      \"mae_ev\": 0.7360528970688474,\n"}
+,{"stream_name":"stdout","time":3203.867131344,"data":"      \"median_ae_ev\": 0.6510018518518521,\n"}
+,{"stream_name":"stdout","time":3203.867133542,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867135761,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.86713788,"data":"      \"rmse_ev\": 0.9117282991359286,\n"}
+,{"stream_name":"stdout","time":3203.867140051,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867142244,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.867144392,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867146466,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867148541,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.867150762,"data":"      \"bias_ev\": -0.3871276073619621,\n"}
+,{"stream_name":"stdout","time":3203.867152943,"data":"      \"element\": \"S\",\n"}
+,{"stream_name":"stdout","time":3203.867155128,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.867157319,"data":"      \"mae_ev\": 0.7361568507157458,\n"}
+,{"stream_name":"stdout","time":3203.867159554,"data":"      \"median_ae_ev\": 0.6547222222222213,\n"}
+,{"stream_name":"stdout","time":3203.867276075,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.867290034,"data":"      \"n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867294262,"data":"      \"rmse_ev\": 0.9113145374472051,\n"}
+,{"stream_name":"stdout","time":3203.86729787,"data":"      \"test_n\": 652,\n"}
+,{"stream_name":"stdout","time":3203.867301414,"data":"      \"train_n\": 3952\n"}
+,{"stream_name":"stdout","time":3203.867305009,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867308446,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867311791,"data":"      \"bias_ev\": 0.23950365513136887,\n"}
+,{"stream_name":"stdout","time":3203.867315297,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867318866,"data":"      \"mae_ev\": 0.543449673193761,\n"}
+,{"stream_name":"stdout","time":3203.867331279,"data":"      \"median_ae_ev\": 0.4539292580319921,\n"}
+,{"stream_name":"stdout","time":3203.86733509,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.867338645,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867342085,"data":"      \"rmse_ev\": 0.718561920859027,\n"}
+,{"stream_name":"stdout","time":3203.867345601,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867349069,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.86735263,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867356144,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867365545,"data":"      \"bias_ev\": 0.09725874452981498,\n"}
+,{"stream_name":"stdout","time":3203.867369359,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867372967,"data":"      \"mae_ev\": 0.3392895844841298,\n"}
+,{"stream_name":"stdout","time":3203.867376488,"data":"      \"median_ae_ev\": 0.19772612973893466,\n"}
+,{"stream_name":"stdout","time":3203.867380039,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.867383777,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867387297,"data":"      \"rmse_ev\": 0.5245560484131143,\n"}
+,{"stream_name":"stdout","time":3203.867390754,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867394227,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867397667,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867401005,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86740439,"data":"      \"bias_ev\": 0.10192607397105119,\n"}
+,{"stream_name":"stdout","time":3203.86740794,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867411455,"data":"      \"mae_ev\": 0.3415446443242485,\n"}
+,{"stream_name":"stdout","time":3203.867415014,"data":"      \"median_ae_ev\": 0.21850077471619067,\n"}
+,{"stream_name":"stdout","time":3203.867418712,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.867422422,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867425867,"data":"      \"rmse_ev\": 0.5256682305000394,\n"}
+,{"stream_name":"stdout","time":3203.867429348,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867432788,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867436317,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867439637,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867443044,"data":"      \"bias_ev\": 0.10009265240347434,\n"}
+,{"stream_name":"stdout","time":3203.867446626,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867450428,"data":"      \"mae_ev\": 0.33693217072878495,\n"}
+,{"stream_name":"stdout","time":3203.867453822,"data":"      \"median_ae_ev\": 0.20086334131238337,\n"}
+,{"stream_name":"stdout","time":3203.867457442,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.867461087,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867464518,"data":"      \"rmse_ev\": 0.5244609911047811,\n"}
+,{"stream_name":"stdout","time":3203.867468073,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867471485,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867475012,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867478378,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867481721,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.867508059,"data":"      \"bias_ev\": 0.07811761789111456,\n"}
+,{"stream_name":"stdout","time":3203.867512101,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867515647,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.867519292,"data":"      \"mae_ev\": 0.3222217870876344,\n"}
+,{"stream_name":"stdout","time":3203.867522857,"data":"      \"median_ae_ev\": 0.21764259259259294,\n"}
+,{"stream_name":"stdout","time":3203.867526455,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867530154,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867533579,"data":"      \"rmse_ev\": 0.5095118686526722,\n"}
+,{"stream_name":"stdout","time":3203.867537091,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867540514,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867543949,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867547261,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867550575,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.867554185,"data":"      \"bias_ev\": 0.07774729811778948,\n"}
+,{"stream_name":"stdout","time":3203.8675577,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867561192,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.867564759,"data":"      \"mae_ev\": 0.3219230115361265,\n"}
+,{"stream_name":"stdout","time":3203.867568247,"data":"      \"median_ae_ev\": 0.21826666666666295,\n"}
+,{"stream_name":"stdout","time":3203.867571706,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.867575022,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867578374,"data":"      \"rmse_ev\": 0.5096287060028994,\n"}
+,{"stream_name":"stdout","time":3203.867581968,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867585444,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.86758889,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867592298,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867595564,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.867599094,"data":"      \"bias_ev\": 0.08004612426634225,\n"}
+,{"stream_name":"stdout","time":3203.867602615,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867607473,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.86761084,"data":"      \"mae_ev\": 0.3253571948998179,\n"}
+,{"stream_name":"stdout","time":3203.867614318,"data":"      \"median_ae_ev\": 0.21328518518519812,\n"}
+,{"stream_name":"stdout","time":3203.867617915,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867621597,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.86762498,"data":"      \"rmse_ev\": 0.5117800114965975,\n"}
+,{"stream_name":"stdout","time":3203.867628528,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.86763215,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867635677,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867638811,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86764214,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.867645758,"data":"      \"bias_ev\": 0.08032152398299872,\n"}
+,{"stream_name":"stdout","time":3203.867649265,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867655374,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.867658978,"data":"      \"mae_ev\": 0.3254670613236188,\n"}
+,{"stream_name":"stdout","time":3203.867662546,"data":"      \"median_ae_ev\": 0.21631666666666838,\n"}
+,{"stream_name":"stdout","time":3203.867666102,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.867669791,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867673255,"data":"      \"rmse_ev\": 0.5116331427282392,\n"}
+,{"stream_name":"stdout","time":3203.8676767,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867680133,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867683648,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867686863,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867690141,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.867693648,"data":"      \"bias_ev\": 0.08154765229710513,\n"}
+,{"stream_name":"stdout","time":3203.867697173,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867700721,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.867704236,"data":"      \"mae_ev\": 0.3300351244687312,\n"}
+,{"stream_name":"stdout","time":3203.867707759,"data":"      \"median_ae_ev\": 0.2219722222222249,\n"}
+,{"stream_name":"stdout","time":3203.867711275,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867715017,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867718439,"data":"      \"rmse_ev\": 0.5180175104438457,\n"}
+,{"stream_name":"stdout","time":3203.867722015,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867725406,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867728863,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86773221,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867735475,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.867739083,"data":"      \"bias_ev\": 0.08114001214329013,\n"}
+,{"stream_name":"stdout","time":3203.867742615,"data":"      \"element\": \"In\",\n"}
+,{"stream_name":"stdout","time":3203.867746309,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.867749897,"data":"      \"mae_ev\": 0.3298775349119613,\n"}
+,{"stream_name":"stdout","time":3203.867753398,"data":"      \"median_ae_ev\": 0.2235888888888835,\n"}
+,{"stream_name":"stdout","time":3203.867756992,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.867762531,"data":"      \"n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.867766039,"data":"      \"rmse_ev\": 0.5182510555021016,\n"}
+,{"stream_name":"stdout","time":3203.867769556,"data":"      \"test_n\": 366,\n"}
+,{"stream_name":"stdout","time":3203.86777296,"data":"      \"train_n\": 4238\n"}
+,{"stream_name":"stdout","time":3203.867776466,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867779754,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86778308,"data":"      \"bias_ev\": 0.004615947409107893,\n"}
+,{"stream_name":"stdout","time":3203.867786588,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.867790126,"data":"      \"mae_ev\": 0.49084682066896096,\n"}
+,{"stream_name":"stdout","time":3203.86779364,"data":"      \"median_ae_ev\": 0.3420648768384429,\n"}
+,{"stream_name":"stdout","time":3203.86779715,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.867803491,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867807031,"data":"      \"rmse_ev\": 0.7197041825913761,\n"}
+,{"stream_name":"stdout","time":3203.867810491,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867813845,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.867817276,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867820581,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86782402,"data":"      \"bias_ev\": -0.1393428056638333,\n"}
+,{"stream_name":"stdout","time":3203.867827703,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.867831198,"data":"      \"mae_ev\": 0.34847076028489204,\n"}
+,{"stream_name":"stdout","time":3203.867834771,"data":"      \"median_ae_ev\": 0.16419399696532044,\n"}
+,{"stream_name":"stdout","time":3203.867838358,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.867841942,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867845174,"data":"      \"rmse_ev\": 0.609750519288323,\n"}
+,{"stream_name":"stdout","time":3203.867848591,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867852046,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.867855528,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867858896,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867862016,"data":"      \"bias_ev\": -0.09332425372257502,\n"}
+,{"stream_name":"stdout","time":3203.867865531,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.867869021,"data":"      \"mae_ev\": 0.35736531894257856,\n"}
+,{"stream_name":"stdout","time":3203.867872573,"data":"      \"median_ae_ev\": 0.17676775017524776,\n"}
+,{"stream_name":"stdout","time":3203.867876555,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.867880231,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867883721,"data":"      \"rmse_ev\": 0.5765365243343729,\n"}
+,{"stream_name":"stdout","time":3203.867887228,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867890614,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.86789404,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867897348,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867900709,"data":"      \"bias_ev\": -0.11319418164684988,\n"}
+,{"stream_name":"stdout","time":3203.867904425,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.86790797,"data":"      \"mae_ev\": 0.3569682787720899,\n"}
+,{"stream_name":"stdout","time":3203.86791148,"data":"      \"median_ae_ev\": 0.16835864732874742,\n"}
+,{"stream_name":"stdout","time":3203.867915056,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.867918649,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867922005,"data":"      \"rmse_ev\": 0.5797257844491601,\n"}
+,{"stream_name":"stdout","time":3203.867925519,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.867928973,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.867932385,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867935685,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867939004,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.86794255,"data":"      \"bias_ev\": -0.14315890353630492,\n"}
+,{"stream_name":"stdout","time":3203.867945986,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.867952349,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.86795593,"data":"      \"mae_ev\": 0.32055965683197346,\n"}
+,{"stream_name":"stdout","time":3203.867959449,"data":"      \"median_ae_ev\": 0.12699259259258938,\n"}
+,{"stream_name":"stdout","time":3203.867962731,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.867966251,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.86796964,"data":"      \"rmse_ev\": 0.5702401175148796,\n"}
+,{"stream_name":"stdout","time":3203.867973154,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.8679766,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.867980131,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.867983474,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.867986871,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.86799044,"data":"      \"bias_ev\": -0.1443822661644698,\n"}
+,{"stream_name":"stdout","time":3203.867994025,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.867997512,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.868001015,"data":"      \"mae_ev\": 0.32082288135593257,\n"}
+,{"stream_name":"stdout","time":3203.8680045,"data":"      \"median_ae_ev\": 0.12541111111110292,\n"}
+,{"stream_name":"stdout","time":3203.868008019,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.868011711,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868015104,"data":"      \"rmse_ev\": 0.5702746215895339,\n"}
+,{"stream_name":"stdout","time":3203.868018589,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.86802207,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.868025559,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868028936,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868032291,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868035817,"data":"      \"bias_ev\": -0.1456778196275374,\n"}
+,{"stream_name":"stdout","time":3203.868039326,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.868042789,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.868046344,"data":"      \"mae_ev\": 0.31637388575015724,\n"}
+,{"stream_name":"stdout","time":3203.868049837,"data":"      \"median_ae_ev\": 0.12799629629629122,\n"}
+,{"stream_name":"stdout","time":3203.868053281,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868056706,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868060083,"data":"      \"rmse_ev\": 0.5637995839509532,\n"}
+,{"stream_name":"stdout","time":3203.868063386,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868066724,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.868070096,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868073374,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868076596,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868080118,"data":"      \"bias_ev\": -0.14638838669177676,\n"}
+,{"stream_name":"stdout","time":3203.868083102,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.868086607,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.868090575,"data":"      \"mae_ev\": 0.3163209039548026,\n"}
+,{"stream_name":"stdout","time":3203.868097664,"data":"      \"median_ae_ev\": 0.12810000000000116,\n"}
+,{"stream_name":"stdout","time":3203.868101201,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.868104749,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868108161,"data":"      \"rmse_ev\": 0.5642329489239899,\n"}
+,{"stream_name":"stdout","time":3203.868111681,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868115099,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.868118502,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868121839,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868125117,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868128651,"data":"      \"bias_ev\": -0.14669884913161782,\n"}
+,{"stream_name":"stdout","time":3203.868132171,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.868135665,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.868139197,"data":"      \"mae_ev\": 0.31503069679849377,\n"}
+,{"stream_name":"stdout","time":3203.868143357,"data":"      \"median_ae_ev\": 0.12565555555555585,\n"}
+,{"stream_name":"stdout","time":3203.868147016,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868150531,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868153932,"data":"      \"rmse_ev\": 0.563824684096941,\n"}
+,{"stream_name":"stdout","time":3203.868157419,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868160944,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.868164453,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868167796,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868171196,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868174834,"data":"      \"bias_ev\": -0.1470331763967361,\n"}
+,{"stream_name":"stdout","time":3203.868178397,"data":"      \"element\": \"Ge\",\n"}
+,{"stream_name":"stdout","time":3203.868181874,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.868185399,"data":"      \"mae_ev\": 0.3142134651600756,\n"}
+,{"stream_name":"stdout","time":3203.868188952,"data":"      \"median_ae_ev\": 0.12233333333333912,\n"}
+,{"stream_name":"stdout","time":3203.86819265,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.868196489,"data":"      \"n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868199916,"data":"      \"rmse_ev\": 0.5631244371437959,\n"}
+,{"stream_name":"stdout","time":3203.868203447,"data":"      \"test_n\": 354,\n"}
+,{"stream_name":"stdout","time":3203.868207037,"data":"      \"train_n\": 4250\n"}
+,{"stream_name":"stdout","time":3203.868210513,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868213805,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868217187,"data":"      \"bias_ev\": 0.32600155491339794,\n"}
+,{"stream_name":"stdout","time":3203.868220696,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868224224,"data":"      \"mae_ev\": 0.5640497584131647,\n"}
+,{"stream_name":"stdout","time":3203.868227776,"data":"      \"median_ae_ev\": 0.4119259431429228,\n"}
+,{"stream_name":"stdout","time":3203.868231287,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.868234851,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868238291,"data":"      \"rmse_ev\": 0.7889023790010848,\n"}
+,{"stream_name":"stdout","time":3203.868244415,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868247961,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868251441,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868254699,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868258061,"data":"      \"bias_ev\": 0.1787430055042507,\n"}
+,{"stream_name":"stdout","time":3203.868261658,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868265195,"data":"      \"mae_ev\": 0.4757074882131203,\n"}
+,{"stream_name":"stdout","time":3203.868268697,"data":"      \"median_ae_ev\": 0.33118362586402955,\n"}
+,{"stream_name":"stdout","time":3203.868272258,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.868275874,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868279257,"data":"      \"rmse_ev\": 0.7191887953313738,\n"}
+,{"stream_name":"stdout","time":3203.868282696,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868286129,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868289683,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868293031,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868296354,"data":"      \"bias_ev\": 0.18736022625180468,\n"}
+,{"stream_name":"stdout","time":3203.868299907,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868303406,"data":"      \"mae_ev\": 0.46985319762737326,\n"}
+,{"stream_name":"stdout","time":3203.868306937,"data":"      \"median_ae_ev\": 0.34710892617590217,\n"}
+,{"stream_name":"stdout","time":3203.868310499,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.868314162,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.86831757,"data":"      \"rmse_ev\": 0.689470311167268,\n"}
+,{"stream_name":"stdout","time":3203.868321004,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868324473,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868327932,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868331217,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86833462,"data":"      \"bias_ev\": 0.19032614113810206,\n"}
+,{"stream_name":"stdout","time":3203.868338226,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868341799,"data":"      \"mae_ev\": 0.4627351934024308,\n"}
+,{"stream_name":"stdout","time":3203.868345351,"data":"      \"median_ae_ev\": 0.32817249661257675,\n"}
+,{"stream_name":"stdout","time":3203.868348894,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.868352549,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868355895,"data":"      \"rmse_ev\": 0.6825460325720337,\n"}
+,{"stream_name":"stdout","time":3203.868365217,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868369098,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868372612,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868375891,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868379219,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868382779,"data":"      \"bias_ev\": 0.163901797063335,\n"}
+,{"stream_name":"stdout","time":3203.868386347,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868389894,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.868393401,"data":"      \"mae_ev\": 0.4659026955950033,\n"}
+,{"stream_name":"stdout","time":3203.868399951,"data":"      \"median_ae_ev\": 0.3186944444444473,\n"}
+,{"stream_name":"stdout","time":3203.868403634,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868407237,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868410684,"data":"      \"rmse_ev\": 0.6953588440566902,\n"}
+,{"stream_name":"stdout","time":3203.868414134,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868417571,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868421113,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868424432,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868427765,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868431874,"data":"      \"bias_ev\": 0.16429020381328022,\n"}
+,{"stream_name":"stdout","time":3203.868435373,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868438943,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.86844244,"data":"      \"mae_ev\": 0.4655461538461539,\n"}
+,{"stream_name":"stdout","time":3203.868446041,"data":"      \"median_ae_ev\": 0.3233388888888791,\n"}
+,{"stream_name":"stdout","time":3203.868449605,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.868453369,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868456793,"data":"      \"rmse_ev\": 0.6951775457051216,\n"}
+,{"stream_name":"stdout","time":3203.86846027,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868463567,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868467017,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86847031,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868473645,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868477077,"data":"      \"bias_ev\": 0.16397274819197846,\n"}
+,{"stream_name":"stdout","time":3203.868480492,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868483878,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.868498213,"data":"      \"mae_ev\": 0.4615810322156476,\n"}
+,{"stream_name":"stdout","time":3203.868501677,"data":"      \"median_ae_ev\": 0.32791296296296524,\n"}
+,{"stream_name":"stdout","time":3203.868508351,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868512156,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868515679,"data":"      \"rmse_ev\": 0.686251326456811,\n"}
+,{"stream_name":"stdout","time":3203.868519234,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868522718,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868526151,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868529447,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868532735,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868536388,"data":"      \"bias_ev\": 0.16434549638395748,\n"}
+,{"stream_name":"stdout","time":3203.868539967,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868543533,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.868546998,"data":"      \"mae_ev\": 0.4621680473372782,\n"}
+,{"stream_name":"stdout","time":3203.868550482,"data":"      \"median_ae_ev\": 0.32882222222222623,\n"}
+,{"stream_name":"stdout","time":3203.868553994,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.868561064,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868564623,"data":"      \"rmse_ev\": 0.6867817141940183,\n"}
+,{"stream_name":"stdout","time":3203.868568148,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868571588,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868575094,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868578398,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86858173,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868585297,"data":"      \"bias_ev\": 0.1690001095770321,\n"}
+,{"stream_name":"stdout","time":3203.868588699,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868592422,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.868595865,"data":"      \"mae_ev\": 0.46273690554459807,\n"}
+,{"stream_name":"stdout","time":3203.868598871,"data":"      \"median_ae_ev\": 0.3262574074074093,\n"}
+,{"stream_name":"stdout","time":3203.868602125,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868605725,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868609006,"data":"      \"rmse_ev\": 0.684156759430364,\n"}
+,{"stream_name":"stdout","time":3203.868612675,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868615988,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.86861922,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868622538,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868625737,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868628913,"data":"      \"bias_ev\": 0.16938339907955233,\n"}
+,{"stream_name":"stdout","time":3203.868632181,"data":"      \"element\": \"Sb\",\n"}
+,{"stream_name":"stdout","time":3203.868635462,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.868638668,"data":"      \"mae_ev\": 0.4632001643655491,\n"}
+,{"stream_name":"stdout","time":3203.868641827,"data":"      \"median_ae_ev\": 0.3312666666666746,\n"}
+,{"stream_name":"stdout","time":3203.868644983,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.868649651,"data":"      \"n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.868652995,"data":"      \"rmse_ev\": 0.6847778832114816,\n"}
+,{"stream_name":"stdout","time":3203.868656385,"data":"      \"test_n\": 338,\n"}
+,{"stream_name":"stdout","time":3203.86866008,"data":"      \"train_n\": 4266\n"}
+,{"stream_name":"stdout","time":3203.868663274,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868666257,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86866983,"data":"      \"bias_ev\": 0.14780039613779464,\n"}
+,{"stream_name":"stdout","time":3203.86867322,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868676473,"data":"      \"mae_ev\": 0.8141498729158205,\n"}
+,{"stream_name":"stdout","time":3203.868679866,"data":"      \"median_ae_ev\": 0.6955970461546945,\n"}
+,{"stream_name":"stdout","time":3203.868683181,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.868686423,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.86868953,"data":"      \"rmse_ev\": 1.0785746027553413,\n"}
+,{"stream_name":"stdout","time":3203.868692852,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868695858,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.868699258,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868705953,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868709961,"data":"      \"bias_ev\": -0.013985765382875676,\n"}
+,{"stream_name":"stdout","time":3203.868713051,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868716448,"data":"      \"mae_ev\": 0.6385888012897214,\n"}
+,{"stream_name":"stdout","time":3203.868719817,"data":"      \"median_ae_ev\": 0.4236487357022434,\n"}
+,{"stream_name":"stdout","time":3203.868723208,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.868726588,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868729817,"data":"      \"rmse_ev\": 0.937710680745884,\n"}
+,{"stream_name":"stdout","time":3203.868733097,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868736421,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.86873949,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868742589,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868745769,"data":"      \"bias_ev\": 0.01129408230516978,\n"}
+,{"stream_name":"stdout","time":3203.868749159,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868752396,"data":"      \"mae_ev\": 0.6601613638405812,\n"}
+,{"stream_name":"stdout","time":3203.868755847,"data":"      \"median_ae_ev\": 0.49906398506653904,\n"}
+,{"stream_name":"stdout","time":3203.868759431,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.868762838,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868765842,"data":"      \"rmse_ev\": 0.9322413691864019,\n"}
+,{"stream_name":"stdout","time":3203.86876913,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868772454,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.868775678,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86877873,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868781773,"data":"      \"bias_ev\": -0.007954533584367282,\n"}
+,{"stream_name":"stdout","time":3203.868784955,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868788288,"data":"      \"mae_ev\": 0.6523097672940557,\n"}
+,{"stream_name":"stdout","time":3203.868791499,"data":"      \"median_ae_ev\": 0.46577932697642255,\n"}
+,{"stream_name":"stdout","time":3203.868794978,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.868798292,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.86880182,"data":"      \"rmse_ev\": 0.9188579798035312,\n"}
+,{"stream_name":"stdout","time":3203.868805395,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868808566,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.868812012,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868815243,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86881855,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868822015,"data":"      \"bias_ev\": -0.06303472394327365,\n"}
+,{"stream_name":"stdout","time":3203.868825409,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868828838,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.868832314,"data":"      \"mae_ev\": 0.6548908440038561,\n"}
+,{"stream_name":"stdout","time":3203.868835816,"data":"      \"median_ae_ev\": 0.4575814814815038,\n"}
+,{"stream_name":"stdout","time":3203.868839347,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868846852,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868850248,"data":"      \"rmse_ev\": 0.9312438552996539,\n"}
+,{"stream_name":"stdout","time":3203.868853719,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.86885671,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.868859786,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868862901,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868866267,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868869364,"data":"      \"bias_ev\": -0.06160123915737259,\n"}
+,{"stream_name":"stdout","time":3203.868872733,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868876265,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.868879694,"data":"      \"mae_ev\": 0.654590086741017,\n"}
+,{"stream_name":"stdout","time":3203.86888263,"data":"      \"median_ae_ev\": 0.45258888888888515,\n"}
+,{"stream_name":"stdout","time":3203.868885868,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.868889119,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868892293,"data":"      \"rmse_ev\": 0.9322860785290169,\n"}
+,{"stream_name":"stdout","time":3203.868895513,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868898641,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.868901844,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868904964,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868908593,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.868912348,"data":"      \"bias_ev\": -0.0633463995594105,\n"}
+,{"stream_name":"stdout","time":3203.868915614,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868918952,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.86892251,"data":"      \"mae_ev\": 0.6454917940245088,\n"}
+,{"stream_name":"stdout","time":3203.868925942,"data":"      \"median_ae_ev\": 0.44432222222222223,\n"}
+,{"stream_name":"stdout","time":3203.868929058,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.868932373,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868935464,"data":"      \"rmse_ev\": 0.9252004245582569,\n"}
+,{"stream_name":"stdout","time":3203.868939098,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868942424,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.86894575,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.868948945,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.868951983,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.868955416,"data":"      \"bias_ev\": -0.06283258983890926,\n"}
+,{"stream_name":"stdout","time":3203.868959001,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.868963152,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.868967208,"data":"      \"mae_ev\": 0.6453988847583654,\n"}
+,{"stream_name":"stdout","time":3203.868970767,"data":"      \"median_ae_ev\": 0.4460111111111089,\n"}
+,{"stream_name":"stdout","time":3203.868974208,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.868977808,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868980897,"data":"      \"rmse_ev\": 0.9253909994603065,\n"}
+,{"stream_name":"stdout","time":3203.868984118,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.868991668,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.868995333,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86899852,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869001601,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869005051,"data":"      \"bias_ev\": -0.06210788930194126,\n"}
+,{"stream_name":"stdout","time":3203.869008193,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.869011704,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.869015041,"data":"      \"mae_ev\": 0.6347199504337061,\n"}
+,{"stream_name":"stdout","time":3203.869018518,"data":"      \"median_ae_ev\": 0.44290740740740064,\n"}
+,{"stream_name":"stdout","time":3203.869021951,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869025384,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.869028899,"data":"      \"rmse_ev\": 0.9160529017318542,\n"}
+,{"stream_name":"stdout","time":3203.869032346,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.869035739,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.869039251,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869042791,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86904616,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.869049482,"data":"      \"bias_ev\": -0.06151594382486568,\n"}
+,{"stream_name":"stdout","time":3203.869053068,"data":"      \"element\": \"Ba\",\n"}
+,{"stream_name":"stdout","time":3203.869056399,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.869059933,"data":"      \"mae_ev\": 0.6355847583643135,\n"}
+,{"stream_name":"stdout","time":3203.869063526,"data":"      \"median_ae_ev\": 0.4522555555555551,\n"}
+,{"stream_name":"stdout","time":3203.869066993,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.869070408,"data":"      \"n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.869074009,"data":"      \"rmse_ev\": 0.9180568835308709,\n"}
+,{"stream_name":"stdout","time":3203.869077243,"data":"      \"test_n\": 269,\n"}
+,{"stream_name":"stdout","time":3203.869080855,"data":"      \"train_n\": 4335\n"}
+,{"stream_name":"stdout","time":3203.869084508,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869088138,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869091379,"data":"      \"bias_ev\": 22.56218622903062,\n"}
+,{"stream_name":"stdout","time":3203.869094898,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869098959,"data":"      \"mae_ev\": 22.631719832044883,\n"}
+,{"stream_name":"stdout","time":3203.869102411,"data":"      \"median_ae_ev\": 0.11029084056921379,\n"}
+,{"stream_name":"stdout","time":3203.869105789,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.869109234,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869112494,"data":"      \"rmse_ev\": 292.4458407175112,\n"}
+,{"stream_name":"stdout","time":3203.869116196,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869120105,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869123756,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869126978,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86913055,"data":"      \"bias_ev\": 0.10244953395360161,\n"}
+,{"stream_name":"stdout","time":3203.86913807,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869142116,"data":"      \"mae_ev\": 0.15261912617537782,\n"}
+,{"stream_name":"stdout","time":3203.869145765,"data":"      \"median_ae_ev\": 0.013398667151538448,\n"}
+,{"stream_name":"stdout","time":3203.869149108,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.869152789,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869156348,"data":"      \"rmse_ev\": 0.3695299701716415,\n"}
+,{"stream_name":"stdout","time":3203.869159807,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869163652,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869167136,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869170815,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869174142,"data":"      \"bias_ev\": 0.11164822914332097,\n"}
+,{"stream_name":"stdout","time":3203.869177747,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869181222,"data":"      \"mae_ev\": 0.17005923003580306,\n"}
+,{"stream_name":"stdout","time":3203.869184949,"data":"      \"median_ae_ev\": 0.004514767014715204,\n"}
+,{"stream_name":"stdout","time":3203.869188312,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.869192377,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.86919653,"data":"      \"rmse_ev\": 0.43216186660815287,\n"}
+,{"stream_name":"stdout","time":3203.869200386,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869204033,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869207678,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869211106,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869214559,"data":"      \"bias_ev\": 0.10416788382537166,\n"}
+,{"stream_name":"stdout","time":3203.869218044,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869221728,"data":"      \"mae_ev\": 0.16587264410502664,\n"}
+,{"stream_name":"stdout","time":3203.869224953,"data":"      \"median_ae_ev\": 0.021531213505085724,\n"}
+,{"stream_name":"stdout","time":3203.869228448,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.869231989,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869235269,"data":"      \"rmse_ev\": 0.39890079634945197,\n"}
+,{"stream_name":"stdout","time":3203.869238576,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869244351,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869247825,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869251073,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869254634,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869258378,"data":"      \"bias_ev\": 0.10719496124031011,\n"}
+,{"stream_name":"stdout","time":3203.869262486,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869266433,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.86927041,"data":"      \"mae_ev\": 0.14885482342807943,\n"}
+,{"stream_name":"stdout","time":3203.869274547,"data":"      \"median_ae_ev\": 0.01735,\n"}
+,{"stream_name":"stdout","time":3203.869278387,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869282294,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869286233,"data":"      \"rmse_ev\": 0.3657269418594301,\n"}
+,{"stream_name":"stdout","time":3203.869289905,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.86929602,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869299811,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869303267,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869307497,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.869310749,"data":"      \"bias_ev\": 0.1071383720930233,\n"}
+,{"stream_name":"stdout","time":3203.869314635,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869318862,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.869322429,"data":"      \"mae_ev\": 0.14862687338501313,\n"}
+,{"stream_name":"stdout","time":3203.869326003,"data":"      \"median_ae_ev\": 0.01631111111111111,\n"}
+,{"stream_name":"stdout","time":3203.869329746,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.869333379,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869336769,"data":"      \"rmse_ev\": 0.3665077627153827,\n"}
+,{"stream_name":"stdout","time":3203.869340201,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869343766,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869347187,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869350825,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869354311,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869358402,"data":"      \"bias_ev\": 0.10689465977605511,\n"}
+,{"stream_name":"stdout","time":3203.86937172,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869375702,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.869379502,"data":"      \"mae_ev\": 0.14932700258397957,\n"}
+,{"stream_name":"stdout","time":3203.869382937,"data":"      \"median_ae_ev\": 0.016725925925925922,\n"}
+,{"stream_name":"stdout","time":3203.869386657,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869390301,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869393865,"data":"      \"rmse_ev\": 0.36935588357757687,\n"}
+,{"stream_name":"stdout","time":3203.86939763,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869401345,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869405218,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869409084,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86941292,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.869416584,"data":"      \"bias_ev\": 0.10579237726098192,\n"}
+,{"stream_name":"stdout","time":3203.869420823,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869424724,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.86942869,"data":"      \"mae_ev\": 0.14772997416020697,\n"}
+,{"stream_name":"stdout","time":3203.86943201,"data":"      \"median_ae_ev\": 0.015916666666666666,\n"}
+,{"stream_name":"stdout","time":3203.869435664,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.869439459,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869442949,"data":"      \"rmse_ev\": 0.36576829834601077,\n"}
+,{"stream_name":"stdout","time":3203.869446207,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869449393,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869452594,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869460056,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869463698,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869467522,"data":"      \"bias_ev\": 0.10598533591731268,\n"}
+,{"stream_name":"stdout","time":3203.869471028,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869475325,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.869478937,"data":"      \"mae_ev\": 0.14782831610680472,\n"}
+,{"stream_name":"stdout","time":3203.869482525,"data":"      \"median_ae_ev\": 0.01623888888888889,\n"}
+,{"stream_name":"stdout","time":3203.869501471,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869510525,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869514007,"data":"      \"rmse_ev\": 0.36699323743846596,\n"}
+,{"stream_name":"stdout","time":3203.869518114,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869521471,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.86952525,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869528575,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.86953198,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.869535571,"data":"      \"bias_ev\": 0.10606841085271318,\n"}
+,{"stream_name":"stdout","time":3203.869541486,"data":"      \"element\": \"Co\",\n"}
+,{"stream_name":"stdout","time":3203.869545024,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.86954888,"data":"      \"mae_ev\": 0.14825949612403125,\n"}
+,{"stream_name":"stdout","time":3203.869552465,"data":"      \"median_ae_ev\": 0.015688888888888888,\n"}
+,{"stream_name":"stdout","time":3203.869556939,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.86956067,"data":"      \"n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869564122,"data":"      \"rmse_ev\": 0.3676553634096744,\n"}
+,{"stream_name":"stdout","time":3203.869567513,"data":"      \"test_n\": 172,\n"}
+,{"stream_name":"stdout","time":3203.869571,"data":"      \"train_n\": 4432\n"}
+,{"stream_name":"stdout","time":3203.869574276,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869578173,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869581869,"data":"      \"bias_ev\": 0.19714241092107224,\n"}
+,{"stream_name":"stdout","time":3203.869585365,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869589187,"data":"      \"mae_ev\": 2.418092388276974,\n"}
+,{"stream_name":"stdout","time":3203.869593182,"data":"      \"median_ae_ev\": 2.0916080394353553,\n"}
+,{"stream_name":"stdout","time":3203.869596852,"data":"      \"model\": \"ridge\",\n"}
+,{"stream_name":"stdout","time":3203.869600459,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869604032,"data":"      \"rmse_ev\": 2.995293858493351,\n"}
+,{"stream_name":"stdout","time":3203.869607939,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869611273,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869614587,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86961842,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869622134,"data":"      \"bias_ev\": 0.4126049701409113,\n"}
+,{"stream_name":"stdout","time":3203.869626369,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869629999,"data":"      \"mae_ev\": 1.818394112162052,\n"}
+,{"stream_name":"stdout","time":3203.869633795,"data":"      \"median_ae_ev\": 1.6547622189104128,\n"}
+,{"stream_name":"stdout","time":3203.869640613,"data":"      \"model\": \"direct_hgb_squared\",\n"}
+,{"stream_name":"stdout","time":3203.869644808,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869648222,"data":"      \"rmse_ev\": 2.3436484007775955,\n"}
+,{"stream_name":"stdout","time":3203.869651715,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.86965537,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869658509,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869662069,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869666293,"data":"      \"bias_ev\": 0.5024246225234131,\n"}
+,{"stream_name":"stdout","time":3203.869669817,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869673412,"data":"      \"mae_ev\": 1.9421836400958907,\n"}
+,{"stream_name":"stdout","time":3203.869676998,"data":"      \"median_ae_ev\": 1.6419303074729061,\n"}
+,{"stream_name":"stdout","time":3203.869680595,"data":"      \"model\": \"catboost_single_seed\",\n"}
+,{"stream_name":"stdout","time":3203.869684244,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869687854,"data":"      \"rmse_ev\": 2.422108023427318,\n"}
+,{"stream_name":"stdout","time":3203.869691372,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869694742,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869698216,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869701921,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869705222,"data":"      \"bias_ev\": 0.3130273502817854,\n"}
+,{"stream_name":"stdout","time":3203.869708979,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869712592,"data":"      \"mae_ev\": 1.795427807967148,\n"}
+,{"stream_name":"stdout","time":3203.869716399,"data":"      \"median_ae_ev\": 1.4708265138257266,\n"}
+,{"stream_name":"stdout","time":3203.86971986,"data":"      \"model\": \"catboost_ensemble\",\n"}
+,{"stream_name":"stdout","time":3203.869723439,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869727436,"data":"      \"rmse_ev\": 2.308277073651306,\n"}
+,{"stream_name":"stdout","time":3203.869731095,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869734746,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869738781,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869742638,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869746146,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869749817,"data":"      \"bias_ev\": 0.14665443121693209,\n"}
+,{"stream_name":"stdout","time":3203.869753898,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869757736,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.869761214,"data":"      \"mae_ev\": 1.5906890211640212,\n"}
+,{"stream_name":"stdout","time":3203.86976478,"data":"      \"median_ae_ev\": 1.1404814814814812,\n"}
+,{"stream_name":"stdout","time":3203.869768508,"data":"      \"model\": \"extra_trees_alpha0.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869772453,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.86977624,"data":"      \"rmse_ev\": 2.1966277047287623,\n"}
+,{"stream_name":"stdout","time":3203.869779726,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869783205,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869786556,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.869790125,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869797681,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.86980164,"data":"      \"bias_ev\": 0.14664126984127096,\n"}
+,{"stream_name":"stdout","time":3203.869805622,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869809319,"data":"      \"frequency_exponent\": 0.0,\n"}
+,{"stream_name":"stdout","time":3203.869813049,"data":"      \"mae_ev\": 1.5905791666666662,\n"}
+,{"stream_name":"stdout","time":3203.869817267,"data":"      \"median_ae_ev\": 1.1355611111111101,\n"}
+,{"stream_name":"stdout","time":3203.86982093,"data":"      \"model\": \"extra_trees_alpha0.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.869825045,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869828556,"data":"      \"rmse_ev\": 2.1965749175717386,\n"}
+,{"stream_name":"stdout","time":3203.869832675,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869836608,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869840083,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86984399,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869847602,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869851503,"data":"      \"bias_ev\": 0.11051200396825518,\n"}
+,{"stream_name":"stdout","time":3203.869854983,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869859227,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.869862485,"data":"      \"mae_ev\": 1.53802662037037,\n"}
+,{"stream_name":"stdout","time":3203.869865802,"data":"      \"median_ae_ev\": 1.0488962962962962,\n"}
+,{"stream_name":"stdout","time":3203.869869726,"data":"      \"model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869873758,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869877435,"data":"      \"rmse_ev\": 2.171291746971322,\n"}
+,{"stream_name":"stdout","time":3203.86988112,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869884728,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869888247,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86989188,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869895574,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.869899755,"data":"      \"bias_ev\": 0.11137787698412811,\n"}
+,{"stream_name":"stdout","time":3203.869903629,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869907188,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.86991088,"data":"      \"mae_ev\": 1.5420122023809524,\n"}
+,{"stream_name":"stdout","time":3203.86991466,"data":"      \"median_ae_ev\": 1.0498833333333333,\n"}
+,{"stream_name":"stdout","time":3203.869918455,"data":"      \"model\": \"extra_trees_alpha0.50_median\",\n"}
+,{"stream_name":"stdout","time":3203.869922285,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.86992583,"data":"      \"rmse_ev\": 2.1743089658252215,\n"}
+,{"stream_name":"stdout","time":3203.869929275,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869932815,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869936766,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.86994028,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.869943856,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.869947744,"data":"      \"bias_ev\": 0.10384219576719754,\n"}
+,{"stream_name":"stdout","time":3203.869954191,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.869958033,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.869961497,"data":"      \"mae_ev\": 1.539778703703703,\n"}
+,{"stream_name":"stdout","time":3203.869965065,"data":"      \"median_ae_ev\": 1.112868518518518,\n"}
+,{"stream_name":"stdout","time":3203.869968813,"data":"      \"model\": \"extra_trees_alpha1.00_mean\",\n"}
+,{"stream_name":"stdout","time":3203.869972523,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869976265,"data":"      \"rmse_ev\": 2.1729090226428447,\n"}
+,{"stream_name":"stdout","time":3203.869980178,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.869984386,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.869988645,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.870000294,"data":"    {\n"}
+,{"stream_name":"stdout","time":3203.870003789,"data":"      \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.870007342,"data":"      \"bias_ev\": 0.10150138888889042,\n"}
+,{"stream_name":"stdout","time":3203.870011016,"data":"      \"element\": \"F\",\n"}
+,{"stream_name":"stdout","time":3203.870014583,"data":"      \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.870018378,"data":"      \"mae_ev\": 1.540963888888888,\n"}
+,{"stream_name":"stdout","time":3203.870022082,"data":"      \"median_ae_ev\": 1.0963055555555536,\n"}
+,{"stream_name":"stdout","time":3203.870025543,"data":"      \"model\": \"extra_trees_alpha1.00_median\",\n"}
+,{"stream_name":"stdout","time":3203.870029046,"data":"      \"n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.870032408,"data":"      \"rmse_ev\": 2.1770474040436643,\n"}
+,{"stream_name":"stdout","time":3203.870035864,"data":"      \"test_n\": 112,\n"}
+,{"stream_name":"stdout","time":3203.870039416,"data":"      \"train_n\": 4492\n"}
+,{"stream_name":"stdout","time":3203.870043056,"data":"    }\n"}
+,{"stream_name":"stdout","time":3203.87004643,"data":"  ],\n"}
+,{"stream_name":"stdout","time":3203.870049698,"data":"  \"run_id\": \"kaggle-development-v3-r1\",\n"}
+,{"stream_name":"stdout","time":3203.870053725,"data":"  \"schema_version\": 3,\n"}
+,{"stream_name":"stdout","time":3203.870057692,"data":"  \"scientific_disposition\": \"DEVELOPMENT_NOT_SUPPORTED\",\n"}
+,{"stream_name":"stdout","time":3203.870061511,"data":"  \"selection\": {\n"}
+,{"stream_name":"stdout","time":3203.870065044,"data":"    \"candidates\": [\n"}
+,{"stream_name":"stdout","time":3203.87006869,"data":"      {\n"}
+,{"stream_name":"stdout","time":3203.870072043,"data":"        \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.870076137,"data":"        \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.87007971,"data":"        \"macro_mae_ev\": 0.7091345594110612,\n"}
+,{"stream_name":"stdout","time":3203.870083902,"data":"        \"model\": \"extra_trees_alpha0.50_mean\"\n"}
+,{"stream_name":"stdout","time":3203.87008812,"data":"      },\n"}
+,{"stream_name":"stdout","time":3203.870091842,"data":"      {\n"}
+,{"stream_name":"stdout","time":3203.870094956,"data":"        \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.870098713,"data":"        \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.870102788,"data":"        \"macro_mae_ev\": 0.7097947283902319,\n"}
+,{"stream_name":"stdout","time":3203.870106357,"data":"        \"model\": \"extra_trees_alpha0.50_median\"\n"}
+,{"stream_name":"stdout","time":3203.870110283,"data":"      },\n"}
+,{"stream_name":"stdout","time":3203.87012054,"data":"      {\n"}
+,{"stream_name":"stdout","time":3203.87012468,"data":"        \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.87012823,"data":"        \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.870131623,"data":"        \"macro_mae_ev\": 0.7099585348500481,\n"}
+,{"stream_name":"stdout","time":3203.870135711,"data":"        \"model\": \"extra_trees_alpha1.00_mean\"\n"}
+,{"stream_name":"stdout","time":3203.870139728,"data":"      },\n"}
+,{"stream_name":"stdout","time":3203.8701428,"data":"      {\n"}
+,{"stream_name":"stdout","time":3203.870146212,"data":"        \"aggregation\": \"median\",\n"}
+,{"stream_name":"stdout","time":3203.870151304,"data":"        \"frequency_exponent\": 1.0,\n"}
+,{"stream_name":"stdout","time":3203.870155146,"data":"        \"macro_mae_ev\": 0.7103227320997049,\n"}
+,{"stream_name":"stdout","time":3203.870158933,"data":"        \"model\": \"extra_trees_alpha1.00_median\"\n"}
+,{"stream_name":"stdout","time":3203.870162881,"data":"      }\n"}
+,{"stream_name":"stdout","time":3203.870166206,"data":"    ],\n"}
+,{"stream_name":"stdout","time":3203.870169514,"data":"    \"selected\": {\n"}
+,{"stream_name":"stdout","time":3203.870172756,"data":"      \"aggregation\": \"mean\",\n"}
+,{"stream_name":"stdout","time":3203.870176531,"data":"      \"frequency_exponent\": 0.5,\n"}
+,{"stream_name":"stdout","time":3203.870180171,"data":"      \"macro_mae_ev\": 0.7091345594110612,\n"}
+,{"stream_name":"stdout","time":3203.870183504,"data":"      \"model\": \"extra_trees_alpha0.50_mean\"\n"}
+,{"stream_name":"stdout","time":3203.870187559,"data":"    },\n"}
+,{"stream_name":"stdout","time":3203.870191036,"data":"    \"tie_band_ev\": 0.003\n"}
+,{"stream_name":"stdout","time":3203.870194619,"data":"  },\n"}
+,{"stream_name":"stdout","time":3203.870197951,"data":"  \"status\": \"SUCCESS\"\n"}
+,{"stream_name":"stdout","time":3203.87020198,"data":"}\n"}
+,{"stream_name":"stdout","time":3204.48765929,"data":"+ /usr/bin/python3 scripts/verify_successor_v3.py /kaggle/working/sparking-v3-source/runs/kaggle-development-v3-r1 --output /kaggle/working/development-v3-verification.json\n"}
+,{"stream_name":"stdout","time":3204.712681012,"data":"{\n"}
+,{"stream_name":"stdout","time":3204.712708772,"data":"  \"gpu_admitted\": true,\n"}
+,{"stream_name":"stdout","time":3204.712712032,"data":"  \"manifest\": {\n"}
+,{"stream_name":"stdout","time":3204.712714509,"data":"    \"changed\": [],\n"}
+,{"stream_name":"stdout","time":3204.712716961,"data":"    \"extra\": [],\n"}
+,{"stream_name":"stdout","time":3204.712719215,"data":"    \"missing\": [],\n"}
+,{"stream_name":"stdout","time":3204.712725032,"data":"    \"valid\": true\n"}
+,{"stream_name":"stdout","time":3204.71272729,"data":"  },\n"}
+,{"stream_name":"stdout","time":3204.712729524,"data":"  \"metric_comparisons\": 320,\n"}
+,{"stream_name":"stdout","time":3204.712731939,"data":"  \"protected_outcomes_observed\": false,\n"}
+,{"stream_name":"stdout","time":3204.712734329,"data":"  \"run_receipt_status\": \"SUCCESS\",\n"}
+,{"stream_name":"stdout","time":3204.712737162,"data":"  \"scientific_disposition\": \"DEVELOPMENT_NOT_SUPPORTED\",\n"}
+,{"stream_name":"stdout","time":3204.712755337,"data":"  \"selected_model\": \"extra_trees_alpha0.50_mean\",\n"}
+,{"stream_name":"stdout","time":3204.712759692,"data":"  \"status\": \"VERIFIED\"\n"}
+,{"stream_name":"stdout","time":3204.712763653,"data":"}\n"}
+,{"stream_name":"stdout","time":3204.780939366,"data":"SPARKING_V3_COMPLETE=DEVELOPMENT_NOT_SUPPORTED\n"}
+,{"stream_name":"stderr","time":3206.681026958,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3206.6810721,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3206.932201733,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3206.932220717,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":3207.765949874,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3208.285512694,"data":"[NbConvertApp] Writing 296524 bytes to __results__.html\n"}
+]

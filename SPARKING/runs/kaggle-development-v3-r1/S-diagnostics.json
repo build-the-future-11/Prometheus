@@ -1,0 +1,33 @@
+{
+  "catboost_prediction_spread_ev": 5.458495084875707,
+  "catboost_seed_std_mean_ev": 0.07761826111622,
+  "element": "S",
+  "test_n": 652,
+  "train_n": 3952,
+  "weight_diagnostics": {
+    "0.00": {
+      "effective_sample_size": 3952.0,
+      "maximum": 1.0,
+      "mean": 1.0,
+      "minimum": 1.0,
+      "seed_prediction_std_mean_ev": 0.031128372882449625,
+      "standard_deviation": 0.0
+    },
+    "0.50": {
+      "effective_sample_size": 3653.445052798808,
+      "maximum": 2.554575824456885,
+      "mean": 1.0,
+      "minimum": 0.4932447988897438,
+      "seed_prediction_std_mean_ev": 0.032563090477883146,
+      "standard_deviation": 0.2858649081309434
+    },
+    "1.00": {
+      "effective_sample_size": 2999.0061623747897,
+      "maximum": 4.0183537045063344,
+      "mean": 0.9999999999999999,
+      "minimum": 0.2511471065316459,
+      "seed_prediction_std_mean_ev": 0.029260338620708298,
+      "standard_deviation": 0.5637108151322483
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "catboost": "1.2.10",
+  "machine": "x86_64",
+  "matminer": "0.10.1",
+  "numpy": "2.5.4",
+  "pid": 169,
+  "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "source": {
+    "dataset_sha256": "783e7d1461eb83b00b2f2942da4b95fda5e58a0d1ae26b581c24cf8a82ca75b2",
+    "git_commit": "5b57c71ae03174b69cde426676fa2000d2724dce",
+    "git_project_status": [],
+    "protocol_path": "protocols/development-v3.json",
+    "protocol_sha256": "999beae71fa7a000e627dd0830307b21471ef78ed1f034daa48276821fcf8d75"
+  }
+}

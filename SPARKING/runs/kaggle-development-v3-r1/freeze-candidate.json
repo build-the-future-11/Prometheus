@@ -1,0 +1,11 @@
+{
+  "architecture_change_after_freeze": "PROHIBITED",
+  "eligible_for_confirmatory_freeze": false,
+  "selected": {
+    "aggregation": "mean",
+    "frequency_exponent": 0.5,
+    "macro_mae_ev": 0.7091345594110612,
+    "model": "extra_trees_alpha0.50_mean"
+  },
+  "source_run_id": "kaggle-development-v3-r1"
+}

@@ -1,0 +1,86 @@
+{
+  "elapsed_seconds": 3090.1929981708527,
+  "resource_observations": [
+    {
+      "elapsed_seconds": 0.00011229515075683594,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 266.7890625,
+      "phase": "admission"
+    },
+    {
+      "elapsed_seconds": 9.571096658706665,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 306.77734375,
+      "phase": "features_complete"
+    },
+    {
+      "elapsed_seconds": 353.5813376903534,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1029.16015625,
+      "phase": "outer_holdout_O_complete"
+    },
+    {
+      "elapsed_seconds": 716.6641683578491,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1069.13671875,
+      "phase": "outer_holdout_S_complete"
+    },
+    {
+      "elapsed_seconds": 1103.7230079174042,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1101.26171875,
+      "phase": "outer_holdout_In_complete"
+    },
+    {
+      "elapsed_seconds": 1490.2784299850464,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1161.08984375,
+      "phase": "outer_holdout_Ge_complete"
+    },
+    {
+      "elapsed_seconds": 1879.8410215377808,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1161.08984375,
+      "phase": "outer_holdout_Sb_complete"
+    },
+    {
+      "elapsed_seconds": 2274.0604236125946,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1161.08984375,
+      "phase": "outer_holdout_Ba_complete"
+    },
+    {
+      "elapsed_seconds": 2684.4956612586975,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1161.08984375,
+      "phase": "outer_holdout_Co_complete"
+    },
+    {
+      "elapsed_seconds": 3090.155914783478,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1161.08984375,
+      "phase": "outer_holdout_F_complete"
+    },
+    {
+      "elapsed_seconds": 3090.15762591362,
+      "pageout_delta": 0,
+      "pageouts": 0,
+      "peak_rss_mib": 1161.08984375,
+      "phase": "complete"
+    }
+  ],
+  "run_id": "kaggle-development-v3-r1",
+  "schema_version": 3,
+  "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "status": "SUCCESS"
+}

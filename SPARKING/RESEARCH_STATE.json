@@ -3,13 +3,13 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-22T09:04:35+05:30",
+  "updated_at": "2026-10-22T11:51:34+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Atlas.git",
-  "git_branch": "codex/ml4materials-research-execution",
-  "phase": "DEVELOPMENT_V3_HOSTED_RUNNING",
-  "disposition": "DEVELOPMENT_V3_NOT_EVALUATED",
+  "git_branch": "main",
+  "phase": "DEVELOPMENT_V3_COMPLETE",
+  "disposition": "DEVELOPMENT_NOT_SUPPORTED",
   "research_question": "Does target-independent inverse-frequency weighting improve a randomized tree ensemble under fresh leave-one-element-out band-gap shifts, while retaining the v2 Extra Trees advantage over GPU CatBoost?",
   "hypothesis": "Stoichiometric inverse-frequency weighting computed only from each outer training set will reduce domination by common elemental environments and improve unseen-element macro MAE relative to an otherwise identical unweighted Extra Trees ensemble.",
   "falsifier": "V3 is not supported unless a nonzero frequency exponent improves macro MAE over the aggregation-matched unweighted Extra Trees control by more than 0.01 eV, improves at least five of eight fresh development elements, improves over CatBoost by more than 0.02 eV, and yields complete finite manifest-valid evidence.",
@@ -49,7 +49,7 @@
     "hosted_accelerator": "Kaggle GPU 0:1"
   },
   "protected_evaluation": {
-    "status": "UNOPENED_V3_DEVELOPMENT_PENDING",
+    "status": "UNOPENED_V3_DEVELOPMENT_STOP",
     "confirmatory_elements": [
       "Li",
       "Zn",
@@ -85,7 +85,7 @@
     {
       "id": "C3",
       "text": "Target-independent frequency balancing improves randomized forests under fresh element exclusion.",
-      "status": "V3_FROZEN_NOT_EVALUATED"
+      "status": "DEVELOPMENT_NOT_SUPPORTED_PROTECTED_NOT_EVALUATED"
     }
   ],
   "history": [
@@ -132,6 +132,10 @@
     {
       "date": "2026-10-22",
       "event": "Pushed frozen v3 source commit 5b57c71ae03174b69cde426676fa2000d2724dce to GitHub, uploaded private source dataset ryangomez010/sparking-source-v3-20261022, and verified the downloaded archive byte-for-byte at SHA-256 9467b930ff71ce462aaaa9e3eece40fc0b61e8b45b1d0812f02ff994d72c0553. Kaggle accepted private GPU kernel version 1 as ryangomez010/sparking-v3-frequency-balanced-forest; live status was RUNNING. Two prelaunch requests were rejected before execution because the original title exceeded Kaggle's 50-character limit; the corrected launch retained identical scientific source."
+    },
+    {
+      "date": "2026-10-22",
+      "event": "Private Kaggle GPU development v3 completed all eight frozen O/S/In/Ge/Sb/Ba/Co/F holdouts on dual Tesla T4 hardware. The exact archive, source identity, 25-file run tree, manifest, raw prediction arrays, and 320 recomputed metrics verified independently. The selected alpha=0.50 mean Extra Trees model improved macro MAE by 0.009123 eV over its matched unweighted control, below the strict >0.010 eV admission threshold. Disposition: DEVELOPMENT_NOT_SUPPORTED. Protected Li/Zn/Ga/Se/Te outcomes and official folds remained unopened; no confirmatory run was launched."
     }
   ],
   "hosted_development": {
@@ -163,7 +167,7 @@
     "results_sha256": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb",
     "archive_sha256": "e78850dfb06f7c3b6d349a4807fe3c1f306bf86945b96574ca5878c993707b03"
   },
-  "disposition_scope": "Frozen v2 development gate failed. V3 is frozen and run-ready but has no scientific result yet; protected confirmation and official-fold evaluation remain unopened.",
+  "disposition_scope": "The frozen v3 development admission rule failed. The exact hosted run and independent verification are retained; protected Li/Zn/Ga/Se/Te confirmation and official-fold evaluation remain unopened and unauthorized.",
   "development_findings": {
     "selected_gate": {
       "support_quantile": 0.99,
@@ -181,7 +185,7 @@
   },
   "confirmation_readiness": {
     "status": "CLOSED_DEVELOPMENT_NOT_SUPPORTED",
-    "reason": "The frozen v2 selected gate worsened macro MAE by 0.000130 eV relative to CatBoost; admission required an improvement greater than 0.020 eV.",
+    "reason": "The frozen v3 selected model improved macro MAE by 0.009123345453943471 eV over its aggregation-matched unweighted Extra Trees control; admission required a strict improvement greater than 0.01 eV.",
     "protected_outcomes_observed": false
   },
   "development_diagnostics": {
@@ -264,15 +268,36 @@
   },
   "successor_v3": {
     "study_id": "sparking-development-v3-frequency-balanced-forest-gpu",
-    "status": "HOSTED_RUNNING_NOT_EVALUATED",
+    "status": "COMPLETE_VERIFIED_DEVELOPMENT_NOT_SUPPORTED",
     "protocol": "protocols/development-v3.json",
     "protocol_explanation": "docs/PROTOCOL_V3.md",
     "parent_commit": "9d6161cd3b063fd844998b57c31a952361a11b92",
-    "development_elements": ["O", "S", "In", "Ge", "Sb", "Ba", "Co", "F"],
-    "protected_confirmatory_elements": ["Li", "Zn", "Ga", "Se", "Te"],
+    "development_elements": [
+      "O",
+      "S",
+      "In",
+      "Ge",
+      "Sb",
+      "Ba",
+      "Co",
+      "F"
+    ],
+    "protected_confirmatory_elements": [
+      "Li",
+      "Zn",
+      "Ga",
+      "Se",
+      "Te"
+    ],
     "protected_outcomes_observed": false,
-    "candidate_exponents": [0.5, 1.0],
-    "aggregations": ["mean", "median"],
+    "candidate_exponents": [
+      0.5,
+      1.0
+    ],
+    "aggregations": [
+      "mean",
+      "median"
+    ],
     "matched_unweighted_exponent": 0.0,
     "accelerator": "Kaggle GPU 0:1",
     "run_id": "kaggle-development-v3-r1",
@@ -283,10 +308,49 @@
     "source_roundtrip_verified": true,
     "kernel": "ryangomez010/sparking-v3-frequency-balanced-forest",
     "kernel_version": 1,
-    "kernel_status": "RUNNING",
+    "kernel_status": "COMPLETE",
     "hosted_launch": "artifacts/kaggle-development-v3-launch.json",
     "local_tests_passed": 21,
     "bounded_cpu_dry_run": "PASSED",
-    "scientific_disposition": "NOT_EVALUATED"
+    "scientific_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+    "confirmation_admission": "DENIED_BY_FROZEN_DEVELOPMENT_RULE",
+    "result": "runs/kaggle-development-v3-r1/results.json",
+    "receipt": "runs/kaggle-development-v3-r1/receipt.json",
+    "verification": "artifacts/development-v3-verification.json",
+    "report": "docs/DEVELOPMENT_RESULTS_V3.md",
+    "posthoc_analysis": "artifacts/development-v3-posthoc-analysis.json",
+    "output_archive_sha256": "8675064282ad9f74e54a4a7489665c992101c6b67b4e9de281ad46271895d049",
+    "retained_tree_sha256": "db9d6958bdac20f61ff118436c3b226fbe386584db8e8ac2fa97efbb573bd64c",
+    "retained_tree_file_count": 25,
+    "hosted_tests_passed": 21,
+    "independent_metric_comparisons": 320,
+    "elapsed_seconds": 3090.1929981708527,
+    "peak_rss_mib": 1161.08984375,
+    "pageout_delta": 0
+  },
+  "development_v3_findings": {
+    "selected_model": "extra_trees_alpha0.50_mean",
+    "selected_frequency_exponent": 0.5,
+    "selected_aggregation": "mean",
+    "selected_macro_mae_ev": 0.7091345594110612,
+    "matched_unweighted_model": "extra_trees_alpha0.00_mean",
+    "matched_unweighted_macro_mae_ev": 0.7182579048650046,
+    "selected_macro_mae_improvement_over_matched_unweighted_ev": 0.009123345453943471,
+    "minimum_required_improvement_over_matched_unweighted_ev": 0.01,
+    "margin_above_required_improvement_ev": -0.0008766545460565291,
+    "improved_element_count_over_matched_unweighted": 5,
+    "minimum_required_improved_elements": 5,
+    "catboost_ensemble_macro_mae_ev": 0.750948753379409,
+    "selected_macro_mae_improvement_over_catboost_ev": 0.041814193968347825,
+    "minimum_required_improvement_over_catboost_ev": 0.02,
+    "admission_passed": false,
+    "interpretation": "Frequency balancing produced a small development improvement and passed the element-count and CatBoost gates, but missed the preregistered strict improvement threshold against the matched unweighted forest. The conjunctive development gate therefore failed.",
+    "posthoc_cluster_bootstrap_95_ev": {
+      "lower_95_ev": 0.006650256719984972,
+      "probability_improvement_gt_0": 1.0,
+      "probability_improvement_gt_threshold": 0.24445,
+      "upper_95_ev": 0.011586486913172774
+    },
+    "posthoc_status": "DESCRIPTIVE_NOT_PREREGISTERED_DOES_NOT_CHANGE_PRIMARY_DISPOSITION"
   }
 }
