@@ -1,337 +1,129 @@
-name: ci
-
+name: prometheus-ci
 on:
   push:
     branches: [main]
   pull_request:
-
+  workflow_dispatch:
 permissions:
   contents: read
-
 concurrency:
-  group: atlas-ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
+  group: prometheus-ci-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  test:
+  integrity:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      GIT_TERMINAL_PROMPT: "0"
+    steps:
+      - name: Checkout exact public source without submodule recursion or stored credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c submodule.recurse=false fetch --filter=blob:none --depth=1 origin "$EXPECTED_SOURCE_SHA"
+          git sparse-checkout init --cone
+          git sparse-checkout set scripts tests-infra .github NEUROGENESIS/successors/memory_v4/delivery NEUROGENESIS/scripts
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Infrastructure regression tests
+        run: |
+          python -m pip install 'pytest>=8,<9'
+          python -m pytest tests-infra -q --junitxml=${{ runner.temp }}/infrastructure-tests.xml
+      - name: Source completeness gate (must stay red while imports are missing)
+        run: python scripts/audit_repository.py --output ${{ runner.temp }}/repository-audit.json
+      - name: Retain integrity evidence even when the source gate fails
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: repository-integrity
+          path: |
+            ${{ runner.temp }}/repository-audit.json
+            ${{ runner.temp }}/infrastructure-tests.xml
+          if-no-files-found: error
+  projects:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12"]
+        include:
+          - {id: adaptive, project: AdaptivePredictive-ML}
+          - {id: derived, project: Derived-Learning-ML}
+          - {id: materials, project: 'ML4-Material Discovery'}
+          - {id: neurogenesis, project: NEUROGENESIS}
+          - {id: piml, project: PI-ML}
+          - {id: sparking, project: SPARKING}
     env:
       EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      PROJECT: ${{ matrix.project }}
+      GIT_TERMINAL_PROMPT: "0"
     steps:
-      - name: Checkout exact source
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Checkout exact project source
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c submodule.recurse=false fetch --filter=blob:none --depth=1 origin "$EXPECTED_SOURCE_SHA"
+          git sparse-checkout init --cone
+          git sparse-checkout set "$PROJECT" scripts
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
-          ref: ${{ env.EXPECTED_SOURCE_SHA }}
-          persist-credentials: false
-
-      - name: Verify exact source binding
-        shell: bash
-        run: |
-          set -euo pipefail
-          case "$EXPECTED_SOURCE_SHA" in
-            (*[!0-9a-f]*|'') echo "invalid expected source SHA: $EXPECTED_SOURCE_SHA" >&2; exit 1 ;;
-          esac
-          test "${#EXPECTED_SOURCE_SHA}" -eq 40
-          actual="$(git rev-parse HEAD)"
-          test "$actual" = "$EXPECTED_SOURCE_SHA" || {
-            echo "source mismatch: expected=$EXPECTED_SOURCE_SHA actual=$actual" >&2
-            exit 1
-          }
-          printf 'SOURCE_SHA=%s\n' "$actual"
-
-      - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+          python-version: "3.12"
+      - name: Build, test, and verify sdist-derived wheel
+        run: python scripts/check_project.py --project "$PROJECT" --output "${{ runner.temp }}/project-check"
+      - name: Preserve logs and receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install
-        run: python -m pip install -e .
-
-      - name: Verify installed dependency consistency
-        run: python -m pip check
-
-      - name: Unit tests
-        run: python -m unittest discover -s tests -v
-
-      - name: CLI smoke
-        run: |
-          atlas init-run \
-            --question "Does a preregistered treatment outperform a strong baseline?" \
-            --output /tmp/atlas-smoke.json
-          python -m json.tool /tmp/atlas-smoke.json >/dev/null
-
-      - name: Benchmark Foundry smoke
-        run: |
-          atlas benchmark validate \
-            --cases examples/benchmark/cases.jsonl \
-            --manifest examples/benchmark/manifest.json
-          atlas benchmark score \
-            --cases examples/benchmark/cases.jsonl \
-            --predictions examples/benchmark/predictions.jsonl \
-            --output /tmp/atlas-benchmark-score.json
-          python -m json.tool /tmp/atlas-benchmark-score.json >/dev/null
-
-      - name: LAM-JEPA adapter dry-run smoke
-        run: |
-          python -m atlas.lam_jepa_adapter \
-            --integration integrations/lam_jepa_arc_v3.json \
-            --dry-run \
-            > /tmp/lam-jepa-plan.json
-          python -m json.tool /tmp/lam-jepa-plan.json >/dev/null
-
-      - name: Build and verify clean wheel install
-        if: matrix.python-version == '3.12'
+          name: project-${{ matrix.id }}
+          path: ${{ runner.temp }}/project-check
+          if-no-files-found: error
+  bounded-equivalence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      EXPECTED_SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      GIT_TERMINAL_PROMPT: "0"
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      PYTHONPATH: AdaptivePredictive-ML/src
+    steps:
+      - name: Checkout preserved reference and opt-in bounded implementation
         shell: bash
         run: |
           set -euo pipefail
-          wheel_dir="$(mktemp -d)"
-          venv_dir="$(mktemp -d)"
-          output_file="$(mktemp)"
-
-          python -m pip wheel --no-deps . --wheel-dir "$wheel_dir"
-          wheel="$(find "$wheel_dir" -maxdepth 1 -type f -name 'atlas_research_engine-*.whl' -print -quit)"
-          test -n "$wheel"
-          sha256sum "$wheel"
-
-          python -m venv "$venv_dir"
-          "$venv_dir/bin/python" -m pip install --no-deps "$wheel"
-          "$venv_dir/bin/python" -m pip check
-
-          (
-            cd /tmp
-            "$venv_dir/bin/python" - <<'PY'
-          import importlib
-          import pathlib
-          import pkgutil
-
-          import atlas
-
-          package_path = pathlib.Path(atlas.__file__).resolve()
-          if "site-packages" not in package_path.parts:
-              raise SystemExit(f"wheel import did not resolve from site-packages: {package_path}")
-
-          module_names = sorted(
-              module.name for module in pkgutil.walk_packages(atlas.__path__, atlas.__name__ + ".")
-          )
-          if not module_names:
-              raise SystemExit("installed wheel exposed no importable atlas submodules")
-
-          for module_name in module_names:
-              module = importlib.import_module(module_name)
-              module_file = getattr(module, "__file__", None)
-              if module_file is None:
-                  raise SystemExit(f"installed module has no file identity: {module_name}")
-              module_path = pathlib.Path(module_file).resolve()
-              if "site-packages" not in module_path.parts:
-                  raise SystemExit(
-                      f"installed module resolved outside site-packages: {module_name} -> {module_path}"
-                  )
-
-          print(f"installed_atlas={package_path}")
-          print(f"imported_modules={','.join(module_names)}")
-          PY
-          )
-
-          "$venv_dir/bin/atlas" init-run \
-            --question "Does the installed wheel preserve the preregistered run contract?" \
-            --output "$output_file"
-          "$venv_dir/bin/python" -m json.tool "$output_file" >/dev/null
-
-      - name: Build and verify source distribution install
-        if: matrix.python-version == '3.12'
-        shell: bash
-        run: |
-          set -euo pipefail
-          build_venv="$(mktemp -d)"
-          direct_wheel_dir="$(mktemp -d)"
-          sdist_dir="$(mktemp -d)"
-          unpack_dir="$(mktemp -d)"
-          rebuilt_wheel_dir="$(mktemp -d)"
-          venv_dir="$(mktemp -d)"
-          output_file="$(mktemp)"
-
-          # pyproject.toml declares setuptools>=77 as the PEP 517 build requirement.
-          # Provision it in a dedicated build environment instead of relying on the
-          # runner's top-level interpreter to happen to expose setuptools.
-          python -m venv "$build_venv"
-          "$build_venv/bin/python" -m pip install 'setuptools>=77'
-          "$build_venv/bin/python" - <<'PY'
-          import setuptools
-          print(f"sdist_build_setuptools={setuptools.__version__}")
-          PY
-
-          DIRECT_WHEEL_DIR="$direct_wheel_dir" "$build_venv/bin/python" - <<'PY'
-          import os
-          import pathlib
-          import setuptools.build_meta as backend
-
-          out_dir = pathlib.Path(os.environ["DIRECT_WHEEL_DIR"]).resolve()
-          filename = backend.build_wheel(str(out_dir))
-          print(out_dir / filename)
-          PY
-
-          test "$(find "$direct_wheel_dir" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
-          direct_wheel="$(find "$direct_wheel_dir" -maxdepth 1 -type f -name '*.whl' -print -quit)"
-          test -n "$direct_wheel"
-          sha256sum "$direct_wheel"
-
-          SDIST_DIR="$sdist_dir" "$build_venv/bin/python" - <<'PY'
-          import os
-          import pathlib
-          import setuptools.build_meta as backend
-
-          out_dir = pathlib.Path(os.environ["SDIST_DIR"]).resolve()
-          filename = backend.build_sdist(str(out_dir))
-          print(out_dir / filename)
-          PY
-
-          test "$(find "$sdist_dir" -maxdepth 1 -type f -name '*.tar.gz' | wc -l)" -eq 1
-          sdist="$(find "$sdist_dir" -maxdepth 1 -type f -name '*.tar.gz' -print -quit)"
-          test -n "$sdist"
-          sha256sum "$sdist"
-          tar -xzf "$sdist" -C "$unpack_dir"
-          source_root="$(find "$unpack_dir" -mindepth 1 -maxdepth 1 -type d -print -quit)"
-          test -n "$source_root"
-
-          (
-            cd "$source_root"
-            REBUILT_WHEEL_DIR="$rebuilt_wheel_dir" "$build_venv/bin/python" - <<'PY'
-          import os
-          import pathlib
-          import setuptools.build_meta as backend
-
-          out_dir = pathlib.Path(os.environ["REBUILT_WHEEL_DIR"]).resolve()
-          filename = backend.build_wheel(str(out_dir))
-          print(out_dir / filename)
-          PY
-          )
-
-          test "$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' | wc -l)" -eq 1
-          rebuilt_wheel="$(find "$rebuilt_wheel_dir" -maxdepth 1 -type f -name '*.whl' -print -quit)"
-          test -n "$rebuilt_wheel"
-          sha256sum "$rebuilt_wheel"
-
-          DIRECT_WHEEL="$direct_wheel" REBUILT_WHEEL="$rebuilt_wheel" "$build_venv/bin/python" - <<'PY'
-          import email.parser
-          import hashlib
-          import os
-          import pathlib
-          import zipfile
-
-          direct_path = pathlib.Path(os.environ["DIRECT_WHEEL"]).resolve()
-          rebuilt_path = pathlib.Path(os.environ["REBUILT_WHEEL"]).resolve()
-
-          def payload(path):
-              with zipfile.ZipFile(path) as archive:
-                  return {
-                      name: archive.read(name)
-                      for name in sorted(archive.namelist())
-                      if not name.endswith("/")
-                  }
-
-          direct = payload(direct_path)
-          rebuilt = payload(rebuilt_path)
-
-          if direct.keys() != rebuilt.keys():
-              missing = sorted(direct.keys() - rebuilt.keys())
-              extra = sorted(rebuilt.keys() - direct.keys())
-              raise SystemExit(
-                  f"sdist-derived wheel file set drift: missing={missing} extra={extra}"
-              )
-
-          mismatched = [name for name in direct if direct[name] != rebuilt[name]]
-          if mismatched:
-              details = []
-              for name in mismatched:
-                  direct_sha = hashlib.sha256(direct[name]).hexdigest()
-                  rebuilt_sha = hashlib.sha256(rebuilt[name]).hexdigest()
-                  details.append(f"{name}:{direct_sha}!={rebuilt_sha}")
-              raise SystemExit(
-                  "sdist-derived wheel payload drift: " + ", ".join(details)
-              )
-
-          metadata_names = [name for name in direct if name.endswith(".dist-info/METADATA")]
-          entry_names = [name for name in direct if name.endswith(".dist-info/entry_points.txt")]
-          if len(metadata_names) != 1:
-              raise SystemExit(f"expected one METADATA file, found {metadata_names}")
-          if len(entry_names) != 1:
-              raise SystemExit(f"expected one entry_points.txt file, found {entry_names}")
-
-          metadata = email.parser.BytesParser().parsebytes(direct[metadata_names[0]])
-          expected = {
-              "Name": "atlas-research-engine",
-              "Version": "0.1.0",
-              "Requires-Python": ">=3.10",
-          }
-          for field, expected_value in expected.items():
-              actual = metadata.get(field)
-              if actual != expected_value:
-                  raise SystemExit(
-                      f"wheel metadata drift for {field}: expected={expected_value!r} actual={actual!r}"
-                  )
-
-          requires_dist = metadata.get_all("Requires-Dist", failobj=[])
-          if requires_dist:
-              raise SystemExit(f"unexpected runtime dependency metadata: {requires_dist}")
-
-          entry_points = direct[entry_names[0]].decode("utf-8")
-          if "atlas = atlas.cli:main" not in entry_points:
-              raise SystemExit(f"console entry point drift: {entry_points!r}")
-
-          payload_bytes = b"".join(
-              name.encode("utf-8") + b"\0" + direct[name] + b"\0"
-              for name in sorted(direct)
-          )
-          payload_sha256 = hashlib.sha256(payload_bytes).hexdigest()
-          print(f"distribution_payload_files={len(direct)}")
-          print(f"distribution_payload_sha256={payload_sha256}")
-          PY
-
-          python -m venv "$venv_dir"
-          "$venv_dir/bin/python" -m pip install --no-deps "$rebuilt_wheel"
-          "$venv_dir/bin/python" -m pip check
-
-          (
-            cd /tmp
-            "$venv_dir/bin/python" - <<'PY'
-          import importlib
-          import pathlib
-          import pkgutil
-
-          import atlas
-
-          package_path = pathlib.Path(atlas.__file__).resolve()
-          if "site-packages" not in package_path.parts:
-              raise SystemExit(f"sdist-derived import did not resolve from site-packages: {package_path}")
-
-          module_names = sorted(
-              module.name for module in pkgutil.walk_packages(atlas.__path__, atlas.__name__ + ".")
-          )
-          if not module_names:
-              raise SystemExit("sdist-derived wheel exposed no importable atlas submodules")
-
-          for module_name in module_names:
-              module = importlib.import_module(module_name)
-              module_file = getattr(module, "__file__", None)
-              if module_file is None:
-                  raise SystemExit(f"installed module has no file identity: {module_name}")
-              module_path = pathlib.Path(module_file).resolve()
-              if "site-packages" not in module_path.parts:
-                  raise SystemExit(
-                      f"sdist-derived module resolved outside site-packages: {module_name} -> {module_path}"
-                  )
-
-          print(f"installed_atlas={package_path}")
-          print(f"imported_modules={','.join(module_names)}")
-          PY
-          )
-
-          "$venv_dir/bin/atlas" init-run \
-            --question "Does the source distribution preserve the preregistered run contract?" \
-            --output "$output_file"
-          "$venv_dir/bin/python" -m json.tool "$output_file" >/dev/null
+          [[ "$EXPECTED_SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git -c submodule.recurse=false fetch --filter=blob:none --depth=1 origin "$EXPECTED_SOURCE_SHA"
+          git sparse-checkout init --cone
+          git sparse-checkout set AdaptivePredictive-ML
+          git -c submodule.recurse=false checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Install declared lightweight diagnostic dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'pytest>=8,<9'
+      - name: Bounded-state regression tests
+        run: python -m pytest AdaptivePredictive-ML/tests/test_bounded_state.py -q
+      - name: Execute declared engineering matrix (not a predictive-success experiment)
+        run: python AdaptivePredictive-ML/engineering/bounded_state_v1/run_equivalence.py --output "${{ runner.temp }}/bounded-equivalence"
+      - name: Retain all engineering evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bounded-equivalence
+          path: ${{ runner.temp }}/bounded-equivalence
+          if-no-files-found: error
