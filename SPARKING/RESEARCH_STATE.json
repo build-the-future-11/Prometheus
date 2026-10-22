@@ -3,22 +3,23 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-21T19:50:03+05:30",
+  "updated_at": "2026-10-22T08:55:57+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Atlas.git",
   "git_branch": "codex/ml4materials-research-execution",
-  "phase": "DEVELOPMENT_V2_COMPLETE",
-  "disposition": "DEVELOPMENT_NOT_SUPPORTED",
-  "research_question": "Does support-gating a nonlinear residual improve composition-only experimental band-gap prediction under preregistered element exclusion relative to the identical ungated residual model, without practically degrading official Matbench MAE?",
-  "hypothesis": "A regularized linear component is safer for descriptor-space extrapolation, while nonlinear residual corrections are useful in-support but brittle out-of-support; attenuating only the residual as support distance increases will reduce leave-one-element-out MAE.",
-  "falsifier": "The hypothesis is not supported if the confirmatory macro-MAE improvement over the ungated matched control is at most 0.01 eV, fewer than four of five element holdouts improve, or official five-fold MAE degrades by more than 0.02 eV.",
-  "intended_contribution": "A small, auditable, compute-matched residual gate and a protocol that separates IID benchmark utility from element-exclusion extrapolation.",
+  "phase": "DEVELOPMENT_V3_FROZEN_RUN_READY",
+  "disposition": "DEVELOPMENT_V3_NOT_EVALUATED",
+  "research_question": "Does target-independent inverse-frequency weighting improve a randomized tree ensemble under fresh leave-one-element-out band-gap shifts, while retaining the v2 Extra Trees advantage over GPU CatBoost?",
+  "hypothesis": "Stoichiometric inverse-frequency weighting computed only from each outer training set will reduce domination by common elemental environments and improve unseen-element macro MAE relative to an otherwise identical unweighted Extra Trees ensemble.",
+  "falsifier": "V3 is not supported unless a nonzero frequency exponent improves macro MAE over the aggregation-matched unweighted Extra Trees control by more than 0.01 eV, improves at least five of eight fresh development elements, improves over CatBoost by more than 0.02 eV, and yields complete finite manifest-valid evidence.",
+  "intended_contribution": "A target-independent composition-frequency weighting rule for randomized tree ensembles, evaluated with compute-matched controls on a fresh element-exclusion panel.",
   "scope": {
     "included": [
       "Matbench v0.1 matbench_expt_gap",
       "composition-only features",
-      "development element holdouts Cu, Ag, B",
+      "preserved v2 development element holdouts Cu, Ag, B",
+      "fresh v3 development element holdouts O, S, In, Ge, Sb, Ba, Co, F",
       "confirmatory element holdouts Li, Zn, Ga, Se, Te",
       "official five-fold Matbench evaluation",
       "split-conformal marginal intervals",
@@ -39,16 +40,16 @@
     "preservation_rule": "Do not edit, replace, or reinterpret predecessor failure receipts."
   },
   "budgets": {
-    "development_candidates": 8,
-    "development_element_holdouts": 3,
+    "development_candidates": 4,
+    "development_element_holdouts": 8,
     "confirmatory_element_holdouts": 5,
     "official_folds": 5,
-    "max_rss_mib": 512,
+    "max_rss_mib": 12288,
     "require_no_rising_pageout": true,
-    "hosted_accelerator": "CPU"
+    "hosted_accelerator": "Kaggle GPU 0:1"
   },
   "protected_evaluation": {
-    "status": "UNOPENED_BY_SPARKING_DEVELOPMENT_STOP",
+    "status": "UNOPENED_V3_DEVELOPMENT_PENDING",
     "confirmatory_elements": [
       "Li",
       "Zn",
@@ -56,7 +57,7 @@
       "Se",
       "Te"
     ],
-    "rule": "No gate hyperparameter or model architecture may change after confirmatory outcomes are observed."
+    "rule": "Do not evaluate the protected element scenarios until a development successor passes its frozen admission rule and a confirmatory protocol is separately frozen."
   },
   "failures": [
     {
@@ -80,6 +81,11 @@
       "id": "C2",
       "text": "Support gating preserves official Matbench MAE within 0.02 eV.",
       "status": "NOT_EVALUATED_DEVELOPMENT_STOP"
+    },
+    {
+      "id": "C3",
+      "text": "Target-independent frequency balancing improves randomized forests under fresh element exclusion.",
+      "status": "V3_FROZEN_NOT_EVALUATED"
     }
   ],
   "history": [
@@ -118,6 +124,10 @@
     {
       "date": "2026-10-21",
       "event": "Private Kaggle GPU development v2 completed 180 CatBoost fits on dual T4 hardware. Exact output and source identities were retained; an independent local verifier recomputed 156 metrics. The selected risk gate worsened macro MAE by 0.000130 eV versus CatBoost, failing the >0.020 eV admission rule. Disposition: DEVELOPMENT_NOT_SUPPORTED. Protected outcomes remained unopened."
+    },
+    {
+      "date": "2026-10-22",
+      "event": "Preserved the completed v2 negative study and froze the separately versioned v3 frequency-balanced forest development protocol. Implemented the production runner, independent verifier, bounded CPU dry run, exact-source packager, and private dual-GPU Kaggle launcher. The fresh O/S/In/Ge/Sb/Ba/Co/F panel was selected from target-independent occurrence counts; protected Li/Zn/Ga/Se/Te scenarios remain unopened."
     }
   ],
   "hosted_development": {
@@ -149,7 +159,7 @@
     "results_sha256": "538e18e6f4a56fc2770603a540c2848080ba4cf46a1624daf8a2ecc0b63ecccb",
     "archive_sha256": "e78850dfb06f7c3b6d349a4807fe3c1f306bf86945b96574ca5878c993707b03"
   },
-  "disposition_scope": "Frozen v2 development gate failed; protected confirmation and official-fold evaluation were not opened.",
+  "disposition_scope": "Frozen v2 development gate failed. V3 is frozen and run-ready but has no scientific result yet; protected confirmation and official-fold evaluation remain unopened.",
   "development_findings": {
     "selected_gate": {
       "support_quantile": 0.99,
@@ -247,5 +257,25 @@
       -0.0019636948533508507,
       0.0014281323657897574
     ]
+  },
+  "successor_v3": {
+    "study_id": "sparking-development-v3-frequency-balanced-forest-gpu",
+    "status": "FROZEN_RUN_READY_NOT_EVALUATED",
+    "protocol": "protocols/development-v3.json",
+    "protocol_explanation": "docs/PROTOCOL_V3.md",
+    "parent_commit": "9d6161cd3b063fd844998b57c31a952361a11b92",
+    "development_elements": ["O", "S", "In", "Ge", "Sb", "Ba", "Co", "F"],
+    "protected_confirmatory_elements": ["Li", "Zn", "Ga", "Se", "Te"],
+    "protected_outcomes_observed": false,
+    "candidate_exponents": [0.5, 1.0],
+    "aggregations": ["mean", "median"],
+    "matched_unweighted_exponent": 0.0,
+    "accelerator": "Kaggle GPU 0:1",
+    "run_id": "kaggle-development-v3-r1",
+    "private_source_dataset": "ryangomez010/sparking-source-v3-20261022",
+    "kernel": "ryangomez010/sparking-development-v3-frequency-balanced-forest-gpu",
+    "local_tests_passed": 21,
+    "bounded_cpu_dry_run": "PASSED",
+    "scientific_disposition": "NOT_EVALUATED"
   }
 }

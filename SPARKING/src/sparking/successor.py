@@ -138,12 +138,60 @@ def catboost_ensemble_predictions(
     )
 
 
+def element_frequency_sample_weights(
+    formulas: Iterable[str],
+    exponent: float,
+    minimum: float = 0.25,
+    maximum: float = 4.0,
+) -> np.ndarray:
+    """Return target-independent row weights that emphasize rare training elements.
+
+    Each composition receives the stoichiometric-fraction-weighted inverse
+    frequency of its constituent elements.  Frequencies are estimated only
+    from the supplied training formulas.  The result is clipped and normalized
+    to unit mean so exponent zero is exactly the unweighted control.
+    """
+
+    formulas = tuple(formulas)
+    if not formulas:
+        raise ValueError("at least one formula is required")
+    if not 0.0 <= float(exponent) <= 1.0:
+        raise ValueError("frequency exponent must lie in [0, 1]")
+    if minimum <= 0.0 or maximum < minimum:
+        raise ValueError("invalid sample-weight bounds")
+    if float(exponent) == 0.0:
+        return np.ones(len(formulas), dtype=float)
+    compositions = [element_fractions(formula) for formula in formulas]
+    counts: dict[str, int] = {}
+    for fractions in compositions:
+        for element in fractions:
+            counts[element] = counts.get(element, 0) + 1
+    row_count = float(len(formulas))
+    raw = np.asarray(
+        [
+            sum(
+                float(fraction) * (float(counts[element]) / row_count) ** (-float(exponent))
+                for element, fraction in fractions.items()
+            )
+            for fractions in compositions
+        ],
+        dtype=float,
+    )
+    raw /= float(np.mean(raw))
+    clipped = np.clip(raw, float(minimum), float(maximum))
+    clipped /= float(np.mean(clipped))
+    if not np.all(np.isfinite(clipped)) or np.any(clipped <= 0.0):
+        raise ValueError("sample weights are invalid")
+    return clipped
+
+
 def extra_trees_ensemble_predictions(
     train_features: np.ndarray,
     train_targets: np.ndarray,
     test_features: np.ndarray,
     config: dict[str, Any],
     seeds: Iterable[int],
+    sample_weight: np.ndarray | None = None,
 ) -> EnsemblePrediction:
     imputer = SimpleImputer(strategy="median")
     train = imputer.fit_transform(train_features)
@@ -157,7 +205,7 @@ def extra_trees_ensemble_predictions(
             n_jobs=-1,
             random_state=int(seed),
         )
-        model.fit(train, train_targets)
+        model.fit(train, train_targets, sample_weight=sample_weight)
         members.append(np.clip(np.asarray(model.predict(test), dtype=float), 0.0, None))
     matrix = np.asarray(members, dtype=float)
     return EnsemblePrediction(np.mean(matrix, axis=0), np.std(matrix, axis=0), matrix)

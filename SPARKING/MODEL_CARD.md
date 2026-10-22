@@ -1,72 +1,43 @@
-# Model card: SPARKING v0.1
+# Model card: SPARKING v3 development candidate
 
 ## Intended use
 
-SPARKING tests whether a support-distance gate can make a composition-only
-nonlinear residual model safer under declared element exclusions. It is a
-research model for one public band-gap dataset, not a materials-discovery or
-deployment system.
+SPARKING v3 is a controlled research study of composition-only experimental band-gap prediction under declared leave-one-element-out shifts. It tests whether target-independent element-frequency weighting improves a randomized tree ensemble. It is not a materials discovery, stability, synthesis, safety, or deployment system.
 
 ## Inputs and outputs
 
-Input formulas are parsed without silent correction. Each is mapped to 118
-elemental fractions and 14 global statistics: element count, fraction entropy,
-fraction extrema and L2 norm, and weighted moments/ranges of atomic number,
-period, and group. The output is a non-negative point estimate in eV. A
-separate split-conformal procedure produces constant-radius 90% marginal
-intervals for the official-fold compatibility study.
+The input is a chemical formula. Parsing rejects invalid formulas rather than silently repairing them. The fixed representation concatenates the original SPARKING elemental-fraction and periodic-statistic features with Matminer Magpie `ElementProperty` and `Stoichiometry` descriptors. Missing feature values are imputed from the outer training partition only. The output is a nonnegative point estimate of experimental band gap in eV.
 
-## Mechanism
+## V3 mechanism
 
-1. Fit standardized ridge regression to the target.
-2. Fit a histogram gradient-boosting regressor to the ridge residual with
-   absolute-error loss.
-3. Standardize the same feature vector for distance computation.
-4. Estimate a support threshold from a declared quantile of training
-   leave-one-out nearest-neighbour distances.
-5. Preserve the full residual correction in support and attenuate it as a
-   power law outside support.
+For each outer training partition, v3 counts how many training formulas contain each element. A composition receives the stoichiometric-fraction-weighted inverse occurrence frequency of its elements, raised to exponent alpha. The weights are normalized, clipped to [0.25, 4.0], and renormalized to mean one. They never use target values.
 
-The compute-matched mechanism-off control uses the exact same ridge and
-residual models with gate value one everywhere.
+The production candidate matrix uses alpha 0.5 and 1.0. Alpha 0.0 is an exact unweighted control. Each setting trains three Extra Trees forests with 900 trees per seed and evaluates both mean and median aggregation across seeds. Every candidate uses the same rows, features, seeds, tree count, and hyperparameters as the matched alpha 0.0 control.
 
-## Training contract
+## Controls
 
-- Ridge alpha candidates: 17 logarithmically spaced values from 1e-4 to 1e4.
-- Residual learner: 180 iterations, learning rate 0.055, 31 leaves,
-  minimum leaf size 12, L2 regularization 0.1, seed 20261020.
-- Development gate grid: support quantile {0.80, 0.90, 0.95, 0.99} crossed
-  with power {1, 2}; exactly eight candidates.
-- Selection: lowest macro-MAE across Cu/Ag/B; candidates within 0.002 eV use
-  lower power and then higher support quantile.
+- Identical unweighted Extra Trees with mean and median aggregation.
+- Three-seed GPU CatBoost ensemble and its single-seed member.
+- Squared-error histogram gradient boosting.
+- Standardized ridge regression.
+
+The development panel is O, S, In, Ge, Sb, Ba, Co, and F. It was chosen from target-independent occurrence counts before v3 outcomes. Cu, Ag, and B are prior observed development scenarios and are not reused as fresh evidence. Li, Zn, Ga, Se, and Te remain protected.
+
+## Selection and admission
+
+The nonzero-exponent candidate with lowest element-macro MAE is selected. Candidates within 0.003 eV choose the smaller exponent and then mean aggregation. Protected confirmation is permitted only if the selected candidate:
+
+- improves macro MAE by more than 0.01 eV over its aggregation-matched alpha 0.0 control;
+- improves at least five of eight development elements over that control;
+- improves macro MAE by more than 0.02 eV over the CatBoost ensemble; and
+- yields complete, finite, manifest-valid evidence with nondegenerate weights.
 
 ## Limitations
 
-Nearest-neighbour distance depends on the chosen standardized feature space and
-is not a probability of correctness. Split conformal intervals guarantee only
-marginal coverage under exchangeability, not conditional or shifted-domain
-coverage. Element exclusions can create chemically severe shifts and overlapping
-test scenarios. No prediction should substitute for structural calculation or
-measurement.
+The panel is a declared set of chemical shift scenarios, not a random sample of the periodic table. A formula can appear in more than one element holdout, so row-level bootstrap analyses must cluster by source row. Composition descriptors omit crystal structure, processing, measurement context, phase, and thermodynamic information. Frequency weighting may reduce effective sample size and can only be interpreted within the clipped weighting rule and frozen model budget.
 
 ## Current status
 
-Protected confirmatory claims remain `NOT_EVALUATED`. Hosted development run
-`kaggle-development-v1-r1` completed on 2026-10-21 with verified evidence for all
-eight settings and four baselines across Cu/Ag/B. The best numerical gate's
-macro-MAE improvement over the ungated model was only 0.000249 eV. All eight
-settings fell within the frozen 0.002 eV tie tolerance; the selection rule chose
-quantile 0.99, power 1, with improvement of 0.000004417 eV. This is negligible
-development benefit, not confirmatory support. Follow-up diagnostics established
-that direct absolute-error HGB predicts zero for all training and test examples
-in each holdout: zero-heavy nonnegative targets initialize at zero and give
-uniform initial gradients. A squared-error direct comparator with otherwise
-identical settings achieved 0.760592 eV macro-MAE, better than the current
-residual model. These exploratory results require a versioned successor before
-adoption. See [diagnosis and measured repairs](docs/DEVELOPMENT_DIAGNOSIS_V1.md).
+V3 is `FROZEN_RUN_READY_NOT_EVALUATED`. The local suite passes 21 tests and a bounded CPU integration run through the production evaluator passes. No v3 performance claim exists until the private Kaggle GPU run completes and its raw arrays, manifest, environment, and independent verification are recovered.
 
-The earlier local `FAILED_RETAINED` attempt remains preserved: pageouts increased
-by eight during featurization before any model fit. See the
-[development results report](docs/DEVELOPMENT_RESULTS_V1.md) for comparisons,
-runtime provenance, and limitations.
-
+V2 remains a preserved valid negative development study: its selected risk gate worsened macro MAE by 0.000130 eV versus CatBoost and did not qualify for protected confirmation. The protected Li/Zn/Ga/Se/Te outcomes and official Matbench folds remain unopened by both v2 and v3.

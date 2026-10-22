@@ -1,0 +1,15 @@
+{
+  "id": "ryangomez010/sparking-development-v3-frequency-balanced-forest-gpu",
+  "title": "SPARKING development v3 frequency balanced forest GPU",
+  "code_file": "sparking-development-v3-20261022.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [
+    "ryangomez010/sparking-source-v3-20261022"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
