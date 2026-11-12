@@ -1,6 +1,38 @@
 # Hosted execution status — DLML-S3-R0
 
-Updated: 2026-10-22
+Updated: 2026-11-12
+
+## 12 November engineering repair
+
+The source package at `releases/s3-r1/` supersedes the earlier package for a
+future private upload. This changes the engineering package revision, not the
+frozen `DLML-S3-R0` scientific protocol. The original `releases/s3-r0/` archive
+and sidecar remain unchanged.
+
+The Python 3.12 preflight failure was reproduced: a dynamically loaded module
+was missing from `sys.modules` when dataclass annotations were resolved. The
+test loader now registers both imported modules before execution. This follows
+the repair already present on the portfolio branch and includes it in the
+actual uploadable source archive.
+
+- Current source-bundle SHA-256: `6d0a07c89bd4cd7485eb53deab9b3f476de15bcc29ee1d9e78abae2b97e42459`.
+- Current sidecar: `releases/s3-r1/dlml-s3-source.sha256`.
+- Outer checkout: all 30 existing unit tests passed.
+- Clean archive extraction: 28 tests passed and two outer-release-only checks
+  skipped as designed (30 discovered).
+- Original source archive, study implementation, data configuration, protocol,
+  and hosted launcher are preserved; this repair produces no protected-test
+  result and launches no GPU job.
+- The builder now refuses to overwrite a release and accepts a fresh output
+  directory as its optional first argument. Its default is `releases/s3-r1`.
+  Use the checked-in bundle for uploading; use a new output directory for any
+  subsequent packaging attempt.
+
+Remote Kaggle state was not changed or rechecked by this repair. The recorded
+source-update requirement below therefore remains the next external step;
+the old bundle hash in that historical record is not the current handoff.
+
+## Historical handoff record from 22 October 2026
 
 ## Current state: REMOTE_SOURCE_UPDATE_REQUIRED
 

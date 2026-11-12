@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-release="$root/releases/s3-r0"
+release="${1:-$root/releases/s3-r1}"
 mkdir -p "$release"
 bundle="$release/dlml-s3-source.bundle"
+
+# The protocol remains S3-R0; r1 is an engineering package revision. Keep every
+# earlier source archive immutable and require a fresh destination for a rebuild.
+if [[ -e "$bundle" || -e "$release/dlml-s3-source.sha256" ]]; then
+  echo "Refusing to overwrite an existing source release: $release" >&2
+  exit 1
+fi
 
 # macOS writes AppleDouble sidecars when archiving files from some external
 # volumes unless COPYFILE_DISABLE is set.  Those files are not source and make
@@ -39,9 +46,9 @@ if bad_paths:
 PY
 
 if command -v sha256sum >/dev/null 2>&1; then
-  sha256sum "$bundle" > "$release/dlml-s3-source.sha256"
+  (cd "$release" && sha256sum dlml-s3-source.bundle > dlml-s3-source.sha256)
 else
-  shasum -a 256 "$bundle" > "$release/dlml-s3-source.sha256"
+  (cd "$release" && shasum -a 256 dlml-s3-source.bundle > dlml-s3-source.sha256)
 fi
 echo "S3_SOURCE_BUNDLE=$bundle"
 echo "S3_SOURCE_SHA256=$(cut -d ' ' -f 1 "$release/dlml-s3-source.sha256")"

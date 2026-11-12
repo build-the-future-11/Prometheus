@@ -1,0 +1,41 @@
+{
+  "schema": "prometheus.derived-repair.v1",
+  "scope": "engineering repair only; no protected test or GPU run",
+  "source_base_commit": "e66b826ebce6671f95798f783524f560716b03aa",
+  "new_bundle_sha256": "6d0a07c89bd4cd7485eb53deab9b3f476de15bcc29ee1d9e78abae2b97e42459",
+  "original_bundle_sha256": "fb24189f110a430f9868acc430aa487764cb6ab30a950dd00126b3bd139f5f86",
+  "frozen_study_sha256": "0407b6d9f34b3c2997a27e2f69fe289a8cfa42d97b95ba4d76cebcba1cdc2970",
+  "clean_extraction_test_returncode": 0,
+  "overwrite_refusal_returncode": 1,
+  "overwrite_refusal_retains_bytes": true,
+  "status": "PASS",
+  "outer_tests": {
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0
+  },
+  "clean_extraction_tests": {
+    "passed": 28,
+    "failed": 0,
+    "skipped": 2
+  },
+  "package_build_status": "PASS",
+  "source_worktree_dirty_at_validation": true,
+  "validated_source_sha256": {
+    "Derived-Learning-ML/tests/test_s3_gpu_study.py": "cf57c5ad540b8981847ba55f20dc2aaf4fc598443c57d6e87b8383657aff6046",
+    "Derived-Learning-ML/scripts/build_s3_source_bundle.sh": "5f78fb9ea8a6248d4fed1d211d165000ebde5b31328b66fbb6ce3b300ae9884e",
+    "Derived-Learning-ML/scripts/run_s3_gpu_study.py": "0407b6d9f34b3c2997a27e2f69fe289a8cfa42d97b95ba4d76cebcba1cdc2970",
+    "Derived-Learning-ML/scripts/verify_s3_hosted_archive.py": "402e632fc38fe33654b2fa379e62ef7f167a52cf1a56450050b1f36cf5a07b69",
+    "Derived-Learning-ML/configs/s3_real_data_gpu.json": "93899596091ceebac412a2dfbfba839328a830fb9b2e798f2b322f59708ef65a",
+    "Derived-Learning-ML/PROTOCOL_S3_REAL_DATA.md": "80849b0c0493bc95449ff0d81e4eef51051d3d4768e47a5edf5719968f0d64f0",
+    "Derived-Learning-ML/kaggle/run_hosted_s3.py": "7ede71b2a1ca69813fd890bb0b35514ce8987d3bc73e6ffb466c2d27bb44630f",
+    "Derived-Learning-ML/releases/s3-r1/dlml-s3-source.bundle": "6d0a07c89bd4cd7485eb53deab9b3f476de15bcc29ee1d9e78abae2b97e42459"
+  },
+  "frozen_inputs_byte_equal_to_base": {
+    "Derived-Learning-ML/scripts/run_s3_gpu_study.py": true,
+    "Derived-Learning-ML/scripts/verify_s3_hosted_archive.py": true,
+    "Derived-Learning-ML/configs/s3_real_data_gpu.json": true,
+    "Derived-Learning-ML/PROTOCOL_S3_REAL_DATA.md": true,
+    "Derived-Learning-ML/kaggle/run_hosted_s3.py": true
+  }
+}

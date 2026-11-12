@@ -1,0 +1,35 @@
+test_config_validator_rejects_cross_split_seed_reuse (test_experiment.ExperimentTests.test_config_validator_rejects_cross_split_seed_reuse) ... ok
+test_relative_config_path_is_recorded_relative_to_project (test_experiment.ExperimentTests.test_relative_config_path_is_recorded_relative_to_project) ... ok
+test_smoke_execution_has_locked_splits_and_verified_outputs (test_experiment.ExperimentTests.test_smoke_execution_has_locked_splits_and_verified_outputs) ... ok
+test_partial_pivot_solve (test_linalg.LinearAlgebraTests.test_partial_pivot_solve) ... ok
+test_ridge_solution_satisfies_independent_normal_equation (test_linalg.LinearAlgebraTests.test_ridge_solution_satisfies_independent_normal_equation) ... ok
+test_ridge_stabilizes_rank_deficient_input (test_linalg.LinearAlgebraTests.test_ridge_stabilizes_rank_deficient_input) ... ok
+test_ridge_with_intercept_recovers_an_affine_relation (test_linalg.LinearAlgebraTests.test_ridge_with_intercept_recovers_an_affine_relation) ... ok
+test_shape_checks (test_linalg.LinearAlgebraTests.test_shape_checks) ... ok
+test_adam_state_round_trip_resumes_identically (test_model_and_rules.ModelAndRuleTests.test_adam_state_round_trip_resumes_identically) ... ok
+test_affine_intercept_is_learned_without_changing_block_shape (test_model_and_rules.ModelAndRuleTests.test_affine_intercept_is_learned_without_changing_block_shape) ... ok
+test_all_rules_accept_batches_and_remain_finite (test_model_and_rules.ModelAndRuleTests.test_all_rules_accept_batches_and_remain_finite) ... ok
+test_analytic_gradient_matches_finite_difference (test_model_and_rules.ModelAndRuleTests.test_analytic_gradient_matches_finite_difference) ... ok
+test_analytic_residual_is_exactly_classical_backfitting (test_model_and_rules.ModelAndRuleTests.test_analytic_residual_is_exactly_classical_backfitting) ... ok
+test_bad_batch_shape_and_nonfinite_values_are_rejected (test_model_and_rules.ModelAndRuleTests.test_bad_batch_shape_and_nonfinite_values_are_rejected) ... ok
+test_cyclic_backfitting_converges_to_global_ridge (test_model_and_rules.ModelAndRuleTests.test_cyclic_backfitting_converges_to_global_ridge) ... ok
+test_derived_rule_does_not_call_global_gradient (test_model_and_rules.ModelAndRuleTests.test_derived_rule_does_not_call_global_gradient) ... ok
+test_gradient_isolation_for_group_assignment (test_model_and_rules.ModelAndRuleTests.test_gradient_isolation_for_group_assignment) ... ok
+test_model_round_trip (test_model_and_rules.ModelAndRuleTests.test_model_round_trip) ... ok
+test_verifier_recomputes_complete_raw_result_matrix (test_s3_gpu_study.HostedArchiveVerificationTests.test_verifier_recomputes_complete_raw_result_matrix) ... ok
+test_kernel_metadata_uses_typed_private_gpu_settings (test_s3_gpu_study.KaggleReleaseContractTests.test_kernel_metadata_uses_typed_private_gpu_settings) ... skipped 'kernel metadata is intentionally outside the hosted source bundle'
+test_release_bundle_is_hash_bound_and_contains_only_source (test_s3_gpu_study.KaggleReleaseContractTests.test_release_bundle_is_hash_bound_and_contains_only_source) ... skipped 'release artifacts are intentionally outside the hosted source bundle'
+test_incomplete_pairs_are_inconclusive (test_s3_gpu_study.RegisteredResultClassificationTests.test_incomplete_pairs_are_inconclusive) ... ok
+test_mixed_retains_one_clause_outcomes (test_s3_gpu_study.RegisteredResultClassificationTests.test_mixed_retains_one_clause_outcomes) ... ok
+test_negative_requires_complete_evidence_and_both_clauses_fail (test_s3_gpu_study.RegisteredResultClassificationTests.test_negative_requires_complete_evidence_and_both_clauses_fail) ... ok
+test_supported_requires_both_registered_clauses (test_s3_gpu_study.RegisteredResultClassificationTests.test_supported_requires_both_registered_clauses) ... ok
+test_deterministic_generation (test_tasks.TaskGenerationTests.test_deterministic_generation) ... ok
+test_groups_partition_features (test_tasks.TaskGenerationTests.test_groups_partition_features) ... ok
+test_hidden_coefficients_are_not_serialized (test_tasks.TaskGenerationTests.test_hidden_coefficients_are_not_serialized) ... ok
+test_split_and_streams_are_independent (test_tasks.TaskGenerationTests.test_split_and_streams_are_independent) ... ok
+test_structural_extensions_are_deterministic_and_do_not_expose_truth (test_tasks.TaskGenerationTests.test_structural_extensions_are_deterministic_and_do_not_expose_truth) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.217s
+
+OK (skipped=2)

@@ -1,0 +1,9 @@
+build==1.6.1
+derived-learning-ml @ file:///tmp/prometheus-check-93grp183/rebuilt/derived_learning_ml-0.1.0-py3-none-any.whl#sha256=4eaa33ae71aaa2f632e1f43fd7f50dbb416550cfd1ee94864a51eec66114fb3b
+iniconfig==2.3.1
+packaging==26.3
+pip==25.0.1
+pluggy==1.7.0
+Pygments==2.21.0
+pyproject_hooks==1.3.3
+pytest==8.4.2

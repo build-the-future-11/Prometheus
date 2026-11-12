@@ -1,0 +1,76 @@
+{
+  "commit": "e66b826ebce6671f95798f783524f560716b03aa",
+  "elapsed_seconds": 18.32449913100004,
+  "project": "Derived-Learning-ML",
+  "schema": "prometheus.project-check.v1",
+  "scope": "package build, unit tests, installed imports, wheel payload comparison; not research execution",
+  "status": "PASS",
+  "steps": [
+    {
+      "log": "install-build-tools.log",
+      "name": "install-build-tools",
+      "returncode": 0,
+      "seconds": 12.244195730000001
+    },
+    {
+      "log": "build-direct.log",
+      "name": "build-direct",
+      "returncode": 0,
+      "seconds": 0.46861725000007937
+    },
+    {
+      "log": "build-from-sdist.log",
+      "name": "build-from-sdist",
+      "returncode": 0,
+      "seconds": 0.3183521450000626
+    },
+    {
+      "log": "install-wheel.log",
+      "name": "install-wheel",
+      "returncode": 0,
+      "seconds": 0.4659990369998468
+    },
+    {
+      "log": "dependency-consistency.log",
+      "name": "dependency-consistency",
+      "returncode": 0,
+      "seconds": 0.3664261129999886
+    },
+    {
+      "log": "installed-import.log",
+      "name": "installed-import",
+      "returncode": 0,
+      "seconds": 0.06597335200012822
+    },
+    {
+      "log": "unit-tests.log",
+      "name": "unit-tests",
+      "returncode": 0,
+      "seconds": 0.7670812000001206
+    },
+    {
+      "log": "environment.log",
+      "name": "environment",
+      "returncode": 0,
+      "seconds": 0.38100637200000165
+    }
+  ],
+  "wheel_payload": {
+    "derived_learning/__init__.py": "2d6b98759467eb186054a61d8fc99f100530a4b6041723ef7acf4e5f101789e2",
+    "derived_learning/__main__.py": "2cdd23d4f5cd6c3b3e4cb690ad16d560637767b9ca5b2a3cf129fcc0a5ebc82b",
+    "derived_learning/analysis.py": "afadb436f49368170f8356cb4c2d9054852a74df9d84602c3705305fcfe3473b",
+    "derived_learning/audit.py": "98e2c798fb166599de3983ee3b12a328bb5a2e4957b8f43306b803d2d7fc5ed7",
+    "derived_learning/cli.py": "34d5fe6174d62fe563d22203ffcccfd48f9d77b4d2b4bb2b6613942ec5f98be2",
+    "derived_learning/experiment.py": "9c222b633f9b5b4cd6417c90cac286894477a42d5ed533f4f0b0a5523ba695d8",
+    "derived_learning/linalg.py": "195d3254fdcd6345ef5f4dca9ab52c149fe63ff2a0b8db64fbb57e2b9ed48a0c",
+    "derived_learning/model.py": "0b0c123a962c51c9e77f82f6d8b9d94262afee2add370732ad2ec4dcd7c51787",
+    "derived_learning/report.py": "f6b75b3247c34e2a4cadad33ca160a7215f2754475fbe2cd8d828402d9d83f62",
+    "derived_learning/rules.py": "d2e0a32311cc7eb162414f68e9370356ef5797715376cf8af45e4830956e7b73",
+    "derived_learning/tasks.py": "d6773d636a999b360e333a5a623a6a54ef0145fb7c5a61019bbcbf19d29c766b",
+    "derived_learning/verification.py": "c879f70c86e355b2fbca3130ce3faf21e775f15c9f251cd36b632af4c77ae1a6",
+    "derived_learning_ml-0.1.0.dist-info/METADATA": "3b5697fb58ff5aeaa7adb8c76ea7dcdc3ce6c230757ee1d1ea14ff5da7f29462",
+    "derived_learning_ml-0.1.0.dist-info/RECORD": "0838f7d7596896b2abf26ddd11032385c77b26c67be1118ff96a8b7ae09b7948",
+    "derived_learning_ml-0.1.0.dist-info/WHEEL": "554cceeb67609447cf6b51e0832b83ed9cedaf15bd77fdab41fc0a3ac95643c0",
+    "derived_learning_ml-0.1.0.dist-info/entry_points.txt": "eb87fedcea7073b97cb597be1105ccee02e31ea39df2224d830a45a885ae1b7c"
+  }
+}
