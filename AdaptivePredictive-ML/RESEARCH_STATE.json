@@ -2,7 +2,7 @@
   "schema_version": "adaptive-predictive.research-state.v1",
   "project": "Adaptive Predictive ML",
   "model_name": "Regret- and Drift-Directed Fixed Share (RDDFS)",
-  "state_updated": "2026-10-21",
+  "state_updated": "2026-11-14",
   "phase": "DEVELOPMENT_REVISION_2_COMPLETE_NEGATIVE_CONFIRMATION_NOT_ADMITTED",
   "research_question": "Does causal drift-directed probability redistribution across matched multi-timescale recursive least-squares experts reduce temporally ordered prequential scaled absolute error relative to constant fixed share on non-stationary real-world univariate forecasting tasks?",
   "hypothesis": "When recent ensemble loss rises above its slow baseline, reallocating fixed-share mass toward shorter-memory experts will adapt faster than uniform redistribution while preserving long-memory accuracy outside shifts.",
@@ -144,7 +144,22 @@
     {
       "date": "2026-10-21",
       "event": "Generated a complete eight-page negative-result manuscript, tables, and vector figures directly from verified JSON; compiled it warning-free with Tectonic and visually inspected every rendered page. Added statistical, failure, reproducibility, and skeptical-review reports plus a one-command paper reproduction script."
+    },
+    {
+      "date": "2026-11-14",
+      "event": "Closed invalid numerical and structural configuration admission. All 101 tests passed; 8064 forecasts and expert states across 63 valid mode/season/configuration combinations matched the pinned original exactly. All 16 previously admitted invalid cases now reject at construction. Historical scientific disposition remains negative."
     }
-  ]
+  ],
+  "extension_20261114": {
+    "status": "VERIFIED_CONFIGURATION_ADMISSION_REPAIR",
+    "branch": "ryan/research-robustness-20261114",
+    "report": "reports/CONFIGURATION_ADMISSION_20261114.md",
+    "verification": "artifacts/configuration-admission-verification-20261114.json",
+    "tests_passed": 101,
+    "synthetic_forecasts_compared": 8064,
+    "prediction_and_state_mismatches": 0,
+    "invalid_cases_previously_admitted_now_rejected": 16,
+    "protected_data_access": 0,
+    "new_efficacy_claim": false
+  }
 }
-

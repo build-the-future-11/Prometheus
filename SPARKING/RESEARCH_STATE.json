@@ -3,7 +3,7 @@
   "project": "SPARKING",
   "expanded_name": "Support-Preserving Adaptive Residual Kernel with In-domain Neighbour Gating",
   "created_at": "2026-10-20T23:00:00+05:30",
-  "updated_at": "2026-10-22T11:58:00+05:30",
+  "updated_at": "2026-11-14T07:51:30+05:30",
   "repository_root": "/Volumes/PRO-BLADE/Atlas",
   "project_path": "SPARKING",
   "git_remote": "https://github.com/build-the-future-11/Prometheus.git",
@@ -136,6 +136,10 @@
     {
       "date": "2026-10-22",
       "event": "Private Kaggle GPU development v3 completed all eight frozen O/S/In/Ge/Sb/Ba/Co/F holdouts on dual Tesla T4 hardware. The exact archive, source identity, 25-file run tree, manifest, raw prediction arrays, and 320 recomputed metrics verified independently. The selected alpha=0.50 mean Extra Trees model improved macro MAE by 0.009123 eV over its matched unweighted control, below the strict >0.010 eV admission threshold. Disposition: DEVELOPMENT_NOT_SUPPORTED. Protected Li/Zn/Ga/Se/Te outcomes and official folds remained unopened; no confirmatory run was launched."
+    },
+    {
+      "date": "2026-11-14",
+      "event": "Reverified the saved v3 manifest and all 320 metrics; quantified domain influence, original-selection stability, and exact domain-reweighting sensitivity. Corrected the small-calibration conformal rank boundary and invalid-metric admission. Executed a 48-cell synthetic coverage study and 33 targeted tests. Original failed admission and protected boundaries remain unchanged."
     }
   ],
   "hosted_development": {
@@ -352,5 +356,19 @@
       "upper_95_ev": 0.011586486913172774
     },
     "posthoc_status": "DESCRIPTIVE_NOT_PREREGISTERED_DOES_NOT_CHANGE_PRIMARY_DISPOSITION"
+  },
+  "extension_20261114": {
+    "status": "VERIFIED_RETROSPECTIVE_ROBUSTNESS_AND_SYNTHETIC_CALIBRATION_REPAIR",
+    "branch": "ryan/research-robustness-20261114",
+    "report": "docs/ROBUSTNESS_AND_CALIBRATION_20261114.md",
+    "domain_analysis": "artifacts/development-v3-robustness-20261114.json",
+    "coverage_study": "artifacts/conformal-boundary-study-20261114.json",
+    "metric_comparisons": 320,
+    "tests_passed": 33,
+    "synthetic_study_cells": 48,
+    "repetitions_per_cell": 100000,
+    "new_material_model_fits": 0,
+    "protected_outcomes_observed": false,
+    "original_admission_changed": false
   }
 }

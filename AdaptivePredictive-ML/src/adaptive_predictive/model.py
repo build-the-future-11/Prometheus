@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from math import exp, isfinite
+from numbers import Integral, Real
 from typing import Literal, Sequence
 
 import numpy as np
@@ -45,16 +46,40 @@ class DDFSConfig:
     interval_window: int = 256
 
     def validate(self) -> None:
+        scalar_fields = (
+            "ridge", "eta", "base_share", "max_share", "drift_gain", "fast_rate",
+            "slow_rate", "prediction_clip", "loss_clip", "min_scale", "interval_alpha",
+        )
+        for name in scalar_fields:
+            value = getattr(self, name)
+            if isinstance(value, (bool, np.bool_)) or not isinstance(value, Real) or not isfinite(value):
+                raise ValueError(f"{name} must be a finite real number")
         if not self.forgetting_factors:
             raise ValueError("at least one forgetting factor is required")
-        if any(not 0.0 < value <= 1.0 for value in self.forgetting_factors):
+        if any(
+            isinstance(value, (bool, np.bool_)) or not isinstance(value, Real)
+            or not isfinite(value) or not 0.0 < value <= 1.0
+            for value in self.forgetting_factors
+        ):
             raise ValueError("forgetting factors must be in (0, 1]")
-        if any(lag <= 0 for lag in self.lags):
-            raise ValueError("lags must be positive")
+        if not self.lags or any(
+            isinstance(lag, (bool, np.bool_)) or not isinstance(lag, Integral) or lag <= 0
+            for lag in self.lags
+        ):
+            raise ValueError("lags must be nonempty positive integers")
         if tuple(sorted(set(self.lags))) != self.lags:
             raise ValueError("lags must be strictly increasing")
         if self.ridge <= 0 or self.eta <= 0:
             raise ValueError("ridge and eta must be positive")
+        if self.prediction_clip <= 0 or self.loss_clip <= 0 or self.min_scale <= 0:
+            raise ValueError("prediction_clip, loss_clip, and min_scale must be positive")
+        if self.drift_gain < 0:
+            raise ValueError("drift_gain must be nonnegative")
+        if (
+            isinstance(self.interval_window, (bool, np.bool_))
+            or not isinstance(self.interval_window, Integral) or self.interval_window <= 0
+        ):
+            raise ValueError("interval_window must be a positive integer")
         if not 0 <= self.base_share <= self.max_share < 1:
             raise ValueError("shares must satisfy 0 <= base <= max < 1")
         if not 0 < self.fast_rate <= 1 or not 0 < self.slow_rate <= 1:
@@ -135,8 +160,8 @@ class DriftDirectedFixedShare:
         config: DDFSConfig | None = None,
         mode: Mode = "ddfs",
     ) -> None:
-        if season <= 0:
-            raise ValueError("season must be positive")
+        if isinstance(season, (bool, np.bool_)) or not isinstance(season, Integral) or season <= 0:
+            raise ValueError("season must be a positive integer")
         if mode not in {
             "uniform",
             "hedge",

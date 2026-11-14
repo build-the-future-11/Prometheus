@@ -294,6 +294,11 @@ def run_confirmatory(root: Path, run_id: str) -> dict[str, object]:
             uq_model = SparkingRegressor.fit(features[proper], targets[proper], config)
             calibration_prediction, _, _ = uq_model.predict(features[calibration], quantile, power)
             radius = conformal_radius(np.abs(targets[calibration] - calibration_prediction), 0.9)
+            if not np.isfinite(radius):
+                raise ValueError(
+                    "calibration sample is too small for a finite interval at the requested coverage; "
+                    "the valid conformal radius is infinite"
+                )
             uq_prediction, _, _ = uq_model.predict(features[test], quantile, power)
             interval_rows.append(
                 {

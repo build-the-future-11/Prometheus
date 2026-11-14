@@ -1,0 +1,458 @@
+{
+  "baseline_commit": "22461b231d4c44fc41562bf24b128a67478524b3",
+  "baseline_source_sha256": "707b44d36aa923537b0eba69d7c6f2c536e321b18cce38a054dcb1bda63b8ec6",
+  "configuration_mode_season_trials": 63,
+  "invalid_cases": 16,
+  "invalid_cases_admitted_before": 16,
+  "invalid_cases_rejected_after": 16,
+  "mismatches": 0,
+  "new_efficacy_claim": false,
+  "protected_data_access": false,
+  "repaired_source_sha256": "c84d8e1bdaf53fce7871708fea83124baaca0b07dbfbfe06762c23380ccbadd0",
+  "scope": "Exact regression check on bounded synthetic sequences. This is configuration hardening and does not change or validate the historical predictive advantage claim.",
+  "status": "VERIFIED_CONFIGURATION_ADMISSION_REPAIR",
+  "synthetic_forecasts_compared": 8064,
+  "trials": [
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 0,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 1,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 1
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 4
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "uniform",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "hedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "adahedge",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "adaptive_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "directed_fixed_share",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    },
+    {
+      "config_index": 2,
+      "forecasts": 128,
+      "mode": "ddfs",
+      "prediction_and_expert_state_exact": true,
+      "season": 7
+    }
+  ]
+}

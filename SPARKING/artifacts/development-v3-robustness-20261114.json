@@ -1,0 +1,316 @@
+{
+  "analysis_status": "RETROSPECTIVE_FIXED_PANEL_SENSITIVITY",
+  "interpretation": "Exact diagnostics for these eight already-observed domains. Domain removal and seed reuse are descriptive; overlapping training/evaluation samples prevent interpreting these as independent confirmatory tests.",
+  "largest_contribution": {
+    "effect_ev": 0.05266240079365114,
+    "element": "F",
+    "fraction_of_net_summed_improvement": 0.7215335791500744
+  },
+  "matched_control": "extra_trees_alpha0.00_mean",
+  "minimum_total_variation_to_nonpositive_effect": 0.18047890066292763,
+  "new_model_fits": 0,
+  "original_admission_passed": false,
+  "overlapping_row_counts": {
+    "Ba": {
+      "Ba": 269,
+      "Co": 4,
+      "F": 7,
+      "Ge": 18,
+      "In": 33,
+      "O": 92,
+      "S": 57,
+      "Sb": 18
+    },
+    "Co": {
+      "Ba": 4,
+      "Co": 172,
+      "F": 5,
+      "Ge": 19,
+      "In": 2,
+      "O": 52,
+      "S": 9,
+      "Sb": 5
+    },
+    "F": {
+      "Ba": 7,
+      "Co": 5,
+      "F": 112,
+      "Ge": 0,
+      "In": 1,
+      "O": 42,
+      "S": 3,
+      "Sb": 5
+    },
+    "Ge": {
+      "Ba": 18,
+      "Co": 19,
+      "F": 0,
+      "Ge": 354,
+      "In": 17,
+      "O": 21,
+      "S": 65,
+      "Sb": 4
+    },
+    "In": {
+      "Ba": 33,
+      "Co": 2,
+      "F": 1,
+      "Ge": 17,
+      "In": 366,
+      "O": 18,
+      "S": 75,
+      "Sb": 23
+    },
+    "O": {
+      "Ba": 92,
+      "Co": 52,
+      "F": 42,
+      "Ge": 21,
+      "In": 18,
+      "O": 1090,
+      "S": 29,
+      "Sb": 44
+    },
+    "S": {
+      "Ba": 57,
+      "Co": 9,
+      "F": 3,
+      "Ge": 65,
+      "In": 75,
+      "O": 29,
+      "S": 652,
+      "Sb": 64
+    },
+    "Sb": {
+      "Ba": 18,
+      "Co": 5,
+      "F": 5,
+      "Ge": 4,
+      "In": 23,
+      "O": 44,
+      "S": 64,
+      "Sb": 338
+    }
+  },
+  "paired_training_seed_sensitivity": [
+    {
+      "paired_single_seed_macro_improvement_ev": 0.013032278352502244,
+      "per_element": {
+        "Ba": 0.00783114415530758,
+        "Co": -0.001586498708010379,
+        "F": 0.04725148809523773,
+        "Ge": 0.004217953546766899,
+        "In": -0.0022882817243472216,
+        "O": 0.014827094801223474,
+        "S": 0.029188922972051612,
+        "Sb": 0.004816403681788261
+      },
+      "seed": 20261031
+    },
+    {
+      "paired_single_seed_macro_improvement_ev": 0.007595202215104513,
+      "per_element": {
+        "Ba": 0.010819289549772572,
+        "Co": -0.0021882428940569265,
+        "F": 0.06747807539682613,
+        "Ge": 0.0035325486503452546,
+        "In": -0.0030038858530660483,
+        "O": -0.02712169215086639,
+        "S": 0.007341547375596192,
+        "Sb": 0.003903977646285327
+      },
+      "seed": 20261032
+    },
+    {
+      "paired_single_seed_macro_improvement_ev": 0.006747099658881015,
+      "per_element": {
+        "Ba": 0.009193391160677107,
+        "Co": 0.0023582041343668805,
+        "F": 0.043552281746032095,
+        "Ge": 0.004792059008160974,
+        "In": -0.004266029143898038,
+        "O": -0.01575838939857272,
+        "S": 0.00994732447171101,
+        "Sb": 0.004157955292570813
+      },
+      "seed": 20261033
+    }
+  ],
+  "per_element_improvement_ev": {
+    "Ba": 0.009399049979347263,
+    "Co": -0.00047217915590014314,
+    "F": 0.05266240079365114,
+    "Ge": 0.004185771081816225,
+    "In": -0.0031354078121835216,
+    "O": -0.009350227658851296,
+    "S": 0.015375693024312409,
+    "Sb": 0.004321663379355689
+  },
+  "positive_domains": 5,
+  "primary_disposition": "DEVELOPMENT_NOT_SUPPORTED",
+  "protected_outcomes_observed": false,
+  "removing_one_domain": [
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "O",
+      "omitted_element_improvement_for_reselected_candidate_ev": -0.009350227658851296,
+      "selected_model_remainder_improvement_ev": 0.011762427327199867
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "S",
+      "omitted_element_improvement_for_reselected_candidate_ev": 0.015375693024312409,
+      "selected_model_remainder_improvement_ev": 0.008230152943890765
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "In",
+      "omitted_element_improvement_for_reselected_candidate_ev": -0.0031354078121835216,
+      "selected_model_remainder_improvement_ev": 0.010874595920533041
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "Ge",
+      "omitted_element_improvement_for_reselected_candidate_ev": 0.004185771081816225,
+      "selected_model_remainder_improvement_ev": 0.00982871322139022
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "Sb",
+      "omitted_element_improvement_for_reselected_candidate_ev": 0.004321663379355689,
+      "selected_model_remainder_improvement_ev": 0.00980930003602744
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "Ba",
+      "omitted_element_improvement_for_reselected_candidate_ev": 0.009399049979347263,
+      "selected_model_remainder_improvement_ev": 0.0090839590931715
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "Co",
+      "omitted_element_improvement_for_reselected_candidate_ev": -0.00047217915590014314,
+      "selected_model_remainder_improvement_ev": 0.01049413468392113
+    },
+    {
+      "candidate_selected_using_remainder": "extra_trees_alpha0.50_mean",
+      "omitted_element": "F",
+      "omitted_element_improvement_for_reselected_candidate_ev": 0.05266240079365114,
+      "selected_model_remainder_improvement_ev": 0.0029034804054138036
+    }
+  ],
+  "reweighting_sensitivity": [
+    {
+      "domain_weights": {
+        "Ba": 0.125,
+        "Co": 0.125,
+        "F": 0.125,
+        "Ge": 0.125,
+        "In": 0.125,
+        "O": 0.125,
+        "S": 0.125,
+        "Sb": 0.125
+      },
+      "minimum_weighted_improvement_ev": 0.009123345453943471,
+      "total_variation_budget": 0.0
+    },
+    {
+      "domain_weights": {
+        "Ba": 0.125,
+        "Co": 0.125,
+        "F": 0.075,
+        "Ge": 0.125,
+        "In": 0.125,
+        "O": 0.175,
+        "S": 0.125,
+        "Sb": 0.125
+      },
+      "minimum_weighted_improvement_ev": 0.006022714031318349,
+      "total_variation_budget": 0.05
+    },
+    {
+      "domain_weights": {
+        "Ba": 0.125,
+        "Co": 0.125,
+        "F": 0.024999999999999994,
+        "Ge": 0.125,
+        "In": 0.125,
+        "O": 0.225,
+        "S": 0.125,
+        "Sb": 0.125
+      },
+      "minimum_weighted_improvement_ev": 0.002922082608693227,
+      "total_variation_budget": 0.1
+    },
+    {
+      "domain_weights": {
+        "Ba": 0.125,
+        "Co": 0.125,
+        "F": 0.0,
+        "Ge": 0.125,
+        "In": 0.125,
+        "O": 0.25,
+        "S": 0.125,
+        "Sb": 0.125
+      },
+      "minimum_weighted_improvement_ev": 0.0013717668973806663,
+      "total_variation_budget": 0.125
+    },
+    {
+      "domain_weights": {
+        "Ba": 0.125,
+        "Co": 0.125,
+        "F": 0.0,
+        "Ge": 0.125,
+        "In": 0.125,
+        "O": 0.325,
+        "S": 0.04999999999999999,
+        "Sb": 0.125
+      },
+      "minimum_weighted_improvement_ev": -0.00048267715385661185,
+      "total_variation_budget": 0.2
+    },
+    {
+      "domain_weights": {
+        "Ba": 0.125,
+        "Co": 0.125,
+        "F": 0.0,
+        "Ge": 0.125,
+        "In": 0.125,
+        "O": 0.375,
+        "S": 0.0,
+        "Sb": 0.125
+      },
+      "minimum_weighted_improvement_ev": -0.0017189731880147968,
+      "total_variation_budget": 0.25
+    }
+  ],
+  "schema_version": 1,
+  "selected_macro_improvement_ev": 0.009123345453943471,
+  "selected_model": "extra_trees_alpha0.50_mean",
+  "source_sha256": {
+    "Ba-predictions.npz": "d063bb881ce9daac7417dc85a395a85901c8abe88bb653125ad549fc3ffc30a8",
+    "Co-predictions.npz": "2cf7972df1e97ca4d0e4dac9255d52127be041f6846ca62ac1cc5de049c1a94e",
+    "F-predictions.npz": "8db6ebb7fc8cd5c2ce43ea49f0167c90a6dc901876a397bd1e6d64c81694d422",
+    "Ge-predictions.npz": "fbf547e48cb8843117a8a3ae0b19d20cb24deab8e23e03d0b7a2f80dec9377f9",
+    "In-predictions.npz": "772daefc485d9d0fbdcf3a8f17e57a101b86d2932dec6a5f5e4af1ab5d13ad07",
+    "O-predictions.npz": "bf19b3f18d7025150fe07b19ca127391daa5e7a599635ff445cb8c5a3147151b",
+    "S-predictions.npz": "5ccfa8a713e6975ebd654cbee5379d94a48b8d4dac5d063022893ab7ceae1cbf",
+    "Sb-predictions.npz": "1ba5d1fc34c020566c16ba90a2d38921c2659950a8516b487b04421e16b4384a",
+    "protocol": "999beae71fa7a000e627dd0830307b21471ef78ed1f034daa48276821fcf8d75",
+    "results.json": "27a67858b087d9300fe2ee372ce2f203fcfc3fa9fcc61b878a319fdaa1976c47"
+  },
+  "total_domains": 8,
+  "total_evaluation_rows_with_reuse": 3353,
+  "unique_row_count": 2682,
+  "verification": {
+    "manifest": {
+      "changed": [],
+      "extra": [],
+      "missing": [],
+      "valid": true
+    },
+    "metric_comparisons": 320,
+    "row_identity_target_consistency": true
+  }
+}

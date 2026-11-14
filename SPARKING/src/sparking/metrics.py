@@ -8,8 +8,8 @@ import numpy as np
 def regression_metrics(target: np.ndarray, prediction: np.ndarray) -> dict[str, float]:
     target = np.asarray(target, dtype=float)
     prediction = np.asarray(prediction, dtype=float)
-    if target.shape != prediction.shape or target.ndim != 1:
-        raise ValueError("targets and predictions must be equal one-dimensional arrays")
+    if target.shape != prediction.shape or target.ndim != 1 or target.size == 0:
+        raise ValueError("targets and predictions must be equal nonempty one-dimensional arrays")
     if not (np.all(np.isfinite(target)) and np.all(np.isfinite(prediction))):
         raise ValueError("metrics require finite inputs")
     error = prediction - target
@@ -23,13 +23,22 @@ def regression_metrics(target: np.ndarray, prediction: np.ndarray) -> dict[str, 
 
 
 def conformal_radius(calibration_errors: np.ndarray, coverage: float) -> float:
+    """Return the corrected order statistic, including its unbounded case.
+
+    For n calibration residuals the rank is ceil((n + 1) * coverage).
+    When that rank is n + 1 the valid threshold is positive infinity; replacing
+    it by the largest observed residual would cover only n/(n + 1) of iid
+    continuous future residuals. This is a marginal guarantee under
+    exchangeability, not a guarantee under element or temporal shift.
+    """
     errors = np.sort(np.asarray(calibration_errors, dtype=float))
-    if errors.ndim != 1 or errors.size < 2 or not np.all(np.isfinite(errors)):
+    if errors.ndim != 1 or errors.size < 2 or not np.all(np.isfinite(errors)) or np.any(errors < 0.0):
         raise ValueError("invalid calibration errors")
     if not 0.0 < coverage < 1.0:
         raise ValueError("coverage must lie between zero and one")
     rank = int(np.ceil((errors.size + 1) * coverage))
-    rank = min(max(rank, 1), errors.size)
+    if rank > errors.size:
+        return float("inf")
     return float(errors[rank - 1])
 
 
@@ -42,8 +51,12 @@ def interval_metrics(
     target = np.asarray(target, dtype=float)
     lower = np.asarray(lower, dtype=float)
     upper = np.asarray(upper, dtype=float)
-    if target.shape != lower.shape or target.shape != upper.shape:
-        raise ValueError("interval arrays must have equal shapes")
+    if target.ndim != 1 or target.size == 0 or target.shape != lower.shape or target.shape != upper.shape:
+        raise ValueError("interval arrays must be nonempty one-dimensional arrays with equal shapes")
+    if not 0.0 < coverage < 1.0:
+        raise ValueError("coverage must lie between zero and one")
+    if not (np.all(np.isfinite(target)) and np.all(np.isfinite(lower)) and np.all(np.isfinite(upper))):
+        raise ValueError("finite interval metrics require finite targets and endpoints")
     if np.any(lower > upper):
         raise ValueError("lower interval exceeds upper interval")
     alpha = 1.0 - coverage
@@ -63,6 +76,8 @@ def bootstrap_mean_interval(values: np.ndarray, seed: int = 20261020, resamples:
     values = np.asarray(values, dtype=float)
     if values.ndim != 1 or values.size < 2 or not np.all(np.isfinite(values)):
         raise ValueError("bootstrap requires at least two finite values")
+    if isinstance(resamples, (bool, np.bool_)) or not isinstance(resamples, (int, np.integer)) or resamples <= 0:
+        raise ValueError("resamples must be a positive integer")
     rng = np.random.default_rng(seed)
     samples = rng.choice(values, size=(resamples, values.size), replace=True).mean(axis=1)
     return {
