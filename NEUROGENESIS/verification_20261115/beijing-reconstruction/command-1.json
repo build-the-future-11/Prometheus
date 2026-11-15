@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "transfer.py",
+    "run",
+    "--dataset",
+    "beijing",
+    "--lock",
+    "runs/freeze.json",
+    "--output",
+    "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/beijing-transfer-reconstruction-20261115-01"
+  ],
+  "cwd": "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4",
+  "ended_utc": "2026-11-15T13:36:14.980803+00:00",
+  "log_sha256": "8247b75a2d47fd236f00bbbbafb7c34cf10a18d09a0c893902f4b5095fa24bb4",
+  "returncode": 0,
+  "started_utc": "2026-11-15T13:34:43.918443+00:00",
+  "wall_seconds": 91.06239014099992
+}

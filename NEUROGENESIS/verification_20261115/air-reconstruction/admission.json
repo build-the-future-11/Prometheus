@@ -1,0 +1,46 @@
+{
+  "commands": [],
+  "data": {
+    "attribution": "De Vito et al., UCI Air Quality",
+    "file": "AirQualityUCI.csv",
+    "scope": "exposed v3 regression data; not a new protected evaluation",
+    "sha256": "13277ae5d8581e80b7be09d47c7d3d06fe9b8e957078f2cf6e859f955e62f996",
+    "source": "https://archive.ics.uci.edu/dataset/360/air+quality"
+  },
+  "dataset": "air",
+  "freeze_sha256": "33a8b559125404db0bf3fa4b05ae0a146b9a4ddb5978d63a24ce11c3bfb2d09c",
+  "frozen_manifest_phase_labels_retained": true,
+  "frozen_source_sha256": {
+    "SPECIFICATION.md": "730246d689c7804da1356801bca5789ad7645f31392c14cd15d9ef5c95d9fc90",
+    "audit.py": "a969ddab14057ed1aa8e4d6023b901888e5cc6c4a7484f479597bc52ec26be84",
+    "data/manifest.json": "0f6caa61bfc7add8c29b16d18dcfd700eccd5f3f1fb2dcd0598f793ba97a0014",
+    "engine.py": "e8a21436bb458889128a632c3cbd99832868aadf31098946940e4d76a7f636c5",
+    "experiment.py": "9f1089d26331c7472f8981d646cb71d4dcbf2ddb033026a8aa35595aa4289bf9",
+    "protocol.json": "1d072deed049cfc321cc5285b47a33ceefc6ab711c7770da10e270c97a5c2d48",
+    "real_transfer.py": "8a39e72dbc488640e48a1a0724a2163b82044ff47941cace099ee22404d16fd0",
+    "test_engine.py": "848698456aa97b21bb92eff329daa96b060663c72265fa15a543bc56d7d8d9dc",
+    "test_pipeline.py": "3834ad658147c5e60640993c4ae14f31eabe06c1b9716648486e8a98178b0add",
+    "test_ridge.py": "1d0113b110ad50416f9be03769066489f30bd25dfed28506ebb60b0ecde02db0",
+    "transfer.py": "ff46dd27c74bc6543df3fdbe9db1b4caa7ce2f68285892761896131cee197109"
+  },
+  "historical_outcome_source": "NEUROGENESIS/successors/memory_v4/paper/main.tex at source_commit",
+  "historical_outcomes_already_exposed": true,
+  "historical_rounded_claims": {
+    "air_relative_mse_change": 0.743,
+    "beijing_relative_mse_change": -0.1383,
+    "beijing_solve_reduction": 0.6534
+  },
+  "hosted_execution": false,
+  "independent_external_reproduction": false,
+  "new_protected_confirmation": false,
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "run_directory": "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/air-regression-reconstruction-20261115-01",
+  "schema": "neurogenesis.local-transfer-command-receipt.v1",
+  "scope": "Frozen-code local reproduction and evidence reconstruction after manuscript outcomes were exposed; exact replay and separate arithmetic audit",
+  "source_commit": "3323b449126ab487bc34756eac781b244ddef22b",
+  "source_directory": "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4",
+  "source_repository": "build-the-future-11/Prometheus",
+  "started_utc": "2026-11-15T13:32:13.197812+00:00"
+}

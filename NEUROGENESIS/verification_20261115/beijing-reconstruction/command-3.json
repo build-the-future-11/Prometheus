@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "audit.py",
+    "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/beijing-transfer-reconstruction-20261115-01",
+    "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/beijing-transfer-reconstruction-20261115-01/audit.json"
+  ],
+  "cwd": "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4",
+  "ended_utc": "2026-11-15T13:37:52.000825+00:00",
+  "log_sha256": "7cc52a6e62d6aebfb84fb8a217e9c00e8a604725420ce473f0cf20ea55b18491",
+  "returncode": 0,
+  "started_utc": "2026-11-15T13:37:45.911116+00:00",
+  "wall_seconds": 6.089734228000452
+}

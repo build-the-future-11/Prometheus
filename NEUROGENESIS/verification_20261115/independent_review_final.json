@@ -1,0 +1,67 @@
+{
+  "status": "INDEPENDENT_READ_ONLY_REVIEW_PASS",
+  "checker_sha256": "e6094d171c982012015fbb2c0f433d5e59261cf712f2a1050724f901fd175275",
+  "review_code_sha256": "af59f2731f70cda8a33358d227f39ba6670fbed65f3b919674ebae8f2bb0d613",
+  "initial_review_sha256": "d89f11014c40dc4a1e3cfa610cf781ff891973a0c4ad4cd4dd75c0d0c06ddd24",
+  "real_runs": [
+    {
+      "dataset": "air",
+      "status": "VALID",
+      "trace_rows": 102927,
+      "methods": 11,
+      "full_run_hashes": 49,
+      "decision": {
+        "disposition": "NEGATIVE_DESCRIPTIVE",
+        "relative_mse_change": 0.74303381153237,
+        "weight_solve_reduction": 0.926949443016281,
+        "candidate_vs_last_observation_mse_ratio": 0.3751567924501315
+      }
+    },
+    {
+      "dataset": "beijing",
+      "status": "VALID",
+      "trace_rows": 192720,
+      "methods": 11,
+      "full_run_hashes": 49,
+      "decision": {
+        "disposition": "SUPPORTED_DESCRIPTIVE",
+        "relative_mse_change": -0.1383360860703461,
+        "weight_solve_reduction": 0.6533887541854289,
+        "candidate_vs_last_observation_mse_ratio": 1.9281919664663274
+      }
+    }
+  ],
+  "additional_cases": [
+    {
+      "case": "untampered_copy",
+      "accepted": true,
+      "reason": null
+    },
+    {
+      "case": "denied_admission",
+      "accepted": false,
+      "reason": "Resource admission was not granted"
+    },
+    {
+      "case": "stale_arithmetic_digest",
+      "accepted": false,
+      "reason": "Arithmetic audit digest does not match current trace/checkpoint artifacts"
+    },
+    {
+      "case": "changed_exact_receipt",
+      "accepted": false,
+      "reason": "Run artifacts differ from the original verified execution receipt"
+    }
+  ],
+  "new_model_outcomes_executed": false,
+  "retained_evidence_modified": false,
+  "findings_resolved": [
+    "Admission refusal is rejected",
+    "Arithmetic receipt digest is recomputed from current trace/checkpoint bytes",
+    "Exact replay receipt and all run outputs are bound to the preserved execution map",
+    "Actual partial trace counts replace nominal totals for failed attempts"
+  ],
+  "gate_review": "Original admission clauses are preserved, including macOS pageout/reclaimable-memory conditions. Source, protocol, data and roster remain bound to the frozen lock. Three successful commands with matching logs and the producer wall budget are required. Air predictive success is not a frozen prerequisite for the separate Beijing reconstruction; all numerical/resource gates remain binding.",
+  "scientific_scope": "Known historical rounded claims are reproduced from frozen code. Air remains negative against selected RLS; Beijing meets the preset RLS comparison but loses to last-observation persistence. No fresh protected confirmation, tuning, hosted execution, external replication or cross-dataset generalization is claimed.",
+  "scope_limit": "This is internal arithmetic/source/receipt verification of retained local outputs. Receipt hashes are integrity records, not signatures or evidence of external investigator replication."
+}

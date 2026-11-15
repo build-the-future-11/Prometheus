@@ -1,0 +1,9 @@
+{
+  "stage": "Adversarial metadata-copy test setup",
+  "status": "FIXTURE_ERROR_REPAIRED",
+  "error": "OSError errno18 invalid cross-device hard link from workspace artifacts into /tmp",
+  "model_outcomes_executed": false,
+  "retained_artifacts_modified": false,
+  "repair": "Create temporary mutation-test directories under the verification output folder on the same filesystem; raw artifacts remain unmodified hardlinks",
+  "repeat_reason": "Required to exercise the positive control and new receipt-chain regressions"
+}

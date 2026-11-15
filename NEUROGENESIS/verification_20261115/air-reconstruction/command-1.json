@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "transfer.py",
+    "run",
+    "--dataset",
+    "air",
+    "--lock",
+    "runs/freeze.json",
+    "--output",
+    "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/air-regression-reconstruction-20261115-01"
+  ],
+  "cwd": "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4",
+  "ended_utc": "2026-11-15T13:32:49.802927+00:00",
+  "log_sha256": "7eafb83e6c4b926a45b7cb3eaea712e937d0bb3aeb77ccda8f5ccf442c72052b",
+  "returncode": 0,
+  "started_utc": "2026-11-15T13:32:13.198162+00:00",
+  "wall_seconds": 36.60478391999641
+}

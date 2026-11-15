@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "audit.py",
+    "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/air-regression-reconstruction-20261115-01",
+    "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4/runs/air-regression-reconstruction-20261115-01/audit.json"
+  ],
+  "cwd": "/workspace/scratch/fe4d20deffd3/recovery/repo_execution/NEUROGENESIS/successors/memory_v4",
+  "ended_utc": "2026-11-15T13:33:27.402704+00:00",
+  "log_sha256": "9c6e45fd3da1d517864221bc16f5bc6cea1a8b92f5bfdd0427482b8f92ef16e5",
+  "returncode": 0,
+  "started_utc": "2026-11-15T13:33:24.384995+00:00",
+  "wall_seconds": 3.0177291619984317
+}

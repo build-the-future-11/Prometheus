@@ -1,0 +1,36 @@
+{
+  "scope": "frozen source and dataset admission before any new transfer outcome",
+  "repository": "build-the-future-11/Prometheus",
+  "commit": "3323b449126ab487bc34756eac781b244ddef22b",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "frozen_source_matches": {
+    "SPECIFICATION.md": true,
+    "audit.py": true,
+    "data/manifest.json": true,
+    "engine.py": true,
+    "experiment.py": true,
+    "protocol.json": true,
+    "real_transfer.py": true,
+    "test_engine.py": true,
+    "test_pipeline.py": true,
+    "test_ridge.py": true,
+    "transfer.py": true
+  },
+  "datasets": {
+    "beijing": {
+      "sha256": "4127f868775e31b3956522adc0ec75af8937dde6a3896e8beed3a376c6d27f1c",
+      "matches_manifest": true
+    },
+    "air": {
+      "sha256": "13277ae5d8581e80b7be09d47c7d3d06fe9b8e957078f2cf6e859f955e62f996",
+      "matches_manifest": true
+    }
+  },
+  "test_run": {
+    "command": "python3 -m unittest discover -s . -p 'test_*.py' -v",
+    "passed": 26,
+    "failed": 0,
+    "reported_seconds": 2.068
+  }
+}

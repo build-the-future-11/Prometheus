@@ -1,0 +1,17 @@
+{
+  "scope": "Frozen-code evidence reconstruction after historical outcomes were already exposed",
+  "source_repository": "build-the-future-11/Prometheus",
+  "source_commit": "3323b449126ab487bc34756eac781b244ddef22b",
+  "historical_outcome_source": "NEUROGENESIS/successors/memory_v4/paper/main.tex",
+  "fresh_protected_confirmation": false,
+  "original_real_transfer_raw_artifacts_recovered": false,
+  "recovery_search": "Current repository, latest available scientific delivery archives, nested source/evidence archives and historical inventories were inspected before execution",
+  "historical_claims": {
+    "air_mse_change_pct": 74.3,
+    "beijing_mse_change_pct": -13.83,
+    "beijing_solve_reduction_pct": 65.34
+  },
+  "original_execution_provenance_verified": false,
+  "current_reconstructed_evidence": "All 22 method attempts, raw traces, checkpoints, exact replay, separate arithmetic audits, full file hashes and executed commands are retained in the identified complete archive",
+  "resource_and_scientific_threshold_changes": false
+}

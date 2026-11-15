@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "legacy_methods": 11,
+      "legacy_status": "VALID",
+      "mutation": "untampered_control",
+      "reason": null,
+      "supplemental_rejected": false
+    },
+    {
+      "legacy_methods": 11,
+      "legacy_status": "VALID",
+      "mutation": "false_support",
+      "reason": "Wrong descriptive_support field",
+      "supplemental_rejected": true
+    },
+    {
+      "legacy_methods": 10,
+      "legacy_status": "VALID",
+      "mutation": "omitted_control",
+      "reason": "Manifest differs from original lock",
+      "supplemental_rejected": true
+    },
+    {
+      "legacy_methods": 11,
+      "legacy_status": "VALID",
+      "mutation": "wrong_units",
+      "reason": "Calendar/scale contract mismatch",
+      "supplemental_rejected": true
+    },
+    {
+      "legacy_methods": 11,
+      "legacy_status": "VALID",
+      "mutation": "admission_refused",
+      "reason": "Resource admission was not granted",
+      "supplemental_rejected": true
+    },
+    {
+      "legacy_methods": 11,
+      "legacy_status": "VALID",
+      "mutation": "stale_audit_digest",
+      "reason": "Arithmetic audit digest does not match current trace/checkpoint artifacts",
+      "supplemental_rejected": true
+    },
+    {
+      "legacy_methods": 11,
+      "legacy_status": "VALID",
+      "mutation": "stale_exact_receipt",
+      "reason": "Run artifacts differ from the original verified execution receipt",
+      "supplemental_rejected": true
+    }
+  ],
+  "cases_passed": 7,
+  "corruptions_rejected": 6,
+  "model_outcomes_executed": false,
+  "retained_evidence_modified": false,
+  "scope": "Corruption checks against copies of Air metadata with read-only references to raw artifacts",
+  "status": "PASS",
+  "untampered_control_accepted": true,
+  "utc": "2026-11-15T13:44:02.745941+00:00"
+}

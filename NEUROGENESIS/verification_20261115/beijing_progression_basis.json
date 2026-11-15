@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-15T13:34:43.294607+00:00",
+  "basis": "Frozen-code reproduction/evidence reconstruction, with both manuscript outcomes already exposed",
+  "fresh_confirmation": false,
+  "historical_manuscript_source": "successors/memory_v4/paper/main.tex at 3323b449126ab487bc34756eac781b244ddef22b",
+  "freshness_receipt": "/workspace/scratch/fe4d20deffd3/recovery/drive/neurogenesis_source_freshness_receipt.json",
+  "air_gate": {
+    "methods_complete": 11,
+    "methods_failed": 0,
+    "exact_replay": "VALID, 102927 trace rows",
+    "separate_arithmetic_audit": "VALID",
+    "independent_fsum_and_full_lock_reconciliation": "VALID",
+    "scientific_disposition": "NEGATIVE_DESCRIPTIVE",
+    "relative_mse_change": 0.74303381153237,
+    "weight_solve_reduction": 0.926949443016281
+  },
+  "progression_basis": [
+    "SUCCESSOR_CONTRACT.md selects Beijing before outcomes and labels Air an exposed predecessor regression",
+    "SPECIFICATION.md declares both streams separately with the same descriptive support thresholds",
+    "README.md Resume step 1 requests both Air and Beijing using the same frozen lock",
+    "transfer.py independently admits either named dataset under exact source/data/lock checks; no Air predictive-advantage admission rule",
+    "protocol.json numerical_support_rule requires no numerical failures across all phases; all 11 Air methods completed without numerical failure"
+  ],
+  "beijing_admission": "Independent frozen-code reconstruction remains eligible, subject to unchanged original resource admission and lock checks",
+  "threshold_changes": false,
+  "configuration_changes": false,
+  "all_failures_retained": true
+}

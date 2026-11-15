@@ -1,0 +1,11 @@
+{
+  "archive_name": "NEUROGENESIS_Transfer_Reconstruction_2026-11-15.zip",
+  "archive_bytes": 29420870,
+  "archive_sha256": "6135d280bbde024b075518bd46c69687d6f5e0671a7b53f2c7785e06279214bd",
+  "manifest_name": "NEUROGENESIS_Transfer_Reconstruction_2026-11-15_manifest.json",
+  "manifest_sha256": "e4c637c64a06e89102693cc0146be837cd53c632b0c8e79f0002b04737b17356",
+  "payload_files": 159,
+  "zip_members": 161,
+  "every_payload_hash_verified_after_packaging": true,
+  "scope": "Frozen-code reconstruction after manuscript outcomes were exposed; not fresh protected confirmation"
+}

@@ -1,0 +1,9 @@
+{
+  "stage": "Adversarial positive-control setup",
+  "status": "FIXTURE_ERROR_REPAIRED",
+  "error": "Test fixture reformatted unmodified manifest.json and summary.json, so immutable full-run hash binding correctly rejected the purported untampered control",
+  "model_outcomes_executed": false,
+  "retained_artifacts_modified": false,
+  "repair": "Retain byte-for-byte metadata copies for untampered control and write only fields/files intentionally mutated in each corruption case",
+  "repeat_reason": "Validate positive control and required receipt-chain corruption cases"
+}
